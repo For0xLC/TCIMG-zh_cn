@@ -1,0 +1,308 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Параметр [xfolder] или &#60;xfolder&#62;</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №11</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Параметр [xfolder] или &#60;xfolder&#62;</font></p>
+<hr><br>
+<b>Описание параметра.</b><br><br>
+Параметр позволяет получать информацию, в зависимости от даты и размера объектов папки.
+<br><br>
+&nbsp;&nbsp;&bull; Параметр может возвращать как <u>один путь к объекту</u>, так и временный <u>список объектов</u> при использовании <b>Count</b><br>
+&nbsp;&nbsp;&bull; Временный список объектов можно использовать в командах, которые поддерживают список.
+<br><br>
+Конструкция параметров:<br><br>
+
+<font class="S51"><b>1.</b> Поиск в заданной папке:</font>
+<a name="1"></a><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:500">
+<span class="S8"><b>&#60;</b></span>xfolder<font class="S81"><b>=</b></font><b>Number<font size=3 class="S51">:</font>Count</b><span class="S11">//</span><b>Folder</b>(<span class="S8">::</span>)<span class="S11">//</span><b>Recursion</b><span class="S11">//</span><b>Mask</b><span class="S11">//</span><b>Include</b><span class="S11">//</span><b>Registr</b><span class="S8"><b>&#62;</b></span>
+</p>
+</div>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3"><tr><td>
+<b>Number</b> - номер получаемой информации см. Таблицы.<br>
+<b>Count</b> [необязательный] - см. <a class="le" href="#Count">Примечания</a>.<br><b>Folder</b> - папка из которой брать информацию.<br>
+&nbsp;&nbsp;используется <span class="S8"><b>::</b></span> если необходимо получать путь к каждой папке (не для всех команд).<br>
+<b>Recursion<font class="S81">|</font>Attributes</b> - см Примечание <a class="le" href="add_lissts.htm#notes3"><b>№3</b></a>:<br>
+&nbsp;&nbsp;0 - без рекурсии - корневой каталог (по умолчанию).<br>
+&nbsp;-1 - с рекурсией: глубина 125.<br>
+&nbsp;&nbsp;N - глубина вложенности.<br>
+<b>Mask</b> [необязательный] - см Примечание <a class="le" href="add_lissts.htm#notes2"><b>№2</b></a><br>
+<b>Include</b> [необязательный] :<br>
+&nbsp;&nbsp;0 - найти указанные в маске (по умолчанию).<br>
+&nbsp;&nbsp;1 - найти все кроме указанных в маске.<br>
+<b>Registr</b> [необязательный] :<br>
+&nbsp;&nbsp;0 - не учитывать регистр (по умолчанию) (только для латинских букв).<br>
+&nbsp;&nbsp;1 - учитывать регистр (для любых символов).<br><br>
+Для придания дате нужного вида используется ключ <b>Format<b>Folder</b><b>Date</b></b> в <font class="S1"><b>TCIMG.ini</b></font> в секции <span class="S8">[</span>Setting<span class="S8">]</span></font>
+</td></tr></table><br><br>
+
+<font class="S51"><b>2.</b> Поиск в заданном списке:</font>
+<a name="2"></a><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:500">
+<span class="S8"><b>&#60;</b></span>xfolder<font class="S81"><b>=</b></font><b>Number<font size=3 class="S51">:</font>Count</b><span class="S11">//</span><b>List</b><span class="S8"><b>&#62;</b></span>
+</p>
+</div>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3"><tr><td>
+<b>Number</b> - номер получаемой информации см. Таблицы.<br>
+<b>Count</b> [необязательный] - см. <a class="le" href="#Count">Примечания</a>.<br>
+<b>List</b> - список полных путей объектов, возможны варианты:
+<br>&nbsp;&nbsp;<font size=+1 class="S91"><b>&#8594;</b></font> File - путь к файлу со списком (с:\List.txt).
+<br>&nbsp;&nbsp;<font size=+1 class="S91"><b>&#8594;</b></font> cliplist - список из буфера обмена
+<br>&nbsp;&nbsp;<font size=+1 class="S91"><b>&#8594;</b></font> $GLOBALNAME - список путей глобальной переменной см. Дополнение<a class="le" href="add_gloobal.htm"> <b>№23</b></a>.
+<br><br>
+Для придания дате нужного вида используется ключ <b>Format<b>Folder</b><b>Date</b></b> в <font class="S1"><b>TCIMG.ini</b></font> в секции <span class="S8">[</span>Setting<span class="S8">]</span></font>
+</td></tr></table>
+<br><br>
+
+
+<hr class="hr-blue"><br>
+
+<p class="section">Примечания:</p>
+<a name="Count"></a>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3"><tr><td>
+<b>Count</b> [необязательный] - возможны варианты:<br>
+
+&nbsp;&nbsp;• Количество получаемой информации (по умолчанию 1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;если Count больше 1, <u>то возвращается временный файл со списком</u>.<br>
+<br>
+&nbsp;&nbsp;• Если Count начинается с символов "&", "#", "@", <u>то возвращается временный файл со списком</u>:<br>
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>&</b>StringNumber - получение информации заданных номеров объектов.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>#</b>StringNumber - получение информации <u>кроме</u> заданных номеров объектов.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringNumber - строка состоящая из номера, номеров или диапазонов чисел.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Номера прописываются через запятую. Пример: <code class="example">1,5,8</code>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;При отрицательных числах отсчёт ведётся с конца. Пример: <code class="example">3,-1,-2</code>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Поддерживается диапазон(ы) номеров. Пример: <code class="example">2:5</code> Пример: <code class="example">1,3:6,8:11,13:-1</code>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>@</b>Start|End|Step|InArow, получение информации чередующих номеров объектов, где:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start - минимальное значение диапазона.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End - максимальное значение диапазона (при <font class="S51"><b>-1</b></font> до конца списка).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Step - шаг чередования (по умолчанию 1).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InArow - количество подряд объектов (по умолчанию 1).
+
+</td></tr></table><br><br>
+
+<hr class="hr-blue"><br>
+
+
+<b><font class="S121">Возвращаемая в командную строку информация, в зависимости от значения:</font></b>
+<br><br>
+<b>Параметр возвращает дату файла:</b>
+<br><br>
+<div align="center"><table class="param" width="70%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="10%">Значение</td><td width="90%">Описание</td></tr>
+<tr><td class="s3td">1</td><td><font class="S0">дата модификации самого старого файла в папке.</font></td></tr>
+<tr><td class="s3td">2</td><td><font class="S0">дата создания самого старого файла в папке.</font></td></tr>
+<tr><td class="s3td">3</td><td class="nobr"><font class="S0">дата последнего доступа самого старого файла в папке.</font></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td">4</td><td><font class="S0">дата модификации самого нового файла в папке.</font></td></tr>
+<tr><td class="s3td">5</td><td><font class="S0">дата создания самого нового файла в папке.</font></td></tr>
+<tr><td class="s3td">6</td><td><font class="S0">дата последнего доступа самого нового файла в папке.</font></td></tr>
+</td></tr></table>
+</div>
+<br>
+<b>Параметр возвращает дату каталога:</b>
+<br><br>
+<div align="center"><table class="param" width="70%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="10%">Значение</td><td width="90%">Описание</td></tr>
+<tr><td class="s3td">7</td><td><font class="S0">дата модификации самой старой папки в папке.</font></td></tr>
+<tr><td class="s3td">8</td><td><font class="S0">дата создания самой старой папки в папке.</font></td></tr>
+<tr><td class="s3td">9</td><td class="nobr"><font class="S0">дата последнего доступа самой старой папки в папке.</font></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td">10</td><td><font class="S0">дата модификации самой новой папки в папке.</font></td></tr>
+<tr><td class="s3td">11</td><td><font class="S0">дата создания самой новой папки в папке.</font></td></tr>
+<tr><td class="s3td">12</td><td><font class="S0">дата последнего доступа самой новой папки в папке.</font></td></tr>
+</td></tr></table>
+</div>
+<br>
+<b>Параметр возвращает дату объекта:</b>
+<br><br>
+<div align="center"><table class="param" width="70%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="10%">Значение</td><td width="90%">Описание</td></tr>
+<tr><td class="s3td">41</td><td><font class="S0">дата модификации самого старого объекта в папке.</font></td></tr>
+<tr><td class="s3td">42</td><td><font class="S0">дата создания самого старого объекта в папке.</font></td></tr>
+<tr><td class="s3td">43</td><td class="nobr"><font class="S0">дата последнего доступа самого старого объекта в папке.</font></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td">44</td><td><font class="S0">дата модификации самого нового объекта в папке.</font></td></tr>
+<tr><td class="s3td">45</td><td><font class="S0">дата создания самого нового объекта в папке.</font></td></tr>
+<tr><td class="s3td">46</td><td><font class="S0">дата последнего доступа самого нового объекта в папке.</font></td></tr>
+</td></tr></table>
+</div>
+
+<br>
+<hr class="hr-blue">
+<br>
+<b>Параметр возвращает размер:</b>
+<br><br>
+<div align="center"><table class="param" width="70%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="10%">Значение</td><td width="90%">Описание</td></tr>
+<tr><td class="s3td">13</td><td class="nobr"><font class="S0">размер самого маленького файла в папке.</font></td></tr>
+<tr><td class="s3td">14</td><td><font class="S0">размер самого большого файла в папке.</font></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td">15</td><td><font class="S0">размер самой маленькой папки в папке.</font></td></tr>
+<tr><td class="s3td">16</td><td><font class="S0">размер самой большой папки в папке.</font></td></tr>
+</td></tr></table>
+</div>
+
+
+
+<br>
+<hr class="hr-blue">
+<br>
+<b>Параметр возвращает путь файла, в зависимости от даты:</b>
+<br><br>
+<div align="center"><table class="param" width="70%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="10%">Значение</td><td width="90%">Описание</td></tr>
+<tr><td class="s3td">21</td><td><font class="S0">дата модификации самого старого файла в папке.</font></td></tr>
+<tr><td class="s3td">22</td><td><font class="S0">дата создания самого старого файла в папке.</font></td></tr>
+<tr><td class="s3td">23</td><td class="nobr"><font class="S0">дата последнего доступа самого старого файла в папке.</font></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td">24</td><td><font class="S0">дата модификации самого нового файла в папке.</font></td></tr>
+<tr><td class="s3td">25</td><td><font class="S0">дата создания самого нового файла в папке.</font></td></tr>
+<tr><td class="s3td">26</td><td><font class="S0">дата последнего доступа самого нового файла в папке.</font></td></tr>
+</td></tr></table>
+</div>
+<br>
+<b>Параметр возвращает путь каталога, в зависимости от даты:</b>
+<br><br>
+<div align="center"><table class="param" width="70%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="10%">Значение</td><td width="90%">Описание</td></tr>
+<tr><td class="s3td">27</td><td><font class="S0">дата модификации самой старой папки в папке.</font></td></tr>
+<tr><td class="s3td">28</td><td><font class="S0">дата создания самой старой папки в папке.</font></td></tr>
+<tr><td class="s3td">29</td><td class="nobr"><font class="S0">дата последнего доступа самой старой папки в папке.</font></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td">30</td><td><font class="S0">дата модификации самой новой папки в папке.</font></td></tr>
+<tr><td class="s3td">31</td><td><font class="S0">дата создания самой новой папки в папке.</font></td></tr>
+<tr><td class="s3td">32</td><td><font class="S0">дата последнего доступа самой новой папки в папке.</font></td></tr>
+</td></tr></table>
+</div>
+<br>
+<b>Параметр возвращает путь объекта, в зависимости от даты:</b>
+<br><br>
+<div align="center"><table class="param" width="70%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="10%">Значение</td><td width="90%">Описание</td></tr>
+<tr><td class="s3td">47</td><td><font class="S0">дата модификации самого старого объекта в папке.</font></td></tr>
+<tr><td class="s3td">48</td><td><font class="S0">дата создания самого старого объекта в папке.</font></td></tr>
+<tr><td class="s3td">49</td><td class="nobr"><font class="S0">дата последнего доступа самого старого объекта в папке.</font></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td">50</td><td><font class="S0">дата модификации самого нового объекта в папке.</font></td></tr>
+<tr><td class="s3td">51</td><td><font class="S0">дата создания самого нового объекта в папке.</font></td></tr>
+<tr><td class="s3td">52</td><td><font class="S0">дата последнего доступа самого нового объекта в папке.</font></td></tr>
+</td></tr></table>
+</div>
+
+
+<br>
+<hr class="hr-blue">
+
+<br>
+<b>Параметр возвращает путь, в зависимости от размера:</b>
+<br><br>
+<div align="center"><table class="param" width="70%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="10%">Значение</td><td width="90%">Описание</td></tr>
+<tr><td class="s3td">33</td><td class="nobr"><font class="S0">путь самого маленького файла в папке.</font></td></tr>
+<tr><td class="s3td">34</td><td><font class="S0">путь самого большого файла в папке.</font></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td">35</td><td><font class="S0">путь самой маленькой папки в папке.</font></td></tr>
+<tr><td class="s3td">36</td><td><font class="S0">путь самой большой папки в папке.</font></td></tr>
+</td></tr></table>
+</div>
+
+
+<br>
+<hr class="hr-blue">
+
+<br>
+<b>Параметр возвращает путь, в зависимости от позиции в заданной папке:</b>
+<br><br>
+<div align="center"><table class="param" width="70%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="10%">Значение</td><td width="90%">Описание</td></tr>
+<tr><td class="s3td">60<font class="S81"><b>:</b></font>N</td><td class="nobr"><font class="S0">путь N-го файла.</font></td></tr>
+<tr><td class="s3td">61<font class="S81"><b>:</b></font>N</td><td><font class="S0">путь N-го файла или каталога.</font></td></tr>
+<tr><td class="s3td">62<font class="S81"><b>:</b></font>N</td><td><font class="S0">путь N-го каталога.</font></td></tr>
+<tr><td class="s3td">&nbsp;</td><td><font class="S0">N - номер объекта.<br>&nbsp;&nbsp;при отрицательном значении отсчёт с конца.<br>&nbsp;&nbsp;если номер превышает количество, то возвращается 1-й элемент.<br>&nbsp;&nbsp;если объектов нет, то возвращается пустая строка.</font></td></tr>
+</td></tr></table>
+</div>
+
+<br><br>
+
+<font class="S51"><b>3.</b> Поиск и передача списка в глобальные переменные:</font>
+<a name="3"></a><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:500">
+<span class="S8"><b>&#60;</b></span>xfolder<font class="S81"><b>=</b></font><b><font size=+1 class="S21">-</font>Number</b><span class="S11">//</span><b>Folder</b><span class="S11">//</span><b>Recursion</b><span class="S11">//</span><b>Mask</b><span class="S11">//</span><b>Include</b><span class="S11">//</span><b>Registr</b><span class="S8"><b>&#62;</b></span><br>
+<span class="S8"><b>&#60;</b></span>xfolder<font class="S81"><b>=</b></font><b><font size=+1 class="S21">-</font>Number</b><span class="S11">//</span><b>List</b><span class="S8"><b>&#62;</b></span>
+</p>
+</div>
+
+Описание параметра смотрите выше.<br>
+При отрицательном Number параметр ничего не передаёт в командную строку.<br>
+<u>Отсортированные данные списка</u> папки записываются в глобальные переменные:<br>
+&nbsp;&nbsp;<font class="S91">GLOBALXFOLD</font> - 2D массив, в 0-й колонке дата или размер, в 1-й колонке путь объекта.<br>
+&nbsp;&nbsp;<font class="S91">GLOBALXFOLD0</font> - 1D массив, в котором дата или размер.<br>
+&nbsp;&nbsp;<font class="S91">GLOBALXFOLD1</font> - 1D массив, в котором пути объектов.<br>
+<br>
+
+<div align="center"><table class="param" width="70%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="10%">Значение</td><td width="90%">Описание</td></tr>
+<tr class="seltr"><td colspan=3><b>Информация относительно даты.</b></td></tr>
+<tr><td class="s3td">-1</td><td>дата модификации (самый старый файл вверху).</td></tr>
+<tr><td class="s3td">-2</td><td>дата создания (самый старый файл вверху).</td></tr>
+<tr><td class="s3td">-3</td><td class="nobr">дата последнего доступа (самый старый файл вверху).</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td">-4</td><td>дата модификации (самый новый файл вверху).</td></tr>
+<tr><td class="s3td">-5</td><td>дата создания (самый новый файл вверху).</td></tr>
+<tr><td class="s3td">-6</td><td>дата последнего доступа (самый новый файл вверху).</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td">-7</td><td>дата модификации (самая старая папка вверху).</td></tr>
+<tr><td class="s3td">-8</td><td>дата создания (самая старая папка вверху).</td></tr>
+<tr><td class="s3td">-9</td><td class="nobr">дата последнего доступа (самая старая папка вверху).</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td">-10</td><td>дата модификации (самая новая папка вверху).</td></tr>
+<tr><td class="s3td">-11</td><td>дата создания (самая новая папка вверху).</td></tr>
+<tr><td class="s3td">-12</td><td class="nobr">дата последнего доступа (самая новая папка вверху).</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td">-41</td><td>дата модификации (самый старый объект вверху).</td></tr>
+<tr><td class="s3td">-42</td><td>дата создания (самый старый объект вверху).</td></tr>
+<tr><td class="s3td">-43</td><td class="nobr">дата последнего доступа (самый старый объект вверху).</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td">-44</td><td>дата модификации (самый новый объект вверху).</td></tr>
+<tr><td class="s3td">-45</td><td>дата создания (самый новый объект вверху).</td></tr>
+<tr><td class="s3td">-46</td><td class="nobr">дата последнего доступа (самый новый объект вверху).</td></tr>
+<tr class="seltr"><td colspan=3><b>Информация относительно размера.</b></td></tr>
+<tr><td class="s3td">-13</td><td><font class="S0">размер (самый маленький файл вверху).</font></td></tr>
+<tr><td class="s3td">-14</td><td><font class="S0">размер (самый большой файл вверху).</font></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td">-15</td><td><font class="S0">размер (самая маленькая папка вверху).</font></td></tr>
+<tr><td class="s3td">-16</td><td><font class="S0">размер (самая большая папка вверху).</font></td></tr>
+</td></tr></table>
+</div>
+
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:300">
+<font class="S21">; пример получения данных:</font>
+<br>
+<a class="le" href="../com_dilog.htm"><span class="S4"><b>dilog</b></span></a>=&#60;xfolder=-14//C:\Test\&#62; GLOBALXFOLD&#60;a&#62; GLOBALXFOLD0&#60;a&#62; GLOBALXFOLD1&#60;a&#62;
+
+</p>
+</div>
+
+<p></p>
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

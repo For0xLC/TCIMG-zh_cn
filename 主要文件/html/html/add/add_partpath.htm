@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Получение часть пути</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №9</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Дополнение к командам <a href="../com_creat.htm">creat</a>, <a href="../com_marks.htm">marks</a> и многим другим.</font></p>
+<hr><br>
+<b>Получение части пути:</b>
+
+<br><br>
+<div align="center">
+<table class="param" width="70%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Значение</td><td>Описание</td></tr>
+
+<tr><td class="s3td">0,1</td><td><font class="S0">полный путь</font></td></tr>
+<tr><td class="s3td">2,3</td><td><font class="S0">расширение</font></td></tr>
+<tr><td class="s3td">4,5</td><td><font class="S0">имя без расширения</font></td></tr>
+<tr><td class="s3td">6,7</td><td><font class="S0">имя с расширением</font></td></tr>
+<tr><td class="s3td">8,9</td><td><font class="S0"> путь без расширения</font></td></tr>
+<tr><td class="s3td">10,11</td><td><font class="S0"> путь родительской папки с конечным слэшем</font></td></tr>
+<tr><td class="s3td">12,13</td><td><font class="S0"> путь родительской папки без конечного слэша</font></td></tr>
+<tr><td class="s3td">14,15</td><td><font class="S0"> путь дедушкиной папки с конечным слэшем</font></td></tr>
+<tr><td class="s3td">16,17</td><td><font class="S0"> путь дедушкиной папки без конечного слэша</font></td></tr>
+<tr><td class="s3td">18,19</td><td><font class="S0"> диск с конечным слэшем</font></td></tr>
+<tr><td class="s3td">20,21</td><td><font class="S0"> диск без конечного слэша</font></td></tr>
+<tr><td class="s3td">22,23</td><td><font class="S0"> путь без диска с начальным слэшем</font></td></tr>
+<tr><td class="s3td">24,25</td><td><font class="S0"> путь без диска без начального слэша</font></td></tr>
+<tr><td class="s3td">26,27</td><td><font class="S0"> путь без диска и корня с начальным слэшем</font></td></tr>
+<tr><td class="s3td">28,29</td><td><font class="S0"> путь без диска и корня без начального слэша</font></td></tr>
+<tr><td class="s3td">30,31</td><td><font class="S0"> расширение с точкой впереди</font></td></tr>
+<tr><td class="s3td">32,33</td><td><font class="S0"> имя с расширением для файлов, для папок имена с конечным слешем</font></td></tr>
+<tr><td class="s3td">34,35</td><td><font class="S0"> расширение, если папка, то возвращается "\"</font></td></tr>
+<tr><td class="s3td">36,37</td><td><font class="S0"> имя без расширения для файлов, для папок имена с конечным слешем</font></td></tr>
+<tr><td class="s3td">38,39</td><td><font class="S0"> пустая строка для файлов, имена для папок</font></td></tr>
+<tr><td></td><td class="codeheader"><font class="S0"><b>Замечание:</b><br><b>0-39</b> - нечётный номер заключает часть пути в кавычки.</font></td></tr>
+
+<tr class="sl2tr"><td></td><td>Получение папки от конца пути:</td></tr>
+<tr><td class="s3td">41</td><td><font class="S0">родительская папка.</font></td></tr>
+<tr><td class="s3td">42</td><td><font class="S0">дедушкина папка.</font></td></tr>
+<tr><td class="s3td">43</td><td><font class="S0">3-я папка от конца пути.</font></td></tr>
+<tr><td class="s3td">...</td></tr>
+<tr><td class="s3td">60</td><td><font class="S0">20-я папка от конца пути (если есть).</font></td></tr>
+<tr><td class="s3td">41<font class="S81">~</font>Level</td><td><font class="S0">Для других уровней, где Level - число уровней.</font></td></tr>
+
+<tr class="sl2tr"><td></td><td>Получение папки от начала пути:</td></tr>
+<tr><td class="s3td">61</td><td><font class="S0">1-я папка с начала пути</font></td></tr>
+<tr><td class="s3td">62</td><td><font class="S0">2-я папка с начала пути</font></td></tr>
+<tr><td class="s3td">63</td><td><font class="S0">3-я папка с начала пути</font></td></tr>
+<tr><td class="s3td">...</td></tr>
+<tr><td class="s3td">80</td><td><font class="S0">20-я папка с начала пути (если есть)</font></td></tr>
+<tr><td class="s3td">61<font class="S81">~</font>Level</td><td><font class="S0">Для других уровней, где Level - число уровней.</font></td></tr>
+
+<tr class="sl2tr"><td></td><td>Получение пути, отсекая концовку:</td></tr>
+<tr><td class="s3td">81</td><td><font class="S0">путь родительской папки</font></td></tr>
+<tr><td class="s3td">82</td><td><font class="S0">путь дедушкиной папки</font></td></tr>
+<tr><td class="s3td">83</td><td><font class="S0">путь, отсекая с 3-й папки с конца и до конца пути</font></td></tr>
+<tr><td class="s3td">...</td></tr>
+<tr><td class="s3td">100</td><td class="nobr"><font class="S0">путь, отсекая с 20-й папки с конца и до конца пути (если есть)</font></td></tr>
+<tr><td class="s3td">81<font class="S81">~</font>Level</td><td><font class="S0">Для других уровней, где Level - число уровней.</font></td></tr>
+
+
+<tr class="sl2tr"><td></td><td>Получение пути, отсекая начало:</td></tr>
+<tr><td class="s3td">101</td><td><font class="S0">путь без диска</font></td></tr>
+<tr><td class="s3td">102</td><td><font class="S0">путь, отсекая с начала до 2-й папки</font></td></tr>
+<tr><td class="s3td">103</td><td><font class="S0">путь, отсекая с начала до 3-й папки</font></td></tr>
+<tr><td class="s3td">...</td></tr>
+<tr><td class="s3td">120</td><td><font class="S0">путь, отсекая с начала до 20-й папки (если есть)</font></td></tr>
+<tr><td class="s3td">101<font class="S81">~</font>Level</td><td><font class="S0">Для других уровней, где Level - число уровней.</font></td></tr>
+
+<tr class="sl2tr"><td></td><td>Получение пути, оставляя начало:</td></tr>
+<tr><td class="s3td">121</td><td><font class="S0">с родительской папки и до конца</font></td></tr>
+<tr><td class="s3td">122</td><td><font class="S0">с дедушкиной папки и до конца</font></td></tr>
+<tr><td class="s3td">123</td><td><font class="S0">с 3-й папки от конца и до конца</font></td></tr>
+<tr><td class="s3td">...</td></tr>
+<tr><td class="s3td">140</td><td><font class="S0">с 20-й папки и до конца (если есть)</font></td></tr>
+<tr><td class="s3td">121<font class="S81">~</font>Level</td><td><font class="S0">Для других уровней, где Level - число уровней.</font></td></tr>
+
+<tr class="sl2tr"><td></td><td>Получение пути заданного уровня:</td></tr>
+<tr><td class="s3td">141</td><td><font class="S0">путь 1-го уровня</font></td></tr>
+<tr><td class="s3td">142</td><td><font class="S0">путь 2-го уровня</font></td></tr>
+<tr><td class="s3td">143</td><td><font class="S0">путь 3-го уровня</font></td></tr>
+<tr><td class="s3td">...</td></tr>
+<tr><td class="s3td">160</td><td><font class="S0">путь 20-го уровня (если есть)</font></td></tr>
+<tr><td class="s3td">141<font class="S81">~</font>Level</td><td><font class="S0">Для других уровней, где Level - число уровней.</font></td></tr>
+
+</td></tr></table>
+</div>
+<p></p>
+
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

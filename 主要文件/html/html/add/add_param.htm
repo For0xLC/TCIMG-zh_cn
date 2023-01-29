@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Параметры Total Commander</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №7</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Параметры командной строки Total Commander</font></p>
+<hr><br>
+<p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="15%">Параметр</td><td width="85%">Описание</td></tr>
+<tr><td class="s3td">?</td><td><font class="S0">В качестве <u>первого</u> символа параметров вызывает перед стартом программы <b>диалоговое окно</b>, содержащее указанные далее параметры. Вы можете изменить их перед стартом программы и даже отменить запуск.</font></td></tr>
+<tr><td class="s3td">%%</td><td><font class="S0">Вставляет одиночный знак процента.</font></td></tr>
+<tr><td class="s3td">%Q</td><td><font class="S0">Отключает автоматическое заключение в кавычки для параметров (версия TC 10.5 и выше).<br>
+Пример: <font class="S91">%Q%N</font>&nbsp;&nbsp;&nbsp;&nbsp;<font class="S91">%Q%P%N</font>
+</font></td></tr>
+<tr><td class="s3td">%P, %p</td><td><font class="S0">
+Вставить в командную строку исходный путь, включая обратный слэш (\) в конце.
+<br>&nbsp;&nbsp;<font class="S91">%P</font> - вставляет путь с длинными именами каталогов.
+<br>&nbsp;&nbsp;<font class="S91">%p</font> - с короткими именами.
+<br>На FTP:
+<br>&nbsp;&nbsp;<font class="S91">%P</font> - вставляет путь к файлу без имени сервера.
+<br>&nbsp;&nbsp;<font class="S91">%p</font> - служит для вставки полного URL, включая имя пользователя.
+</font></td></tr>
+
+<tr><td class="s3td">%N, %n</td><td><font class="S0">
+Помещает в командную строку имя файла под курсором.
+<br>&nbsp;&nbsp;<font class="S91">%N</font> - вставляет длинное имя.
+<br>&nbsp;&nbsp;<font class="S91">%n</font> - имя DOS (8.3).
+<br>Если имя содержит пробелы, <font class="S91">%N</font> автоматически заключает его в кавычки (в отличие от следующих отдельных параметров, где кавычки внутренне не добавляются).
+</font></td></tr>
+
+<tr><td class="s3td">%T, %t</td><td><font class="S0">
+Вставляет текущий каталог назначения.
+<br>&nbsp;&nbsp;<font class="S91">%T</font> - вставляет путь с длинными именами каталогов.
+<br>&nbsp;&nbsp;<font class="S91">%t</font> - с короткими именами (особенно полезно для упаковщиков).
+<br>На FTP:
+<br>&nbsp;&nbsp;<font class="S91">%T</font> - вставляет путь к файлу без имени сервера.
+<br>&nbsp;&nbsp;<font class="S91">%t</font> - служит для вставки полного URL, включая имя пользователя.
+</font></td></tr>
+
+<tr><td class="s3td">%M, %m</td><td><font class="S0">
+Помещает в командную строку текущее имя файла в <u>каталоге назначения</u>.
+<br>&nbsp;&nbsp;<font class="S91">%М</font> - вставляет длинное имя.
+<br>&nbsp;&nbsp;<font class="S91">%m</font> - вставляет короткое имя (в формате DOS 8.3).
+</font></td></tr>
+
+<tr><td class="s3td">%O, %o</td><td><font class="S0">
+Помещает в командную строку текущее имя файла <u>без расширения</u>.
+<br>&nbsp;&nbsp;<font class="S91">%O</font> - вставляет длинное имя.
+<br>&nbsp;&nbsp;<font class="S91">%o</font> - вставляет короткое имя (в формате DOS 8 символов).
+</font></td></tr>
+
+<tr><td class="s3td">%E, %e</td><td><font class="S0">
+Помещает в командную строку текущее расширение (без предшествующей точки).
+<br>&nbsp;&nbsp;<font class="S91">%E</font> - вставляет длинное расширение.
+<br>&nbsp;&nbsp;<font class="S91">%e</font> - вставляет короткое расширение (в формате DOS 3 символа).
+</font></td></tr>
+
+
+<tr><td class="s3td">%B,%B0..%B9<br><br>%b,%b0..%b9</td><td><font class="S0">
+Вставить (последовательно с конца) элементы пути файла под курсором.
+<br>&nbsp;&nbsp;<font class="S91">%B</font> - имя каталога, содержащего файл под курсором (синоним — <font class="S91">%B0</font>)
+<br>&nbsp;&nbsp;<font class="S91">%B1</font> - его родительский каталог и т.д. до <font class="S91">%B9</font>
+<br>&nbsp;&nbsp;<font class="S91">%B</font> -  вставляет длинное имя.
+<br>&nbsp;&nbsp;<font class="S91">%b</font> - вставляет короткое имя DOS (8.3).
+<br>Работает и в специальных режимах (результаты поиска, показ файлов без подкаталогов "плоским" списком).
+</font></td></tr>
+
+<tr><td class="s3td">%B-,%B-0..%B-9</td><td><font class="S0">
+То же, что <font class="S91">%B,%B0..%B9</font>, но без поддержки специальных режимов.
+<br>В результатах поиска и при показе файлов без подкаталогов используется базовый путь файловой панели.
+</font></td></tr>
+
+<tr><td class="s3td">%BT,%BT0..%BT9</td><td><font class="S0">
+То же, что <font class="S91">B-,%B-0..%B-9</font>, но без поддержки специальных режимов.
+<br>Специальные режимы не поддерживаются, в них используется только базовый путь файловой панели.
+</font></td></tr>
+
+<tr><td class="s3td">%B+,%B+0..%BT9</td><td><font class="S0">
+Вставить (последовательно с начала) элементы пути файла под курсором.
+<br>&nbsp;&nbsp;<font class="S91">%B+</font> - буква диска с двоеточием.
+<br>&nbsp;&nbsp;<font class="S91">%B+0</font> - буква диска без двоеточия.
+<br>&nbsp;&nbsp;<font class="S91">%B+1</font> - первый подкаталог в пути.
+<br>&nbsp;&nbsp;<font class="S91">%B+2</font> - второй подкаталог и т.д. до %B+9.
+<br>Работает и в специальных режимах (результаты поиска, показ файлов без подкаталогов "плоским" списком).
+</font></td></tr>
+
+<tr><td class="s3td">%S, %s</td><td><font class="S0">
+Вставить имена всех файлов, выбранных в исходной панели.<br>
+<font class="S121">Длина командной строки не может превышать 32767 символов! </font>
+<br>&nbsp;&nbsp;<font class="S91">%S</font> -  вставляет длинное имя.
+<br>&nbsp;&nbsp;<font class="S91">%s</font> - вставляет короткое имя DOS (8.3).
+<br>Если приписать <font class="S91">%P</font>, <font class="S91">%p</font>, <font class="S91">%T</font> или <font class="S91">%t</font> сразу перед <font class="S91">%S</font> или <font class="S91">%s</font> (либо, аналогично, перед <font class="S91">%R</font>, <font class="S91">%r</font>, <font class="S91">%N</font>, <font class="S91">%n</font>, <font class="S91">%M</font> или <font class="S91">%m</font>), то к имени каждого файла из списка будет добавлен путь.<br>
+При наличии пробелов имена/пути автоматически заключаются в кавычки.
+<br>То же происходит при обработке параметрами <font class="S91">%S</font>, <font class="S91">%R</font>, <font class="S91">%P%S</font> и <font class="S91">%T%R</font> имён, содержащих знак равенства (это нужно для командных файлов).<br>
+Те же параметры в TC 10.00 и выше поддерживают добавление одинакового текста к каждому элементу, при этом параметр обязательно заключать в кавычки.<br>
+<font class="S101">Пример</font>: параметр "%P%S.bak" добавит расширение .bak к каждому из выбранных файлов.
+</font></td></tr>
+
+<tr><td class="s3td">%P%S</td><td><font class="S0">
+Вставить имена всех выбранных файлов исходной панели с полными путями.
+<br>Аналог для целевой панели — <font class="S91">%T%R</font>.
+<br>Если указать параметры и соответствующие связки как "<font class="S91">%S</font>", "<font class="S91">%R</font>","<font class="S91">%P%S</font>", "<font class="S91">%T%R</font>", все подставленные имена/пути будут взяты в кавычки.
+<br><font class="S101">Пример</font>: "%S" -> "имя1" "имя2".
+</font></td></tr>
+
+<tr><td class="s3td">%S10, %s10</td><td><font class="S0">
+Помещает в командную строку имена не более чем 10 первых выбранных файлов. Вы можете использовать любое другое число для ограничения количества файлов, передаваемых в программу.
+<br>То же, что <font class="S91">%S</font>, но вставить не более первых NN (в примере 10) имён выбранных файлов.
+<br>Задайте нужное число для ограничения количества файлов, передаваемых в программу.
+</font></td></tr>
+<tr><td class="s3td">%R, %r</td><td><font class="S0">
+Вставить имена всех файлов, выбранных в панели назначения.
+<br>&nbsp;&nbsp;<font class="S91">%R</font> - вставляет длинное имя.
+<br>&nbsp;&nbsp;<font class="S91">%r</font> - вставляет короткое имя в формате DOS.
+<br>Условия работы те же, что для <font class="S91">%S</font> и <font class="S91">%s</font>.
+</font></td></tr>
+
+
+<tr><td class="s3td">%R10, %r10</td><td><font class="S0">Работает аналогично %S10, но для выбранных файлов в целевой панели.</font></td></tr>
+<tr><td class="s3td">%C1</td><td><font class="S0">Путь 1-го выделенного объекта под курсором, заключается в кавычки, если есть пробелы.</font></td></tr>
+<tr><td class="s3td">%C2</td><td><font class="S0">Путь 2-го выделенного объекта под курсором, заключается в кавычки, если есть пробелы.</font></td></tr>
+<tr><td class="s3td">%Cnn...%Ckk<br><br>%cnn..%ckk</td><td><font class="S0">
+Выделенные файлы в активной панели от nn-го по kk-й.
+<br>&nbsp;&nbsp;<font class="S91">%Cnn...%Ckk</font> - вставляет длинные пути.
+<br>&nbsp;&nbsp;<font class="S91">%cnn..%ckk</font> - вставляет короткие пути в формате DOS.
+<br>…или пустое значение, если выбрано меньше файлов, чем задано параметром.
+
+</font></td></tr>
+<tr><td></td><td class="codeheader"><font class="S0">Замечания:<br><br>• <font class="S91">%N</font> и <font class="S91">%M</font> вставляют длинное имя, в то время как <font class="S91">%n</font> и <font class="S91">%m</font> вставляют имя DOS (8.3). <font class="S91">%P</font> и <font class="S91">%T</font> вставляют пути с длинными именами каталогов, а <font class="S91">%p</font> и <font class="S91">%t</font> - с короткими. (То же самое для <font class="S91">%o</font>, <font class="S91">%e</font> и <font class="S91">%s</font>.)<br><br>• Если приписать %<font class="S91">P</font>, <font class="S91">%p</font>, <font class="S91">%T</font> или <font class="S91">%t</font> непосредственно перед <font class="S91">%S</font> или <font class="S91">%s</font> (без пробела между ними!), то к имени каждого файла из списка будет добавлен путь. При наличии пробелов полный путь автоматически заключается в кавычки.<br><br><font class="S101">Пример</font>: <font class="S91">%P%S</font> помещает в командную строку список всех выбранных файлов с полными путями.</font></td></tr>
+<tr><td></td><td class="s7td"><font class="S0"><font class="S91">%L, %l, %F, %f, %D, %d, %WL, %WF, %UL, %UF</font><br>Создаёт файл списка в каталоге, заданном переменной TEMP, с именами выбранных файлов и добавляет имя этого файла списка в командную строку. Список удаляется автоматически, когда запущенная программа завершается. Можно создать файл списка в одном из 10-ти форматов (одновременное использование двух и более списочных параметров не поддерживается):</font></td></tr>
+<tr><td class="s3td">%L <a class="le" href="#cmm"><span class="S81"><b><font size="+2">*</font></b></span></a></td><td><font class="S0">Длинные имена файлов, включая полный путь, например, c:\Program Files\Long name.exe.</font></td></tr>
+<tr><td class="s3td">%l</td><td><font class="S0">(L в нижнем регистре) Короткие имена файлов, включая полный путь, например, C:\PROGRA~1\LONGNA~1.EXE.</font></td></tr>
+<tr><td class="s3td">%F</td><td><font class="S0">Длинные имена файлов без пути, например, Long name.exe.</font></td></tr>
+<tr><td class="s3td">%f</td><td><font class="S0">Короткие имена файлов без пути, например, LONGNA~1.EXE.</font></td></tr>
+<tr><td class="s3td">%D</td><td><font class="S0">Короткие имена файлов, включая полный путь, но с использованием набора символов DOS для диакритических знаков.</font></td></tr>
+<tr><td class="s3td">%d</td><td><font class="S0">Короткие имена файлов без пути, но с использованием набора символов DOS для диакритических знаков.</font></td></tr>
+<tr><td class="s3td">%UL, %UF <a class="le" href="#cmm"><span class="S81"><b><font size="+2">*</font></b></span></a></td><td><font class="S0">Аналогично <font class="S91">%L</font> и <font class="S91">%F</font>, но файлы списка создаются в юникодном формате UTF-8 (с сигнатурой).</font></td></tr>
+<tr><td class="s3td">%WL, %WF</td><td><font class="S0">Аналогично <font class="S91">%L</font> и <font class="S91">%F</font>, но файлы списка создаются в юникодном формате UTF-16 (с сигнатурой).</font></td></tr>
+<tr><td class="s3td">%v</td><td><font class="S0">Помещает в командную строку имя виртуального файла при работе с FS-плагинами виртуальных панелей, для которых <font class="S91">%N</font> вставляет имя реального файла (в файловой системе), на который указывает выбранный элемент.</font></td></tr>
+<tr><td class="s3td">%V</td><td><font class="S0">То же, что и <font class="S91">%v</font>, но с полным путём (включая имя плагина).</font></td></tr>
+<tr><td class="s3td">%X</td><td><font class="S0">Трактует последующие параметры как относящиеся к левой/правой панели вместо источника/получателя.<br>
+Новые значения параметров:
+<br>&nbsp;&nbsp;<font class="S91">%P, %p</font> — путь слева.
+<br>&nbsp;&nbsp;<font class="S91">%T, %t</font> — путь справа.
+<br>&nbsp;&nbsp;<font class="S91">%N, %n</font> — имя слева.
+<br>&nbsp;&nbsp;<font class="S91">%M, %m</font> — имя справа.
+<br>&nbsp;&nbsp;<font class="S91">%S, %s</font> — выбранные слева.
+<br>&nbsp;&nbsp;<font class="S91">%R, %r</font> — выбранные справа.
+<br><font class="S101">Пример</font>: <font class="S91">%X%P %T</font> посылает пути слева и справа (например, внешнему инструменту синхронизации).</font></td></tr>
+<tr><td class="s3td">%x</td><td><font class="S0">Трактует последующие параметры снова как относящиеся к источнику/получателю.<br><font class="S101">Пример</font>: <font class="S91">%X%P %x%P</font> посылает вызванной программе путь слева и (вместо пути справа) путь источника.</font></td></tr>
+<tr><td class="s3td">%Z</td><td><font class="S0">При открытом в панели TC архиве позволяет передавать программам архивы в качестве путей для <font class="S91">%P</font> или <font class="S91">%T</font>. Указывается в произвольном месте относительно других параметров. <br><font class="S101">Пример</font>: <font class="S91">%Z%P</font> передаёт имя в архиве внешней программе при отображении в TC содержимого этого архива.</font></td></tr>
+<tr><td class="s3td">%Y</td><td><font class="S0">Позволяет передавать пустое содержимое в списочных параметрах (<font class="S91">%S, %L </font>и т.п.), если в панели нет выделения. Без <font class="S91">%Y</font> в этом случае передаётся файл под курсором. Указывается в произвольном месте относительно других параметров.</font></td></tr>
+<tr><td class="s3td">*</td><td><font class="S0">При указании сразу перед именем программы та запускается с правами администратора. Необходимо указание полного пути к файлу программы.</font></td></tr>
+<tr><td class="s3td">**</td><td><font class="S0">При указании сразу перед именем программы та запускается от имени другого пользователя. Необходимо указание полного пути к файлу программы.</font></td></tr>
+<tr><td class="s3td">%A или %A0</td><td><font class="S0">Вставить оставшуюся часть введённой командной строки (для пользовательских команд <b>em_tc</b> с параметром <font class="S91">%A</font>).</font></td></tr>
+<tr><td class="s3td">%A1..%A9</td><td><font class="S0">Вставить, соответственно, параметры от первого до девятого (для пользовательских команд <b>em_tc</b> с параметрами <font class="S91">%A1..%A9</font>).
+</font></td></tr>
+</td></tr></table>
+</p>
+<br>
+<a name="cmm"></a><a class="le"><span class="S81"><b><font size="+2">*</font></b></span></a>
+<font class="S81">При получении пути(ей) имеется ограничение в 259 символов, относительно полного пути.</font><br>
+&nbsp;&nbsp;&nbsp;<font class="S81">Так же замечено ограничение в 156 символов в параметрах %UL.</font><br>
+&nbsp;&nbsp;&nbsp;(В Total Commander 10 это ограничение снято)
+<br><br>
+Для просмотра ряда параметров, можно воспользоваться командой <a class="le" href="../com_infos.htm"><b><big>infos</big></b></a>.</font>
+<br><br>
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

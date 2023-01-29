@@ -1,0 +1,911 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Параметр formt</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №15</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Параметр formt&#60;&#62;, ?F (см. в Дополнение <a class="le" href="add_lines.htm#?F"><span class="S4"><font size="+1"><b>№24</b></font></span></a>)</font></p>
+<hr><br>
+<b>Описание параметра.</b><br><br>
+Параметр позволяет преобразовывать и изменять текстовую информацию с помощью шаблонов и регулярных выражений.<br><br>
+Конструкция параметра:<br><br>
+
+1. Встроенные шаблоны (номера из таблицы):
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:480">
+formt<span class="S8">&lt;</span><b>1(,2,3,..., N)</b><span class="S8">&gt</span>
+</p>
+</div>
+2. Пользовательские шаблоны:
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:480">
+formt<span class="S8">&lt;</span><b>u1<span class="S0">,</span>...<span class="S0">,</span>uN</b><span class="S8">&gt</span>
+</p>
+</div>
+3. Регулярные выражения:
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:480">
+formt<span class="S8">&lt;</span><b>0</b><span class="S11">!!</span><b>RegExp</b><span class="S11">!!</span><b>Replace</b><span class="S8">&gt</span>
+</p>
+</div>
+4. Объединение вариантов в одной строке:
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:480">
+formt<span class="S8">&lt;</span><b>1(,2,3,..., N)</b><span class="S0"><b>,</b></span><b>u1<span class="S0">,</span>...<span class="S0">,</span>uN</b><span class="S11">!!</span><b>RegExp</b><span class="S11">!!</span><b>Replace</b><span class="S8">&gt</span>
+</p>
+</div>
+
+5. Использование цифровых диапазонов: (добавлено в версии 13.3)<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+Если необходимо прописать несколько подобных имён шаблонов, имеющих конечную и <u>последовательную</u> нумерацию, то для экономии места можно использовать диапазон, используя двойной дефис <font class="S81"><b><big>--</big></b></font><br>
+
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:480">
+formt<span class="S8">&lt;</span><b>1,2,3,4,5,u1,u2,u3,u4,u5,u6,u7,u8,h2,h8,e2,e3,e4,e5,e6,e7</b><span class="S8">&gt</span>
+</p>
+</div>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:480">
+formt<span class="S8">&lt;</span><b>1<font class="S81"><big>--</big></font>5,u1<font class="S81"><big>--</big></font>u8,h2,h8,e2<font class="S81"><big>--</big></font>e7</b><span class="S8">&gt</span>
+</p>
+</div>
+
+<!-- :A: -->
+
+<br>
+<hr class="hr-blue">
+<br>
+<b><font class="S121">Специальные теги в строке, позволяющие производить дополнительные действия:</font></b>
+<br>
+<br>1. <font class="S51"><b>:A:</b></font>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:480">
+formt<span class="S8">&lt;</span><b>1<font class="S51"><b>:A:</b></font></b><span class="S0"><b>,</b></span><b>u1<font class="S51"><b>:A:</b></font>,u2,...</b><span class="S8">&gt</span>
+</p>
+</div>
+Тег <font class="S51"><b>:A:</b></font> прописывается после или до номера/ключа.<br>
+Означает условие: если после заданной обработки (номера или ключа) возвращается <u>пустой</u> результат, то это преобразование игнорируется, возвращается предыдущая строка для обработки с помощью последующих номеров или ключей.
+<br><br>
+По умолчанию если какое-либо условие возвращает пустой результат, то обработка последующих номеров или ключей завершается и возвращается путая строка.
+
+<!-- :B: -->
+
+<br>
+<br>2. <font class="S51"><b>:B:</b></font>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:480">
+formt<span class="S8">&lt;</span><b>6,1,3...,N<font class="S51"><b>:B:</b></font></b><span class="S0"><b>,</b></span><b>key1,key2,...,keyN<font class="S51"><b>:B:</b></font>key1,key2,...,keyN</b><span class="S8">&gt</span>
+</p>
+</div>
+Тег <font class="S51"><b>:B:</b></font> прописывается между номерами и ключами.<br>
+Означает условие: если преобразование параметров (между :B:) возвращает не пустой результат, то остальные параметры не вычисляются.<br>
+Между тегом <font class="S51"><b>:B:</b></font> могут использоваться теги <font class="S51"><b>:A:</b></font>, <font class="S51"><b>:C:</b></font>, <font class="S51"><b>:D:</b></font>, <font class="S51"><b>:E:</b></font>
+
+
+<!-- :C: -->
+
+<br>
+<br>3. <font class="S51"><b>:C:</b></font>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:480">
+formt<span class="S8">&lt;</span><b>6,1,3...,N<font class="S51"><b>:C:</b></font></b><span class="S0"><b>,</b></span><b>key1,key2,...,keyN<font class="S51"><b>:C:</b></font>key1,key2,...,keyN<font class="S51"><b>:C:</b></font><font class="S21">Delimeter</font></b><span class="S8">&gt</span>
+</p>
+</div>
+Тег <font class="S51"><b>:C:</b></font> прописывается между номерами и ключами.<br>
+Каждому параметру передаётся начальная строка (текст) для преобразования, полученные результаты последовательно объединяются через разделитель <font class="S21">Delimeter</font>, который прописывается после последнего тега <font class="S51"><b>:C:</b></font>.<br>
+В разделителе можно использовать теги "@CRLF", "@CR", "@LF", "@TAB" означающие переносы строки и табуляцию.<br>
+По умолчанию начальная строка передаётся первому параметру, результат преобразования передаётся второму параметру и т.д.<br>
+Между тегом <font class="S51"><b>:C:</b></font> могут использоваться теги <font class="S51"><b>:A:</b></font>, <font class="S51"><b>:D:</b></font>, <font class="S51"><b>:E:</b></font>
+
+<!-- :D: -->
+
+<br>
+<br>4. <font class="S51"><b>:D:</b></font><br>
+Тег <font class="S51"><b>:D:</b></font> аналог тега <font class="S51"><b>:B:</b></font><br>
+Между тегом <font class="S51"><b>:D:</b></font> могут использоваться теги <font class="S51"><b>:A:</b></font>, <font class="S51"><b>:E:</b></font>
+
+<!-- :D: -->
+
+<br>
+<br>5. <font class="S51"><b>:E:</b></font><br>
+Тег <font class="S51"><b>:E:</b></font> аналог тега <font class="S51"><b>:С:</b></font><br>
+Между тегом <font class="S51"><b>:D:</b></font> могут использоваться теги <font class="S51"><b>:A:</b></font>
+<br>
+<br>
+<hr class="hr-blue">
+<br>
+
+Если в регулярных выражениях, которые используются в командной строке, необходимы символы "<span class="S8"><b>&lt</b></span>" и "<span class="S8"><b>&gt</b></span>"<span class="S0">,</span> то используйте "<font class="S81"><b>{{</b></font>" и "<font class="S81"><b>}}</b></font>" соответственно</font><br>
+Так же есть возможность вставлять в шаблоны необходимые символы с помощью функций Autoit :<br>
+<a class="le" href="../fun/chr.htm"><span class="S4"><font size="2"><b>Chr()</b></font></span></a> и <a class="le" href="../fun/chrw.htm"><span class="S4"><font size="2"><b>ChrW()</b></font></span></a> заменяются соответствующими символами.<br>
+<a class="le" href="../fun/clipget.htm"><span class="S4"><font size="2"><b>ClipGet()</b></font></span></a> заменяется содержимым буфера обмена.<br>
+<a class="le" href="../fun/number.htm"><span class="S4"><font size="2"><b>Number()</b></font></span></a> позволяет производить математические действия.<br>
+<a class="le" href="../fun/strinjleft.htm"><span class="S4"><font size="2"><b>StringLeft()</b></font></span></a> позволяет получать указанное число символов строки слева.<br>
+<a class="le" href="../fun/strinjright.htm"><span class="S4"><font size="2"><b>StringRight()</b></font></span></a> позволяет получать указанное число символов строки справа.<br>
+<a class="le" href="../fun/strinjmid.htm"><span class="S4"><font size="2"><b>StringMid()</b></font></span></a> позволяет получать часть символов строки.<br>
+<a class="le" href="../fun/strinjlen.htm"><span class="S4"><font size="2"><b>StringLen()</b></font></span></a> позволяет получать количество символов строки.<br>
+
+<a name="ini"></a>
+<br>
+<hr class="hr-blue">
+<br>
+
+<div align="center">
+<table class="param" width="98%" cellspacing="0" cellpadding="3">
+
+<tr class="sl2tr"><td width="1%">Параметр</b></font></td><td>Описание</td></tr>
+
+<!-- 1,2,3,..., N -->
+
+<tr><td class="s3td">Numbers</td><td><font class="S0">
+<font class="S121">Форматирует текст встроенными шаблонами.</font><br>
+&nbsp;&nbsp;<b>1</b>,<b>2</b>,<b>3</b>,..., <b>N</b> - номера преобразований (см. <a class="le" href="#tablica"><b>таблицу</b></a> значений форматирования текста)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Может быть несколько в любом порядке перечисленных через запятую.<br>
+
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:800">
+<span class="S0"><span class="S51">stext</span><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span>x<span class="S8">||</span><a class="le" href="add_format.htm"><span class="S4">fo&#114mt</span></a><span class="S8">&lt</span>6,1<span class="S8">&gt</span><span class="S8">||</span>clip<span class="S8">&lt</span><span class="S8">&gt</span></span><font class="S1"> ;; извлечь все ссылки из выделенных файлов, удалить дубликаты и записать в буфер обмена</font><br>
+</p>
+</div>
+
+
+</font><a name="RegExp"></a></td></tr>
+
+<!-- n!!RegExp -->
+
+<tr><td class="s3td">n<font class="S81">!!</font>RegExp<br>-n<font class="S81">!!</font>RegExp<br>+n<font class="S81">!!</font>RegExp</td><td><font class="S0">
+<font class="S121">Производит в тексте поиск совпадений регулярного выражения.</font><br>
+&nbsp;&nbsp;<b>n</b> - номер преобразований из таблицы (по умолчанию 0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;по умолчанию возвращаются все найденные совпадения через разделитель переноса строки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;при <b>-n</b> возвращается 1 (совпадение найдено) или 0 (не найдено).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;при <b>+n</b> поиск до первого совпадения, возвращается первое найденное совпадение.<br>
+&nbsp;&nbsp;<b>RegExp</b> - строка регулярных выражений для поиска.<br>
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:800">
+<span class="S0"><span class="S51">sends</span><span class="S8">=</span>-1<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_format.htm"><span class="S4">fo&#114mt</span></a><span class="S8">&lt</span>0<span class="S11">!!</span><span class="S24">(</span><span class="S8">[</span>^/<span class="S8">]</span><span class="S8">+</span><span class="S24">)</span><span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALSENDS"><span class="S121">GLOBA&#76SENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; разбить путь ссылки в буфере обмена по обратным слешам и вывести результат</font><br>
+</p>
+</div>
+</font><a name="Replace"></a></td></tr>
+
+<!-- n!!RegExp!!Replace -->
+
+<tr><td class="s3td">n<font class="S81">!!</font>RegExp<font class="S81">!!</font>Replace<font class="S81">!!</font>Flag</td><td><font class="S0">
+<font class="S121">Производит в тексте поиск и замену, используя регулярное выражение.</font><br>
+&nbsp;&nbsp;<b>n</b> - номер преобразований из таблицы (по умолчанию 0)<br>
+&nbsp;&nbsp;<b>RegExp</b> - строка регулярных выражений для поиска.<br>
+&nbsp;&nbsp;<b>Replace</b> - текст замены регулярного выражения.<br>
+&nbsp;&nbsp;<b>Flag</b> [необязательный] - количество замен в строке.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;по умолчанию 0 - выполняет замену всех найденных образцов.<br>
+&nbsp;Возвращает строку преобразованную регулярным выражением.
+</font></td></tr>
+
+<tr><td class="s3td"><font class="S51">#</font><font color="green">Number</font><font class="S91">Line</font><font color="red">:F:</font></b>
+</td><td><font class="S0">
+<font class="S121">Сортирует файлы с помощью информации параметра <b>info</b> Дополнения <a class="le" href="add_info.htm"><span class="S4"><font size="2"><b>№10</b></font></span></a>.</font><br>
+&nbsp;&nbsp;<font class="S51"><b>#</b></font> - обязательный символ, означающий сортировку.<br>
+&nbsp;&nbsp;<font color="green"><b>Number</b></font> - режим:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - сортировать по возрастанию.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - сортировать по убыванию.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2 - сортировать по числовому возрастанию.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3 - сортировать по числовому убыванию.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(важно, при 2 и 3 выражение должно извлекать число)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;4 - удалять дубликаты.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;5 - удалять дубликаты (без учёта регистра).<br>
+&nbsp;&nbsp;<font class="S91"><b>Line</b></font> - строка параметров из Дополнения №10.<br>
+&nbsp;&nbsp;<font color="red"><b>:F:</b></font> - тег, вместо которого будет вставлен объект из списка при сортировке.<br>
+<hr align="left" width=70%>
+&nbsp;&nbspЕсть возможность сортировать по нескольким данным из параметра <b>info</b><br>
+&nbsp;&nbsp&nbsp;&nbsp;<b><font class="S51">#</font><font color="green">Number</font><font class="S91">Line</font><font color="red">:F:</font>&&<font class="S91">Line</font><font color="red">:F:</font>&& ... &&<font class="S91">Line</font><font color="red">:F:</font></b><br>
+&nbsp;&nbsp&nbsp;&nbsp;Разделитель между параметрами <b>&&</b>
+
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<span class="S0"><a class="le" href="../com_global.htm"><span class="S4">global</span></a> <span class="S51">alist</span><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_format.htm"><span class="S4">fo&#114mt</span></a><span class="S8">&lt</span><a class="le" href="add_format.htm#S8"><span class="S21">#2</span></a><a class="le" href="add_info.htm#i1"><span class="S91"><b>i1</b></span><span class="S81">:F:</span></a><span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALALIST"><span class="S121">GLOBA&#76ALIST</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; сортировать выделенные изображения по ширине по возрастанию</font><br>
+<span class="S0"><a class="le" href="../com_global.htm"><span class="S4">global</span></a> <span class="S51">alist</span><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_format.htm"><span class="S4">fo&#114mt</span></a><span class="S8">&lt</span><a class="le" href="add_format.htm#S8"><span class="S21">#3</span></a><a class="le" href="add_info.htm#i1"><span class="S91"><b>i1</b></span><span class="S81">:F:</span></a><span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALALIST"><span class="S121">GLOBA&#76ALIST</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; сортировать выделенные изображения по ширине по убыванию</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_global.htm"><span class="S4">global</span></a> <span class="S51">alist</span><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_format.htm"><span class="S4">fo&#114mt</span></a><span class="S8">&lt</span><a class="le" href="add_format.htm#S8"><span class="S21">#0</span></a><a class="le" href="add_info.htm#o30"><span class="S91"><b>o30</b></span><span class="S81">:F:</span></a><span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALALIST"><span class="S121">GLOBA&#76ALIST</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; сортировать выделенные файлы по дате создания по возрастанию</font><br>
+<span class="S0"><a class="le" href="../com_global.htm"><span class="S4">global</span></a> <span class="S51">alist</span><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_format.htm"><span class="S4">fo&#114mt</span></a><span class="S8">&lt</span><a class="le" href="add_format.htm#S8"><span class="S21">#1</span></a><a class="le" href="add_info.htm#o30"><span class="S91"><b>o30</b></span><span class="S81">:F:</span></a><span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALALIST"><span class="S121">GLOBA&#76ALIST</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; сортировать выделенные файлы по дате создания по убыванию</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_global.htm"><span class="S4">global</span></a> <span class="S51">alist</span><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_format.htm"><span class="S4">fo&#114mt</span></a><span class="S8">&lt</span><a class="le" href="add_format.htm#S8"><span class="S21">#0</span></a><a class="le" href="add_info.htm#f11"><span class="S91"><b>f11</b></span><span class="S81">:F:</span></a><span class="S51">&&</span><font class="S91"><b>f12</b></font><font class="S81">:F:</font><span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALALIST"><span class="S121">GLOBA&#76ALIST</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; сортировать выделенные файлы по типу и имени по возрастанию</font><br>
+<span class="S0"><a class="le" href="../com_global.htm"><span class="S4">global</span></a> <span class="S51">alist</span><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_format.htm"><span class="S4">fo&#114mt</span></a><span class="S8">&lt</span><a class="le" href="add_format.htm#S8"><span class="S21">#1</span></a><a class="le" href="add_info.htm#f11"><span class="S91"><b>f11</b></span><span class="S81">:F:</span></a><span class="S51">&&</span><font class="S91"><b>f12</b></font><font class="S81">:F:</font><span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALALIST"><span class="S121">GLOBA&#76ALIST</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; сортировать выделенные файлы по типу и имени по убыванию</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_global.htm"><span class="S4">global</span></a> <span class="S51">alist</span><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_format.htm"><span class="S4">fo&#114mt</span></a><span class="S8">&lt</span><a class="le" href="add_format.htm#S8"><span class="S21">#2</span></a><a class="le" href="add_info.htm#f25"><span class="S91"><b>f25</b></span><span class="S81">:F:</span></a><span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALALIST"><span class="S121">GLOBA&#76ALIST</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; сортировать выделенные файлы по размеру по возрастанию</font><br>
+<span class="S0"><a class="le" href="../com_global.htm"><span class="S4">global</span></a> <span class="S51">alist</span><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_format.htm"><span class="S4">fo&#114mt</span></a><span class="S8">&lt</span><a class="le" href="add_format.htm#S8"><span class="S21">#3</span></a><a class="le" href="add_info.htm#f25"><span class="S91"><b>f25</b></span><span class="S81">:F:</span></a><span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALALIST"><span class="S121">GLOBA&#76ALIST</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; сортировать выделенные файлы по размеру по убыванию</font><br>
+
+</p>
+</div>
+
+
+
+</font><a name="keys"></a></td></tr>
+
+
+<!-- FormatUser -->
+
+
+<tr class="seltr"><td colspan=2><a href="#v"></a><b><div align="center">Ключи из секции <span class="S8">[</span><b>FormatUser</b><span class="S8">]</span> в <a class="le" href="../../config.htm#FormatUser"><font class="S1"><b>TCIMG.ini</b></font></a></div></b></td></tr>
+
+<!-- key1,key2,key3,...,keyN -->
+
+<tr><td class="s3td">keys</td><td><font class="S0">
+key1,key2,key3,...,keyN - имена ключей в секции [FormatUser] в TCIMG.ini, в которых прописываются пользовательские шаблоны регулярных выражений для дополнительного форматирования.<br>
+&nbsp;&nbsp;Может быть несколько перечисленных в любом порядке через запятую.<br>
+&nbsp;&nbsp;Имена пользовательских шаблонов могут содержать латинские символы, цифры.<br>
+
+<hr align="left" width=70%>
+
+Синтаксис:<br>
+&nbsp;&nbsp;1. key<font class="S81">=</font>RegExp<br>
+&nbsp;&nbsp;&nbsp;&nbsp;RegExp - строка регулярных выражений для поиска.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Возвращаются все найденные совпадения через разделитель переноса строки.<br>
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:480">
+<font class="S81"><b>[FormatUser]</b></font><br>
+<font class="S21">; найти все цифры</font><br>
+<b>key1</b><font class="S81"><b>=</b></font>(\d+)<br>
+<font class="S21">; найти русские слова (более 2-х символов)</font><br>
+<b>words1</b><font class="S81"><b>=</b></font>(?i)([а-яё-]{3,})<br>
+</p>
+</div>
+<br>
+&nbsp;&nbsp;2. key<font class="S81">=</font>RegExp<font class="S81">||</font>Replace<br>
+&nbsp;&nbsp;&nbsp;&nbsp;RegExp - строка регулярных выражений для поиска.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Replace - текст замены регулярного выражения.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Возвращает строку преобразованную регулярным выражением.<br>
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:480">
+<font class="S81"><b>[FormatUser]</b></font><br>
+<font class="S21">; оставляет левую часть строк 4-е символа и правую часть строк 4-е символа</font><br>
+<b>U3</b><font class="S81"><b>=</b></font>(?m)^(.{4}).*(.{4})$<span class="S8">||</span>$1$2<br>
+<font class="S21">; удалить повторы слов, которые стоят рядом</font><br>
+<b>U4</b><font class="S81"><b>=</b></font>(?&#60;![^\s\A])([А-яЁё]+)[\h]+\1<font class="S81"><b>||</b></font>\1<br>
+</p>
+</div>
+</font><a name="fun"></a></td></tr>
+
+<!-- fun_keys -->
+
+<tr><td class="s3td"><b>fun_</b>keys</td><td><font class="S0">
+Имена шаблонов с приставкой <b>fun_</b> позволяют производить замену на "функцию"
+<br>Синтаксис:
+<br>&nbsp;&nbsp;fun_key<font class="S81">=</font><b>RegExp<font class="S81">||</font>Replace<font class="S81">||</font>Count<font class="S81">||</font>Flag<font class="S81">||</font>StringNumber</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>RegExp</b> - строка регулярных выражений для поиска.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Replace</b> - текст замены регулярного выражения, в замене могут быть задействованы:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- встроенные и вспомогательные <a class="le" href="../par/par_aa_functions.htm"><span class="S4"><font size="2"><b>функции</b></font></span></a> Autoit
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(строки необходимо обрамлять одинарными кавычками и использовать символ присоединения строк <font class="S81"><b>&</b></font>)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- математические операторы при действиях с числами "+-*/^"
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <a class="le" href="../fun/ternary.htm"><span class="S4"><font size="2"><b>тернарные</b></font></span></a> условия: (логическое выражение)<font class="S51"><b>?</b></font>выражение1<font class="S51"><b>:</b></font>выражение2
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- глобальные переменные $var_... , созданные в команде <a class="le" href="../com_exect.htm"><span class="S4"><font size="2"><b>exect</b></font></span></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- глобальные переменные GLOBALNAME..., созданные другими командами см. Дополнение <a class="le" href="add_gloobal.htm"><span class="S4"><font size="2"><b>№23</b></font></span></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- теги:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121">:NUMFORMAT:</font> заменяется числом текущего найденного совпадения с шаблоном (отсчёт с 0)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(можно использовать математические действия для получения других чисел (к примеру, :NUMFORMAT:+1))
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121">:MAXFORMAT:</font> заменяется числом (количеством всех найденных совпадений с шаблоном)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121">:QUOTES1:</font> или <font class="S121">:QUOTES2:</font> добавляется в начале замены Replace
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:QUOTES1: - в найденных фрагментах игнорируются одинарные кавычки.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:QUOTES2: - в найденных фрагментах игнорируются двойные кавычки.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121">[:delete:]</font> означает удаление совпадений (удаление найденных фраз).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Count</b> [необязательный]:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - поочерёдная замена каждого найденного образца (по умолчанию)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - одновременная замена всех найденных образцов
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(в некоторых случаях Count может использоваться как число замен)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Flag</b> [необязательный]:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - обрабатывать параметры в тексте (по умолчанию)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(параметры GLOBALNAME<xN>, [info], [input], ... и др. заменяются их значениями)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - не обрабатывать
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>StringNumber</b> [необязательный]:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Строка состоящая из номера или номеров найденных совпадений, которые необходимо заменить.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Номера прописываются через запятую. Пример: <code class="example">1,5,8</code><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;При отрицательных числах отсчёт ведётся с конца. Пример: <code class="example">3,-1,-2</code><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Поддерживается диапазон(ы) номеров. Пример: <code class="example">2:5</code> Пример: <code class="example">1,3:6,8:11,13:-1</code><br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Первый символ "<b>#</b>" означает "кроме" заданных номеров. Пример: <code class="example">#1,5,8</code><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Первый символ "<b>@</b>" означает чередование в диапазоне найденных совпадений: @Start<font class="S81"><b>|</b></font>End<font class="S81"><b>|</b></font>Step<font class="S81"><b>|</b></font>InArow, где:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start - минимальное значение диапазона.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End - максимальное значение диапазона (при <font class="S51"><b>-1</b></font> все совпадения).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Step - шаг чередования (по умолчанию 1).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InArow - количество подряд номеров (по умолчанию 1).<br>
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:580">
+<font class="S81"><b>[FormatUser]</b></font><br>
+<font class="S21">; fun_numplus - увеличение всех цифр на единицу</font><br>
+<b>fun_numplus</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><a class="le" href="../fun/number.htm"><span class="S41"><b>Number</b></span></a><span class="S24">(</span><font class="S91">$1</font><font class="S24">)</font>+1<br>
+<br>
+<font class="S21">; fun_uplo - левую часть от " - " перевести в верхний регистр, правую в нижний</font><br>
+<b>fun_uplo</b><font class="S81"><b>=</b></font>([^-]+)( - )(.+)<font class="S81"><b>||</b></font><a class="le" href="../fun/strinjupper.htm"><span class="S41"><b>StringUpper</b></span></a><span class="S24">(</span><font class="S19"><b>'</b></font><font class="S91">$1</font><font class="S19"><b>'</b></font><font class="S24">)</font></font><font class="S81"><b>&</b></font><font class="S19"><b>'</b></font><font class="S91">$2</font><font class="S19"><b>'</b></font><font class="S81"><b>&</b></font><a class="le" href="../fun/strinjlower.htm"><span class="S41"><b>StringLower</b></span></a><span class="S24">(</span><font class="S19"><b>'</b></font><font class="S91">$3</font><font class="S19"><b>'</b></font><font class="S24">)</font><br>
+<br>
+<font class="S21">; fun_numdel1- удалить 2-ю цифру</font><br>
+<b>fun_numdel1</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><b>[:delete:]</b><font class="S81"><b>||</b></font>1<font class="S81"><b>||</b></font>0<font class="S81"><b>||</b></font>2<br>
+<br>
+<font class="S21">; fun_numdel6 - удалить все цифры, кроме 1-й и 3-й</font><br>
+<b>fun_numdel6</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><b>[:delete:]</b><font class="S81"><b>||</b></font>1<font class="S81"><b>||</b></font>0<font class="S81"><b>||</b></font>#1,3<br>
+<br>
+<font class="S21">; fun_numcount1 - увеличение всех цифр на единицу, кроме первой</font><br>
+<b>fun_numcount1</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><a class="le" href="../fun/number.htm"><span class="S41"><b>Number</b></span></a><span class="S24">(</span><font class="S91">$1</font><font class="S24">)</font>+1<font class="S81"><b>||</b></font>1<font class="S81"><b>||</b></font>0<font class="S81"><b>||</b></font>#1<br>
+<br>
+<font class="S21">; fun_numdel7 - удалить все цифры через одну, начиная с 1-й</font><br>
+<b>fun_numdel7</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><b>[:delete:]</b><font class="S81"><b>||</b></font>1<font class="S81"><b>||</b></font>0<font class="S81"><b>||</b></font>@1|-1|2
+</p>
+</div>
+</font><a name="fnc"></a></td></tr>
+
+<!-- fnc_keys -->
+
+<tr><td class="s3td"><b>fnc_</b>keys</td><td><font class="S0">
+Имена шаблонов с приставкой <b>fnc_</b> позволяют производить замену на "функцию".
+<br>Синтаксис:
+<br>&nbsp;&nbsp;fnc_key<font class="S81">=</font><b>RegExp<font class="S81">||</font>Replace<font class="S81">||</font>Count</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>RegExp</b> - строка регулярных выражений для поиска.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Replace</b> - текст замены регулярного выражения, в замене могут быть задействованы:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- $1, $2, ... $9 - группы замены; для отделения групп от цифр используются ${1}, ${2}, ... ${3}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- встроенные и вспомогательные <a class="le" href="../par/par_aa_functions.htm"><span class="S4"><font size="2"><b>функции</b></font></span></a> Autoit
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(строки необходимо обрамлять одинарными кавычками и использовать символ присоединения строк <font class="S81"><b>&</b></font>)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- математические операторы при действиях с числами "+-*/^"
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <a class="le" href="../fun/ternary.htm"><span class="S4"><font size="2"><b>тернарные</b></font></span></a> условия: (логическое выражение)<font class="S51"><b>?</b></font>выражение1<font class="S51"><b>:</b></font>выражение2
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- глобальные переменные $var_... , созданные в команде <a class="le" href="../com_exect.htm"><span class="S4"><font size="2"><b>exect</b></font></span></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- глобальные переменные GLOBALNAME..., созданные другими командами см. Дополнение <a class="le" href="add_gloobal.htm"><span class="S4"><font size="2"><b>№23</b></font></span></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- теги:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121">:NUMFORMAT:</font> заменяется числом текущего найденного совпадения с шаблоном (отсчёт с 0)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(можно использовать математические действия для получения других чисел (к примеру, :NUMFORMAT:+1))
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121">:MAXFORMAT:</font> заменяется числом (количеством всех найденных совпадений с шаблоном)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121">:NUMBER:</font> и <font class="S121">:LISTNUM:</font> заменяется числом очерёдности в командах <a class="le" href="../com_slist.htm"><span class="S4"><b>slist</b></span></a> и других.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121">[:delete:]</font> означает удаление совпадений (удаление найденных фраз, относительно параметра Count).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121">rnm&#60;&#62;</font> заменяется случайными данными, параметры такие же как в Дополнении <a class="le" href="add_randms.htm"><span class="S4"><font size="2"><b>№30</b></font></span></a>, кроме <font class="S19">?Count</font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121">tnm&#60;&#62;</font> заменяется числовым счётчиком, параметры такие же как в <font class="S19">n9</font> см. Дополнение <a class="le" href="add_info.htm#n9"><span class="S4"><font size="2"><b>№10</b></font></span></a>.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121">enm&#60;&#62;</font> заменяется буквенным счётчиком, параметры такие же как в <font class="S19">n92</font> см. Дополнение <a class="le" href="add_info.htm#n92"><span class="S4"><font size="2"><b>№10</b></font></span></a>.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121">rom&#60;&#62;</font> заменяется римским счётчиком, параметры такие же как в <font class="S19">n94</font> см. Дополнение <a class="le" href="add_info.htm#n94"><span class="S4"><font size="2"><b>№10</b></font></span></a>.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121">arm&#60;&#62;</font> заменяется армянским счётчиком, параметры такие же как в <font class="S19">n96</font> см. Дополнение <a class="le" href="add_info.htm#n96"><span class="S4"><font size="2"><b>№10</b></font></span></a>.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121">grg&#60;&#62;</font> заменяется грузинским счётчиком, параметры такие же как в <font class="S19">n98</font> см. Дополнение <a class="le" href="add_info.htm#n98"><span class="S4"><font size="2"><b>№10</b></font></span></a>.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rnm&#60;&#62;, tnm&#60;&#62;, enm&#60;&#62;, rom&#60;&#62; могут использоваться несколько раз в любой последовательности.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Count</b> [необязательный] возможны варианты: 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>N</b> - количество замен. По умолчанию 0 - выполняет замену всех найденных образцов.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>&</b>StringNumber - преобразования заданных номеров найденных образцов.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>#</b>StringNumber - преобразования <u>кроме</u> заданных номеров найденных образцов.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringNumber - строка состоящая из номера, номеров или диапазонов чисел.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Номера прописываются через запятую. Пример: <code class="example">1,5,8</code>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;При отрицательных числах отсчёт ведётся с конца. Пример: <code class="example">3,-1,-2</code>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Поддерживается диапазон(ы) номеров. Пример: <code class="example">2:5</code> Пример: <code class="example">1,3:6,8:11,13:-1</code>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>@</b>Start|End|Step|InArow, преобразования чередующих номеров найденных образцов, где:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start - минимальное значение диапазона.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End - максимальное значение диапазона (при <font class="S51"><b>-1</b></font> все совпадения).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Step - шаг чередования (по умолчанию 1).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InArow - количество подряд номеров (по умолчанию 1).
+
+
+<br>
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:600">
+<font class="S81"><b>[FormatUser]</b></font><br>
+<font class="S21">; увеличение всех цифр на единицу</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><a class="le" href="../fun/number.htm"><span class="S41"><b>Number</b></span></a><span class="S24">(</span><font class="S91">$1</font><font class="S24">)</font>+1<br>
+<br>
+<font class="S21">; увеличение 1-й цифры на единицу</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><a class="le" href="../fun/number.htm"><span class="S41"><b>Number</b></span></a><span class="S24">(</span><font class="S91">$1</font><font class="S24">)</font>+1<font class="S81"><b>||</b></font>1<br>
+<br>
+<font class="S21">; увеличение первых 6-ти цифр на единицу</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><a class="le" href="../fun/number.htm"><span class="S41"><b>Number</b></span></a><span class="S24">(</span><font class="S91">$1</font><font class="S24">)</font>+1<font class="S81"><b>||</b></font>6<br>
+<br>
+<font class="S21">; увеличение 1-й и последней цифры на единицу</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><a class="le" href="../fun/number.htm"><span class="S41"><b>Number</b></span></a><span class="S24">(</span><font class="S91">$1</font><font class="S24">)</font>+1<font class="S81"><b>||</b></font><font class="S121"><b>&</b></font>1,-1<br>
+<br>
+<font class="S21">; увеличение с 5-й по 8-ю цифр на единицу</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><a class="le" href="../fun/number.htm"><span class="S41"><b>Number</b></span></a><span class="S24">(</span><font class="S91">$1</font><font class="S24">)</font>+1<font class="S81"><b>||</b></font><font class="S121"><b>&</b></font>5:8<br>
+<br>
+<font class="S21">; увеличение цифр на единицу, кроме 1-й и последней</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><a class="le" href="../fun/number.htm"><span class="S41"><b>Number</b></span></a><span class="S24">(</span><font class="S91">$1</font><font class="S24">)</font>+1<font class="S81"><b>||</b></font><font class="S121"><b>#</b></font>1,-1<br>
+<br>
+<font class="S21">; увеличение цифр на единицу, кроме с 5-й по 8-ю</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><a class="le" href="../fun/number.htm"><span class="S41"><b>Number</b></span></a><span class="S24">(</span><font class="S91">$1</font><font class="S24">)</font>+1<font class="S81"><b>||</b></font><font class="S121"><b>#</b></font>5:8<br>
+<br>
+<font class="S21">; увеличение всех цифр на единицу через одну, начиная с 1-й</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><a class="le" href="../fun/number.htm"><span class="S41"><b>Number</b></span></a><span class="S24">(</span><font class="S91">$1</font><font class="S24">)</font>+1<font class="S81"><b>||</b></font><font class="S121"><b>@</b></font>1|-1|2<br>
+<br>
+<font class="S21">; удаление первых 6-ти цифр</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><b>[:delete:]</b><font class="S81"><b>||</b></font>6<br>
+<br>
+<font class="S21">; удаление 1-й и последней цифры</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><b>[:delete:]</b><font class="S81"><b>||</b></font><font class="S121"><b>&</b></font>1,-1<br>
+<br>
+<font class="S21">; удаление цифр, кроме 1-й и последней</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><b>[:delete:]</b><font class="S81"><b>||</b></font><font class="S121"><b>#</b></font>1,-1<br>
+<br>
+<font class="S21">; удаление всех цифр через одну, начиная с 1-й</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><b>[:delete:]</b><font class="S81"><b>||</b></font><font class="S121"><b>@</b></font>1|-1|2<br>
+<br>
+<font class="S21">; замена всех цифр на счётчик</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><b>tnm&#60;1|#|1|1|. ,&#62;</b><br>
+<br>
+<font class="S21">; замена всех цифр на буквенный счётчик</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><b>enm&#60;0|1|A|#|1|1&#62;</b><br>
+<br>
+<font class="S21">; замена всех цифр на римский счётчик</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><b>rom&#60;1|3999&#62;</b><br>
+<br>
+<font class="S21">; замена всех цифр на армянский счётчик</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><b>arm&#60;1|9999&#62;</b><br>
+<br>
+<font class="S21">; замена всех цифр на грузинский счётчик</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><b>grg&#60;1|19999&#62;</b><br>
+<br>
+<font class="S21">; замена всех цифр на случайные данные</font><br>
+<b>fnc_xxx</b><font class="S81"><b>=</b></font>(\d+)<font class="S81"><b>||</b></font><b>rnm&#60;1|10&#62;</b><br>
+<br>
+<font class="S21">; пронумеровать строки текста, добавляя в начало счётчик</font><br>
+<b>fnc_line1</b><font class="S81"><b>=</b></font>(?m)(\A|\r\n|\r|\n)<font class="S81"><b>||</b></font><b><font class="S19">'$1'</font><font class="S61">&</font><font class="S19">'tnm&#60;1|#|1|1|. ,&#62;'</font></b><br>
+
+</p>
+<hr align="left" width=70%>
+<span class="section">Примечания:</span><br>
+По сравнению с ключами <b>fun_</b>key, ключи <b>fnс_</b>key гораздо быстрее обрабатывают большой текст.<br>
+</div>
+</font><a name="sor"></a><a name="sort"></a></td></tr>
+
+<!-- sort_keys -->
+
+<tr><td class="s3td"><b>sort_</b>keys</td><td><font class="S0">
+Имена шаблонов с приставкой <b>sort_</b> позволяют сортировать текст с помощью регулярного выражения.
+<br>Синтаксис:
+<br>&nbsp;&nbsp;sort_key<font class="S81">=</font><b>RegExp<font class="S81">||</font>Replace<font class="S81">||</font>Mode<font class="S81">||</font>Start<font class="S81">||</font>End<font class="S81">||</font>Func</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>RegExp</b> - строка регулярных выражений для поиска.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Replace</b> - текст замены регулярного выражения.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Mode</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - сортировать по возрастанию.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - сортировать по убыванию.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - сортировать по числовому возрастанию.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 - сортировать по числовому убыванию.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(важно, при 2 и 3 регулярное выражение должно извлекать число).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 - удалять дубликаты.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 - удалять дубликаты (без учёта регистра).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Start</b> [необязательный]
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;индекс массива, от которого начинать сортировку (отсчёт с 0, по умолчанию 0).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>End</b> [необязательный]
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;индекс массива, в котором закончить сортировку (0 - до конца массива, по умолчанию 0).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Func</b> [необязательный]
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - вычислить с помощью функций <a class="le" href="../par/par_aa_functions.htm"><span class="S4"><font size="2"><b>Autoit</b></font></span></a> (в замене Replace могут использоваться функции Autoit)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - простая замена (по умолчанию).
+<br>
+<hr align="left" width=70%>
+Принцип работы:<br>
+&nbsp;&nbsp;1. Текст разбивается построчно.<br>
+&nbsp;&nbsp;2. В каждой строке ищется фраза, заданная регулярным выражением (поиск и замена).<br>
+&nbsp;&nbsp;3. По найденным фразам сортируются строки текста.<br>
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:600">
+<font class="S81"><b>[FormatUser]</b></font><br>
+
+<font class="S21">; сортировать по возрастанию по словам, исключая начальные символы неслова</font><br>
+<b>sort_s1</b><font class="S81"><b>=</b></font>(?i)([^a-zа-яё]*)([a-zа-яё]+)<font class="S81"><b>||</b></font>$2<font class="S81"><b>||</b></font>0<br>
+<br>
+<font class="S21">; сортировать по убыванию, исключая начальные символы неслова</font><br>
+<b>sort_s2</b><font class="S81"><b>=</b></font>(?i)([^a-zа-яё]*)([a-zа-яё]+)<font class="S81"><b>||</b></font>$2<font class="S81"><b>||</b></font>1<br>
+<br>
+<font class="S21">; сортировать по убыванию по длине строки</font><br>
+<b>sort_len1</b><font class="S81"><b>=</b></font>(?m)([^\r\n]+)<font class="S81"><b>||</b></font><a class="le" href="../fun/strinjlen.htm"><span class="S41"><b>StringLen</b></span></a><span class="S24">(</span>'<font class="S19">$1</font>'<span class="S24">)</span><font class="S81"><b>||</b></font>0<font class="S81"><b>||</b></font>0<font class="S81"><b>||</b></font>0<font class="S81"><b>||</b></font>1<br>
+<br>
+<font class="S21">; сортировка по числовому возрастанию ссылок вида https://234pi.com/d95e9734da.320.mp4</font><br>
+<b>sort_num1</b><font class="S81"><b>=</b></font>(?s).*[^\d](\d+)\.mp4<font class="S81"><b>||</b></font>$1<font class="S81"><b>||</b></font>2<br>
+<br>
+<font class="S21">; сортировка по числовому убыванию ссылок вида https://3453api.com/d95e9734da.320.mp4</font><br>
+<b>sort_num2</b><font class="S81"><b>=</b></font>(?s).*[^\d](\d+)\.mp4<font class="S81"><b>||</b></font>$1<font class="S81"><b>||</b></font>3<br>
+<br>
+<font class="S21">; удаление дубликатов по заданному регулярному выражению</font><br>
+<b>sort_dd1</b><font class="S81"><b>=</b></font>(?s)(.*[^\d])\d+\.mp4<font class="S81"><b>||</b></font>$1<font class="S81"><b>||</b></font>4<br>
+</p><br>
+</div>
+</font><a name="lot"></a></td></tr>
+
+<!-- lot_keys -->
+
+<tr><td class="s3td"><b>lot_</b>keys</td><td><font class="S0">
+Имена шаблонов с приставкой <b>lot_</b> позволяют производить многократный поиск и замену.
+<br>Синтаксис:
+<br>&nbsp;&nbsp;lot_key<font class="S81">=</font><b>RegExp<font class="S81">||</font>Replace</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>RegExp</b> - строка регулярных выражений для поиска.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Replace</b> - текст замены регулярного выражения.
+<hr align="left" width=70%>
+Поиск и замена будут производиться пока замены не закончатся.
+<br>
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:300">
+<font class="S81"><b>[FormatUser]</b></font><br>
+<font class="S21">; lot_del1 - удалить парные буквенные теги</font><br>
+<b>lot_del1</b><font class="S81"><b>=</b></font>(?si)<[a-z]>¤<[a-z]><font class="S81"><b>||</b></font>$1¤<br>
+</p>
+</div>
+</font><a name="rgx"></a></td></tr>
+
+<!-- rgx_keys -->
+
+<tr><td class="s3td"><b>rgx_</b>keys</td><td><font class="S0">
+Имена шаблонов с приставкой <b>rgx_</b> позволяют производить поиск и назначать разделитель между найденными совпадениями.
+<br>Синтаксис:
+<br>&nbsp;&nbsp;rgx_key<font class="S81">=</font><b>RegExp<font class="S81">||</font>Flag<font class="S81">||</font>Number<font class="S81">||</font><font class="S51">Delimeter</font></b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>RegExp</b> - строка регулярных выражений для поиска.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Flag</b> - [необязательный] режим поиска:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - возвращается 1, если совпадение найдено или 0, если не найдено.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - поиск до первого совпадения, возвращается полное совпадение с шаблоном.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 - возвращаются все совпадения, разделённые разделителем Delimeter (по умолчанию).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Number</b> - [необязательный] позиция строки, начиная с которой будут искаться совпадения (по умолчанию 1)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b><font class="S51">Delimeter</font></b> - [необязательный] разделитель при объединении:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;символ или строка между найденными совпадениями (по умолчанию перенос строки)
+
+
+<hr align="left" width=70%>
+В отличие от обычного поиска с регулярными выражениями, можно выбирать разделитель при объединении найденных совпадений (по умолчанию перенос строки @CRLF)<br>
+Может использоваться, когда регулярное выражение связано с получением нескольких строк.
+<br>
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:300">
+<font class="S81"><b>[FormatUser]</b></font><br>
+<font class="S21">; rgx_line5 - разделить текст по 5 строк</font><br>
+<b>rgx_line5</b><font class="S81"><b>=</b></font>((?:[^\r\n]+(?:\r\n|$)*?){5})<font class="S81"><b>||</b></font>3<font class="S81"><b>||</b></font>1<font class="S81"><b>||</b></font><font class="S51"><b>#:#</b></font><br>
+</p>
+</div>
+</font><a name="cmd"></a></td></tr>
+
+
+<!-- cmd_keys -->
+
+<tr><td class="s3td"><b>cmd_</b>keys</td><td><font class="S0">
+Имена шаблонов с приставкой <b>cmd_</b> позволяют производить преобразование с помощью сторонних консольных программ и утилит, а так же команд cmd.
+<br>Синтаксис:
+<br>&nbsp;&nbsp;cmd_key<font class="S81">=</font><b>String</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>String</b> - возможны варианты:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• строка команд и параметров.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• путь к программе и её строка команд и параметров.<br>
+Тег <font class="S81">?</font>NameKey<font class="S81">?</font> позволяет вставить программу, прописанную в <a class="le" href="../../config.htm#Programs"><font class="S1"><b>TCIMG.ini</b></font></a> в секции <b><font class="S81">[</font>Programs<font class="S81">]</font></b>, где NameKey - имя ключа
+<hr align="left" width=70%>
+Принцип действий:<br>
+&nbsp;&nbsp;1. Запускается заданная командная строка.<br>
+&nbsp;&nbsp;2. Передаётся в консоль текст на форматирование.<br>
+&nbsp;&nbsp;3. Считывается из консоли обработанный текст.<br>
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:680">
+<font class="S81"><b>[FormatUser]</b></font><br>
+<font class="S21">; cmd_sort2 - сортировка в обратном порядке с помощью команды cmd sort</font><br>
+<b>cmd_sort2</b><font class="S81"><b>=</b></font>sort /r<br>
+<br>
+<font class="S21">; cmd_uniq1 - удаление дубликатов с помощью программы uniq</font><br>
+<b>cmd_uniq1</b><font class="S81"><b>=</b></font>"%PROGRAMFILES(X86)%\GnuWin32\bin\uniq.exe"<br>
+<br>
+<font class="S21">; cmd_fmt1 - преобразование текста - 50 символов строке, остальное переносится на следующую строку</font><br>
+<b>cmd_fmt1</b><font class="S81"><b>=</b></font>"%PROGRAMFILES(X86)%\GnuWin32\bin\fmt.exe" -w 50<br>
+<br>
+
+<font class="S21">
+; Можно использовать только имя утилиты, если прописать в autorun.cfg путь к программе
+<br>
+<code class="example"><font class="S0">SetEnv /A /EV PATH ;%PROGRAMFILES(X86)%\GnuWin32\bin</font></code><br>
+; см. Дополнение <a class="le" href="add_autorun.htm">№4</a>, <a class="le" href="../../faq.htm#21"><span class="S4">Основные вопросы</span></a>
+<br>
+; После этого можно прописывать:
+</font>
+<br>
+<b>cmd_uniq1</b><font class="S81"><b>=</b></font>uniq<br>
+<br>
+<font class="S21">; cmd_jq_c - сжимает текст json в одну строку (Compact-print JSON)</font><br>
+<b>cmd_jq_c</b><font class="S81"><b>=</b></font>"%COMMANDER_PATH%\Utilities\Images\json\jq-win32.exe" -c .<br>
+<font class="S21">Если путь программы прописать в TCIMG.ini (TCIMGU.ini) в секции [Programs]<br>
+<b>[Programs]</b><br>
+<b>JQ</b>=%COMMANDER_PATH%\Utilities\Images\json\jq-win32.exe<br>
+то можно использовать имя ключа JQ</font><br>
+<b>cmd_jq_c</b><font class="S81"><b>=</b></font>"<font class="S81"><b>?</b></font><font class="S91"><b>JQ</b></font><font class="S81"><b>?</b></font>" -c .
+
+</p>
+</div>
+</font><a name="ndb"></a></td></tr>
+
+
+<!-- ndb_keys -->
+
+<tr><td class="s3td"><b>ndb_</b>keys</td><td><font class="S0">
+Имена шаблонов с приставкой <b>ndb_</b> позволяют нумеровать дублирующие фразы, заданные регулярным выражением.<br>
+Для каждой группы дубликатов отдельный счётчик.
+<br>Синтаксис:
+<br>&nbsp;&nbsp;ndb_key<font class="S81">=</font><b>RegExp<font class="S81">||</font>Replace<font class="S81">||</font>Mode<font class="S81">||</font>Start<font class="S81">||</font>Register</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>RegExp</b> - строка регулярных выражений для поиска.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Replace</b> - строка замены регулярного выражения.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• чтобы вставить текст группы используются $1,$2,..., $9
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• группа для которой нужно произвести нумерацию заключается в угловые скобки и внутри в любом месте прописывается тег <font class="S21">:NDB:</font>, который будет заменён нумерацией, пример: <code class="example">&#60;$2 :NDB:&#62;</code>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• внутри <code class="example"><...></code> могут использоваться любые символы/разделители, кроме угловых скобок.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Mode</b> - [необязательный] режим нумерации:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - первые найденные не нумеруются (по умолчанию).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - нумеруются все, начиная с первого.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - нумеруются только дубликаты, начиная с первого.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Start</b> - [необязательный] число с которого начинается нумерация (по умолчанию 1)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Register</b> - [необязательный] флаг установки чувствительности к регистру написания.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - учитывать регистр (по умолчанию).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - не учитывать регистр.
+<br>
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:680">
+<font class="S81"><b>[FormatUser]</b></font><br>
+<font class="S21">; ndb_name1 - пронумеровать дубликаты имён списка путей фалов, для каждой группы дубликатов отдельный счётчик</font><br>
+<b>ndb_name1<font class="S81">=</font></b>(?m)^(.+\\)([^\\]+)(\.[^.]+)$<font class="S81">||</font>$1<code class="example"><$2:NDB:></code>$3<br>
+<br>
+<font class="S21">; ndb_line1 - пронумеровать все строки, для каждой группы дубликатов отдельный счётчик</font><br>
+<b>ndb_line1<font class="S81">=</font></b>(?m)^(.+)$<font class="S81"><b>||</b></font><code class="example"><:NDB: $1></code><font class="S81"><b>||</b></font>1<br>
+<br>
+<font class="S21">; ndb_line2 - пронумеровать строки, которые имеют дубликаты, для каждой группы дубликатов отдельный счётчик</font><br>
+<b>ndb_line2<font class="S81">=</font></b>(?m)^(.+)$<font class="S81"><b>||</b></font><code class="example"><:NDB: $1></code><font class="S81"><b>||</b></font>2<br>
+<br>
+<font class="S21">ndb_word1 - пронумеровать все слова в предложении, для каждой группы дубликатов отдельный счётчик</font><br>
+<font class="S21">; строка "soft boy soft boy soft boy soft boy" ==> "soft_1 boy_1 soft_2 boy_2 soft_3 boy_3 soft_4 boy_4"</font><br>
+<b>ndb_word1<font class="S81">=</font></b>(*UCP)(\A|\W*)(\w+)(\W*|\z)<font class="S81"><b>||</b></font>$1<code class="example"><$2_:NDB:></code>$3<font class="S81"><b>||</b></font>1<br>
+
+</p>
+</div>
+</font><a name="rps"></a></td></tr>
+
+
+<!-- ndb_keys -->
+
+<tr><td class="s3td"><b>rps_</b>keys</td><td><font class="S0">
+Имена шаблонов с приставкой <b>rps_</b> позволяют производить поиск и замену.<br>
+<br>Синтаксис:
+<br>&nbsp;&nbsp;rps_key<font class="S81">=</font><b>Search<font class="S81">||</font>Replace<font class="S81">||</font>Count<font class="S81">||</font>Register</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Search</b> - строка поиска.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Replace</b> - строка замены.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Count</b> - [необязательный] количество выполняемых замен:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - выполнить замену всех найденных строк (по умолчанию).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;используйте отрицательное число, чтобы выполнить замену справа.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Register</b> - [необязательный] флаг установки чувствительности к регистру написания.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - не учитывать регистр, используется локальный язык (по умолчанию).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - учитывать регистр.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - не учитывать регистр, используется основное/быстрое сравнение.
+
+
+
+<br>
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:680">
+<font class="S81"><b>[FormatUser]</b></font><br>
+<font class="S21">; ndb_name1 - произвести замену всех найденных "1111" на "2222"</font><br>
+<b>ndb_name1<font class="S81">=</font></b>1111<font class="S81">||</font>2222<br>
+<br>
+<font class="S21">; ndb_name2 - произвести в начале одну замену "1111" на "2222"</font><br>
+<b>ndb_name2<font class="S81">=</font></b>1111<font class="S81">||</font>2222<font class="S81">||</font>1<br>
+<br>
+<font class="S21">; ndb_name3 - произвести в конце одну замену "1111" на "2222"</font><br>
+<b>ndb_name3<font class="S81">=</font></b>1111<font class="S81">||</font>2222<font class="S81">||</font>-1<br>
+<br>
+<font class="S21">; ndb_name4 - произвести замену всех найденных "AAAA" на "BBBB", учитывая регистр символов</font><br>
+<b>ndb_name4<font class="S81">=</font></b>AAAA<font class="S81">||</font>BBBB<font class="S81">||</font>0<font class="S81">||</font>1<br>
+<br>
+</p>
+</div>
+
+</font></td></tr>
+
+
+
+</td></tr></table>
+
+</div>
+
+
+<a name="tablica"></a>
+<br><br>
+<hr class="hr-blue">
+<br><br>
+
+<b>Таблица значений форматирования текста:</b><br>
+<br><br>
+<p align="center">
+<table class="param" width="40%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Значение</td><td>Описание</td></tr>
+<tr><td class="s3td"><a name="0"></a>0</td><td class="s6td">0 или пустое значение не обрабатывается - переходит к следующему</td></tr>
+<tr class="sl2tr"><td></td><td></td></tr>
+<tr><td class="s3td"><a name="1"></a>1</td><td class="s6td">удаление дубликатов строк</td></tr>
+<tr><td class="s3td"><a name="27"></a>27</td><td class="s6td">удаление дубликатов строк (без учёта регистра)</td></tr>
+<tr><td class="s3td"><a name="31"></a>31</td><td class="s6td">удаление дубликатов строк, дубликаты заменяются пустой строкой</td></tr>
+<tr><td class="s3td"><a name="32"></a>32</td><td class="s6td">удаление дубликатов строк (без учёта регистра), дубликаты заменяются пустой строкой</td></tr>
+<tr class="sl2tr"><td></td><td></td></tr>
+<tr><td class="s3td"><a name="9"></a>9</td><td class="s6td">удаление дублирующихся строк (остаются строки, которые не повторялись)</td></tr>
+<tr><td class="s3td"><a name="28"></a>28</td><td class="s6td">удаление дублирующихся строк (остаются строки, которые не повторялись) (без учёта регистра)</td></tr>
+<tr class="sl2tr"><td></td><td></td></tr>
+<tr><td class="s3td"><a name="2"></a>2</td><td class="s6td">удаление уникальных значений строк<br>(остаются строки только повторяющиеся в одном экземпляре)</td></tr>
+<tr><td class="s3td"><a name="29"></a>29</td><td class="s6td">удаление уникальных значений строк<br>(остаются строки только повторяющиеся в одном экземпляре) (без учёта регистра)</td></tr>
+<tr class="sl2tr"><td></td><td></td></tr>
+<tr><td class="s3td"><a name="39"></a>39</td><td class="s6td">удаление уникальных значений строк с сохранением последовательности встречающихся повторов<br>(остаются строки только повторяющиеся в одном экземпляре)</td></tr>
+<tr><td class="s3td"><a name="40"></a>40</td><td class="s6td">удаление уникальных значений строк с сохранением последовательности встречающихся повторов<br>(остаются строки только повторяющиеся в одном экземпляре) (без учёта регистра)</td></tr>
+<tr class="sl2tr"><td></td><td></td></tr>
+<tr><td class="s3td"><a name="26"></a>26</td><td class="s6td">удаление уникальных значений строк (остаются все повторяющиеся строки)</td></tr>
+<tr><td class="s3td"><a name="30"></a>30</td><td class="s6td">удаление уникальных значений строк (остаются все повторяющиеся строки) (без учёта регистра)</td></tr>
+<tr class="sl2tr"><td></td><td></td></tr>
+
+<tr><td class="s3td"><a name="33"></a>33</td><td class="s6td">возвращает текст, не содержащий повторов строк (из повторяющихся строк остаются только первые)</td></tr>
+<tr><td class="s3td"><a name="34"></a>34</td><td class="s6td">возвращает текст, не содержащий повторов строк (из повторяющихся строк остаются только первые) (без учёта регистра)</td></tr>
+<tr class="sl2tr"><td></td><td></td></tr>
+
+<tr><td class="s3td"><a name="35"></a>35</td><td class="s6td">удаление повторяющихся подряд строк (из повторяющихся строк остаются только первые)</td></tr>
+<tr><td class="s3td"><a name="36"></a>36</td><td class="s6td">удаление повторяющихся подряд строк (из повторяющихся строк остаются только первые) (без учёта регистра)</td></tr>
+<tr class="sl2tr"><td></td><td></td></tr>
+
+<tr><td class="s3td"><a name="5"></a>5</td><td class="s6td">реверс строк текста</td></tr>
+<tr><td></td><td></td></tr>
+<tr class="seltr"><td colspan=3>&nbsp;&nbsp;<b>Получение различных объектов.</b></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td"><a name="6"></a>6</td><td class="s6td">получение всех ссылок</td></tr>
+<tr><td class="s3td"><a name="7"></a>7</td><td class="s6td">получение всех е-mail адресов</td></tr>
+<tr><td class="s3td"><a name="8"></a>8</td><td class="s6td">получение всех IP адресов</td></tr>
+<tr><td class="s3td"><a name="18"></a>18</td><td class="s6td">получение строк, в начале которых есть числа</td></tr>
+<tr><td class="s3td"><a name="19"></a>19</td><td class="s6td">получение строк, в начале которых нет чисел</td></tr>
+<tr><td class="s3td"><a name="100"></a>100</td><td class="s6td">получение всех возможных путей (C:\xxx.... , %WINDIR%\xxx...)</td></tr>
+<tr><td></td><td></td></tr>
+<tr class="seltr"><td colspan=3>&nbsp;&nbsp;<b>Сортировка строк.</b></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td"><a name="3"></a>3</td><td class="s6td">сортировка по возрастанию</td></tr>
+<tr><td class="s3td"><a name="4"></a>4</td><td class="s6td">сортировка по убыванию</td></tr>
+<tr><td class="s3td"><a name="20"></a>20</td><td class="s6td">сортировка по числовому возрастанию</td></tr>
+<tr><td class="s3td"><a name="21"></a>21</td><td class="s6td">сортировка по числовому убыванию</td></tr>
+<tr><td class="s3td"><a name="22"></a>22</td><td class="s6td">сортировка по длине строки по возрастанию</td></tr>
+<tr><td class="s3td"><a name="23"></a>23</td><td class="s6td">сортировка по длине строки по убыванию</td></tr>
+<tr class="seltr"><td colspan=3>&nbsp;&nbsp;<b>Сортировка имен объектов пути.</b></td></tr>
+<tr><td class="s3td"><a name="24"></a>24</td><td class="s6td">сортировка по числовому возрастанию начальных цифр имени объекта пути</td></tr>
+<tr><td class="s3td"><a name="25"></a>25</td><td class="s6td">сортировка по числовому возрастанию конечных цифр имени объекта пути</td></tr>
+<tr><td class="s3td"><a name="37"></a>37</td><td class="s6td">сортировка по числовому убыванию начальных цифр имени объекта пути</td></tr>
+<tr><td class="s3td"><a name="38"></a>38</td><td class="s6td">сортировка по числовому убыванию конечных цифр имени объекта пути</td></tr>
+<tr><td class="s3td"><a name="41"></a>41</td><td class="s6td">сортировка по числовому возрастанию всех цифр имени объекта пути</td></tr>
+<tr><td class="s3td"><a name="42"></a>42</td><td class="s6td">сортировка по числовому убыванию всех цифр имени объекта пути</td></tr>
+<tr><td></td><td></td></tr>
+<tr class="seltr"><td colspan=3>&nbsp;&nbsp;<b>Поочерёдная числовая и буквенная сортировка строк, в начале которых есть/нет чисел.</b></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td"><a name="10"></a>10</td><td class="s6td">0<br>9<br>a<br>z</td></tr>
+<tr><td class="s3td"><a name="11"></a>11</td><td class="s6td">9<br>0<br>z<br>a</td></tr>
+<tr><td class="s3td"><a name="12"></a>12</td><td class="s6td">0<br>9<br>z<br>a</td></tr>
+<tr><td class="s3td"><a name="13"></a>13</td><td class="s6td">9<br>0<br>a<br>z</td></tr>
+<tr><td class="s3td"><a name="14"></a>14</td><td class="s6td">a<br>z<br>0<br>9</td></tr>
+<tr><td class="s3td"><a name="15"></a>15</td><td class="s6td">z<br>a<br>9<br>0</td></tr>
+<tr><td class="s3td"><a name="16"></a>16</td><td class="s6td">a<br>z<br>9<br>0</td></tr>
+<tr><td class="s3td"><a name="17"></a>17</td><td class="s6td">z<br>a<br>0<br>9</td></tr>
+<tr><td></td><td></td></tr>
+<tr class="seltr"><td colspan=3>&nbsp;&nbsp;<b>Удаление различных символов.</b></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td"><a name="51"></a>51</td><td class="s6td">удаление лишних пустых строк</td></tr>
+<tr><td class="s3td"><a name="52"></a>52</td><td class="s6td">удаление конечных пробелов, табуляции в строках (Chr(9), Chr(32), Chr(160))</td></tr>
+<tr><td class="s3td"><a name="53"></a>53</td><td class="s6td">удаление начальных пробелов, табуляции в строках ...</td></tr>
+<tr><td class="s3td"><a name="54"></a>54</td><td class="s6td">удаление начальных и конечных пробелов, табуляции в строках ...</td></tr>
+<tr><td class="s3td"><a name="55"></a>55</td><td class="s6td">удаление всех пробелов, табуляции в строках ...</td></tr>
+<tr><td class="s3td"><a name="56"></a>56</td><td class="s6td">удаление более одного пробела, табуляции в строках ...</td></tr>
+<tr><td class="s3td"><a name="57"></a>57</td><td class="s6td">удалить переводы строк</td></tr>
+<tr><td class="s3td"><a name="58"></a>58</td><td class="s6td">заменить переводы строк на пробел</td></tr>
+<tr><td class="s3td"><a name="59"></a>59</td><td class="s6td">удаление первых пустых строк</td></tr>
+<tr><td class="s3td"><a name="60"></a>60</td><td class="s6td">удаление последних пустых строк</td></tr>
+<tr><td class="s3td"><a name="61"></a>61</td><td class="s6td">удаление по краям пустых строк</td></tr>
+<tr><td class="s3td"><a name="62"></a>62</td><td class="s6td">удаление более одной пустой строки</td></tr>
+<tr><td class="s3td"><a name="63"></a>63</td><td class="s6td">удаление всех пустых строк</td></tr>
+<tr><td class="s3td"><a name="64"></a>64</td><td class="s6td">удаление всех табов в строках</td></tr>
+<tr><td class="s3td"><a name="64"></a>66</td><td class="s6td">
+удаление всех пустых строк<br>
+&nbsp;&nbsp;пустые строки могут содержать пустые символы: Chr(9), Chr(10), Chr(12), Chr(13), Chr(32)<br>
+&nbsp;&nbsp;(перенос страницы, табуляция, возврат каретки, перевод строки и пробел)
+</td></tr>
+
+<tr><td></td><td></td></tr>
+<tr class="seltr"><td colspan=3>&nbsp;&nbsp;<b>Различные замены и удаления объектов.</b></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td"><a name="65"></a>65</td><td class="s6td">замена всех переносов подряд \r и \n на \r\n (@CR и @LF на @CRLF)</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td class="s3td"><a name="70"></a>70<br><a name="75"></a>75</td><td class="s6td">
+<font class="S121">Удаление тегов в html или конвертация htm* в txt без дополнительного форматирования</font>.<br>
+&nbsp;&nbsp;70 - часть тегов заменяются на пробел.<br>
+&nbsp;&nbsp;75 - теги удаляются.<br>
+</td></tr>
+
+<tr><td></td><td></td></tr>
+<tr><td class="s3td"><a name="72"></a>72</td><td class="s6td">
+<font class="S121">Замена ссылки-мнемоники html на символы</font>. Описание (см. <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%BD%D0%B5%D0%BC%D0%BE%D0%BD%D0%B8%D0%BA%D0%B8_%D0%B2_HTML" target="_blank">Мнемоники в HTML</a>)<br>
+&nbsp;&nbsp;<font class="S91">&plu&#115;mn;</font> будет заменён на символ <font class="S51"><b>&plusmn;</b></font>.
+<br>в версии 29.8 добавлена мнемоника html5.<br>
+&nbsp;&nbsp;<font class="S91">&#38;&#112;&#109;&#59;</font> будет заменён на символ <font class="S51"><b>&plusmn;</b></font>.<br>
+&nbsp;&nbsp;<font class="S91">&#38;&#112;&#104;&#111;&#110;&#101;&#59;</font> будет заменён на символ <font class="S51"><b>&#9742;</b></font>.<br>
+Для просмотра символов, кодов и мнемоники можно воспользоваться командой <a class="le" href="../com_symvw.htm"><span class="S4"><b>symvw</b></span></a>.
+
+</td></tr>
+<tr><td class="s3td"><a name="73"></a>73</td><td class="s6td">
+<font class="S121">Замена кодов на символы</font>.<br>
+1. Замена кодов html на символы:<br>
+&nbsp;&nbsp;код <font class="S91">&#38;&#35;&#56;&#51;&#54;&#52;&#59;</font> будет заменён символом <font class="S51"><b>&#8364;</b></font>.<br>
+2. Замена кодов xhtml на символы:<br>
+&nbsp;&nbsp;код <font class="S91">&#38;&#35;&#120;&#50;&#48;&#65;&#67;&#59;</font> будет заменён символом <font class="S51"><b>&#8364;</b></font>.<br>
+3. Замена кодов html и xhtml, значения которых более 65535 на специальные символы, состоящие из 2-х символов:<br>
+&nbsp;&nbsp;код <font class="S91">&#38;&#35;&#49;&#49;&#57;&#57;&#54;&#52;&#59;</font> или <font class="S91">&#38;&#35;&#120;&#49;&#68;&#52;&#57;&#67;&#59;</font> будет заменён символом <font class="S51"><b>&#119964;</b></font> (тоже что и <font class="S91">&#38;&#35;55349&#59;&#38;&#35;56476&#59;</font> или <font class="S91">&#38;&#35;xD835&#59;&#38;&#35;xDC9C&#59;</font>)<br>
+&nbsp;&nbsp;код <font class="S91">&#38;&#35;&#49;&#50;&#48;&#49;&#50;&#48;&#59;</font> или <font class="S91">&#38;&#35;&#120;&#49;&#68;&#53;&#51;&#56;&#59;</font> будет заменён символом <font class="S51"><b>&#120120;</b></font> (тоже что и <font class="S91">&#38;&#35;55349&#59;&#38;&#35;56632&#59;</font> или <font class="S91">&#38;&#35;xD835&#59;&#38;&#35;xDD38&#59;</font>)<br>
+<!-- <br>&#55349;&#56476; -->
+<!-- <br>&#xD835;&#xDC9C; -->
+4. Замена ссылки-мнемоники html на символы (тоже что и режим 72)<br>
+
+</td></tr>
+
+<tr><td class="s3td"><a name="74"></a>74</td><td class="s6td">
+<font class="S121">Удаление тегов в html или конвертация htm* в txt с дополнительным форматированием</font>.
+<br>При получении текста из htm параметр постарается:
+<br>&nbsp;&nbsp;1. Сохранить структуру табличных данных в тегах <font class="S91">&#60;table&#62;</font> (если это возможно).
+<br>&nbsp;&nbsp;2. Сохранить структуру данных в тегах <font class="S91">&#60;pre&#62;</font>, <font class="S91">&#60;code&#62;</font>, <font class="S91">&#60;listing&#62;</font>, <font class="S91">&#60;xmp&#62;</font>, <font class="S91">&#60;plaintext&#62;</font>.
+<br>&nbsp;&nbsp;3. Сохранить структуру нумерованных списков в тегах <font class="S91">&#60;ol&#62;</font> с поддержкой значений атрибутов:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<font class="S91">type</font> - вид маркера списка со значениями <code class="example">&#60;ol <a href="http://htmlbook.ru/html/ol" target="_blank">type</a>="<font class="S91">A</font> | <font class="S91">a</font> | <font class="S91">I</font> | <font class="S91">i</font> | <font class="S91">1</font>" start="<font class="S91">5</font>" reversed&#62;...&#60;/ol&#62;</code>.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S91">A</font>, <font class="S91">a</font> (буквенный счётчик); <font class="S91">I</font>, <font class="S91">i</font> (римский счётчик); <font class="S91">1</font> (числовой счётчик).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<font class="S91">start</font> - номер, с которого будет начинаться список.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<font class="S91">reversed</font> - меняет нумерацию в списке на обратный порядок.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;так же поддерживаются все цифровые и буквенные счётчики в теге style <code class="example">&#60;ol style <a href="http://htmlbook.ru/css/list-style-type" target="_blank">list-style-type</a>="..."&#62;</code>.
+
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;(пока не поддерживаются отдельные атрибуты для тегов <font class="S91">&#60;li...&#62;</font>, возможно в будущем будет реализовано).
+<br>&nbsp;&nbsp;4. Сохранить структуру маркерованных списков в тегах <font class="S91">&#60;ul&#62;</font> с поддержкой значений атрибутов:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<font class="S91">type</font> - вид маркера списка со значениями <code class="example">&#60;ul type="<font class="S91">circle</font> | <font class="S91">disc</font> | <font class="S91">square</font> | <font class="S91">none</font>"&#62;...&#60;/ul&#62;</code>.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;К элементам списка добавляется: &#9675; <font class="S91">circle</font>; &#8226; <font class="S91">disc</font> (по умолчанию); &#9670; <font class="S91">square</font>; без добавления символа <font class="S91">none</font>.
+<br>&nbsp;&nbsp;5. Сохранить структуру маркерованных списков в тегах <font class="S91">&#60;menu&#62;</font>, <font class="S91">&#60;dir&#62;</font>.
+<br>&nbsp;&nbsp;6. Сохранить структуру списков в тегах <font class="S91">&#60;optgroup&#62;</font>, <font class="S91">&#60;option&#62;</font>, <font class="S91">&#60;blockquote&#62;</font>, <font class="S91">&#60;input&#62;</font> и др.
+<br>&nbsp;&nbsp;7. Сохранить начальные и внутренние отступы.
+<br>Далее производится дополнительное форматирование:
+<br>&nbsp;&nbsp;8. Удаление однострочных и многострочных комментариев.
+<br>&nbsp;&nbsp;9. Удаление "шапки" htm, стилей и скриптов.
+<br>&nbsp;10. Удаление всех оставшихся тегов.
+<br>&nbsp;11. Замена мнемоники и кодов html (режим 73).
+<br>&nbsp;12. Удаление переносов в предложениях (если это возможно).
+<br>&nbsp;13. Удаление "мусора" и конечных пустых символов.
+<br>&nbsp;14. Удаление начальных, конечных и лишних пустых строк.
+<hr align="left" width=700>
+Увидеть результат работы параметра можно воспользовавшись одной из команд:<br>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<font class="S21">;; просмотреть форматированный текст файла htm, html, chm...</font><br>
+<a class="le" href="../com_sends.htm"><span class="S4"><b>sends</b></span></a><font class="S81"><b>=</b></font>`C:\File.htm <a class="le" href="../com_textv.htm"><span class="S4"><b>textv</b></span></a>=GLOBALSENDS&#60;x1&#62;||pos&#60;1&#62;<br>
+<font class="S21">;; просмотреть форматированный текст html в txt</font><br>
+<a class="le" href="../com_sends.htm"><span class="S4"><b>sends</b></span></a><font class="S81"><b>=</b></font>`$f209\Htm2Txt.htm <a class="le" href="../com_textv.htm"><span class="S4"><b>textv</b></span></a>=GLOBALSENDS&#60;x1&#62;||pos&#60;1&#62;
+</p>
+Параметр тестируется, будет улучшаться по мере нахождения неточностей.<br>
+Если на каких-либо файлах (htm, html, xhtml, chm, mht) некорректно извлекается текстовая информация или остаётся "мусор",<br>
+то вы можете их прислать для исправления форматирования...
+</td></tr>
+
+<tr><td class="s3td"><a name="80"></a>80</td><td class="s6td">
+<font class="S121">Декодирование в тексте фраз URL UTF-8</font>.<br>
+(декодирует "%D0%A3%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D0%B0" в слово "Утилита")<br>
+тоже самое, что и <code class="example">fun_convert6=((?:%[\dA-F]{2})+)||_StringConv('$1','#U¤¤?D65001')</code> , но быстрее при повторяющихся фразах.
+
+</td></tr>
+
+
+</td></tr></table>
+</p>
+
+<p></p>
+<br>
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

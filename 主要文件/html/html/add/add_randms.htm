@@ -1,0 +1,603 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Дополнение к командам и параметрам, связанным с подпараметром rndm[]</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №30</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+<a name="up"></a>
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Параметры rndm[] и rndm<></font></p>
+<hr><br>
+<b>Описание параметра.</b><br><br><br>
+Параметры позволяют получать различную информацию случайных данных.<br><br>
+Конструкция параметров аналогичная для rndm[] и rndm<>, разница в скобках:<br><br>
+
+&nbsp;<font class="S81"><b>a)</b></font> Одно условие:
+<p class="codeheader" style="position:relative;left:10px;padding:6px;white-space:nowrap;width:570">
+<b>rndm</b><font class="S81"><b><</b></font><font class="S121"><b>Number</b></font><font class="S81"><b>|</b></font><font class="S21"><b>Condition</b></font><font class="S81"><b>></b></font>
+</p>
+
+&nbsp;<font class="S81"><b>б)</b></font> Несколько условий:
+<p class="codeheader" style="position:relative;left:10px;padding:6px;white-space:nowrap;width:570">
+<b>rndm</b><font class="S81"><b><</b></font><font class="S121"><b>Number</b></font><font class="S41"><b>1</b></font><font class="S81"><b>|</b></font><font class="S21"><b>Condition</b></font><font class="S41"><b>1</b></font><font size="+1" class="S91"><b>!!</b></font><font class="S81"><b>#</b></font><font class="S51"><b>String</b></font><font size="+1" class="S91"><b>!!</b></font><font class="S121"><b>Number</b></font><font class="S41"><b>2</b></font><font class="S81"><b>|</b></font><font class="S21"><b>Condition</b></font><font class="S41"><b>2</b></font><font size="+1" class="S91"><b>!!</b></font><b> ... </b><font size="+1" class="S91"><b>!!</b></font><font class="S121"><b>Number</b></font><font class="S41"><b>N</b></font><font class="S81"><b>|</b></font><font class="S21"><b>Condition</b></font><font class="S41"><b>N</b></font><font class="S81"><b>></b></font>
+</p>
+Каждая пара <font class="S121"><b>Number</b></font><font class="S81"><b>|</b></font><font class="S21"><b>Condition</b></font> разделяются символами <font class="S91"><b>!!</b></font><br><br>
+
+<font class="S121"><b>Number</b></font> - номер, относящийся к необходимой информации.<br>
+&nbsp;&nbsp;После номера может быть прописан символ:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="S8"><b><big>+</big></b></span> - строка будет переведена в верхний регистр.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="S8"><b><big>-</big></b></span> - строка будет переведена в нижний регистр.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="S8"><b><big>~</big></b></span> - случайный перевод каждого символа строки в нижний или верхний регистр.<br>
+&nbsp;&nbsp;После +/-/~ или сразу после номера может быть прописано:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S91"><b><big>?</big></b></font><font class="S41">Count</font> - где Count количество возвращаемых строк.<br>
+<br>
+<font class="S21"><b>Condition</b></font> - условия для получения информации.<br>
+<font class="S81"><b>#</b></font><font class="S51"><b>String</b></font> - строка (необязательный), должен начинаться с <font class="S81"><b>#</b></font>.</font><br>
+<b>clpget</b> - в любом месте тег clpget будет заменён содержимым буфера обмена.
+
+<br><br>
+Использование: В тех, командах (методах), где есть в описании rndm<> - используется rndm<>, там где указано rndm[] - используется rndm[]
+<br><br>
+В <b>BeginLine</b> и <b>EndLine</b> можно вставлять коды символов с помощью функций Autoit <a class="le" href="../fun/chr.htm"><span class="S4"><font size="2"><b>Chr()</b></font></span></a> и <a class="le" href="../fun/chrw.htm"><span class="S4"><font size="2"><b>ChrW()</b></font></span></a>, которые заменяются соответствующими символами, а так же <a class="le" href="../fun/clipget.htm"><span class="S4"><font size="2"><b>ClipGet()</b></font></span></a>, которая заменяется содержимым буфера обмена и <a class="le" href="../fun/number.htm"><span class="S4"><font size="2"><b>Number()</b></font></span></a>, позволяющая производить математические действия.
+<br><br>
+
+<table width="95%" cellspacing="0" cellpadding="3">
+<tr><td width="2%"><b>1.</b>&nbsp;</td><td width="80%"><a class="le" href="#1"><b>Случайный набор символов</b></a></td></tr>
+<tr><td><b>2.</b>&nbsp;</td><td><a class="le" href="#2"><b>Случайное число из диапазона</b></a></td></tr>
+<tr><td><b>3.</b>&nbsp;</td><td><a class="le" href="#3"><b>Случайный цвет</b></a></td></tr>
+<tr><td><b>4.</b>&nbsp;</td><td><a class="le" href="#4"><b>Случайная дата</b></a></td></tr>
+<tr><td><b>5.</b>&nbsp;</td><td><a class="le" href="#5"><b>Случайный набор Юникод символов</b></a></td></tr>
+<tr><td><b>6.</b>&nbsp;</td><td><a class="le" href="#6"><b>Случайный набор ASCII символов</b></a></td></tr>
+<tr><td><b>7.</b>&nbsp;</td><td><a class="le" href="#7"><b>Случайное значение из строки заданного ключа</b></a></td></tr>
+<tr><td><b>8.</b>&nbsp;</td><td><a class="le" href="#8"><b>Случайное значение из заданной строки</b></a></td></tr>
+<tr><td><b>9.</b>&nbsp;</td><td><a class="le" href="#9"><b>Случайное значение из файла списка значений</b></a></td></tr>
+<tr><td><b>10.</b>&nbsp;</td><td><a class="le" href="#10"><b>Случайное время из заданного диапазона</b></a></td></tr>
+<tr><td><b>11.</b>&nbsp;</td><td><a class="le" href="#11"><b>Случайный набор из символов заданной строки</b></a></td></tr>
+<tr><td><b>12.</b>&nbsp;</td><td><a class="le" href="#12"><b>Случайный набор из символов прописанных в [PassGenerator]</b></a></td></tr>
+<tr><td><b>13.</b>&nbsp;</td><td><a class="le" href="#13"><b>Временный файл</b></a></td></tr>
+<tr><td><b>14.</b>&nbsp;</td><td><a class="le" href="#14"><b>Случайные числа из диапазона</b></a></td></tr>
+</table>
+<br><br>
+
+
+<a name="1"></a><b>1.</b><br>
+<p align="center"><table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td><a href="#2"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>
+&nbsp;&nbsp;Случайный набор символов</td></tr><tr><td class="s6td">
+<font class="S91">rndm</font><span class="S8"><b><</b></span><b>Number</b><font class="S81">|</font><b>Length</b><font class="S91"><b>(</b></font><font class="S81"><b>|</b></font><b>BeginLine</b><font class="S81"><b>|</b></font><b>EndLine</b><font class="S91"><b>)</b></font><span class="S8"><b>></b></span>, где:<br>
+&nbsp;&nbsp;<b>Number</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>1</b></font> - набор цифр.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>2</b></font> - набор латинских букв.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>3</b></font> - набор цифр и латинских букв.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>4</b></font> - набор символов (диапазон 33 - 122 dec).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>5</b></font> - набор символов (диапазон 33 - 160 dec).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>6</b></font> - набор символов (диапазон 32 - 255 dec).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>8</b></font> - набор русских символов.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>23</b></font> - набор русских символов и цифр.<br><br>
+&nbsp;&nbsp;<b>Length</b> - количество символов в наборе.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- может быть диапазоном M-N определяющее случайное количество.
+<br><br>
+&nbsp;&nbsp;<b>BeginLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в начало случайных данных.<br>
+&nbsp;&nbsp;<b>EndLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в конец случайных данных.<br><br>
+
+<span class="section">Примечание:</span><br>
+&nbsp;&nbsp;Нет.
+<br><br>
+<span class="section">Примеры:</span><br>
+<p class="codeheader" style="position:relative;padding:6px;white-space:nowrap">
+
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>3|<span class="S8">[</span><a class="le" href="add_dialog.htm#1"><span class="S121">i&#110p&#117t</span></a>=BOX76<span class="S8">]</span><span class="S8">&gt</span><span class="S8">||</span><a class="le" href="add_lines.htm#E"><span class="S51">#E</span></a>b64-<span class="S8">||</span>=<span class="S11">!!</span></span><font class="S1"> ;; создать пароль случайными данными заданной длины и кодировать в MIME Base64</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>3|20<span class="S8">&gt</span><span class="S8">||</span><a class="le" href="add_lines.htm#E"><span class="S51">#E</span></a>b64-<span class="S8">||</span>=<span class="S11">!!</span></span><font class="S1"> ;; мини генератор одноразовых паролей нужной длинны + b64 в буфере обмена</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>3|40<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена строку со случайными 40 символами</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>3|40<span class="S8">&gt</span><span class="S8">||</span><a class="le" href="add_lines.htm#X"><span class="S51">#X</span></a><span class="S8">||</span>0x<span class="S11">!!</span><span class="S8">||</span><a class="le" href="add_lines.htm#E"><span class="S51">#E</span></a>b64-</span><font class="S1"> ;; генератор пароля с использованием преобразования случайной комбинации буквы, цифры+ сжатая бинарная строка+ b64</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>3|80<span class="S8">&gt</span><span class="S8">||</span><a class="le" href="add_lines.htm#H"><span class="S51">#H</span></a>sha256|1<span class="S8">||</span><a class="le" href="add_lines.htm#E"><span class="S51">#E</span></a>uue-<span class="S8">||</span><a class="le" href="add_lines.htm#V"><span class="S51">#V</span></a><span class="S8">||</span><a class="le" href="add_lines.htm#RegExp"><span class="S51">&&</span></a><span class="S24">(</span>.<span class="S24">)</span><span class="S24">(</span>.<span class="S24">)</span><span class="S11">!!</span>$2$1<span class="S8">||</span><a class="le" href="add_lines.htm#E"><span class="S51">#E</span></a>uue-<span class="S8">||</span><a class="le" href="add_lines.htm#V"><span class="S51">#V</span></a><span class="S8">||</span><a class="le" href="add_lines.htm#E"><span class="S51">#E</span></a>b64-<span class="S8">||</span><a class="le" href="add_lines.htm#RegExp"><span class="S51">&&</span></a><span class="S24">(</span>.<span class="S111">{</span>42<span class="S111">}</span><span class="S24">)</span><span class="S24">(</span>.*<span class="S24">)</span><span class="S24">(</span>.<span class="S111">{</span>41<span class="S111">}</span><span class="S24">)</span><span class="S11">!!</span>$2<span class="S8">||</span><a class="le" href="add_lines.htm#RegExp"><span class="S51">&&</span></a><span class="S24">(</span>.<span class="S24">)</span><span class="S24">(</span>.<span class="S24">)</span><span class="S11">!!</span>$2$1 pause=10s clpclr sndps=1</span><font class="S1"> ;; генератор случайных паролей, - отправка в буфер случайного пароля, каждый раз создается новый пароль, через 10 секунд он удаляется из буфера обмена</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>4|40<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена строку со случайными 40 символами (диапазон символов от 33 до 122 DEC)</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>5|40<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена строку со случайными 40 символами (диапазон символов от 33 до 160 DEC)</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>6|40<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена строку со случайными 40 символами (диапазон символов от 32 до 255 DEC)</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>8|40<span class="S11">!!</span>#@CRF<span class="S11">!!</span>8|40<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный набор из 40 русских символов (2 строки)</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>8|40<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный набор из 40 русских символов</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>2|5-9<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена строку со случайными символами (случайная длина строки в диапазоне 5-9)</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>2<font class="S81"><b>-</b></font>|5-9<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена строку со случайными символами (случайная длина строки в диапазоне 5-9) в нижнем регистре</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>2<span class="S8">+</span>|5-9<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена строку со случайными символами (случайная длина строки в диапазоне 5-9) в верхнем регистре</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>23|25-50<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена строку со случайным набором русских символов и цифр (случайная длина строки в диапазоне 25-50)</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>23<font class="S81"><b>-</b></font>|25-50<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена строку со случайным набором русских символов и цифр (случайная длина строки в диапазоне 25-50) в нижнем регистре</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>23<span class="S8">+</span>|25-50<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена строку со случайным набором русских символов и цифр (случайная длина строки в диапазоне 25-50) в верхнем регистре</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_jends.htm"><span class="S51">jends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>3?10|20<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALJENDS"><span class="S121">GLOBA&#76JENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 10 строк со случайными данными (набор цифр и латинских букв, длина строки 20)</font><br>
+<span class="S0"><a class="le" href="../com_jends.htm"><span class="S51">jends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>3-?10|20<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALJENDS"><span class="S121">GLOBA&#76JENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 10 строк со случайными данными в нижнем регистре (набор цифр и латинских букв, длина строки 20)</font><br>
+<span class="S0"><a class="le" href="../com_jends.htm"><span class="S51">jends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>3?10|5-50<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALJENDS"><span class="S121">GLOBA&#76JENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 10 строк со случайными данными (набор цифр и латинских букв, случайная длина строки от 5 до 50)</font><br>
+<span class="S0"><a class="le" href="../com_jends.htm"><span class="S51">jends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>3<span class="S8">+</span>?10|20<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALJENDS"><span class="S121">GLOBA&#76JENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 10 строк со случайными данными в верхнем регистре (набор цифр и латинских букв, длина строки 20)</font><br>
+<br>
+<span class="S0"><span class="S51">renms</span><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_lines.htm#EndLine"><span class="S51">$$</span></a><span class="S101">~~</span>rndm<span class="S8">&lt</span>3|8<span class="S8">&gt</span></span><font class="S1"> ;; переименование - добавление в конец базового имени случайных цифр и латинских символов, длина 8</font><br>
+<span class="S0"><span class="S51">renms</span><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_lines.htm#BeginLine"><span class="S51">^^</span></a>rndm<span class="S8">&lt</span>2|4<span class="S8">&gt</span><span class="S101">~~</span></span><font class="S1"> ;; переименование - добавление в начало базового имени случайных латинских символов, длина 4</font><br>
+<span class="S0"><span class="S51">renms</span><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>1|9<span class="S8">&gt</span></span><font class="S1"> ;; переименование - замена базовое имя случайными цифрами, длина 9</font><br>
+<span class="S0"><span class="S51">renms</span><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>cntr<span class="S8">&lt</span>1|1|8|1<span class="S8">&gt</span><span class="S8">||</span><a class="le" href="add_lines.htm#EndLine"><span class="S51">$$</span></a><span class="S101">~~</span>rndm<span class="S8">&lt</span>3|8<span class="S8">&gt</span></span><font class="S1"> ;; переименование - замена имени на счётчик + случайные цифры и буквы</font><br>
+</p>
+</td></tr></td></tr></table></p><br>
+
+
+
+<a name="2"></a><b>2.</b><br>
+<p align="center"><table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td><a href="#3"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>
+&nbsp;&nbsp;Случайное число из диапазона</td></tr><tr><td class="s6td">
+<font class="S91">rndm</font><span class="S8"><b><</b></span><b>7</b><font class="S81">|</font><b>Min<font class="S81">:</font>Max</b><font class="S91"><b>(</b></font><font class="S81"><b>|</b></font><b>BeginLine</b><font class="S81"><b>|</b></font><b>EndLine</b><font class="S91"><b>)</b></font><span class="S8"><b>></b></span>, где:<br>
+&nbsp;&nbsp;<b>Number</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>7</b></font> - случайное число из диапазона.<br><br>
+&nbsp;&nbsp;<b>Min</b> - наименьшее генерируемое число.<br>
+&nbsp;&nbsp;<b>Max</b> - наибольшее генерируемое число.<br><br>
+&nbsp;&nbsp;<b>BeginLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в начало случайных данных.<br>
+&nbsp;&nbsp;<b>EndLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в конец случайных данных.<br><br>
+
+<span class="section">Примечание:</span><br>
+&nbsp;&nbsp;Нет.
+<br><br>
+<span class="section">Примеры:</span><br>
+<p class="codeheader" style="position:relative;padding:6px;white-space:nowrap">
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>7|10000:99999<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайное число из диапазона 10000:99999</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_jends.htm"><span class="S51">jends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>7?20|0:100<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALJENDS"><span class="S121">GLOBA&#76JENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 20 случайных цифр от 0 до 100</font><br>
+</p>
+</td></tr></td></tr></table></p><br>
+
+
+<a name="3"></a><b>3.</b><br>
+<p align="center"><table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td><a href="#4"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>
+&nbsp;&nbsp;Случайный цвет</td></tr><tr><td class="s6td">
+<font class="S91">rndm</font><span class="S8"><b><</b></span><b>10</b><font class="S81">|</font><b>Mode<font class="S81">:</font>Count<font class="S81">:</font>Delimeter</b><font class="S91"><b>(</b></font><font class="S81"><b>|</b></font><b>BeginLine</b><font class="S81"><b>|</b></font><b>EndLine</b><font class="S91"><b>)</b></font><span class="S8"><b>></b></span>, где:<br>
+&nbsp;&nbsp;<b>Number</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>10</b></font> - случайный цвет.<br><br>
+&nbsp;&nbsp;<b>Mode</b> - режим.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - возвращается цвет вида FF0000 - 6 символов.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - возвращается цвет вида rgb(226,74,130).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2 - возвращается ARGB цвет вида FF000000 - 8 символов.<br>
+&nbsp;&nbsp;<b>Count</b> <font class="S81">[</font>необязательный<font class="S81">]</font> - количество генерируемых цветов (по умолчанию 1).<br>
+&nbsp;&nbsp;<b>Delimeter</b> <font class="S81">[</font>необязательный<font class="S81">]</font> разделитель между цветами, по умолчанию "<font class="S51"><b>|</b></font>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;В разделителе могут использоваться функций Autoit:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="le" href="../fun/chr.htm"><span class="S4"><font size="2"><b>Chr()</b></font></span></a> и <a class="le" href="../fun/chrw.htm"><span class="S4"><font size="2"><b>ChrW()</b></font></span></a>, которые заменяются соответствующими символами.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="le" href="../fun/clipget.htm"><span class="S4"><font size="2"><b>ClipGet()</b></font></span></a>, заменяется содержимым буфера обмена.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="le" href="../fun/number.htm"><span class="S4"><font size="2"><b>Number()</b></font></span></a>, производит математические действия.<br>
+
+<br>
+&nbsp;&nbsp;<b>BeginLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в начало случайных данных.<br>
+&nbsp;&nbsp;<b>EndLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в конец случайных данных.<br><br>
+
+<span class="section">Примечание:</span><br>
+&nbsp;&nbsp;Диапазон получаемых цветов от 000000 (черного) до FFFFFF (белого).
+<br><br>
+<span class="section">Примеры:</span><br>
+<p class="codeheader" style="position:relative;padding:6px;white-space:nowrap">
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>10|0|#<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный html цвет (#0053FA)</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>10|1<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный rgb цвет (rgb(98,98,150))</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_jends.htm"><span class="S51">jends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>10?15|0|#<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALJENDS"><span class="S121">GLOBA&#76JENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 15 случайных цветов</font><br>
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S51">uends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>10-?15|0|#<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 15 случайных цветов в нижнем регистре</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S51">aends</span></a><span class="S8">=</span>x<span class="S51">??</span>-1<span class="S8">||</span><span class="S51"><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a></span>rndm<span class="S8">&lt</span>10|0:9:<span class="S101">~~</span>#|#<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 9 случайных цветов</font><br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S51">aends</span></a><span class="S8">=</span>x<span class="S51">??</span>-1<span class="S8">||</span><span class="S51"><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a></span>rndm<span class="S8">&lt</span>10?4|0:2:-#|gradient:#<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 4 строки с 2-мя случайными цветами</font><br>
+</p>
+</td></tr></td></tr></table></p><br>
+
+
+
+<a name="4"></a><b>4.</b><br>
+<p align="center"><table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td><a href="#5"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>
+&nbsp;&nbsp;Случайная дата</td></tr><tr><td class="s6td">
+<font class="S91">rndm</font><span class="S8"><b><</b></span><b>11</b><font class="S81">|</font><b>FormatData<font class="S91"><b>(</b></font><font class="S81">?</font>StringData</b><font class="S91"><b>)</b></font><font class="S91"><b>(</b></font><font class="S81"><b>|</b></font><b>BeginLine</b><font class="S81"><b>|</b></font><b>EndLine</b><font class="S91"><b>)</b></font><span class="S8"><b>></b></span>, где:<br>
+&nbsp;&nbsp;<b>Number</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>11</b></font> - случайная дата.<br><br>
+&nbsp;&nbsp;<b>FormatData</b> - формат возвращаемой даты:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;YYYY.YY.MM.DD.HH.NN<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YYYY - все четыре цифры года.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YY - последние две цифры года.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MM - месяц от 01 до 12.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DD - день месяца от 01 до 31.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HH - часы в 24-часовом формате от 00 до 23.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NN - минуты от 00 до 59.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SS - секунды от 00 до 59.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Вместо точек может быть текст или символ.<br><br>
+&nbsp;&nbsp;<b>StringData</b> <b><font class="S81">[</font>необязательный<font class="S81">]</font></b> - строка диапазонов времени прописанных через запятую <b><font class="S21">X</font><font class="S61">:</font><font class="S51">Min</font><font class="S61">:</font><font class="S121">Max</font></b>, где:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>X</b></font> - буква формата (<b>Y</b> - для года, <b>M</b> - для месяца, <b>D</b> - для дня, <b>H</b> - для часа, <b>N</b> - для минут, <b>S</b> - для секунд).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S51"><b>Min</b></font> - наименьшее генерируемое число для заданного формата.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>Max</b></font> - наибольшее генерируемое число для заданного формата.<br><br>
+&nbsp;&nbsp;<b>BeginLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в начало случайных данных.<br>
+&nbsp;&nbsp;<b>EndLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в конец случайных данных.<br><br>
+
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="position:relative;left:10px;padding:6px;white-space:nowrap;width:300">
+<font class="S91">rndm</font><span class="S8"><b><</b></span><b>11</b><font class="S81">|</font>
+YYYY.MM.DD-HH.NN.SS<font class="S81"><b>?</b></font><font class="S21"><b>Y</b></font><font class="S61"><b>:</b></font><font class="S51"><b>2000</b></font><font class="S61"><b>:</b></font><font class="S121"><b>2015</b></font><font class="S81"><b>,</b></font><font class="S21"><b>M</b></font><font class="S61"><b>:</b></font><font class="S51"><b>2</b></font><font class="S61"><b>:</b></font><font class="S121"><b>6</b></font><font class="S81"><b>,</b></font><font class="S21"><b>D</b></font><font class="S61"><b>:</b></font><font class="S121"><b>10</b></font><font class="S61"><b>:</b></font><font class="S51"><b>20</b></font><span class="S8"><b>></b></span>
+</p>
+<br>
+<span class="section">Примеры:</span><br>
+<p class="codeheader" style="position:relative;padding:6px;white-space:nowrap">
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>11|YYYY.MM.DD<span class="S101">~~</span>-<span class="S101">~~</span>HH:NN:SS?Y:2000:2015<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайную дату (диапазон года 2000:2015)</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>11|YYYY.MM.DD<span class="S101">~~</span>-<span class="S101">~~</span>HH:NN:SS<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайную дату </font><br>
+<br>
+<span class="S0"><a class="le" href="../com_jends.htm"><span class="S51">jends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>11?10|YYYY.MM.DD<span class="S101">~~</span>-<span class="S101">~~</span>HH:NN:SS?Y:2015:2016<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALJENDS"><span class="S121">GLOBA&#76JENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 10 случайных дат в диапазоне 2015-2016 года</font><br>
+</p>
+</td></tr></td></tr></table></p><br>
+
+
+
+<a name="5"></a><b>5.</b><br>
+<p align="center"><table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td><a href="#6"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>
+&nbsp;&nbsp;Случайный набор Юникод символов</td></tr><tr><td class="s6td">
+<font class="S91">rndm</font><span class="S8"><b><</b></span><b>12</b><font class="S81">|</font><b>Min</b><font class="S81"><b>:</b></font><b>Max</b><font class="S81"><b>:</b></font><b>Length</b><font class="S91"><b>(</b></font><font class="S81"><b>|</b></font><b>BeginLine</b><font class="S81"><b>|</b></font><b>EndLine</b><font class="S91"><b>)</b></font><span class="S8"><b>></b></span>, где:<br>
+&nbsp;&nbsp;<b>Number</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>12</b></font> - случайный набор Юникод символов.<br><br>
+&nbsp;&nbsp;<b>Min</b> - наименьший генерируемый юникодный код символа (минимальный=0).<br>
+&nbsp;&nbsp;<b>Max</b> - наибольший генерируемый юникодный код символа (максимальный=65535).<br>
+&nbsp;&nbsp;<b>Length</b> - количество символов в наборе.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- может быть диапазоном M-N определяющее случайное количество.
+<br><br>
+&nbsp;&nbsp;<b>BeginLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в начало случайных данных.<br>
+&nbsp;&nbsp;<b>EndLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в конец случайных данных.<br><br>
+
+<span class="section">Примечание:</span><br>
+&nbsp;&nbsp;Нет.
+<br><br>
+<span class="section">Примеры:</span><br>
+<p class="codeheader" style="position:relative;padding:6px;white-space:nowrap">
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>12|0:65535:40<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный набор из 40 юникодных символов</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>12|0:65535:20-60<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный набор из юникодных символов (случайное количество в диапазоне 20-60)</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>12<font class="S81"><b>-</b></font>|0:65535:20-60<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный набор из юникодных символов (случайное количество в диапазоне 20-60) в нижнем регистре</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>12<span class="S8">+</span>|0:65535:20-60<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный набор из юникодных символов (случайное количество в диапазоне 20-60) в верхнем регистре</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_jends.htm"><span class="S51">jends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>12?5|0:65535:20-30<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALJENDS"><span class="S121">GLOBA&#76JENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 5 строк случайного набора из юникодных символов (случайная длина строки от 20 до 30)</font><br>
+<span class="S0"><a class="le" href="../com_jends.htm"><span class="S51">jends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>12?5|0:65535:40<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALJENDS"><span class="S121">GLOBA&#76JENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 5 строк случайного набора из 40 юникодных символов</font><br>
+</p>
+</td></tr></td></tr></table></p><br>
+
+
+
+
+<a name="6"></a><b>6.</b><br>
+<p align="center"><table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td><a href="#7"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>
+&nbsp;&nbsp;Случайный набор ASCII символов</td></tr><tr><td class="s6td">
+<font class="S91">rndm</font><span class="S8"><b><</b></span><b>13</b><font class="S81">|</font><b>Min</b><font class="S81"><b>:</b></font><b>Max</b><font class="S81"><b>:</b></font><b>Length</b><font class="S91"><b>(</b></font><font class="S81"><b>|</b></font><b>BeginLine</b><font class="S81"><b>|</b></font><b>EndLine</b><font class="S91"><b>)</b></font><span class="S8"><b>></b></span>, где:<br>
+&nbsp;&nbsp;<b>Number</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>13</b></font> - случайный набор ASCII символов.<br><br>
+&nbsp;&nbsp;<b>Min</b> - наименьший генерируемый ASCII код символа (минимальный=0).<br>
+&nbsp;&nbsp;<b>Max</b> - наибольший генерируемый ASCII код символа (минимальный=255).<br>
+&nbsp;&nbsp;<b>Length</b> - количество символов в наборе.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- может быть диапазоном M-N определяющее случайное количество.
+<br><br>
+&nbsp;&nbsp;<b>BeginLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в начало случайных данных.<br>
+&nbsp;&nbsp;<b>EndLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в конец случайных данных.<br><br>
+
+<span class="section">Примечание:</span><br>
+&nbsp;&nbsp;Нет.
+<br><br>
+<span class="section">Примеры:</span><br>
+<p class="codeheader" style="position:relative;padding:6px;white-space:nowrap">
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>13|48:49:40<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный набор из 40 нолей и единиц</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>13|65:70:10-50<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный набор символов (A-F) (случайное количество в диапазоне 10-50)</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>13-|65:70:10-50<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный набор символов (A-F) (случайное количество в диапазоне 10-50) в нижнем регистре</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>13|65:70:40<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный набор из 40 символов (A-F)</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_jends.htm"><span class="S51">jends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>13?12|65:70:5-30<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALJENDS"><span class="S121">GLOBA&#76JENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 12 строк случайного набора из символов (A-F) (случайная длина строки от 5 до 30)</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S51">uends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>13~?18|65:70:40<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 18 строк случайных символов (A-F), длина строки 30 + случайный верхний и нижний регистр символов</font><br>
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S51">uends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>13~|65:70:40<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить строку случайных символов (A-F), длина строки 30 + случайный верхний и нижний регистр символов</font><br>
+</p>
+</td></tr></td></tr></table></p><br>
+
+
+
+<a name="7"></a><b>7.</b><br>
+<p align="center"><table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td><a href="#8"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>
+&nbsp;&nbsp;Случайное значение из строки заданного ключа</td></tr><tr><td class="s6td">
+<font class="S91">rndm</font><span class="S8"><b><</b></span><b>20</b><font class="S81">|</font><b>NameKey</b><font class="S91"><b>(</b></font><font class="S81"><b>|</b></font><b>BeginLine</b><font class="S81"><b>|</b></font><b>EndLine</b><font class="S91"><b>)</b></font><span class="S8">&nbsp;</span>, где:<br>
+&nbsp;&nbsp;<b>Number</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>20</b></font> - случайное значение из строки заданного ключа.<br><br>
+&nbsp;&nbsp;<b>NameKey</b> - имя ключа из секции <span class="S8">[</span><b>Random</b><span class="S8">]</span> в <a class="le" href="../../config.htm#Random"><font class="S1"><b>TCIMG.ini</b></font></a>, в котором прописываются значения через разделитель <font class="S81"><b>|</b></font><br><br>
+&nbsp;&nbsp;<b>BeginLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в начало случайных данных.<br>
+&nbsp;&nbsp;<b>EndLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в конец случайных данных.<br><br>
+
+
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="position:relative;left:10px;padding:6px;white-space:nowrap;width:200">
+<span class="S8">[</span><b>Random</b><span class="S8">]</span><br>
+<b>NameKey</b><font class="S81"><b>=</b></font>Value1<font class="S81"><b>|</b></font>Value2<font class="S81"><b>|</b></font>Value3<font class="S81"><b>|</b></font>Value4<font class="S81"><b>|</b></font>Value5
+</p>
+<br>
+<span class="section">Примеры:</span><br>
+<p class="codeheader" style="position:relative;padding:6px;white-space:nowrap">
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>20|BaseColor<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайное значение из строки значений, прописанных в TCIMG.ini в секции [Random] в ключе BaseColor</font><br>
+</p>
+</td></tr></td></tr></table></p><br>
+
+
+<a name="8"></a><b>8.</b><br>
+<p align="center"><table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td><a href="#9"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>
+&nbsp;&nbsp;Случайное значение из заданной строки</td></tr><tr><td class="s6td">
+<font class="S91">rndm</font><span class="S8"><b><</b></span><b>21</b><font class="S81">|</font><b>LineValues</b><font class="S91"><b>(</b></font><font class="S81"><b>|</b></font><b>BeginLine</b><font class="S81"><b>|</b></font><b>EndLine</b><font class="S91"><b>)</b></font><span class="S8">&nbsp;</span>, где:<br>
+&nbsp;&nbsp;<b>Number</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>21</b></font> - случайное значение из заданной строки.<br><br>
+&nbsp;&nbsp;<b>LineValues</b> - строка значений, которые прописываются через разделитель.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Разделитель указывается первым символом.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Разделителем является любой один символ, кроме символов: <font class="S81"><b>|</b></font>, <font class="S81"><b>[</b></font> , <font class="S81"><b>]</b></font> , <font class="S81"><b><</b></font> , <font class="S81"><b>></b></font>.<br><br>
+&nbsp;&nbsp;<b>BeginLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в начало случайных данных.<br>
+&nbsp;&nbsp;<b>EndLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в конец случайных данных.<br><br>
+
+<span class="section">Примечание:</span><br>
+&nbsp;&nbsp;Нет.
+<br><br>
+<span class="section">Примеры:</span><br>
+<p class="codeheader" style="position:relative;padding:6px;white-space:nowrap">
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>21|;Value1;Value2;Value3;Value4;Value5<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайное значение из строки значений</font><br>
+</p>
+</td></tr></td></tr></table></p><br>
+
+
+
+<a name="9"></a><b>9.</b><br>
+<p align="center"><table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td><a href="#10"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>
+&nbsp;&nbsp;Случайное значение из файла списка значений</td></tr><tr><td class="s6td">
+<font class="S91">rndm</font><span class="S8"><b><</b></span><b>22</b><font class="S81">|</font><b>ListFile</b><font class="S91"><b>(</b></font><font class="S81"><b>|</b></font><b>BeginLine</b><font class="S81"><b>|</b></font><b>EndLine</b><font class="S91"><b>)</b></font><span class="S8">&nbsp;</span>, где:<br>
+&nbsp;&nbsp;<b>Number</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>22</b></font> - случайное значение из файла списка значений.<br><br>
+&nbsp;&nbsp;<b>ListFile</b> - путь к файлу списка, в котором прописаны значения, каждое с новой строки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;или глобальный массив <b>$GLOBALNAME</b> из которого будут получены данные случайной ячейки.<br>
+<br>
+&nbsp;&nbsp;<b>BeginLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в начало случайных данных.<br>
+&nbsp;&nbsp;<b>EndLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в конец случайных данных.<br><br>
+
+<span class="section">Примечание:</span><br>
+&nbsp;&nbsp;Нет.
+<br><br>
+<span class="section">Примеры:</span><br>
+<p class="codeheader" style="position:relative;padding:6px;white-space:nowrap">
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>22|<a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный путь из выделенных объектов</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>22|<a class="le" href="add_param.htm"><span class="S23">%P</span></a><a class="le" href="add_param.htm"><span class="S23">%N</span></a><span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайную строку из текстового файла под курсором</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_global.htm"><span class="S51">global</span></a> <a class="le" href="../com_blist.htm"><span class="S51">blist</span></a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a> <a class="le" href="../com_uends.htm"><span class="S4">uends</span></a>=x<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>22|<a class="le" href="add_gloobal.htm#LISTGLOBALSYN"><span class="S91">$GLOB&#65&#76BLIST</span></a><span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный путь из выделенных объектов</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S4">uends</span></a><span class="S8">=</span>x<span class="S51">??</span>-1<span class="S8">||</span><a class="le" href="add/add_lines.htm###"><span class="S51">##</span></a>rndm<span class="S8">&lt;</span>22?3|<a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">&gt;</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76;UENDS</span></a><span class="S8">&lt;</span>a<span class="S8">&gt;</span></span><font class="S1"> ;; из выделенных объектов получить 3 случайных пути</font><br>
+
+</p>
+</td></tr></td></tr></table></p><br>
+
+
+
+<a name="10"></a><b>10.</b><br>
+<p align="center"><table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td><a href="#11"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>
+&nbsp;&nbsp;Случайное время из заданного диапазона</td></tr><tr><td class="s6td">
+<font class="S91">rndm</font><span class="S8"><b><</b></span><b>25</b><font class="S81">|</font><b>TimeMin<font class="S51"><b>~</b></font>TimeMax</b><font class="S91"><b>(</b></font><font class="S81"><b>|</b></font><b>BeginLine</b><font class="S81"><b>|</b></font><b>EndLine</b><font class="S91"><b>)</b></font><span class="S8">&nbsp;</span>, где:<br>
+&nbsp;&nbsp;<b>Number</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>25</b></font> - случайное значение времени из заданного диапазона.<br><br>
+&nbsp;&nbsp;<b>TimeMin</b> - минимальное время (00:00:00).<br>
+&nbsp;&nbsp;<b>TimeMax</b> - минимальное время (00:45:20).<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Формат времени HH:NN:SS<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HH - часы в 24-часовом формате от 00 до 23.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NN - минуты от 00 до 59.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SS - секунды от 00 до 59.<br>
+
+<br>
+&nbsp;&nbsp;<b>BeginLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в начало случайных данных.<br>
+&nbsp;&nbsp;<b>EndLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в конец случайных данных.<br><br>
+
+<span class="section">Примечание:</span><br>
+&nbsp;&nbsp;Нет.
+<br><br>
+<span class="section">Примеры:</span><br>
+<p class="codeheader" style="position:relative;padding:6px;white-space:nowrap">
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>25<font class="S81"><b>|</b></font>00:00:00<font class="S51"><b>~</b></font>00:45:25<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайное время в заданном диапазоне</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_jends.htm"><span class="S51">jends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>25?20|00:00:00~23:42:28<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALJENDS"><span class="S121">GLOBA&#76JENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 20 строк случайного времени</font><br>
+</p>
+</td></tr></td></tr></table></p><br>
+
+
+
+<a name="11"></a><b>11.</b><br>
+<p align="center"><table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td><a href="#12"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>
+&nbsp;&nbsp;Случайный набор из символов заданной строки</td></tr><tr><td class="s6td">
+<font class="S91">rndm</font><span class="S8"><b><</b></span><b>26</b><font class="S81">|</font><b>Line</b><font class="S81"><b>:</b></font><b>Length</b><font class="S91"><b>(</b></font><font class="S81"><b>|</b></font><b>BeginLine</b><font class="S81"><b>|</b></font><b>EndLine</b><font class="S91"><b>)</b></font><span class="S8"><b>></b></span>, где:<br>
+&nbsp;&nbsp;<b>Number</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>26</b></font> - случайный набор из символов заданной строки.<br><br>
+&nbsp;&nbsp;<b>Line</b> - строка символов.<br>
+&nbsp;&nbsp;<b>Length</b> - количество символов в наборе.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- может быть диапазоном M-N определяющее случайное количество.
+<br><br>
+&nbsp;&nbsp;<b>BeginLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в начало случайных данных.<br>
+&nbsp;&nbsp;<b>EndLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в конец случайных данных.<br><br>
+
+<span class="section">Примечание:</span><br>
+&nbsp;&nbsp;Нет.
+<br><br>
+<span class="section">Примеры:</span><br>
+<p class="codeheader" style="position:relative;padding:6px;white-space:nowrap">
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>26<font class="S81"><b>|</b></font>сТрОкА<font class="S51"><b>:</b></font>30<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный набор 30 символов из заданной строки</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>26<font class="S81"><b>-|</b></font>сТрОкА<font class="S51"><b>:</b></font>30<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный набор 30 символов из заданной строки в нижнем регистре</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>26<span class="S8">+|</span>сТрОкА<font class="S51"><b>:</b></font>30<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный набор 30 символов из заданной строки в верхнем регистре</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>26<font class="S81"><b>|</b></font>сТрОкА<font class="S51"><b>:</b></font>10-50<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный набор символов из заданной строки (случайное количество в диапазоне 10-50) </font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>26<font class="S81"><b>-|</b></font>сТрОкА<font class="S51"><b>:</b></font>10-50<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный набор символов из заданной строки (случайное количество в диапазоне 10-50) в нижнем регистре</font><br>
+<span class="S0"><a class="le" href="../com_bufsr.htm"><span class="S51">bufsr</span></a><span class="S8">=</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>26<span class="S8">+|</span>сТрОкА<font class="S51"><b>:</b></font>10-50<span class="S8">&gt</span></span><font class="S1"> ;; записать в буфер обмена случайный набор символов из заданной строки (случайное количество в диапазоне 10-50) в верхнем регистре</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_jends.htm"><span class="S51">jends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>26?8|сТрОкА:30<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALJENDS"><span class="S121">GLOBA&#76JENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 8 строк случайного набора заданной строки (длина строки 30)</font><br>
+<span class="S0"><a class="le" href="../com_jends.htm"><span class="S51">jends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>26-?8|сТрОкА:30<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALJENDS"><span class="S121">GLOBA&#76JENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 8 строк случайного набора заданной строки в нижнем регистре (длина строки 30)</font><br>
+<span class="S0"><a class="le" href="../com_jends.htm"><span class="S51">jends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>26?8|сТрОкА:5-50<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALJENDS"><span class="S121">GLOBA&#76JENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 8 строк случайного набора заданной строки (случайная длина строки от 5 до 50)</font><br>
+<span class="S0"><a class="le" href="../com_jends.htm"><span class="S51">jends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>26<span class="S8">+</span>?8|сТрОкА:30<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALJENDS"><span class="S121">GLOBA&#76JENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 8 строк случайного набора заданной строки в верхнем регистре (длина строки 30)</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S51">uends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>26~?12|строка:18-23<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 12 строк случайных данных из заданной строки, случайная длина строки от 18 до 23 + случайный верхний и нижний регистр символов</font><br>
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S51">uends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>26~?12|строка:30<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 12 строк случайных данных из заданной строки, длина строки 30 + случайный верхний и нижний регистр символов</font><br>
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S51">uends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>26~|строка:30<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить строку случайных данных из заданной строки, длина строки 30 + случайный верхний и нижний регистр символов</font><br>
+</p>
+</td></tr></td></tr></table></p><br>
+
+
+
+
+<a name="12"></a><b>12.</b><br>
+<p align="center"><table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td><a href="#13"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>
+&nbsp;&nbsp;Случайный набор из символов прописанных в [PassGenerator]</td></tr><tr><td class="s6td">
+<font class="S91">rndm</font><span class="S8"><b><</b></span><b>27</b><font class="S81">|</font><b>Key</b><font class="S81"><b>:</b></font><b>Length</b><font class="S91"><b>(</b></font><font class="S81"><b>|</b></font><b>BeginLine</b><font class="S81"><b>|</b></font><b>EndLine</b><font class="S91"><b>)</b></font><span class="S8"><b>></b></span>, где:<br>
+&nbsp;&nbsp;<b>Number</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>27</b></font> - случайный набор из символов прописанных в ключе.<br><br>
+&nbsp;&nbsp;<b>Key</b> - имя ключа из TCIMG.ini из секции [PassGenerator] в котором прописан набор символов.<br>
+&nbsp;&nbsp;<b>Length</b> - количество символов в наборе.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- может быть диапазоном M-N определяющее случайное количество.
+<br><br>
+&nbsp;&nbsp;<b>BeginLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в начало случайных данных.<br>
+&nbsp;&nbsp;<b>EndLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в конец случайных данных.<br><br>
+
+<span class="section">Примечание:</span><br>
+&nbsp;&nbsp;Нет.
+<br><br>
+<span class="section">Примеры:</span><br>
+<p class="codeheader" style="position:relative;padding:6px;white-space:nowrap">
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S51">uends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>27?18|Line2:30<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 18 строк случайных данных (набор символов из TCIMG.ini из секции [PassGenerator] из ключа Line2, длина строки 30)</font><br>
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S51">uends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>27?25|Line1:10-50<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 25 строк случайных данных (набор символов из TCIMG.ini из секции [PassGenerator] из ключа Line1, случайная длина строки от 10 до 50)</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S51">uends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>27|Line1:10-50<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить строку случайных данных (набор символов из TCIMG.ini из секции [PassGenerator] из ключа Line1, случайная длина строки от 10 до 50)</font><br>
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S51">uends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>27|Line1:30<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить строку случайных данных (набор символов из TCIMG.ini из секции [PassGenerator] из ключа Line1, длина строки 30)</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S51">uends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>27-|Line2:30<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить строку случайных данных в нижнем регистре (набор символов из TCIMG.ini из секции [PassGenerator] из ключа Line2, длина строки 30)</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S51">uends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>27~?28|Line2:10-50<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 28 строк случайных данных (набор символов из TCIMG.ini из секции [PassGenerator] из ключа Line2, случайная длина строки от 10 до 50) + случайный верхний и нижний регистр символов</font><br>
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S51">uends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>27~|Line2:10-50<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить строку случайных данных (набор символов из TCIMG.ini из секции [PassGenerator] из ключа Line2, случайная длина строки от 10 до 50) + случайный верхний и нижний регистр символов</font><br>
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S51">uends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>27~|Line2:30<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить строку случайных данных (набор символов из TCIMG.ini из секции [PassGenerator] из ключа Line2, длина строки 30) + случайный верхний и нижний регистр символов</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S51">uends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>27<span class="S8">+</span>?18|Line2:30<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 18 строк случайных данных в верхнем регистре (набор символов из TCIMG.ini из секции [PassGenerator] из ключа Line2, длина строки 30)</font><br>
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S51">uends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>27<span class="S8">+</span>?25|Line2:10-50<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 25 строк случайных данных в верхнем регистре (набор символов из TCIMG.ini из секции [PassGenerator] из ключа Line2, случайная длина строки от 10 до 50)</font><br>
+<span class="S0"><a class="le" href="../com_uends.htm"><span class="S51">uends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>27<span class="S8">+</span>|Line2:30<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALUENDS"><span class="S121">GLOBA&#76UENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить строку случайных данных в верхнем регистре (набор символов из TCIMG.ini из секции [PassGenerator] из ключа Line2, длина строки 30)</font><br>
+<br>
+<span class="S0"><span class="S51">renms</span><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%L</span></a><span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>27|Line2:6-12<span class="S8">&gt</span></span><font class="S1"> ;; переименовать выделенные объекты случайными данными (набор символов из TCIMG.ini из секции [PassGenerator] из ключа Line2, случайная длина строки от 6 до 12)</font><br>
+</p>
+</td></tr></td></tr></table></p><br>
+
+
+
+
+<a name="13"></a><b>13.</b><br>
+<p align="center"><table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td><a href="#14"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>
+&nbsp;&nbsp;Временный файл.</td></tr><tr><td class="s6td">
+<font class="S91">rndm</font><span class="S8"><b><</b></span><b>Number</b><font class="S81">|</font><b>Ext</b><font class="S81"><b>:</b></font><b>Length</b><font class="S91"><b>(</b></font><font class="S81"><b>|</b></font><b>BeginLine</b><font class="S81"><b>|</b></font><b>EndLine</b><font class="S91"><b>)</b></font><span class="S8"><b>></b></span>, где:<br>
+&nbsp;&nbsp;<b>Number</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>28</b></font> - временный файл в папке утилиты ...\Temp\<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>29</b></font> - временный файл в системной папке ...\Temp\tci_...\<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>30</b></font> - временный файл в системной папке ...\Temp\<br><br>
+&nbsp;&nbsp;<b>Ext</b> - расширение временного файла.<br>
+&nbsp;&nbsp;<b>Length</b> - количество символов имени файла.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- может быть диапазоном M-N определяющее случайное количество.
+<br><br>
+&nbsp;&nbsp;<b>BeginLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в начало случайных данных.<br>
+&nbsp;&nbsp;<b>EndLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в конец случайных данных.<br><br>
+
+<span class="section">Примечание:</span><br>
+&nbsp;&nbsp;Временный файл не создаётся, проверяется уникальность имени.<br>
+&nbsp;&nbsp;При использовании файла(ов):<br>
+&nbsp;&nbsp;- при Number=28 папку можно очистить командой <a class="le" href="../com_tempxx.htm"> <b>tempxx</b></a><br>
+&nbsp;&nbsp;- при Number=29 временная папка удаляется автоматически при завершении работы утилиты.<br>
+&nbsp;&nbsp;- при Number=30 файлы удаляются самостоятельно.<br>
+&nbsp;&nbsp;Минимальное количество символов имени Length = 8 , максимальное = 50 (по умолчанию 8).
+<br><br>
+<span class="section">Примеры:</span><br>
+<p class="codeheader" style="position:relative;padding:6px;white-space:nowrap">
+<span class="S0"><a class="le" href="../com_qends.htm"><span class="S51">qends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>28?10|txt<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALQENDS"><span class="S121">GLOBA&#76QENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 10 путей временных файлов txt в папке утилиты ...\Temp\</font><br>
+<span class="S0"><a class="le" href="../com_qends.htm"><span class="S51">qends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>28|txt:10-15<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALQENDS"><span class="S121">GLOBA&#76QENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь временного файла txt в папке утилиты ...\Temp\ (случайная длина имени от 10 до 15 символов)</font><br>
+<span class="S0"><a class="le" href="../com_qends.htm"><span class="S51">qends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>28|txt:15<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALQENDS"><span class="S121">GLOBA&#76QENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь временного файла txt в папке утилиты ...\Temp\ (длина имени 15 символов)</font><br>
+<span class="S0"><a class="le" href="../com_qends.htm"><span class="S51">qends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>28|txt<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALQENDS"><span class="S121">GLOBA&#76QENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь временного файла txt в папке утилиты ...\Temp\</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_qends.htm"><span class="S51">qends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>29?10|txt<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALQENDS"><span class="S121">GLOBA&#76QENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 10 путей временных файлов txt в системной папке ...\Temp\tci_...\</font><br>
+<span class="S0"><a class="le" href="../com_qends.htm"><span class="S51">qends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>29|txt:10-15<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALQENDS"><span class="S121">GLOBA&#76QENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь временного файла txt в системной папке ...\Temp\tci_...\ (случайная длина имени от 10 до 15 символов)</font><br>
+<span class="S0"><a class="le" href="../com_qends.htm"><span class="S51">qends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>29|txt:15<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALQENDS"><span class="S121">GLOBA&#76QENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь временного файла txt в системной папке ...\Temp\tci_...\ (длина имени 15 символов)</font><br>
+<span class="S0"><a class="le" href="../com_qends.htm"><span class="S51">qends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>29|txt<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALQENDS"><span class="S121">GLOBA&#76QENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь временного файла txt в системной папке ...\Temp\tci_...\</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_qends.htm"><span class="S51">qends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>30<span class="S0">?</span>10|txt<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALQENDS"><span class="S121">GLOBA&#76QENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 10 путей временных файлов txt в системной папке ...\Temp\</font><br>
+<span class="S0"><a class="le" href="../com_qends.htm"><span class="S51">qends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>30|txt:10-15<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALQENDS"><span class="S121">GLOBA&#76QENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь временного файла txt в системной папке ...\Temp\ (случайная длина имени от 10 до 15 символов)</font><br>
+<span class="S0"><a class="le" href="../com_qends.htm"><span class="S51">qends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>30|txt:15<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALQENDS"><span class="S121">GLOBA&#76QENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь временного файла txt в системной папке ...\Temp\ (длина имени 15 символов)</font><br>
+<span class="S0"><a class="le" href="../com_qends.htm"><span class="S51">qends</span></a><span class="S8">=</span>x<span class="S11">!!</span>-1<span class="S8">||</span><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a>rndm<span class="S8">&lt</span>30|txt<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALQENDS"><span class="S121">GLOBA&#76QENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь временного файла txt в системной папке ...\Temp\</font><br></p>
+</td></tr></td></tr></table></p><br>
+
+
+<a name="14"></a><b>14.</b><br>
+<p align="center"><table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td><a href="#15"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>
+&nbsp;&nbsp;Случайные числа из диапазона</td></tr><tr><td class="s6td">
+<font class="S91">rndm</font><span class="S8"><b><</b></span><b>Number</b><font class="S81">|</font><b>Min<font class="S81">:</font>Max<font class="S81">:</font>Count<font class="S81">:</font>Repeat<font class="S81">:</font>Sort<font class="S81">:</font>Delimeter</b><font class="S91"><b>(</b></font><font class="S81"><b>|</b></font><b>BeginLine</b><font class="S81"><b>|</b></font><b>EndLine</b><font class="S91"><b>)</b></font><span class="S8"><b>></b></span>, где:<br>
+&nbsp;&nbsp;<b>Number</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>40</b></font> - случайные числа из диапазона.<br><br>
+&nbsp;&nbsp;<b>Min</b> - наименьшее генерируемое число.<br>
+&nbsp;&nbsp;<b>Max</b> - наибольшее генерируемое число.<br>
+&nbsp;&nbsp;<b>Count</b> <font class="S81">[</font>необязательный<font class="S81">]</font> - количество генерируемых чисел.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;по умолчанию максимальное количество чисел из диапазона (Max-Min+1).<br>
+&nbsp;&nbsp;<b>Repeat</b> <font class="S81">[</font>необязательный<font class="S81">]</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - могут быть повторы генерируемых чисел.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - без повторов (по умолчанию).<br>
+&nbsp;&nbsp;<b>Sort</b> <font class="S81">[</font>необязательный<font class="S81">]</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - без сортировки (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - сортировка по возрастанию.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2 - сортировка по убыванию.<br>
+&nbsp;&nbsp;<b>Delimeter</b> <font class="S81">[</font>необязательный<font class="S81">]</font> разделитель между числами, по умолчанию "<font class="S51"><b>|</b></font>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;В разделителе могут использоваться функций Autoit:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="le" href="../fun/chr.htm"><span class="S4"><font size="2"><b>Chr()</b></font></span></a> и <a class="le" href="../fun/chrw.htm"><span class="S4"><font size="2"><b>ChrW()</b></font></span></a>, которые заменяются соответствующими символами.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="le" href="../fun/clipget.htm"><span class="S4"><font size="2"><b>ClipGet()</b></font></span></a>, заменяется содержимым буфера обмена.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="le" href="../fun/number.htm"><span class="S4"><font size="2"><b>Number()</b></font></span></a>, производит математические действия.<br>
+
+<br>
+&nbsp;&nbsp;<b>BeginLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в начало случайных данных.<br>
+&nbsp;&nbsp;<b>EndLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> строка добавляемая в конец случайных данных.<br><br>
+
+<span class="section">Примечание:</span><br>
+&nbsp;&nbsp;Нет.
+<br><br>
+<span class="section">Примеры:</span><br>
+<p class="codeheader" style="position:relative;padding:6px;white-space:nowrap">
+
+
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S51">aends</span></a><span class="S8">=</span>x<span class="S8">||</span><span class="S51"><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a></span>rndm<span class="S8">&lt</span>40|1:10:5<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 5 случайных неповторяющихся чисел в диапазоне от 1 до 10</font><br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S51">aends</span></a><span class="S8">=</span>x<span class="S8">||</span><span class="S51"><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a></span>rndm<span class="S8">&lt</span>40|1:10:5:1:1<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 5 случайных неповторяющихся чисел в диапазоне от 1 до 10 (сортировка по возрастанию)</font><br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S51">aends</span></a><span class="S8">=</span>x<span class="S8">||</span><span class="S51"><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a></span>rndm<span class="S8">&lt</span>40|1:10:5:1:2<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 5 случайных неповторяющихся чисел в диапазоне от 1 до 10 (сортировка по убыванию)</font><br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S51">aends</span></a><span class="S8">=</span>x<span class="S8">||</span><span class="S51"><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a></span>rndm<span class="S8">&lt</span>40|1:10:5:1:0:,<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 5 случайных неповторяющихся чисел в диапазоне от 1 до 10 с заданным разделителем</font><br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S51">aends</span></a><span class="S8">=</span>x<span class="S8">||</span><span class="S51"><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a></span>rndm<span class="S8">&lt</span>40|1:10:5|Begin-|-End<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 5 случайных неповторяющихся чисел в диапазоне от 1 до 10 с добавлением в начало и в конец заданных фраз</font><br>
+
+<br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S51">aends</span></a><span class="S8">=</span>x<span class="S8">||</span><span class="S51"><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a></span>rndm<span class="S8">&lt</span>40|1:10:20:0<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 20 случайных чисел в диапазоне от 1 до 10</font><br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S51">aends</span></a><span class="S8">=</span>x<span class="S8">||</span><span class="S51"><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a></span>rndm<span class="S8">&lt</span>40|1:10:20:0:1<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 20 случайных чисел в диапазоне от 1 до 10 (сортировка по возрастанию)</font><br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S51">aends</span></a><span class="S8">=</span>x<span class="S8">||</span><span class="S51"><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a></span>rndm<span class="S8">&lt</span>40|1:10:20:0:2<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 20 случайных чисел в диапазоне от 1 до 10 (сортировка по убыванию)</font><br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S51">aends</span></a><span class="S8">=</span>x<span class="S8">||</span><span class="S51"><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a></span>rndm<span class="S8">&lt</span>40|1:10:20:0:0:,<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 20 случайных чисел в диапазоне от 1 до 10 с заданным разделителем</font><br>
+
+<br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S51">aends</span></a><span class="S8">=</span>x<span class="S51">??</span>-1<span class="S8">||</span><span class="S51"><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a></span>rndm<span class="S8">&lt</span>40?7|1:10:5<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 7 строк с 5 случайными неповторяющимися числами в диапазоне от 1 до 10</font><br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S51">aends</span></a><span class="S8">=</span>x<span class="S51">??</span>-1<span class="S8">||</span><span class="S51"><a class="le" href="add_lines.htm#FullReplace"><span class="S51">##</span></a></span>rndm<span class="S8">&lt</span>40?9|1:25000:1000:1:0:<span class="S8">+</span><span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить 9 строк с 1000 случайных неповторяющихся чисел в диапазоне от 1 до 25000 с заданным разделителем (тест на скорость выполнения)</font><br>
+
+
+
+</p>
+</td></tr></td></tr></table></p><br>
+
+
+
+
+
+
+
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

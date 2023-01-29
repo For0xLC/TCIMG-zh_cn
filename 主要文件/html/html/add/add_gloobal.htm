@@ -1,0 +1,1329 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Глобальные переменные, позволяющие передавать информацию от команды к команде</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №23</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Глобальные переменные.</font></p>
+<hr><br>
+<!-- <a class="le" href="add_format.htm#cmd"><b>таблице</b></a><br><br> -->
+
+
+В версии 5.3 появилась возможность сохранять и передавать информацию от основных команд другим командам во время работы утилиты.<br><br>
+Если включена "глобальность", то команды записывают информацию в именные массивы, данные которых можно использовать в других командах.<br><br>
+У команды может быть несколько массивов: массив входных и выходных данных...
+<br>
+
+<br><br>
+<hr class="hr-blue"><br>
+<b>1. Запись информации в глобальные переменные.</b><br><br>
+
+&nbsp;&nbsp;<font class="S81"><b>а)</b></font> <font class="S31">Команды имеющие глобальные переменные.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;На странице описания команды в примечании указано может ли она записывать и передавать информацию (в большинстве команд в этом нет необходимости).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Полный список команд имеющих глобальные переменные в <a class="le" href="#LISTGLOBALNAME"><b>таблице</b></a>.<br><br>
+
+&nbsp;&nbsp;<font class="S81"><b>б)</b></font> <font class="S31">Включение глобальных переменных.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;В обычном режиме глобальные переменные выключены. Чтобы их задействовать необходимо один раз перед командой (серией команд) прописать <b>global</b>, после чего переменные будут объявлены и в <u>автоматическом</u> режиме по завершению работы каждой команды будут создаваться массивы данных.<br><br>
+
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:200">
+<b>global</b> name=...
+</p>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:200">
+<b>global</b> copys=%L||"%t"//0
+</p>
+<br>
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;При запуске команды <a class="le" href="../com_exect.htm"><b>exect</b></a> не требуется указывать global, т.к. команда сама объявляет все глобальные переменные.<br>
+<br>
+&nbsp;&nbsp;<font class="S81"><b>в)</b></font> <font class="S31">Имена глобальных переменных.</font><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Команды создают массивы в именных переменных, имена которых складываются из слова <b>GLOBAL</b> и имени команды в верхнем регистре <b>NAME</b>, к примеру, <b>GLOBALCOPYS</b><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Если команда поддерживает создание и передачу нескольких массивов, то к имени добавляются номера <b>0</b>, <b>1</b> или <b>2</b> <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALCOPYS0</b> - массив входных данных<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALCOPYS</b>&nbsp;&nbsp; - массив выходных данных<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALCOPYS1</b> - массив скопированных объектов<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALCOPYS2</b> - массив нескопированных объектов<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;см. <a class="le" href="#LISTGLOBALNAME"><b>таблицу</b></a>
+<br><br>
+
+&nbsp;&nbsp;<font class="S81"><b>г)</b></font> <font class="S31">Продолжительность существования переменных и их данных.</font><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Переменные сохраняются и сохраняют свои данные до завершения работы утилиты.<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Данные в переменной будут перезаписаны при повторном вызове той же команды, которой созданы.</b><br>
+<br><br>
+&nbsp;&nbsp;<font class="S81"><b>д)</b></font> <font class="S31">Порядок обработки параметров при глобальных переменных.</font><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Глобальные переменные обрабатываются в первую очередь, независимо от расположения и количества их в строке.<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Т.е. сначала в строку параметров передаётся информация от переменных, а затем вычисляются параметры.</b><br>
+<br>
+
+
+<hr class="hr-blue"><br>
+<b>2. Использование глобальных переменных в командах.</b><br><br>
+&nbsp;&nbsp;<font class="S81"><b>а)</b></font> <font class="S31">Команды принимающие глобальные переменные.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В большинстве команд подключена возможность получать данные из глобальных переменных.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Если вы обнаружили, что в какой-то команде этого не происходит, то можете сообщить об этом - функция будет добавлена. 
+<br><br>
+&nbsp;&nbsp;<font class="S81"><b>б)</b></font> <font class="S31">Синтаксис получения данных от глобальных переменных в командах.</font><br>
+
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:790">
+<b>global</b> name1=... name2=... GLOBALNAME1<i><</i>Type>... GLOBALNAME1<i><</i>Type> ... GLOBALNAME1<i><</i>Type>
+</p>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команда <b>name1</b> после обработки параметров создаёт глобальную переменную <b>GLOBALNAME1</b> с данными<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команда <b>name2</b> использует данные <b>GLOBALNAME1</b>, в зависимости от типа <b>Type</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• в командах возможно многократное использование данных от <b>GLOBALNAME1</b>
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:790">
+<b>global</b> name1=... name2=... GLOBALNAME1<i><</i>Type>... name3=... GLOBALNAME1<i><</i>Type>... nameN=... GLOBALNAME1<i><</i>Type>... 
+</p>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команда <b>name1</b> создаёт глобальную переменную <b>GLOBALNAME1</b><br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команды <b>name2</b>... <b>nameN</b> используют данные <b>GLOBALNAME1</b><br>
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:790">
+<b>global</b> name1=... name2=... GLOBALNAME1<i><</i>Type>... nameN=... GLOBALNAME2<i><</i>Type>... nameM=... GLOBALNAMEN<i><</i>Type>... 
+</p>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команда <b>name1</b> создаёт глобальную переменную <b>GLOBALNAME1</b><br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команда <b>name2</b> использует данные <b>GLOBALNAME1</b> и создаёт свою переменную <b>GLOBALNAME2</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команда <b>nameN</b> использует данные <b>GLOBALNAME2</b> и создаёт свою переменную <b>GLOBALNAMEN</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команда <b>nameM</b> использует данные <b>GLOBALNAMEN</b><br>
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:790">
+<b>global</b> name1=... name2=... name3=... GLOBALNAME1<i><</i>Type>... GLOBALNAME2<i><</i>Type>... 
+</p>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команда <b>name1</b> создаёт глобальную переменную <b>GLOBALNAME1</b><br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команда <b>name2</b> создаёт глобальную переменную <b>GLOBALNAME2</b><br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команды <b>name3</b> использует данные <b>GLOBALNAME1</b> и <b>GLOBALNAME2</b><br>
+<br>
+Вариантов может быть масса...
+<br><br>
+
+<hr class="hr-blue"><br>
+<b>3. Типы получаемых данных.</b><br><br>
+&nbsp;&nbsp;Так как глобальные переменные <b>GLOBALNAME</b> являются массивами (списками элементов), то есть возможность получать из них различную информацию:<br><br>
+&nbsp;&nbsp;<font class="S81"><b>а)</b></font> <font class="S31">Файл списка элементов.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>t</b></font><b>></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;При параметре <b>t</b> все данные массива <b>GLOBALNAME</b> записываются во <u>временный файл</u>, полный путь которого будет передан в командную строку.<br><br>
+
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:520">
+<b>global</b> copys=%L||"%t"//0 renms=<b>GLOBALCOPYS</b><b><</b><font size=+1 class="S81"><b>t</b></font><b>></b>||??2
+</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команда <b>copys</b> после копирования (выделенных объектов) автоматически создаёт массивы:<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALCOPYS0</b> - список начальных элементов (в примере список всех путей копируемых объектов)<br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALCOPYS</b> - список выходных элементов (в примере список всех путей скопированных объектов)<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• в команду <b>renms</b> передаётся файл списка скопированных объектов для дальнейшего переименования.<br>
+<br>
+</div>
+
+<a name="tabl"></a>
+<div align="center">
+<table class="param" width="80%" cellspacing="0" cellpadding="3">
+<tr class="selcntr"><td colspan="2">Варианты включения элементов в список временного файла</td></tr>
+<tr class="sl2tr"><td width="20%">Значение</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>t</b>></td><td><font class="S0">Файл список со всеми элементами</font></td></tr>
+<tr><td class="s3td"></td><td></td></tr><tr><td class="s3td"></td><td></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>t</b>1></td><td><font class="S0">Файл список с одним первым элементом</font></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>t</b>20></td><td><font class="S0">Файл список с одним 20-м элементом</font></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>t</b>2,5,9></td><td><font class="S0">Файл список с элементами 2, 5, 9</font></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>t</b>2:5></td><td><font class="S0">Файл список с элементами со 2-го по 5-й</font></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>t</b>5:2></td><td><font class="S0">Файл список с элементами со 5-го по 2-й</font></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>t</b>1,6:9></td><td><font class="S0">Файл список с элементами 1-й и с 6-го по 9-й</font></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>t</b>1,6:9,12,18:15></td><td><font class="S0">Файл список с элементами 1-й, с 6-го по 9-й, 12-й и с 18-го по 15-й</font></td></tr>
+<tr><td class="s3td"></td><td></td></tr><tr><td class="s3td"></td><td></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>t</b>-1></td><td><font class="S0">Файл список с одним последним элементом</font></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>t</b>-20></td><td><font class="S0">Файл список с одним 20-м элементом с конца</font></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>t</b>-2,-5,-9></td><td><font class="S0">Файл список с элементами 2, 5, 9 с конца</font></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>t</b>-2:-5></td><td><font class="S0">Файл список с элементами со 2-го по 5-й с конца</font></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>t</b>-5:-2></td><td><font class="S0">Файл список с элементами со 5-го по 2-й с конца</font></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>t</b>-1,-6:-9></td><td><font class="S0">Файл список с элементами 1-й и с 6-го по 9-й с конца</font></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>t</b>-1,-6:-9,-12,-18:-15></td><td><font class="S0">Файл список с элементами 1-й, с 6-го по 9-й, 12-й и с 18-го по 15-й с конца</font></td></tr>
+<tr><td class="s3td"></td><td></td></tr><tr><td class="s3td"></td><td></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>t</b>1,3:6,11:8,13:-1></td><td><font class="S0">Файл список с элементами 1-й, с 3-го по 6-й, с 11-го по 8-й, с 13-го и до конца</font></td></tr>
+</td></tr></table>
+</div>
+<p></p>
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+По умолчанию временный список создаётся в кодировке UTF-8, для использования других кодировок в конце через разделитель <font class="S81"><b>|</b></font> прописывается соответствующий номер:<br><br>
+0 - ANSI 1251<br>
+1 - UTF-16 LE 1200<br>
+2 - UTF-16 BE 1201<br>
+3 - UTF-8 с BOM<br>
+4 - UTF-8 без BOM<br><br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:520">
+<b>global</b> copys=%L||"%t"//0 renms=<b>GLOBALCOPYS</b><b><</b><font size=3 class="S81"><b>t<font class="S51"><b>|3</b></font></b></font><b>></b>||??2
+</p>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:520">
+<b>global</b> copys=%L||"%t"//0 renms=<b>GLOBALCOPYS</b><b><</b><font size=3 class="S81"><b>t-1,-6:-9,-12,-18:-15<font class="S51"><b>|3</b></font></b></font><b>></b>||??2
+</p>
+<br>
+При получении отдельных элементов пустые строки по умолчанию удаляются.<br>
+Для сохранения пустых строк необходимо в конце первого параметра (до разделителя <font class="S51"><b>|</b></font>) прописать символ <font size=3 class="S121"><b>=</b></font><br><br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:520">
+<b>global</b> sends=-1||?T|d,3,5 creat="%p"||Name.txt||content<font class="S21"><b>&#60;</b></font><b>GLOBALSENDS<</b><font size=3 class="S81"><b>t1</b></font><font size=3 class="S121"><b>=</b></font><b>&#62;<font class="S21"><b>&#62;</b></font></b>
+<br>
+<b>global</b> sends=-1||?T|d,3,5 creat="%p"||Name.txt||content<font class="S21"><b>&#60;</b></font><b>GLOBALSENDS<</b><font size=3 class="S81"><b>t-1,-6:-9,-12,-18:-15</b></font><font size=3 class="S121"><b>=</b></font><font class="S51"><b>|3</b></font><b>&#62;<font class="S21"><b>&#62;</b></font></b>
+</p>
+</div>
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+
+
+
+&nbsp;&nbsp;<font class="S81"><b>б)</b></font> <font class="S31">Один элемент из массива.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=2 class="S81"><b>Number</b></font><b>></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В командную строку будет возвращён один элемент, соответствующий заданному в параметре номеру.
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:520">
+<b>global</b> copys=%L||"%t"//0 clint=<b>GLOBALCOPYS</b><b><</b><font size=+1 class="S81"><b>2</b></font><b>></b>
+</p>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команда <b>copys</b> после копирования (выделенных объектов) автоматически создаёт массивы:<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALCOPYS0</b> - список начальных элементов (в примере список всех путей копируемых объектов)<br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALCOPYS</b> - список выходных элементов (в примере список всех путей скопированных объектов)<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• в команду <b>clint</b> передаётся полный путь 2-го скопированного объекта для дальнейшего создания ярлыка.<br>
+<br>
+
+
+<div align="center">
+<table class="param" width="80%" cellspacing="0" cellpadding="3">
+<tr class="selcntr"><td colspan="2">Варианты возвращения элемента по его номеру</td></tr>
+<tr class="sl2tr"><td width="20%">Значение</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>1</b>></td><td><font class="S0">1-й элемент</font></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>5</b>></td><td><font class="S0">5-й элемент</font></td></tr>
+<tr><td class="s3td"></td><td></td></tr><tr><td class="s3td"></td><td></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>-1</b>></td><td><font class="S0">последний элемент</font></td></tr>
+<tr><td class="s3td">GLOBALNAME<i><</i><b>-5</b>></td><td><font class="S0">5-й элемент с конца</font></td></tr>
+</td></tr></table>
+</div>
+<p></p>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В версии 20.7 добавлены необязательный параметр:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><b>Number<font class="S81">|</font><font class="S51">Value</font>></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value - возвращаемое значение, если задан несуществующий номер ячейки Number, возможны варианты:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>&#10004;</b></font> N - номер ячейки (при отрицательных значениях значение берётся с конца массива)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>&#10004;</b></font> @ - возвращается пустая строка<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>&#10004;</b></font> String - строка<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;По умолчанию возвращается последний элемент массива.<br>
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:600">
+dends=abcd??-3 GLOBALDENDS&#60;a&#62; cends=@GLOBALDENDS<10<font class="S81"><b>|</b></font><font class="S51"><b>ошибка</b></font>> GLOBALCENDS&#60;a&#62;<br>
+dends=abcd??-3 GLOBALDENDS&#60;a&#62; cends=@GLOBALDENDS<10<font class="S81"><b>|</b></font><font class="S51"><b>@</b></font>> GLOBALCENDS&#60;a&#62;<br>
+dends=abcd??-3 GLOBALDENDS&#60;a&#62; cends=@GLOBALDENDS<10<font class="S81"><b>|</b></font><font class="S51"><b>1</b></font>> GLOBALCENDS&#60;a&#62;<br>
+dends=abcd??-3 GLOBALDENDS&#60;a&#62; cends=@GLOBALDENDS<10<font class="S81"><b>|</b></font><font class="S51"><b>-2</b></font>> GLOBALCENDS&#60;a&#62;<br>
+</p>
+</div>
+
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+
+
+&nbsp;&nbsp;<font class="S81"><b>в)</b></font> <font class="S31">Количество элементов в массиве.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=3 class="S81"><b>0</b></font><b>></b><br>
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+
+
+&nbsp;&nbsp;<font class="S81"><b>г)</b></font> <font class="S31">Дополнительные возможности.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>c</b></font><b>></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;При параметре <font size=3><b>c</b></font> данные массива <b>GLOBALNAME</b> будут записаны в буфер обмена.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Это может быть использовано как в командах, связанных с буфером обмена, так и для проверки передачи элементов.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Для проверки GLOBALNAME<i><</i>c> прописывается сразу после проверяемой команды.
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:320">
+<b>global</b> copys=%L||"%t"//0 <b>GLOBALCOPYS0</b></b><b><</b><font size=+1 class="S81"><b>c</b></font><b>></b>
+</p>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• после копирования в буфер обмена будет записан список начальных элементов (в примере список всех путей копируемых объектов)
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:320">
+<b>global</b> copys=%L||"%t"//0 <b>GLOBALCOPYS</b></b><b><</b><font size=+1 class="S81"><b>c</b></font><b>></b>
+</p>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• после копирования в буфер обмена будет записан список выходных элементов (в примере список всех путей скопированных объектов)
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+Варианты включения элементов для записи в буфер обмена такой же как и в таблице параметра <font size=+1 class="S81"><b>t</b></font>
+<br><br>
+При получении отдельных элементов пустые строки по умолчанию удаляются.<br>
+Для сохранения пустых строк необходимо в любом месте прописать символ <font size=3 class="S81"><b>=</b></font><br><br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:320">
+sends=-1||?T|d,3,5 <b>GLOBALSENDS<</b><font size=3 class="S81"><b>c1</b></font><font size=3 class="S121"><b>=</b></font><b>></b>
+</p>
+<p></p>
+<br>
+В версии 20.7 добавлены необязательные параметры:<br>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>c</b></font>(<font class="S81"><b>|</b></font>Number<font class="S81"><b>|</b></font>Delimeter<font class="S81"><b>|</b></font>Sound)<b>></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number [необязательный]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - записать в буфер обмена (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - записать в начало буфера обмена.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 - записать в конец буфера обмена.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delimeter [необязательный] - разделитель для 2 и 3 (по умолчанию перенос строки @CRLF). Если "x", то без разделителя<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sound [необязательный] - номер ключа из <a class="le" href="../../config.htm#Sound"><font class="S1"><b>TCIMG.ini</b></font></a> секции <span class="S8"><b>[</b></span><a href="../../config.htm#Sound"><b>Sound</b></a><span class="S8"><b>]</b></span> для воспроизведения звука при изменении буфера обмена.<br>
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:320">
+qlist=%L <b>GLOBALQLIST<</b><font size=3 class="S81"><b>c</b></font>1:3<font class="S81"><b>|</b></font><b>1</b><font class="S81"><b>|</b></font><b>x</b><font class="S81"><b>|</b></font><b>2</b><b>></b>
+</p>
+</div>
+<p></p>
+
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+
+
+&nbsp;&nbsp;<font class="S81"><b>д.1)</b></font> <font class="S31">Дополнительные возможности.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>a</b></font><b>></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;При параметре <font size=3><b>a</b></font> данные массива <b>GLOBALNAME</b> будут отображены в диалоге в виде таблицы.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Это может быть использовано для проверки передачи элементов.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Для проверки GLOBALNAME<i><</i>a> прописывается сразу после проверяемой команды.
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:10">
+<b>global</b> copys=%L||"%t"//0 <b>GLOBALCOPYS0</b></b><b><</b><font size=+1 class="S81"><b>a</b></font><b>></b>
+</p>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• после копирования будет отображен в диалоге список начальных элементов (в примере список всех путей копируемых объектов)
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:10">
+<b>global</b> copys=%L||"%t"//0 <b>GLOBALCOPYS</b></b><b><</b><font size=+1 class="S81"><b>a</b></font><b>></b>
+</p>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• после копирования будет отображен в диалоге список выходных элементов (в примере список всех путей скопированных объектов)
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Порядок отображения элементов такой же как и в таблице параметра <font size=+1 class="S81"><b>t</b></font>
+
+<p></p>
+<br>
+<p align="center"><img src="../../images/global.png" border="0"></p>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>a|1</b></font><b>></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В таблице в заголовке столбцов латинские буквы.
+<br><br>
+&nbsp;&nbsp;<font class="S81"><b>д.2)</b></font> <font class="S31">Дополнительные возможности.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>b</b></font><b>></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Тоже самое, что и GLOBALNAME&#60;a&#62;, позволяет отображать check-boxes для элементов.
+
+<p></p>
+<br>
+<p align="center"><img src="../../images/global2.png" border="0"></p>
+<br>
+
+
+&nbsp;&nbsp;<font class="S81"><b>д.3)</b></font> <font class="S31">Дополнительные возможности.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>e</b></font>(<font class="S81"><b>|</b></font>Column<font class="S81"><b>|</b></font>iNameKey)<b>></b> - значок устанавливается, относительно ассоциации типа файла/папки в системе.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>v</b></font>(<font class="S81"><b>|</b></font>Column<font class="S81"><b>|</b></font>iNameKey)<b>></b> - значок устанавливается из самого файла (exe, dll, ...).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>z</b></font>(<font class="S81"><b>|</b></font>Column<font class="S81"><b>|</b></font>iNameKey)<b>></b> - значок устанавливается из шаблона NameKey.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>w</b></font>(<font class="S81"><b>|</b></font>Column<font class="S81"><b>|</b></font>iNameKey)<b>></b> - значок устанавливается из файла и номера иконки (xxx.dll,n).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>g</b></font>(<font class="S81"><b>|</b></font>Column<font class="S81"><b>|</b></font>iNameKey)<b>></b> - значки устанавливаются для информации реестра.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>s</b></font>(<font class="S81"><b>|</b></font>Column<font class="S81"><b>|</b></font>iNameKey)<b>></b> - значки устанавливаются для информации INI файла.<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Тоже самое, что и GLOBALNAME&#60;a&#62;, позволяет отображать дополнительные значки для пунктов.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Подробное описание в UDF функции <a class="le" href="../fun/_ArrayDisplay.htm#TEMPLATEICON"><span class="S4"><font size="2"><b>_ArrayDisplay()</b></font></span></a><br>
+
+<p></p>
+<br>
+<p align="center"><img src="../../images/arraydisplay2.gif" border="0"></p>
+
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+<font class="S21"><b>Примечание:</b></font><br><br>
+
+При использовании букв в верхнем регистре A(B,E,V,Z,W,G,S) окно выводится во весь экран.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>A</b></font><b>></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>B</b></font><b>></b><br>
+
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+
+
+&nbsp;&nbsp;<font class="S81"><b>e)</b></font> <font class="S31">Файл списка элементов в одну строку.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>k</b></font><b></b>(<font class="S81"><b>|</b></font>Coding<font class="S81"><b>|</b></font>Delimeters)<b>></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;При параметре <b>k</b> все данные массива <b>GLOBALNAME</b> записываются во временный файл, полный путь которого будет передан в командную строку.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coding - кодировка временного файла. см. параметр <b>t</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delimeters - разделитель между элементами.<br><br>
+
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:520">
+<b>global</b> copys=%L||"%t"//0 sends=<b>GLOBALCOPYS</b><b><</b><font size=+1 class="S81"><b>k</b></font><b>></b> <b>GLOBALSENDS</b><b><</b>c1<b>></b>
+</p>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команда <b>copys</b> после копирования (выделенных объектов) автоматически создаёт 2 глобальных массива:<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALCOPYS0</b> - список начальных элементов (в примере список всех путей копируемых объектов)<br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALCOPYS</b> - список выходных элементов (в примере список всех путей скопированных объектов)<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• в команду <b>sends</b> передаётся файл списка скопированных объектов для дальнейшего создания списка всех элементов в одну строку.<br>
+<br>
+
+<div style="margin-left: 16pt; text-indent: 0pt;">
+Если в элементах массива содержатся многострочные данные, то они объединяются колонками.
+<br>
+<br>
+<span class="section">Пример:</span><br>
+Есть три файла:<br>
+1. c:\Test1.txt с содержимым:<br>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:180">
+1111<br>
+2222<br>
+3333<br>
+</p>
+2. c:\Test2.txt с содержимым:<br>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:180">
+4444<br>
+5555<br>
+6666<br>
+</p>
+3. c:\Test3.txt с содержимым:<br>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:180">
+7777<br>
+8888<br>
+9999<br>
+</p>
+то нижеприведённая команда отправит в буфер:
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:180">
+1111##4444##7777<br>
+2222##5555##8888<br>
+3333##6666##9999<br>
+</p>
+
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:830">
+<b>global</b> sends=c:\Test1.txt<font class="S61"><b>!!</b></font><font class="S81"><b>1</b></font> sends=c:\Test2.txt<font class="S61"><b>!!</b></font><font class="S81"><b>2</b></font> sends=c:\Test3.txt<font class="S61"><b>!!</b></font><font class="S81"><b>3</b></font> sends=<b>GLOBALSENDS<</b><font size=+1 class="S81"><b>k1:3</b><font class="S51"><b>|0</b></font><font class="S21">|##</font><b></font>></b>!!4 <b>GLOBALSENDS<</b>c4<b>></b>
+</p>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команда <b>sends</b> записывает в 1-ю ячейку массива содержимое файла c:\Test1.txt<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команда <b>sends</b> записывает в 2-ю ячейку массива содержимое файла c:\Test2.txt<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команда <b>sends</b> записывает в 3-ю ячейку массива содержимое файла c:\Test3.txt<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• команда <b>sends</b> записывает в 4-ю ячейку массива колоночное объединение 3-х элементов (1:3) с разделителем ## <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• далее содержимое 4-го элемента записывается в буфер обмена<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Кодировки временного файла и порядок включения элементов такой же как и в таблице параметра <font size=+1 class="S81"><b>t</b></font>
+<br>
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+
+
+&nbsp;&nbsp;<font class="S81"><b>ж)</b></font> <font class="S31">Дополнительные возможности.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=3 class="S81"><b>$var_...</b></font><b>></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В команде <a class="le" href="../com_exect.htm"><font size=3 class="S4"><b>exect</b></font></a> могут быть созданы глобальные переменные $var_... с массивами с данных<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Данные такого массива могут быть просмотрены в диалоге в виде таблицы.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Это может быть использовано для проверки передачи элементов.<br>
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:550">
+<b>exect</b>=<a class="le" href="../com_exect.htm"><span class="S121"><b>$var_a1</b></span></a>=<a class="le" href="../fun/strinjjplit.htm"><span class="S41"><b>StringSplit</b></span></a><span class="S24">(</span><span class="S19">'1a|2a|3a|4a|5a|6a|7a|8a|9a'</span>,<span class="S19">'|'</span>,1<span class="S24">)</span> <b>GLOBALEXECT<</b><a class="le" href="../com_exect.htm"><span class="S121"><b>$var_a1</b></span></a><b>></b>
+</p>
+</div>
+<br>
+
+<a name="x"></a>
+&nbsp;&nbsp;<font class="S81"><b>з)</b></font> <font class="S31">Дополнительные возможности.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>x</b>N</font><b>></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;При параметре <font size=3><b>x</b></font> данные N-ой ячейки массива <b>GLOBALNAME</b> будут переданы непосредственно тогда, когда до него доходит очередь, а не в самом начале строки параметров любой команды.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Это может быть использовано при поиске и замене многострочного текста.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;При отрицательных значениях ячейки считаются с конца.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Также возможно получать данные в диапазоне ячеек - варианты смотрите в таблице параметра <font size=+1 class="S81"><b>t</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Все данные при параметре <b>x</b> записываются в глобальный массив <font class="S91">GLOBALLOCAL</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(в 1-ю ячейку записываются первые данные, во 2-ю ячейку - вторые данные, и.т.д)
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:740">
+<b>global</b> sends=&#60;inikey=5//%TCIMG_PATH%\File.ini//Online&#62; textx=PS<"%p"//1//-1//htm><font class="S81"><b>||</b></font>&#60;/body&#62;<font class="S81"><b>!!</b></font>GLOBALSENDS&#60;<font class="S81"><b>x1</b></font>&#62;
+</p>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Команда sends получает в 1-ю ячейку массива содержимое секции, далее в команде textx содержимое используется при поиске и замене.
+<br>
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+
+
+&nbsp;&nbsp;<font class="S81"><b>и)</b></font> <font class="S31">Дополнительные возможности.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Для записи содержимого элементов массива <b>GLOBALNAME</b> в файл, можно воспользоваться командой <a class="le" href="..\com_asave.htm"><span class="S4"><b><big>asave</big></b></span></a>
+<br>
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+
+&nbsp;&nbsp;<font class="S81"><b>к)</b></font> <font class="S31">Дополнительные возможности.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В утилите есть специальные глобальные переменные <a class="le" href="../fun/cmdline.htm"><span class="S6"><b>$CmdLine</b></span></a> и <a class="le" href="../fun/cmdline.htm"><span class="S6"><b>$CmdLineRaw</b></span></a>, позволяющие просматривать и использовать параметры командной строки, переданных утилите при запуске.
+<br>
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+
+&nbsp;&nbsp;<font class="S81"><b>л)</b></font> <font class="S31">Дополнительные возможности.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В утилите кроме просмотра глобальных переменных, так же можно выбрать нужные ячейки и записать в массив <b>GLOBALARRAY</b>, а номера выбранных ячеек в <b>GLOBALARRAY1</b> см. описание функции <a class="le" href="../fun/_ArrayDisplay.htm"><span class="S41"><b>_ArrayDisplay()</b></span></a>.
+<br>
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+
+&nbsp;&nbsp;<font class="S81"><b>м)</b></font> <font class="S31">Дополнительные возможности.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>r</b></font><b>></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Перемещает элементы массива случайным образом.
+<br>
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+
+&nbsp;&nbsp;<font class="S81"><b>о)</b></font> <font class="S31">Дополнительные возможности.</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GLOBALNAME</b><b><</b><font size=+1 class="S81"><b>d</b></font>(<font class="S81"><b>|</b></font>Mode<font class="S81"><b>|</b></font>Active<font class="S81"><b>|</b></font>Save)<b>></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Вставляет данные в активный документ текстового	редактора AkelPad.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mode [необязательный] - режим вставки:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - вставить в место курсора (по умолчанию).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - заменить текст.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - вставить в начало.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 - вставить в конец.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 - вставить в место курсора без прокрутки документа (курсор остаётся в начальной позиции).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Active [необязательный]
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - не активировать окно (по умолчанию).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - активировать окно (передать фокус окну).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Save [необязательный]
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - не сохранять документ (по умолчанию).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - сохранять документ, если он не безымянный.
+<br><br>
+
+<hr class="hr-blue"><br>
+<a name="LISTGLOBALSYN"></a>
+<b>Дополнительные действия с глобальными переменными.</b> (добавлено в версии 15.6)<br>
+Без участия команд есть возможность передавать данные между глобальными переменными.<br> 
+&nbsp;&nbsp;a) К именам глобальных переменных дописывается знак <font class="S91"><b>$</b></font><br>
+&nbsp;&nbsp;b) Так как переменные являются массивами, то данные передаются между ними.<br>
+&nbsp;&nbsp;c) Могут использоваться свои имена переменных:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• имя должно начинаться с GLOBAL и иметь 11 символов GLOBALXXXXX<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• имя не должно совпадать с <a class="le" href="#LISTGLOBALNAME"><b>существующими</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• имя не должно совпадать со <a class="le" href="#METOD0"><b>специальными</b></a> именами глобальных переменных.<br>
+&nbsp;&nbsp;d) Методы рассчитаны для действий с одномерными 1D массивами.<br>
+&nbsp;&nbsp;e) Если метод используется и для двумерных 2D массивов, то это будет указано в комментариях.<br>
+ <br>
+
+<!-- 0. Специальные имена глобальных переменных: -->
+
+<a name="METOD0"></a>
+<font class="S21"><b>0. Специальные имена глобальных переменных:</b></font><br><br>
+&nbsp;&nbsp;a) <b>$GLOBAL<font class="S51">0</font>XXXX</b> - переменная и её производные являются аналогом команды <a class="le" href="../com_sends.htm"><font size=3 class="S4"><b>sends</b></font></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• вместо XXXX могут быть любые латинские буквы.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• информация переменной передаётся так же как и в команде sends:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$GLOBAL<font class="S51">0</font>XXXX=Params, где Params - параметры команды sends.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• информация переменной может передаваться нижеописанными методами, кроме тех, где за переменной стоит знак "="<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• примеры в конце <a class="le" href="../com_sends.htm#END"><font class="S4"><b>страницы</b></font></a> команды sends
+<br><br>
+&nbsp;&nbsp;b) <b>$GLOBAL<font class="S51">1</font>XXXX</b> - переменная и её производные являются аналогом команды <a class="le" href="../com_slist.htm"><font size=3 class="S4"><b>slist</b></font></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• вместо XXXX могут быть любые латинские буквы.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• информация переменной передаётся так же как и в команде slist:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$GLOBAL<font class="S51">1</font>XXXX=Params, где Params - параметры команды slist.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• информация переменной может передаваться нижеописанными методами, кроме тех, где за переменной стоит знак "="<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• переменные на выходе имеют аналогичную серию переменных подобных GLOBALSLIST:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GLOBAL1XXXX0, GLOBAL1XXXX, GLOBAL1XXXX1, GLOBAL1XXXX2, GLOBAL1XXXX3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• примеры в конце <a class="le" href="../com_slist.htm#END"><font class="S4"><b>страницы</b></font></a> команды slist
+
+<br><br>
+
+<!-- 1. Присвоение: -->
+
+<a name="METOD1"></a>
+<font class="S21"><b>1. Присвоение:</b></font><br><br>
+<font class="S91">переменной GLOBALSENDS присваиваются все значения переменной GLOBALSLIST<br>
+этот метод работает и для 2D массивов.</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:330">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font size=3 class="S81"><b>=</b></font><font class="S91"><b>$</b></font>GLOBALSLIST
+</p>
+
+<font class="S91">ячейке <font class="S51"><b>N</b></font> переменной GLOBALSENDS присваиваются все значения переменной GLOBALSLIST (ячейки разбиваются переносом строк)</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:330">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</font><font size=3 class="S81"><b>=</b></font></b><font class="S91"><b>$</b></font>GLOBALSLIST
+</p>
+</p>
+
+<font class="S91">ячейке <font class="S51"><b>N</b></font> переменной GLOBALSENDS присваиваются все значения переменной GLOBALSLIST (ячейки разбиваются заданным разделителем Delimeter)</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:330">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</font><font size=3 class="S81"><b>=</b></font></b><font class="S91"><b>$</b></font>GLOBALSLIST<font size=3 class="S81"><b>!!</b></font>Delimeter
+</p>
+</p>
+
+<font class="S91">ячейке <font class="S51"><b>N</b></font> переменной GLOBALSENDS присваивается значение ячейки <font class="S51"><b>M</b></font> переменной GLOBALSLIST</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:330">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</b></font><font size=3 class="S81"><b>=</b></font><font class="S91"><b>$</b></font>GLOBALSLIST<font class="S81"><b>[</b></font><font class="S51"><b>M</b></font><font class="S81"><b>]</b></font>
+</p>
+
+<font class="S91">переменной GLOBALSENDS присваиваются значения ячейки переменной GLOBALSLIST (данные ячейки разбиваются переносом строк)</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:330">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font size=3 class="S81"><b>=</b></font><font class="S91"><b>$</b></font>GLOBALSLIST<font class="S81"><b>[</b></font><font class="S51"><b>M</b></font><font class="S81"><b>]</b></font>
+</p>
+Ячейка - <font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</b></font> <u>первой</u> переменной может быть только целым числом.<br>
+Ячейка - <font class="S81"><b>[</b></font><font class="S51"><b>M</b></font><font class="S81"><b>]</b></font> <u>второй</u> переменной может иметь варианты включения элементов такой же как и в таблице <font class="S81"><b><a class="le" href="#tabl"><b>параметра t</b></a></b></font>
+<br><br>
+<span class="section">Примеры вариантов <font class="S81"><b>[</b></font><font class="S51"><b>M</b></font><font class="S81"><b>]</b></font> :</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:330">
+
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>5<font class="S81"><b>]</b></font><br>
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>2<font class="S51"><b>:</b></font>-1<font class="S81"><b>]</b></font><br>
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>1<font class="S51"><b>:</b></font>8<font class="S81"><b>]</b></font><br>
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>1<font class="S81"><b>,</b></font>3<font class="S51"><b>:</b></font>6<font class="S81"><b>,</b></font>11<font class="S51"><b>:</b></font>8<font class="S81"><b>,</b></font>13<font class="S51"><b>:</b></font>-1<font class="S81"><b>]</b></font><br>
+</p>
+
+<!-- 2. Присвоение случайных данных -->
+
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+
+<a name="METOD2"></a>
+<font class="S21"><b>2. Присвоение случайных данных:</b></font><br><br>
+<font class="S91">переменной GLOBALSENDS присваиваются все значения переменной GLOBALSLIST в случайном порядке</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:330">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font size=3 class="S81"><b>~</b></font><font class="S91"><b>$</b></font>GLOBALSLIST
+</p>
+
+<font class="S91">ячейке <font class="S51"><b>N</b></font> переменной GLOBALSENDS присваиваются все значения переменной GLOBALSLIST в случайном порядке (ячейки разбиваются переносом строк)</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:330">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</font><font size=3 class="S81"><b>~</b></font></b><font class="S91"><b>$</b></font>GLOBALSLIST
+</p>
+</p>
+
+<font class="S91">ячейке <font class="S51"><b>N</b></font> переменной GLOBALSENDS присваивается значение ячейки <font class="S51"><b>M</b></font> переменной GLOBALSLIST в случайном порядке</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:330">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</b></font><font size=3 class="S81"><b>~</b></font><font class="S91"><b>$</b></font>GLOBALSLIST<font class="S81"><b>[</b></font><font class="S51"><b>M</b></font><font class="S81"><b>]</b></font>
+</p>
+
+<font class="S91">переменной GLOBALSENDS присваиваются значения ячейки переменной GLOBALSLIST в случайном порядке (данные ячейки разбиваются переносом строк)</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:330">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font size=3 class="S81"><b>~</b></font><font class="S91"><b>$</b></font>GLOBALSLIST<font class="S81"><b>[</b></font><font class="S51"><b>M</b></font><font class="S81"><b>]</b></font>
+</p>
+Ячейка - <font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</b></font> <u>первой</u> переменной может быть только целым числом.<br>
+Ячейка - <font class="S81"><b>[</b></font><font class="S51"><b>M</b></font><font class="S81"><b>]</b></font> <u>второй</u> переменной может иметь варианты включения элементов такой же как и в таблице <font class="S81"><b><a class="le" href="#tabl"><b>параметра t</b></a></b></font>
+<br>
+
+<!-- 3. Прибавление -->
+
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+<a name="METOD3"></a>
+<font class="S21"><b>3. Прибавление:</b></font><br>
+<br>
+<font class="S91">массиву GLOBALSENDS добавляются в конец все элементы массива GLOBALSLIST</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:450">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font size=3 class="S81"><b>+</b></font><font class="S91"><b>$</b></font>GLOBALSLIST
+</p>
+<br>
+<font class="S91">массиву GLOBALSENDS добавляются в конец все элементы массива GLOBALSLIST,<br>
+затем в конец добавляются все элементы массива GLOBALSLIST1 и.т.д</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:450">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font size=3 class="S81"><b>+</b></font><font class="S91"><b>$</b></font>GLOBALSLIST<font size=3 class="S81"><b>+</b></font><font class="S91"><b>$</b></font>GLOBALSLIST1<font size=3 class="S81"><b>+</b></font><font class="S91"><b>$</b></font>GLOBAL...
+</p>
+<br>
+<font class="S91">ячейке <font class="S51"><b>N</b></font> массива GLOBALSENDS добавляется значение ячейки <font class="S51"><b>M</b></font> переменной GLOBALSLIST</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:450">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</b></font><font size=3 class="S81"><b>+</b></font><font class="S91"><b>$</b></font>GLOBALSLIST<font class="S81"><b>[</b></font><font class="S51"><b>M</b></font><font class="S81"><b>]</b></font>
+</p>
+<br>
+<font class="S91">ячейке <font class="S51"><b>N</b></font> массива GLOBALSENDS добавляется все значения массива GLOBALXLIST (ячейки разбиваются переносом строк),<br>
+затем в конец добавляется значение ячейки <font class="S51"><b>M</b></font> переменной GLOBALSLIST и т.д.</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:450">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</b></font><font size=3 class="S81"><b>+</b></font><font class="S91"><b>$</b></font>GLOBALXLIST<font size=3 class="S81"><b>+</b></font><font class="S91"><b>$</b></font>GLOBALSLIST<font class="S81"><b>[</b></font><font class="S51"><b>M</b></font><font class="S81"><b>]</b></font><font size=3 class="S81"><b>+</b></font><font class="S91"><b>$</b></font>GLOBAL...
+</p>
+<br>
+<font class="S91">массиву GLOBALSENDS добавляется в конец новая ячейка со значением ячейки <font class="S51"><b>N</b></font> массива GLOBALSLIST</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:450">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font size=3 class="S81"><b>+</b></font><font class="S91"><b>$</b></font>GLOBALSLIST<font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</b></font>
+</p>
+<br>
+<font class="S91">массиву GLOBALSENDS добавляется в конец новая ячейка со значением ячейки <font class="S51"><b>N</b></font> массива GLOBALSLIST,<br>
+затем в конец добавляются все элементы массива GLOBALXLIST и т.д.
+</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:450">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font size=3 class="S81"><b>+</b></font><font class="S91"><b>$</b></font>GLOBALSLIST<font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</b></font><font size=3 class="S81"><b>+</b></font><font class="S91"><b>$</b></font>GLOBALXLIST<font size=3 class="S81"><b>+</b></font><font class="S91"><b>$</b></font>GLOBAL...
+</p>
+<br>
+<font class="S91">из массива GLOBALSENDS создаётся новый массив, относительно заданных ячеек [M],<br>
+в конец добавляется новая ячейка со значением ячейки <font class="S51"><b>N</b></font> массива GLOBALSLIST,<br>
+затем в конец добавляются все элементы массива GLOBALXLIST и т.д.
+</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:450">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font class="S81"><b>[</b></font><font class="S51"><b>M</b></font><font class="S81"><b>]</b></font><font size=3 class="S81"><b>+</b></font><font class="S91"><b>$</b></font>GLOBALSLIST<font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</b></font><font size=3 class="S81"><b>+</b></font><font class="S91"><b>$</b></font>GLOBALXLIST<font size=3 class="S81"><b>+</b></font><font class="S91"><b>$</b></font>GLOBAL...
+</p>
+
+<br>
+Если первая переменная $GLOBALNAME1 не является массивом, то она объявляется для слияния массива(ов)
+<br><br>
+Ячейка - <font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</b></font> может быть только целым числом.<br>
+Ячейка - <font class="S81"><b>[</b></font><font class="S51"><b>M</b></font><font class="S81"><b>]</b></font> может иметь варианты включения элементов такой же как и в таблице <font class="S81"><b><a class="le" href="#tabl"><b>параметра t</b></a></b></font>
+<br><br>
+<span class="section">Примеры вариантов <font class="S81"><b>[</b></font><font class="S51"><b>M</b></font><font class="S81"><b>]</b></font> :</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:450">
+
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>-1<font class="S81"><b>]</b></font><br>
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>5<font class="S81"><b>]</b></font><br>
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>2<font class="S51"><b>:</b></font>-1<font class="S81"><b>]</b></font><br>
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>1<font class="S51"><b>:</b></font>8<font class="S81"><b>]</b></font><br>
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>1<font class="S81"><b>,</b></font>3<font class="S51"><b>:</b></font>6<font class="S81"><b>,</b></font>11<font class="S51"><b>:</b></font>8<font class="S81"><b>,</b></font>13<font class="S51"><b>:</b></font>-1<font class="S81"><b>]</b></font><br>
+</p>
+
+
+
+<!-- 4. Поэлементное слияние -->
+
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+<a name="METOD4"></a>
+<font class="S21"><b>4. Поэлементное слияние:</b></font><br>
+<br>
+<font class="S91">каждой ячейки переменной GLOBALSENDS добавить данные соответствующей ячейки переменной GLOBALSLIST через разделитель Delimeter</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:450">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font size=3 class="S81"><b>@</b></font><font class="S91"><b>$</b></font>GLOBALSLIST
+<br>
+<font class="S91"><b>$</b></font>GLOBALSENDS<font size=3 class="S81"><b>@</b></font><font class="S91"><b>$</b></font>GLOBALSLIST<font size=3 class="S81"><b>@</b></font>Delimeter
+<br>
+<font class="S91"><b>$</b></font>GLOBALSENDS<font size=3 class="S81"><b>@</b></font><font class="S91"><b>$</b></font>GLOBALSLIST<font size=3 class="S81"><b>@</b></font>Delimeter<font size=3 class="S81"><b>@</b></font>String
+<br>
+<font class="S91"><b>$</b></font>GLOBALSENDS<font size=3 class="S81"><b>@</b></font><font class="S91"><b>$</b></font>GLOBALSLIST<font size=3 class="S81"><b>@</b></font>Delimeter<font size=3 class="S81"><b>@</b></font><font size="+1" class="S51"><b>!</b></font>
+</p>
+
+<b>Delimeter</b> - [необязательный] - разделитель.<br>
+<b>String</b> - [необязательный] - если количество элементов массивов разное, то к наименьшему в недостающие элементы добавляется строка.<br>
+<font size="+1" class="S51"><b>!</b></font> - если количество элементов массивов разное, то первый составляется относительно минимального количества элементов.
+<br><br>
+В Delimeter и String могут использоваться функции Autoit <a class="le" href="../fun/chr.htm"><span class="S4"><font size="2"><b>Chr()</b></font></span></a> и <a class="le" href="../fun/chrw.htm"><span class="S4"><font size="2"><b>ChrW()</b></font></span></a>, которые заменяются соответствующими символами<br>
+Если нужен перенос строки, то прописывается Chr(13)Chr(10)
+
+<!-- 5. Поэлементное слияние -->
+
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+<a name="METOD5"></a>
+<font class="S21"><b>5. В каждый элемент 1-го массива добавить каждый элемент 2-го массива:</b></font><br>
+<br>
+<font class="S91">каждой ячейки переменной GLOBALSENDS добавить данные каждой ячейки переменной GLOBALSLIST через разделитель Delimeter</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:450">
+<font class="S91"><b>$</b></font>GLOBALSENDS<font size=3 class="S81"><b>^</b></font><font class="S91"><b>$</b></font>GLOBALSLIST<font size=3 class="S81"><b>^</b></font>Mode<font size=3 class="S81"><b>^</b></font>Delimeter
+</p>
+&nbsp;&nbsp;<b>Mode</b> - режим добавления:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - добавить в начало.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2 - добавить в конец.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3 - добавить в начало и в конец.<br>
+&nbsp;&nbsp;<b>Delimeter</b> - [необязательный] - разделитель.<br>
+<br>
+Важно: 1-й массив увеличится (если размер 1-го массива <b>3</b>, а 2-го <b>5</b>, то размер 1-го массива в итоге будет 3*5=<b>15</b>).<br> 
+
+<!-- 6. Передача информации командам напрямую без создания временного файла -->
+
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+<a name="LISTGLOBALCMD"></a><a name="METOD6"></a>
+<font class="S21"><b>6. Передача информации командам напрямую без создания временного файла:</b></font><br><br>
+<font class="S91">команде <b>copys</b> передаётся список массива GLOBALSENDS<br>вместо GLOBALSENDS может быть любая переменная, имеющая данные</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:860">
+global sends=-1!!-1 copys=<font class="S91"><b>$</b></font><font class="S51"><b>GLOBALSENDS</b></font>||"%p"//0||upd<1> <font color="green">;; копировать в активную панель файлы по списку путей из буфера обмена</font><br>
+global sends=-1!!-1 copys=<font class="S91"><b>$</b></font><font class="S51"><b>GLOBALSENDS</b></font><font class="S81"><b>[</b></font>2<font class="S51"><b>:</b></font>-1<font class="S81"><b>]</b></font>||"%p"//0||upd<1> <font color="green">;; копировать в активную панель файлы по списку путей из буфера обмена начиная со 2-го</font><br>
+<br>
+<font color="green"> ;; пример передачи данных 2-х переменных команде (выделенных объектов активной панели)</font><br>
+global slist=%L wlist=%L alist=<font class="S91"><b>$</b></font><font class="S51"><b>GLOBALSLIST</b></font><font class="S81"><b>+</b></font><font class="S91"><b>$</b></font><font class="S51"><b>GLOBALWLIST</b></font>||^^#~~ GLOBALALIST&#60;a&#62; GLOBALSLIST&#60;a&#62; GLOBALWLIST&#60;a&#62;
+<br>
+<font color="green"> ;; пример передачи данных 3-х переменных команде (выделенных объектов активной панели)</font><br>
+global slist=%L wlist=%L zlist=%L alist=<font class="S91"><b>$</b></font><font class="S51"><b>GLOBALSLIST</b></font><font class="S81"><b>+</b></font><font class="S91"><b>$</b></font><font class="S51"><b>GLOBALWLIST</b></font><font class="S81"><b>+</b></font><font class="S91"><b>$</b></font><font class="S51"><b>GLOBALZLIST</b></font>||^^#~~ GLOBALALIST&#60;a&#62; GLOBALSLIST&#60;a&#62; GLOBALWLIST&#60;a&#62; GLOBALZLIST&#60;a&#62;
+</p>
+
+<!-- 7. Передача информации командам напрямую без создания временного файла -->
+
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+<a name="METOD7"></a>
+<font class="S21"><b>7. Дублирование данных:</b></font><br><br>
+
+<font class="S91">возможные варианты:</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:860">
+<font class="S21">; данные GLOBALSENDS дублируются M раз</font><br>
+<font class="S91"><b>$</b></font>GLOBALSENDS<font size=3 class="S81"><b>&</b></font><font class="S91"><b>M</b></font><br>
+<br>
+<font class="S21">; ячейка N GLOBALSENDS дублируется M раз</font><br>
+<font class="S91"><b>$</b></font>GLOBALSENDS<font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</b></font><font size=3 class="S81"><b>&</b></font><font class="S91"><b>M</b></font><br>
+<br>
+<font class="S21">; данные GLOBALSENDS дублируются, число раз определяется случайно в диапазоне от Min (минимального числа) до Max (максимального числа)</font><br>
+<font class="S91"><b>$</b></font>GLOBALSENDS<font size=3 class="S81"><b>&</b></font><font class="S91"><b>Min</b></font><font class="S61" size=+1><b>|</b></font><font class="S91"><b>Max</b></font><br>
+<br>
+<font class="S21">; ячейка N GLOBALSENDS дублируется, число раз определяется случайно в диапазоне от Min (минимального числа) до Max (максимального числа)</font><br>
+<font class="S91"><b>$</b></font>GLOBALSENDS<font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</b></font><font size=3 class="S81"><b>&</b></font><font class="S91"><b>Min</b></font><font class="S61" size=+1><b>|</b></font><font class="S91"><b>Max</b></font><br>
+
+</p><br>
+Ячейка <font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</b></font> может иметь варианты включения элементов такой же как и в таблице <font class="S81"><b><a class="le" href="#tabl"><b>параметра t</b></a></b></font>
+<br>
+<span class="section">Примеры вариантов <font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</b></font> :</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:250">
+
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>5<font class="S81"><b>]</b></font><br>
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>2<font class="S51"><b>:</b></font>-1<font class="S81"><b>]</b></font><br>
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>1<font class="S51"><b>:</b></font>8<font class="S81"><b>]</b></font><br>
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>1<font class="S81"><b>,</b></font>3<font class="S51"><b>:</b></font>6<font class="S81"><b>,</b></font>11<font class="S51"><b>:</b></font>8<font class="S81"><b>,</b></font>13<font class="S51"><b>:</b></font>-1<font class="S81"><b>]</b></font><br>
+</p>
+<br>
+В числах <font class="S91"><b>M</b></font>, <font class="S91"><b>Min</b></font> и <font class="S91"><b>Max</b></font> могут использоваться математические действия.<br>
+
+Важно: массив перезаписывается новыми данными.<br>
+
+<!-- 8. Создание массива с заданным размером -->
+
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+<a name="METOD8"></a>
+<font class="S21"><b>8. Создание "пустого" массива с заданным размером:</b></font><br><br>
+
+<font class="S91">возможные варианты:</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:620">
+<font class="S21">; создание одномерного 1D массива GLOBALXXXXX - размер 50</font><br>
+<font class="S91"><b>$</b></font>GLOBALXXXXX<font class="S81"><b>[</b></font>50<font class="S81"><b>]</b></font><br>
+<br>
+<font class="S21">; создание двумерного 2D массива GLOBALXXXXX - 10 строк, 8 столбцов</font><br>
+<font class="S91"><b>$</b></font>GLOBALXXXXX<font class="S81"><b>[</b></font>10<font class="S81"><b>]</b></font><font class="S81"><b>[</b></font>8<font class="S81"><b>]</b></font><br>
+<br>
+<font class="S21">; можно несколько раз объявлять размер массива, при этом все данные будут удалены.</font><br>
+</p>
+
+
+<!-- 9. Запись данных в ячейку массива: -->
+
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+<a name="METOD9"></a>
+<font class="S21"><b>9. Запись данных в ячейку массива:</b></font><br><br>
+<font class="S91">возможные варианты:</font>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:860">
+<font class="S21">; если после знака равно <font size=3 class="S51"><b>=</b></font> прописана точка с запятой <font size=3 class="S51"><b>;</b></font> , то в заданную ячейку записывается последующая строка:</font><br>
+<font class="S21">; если после <font size=3 class="S51"><b>;</b></font> ничего не прописано, то заданная ячейка очищается.</font><br>
+<br>
+<font class="S21">; в 20-ю ячейку одномерного 1D массива GLOBALXXXXX записывается строка "STRING"</font><br>
+<font class="S91"><b>$</b></font>GLOBALXXXXX<font class="S81"><b>[</b></font>N<font class="S81"><b>]</b></font><font size=3 class="S51"><b>=;</b></font>STRING<br>
+<font class="S91"><b>$</b></font>GLOBALXXXXX<font class="S81"><b>[</b></font>20<font class="S81"><b>]</b></font><font size=3 class="S51"><b>=;</b></font>STRING<br>
+<br>
+<font class="S21">; в ячейку 8-й строки 3-й колонки двумерного 2D массива GLOBALXXXXX записывается строка "STRING"</font><br>
+<font class="S91"><b>$</b></font>GLOBALXXXXX<font class="S81"><b>[</b></font>N<font class="S81"><b>]</b></font><font class="S81"><b>[</b></font>M<font class="S81"><b>]</b></font><font size=3 class="S51"><b>=;</b></font>STRING<br>
+<font class="S91"><b>$</b></font>GLOBALXXXXX<font class="S81"><b>[</b></font>8<font class="S81"><b>]</b></font><font class="S81"><b>[</b></font>3<font class="S81"><b>]</b></font><font size=3 class="S51"><b>=;</b></font>STRING<br>
+<br>
+<font class="S21">; если после знака равно <font size=3 class="S51"><b>=</b></font> прописан знак вопроса <font size=3 class="S51"><b>?</b></font> , то в последующей строке:</font><br>
+<font class="S21">; две одинарных кавычки (апострофа) <b>&#39;&#39;</b> будут заменены на <u>кавычки</u></font><br>
+<font class="S21">; два символа тильды ~~ будут заменены на <u>пробел</u></font><br>
+<br>
+<font class="S21">; в 20-ю ячейку одномерного 1D массива GLOBALXXXXX записывается строка с пробелами "STRING WITH SPACES"</font><br>
+<font class="S91"><b>$</b></font>GLOBALXXXXX<font class="S81"><b>[</b></font>N<font class="S81"><b>]</b></font><font size=3 class="S51"><b>=?</b></font>STRING~~WITH~~SPACES<br>
+<font class="S91"><b>$</b></font>GLOBALXXXXX<font class="S81"><b>[</b></font>20<font class="S81"><b>]</b></font><font size=3 class="S51"><b>=?</b></font>STRING~~WITH~~SPACES<br>
+<br>
+<font class="S21">; в ячейку 8-й строки 3-й колонки двумерного 2D массива GLOBALXXXXX записывается строка с пробелами "STRING "WITH" SPACES"</font><br>
+<font class="S91"><b>$</b></font>GLOBALXXXXX<font class="S81"><b>[</b></font>N<font class="S81"><b>]</b></font><font class="S81"><b>[</b></font>M<font class="S81"><b>]</b></font><font size=3 class="S51"><b>=?</b></font>STRING~~''WITH''~~SPACES<br>
+<font class="S91"><b>$</b></font>GLOBALXXXXX<font class="S81"><b>[</b></font>8<font class="S81"><b>]</b></font><font class="S81"><b>[</b></font>3<font class="S81"><b>]</b></font><font size=3 class="S51"><b>=?</b></font>STRING~~''WITH''~~SPACES<br>
+</p>
+(добавлено в версии 31.8)<br>
+Ячейка <font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</b></font> может иметь варианты включения элементов такой же как и в таблице <font class="S81"><b><a class="le" href="#tabl"><b>параметра t</b></a></b></font>
+<br>
+<span class="section">Примеры вариантов <font class="S81"><b>[</b></font><font class="S51"><b>N</b></font><font class="S81"><b>]</b></font> :</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:250">
+
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>5<font class="S81"><b>]</b></font><br>
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>2<font class="S51"><b>:</b></font>-1<font class="S81"><b>]</b></font><br>
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>1<font class="S51"><b>:</b></font>8<font class="S81"><b>]</b></font><br>
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>1<font class="S81"><b>,</b></font>3<font class="S51"><b>:</b></font>6<font class="S81"><b>,</b></font>11<font class="S51"><b>:</b></font>8<font class="S81"><b>,</b></font>13<font class="S51"><b>:</b></font>-1<font class="S81"><b>]</b></font><br>
+</p>
+Столбец <font class="S81"><b>[</b></font><font class="S51"><b>M</b></font><font class="S81"><b>]</b></font> может иметь варианты (отсчёт  0):
+<br>
+<span class="section">Примеры вариантов <font class="S81"><b>[</b></font><font class="S51"><b>M</b></font><font class="S81"><b>]</b></font> :</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:250">
+
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>N<font class="S81"><b>]</b></font><font class="S81"><b>[</b></font>5<font class="S81"><b>]</b></font><br>
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>N<font class="S81"><b>]</b></font><font class="S81"><b>[</b></font>2<font class="S51"><b>:</b></font>-1<font class="S81"><b>]</b></font><br>
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>N<font class="S81"><b>]</b></font><font class="S81"><b>[</b></font>0<font class="S51"><b>:</b></font>8<font class="S81"><b>]</b></font><br>
+<font class="S91"><b>$</b></font>GLOBALNAME<font class="S81"><b>[</b></font>N<font class="S81"><b>]</b></font><font class="S81"><b>[</b></font>1<font class="S81"><b>,</b></font>3<font class="S51"><b>:</b></font>6<font class="S81"><b>,</b></font>11<font class="S51"><b>:</b></font>8<font class="S81"><b>,</b></font>13<font class="S51"><b>:</b></font>-1<font class="S81"><b>]</b></font><br>
+</p>
+Массив будет увеличен, если заданные значения строк и колонок больше текущего массива.<br>
+
+<!-- 10. Присвоение информации с помощью функций Autoit: -->
+
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+<a name="METOD10"></a>
+<font class="S21"><b>10. Присвоение информации с помощью функций <a class="le" href="../par/par_aa_functions.htm"><span class="S4"><b>Autoit</b></span></a>:</b></font><br><br>
+<font class="S91">возможные варианты:</font>
+
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:860">
+<font class="S21">; если после знака равно <font size=3 class="S51"><b>=</b></font> прописан знак вопроса <font size=3 class="S51"><b>&#62;</b></font> , то возвращаются данные результата вычисления выражения Autoit:</font><br>
+<br>
+
+<font class="S21">; создание массива: в GLOBALXXXXX записывается информация получаемая функцией StringSplit()</font><br>
+<font class="S91"><b>$</b></font>GLOBALXXXXX<font size=3 class="S51"><b>=&#62;</b></font><a class="le" href="../fun/strinjjplit.htm"><span class="S41"><b>StringSplit</b></span></a><span class="S24">(</span><span class="S19">'1a|2a|3a|4a|5a|6a|7a|8a|9a'</span>,<span class="S19">'|'</span>,2<span class="S24">)</span><br>
+<br>
+<font class="S21">; тернарное условие: если $GLOBALNAME2[0] больше $GLOBALNAME1[0], то в GLOBALXXXXX возвращается массив $GLOBALNAME2, иначе $GLOBALNAME1</font><br>
+<font class="S91"><b>$</b></font>GLOBALXXXXX<font size=3 class="S51"><b>=&#62;</b></font><font class="S91"><b>$</b></font>GLOBALNAME2[0]<font size=3 class="S81"><b>&#62;</b></font><font class="S91"><b>$</b></font>GLOBALNAME1[0]<a class="le" href="../fun/ternary.htm"><font size=3 class="S81"><b>?</b></font></a><font class="S91"><b>$</b></font>GLOBALNAME2<a class="le" href="../fun/ternary.htm"><font size=3 class="S81"><b>:</b></font></a><font class="S91"><b>$</b></font>GLOBALNAME1
+
+<br><br>
+
+<font class="S21">; в 20-ю ячейку одномерного 1D массива GLOBALXXXXX записывается размер файла в байтах</font><br>
+<font class="S91"><b>$</b></font>GLOBALXXXXX<font class="S81"><b>[</b></font>20<font class="S81"><b>]</b></font><font size=3 class="S51"><b>=&#62;</b></font><a class="le" href="../fun/filegetsize.htm"><span class="S41"><b>FileGetSize</b></span></a><span class="S24">(</span><font class="S19">'C:\Test.txt'</font><span class="S24">)</span><br>
+
+<font class="S91"><b>$</b></font>GLOBALXXXXX<font class="S81"><b>[</b></font>20<font class="S81"><b>]</b></font><font size=3 class="S51"><b>=&#62;</b></font><font class="S19">'Size:'</font><font class="S81"><b>&</b></font><a class="le" href="../fun/filegetsize.htm"><span class="S41"><b>FileGetSize</b></span></a><span class="S24">(</span><font class="S19">'C:\Test.txt'</font><span class="S24">)</span><br>
+<br>
+<font class="S21">; в ячейку 8-й строки 3-й колонки двумерного 2D массива GLOBALXXXXX записывается атрибуты файла</font><br>
+<font class="S91"><b>$</b></font>GLOBALXXXXX<font class="S81"><b>[</b></font>8<font class="S81"><b>]</b></font><font class="S81"><b>[</b></font>3<font class="S81"><b>]</b></font><font size=3 class="S51"><b>=&#62;</b></font><a class="le" href="../fun/filegetattrib.htm"><span class="S41"><b>FileGetAttrib</b></span></a><span class="S24">(</span><font class="S19">'C:\Test.txt'</font><span class="S24">)</span><br>
+
+</p>
+
+
+<!-- 11. Объявление глобальных переменных: -->
+
+<br><div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div><br>
+<a name="METOD11"></a>
+<font class="S21"><b>11. Объявление глобальных переменных:</b></font><br><br>
+В ряде случаев глобальные переменные необходимо объявить заранее, т.к. они могут подключаться из различных шаблонов...<br>
+В имени глобальной переменной в нужном месте вставляется <b><font class="S81">{</font>String<font class="S81">}</font></b><br>
+&nbsp;&nbsp;String - строка состоящая из чисел (от 0 до 9) и/или латинских букв (от A до Z).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;числа и буквы прописываются через запятую. Пример: <code class="example">1,5,8,A,F,Y</code><br>
+&nbsp;&nbsp;&nbsp;&nbsp;поддерживаются диапазоны. Пример: <code class="example">0:9,A:Z</code><br>
+&nbsp;&nbsp;&nbsp;&nbsp;числа и буквы могут быть составными. Пример: <code class="example">05,12,AF,OH</code><br>
+<br>
+<font class="S91">возможные варианты:</font>
+
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:860">
+<font class="S21">; объявляются 4 переменных: $GLOBALXXXX0, $GLOBALXXXX5, $GLOBALXXXXA, $GLOBALXXXXB</font><br>
+<font class="S91"><b>$</b></font>GLOBALXXXX<b><font class="S81">{</font>0,5,A,B<font class="S81">}</font></b><br>
+<br>
+<font class="S21">; объявляются 32 переменных: $GLOBALXXXX0, ..., $GLOBALXXXX9, $GLOBALXXXXA, ..., $GLOBALXXXXZ</font><br>
+<font class="S91"><b>$</b></font>GLOBALXXXX<b><font class="S81">{</font>0:9,A:Z<font class="S81">}</font></b><br>
+<br>
+<font class="S21">; объявляются 4 переменных: $GLOBALXXX06, $GLOBALXXX58, $GLOBALXXXAV, $GLOBALXXXWX</font><br>
+<font class="S91"><b>$</b></font>GLOBALXXX<b><font class="S81">{</font>06,58,AV,WX<font class="S81">}</font></b><br>
+<br>
+<font class="S21">; объявляются 776 переменных: $GLOBALXXX00, ..., $GLOBALXXX99, $GLOBALXXXAA, ..., $GLOBALXXXZZ</font><br>
+<font class="S91"><b>$</b></font>GLOBALXXX<b><font class="S81">{</font>00:99,AA:ZZ<font class="S81">}</font></b><br>
+<br>
+<font class="S21">; объявляются 22 переменных: GLOBALAENDS, GLOBALBENDS, GLOBALCENDS, ..., GLOBALZENDS</font><br>
+<font class="S91"><b>$</b></font>GLOBAL<b><font class="S81">{</font>A:Z<font class="S81">}</font></b>ENDS<br>
+</p>
+По умолчанию создаётся 1D массив с одной строкой.<br>
+Для установки размерности массива в конец имени переменной дописывается:<br>
+&nbsp;&nbsp;[N] - для 1D массива (N - количество строк - отсчёт с 1).<br>
+&nbsp;&nbsp;[N][M] - для 2D массива (N - количество строк, M - количество столбцов - отсчёт с 0).<br>
+
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:860">
+<font class="S21">; объявляются 4 переменных: $GLOBALXXXX0, $GLOBALXXXX5, $GLOBALXXXXA, $GLOBALXXXXB</font><br>
+<font class="S21">; 1D массив, количество строк в массиве 8</font><br>
+<font class="S91"><b>$</b></font>GLOBALXXXX<b><font class="S81">{</font>0,5,A,B<font class="S81">}</font><font class="S121">[8]</font></b><br>
+<br>
+<font class="S21">; объявляются 32 переменных: $GLOBALXXXX0, ..., $GLOBALXXXX9, $GLOBALXXXXA, ..., $GLOBALXXXXZ</font><br>
+<font class="S21">; 2D массив, количество строк в массиве 10, количество столбцов 8</font><br>
+<font class="S91"><b>$</b></font>GLOBALXXXX<b><font class="S81">{</font>0:9,A:Z<font class="S81">}</font><font class="S121">[10][8]</font></b><br>
+
+</p>
+
+<br><br>
+
+
+<!-- Двумерные 2D массивы -->
+
+<hr class="hr-blue">
+<a name="2DARRAY"></a>
+<hr class="hr-blue">
+<font class="S121"><b>Двумерные 2D массивы.</b></font><br><br>
+Большинство методов описанных выше направлены на работу одномерных 1D массивов.<br>
+Ряд методов адаптированы для двумерных 2D массивов.<br><br>
+В методах GLOBALNAME<b>&#60;</b><font size=+1 class="S81">t</font><b>&#62;</b>, GLOBALNAME<b>&#60;</b><font size=+1 class="S81">c</font><b>&#62;</b>, GLOBALNAME<b>&#60;</b><font size=+1 class="S81">r</font><b>&#62;</b>, GLOBALNAME<b>&#60;</b><font size=+1 class="S81">xN</font><b>&#62;</b>, GLOBALNAME<b>&#60;</b><font class="S81">Number</font><b>&#62;</b> :<br>
+&nbsp;&nbsp;<font size=+1 class="S51"><b>&#8608;</b></font>&nbsp;2D массив построчно преобразовывается в 1D массив (все данные ячеек строки "склеиваются" в одну строку через разделитель).<br>
+&nbsp;&nbsp;<font size=+1 class="S51"><b>&#8608;</b></font>&nbsp;после этого передача данных происходит так же как для 1D массива.<br>
+&nbsp;&nbsp;<font size=+1 class="S51"><b>&#8608;</b></font>&nbsp;есть возможность задать разделитель между данными колонок (по умолчанию @TAB - табуляция):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;для этого перед буквой/цифрой прописывается тег *DELIMETER* , пример: GLOBALNAME<b>&#60;</b><font size=+1 class="S121"><b>*</b></font>DELIMETER<font size=+1 class="S121"><b>*</b></font><font size=+1 class="S81">t</font><b>&#62;</b><br>
+<br>
+В методах GLOBALNAME<b>&#60;</b><font size=+1 class="S81">a</font><b>&#62;</b>, GLOBALNAME<b>&#60;</b><font size=+1 class="S81">b</font><b>&#62;</b><br>
+&nbsp;&nbsp;<font size=+1 class="S51"><b>&#8608;</b></font>&nbsp;2D массив <u>не</u> преобразовывается в 1D массив.<br>
+&nbsp;&nbsp;<font size=+1 class="S51"><b>&#8608;</b></font>&nbsp;при передачи выбранных строк в GLOBALARRAY данные ячеек 2D массива построчно соединяются через разделитель.<br>
+&nbsp;&nbsp;<font size=+1 class="S51"><b>&#8608;</b></font>&nbsp;разделитель устанавливается как и описано выше: GLOBALNAME<b>&#60;</b><font size=+1 class="S121"><b>*</b></font>DELIMETER<font size=+1 class="S121"><b>*</b></font><font size=+1 class="S81">a</font><b>&#62;</b><br>
+<br>
+Дополнительные инструменты для работы с 1D и 2D массивами:<br>
+&nbsp;&nbsp;<font size=+1 class="S51"><b>&#8608;</b></font>&nbsp;<a class="le" href="..\com_anf2d.htm"><span class="S4"><b><big>anf2d</big></b></span></a> - команда для создания двумерного 2D массива.<br>
+&nbsp;&nbsp;<font size=+1 class="S51"><b>&#8608;</b></font>&nbsp;<a class="le" href="..\com_arr2d.htm"><span class="S4"><b><big>arr2d</big></b></span></a> - команда для преобразования 1D и 2D массива.<br>
+&nbsp;&nbsp;<font size=+1 class="S51"><b>&#8608;</b></font>&nbsp;<a class="le" href="..\com_asave.htm"><span class="S4"><b><big>asave</big></b></span></a> - команда для сохранения данных 1D и 2D массива в файл.<br>
+&nbsp;&nbsp;<font size=+1 class="S51"><b>&#8608;</b></font>&nbsp;<a class="le" href="..\com_extxt.htm"><span class="S4"><b><big>extxt</big></b></span></a> и <a class="le" href="..\com_extxs.htm"><span class="S4"><b><big>extxs</big></b></span></a> - команды получения информации из файла(ов) и вывод значений в 2D массив.<br>
+&nbsp;&nbsp;<font size=+1 class="S51"><b>&#8608;</b></font>&nbsp;<a class="le" href="..\com_infos.htm"><span class="S4"><b><big>infos</big></b></span></a> - команда, ряд параметров которой выводят информацию в двумерный 2D массив.<br>
+&nbsp;&nbsp;<font size=+1 class="S51"><b>&#8608;</b></font>&nbsp;<a class="le" href="add_info.htm#a"><span class="S4"><b><big>info</big></b></span></a> - параметр для получения информации двумерного 2D массива.<br>
+<br>
+Для всех переменных, связанных с 2D массивами:<br>
+&nbsp;&nbsp;<b>GLOBALNAME_</b> содержит:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;если 2D массив, то номер последней колонки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;если 1D массив, то <b>-1</b>
+<br><br>
+<hr class="hr-blue">
+<hr class="hr-blue"><a name="LISTGLOBALNAME"></a><br>
+
+<div align="center">
+<table class="param" width="50%" cellspacing="0" cellpadding="3">
+<tr class="selcntr"><td colspan="2" style="white-space: nowrap">Список команд имеющих глобальные переменные</td></tr>
+<tr class="sl2tr"><td width="50%">Переменные</td><td width="40%">Команда </td></tr>
+<tr><td class="s3td"><a name="GLOBALATTRB"></a>GLOBALATTRB<font class="S81">0</font><br>GLOBALATTRB<br>GLOBALATTRB<font class="S81">1</font><br>GLOBALATTRB<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_attrb.htm#GLOBALATTRBX"><span class="S4"><b><big>attrb</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALATTRF"></a>GLOBALATTRF<font class="S81">0</font><br>GLOBALATTRF<br>GLOBALATTRF<font class="S81">1</font><br>GLOBALATTRF<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_attrf.htm#GLOBALATTRFX"><span class="S4"><b><big>attrf</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALASAVE"></a>GLOBALASAVE</td><td>&nbsp;<a class="le" href="../com_asave.htm#GLOBALASAVEX"><span class="S4"><b><big>asave</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALAENDS"></a>GLOBALAENDS</td><td>&nbsp;<a class="le" href="../com_aends.htm#GLOBALAENDSX"><span class="S4"><b><big>aends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALALIST"></a>GLOBALALIST<font class="S81">0</font><br>GLOBALALIST<br>GLOBALALIST<font class="S81">1</font><br>GLOBALALIST<font class="S81">2</font><br>GLOBALALIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_alist.htm#GLOBALALISTX"><span class="S4"><b><big>alist</big></b></span></a></td></tr>
+
+
+<tr><td class="s3td"><a name="GLOBALBARJN"></a>GLOBALBARJN<font class="S81">0</font><br>GLOBALBARJN</td><td>&nbsp;<a class="le" href="../com_barjn.htm#GLOBALBARJNX"><span class="S4"><b><big>barjn</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALBENDS"></a>GLOBALBENDS</td><td>&nbsp;<a class="le" href="../com_bends.htm#GLOBALBENDSX"><span class="S4"><b><big>bends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALBLIST"></a>GLOBALBLIST<font class="S81">0</font><br>GLOBALBLIST<br>GLOBALBLIST<font class="S81">1</font><br>GLOBALBLIST<font class="S81">2</font><br>GLOBALBLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_blist.htm#GLOBALBLISTX"><span class="S4"><b><big>blist</big></b></span></a></td></tr>
+
+
+<tr><td class="s3td"><a name="GLOBALCARRY"></a>GLOBALCARRY</td><td>&nbsp;<a class="le" href="../com_carry.htm#GLOBALCARRYX"><span class="S4"><b><big>carry</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALCHESH"></a>GLOBALCHESH<font class="S81">0</font><br>GLOBALCHESH<font class="S81">1</font><br>GLOBALCHESH<font class="S81">2</font><br>GLOBALCHESH<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_chesh.htm#GLOBALCHESHX"><span class="S4"><b><big>chesh</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALCENDS"></a>GLOBALCENDS</td><td>&nbsp;<a class="le" href="../com_cends.htm#GLOBALCENDSX"><span class="S4"><b><big>cends</big></b></span></a></td></tr>
+
+
+<tr><td class="s3td"><a name="GLOBALCLINK"></a>GLOBALCLINK<font class="S81">0</font><br>GLOBALCLINK<br>GLOBALCLINK<font class="S81">1</font><br>GLOBALCLINK<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_clink.htm#GLOBALCLINKX"><span class="S4"><b><big>clink</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALCLINT"></a>GLOBALCLINT<font class="S81">0</font><br>GLOBALCLINT<br>GLOBALCLINT<font class="S81">1</font><br>GLOBALCLINT<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_clint.htm#GLOBALCLINTX"><span class="S4"><b><big>clint</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALCLIPI"></a>GLOBALCLIPI</td><td>&nbsp;<a class="le" href="../com_clipi.htm#GLOBALCLIPIX"><span class="S4"><b><big>clipi</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALCLIST"></a>GLOBALCLIST<font class="S81">0</font><br>GLOBALCLIST<br>GLOBALCLIST<font class="S81">1</font><br>GLOBALCLIST<font class="S81">2</font><br>GLOBALCLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_clist.htm#GLOBALCLISTX"><span class="S4"><b><big>clist</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALCMDBT"></a>GLOBALCMDBT<font class="S81">0</font><br>GLOBALCMDBT<br>GLOBALCMDBT<font class="S81">1</font><br>GLOBALCMDBT<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_cmdbt.htm#GLOBALCMDBTX"><span class="S4"><b><big>cmdbt</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALCOPYS"></a>GLOBALCOPYS<font class="S81">0</font><br>GLOBALCOPYS<br>GLOBALCOPYS<font class="S81">1</font><br>GLOBALCOPYS<font class="S81">2</font><br>GLOBALCOPYS<font class="S81">3</font><br>GLOBALCOPYS<font class="S81">4</font></td><td>&nbsp;<a class="le" href="../com_copys.htm#GLOBALCOPYSX"><span class="S4"><b><big>copys</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALCOPYY"></a>GLOBALCOPYY<font class="S81">0</font><br>GLOBALCOPYY<br>GLOBALCOPYY<font class="S81">1</font><br>GLOBALCOPYY<font class="S81">2</font><br>GLOBALCOPYY<font class="S81">3</font><br>GLOBALCOPYY<font class="S81">4</font></td><td>&nbsp;<a class="le" href="../com_copyy.htm#GLOBALCOPYYX"><span class="S4"><b><big>copyy</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALCOUNT"></a>GLOBALCOUNT<br>GLOBALCOUNT<font class="S81">1</font></td><td>&nbsp;<a class="le" href="../com_count.htm#GLOBALCOUNTX"><span class="S4"><b><big>count</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALCREAT"></a>GLOBALCREAT<font class="S81">0</font><br>GLOBALCREAT</font></td><td>&nbsp;<a class="le" href="../com_creat.htm#GLOBALCREATX"><span class="S4"><b><big>creat</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALDECOD"></a>GLOBALDECOD<font class="S81">0</font><br>GLOBALDECOD<br>GLOBALDECOD<font class="S81">1</font><br>GLOBALDECOD<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_decod.htm#GLOBALDECODX"><span class="S4"><b><big>decod</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALDECRD"></a>GLOBALDECRD<font class="S81">0</font><br>GLOBALDECRD<br>GLOBALDECRD<font class="S81">1</font><br>GLOBALDECRD<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_decrd.htm#GLOBALDECRDX"><span class="S4"><b><big>decrd</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALDECRY"></a>GLOBALDECRY<font class="S81">0</font><br>GLOBALDECRY<br>GLOBALDECRY<font class="S81">1</font><br>GLOBALDECRY<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_decry.htm#GLOBALDECRYX"><span class="S4"><b><big>decry</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALDECTD"></a>GLOBALDECTD<font class="S81">0</font><br>GLOBALDECTD<br>GLOBALDECTD<font class="S81">1</font><br>GLOBALDECTD<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_dectd.htm#GLOBALDECTDX"><span class="S4"><b><big>dectd</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALDENDS"></a>GLOBALDENDS</td><td>&nbsp;<a class="le" href="../com_dends.htm#GLOBALDENDSX"><span class="S4"><b><big>dends</big></b></span></a></td></tr>
+
+
+<tr><td class="s3td"><a name="GLOBALDELSM"></a>GLOBALDELSM<font class="S81">0</font><br>GLOBALDELSM<br>GLOBALDELSM<font class="S81">1</font><br>GLOBALDELSM<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_delsm.htm#GLOBALDELSMX"><span class="S4"><b><big>delsm</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALDELSS"></a>GLOBALDELSS<font class="S81">0</font><br>GLOBALDELSS<br>GLOBALDELSS<font class="S81">1</font><br>GLOBALDELSS<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_delss.htm#GLOBALDELSSX"><span class="S4"><b><big>delss</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALDLIST"></a>GLOBALDLIST<font class="S81">0</font><br>GLOBALDLIST<br>GLOBALDLIST<font class="S81">1</font><br>GLOBALDLIST<font class="S81">2</font><br>GLOBALDLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_dlist.htm#GLOBALDLISTX"><span class="S4"><b><big>dlist</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALDOWNH"></a>GLOBALDOWNH<font class="S81">0</font><br>GLOBALDOWNH<br>GLOBALDOWNH<font class="S81">1</font><br>GLOBALDOWNH<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_downh.htm#GLOBALDOWNHX"><span class="S4"><b><big>downh</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALDECTD"></a>GLOBALDOWNL<font class="S81">0</font><br>GLOBALDOWNL<br>GLOBALDOWNL<font class="S81">1</font><br>GLOBALDOWNL<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_downl.htm#GLOBALDOWNLX"><span class="S4"><b><big>downl</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALENCOD"></a>GLOBALENCOD<font class="S81">0</font><br>GLOBALENCOD<br>GLOBALENCOD<font class="S81">1</font><br>GLOBALENCOD<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_encod.htm#GLOBALENCODX"><span class="S4"><b><big>encod</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALENCRD"></a>GLOBALENCRD<font class="S81">0</font><br>GLOBALENCRD<br>GLOBALENCRD<font class="S81">1</font><br>GLOBALENCRD<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_encrd.htm#GLOBALENCRDX"><span class="S4"><b><big>encrd</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALENCRY"></a>GLOBALENCRY<font class="S81">0</font><br>GLOBALENCRY<br>GLOBALENCRY<font class="S81">1</font><br>GLOBALENCRY<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_encry.htm#GLOBALENCRYX"><span class="S4"><b><big>encry</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALENCTD"></a>GLOBALENCTD<font class="S81">0</font><br>GLOBALENCTD<br>GLOBALENCTD<font class="S81">1</font><br>GLOBALENCTD<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_enctd.htm#GLOBALENCTDX"><span class="S4"><b><big>enctd</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALEXBNS"></a>GLOBALEXBNS<font class="S81">0</font><br>GLOBALEXBNS<br>GLOBALEXBNS<font class="S81">1</font><br>GLOBALEXBNS<font class="S81">2</font><br>GLOBALEXBNS<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_exbns.htm#GLOBALEXBNSX"><span class="S4"><b><big>exbns</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALEXBNF"></a>GLOBALEXBNF<font class="S81">0</font><br>GLOBALEXBNF<br>GLOBALEXBNF<font class="S81">1</font><br>GLOBALEXBNF<font class="S81">2</font><br>GLOBALEXBNF<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_exbnf.htm#GLOBALEXBNFX"><span class="S4"><b><big>exbnf</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALEXICN"></a>GLOBALEXICN<font class="S81">0</font><br>GLOBALEXICN<br>GLOBALEXICN<font class="S81">1</font></td><td>&nbsp;<a class="le" href="../com_exicn.htm#GLOBALEXICNX"><span class="S4"><b><big>exicn</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALEXICS"></a>GLOBALEXICS<font class="S81">0</font><br>GLOBALEXICS<br>GLOBALEXICS<font class="S81">1</font><br>GLOBALEXICS<font class="S81">2</font><br>GLOBALEXICS<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_exics.htm#GLOBALEXICSX"><span class="S4"><b><big>exics</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALEXMPL"></a>GLOBALEXMPL</td><td>&nbsp;<a class="le" href="../com_exmpl.htm#GLOBALEXMPLX"><span class="S4"><b><big>exmpl</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALEXECT"></a>GLOBALEXECT</td><td>&nbsp;<a class="le" href="../com_exect.htm#GLOBALEXECTX"><span class="S4"><b><big>exect</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALEXTRA"></a>GLOBALEXTRA<font class="S81">0</font><br>GLOBALEXTRA<br>GLOBALEXTRA<font class="S81">1</font><br>GLOBALEXTRA<font class="S81">2</font><br>GLOBALEXTRA<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_extra.htm#GLOBALEXTRAX"><span class="S4"><b><big>extra</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALEXTRF"></a>GLOBALEXTRF<font class="S81">0</font><br>GLOBALEXTRF<br>GLOBALEXTRF<font class="S81">1</font><br>GLOBALEXTRF<font class="S81">2</font><br>GLOBALEXTRF<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_extrf.htm#GLOBALEXTRFX"><span class="S4"><b><big>extrf</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALEENDS"></a>GLOBALEENDS</td><td>&nbsp;<a class="le" href="../com_fends.htm#GLOBALEENDSX"><span class="S4"><b><big>eends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALELIST"></a>GLOBALELIST<font class="S81">0</font><br>GLOBALELIST<br>GLOBALELIST<font class="S81">1</font><br>GLOBALELIST<font class="S81">2</font><br>GLOBALELIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_elist.htm#GLOBALELISTX"><span class="S4"><b><big>elist</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALFENDS"></a>GLOBALFENDS</td><td>&nbsp;<a class="le" href="../com_fends.htm#GLOBALFENDSX"><span class="S4"><b><big>fends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALFLIST"></a>GLOBALFLIST<font class="S81">0</font><br>GLOBALFLIST<br>GLOBALFLIST<font class="S81">1</font><br>GLOBALFLIST<font class="S81">2</font><br>GLOBALFLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_flist.htm#GLOBALFLISTX"><span class="S4"><b><big>flist</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALFOLDS"></a>GLOBALFOLDS<font class="S81">0</font><br>GLOBALFOLDS<font class="S81">1</font><br>GLOBALFOLDS<font class="S81">2</font><br>GLOBALFOLDS</td><td>&nbsp;<a class="le" href="../com_folds.htm#GLOBALFOLDSX"><span class="S4"><b><big>folds</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALFORMT"></a>GLOBALFORMT<br>GLOBALFORMT<font class="S81">1</font><br>GLOBALFORMT<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_formt.htm#GLOBALFORMTX"><span class="S4"><b><big>formt</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALFTPGO"></a>GLOBALFTPGO<br>GLOBALFTPGO<font class="S81">1</font><br>GLOBALFTPGO<font class="S81">2</font><br>GLOBALFTPGO<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_ftpgo.htm#GLOBALFTPGOX"><span class="S4"><b><big>ftpgo</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALFTPGF"></a>GLOBALFTPGF<br>GLOBALFTPGF<font class="S81">1</font><br>GLOBALFTPGF<font class="S81">2</font><br>GLOBALFTPGF<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_ftpgf.htm#GLOBALFTPGFX"><span class="S4"><b><big>ftpgf</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALFTPLF0"></a>GLOBALFTPLF<font class="S81">0</font><br>GLOBALFTPLF<font class="S81">1</font><br>GLOBALFTPLF<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_ftplf.htm#GLOBALFTPLFX"><span class="S4"><b><big>ftplf</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALFTPLS0"></a>GLOBALFTPLS<font class="S81">0</font><br>GLOBALFTPLS<font class="S81">1</font><br>GLOBALFTPLS<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_ftpls.htm#GLOBALFTPLSX"><span class="S4"><b><big>ftpls</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALFUNAU"></a>GLOBALFUNAU<font class="S81">1</font><br>GLOBALFUNAU<font class="S81">2</font><br>GLOBALFUNAU<font class="S81">3</font><br>...<br>GLOBALFUNAUN</td><td>&nbsp;<a class="le" href="../com_funau.htm#GLOBALFUNAUX"><span class="S4"><b><big>funau</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALFUNJS"></a>GLOBALFUNJS<font class="S81">1</font><br>GLOBALFUNJS<font class="S81">2</font><br>GLOBALFUNJS<font class="S81">3</font><br>...<br>GLOBALFUNJSN</td><td>&nbsp;<a class="le" href="../com_funjs.htm#GLOBALFUNJSX"><span class="S4"><b><big>funjs</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALFUNVB"></a>GLOBALFUNVB<font class="S81">1</font><br>GLOBALFUNVB<font class="S81">2</font><br>GLOBALFUNVB<font class="S81">3</font><br>...<br>GLOBALFUNVBN</td><td>&nbsp;<a class="le" href="../com_funvb.htm#GLOBALFUNVBX"><span class="S4"><b><big>funvb</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALGENDS"></a>GLOBALGENDS</td><td>&nbsp;<a class="le" href="../com_gends.htm#GLOBALGENDSX"><span class="S4"><b><big>gends</big></b></span></a></td></tr>
+
+
+<tr><td class="s3td"><a name="GLOBALGIFCS"></a>GLOBALGIFCS<font class="S81">0</font><br>GLOBALGIFCS<br>GLOBALGIFCS<font class="S81">1</font><br>GLOBALGIFCS<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_gifcs.htm#GLOBALGIFCSX"><span class="S4"><b><big>gifcs</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALGIFCN"></a>GLOBALGIFCN<font class="S81">0</font><br>GLOBALGIFCN<br>GLOBALGIFCN<font class="S81">1</font><br>GLOBALGIFCN<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_gifcn.htm#GLOBALGIFCNX"><span class="S4"><b><big>gifcn</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALGIFNN"></a>GLOBALGIFNN<font class="S81">0</font><br>GLOBALGIFNN<br>GLOBALGIFNN<font class="S81">1</font><br>GLOBALGIFNN<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_gifnn.htm#GLOBALGIFNNX"><span class="S4"><b><big>gifnn</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALGLIST"></a>GLOBALGLIST<font class="S81">0</font><br>GLOBALGLIST<br>GLOBALGLIST<font class="S81">1</font><br>GLOBALGLIST<font class="S81">2</font><br>GLOBALGLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_glist.htm#GLOBALGLISTX"><span class="S4"><b><big>glist</big></b></span></a></td></tr>
+
+
+<tr><td class="s3td"><a name="GLOBALHENDS"></a>GLOBALHENDS</td><td>&nbsp;<a class="le" href="../com_hends.htm#GLOBALHENDSX"><span class="S4"><b><big>hends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALHLIST"></a>GLOBALHLIST<font class="S81">0</font><br>GLOBALHLIST<br>GLOBALHLIST<font class="S81">1</font><br>GLOBALHLIST<font class="S81">2</font><br>GLOBALHLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_hlist.htm#GLOBALHLISTX"><span class="S4"><b><big>hlist</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALICODS"></a>GLOBALICODS<font class="S81">0</font><br>GLOBALICODS<br>GLOBALICODS<font class="S81">1</font><br>GLOBALICODS<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_icods.htm#GLOBALICODSX"><span class="S4"><b><big>icods</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALICODF"></a>GLOBALICODF<font class="S81">0</font><br>GLOBALICODF<br>GLOBALICODF<font class="S81">1</font><br>GLOBALICODF<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_icodf.htm#GLOBALICODFX"><span class="S4"><b><big>icodf</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALICOFS"></a>GLOBALICOFS<br>GLOBALICOFS<font class="S81">1</font><br>GLOBALICOFS<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_icofs.htm#GLOBALICOFSX"><span class="S4"><b><big>icofs</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALICOFT"></a>GLOBALICOFT<br>GLOBALICOFT<font class="S81">1</font><br>GLOBALICOFT<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_icoft.htm#GLOBALICOFTX"><span class="S4"><b><big>icoft</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALICOMM"></a>GLOBALICOMM<font class="S81">0</font><br>GLOBALICOMM<br>GLOBALICOMM<font class="S81">1</font><br>GLOBALICOMM<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_icomm.htm#GLOBALICOMMX"><span class="S4"><b><big>icomm</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALICOMF"></a>GLOBALICOMF<font class="S81">0</font><br>GLOBALICOMF<br>GLOBALICOMF<font class="S81">1</font><br>GLOBALICOMF<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_icomf.htm#GLOBALICOMFX"><span class="S4"><b><big>icomf</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALICONN"></a>GLOBALICONN<font class="S81">0</font><br>GLOBALICONN<br>GLOBALICONN<font class="S81">1</font><br>GLOBALICONN<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_iconn.htm#GLOBALICONNX"><span class="S4"><b><big>iconn</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALICONV"></a>GLOBALICONV<font class="S81">0</font><br>GLOBALICONV<br>GLOBALICONV<font class="S81">1</font><br>GLOBALICONV<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_iconv.htm#GLOBALICONVX"><span class="S4"><b><big>iconv</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALICONF"></a>GLOBALICONF<font class="S81">0</font><br>GLOBALICONF<br>GLOBALICONF<font class="S81">1</font><br>GLOBALICONF<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_iconf.htm#GLOBALICONFX"><span class="S4"><b><big>iconf</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALIMGCN"></a>GLOBALIMGCN<font class="S81">0</font><br>GLOBALIMGCN<br>GLOBALIMGCN<font class="S81">1</font><br>GLOBALIMGCN<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_imgcn.htm#GLOBALIMGCNX"><span class="S4"><b><big>imgcn</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALIMGCF"></a>GLOBALIMGCF<font class="S81">0</font><br>GLOBALIMGCF<br>GLOBALIMGCF<font class="S81">1</font><br>GLOBALIMGCF<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_imgcf.htm#GLOBALIMGCFX"><span class="S4"><b><big>imgcf</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALIMGFS"></a>GLOBALIMGFS<font class="S81">0</font><br>GLOBALIMGFS<br>GLOBALIMGFS<font class="S81">1</font><br>GLOBALIMGFS<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_imgfs.htm#GLOBALIMGFSX"><span class="S4"><b><big>imgfs</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALIMGFF"></a>GLOBALIMGFF<font class="S81">0</font><br>GLOBALIMGFF<br>GLOBALIMGFF<font class="S81">1</font><br>GLOBALIMGFF<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_imgff.htm#GLOBALIMGFFX"><span class="S4"><b><big>imgff</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALIMGCG"></a>GLOBALIMGCG</td><td>&nbsp;<a class="le" href="../com_imgcg.htm#GLOBALIMGCGX"><span class="S4"><b><big>imgcg</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALIMGCR"></a>GLOBALIMGCR</td><td>&nbsp;<a class="le" href="../com_imgcr.htm#GLOBALIMGCRX"><span class="S4"><b><big>imgcr</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALIMGJS"></a>GLOBALIMGJS<font class="S81">0</font><br>GLOBALIMGJS<br>GLOBALIMGJS<font class="S81">1</font><br>GLOBALIMGJS<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_imgjs.htm#GLOBALIMGJSX"><span class="S4"><b><big>imgjs</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALIMGJF"></a>GLOBALIMGJF<font class="S81">0</font><br>GLOBALIMGJF<br>GLOBALIMGJF<font class="S81">1</font><br>GLOBALIMGJF<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_imgjf.htm#GLOBALIMGJFX"><span class="S4"><b><big>imgjf</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALIMGNZ"></a>GLOBALIMGNZ<font class="S81">0</font><br>GLOBALIMGNZ<br>GLOBALIMGNZ<font class="S81">1</font><br>GLOBALIMGNZ<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_imgnz.htm#GLOBALIMGNZX"><span class="S4"><b><big>imgnz</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALIMGTX"></a>GLOBALIMGTX</td><td>&nbsp;<a class="le" href="../com_imgtx.htm#GLOBALIMGTXX"><span class="S4"><b><big>imgtx</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALIMGTZ"></a>GLOBALIMGTZ<br>GLOBALIMGTZ<font class="S81">1</font><br>GLOBALIMGTZ<font class="S81">2</font><br>GLOBALIMGTZ<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_imgtz.htm#GLOBALIMGTZX"><span class="S4"><b><big>imgtz</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALIENDS"></a>GLOBALIENDS</td><td>&nbsp;<a class="le" href="../com_iends.htm#GLOBALIENDSX"><span class="S4"><b><big>iends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALILIST"></a>GLOBALILIST<font class="S81">0</font><br>GLOBALILIST<br>GLOBALILIST<font class="S81">1</font><br>GLOBALILIST<font class="S81">2</font><br>GLOBALILIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_ilist.htm#GLOBALILISTX"><span class="S4"><b><big>ilist</big></b></span></a></td></tr>
+
+
+<tr><td class="s3td"><a name="GLOBALINIST"></a>GLOBALINIST</td><td>&nbsp;<a class="le" href="../com_inist.htm#GLOBALINISTX"><span class="S4"><b><big>inist</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALJOINF"></a>GLOBALJOINF<font class="S81">0</font><br>GLOBALJOINF</td><td>&nbsp;<a class="le" href="../com_joinf.htm#GLOBALJOINFX"><span class="S4"><b><big>joinf</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALJOINZ"></a>GLOBALJOINZ<font class="S81">0</font><br>GLOBALJOINZ</td><td>&nbsp;<a class="le" href="../com_joinz.htm#GLOBALJOINZX"><span class="S4"><b><big>joinz</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALJENDS"></a>GLOBALJENDS</td><td>&nbsp;<a class="le" href="../com_jends.htm#GLOBALJENDSX"><span class="S4"><b><big>jends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALJLIST"></a>GLOBALJLIST<font class="S81">0</font><br>GLOBALJLIST<br>GLOBALJLIST<font class="S81">1</font><br>GLOBALJLIST<font class="S81">2</font><br>GLOBALJLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_jlist.htm#GLOBALJLISTX"><span class="S4"><b><big>jlist</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALKENDS"></a>GLOBALKENDS</td><td>&nbsp;<a class="le" href="../com_kends.htm#GLOBALKENDSX"><span class="S4"><b><big>kends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALKLIST"></a>GLOBALKLIST<font class="S81">0</font><br>GLOBALKLIST<br>GLOBALKLIST<font class="S81">1</font><br>GLOBALKLIST<font class="S81">2</font><br>GLOBALKLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_klist.htm#GLOBALKLISTX"><span class="S4"><b><big>klist</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALLENDS"></a>GLOBALLENDS</td><td>&nbsp;<a class="le" href="../com_lends.htm#GLOBALLENDSX"><span class="S4"><b><big>lends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALLLIST"></a>GLOBALLLIST<font class="S81">0</font><br>GLOBALLLIST<br>GLOBALLLIST<font class="S81">1</font><br>GLOBALLLIST<font class="S81">2</font><br>GLOBALLLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_llist.htm#GLOBALLLISTX"><span class="S4"><b><big>llist</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALLBICL"></a>GLOBALLBICL<br>GLOBALLBICL<font class="S81">1</font></td><td>&nbsp;<a class="le" href="../com_lbicl.htm#GLOBALLBICLX"><span class="S4"><b><big>lbicl</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALLISTS"></a>GLOBALLISTS<font class="S81">0</font><br>GLOBALLISTS<br>GLOBALLISTS<font class="S81">1</font><br>GLOBALLISTS<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_lists.htm#GLOBALLISTSX"><span class="S4"><b><big>lists</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALLISTT"></a>GLOBALLISTT<font class="S81">0</font><br>GLOBALLISTT<br>GLOBALLISTT<font class="S81">1</font><br>GLOBALLISTT<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_listt.htm#GLOBALLISTTX"><span class="S4"><b><big>listt</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALLISTX"></a>GLOBALLISTX<font class="S81">0</font><br>GLOBALLISTX<br>GLOBALLISTX<font class="S81">1</font></td><td>&nbsp;<a class="le" href="../com_listx.htm"><span class="S4"><b><big>listx</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALMARKS"></a>GLOBALMARKS<font class="S81">0</font><br>GLOBALMARKS<br>GLOBALMARKS<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_marks.htm#GLOBALMARKSX"><span class="S4"><b><big>marks</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALMASKZ"></a>GLOBALMASKZ<font class="S81">0</font><br>GLOBALMASKZ<br>GLOBALMASKZ<font class="S81">1</font><br>GLOBALMASKZ<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_maskz.htm#GLOBALMASKZX"><span class="S4"><b><big>maskz</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALMASKX"></a>GLOBALMASKX<font class="S81">0</font><br>GLOBALMASKX</td><td>&nbsp;<a class="le" href="../com_maskx.htm#GLOBALMASKXX"><span class="S4"><b><big>maskx</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALMENDS"></a>GLOBALMENDS</td><td>&nbsp;<a class="le" href="../com_mends.htm#GLOBALMENDSX"><span class="S4"><b><big>mends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALMLIST"></a>GLOBALMLIST<font class="S81">0</font><br>GLOBALMLIST<br>GLOBALMLIST<font class="S81">1</font><br>GLOBALMLIST<font class="S81">2</font><br>GLOBALMLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_mlist.htm#GLOBALMLISTX"><span class="S4"><b><big>mlist</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALMODFS"></a>GLOBALMODFS<font class="S81">0</font><br>GLOBALMODFS<br>GLOBALMODFS<font class="S81">1</font><br>GLOBALMODFS<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_modfs.htm#GLOBALMODFSX"><span class="S4"><b><big>modfs</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALMODFT"></a>GLOBALMODFT<font class="S81">0</font><br>GLOBALMODFT<br>GLOBALMODFT<font class="S81">1</font><br>GLOBALMODFT<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_modft.htm#GLOBALMODFTX"><span class="S4"><b><big>modft</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALMOVEE"></a>GLOBALMOVEE<font class="S81">0</font><br>GLOBALMOVEE<br>GLOBALMOVEE<font class="S81">1</font><br>GLOBALMOVEE<font class="S81">2</font><br>GLOBALMOVEE<font class="S81">3</font><br>GLOBALMOVEE<font class="S81">4</font></td><td>&nbsp;<a class="le" href="../com_movee.htm#GLOBALMOVEEX"><span class="S4"><b><big>movee</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALMOVES"></a>GLOBALMOVES<font class="S81">0</font><br>GLOBALMOVES<br>GLOBALMOVES<font class="S81">1</font><br>GLOBALMOVES<font class="S81">2</font><br>GLOBALMOVES<font class="S81">3</font><br>GLOBALMOVES<font class="S81">4</font></td><td>&nbsp;<a class="le" href="../com_moves.htm#GLOBALMOVESX"><span class="S4"><b><big>moves</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALMP3IS"></a>GLOBALMP3IS<font class="S81">0</font><br>GLOBALMP3IS<br>GLOBALMP3IS<font class="S81">1</font><br>GLOBALMP3IS<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_mp3is.htm#GLOBALMP3ISX"><span class="S4"><b><big>mp3is</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALMP3IM"></a>GLOBALMP3IM<font class="S81">0</font><br>GLOBALMP3IM<br>GLOBALMP3IM<font class="S81">1</font><br>GLOBALMP3IM<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_mp3im.htm#GLOBALMP3IMX"><span class="S4"><b><big>mp3im</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALMULTI"></a>GLOBALMULTI<br>GLOBALMULTI<font class="S81">0</font><br>GLOBALMULTI<font class="S81">1</font><br>GLOBALMULTI<font class="S81">2</font><br>GLOBALMULTI<font class="S81">3</font><br>GLOBALMULTI<font class="S81">4</font><br>GLOBALMULTI<font class="S81">5</font></td><td>&nbsp;<a class="le" href="../com_multi.htm#GLOBALMULTIX"><span class="S4"><b><big>multi</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALNFSIS"></a>GLOBALNFSIS<br>GLOBALNFSIS<font class="S81">0</font><br>GLOBALNFSIS<font class="S81">1</font><br>GLOBALNFSIS<font class="S81">2</font><br>...<br>GLOBALNFSISN</td><td>&nbsp;<a class="le" href="../com_nfsis.htm#GLOBALNFSISX"><span class="S4"><b><big>nfsis</big></b></span></a></td></tr>
+
+
+<tr><td class="s3td"><a name="GLOBALNENDS"></a>GLOBALNENDS</td><td>&nbsp;<a class="le" href="../com_nends.htm#GLOBALNENDSX"><span class="S4"><b><big>nends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALNLIST"></a>GLOBALNLIST<font class="S81">0</font><br>GLOBALNLIST<br>GLOBALNLIST<font class="S81">1</font><br>GLOBALNLIST<font class="S81">2</font><br>GLOBALNLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_nlist.htm#GLOBALNLISTX"><span class="S4"><b><big>nlist</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALOENDS"></a>GLOBALOENDS</td><td>&nbsp;<a class="le" href="../com_oends.htm#GLOBALOENDSX"><span class="S4"><b><big>oends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALOLIST"></a>GLOBALOLIST<font class="S81">0</font><br>GLOBALOLIST<br>GLOBALOLIST<font class="S81">1</font><br>GLOBALOLIST<font class="S81">2</font><br>GLOBALOLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_olist.htm#GLOBALOLISTX"><span class="S4"><b><big>olist</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALOPENS"></a>GLOBALOPENS<br>GLOBALOPENS<font class="S81">1</font></td><td>&nbsp;<a class="le" href="../com_opens.htm#GLOBALOPENSX"><span class="S4"><b><big>opens</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALOPENF"></a>GLOBALOPENF<br>GLOBALOPENF<font class="S81">1</font></td><td>&nbsp;<a class="le" href="../com_openf.htm#GLOBALOPENFX"><span class="S4"><b><big>openf</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALPENDS"></a>GLOBALPENDS</td><td>&nbsp;<a class="le" href="../com_pends.htm#GLOBALPENDSX"><span class="S4"><b><big>pends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALPLIST"></a>GLOBALPLIST<font class="S81">0</font><br>GLOBALPLIST<br>GLOBALPLIST<font class="S81">1</font><br>GLOBALPLIST<font class="S81">2</font><br>GLOBALPLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_plist.htm#GLOBALPLISTX"><span class="S4"><b><big>plist</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALPICUP"></a>GLOBALPICUP<font class="S81">0</font><br>GLOBALPICUP<br>GLOBALPICUP<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_picup.htm#GLOBALPICUPX"><span class="S4"><b><big>picup</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALPICUS"></a>GLOBALPICUS<font class="S81">0</font><br>GLOBALPICUS<br>GLOBALPICUS<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_picus.htm#GLOBALPICUSX"><span class="S4"><b><big>picus</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALQENDS"></a>GLOBALQENDS</td><td>&nbsp;<a class="le" href="../com_qends.htm#GLOBALQENDSX"><span class="S4"><b><big>qends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALQLIST"></a>GLOBALQLIST<font class="S81">0</font><br>GLOBALQLIST<br>GLOBALQLIST<font class="S81">1</font><br>GLOBALQLIST<font class="S81">2</font><br>GLOBALQLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_qlist.htm#GLOBALQLISTX"><span class="S4"><b><big>qlist</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALREGXT"></a>GLOBALREGXT<font class="S81">0</font><br>GLOBALREGXT</td><td>&nbsp;<a class="le" href="../com_regxt.htm#GLOBALREGXTX"><span class="S4"><b><big>regxt</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALRENDS"></a>GLOBALRENDS</td><td>&nbsp;<a class="le" href="../com_rends.htm#GLOBALRENDSX"><span class="S4"><b><big>rends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALRENMM"></a>GLOBALRENMM<font class="S81">0</font><br>GLOBALRENMM<br>GLOBALRENMM<font class="S81">1</font><br>GLOBALRENMM<font class="S81">2</font><br>GLOBALRENMM<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_renmm.htm#GLOBALRENMMX"><span class="S4"><b><big>renmm</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALRENMS"></a>GLOBALRENMS<font class="S81">0</font><br>GLOBALRENMS<br>GLOBALRENMS<font class="S81">1</font><br>GLOBALRENMS<font class="S81">2</font><br>GLOBALRENMS<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_renms.htm#GLOBALRENMSX"><span class="S4"><b><big>renms</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALRLIST"></a>GLOBALRLIST<font class="S81">0</font><br>GLOBALRLIST<br>GLOBALRLIST<font class="S81">1</font><br>GLOBALRLIST<font class="S81">2</font><br>GLOBALRLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_rlist.htm#GLOBALRLISTX"><span class="S4"><b><big>rlist</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALRUNCM"></a>GLOBALRUNCM</td><td>&nbsp;<a class="le" href="../com_runcm.htm#GLOBALRUNCMX"><span class="S4"><b><big>runcm</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALSCREN"></a>GLOBALSCREN</td><td>&nbsp;<a class="le" href="../com_scren.htm#GLOBALSCRENX"><span class="S4"><b><big>scren</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALSENDS"></a>GLOBALSENDS</td><td>&nbsp;<a class="le" href="../com_sends.htm#GLOBALSENDSX"><span class="S4"><b><big>sends</big></b></span></a></td></tr>
+
+
+<tr><td class="s3td"><a name="GLOBALSCRPT"></a>GLOBALSCRPT<font class="S81">0</font><br>GLOBALSCRPT<br>GLOBALSCRPT<font class="S81">1</font></td><td>&nbsp;<a class="le" href="../com_scrpt.htm#GLOBALSCRPTX"><span class="S4"><b><big>scrpt</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALSLIST"></a>GLOBALSLIST<font class="S81">0</font><br>GLOBALSLIST<br>GLOBALSLIST<font class="S81">1</font><br>GLOBALSLIST<font class="S81">2</font><br>GLOBALSLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_slist.htm#GLOBALSLISTX"><span class="S4"><b><big>slist</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALSPLIT"></a>GLOBALSPLIT<font class="S81">0</font><br>GLOBALSPLIT<br>GLOBALSPLIT<font class="S81">1</font><br>GLOBALSPLIT<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_split.htm#GLOBALSPLITX"><span class="S4"><b><big>split</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALSPLIS"></a>GLOBALSPLIS<font class="S81">0</font><br>GLOBALSPLIS<br>GLOBALSPLIS<font class="S81">1</font><br>GLOBALSPLIS<font class="S81">2</font><br>GLOBALSPLIS<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_splis.htm#GLOBALSPLISX"><span class="S4"><b><big>splis</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALSTART"></a><a name="GLOBALPROGR"></a>GLOBALSTART<br>GLOBALPROGR<br>GLOBALSTOUT<br>GLOBALSTERR</td><td>&nbsp;<a class="le" href="../com_start.htm#GLOBALSTARTX"><span class="S4"><b><big>start</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALSTRCT"></a>GLOBALSTRCT</td><td>&nbsp;<a class="le" href="../com_strct.htm#GLOBALSTRCTX"><span class="S4"><b><big>strct</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALSTEXT"></a>GLOBALSTEXT<font class="S81">0</font><br>GLOBALSTEXT<br>GLOBALSTEXT<font class="S81">1</font><br>GLOBALSTEXT<font class="S81">2</font><br>GLOBALSTEXT<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_stext.htm#GLOBALSTEXTX"><span class="S4"><b><big>stext</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALSYMXX"></a>GLOBALSYMXX</td><td>&nbsp;<a class="le" href="../com_symxx.htm#GLOBALSYMXXX"><span class="S4"><b><big>symxx</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALTABSV"></a>GLOBALTABSV</td><td>&nbsp;<a class="le" href="../com_tabsv.htm#GLOBALTABSVX"><span class="S4"><b><big>tabsv</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALTENDS"></a>GLOBALTENDS</td><td>&nbsp;<a class="le" href="../com_tends.htm#GLOBALTENDSX"><span class="S4"><b><big>tends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALTLIST"></a>GLOBALTLIST<font class="S81">0</font><br>GLOBALTLIST<br>GLOBALTLIST<font class="S81">1</font><br>GLOBALTLIST<font class="S81">2</font><br>GLOBALTLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_tlist.htm#GLOBALTLISTX"><span class="S4"><b><big>tlist</big></b></span></a></td></tr>
+
+
+<tr><td class="s3td"><a name="GLOBALTXTSP"></a>GLOBALTXTSP<font class="S81">0</font><br>GLOBALTXTSP</td><td>&nbsp;<a class="le" href="../com_txtsp.htm#GLOBALTXTSPX"><span class="S4"><b><big>txtsp</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALTXTSS"></a>GLOBALTXTSS<font class="S81">0</font><br>GLOBALTXTSS<br>GLOBALTXTSS<font class="S81">1</font><br>GLOBALTXTSS<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_txtss.htm#GLOBALTXTSSX"><span class="S4"><b><big>txtss</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALTEXTT"></a>GLOBALTEXTT<font class="S81">0</font><br>GLOBALTEXTT<br>GLOBALTEXTT<font class="S81">1</font><br>GLOBALTEXTT<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_textt.htm#GLOBALTEXTTX"><span class="S4"><b><big>textt</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALTEXTX"></a>GLOBALTEXTX<font class="S81">0</font><br>GLOBALTEXTX<br>GLOBALTEXTX<font class="S81">1</font><br>GLOBALTEXTX<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_textx.htm#GLOBALTEXTXX"><span class="S4"><b><big>textx</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALTEXTVX"></a>GLOBALTEXTV<br>GLOBALTEXTV<font class="S81">1</font><br>GLOBALTEXTV<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_textv.htm#GLOBALTEXTXX"><span class="S4"><b><big>textv</big></b></span></a></td></tr>
+
+
+<tr><td class="s3td"><a name="GLOBALTXWVFX"></a>GLOBALTXWVF<font class="S81">1</font><br>GLOBALTXWVF<font class="S81">2</font></font></td><td>&nbsp;<a class="le" href="../com_txwvf.htm#GLOBALTXWVFX"><span class="S4"><b><big>txwvf</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALTXWVSX"></a>GLOBALTXWVS<font class="S81">1</font><br>GLOBALTXWVS<font class="S81">2</font></font></td><td>&nbsp;<a class="le" href="../com_txwvs.htm#GLOBALTXWVSX"><span class="S4"><b><big>txwvs</big></b></span></a></td></tr>
+
+
+
+
+<tr><td class="s3td"><a name="GLOBALUENDS"></a>GLOBALUENDS</td><td>&nbsp;<a class="le" href="../com_uends.htm#GLOBALUENDSX"><span class="S4"><b><big>uends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALULIST"></a>GLOBALULIST<font class="S81">0</font><br>GLOBALULIST<br>GLOBALULIST<font class="S81">1</font><br>GLOBALULIST<font class="S81">2</font><br>GLOBALULIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_ulist.htm#GLOBALULISTX"><span class="S4"><b><big>ulist</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALUPLDS"></a>GLOBALUPLDS<font class="S81">0</font><br>GLOBALUPLDS<br>GLOBALUPLDS<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_uplds.htm#GLOBALUPLDSX"><span class="S4"><b><big>uplds</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALUPLDF"></a>GLOBALUPLDF<font class="S81">0</font><br>GLOBALUPLDF<br>GLOBALUPLDF<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_upldf.htm#GLOBALUPLDFX"><span class="S4"><b><big>upldf</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALURLXT"></a>GLOBALURLXT<font class="S81">0</font><br>GLOBALURLXT<br>GLOBALURLXT<font class="S81">1</font><br>GLOBALURLXT<font class="S81">2</font><br>GLOBALURLXT<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_urlxt.htm#GLOBALURLXTX"><span class="S4"><b><big>urlxt</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALURLRA"></a>GLOBALURLRA<font class="S81">0</font><br>GLOBALURLRA<br>GLOBALURLRA<font class="S81">1</font><br>GLOBALURLRA<font class="S81">2</font><br>GLOBALURLRA<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_urlra.htm#GLOBALURLRAX"><span class="S4"><b><big>urlra</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALURLRF"></a>GLOBALURLRF<font class="S81">0</font><br>GLOBALURLRF<br>GLOBALURLRF<font class="S81">1</font><br>GLOBALURLRF<font class="S81">2</font><br>GLOBALURLRF<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_urlrf.htm#GLOBALURLRFX"><span class="S4"><b><big>urlrf</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALVENDS"></a>GLOBALVENDS</td><td>&nbsp;<a class="le" href="../com_vends.htm#GLOBALVENDSX"><span class="S4"><b><big>vends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALVERSN"></a>GLOBALVERSN<br>GLOBALVERSN<font class="S81">1</font><br>GLOBALVERSN<font class="S81">2</font></td><td>&nbsp;<a class="le" href="../com_versn.htm#GLOBALVERSNX"><span class="S4"><b><big>versn</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALVLIST"></a>GLOBALVLIST<font class="S81">0</font><br>GLOBALVLIST<br>GLOBALVLIST<font class="S81">1</font><br>GLOBALVLIST<font class="S81">2</font><br>GLOBALVLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_vlist.htm#GLOBALVLISTX"><span class="S4"><b><big>vlist</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALWATCH"></a>GLOBALWATCH</td><td>&nbsp;<a class="le" href="../com_watch.htm#GLOBALWATCHX"><span class="S4"><b><big>watch</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALWEBSC"></a>GLOBALWEBSC<font class="S81">0</font><br>GLOBALWEBSC</td><td>&nbsp;<a class="le" href="../com_websc.htm#GLOBALWEBSCX"><span class="S4"><b><big>websc</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALWEBSS"></a>GLOBALWEBSS<font class="S81">0</font><br>GLOBALWEBSS</td><td>&nbsp;<a class="le" href="../com_webss.htm#GLOBALWEBSSX"><span class="S4"><b><big>webss</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALWENDS"></a>GLOBALWENDS</td><td>&nbsp;<a class="le" href="../com_wends.htm#GLOBALWENDSX"><span class="S4"><b><big>wends</big></b></span></a></td></tr>
+
+
+<tr><td class="s3td"><a name="GLOBALWINLS"></a>GLOBALWINLS<font class="S81">0</font><br>GLOBALWINLS</td><td>&nbsp;<a class="le" href="../com_winls.htm#GLOBALWINLSX"><span class="S4"><b><big>winls</big></b></span></a></td></tr>
+
+
+<tr><td class="s3td"><a name="GLOBALWLIST"></a>GLOBALWLIST<font class="S81">0</font><br>GLOBALWLIST<br>GLOBALWLIST<font class="S81">1</font><br>GLOBALWLIST<font class="S81">2</font><br>GLOBALWLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_wlist.htm#GLOBALWLISTX"><span class="S4"><b><big>wlist</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALWNTXT"></a>GLOBALWNTXT</td><td>&nbsp;<a class="le" href="../com_wntxt.htm#GLOBALWNTXTX"><span class="S4"><b><big>wntxt</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALWORDS"></a>GLOBALWORDS<br>GLOBALWORDS<font class="S81">1</font></td><td>&nbsp;<a class="le" href="../com_words.htm#GLOBALWORDSX"><span class="S4"><b><big>words</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALXCLIP"></a>GLOBALXCLIP</td><td>&nbsp;<a class="le" href="../com_xclip.htm#GLOBALXCLIPX"><span class="S4"><b><big>xclip</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALXENDS"></a>GLOBALXENDS</td><td>&nbsp;<a class="le" href="../com_xends.htm#GLOBALXENDSX"><span class="S4"><b><big>xends</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALXLIST"></a>GLOBALXLIST<font class="S81">0</font><br>GLOBALXLIST<br>GLOBALXLIST<font class="S81">1</font><br>GLOBALXLIST<font class="S81">2</font><br>GLOBALXLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_xlist.htm#GLOBALXLISTX"><span class="S4"><b><big>xlist</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALXLSXF"></a>GLOBALXLSXF<font class="S81">0</font><br>GLOBALXLSXF</td><td>&nbsp;<a class="le" href="../com_xlsxf.htm#GLOBALXLSXFX"><span class="S4"><b><big>xlsxf</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALXLSXT"></a>GLOBALXLSXT<font class="S81">0</font><br>GLOBALXLSXT</td><td>&nbsp;<a class="le" href="../com_xlsxt.htm#GLOBALXLSXTX"><span class="S4"><b><big>xlsxt</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALXYPOS"></a>GLOBALXYPOS<br>GLOBALXYPOS<font class="S81">1</font><br>GLOBALXYPOS<font class="S81">2</font><br>...<br>GLOBALXYPOS<font class="S81">N</font><br></td><td>&nbsp;<a class="le" href="../com_xypos.htm#GLOBALXYPOSX"><span class="S4"><b><big>xypos</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALYENDS"></a>GLOBALYENDS</td><td>&nbsp;<a class="le" href="../com_yends.htm#GLOBALYENDSX"><span class="S4"><b><big>yends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALYLIST"></a>GLOBALYLIST<font class="S81">0</font><br>GLOBALYLIST<br>GLOBALYLIST<font class="S81">1</font><br>GLOBALYLIST<font class="S81">2</font><br>GLOBALYLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_ylist.htm#GLOBALYLISTX"><span class="S4"><b><big>ylist</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALZENDS"></a>GLOBALZENDS</td><td>&nbsp;<a class="le" href="../com_zends.htm#GLOBALZENDSX"><span class="S4"><b><big>zends</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALZLIST"></a>GLOBALZLIST<font class="S81">0</font><br>GLOBALZLIST<br>GLOBALZLIST<font class="S81">1</font><br>GLOBALZLIST<font class="S81">2</font><br>GLOBALZLIST<font class="S81">3</font></td><td>&nbsp;<a class="le" href="../com_zlist.htm#GLOBALZLISTX"><span class="S4"><b><big>zlist</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALZPACF"></a>GLOBALZPACF<font class="S81">0</font><br>GLOBALZPACF</td><td>&nbsp;<a class="le" href="../com_zpacf.htm#GLOBALZPACFX"><span class="S4"><b><big>zpacf</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALZPACK"></a>GLOBALZPACK<font class="S81">0</font><br>GLOBALZPACK</td><td>&nbsp;<a class="le" href="../com_zpack.htm#GLOBALZPACKX"><span class="S4"><b><big>zpack</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALZUNPF"></a>GLOBALZUNPF<font class="S81">0</font><br>GLOBALZUNPF</td><td>&nbsp;<a class="le" href="../com_zunpf.htm#GLOBALZUNPFX"><span class="S4"><b><big>zunpf</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALZUNPK"></a>GLOBALZUNPK<font class="S81">0</font><br>GLOBALZUNPK</td><td>&nbsp;<a class="le" href="../com_zunpk.htm#GLOBALZUNPKX"><span class="S4"><b><big>zunpk</big></b></span></a></td></tr>
+
+<tr class="selcntr"><td colspan="2" style="white-space: nowrap">Глобальные переменные аналогичных команд <a class="le" href="../com_listx.htm#GLOBALLISTXX"><span class="S4"><b><big>listx</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALLISTX"></a>GLOBAL<font class="S51">A</font>ISTX<br>GLOBAL<font class="S51">B</font>ISTX<br>...<br>GLOBAL<font class="S51">Z</font>ISTX</font></td><td>&nbsp;<a class="le" href="../com_aistx.htm#GLOBALAISTXX"><span class="S4"><b><big>aistx</big></b></span></a>, <a class="le" href="../com_bistx.htm#GLOBALBISTXX"><span class="S4"><b><big>bistx</big></b></span></a>, ... , <a class="le" href="../com_zistx.htm#GLOBALZISTXX"><span class="S4"><b><big>zistx</big></b></span></a>
+
+<tr class="selcntr"><td colspan="2" style="white-space: nowrap">Глобальные переменные аналогичных команд <a class="le" href="../com_infos.htm#GLOBALINFOSX"><span class="S4"><b><big>infos</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALINFOSX"></a>GLOBAL<font class="S51">A</font>NFOS<br>GLOBAL<font class="S51">B</font>NFOS<br>...<br>GLOBAL<font class="S51">Z</font>NFOS</font></td><td>&nbsp;<a class="le" href="../com_infos.htm#GLOBALINFOSX"><span class="S4"><b><big>anfos</big></b></span></a>, <a class="le" href="../com_infos.htm#GLOBALINFOSX"><span class="S4"><b><big>bnfos</big></b></span></a>, ... , <a class="le" href="../com_infos.htm#GLOBALINFOSX"><span class="S4"><b><big>znfos</big></b></span></a>
+
+
+<tr class="selcntr"><td colspan="2" style="white-space: nowrap">Глобальные переменные 2D массивов</td></tr>
+<tr><td class="s3td"><a name="GLOBALARR2D"></a>GLOBAL<font class="S51">A</font>RR2D<br>GLOBAL<font class="S51">B</font>RR2D<br>...<br>GLOBAL<font class="S51">Z</font>RR2D</td><td>&nbsp;<a class="le" href="../com_arr2d.htm#GLOBALARR2DX"><span class="S4"><b><big>arr2d</big></b></span></a>, <a class="le" href="../com_brr2d.htm#GLOBALBRR2DX"><span class="S4"><b><big>brr2d</big></b></span></a>, ... , <a class="le" href="../com_zrr2d.htm#GLOBALZRR2DX"><span class="S4"><b><big>zrr2d</big></b></span></a>
+
+<tr><td class="s3td"><a name="GLOBALANF2D"></a>GLOBAL<font class="S51">A</font>NF2D<br>GLOBAL<font class="S51">B</font>NF2D<br>...<br>GLOBAL<font class="S51">Z</font>NF2D</td><td>&nbsp;<a class="le" href="../com_anf2d.htm#GLOBALANF2DX"><span class="S4"><b><big>anf2d</big></b></span></a>, <a class="le" href="../com_bnf2d.htm#GLOBALBNF2DX"><span class="S4"><b><big>bnf2d</big></b></span></a>, ... , <a class="le" href="../com_znf2d.htm#GLOBALANF2DX"><span class="S4"><b><big>znf2d</big></b></span></a>
+
+<tr><td colspan="2">Для всех переменных 2D массивов:<br>
+&nbsp;&nbsp;<font class="S91">GLOBALNAME</font><font class="S81"><b>_</b></font> содержит:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;если 2D массив, то номер последней колонки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;если 1D массив, то -1
+
+</td></tr>
+
+
+<tr class="selcntr"><td colspan="2" style="white-space: nowrap">Глобальные переменные диалогов</td></tr>
+<tr><td class="s3td"><a name="GLOBALCOMBO"></a>GLOBALCOMBO<br>GLOBALCOMBO<font class="S81">1</font><br>...<br>GLOBALCOMBO<font class="S81">N</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALCOMBOX"><span class="S4"><b><big>[combo]</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALCOMBN"></a>GLOBALCOMBN<font class="S81">1</font><br>...<br>GLOBALCOMBN<font class="S81">N</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALCOMBNX"><span class="S4"><b><big>[combo]</big></b></span></a></td></tr>
+
+
+<tr><td class="s3td"><a name="GLOBALDATES"></a>GLOBALDATES<br>GLOBALDATES<font class="S81">1</font><br>...<br>GLOBALDATES<font class="S81">N</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALDATESX"><span class="S4"><b><big>[dates]</big></b></span></a></td></tr>
+
+
+<tr><td class="s3td"><a name="GLOBALEDITS"></a>GLOBALEDITS<br>GLOBALEDITS<font class="S81">1</font><br>...<br>GLOBALEDITS<font class="S81">N</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALEDITSX"><span class="S4"><b><big>[edits]</big></b></span></a></td></tr>
+
+<tr><td class="s3td">GLOBALICONZ<font class="S81">1</font><br>...<br>GLOBALICONZ<font class="S81">N</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALICONZX"><span class="S4"><b><big>[iconz]</big></b></span></a></td></tr>
+
+
+<tr><td class="s3td">GLOBALIMAGE<font class="S81">0</font><br>GLOBALIMAGE<font class="S81">1</font><br>...<br>GLOBALIMAGE<font class="S81">N</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALIMAGEX"><span class="S4"><b><big>[image]</big></b></span></a></td></tr>
+
+<tr><td class="s3td">GLOBALLISTA<font class="S81">1</font><br>...<br>GLOBALLISTA<font class="S81">N</font><br><br>GLOBALLISTB<font class="S81">1</font><br>...<br>GLOBALLISTB<font class="S81">N</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALLISTAX"><span class="S4"><b><big>[lista]</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALINPUT"></a>GLOBALINPUT<br>GLOBALINPUT<font class="S81">1</font><br>...<br>GLOBALINPUT<font class="S81">N</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALINPUTX"><span class="S4"><b><big>[input]</big></b></span></a><br>&nbsp;<a class="le" href="add_dialog.htm#GLOBALRICHINPUTX"><span class="S4"><b><big>[richinput]</big></b></span></a><br></td></tr>
+<tr><td class="s3td"><a name="GLOBALGROUP"></a>GLOBALGROUP<br>GLOBALGROUP<font class="S81">1</font><br>...<br>GLOBALGROUP<font class="S81">N</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALGROUPX"><span class="S4"><b><big>[group]</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALGROUN"></a>GLOBALGROUN<font class="S81">1</font><br>...<br>GLOBALGROUN<font class="S81">N</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALGROUNX"><span class="S4"><b><big>[group]</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALCHECK"></a>GLOBALCHECK<font class="S81">1</font><br>GLOBALCHECK<font class="S81">2</font><br>...<br>GLOBALCHECK<font class="S81">9</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALCHECKX"><span class="S4"><b><big>[check]</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALCHECM"></a>GLOBALCHECM<font class="S81">1</font><br>GLOBALCHECM<font class="S81">2</font><br>...<br>GLOBALCHECM<font class="S81">9</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALCHECMX"><span class="S4"><b><big>[check]</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALCHECR"></a>GLOBALCHECR<font class="S81">1</font><br>GLOBALCHECR<font class="S81">2</font><br>...<br>GLOBALCHECR<font class="S81">9</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALCHECRX"><span class="S4"><b><big>[check]</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALCHECN"></a>GLOBALCHECN<font class="S81">1</font><br>GLOBALCHECN<font class="S81">2</font><br>...<br>GLOBALCHECN<font class="S81">9</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALCHECNX"><span class="S4"><b><big>[check]</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALCHECO"></a>GLOBALCHECO<font class="S81">1</font><br>GLOBALCHECO<font class="S81">2</font><br>...<br>GLOBALCHECO<font class="S81">9</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALCHECOX"><span class="S4"><b><big>[check]</big></b></span></a></td></tr>
+
+
+
+<tr><td></td><td></td></tr>
+<tr><td class="s3td"><a name="GLOBALZFOLD"></a>GLOBALZFOLD<br>GLOBALZFOLD<font class="S81">1</font><br>...<br>GLOBALZFOLD<font class="S81">N</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALZFOLDX"><span class="S4"><b><big>[zfold]</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALSFOLD"></a>GLOBALSFOLD<br>GLOBALSFOLD<font class="S81">1</font><br>...<br>GLOBALSFOLD<font class="S81">N</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALSFOLDX"><span class="S4"><b><big>[sfold]</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALSOPEN"></a>GLOBALSOPEN<br>GLOBALSOPEN<font class="S81">1</font><br>...<br>GLOBALSOPEN<font class="S81">N</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALSOPENX"><span class="S4"><b><big>[sopen]</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALSSAVE"></a>GLOBALSSAVE<br>GLOBALSSAVE<font class="S81">1</font><br>...<br>GLOBALSSAVE<font class="S81">N</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALSSAVEX"><span class="S4"><b><big>[ssave]</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALSICON"></a>GLOBALSICON<br>GLOBALSICON<font class="S81">1</font><br>...<br>GLOBALSICON<font class="S81">N</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALSICONX"><span class="S4"><b><big>[sicon]</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALUPDWN"></a>GLOBALUPDWN<br>GLOBALUPDWN<font class="S81">1</font><br>...<br>GLOBALUPDWN<font class="S81">N</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALUPDWNX"><span class="S4"><b><big>[updwn]</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALELECT"></a>GLOBALELECT<br>GLOBALELECT<font class="S81">1</font><br>...<br>GLOBALELECT<font class="S81">N</font></td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALELECTX"><span class="S4"><b><big>[elect]</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBALMSGBX"></a>GLOBALMSGBX</td><td>&nbsp;<a class="le" href="add_dialog.htm#GLOBALMSGBXX"><span class="S4"><b><big>[msgbx]</big></b></span></a></td></tr>
+
+
+<tr class="selcntr"><td colspan="2" style="white-space: nowrap">Дополнительные глобальные переменные</td></tr>
+<tr><td class="s3td"><a name="GLOBALXFOLD"></a>GLOBALXFOLD<font class="S81">0</font><br>GLOBALXFOLD<br>GLOBALXFOLD<font class="S81">1</font></td><td>&nbsp;<a class="le" href="add_xfolder.htm#3"><span class="S4"><b><big>xfolder</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALARRAY"></a>GLOBALARRAY<br>GLOBALARRAY<font class="S81">1</font></td><td>&nbsp;<a class="le" href="../fun/_ArrayDisplay.htm#GLOBALARRAYX"><span class="S4"><b><big>_ArrayDisplay()</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALLOCAL"></a>GLOBALLOCAL</td><td>&nbsp;<a class="le" href="#x"><span class="S4"><b><big>GLOBALNAME&#60;xN&#62;</big></b></span></a></td></tr>
+
+<tr><td class="s3td"><a name="GLOBALTOTAL"></a>GLOBALTOTAL</td><td>&nbsp;<a class="le" href="add_tc.htm#GLOBALTOTAL"><span class="S4"><b><big>[tc]</big></b></span></a></td></tr>
+
+<tr class="selcntr"><td colspan="2" style="white-space: nowrap">Специальные глобальные переменные</td></tr>
+
+<tr><td class="s3td"><a name="GLOBAL0XXXX"></a>GLOBAL<font class="S51">0</font>XXXX</td><td>&nbsp;<a class="le" href="#METOD0"><span class="S4"><b><big>GLOBAL0XXXX</big></b></span></a></td></tr>
+<tr><td class="s3td"><a name="GLOBAL1XXXX"></a>GLOBAL<font class="S51">1</font>XXXX</td><td>&nbsp;<a class="le" href="#METOD0"><span class="S4"><b><big>GLOBAL1XXXX</big></b></span></a></td></tr>
+
+
+
+<!-- <tr><td class="s3td"><a name=""></a></td><td>&nbsp;<a class="le" href="../com_modfn.htm"><span class="S4"><b></b></span></a></td></tr> -->
+<!-- <tr><td class="s3td"><a name="GLOBALMODFN"></a>GLOBALMODFN</td><td>&nbsp;<a class="le" href="../com_modfn.htm"><span class="S4"><b>modfn</b></span></a></td></tr> -->
+</td></tr></table>
+</div>
+<br>
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

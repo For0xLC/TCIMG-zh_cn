@@ -1,0 +1,1399 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Список классов окон и элементов Total Commander 8.01</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №17+</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Список классов окон и элементов Total Commander 8.01 32 и 64 разрядности.</font></p>
+<hr>
+Информация взята из файла <font class="S1"><b>...\Files\Ini\TCIMG3264_8_01.ini</b></font><br><br>
+
+Для пользователей версией Total Commander 8.01, утилита автоматически определит версию и соответствующий файл</b>
+<br><br>
+
+Утилита автоматически определяет разрядность запущенного Total Commander.<br>
+Утилита автоматически перебирает классы для получение информации (где это необходимо).<br><br>
+Для внесения в команду следует:<br>
+1. Найти нужный класс, контролл.<br>
+2. Вставить в параметр значение ключа, приписав в начале <b>+tc</b><br>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<b>+tc</b>TOTAL1
+</p>
+<br>
+Отдельное спасибо <b>Asmadeus</b> за составление классов для 64 разрядности.
+<br><br>
+<p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="4">
+<tr class="sl2tr"><td width="8%">Ключ</td><td width="10%">CLASS 32</td><td width="10%">CLASS 64</td><td width="60%">Описание</td></tr>
+<tr class="selcntr"><td colspan="4">ОСНОВНОЕ ОКНО TOTAL COMMANDER</td></tr>
+
+<tr><td class="s3td">TOTAL</td><td class="s2td">TTOTAL_CMD<td class="s4td">TTOTAL_CMD</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TOTAL1</td><td class="s2td">TButtonBar1<td class="s4td">Window4</td><td class="s5td">панель инструментов</td></tr>
+<tr><td class="s3td">TOTAL2</td><td class="s2td">TDrivePanel2<td class="s4td">Window3</td><td class="s5td">кнопки дисков слева</td></tr>
+<tr><td class="s3td">TOTAL3</td><td class="s2td">TDrivePanel1<td class="s4td">Window2</td><td class="s5td">кнопки дисков справа</td></tr>
+<tr><td class="s3td">TOTAL4</td><td class="s2td">TMyComboBox2<td class="s4td">LCLComboBox2</td><td class="s5td">выбор дисков слева</td></tr>
+<tr><td class="s3td">TOTAL5</td><td class="s2td">TMyComboBox3<td class="s4td">LCLComboBox3</td><td class="s5td">выбор дисков справа</td></tr>
+<tr><td class="s3td">TOTAL6</td><td class="s2td">TMyPanel5<br>TMyPanel6<br>TMyPanel7<td class="s4td">Window9<br>Window10<br>Window11</td><td class="s5td">строка состояния слева (для получении информации приходится перебирать эти классы)</td></tr>
+<tr><td class="s3td">TOTAL7</td><td class="s2td">TMyPanel8<br>TMyPanel9<br>TMyPanel10<td class="s4td">Window14<br>Window15<br>Window16</td><td class="s5td">строка состояния справа (для получении информации приходится перебирать эти классы)</td></tr>
+<tr><td class="s3td">TOTAL8</td><td class="s2td">TMyTabControl1<td class="s4td">SysTabControl32-1</td><td class="s5td">Вкладки слева</td></tr>
+<tr><td class="s3td">TOTAL9</td><td class="s2td">TMyTabControl2<td class="s4td">SysTabControl32-2</td><td class="s5td">Вкладки справа</td></tr>
+<tr><td class="s3td">TOTAL10</td><td class="s2td">TPathPanel1<td class="s4td">Window13</td><td class="s5td">Заголовок файловой панели слева</td></tr>
+<tr><td class="s3td">TOTAL11</td><td class="s2td">TPathPanel2<td class="s4td">Window18</td><td class="s5td">Заголовок файловой панели справа</td></tr>
+<tr><td class="s3td">TOTAL12</td><td class="s2td">TPanel1<td class="s4td">Window1</td><td class="s5td">Сепаратор</td></tr>
+<tr><td class="s3td">TOTAL13</td><td class="s2td">TMyListBox1<td class="s4td">LCLListBox1</td><td class="s5td">ListBox</td></tr>
+<tr><td class="s3td">TOTAL14</td><td class="s2td">TMyListBox2<td class="s4td">LCLListBox2</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TOTAL15</td><td class="s2td">TMyListBox3<td class="s4td">LCLListBox3</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TOTAL16</td><td class="s2td">THeaderClick1<td class="s4td">THeaderClick1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TOTAL17</td><td class="s2td">THeaderClick2<td class="s4td">THeaderClick2</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TOTAL18</td><td class="s2td">TMyPanel2<td class="s4td">Window6</td><td class="s5td">функциональные кнопки</td></tr>
+
+<tr class="selcntr"><td colspan="4">ОКНО НАСТРОЙКИ TOTAL COMMANDER</td></tr>
+<tr><td class="s3td">TCSETTING</td><td class="s2td">TDLGCONFIGALL<td class="s4td">TDLGCONFIGALL</td><td class="s5td">класс окна настройки</td></tr>
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: ВИД ОКНА</strong></td></tr>
+<tr><td class="s3td">TCSVW1</td><td class="s2td">TCheckBox16<td class="s4td">Button18</td><td class="s5td">Панель инструментов</td></tr>
+<tr><td class="s3td">TCSVW2</td><td class="s2td">TCheckBox15<td class="s4td">Button17</td><td class="s5td">Кнопки дисков</td></tr>
+<tr><td class="s3td">TCSVW3</td><td class="s2td">TCheckBox7<td class="s4td">Button9</td><td class="s5td">Две панели кнопок дисков (над файловыми панелями)</td></tr>
+<tr><td class="s3td">TCSVW4</td><td class="s2td">TCheckBox8<td class="s4td">Button10</td><td class="s5td">Плоские</td></tr>
+<tr><td class="s3td">TCSVW5</td><td class="s2td">TCheckBox14<td class="s4td">Button16</td><td class="s5td">Окно выбора диска</td></tr>
+<tr><td class="s3td">TCSVW6</td><td class="s2td">TCheckBox5<td class="s4td">Button7</td><td class="s5td">Вкладки папок</td></tr>
+<tr><td class="s3td">TCSVW7</td><td class="s2td">TCheckBox13<td class="s4td">Button15</td><td class="s5td">Заголовок файловой панели (с текущим путём)</td></tr>
+<tr><td class="s3td">TCSVW8</td><td class="s2td">TCheckBox4<td class="s4td">Button6</td><td class="s5td">Цепочки навигации</td></tr>
+<tr><td class="s3td">TCSVW9</td><td class="s2td">TCheckBox3<td class="s4td">Button5</td><td class="s5td">Автоматически раскрывать при наведении указателя мыши</td></tr>
+<tr><td class="s3td">TCSVW10</td><td class="s2td">TCheckBox6<td class="s4td">Button8</td><td class="s5td">Кнопки для истории и избранных каталогов</td></tr>
+<tr><td class="s3td">TCSVW11</td><td class="s2td">TCheckBox12<td class="s4td">Button14</td><td class="s5td">Заголовки табуляторов</td></tr>
+<tr><td class="s3td">TCSVW12</td><td class="s2td">TCheckBox11<td class="s4td">Button13</td><td class="s5td">Строка состояния</td></tr>
+<tr><td class="s3td">TCSVW13</td><td class="s2td">TCheckBox10<td class="s4td">Button12</td><td class="s5td">Командная строка</td></tr>
+<tr><td class="s3td">TCSVW14</td><td class="s2td">TCheckBox9<td class="s4td">Button11</td><td class="s5td">Кнопки функциональных клавиш</td></tr>
+<tr><td class="s3td">TCSVW15</td><td class="s2td">TCheckBox2<td class="s4td">Button3</td><td class="s5td">Плоский интерфейс (к панели инструментов не относится)</td></tr>
+<tr><td class="s3td">TCSVW16</td><td class="s2td">TCheckBox1<td class="s4td">Button2</td><td class="s5td">Стиль XP/Vista/7 для фона (меню, панели инструментов и дисков)</td></tr>
+<tr><td class="s3td">TCSVW17</td><td class="s2td">TButton30<td class="s4td">Button22</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSVW18</td><td class="s2td">TButton29<td class="s4td">Button21</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSVW19</td><td class="s2td">TButton27<td class="s4td">Button19</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSVW20</td><td class="s2td">TButton28<td class="s4td">Button20</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: СОДЕРЖИМОЕ ПАНЕЛЕЙ</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Отображение файлов</td></tr>
+<tr><td class="s3td">TCSCP1</td><td class="s2td">TCheckBox14<td class="s4td">Button21</td><td class="s5td">Показывать скрытые'системные файлы (только для опытных)</td></tr>
+<tr><td class="s3td">TCSCP2</td><td class="s2td">TCheckBox11<td class="s4td">Button18</td><td class="s5td">Длинные имена файлов</td></tr>
+<tr><td class="s3td">TCSCP3</td><td class="s2td">TCheckBox13<td class="s4td">Button20</td><td class="s5td">Имена формата 8.3 - в нижнем регистре (как в Проводнике Win9x)</td></tr>
+<tr><td class="s3td">TCSCP4</td><td class="s2td">TCheckBox12<td class="s4td">Button19</td><td class="s5td">Показывать [..] также и в корневом каталоге диска</td></tr>
+<tr><td class="s3td">TCSCP5</td><td class="s2td">TCheckBox10<td class="s4td">Button17</td><td class="s5td">Показывать квадратные скобки [] вокруг имён папок</td></tr>
+<tr><td class="s3td">TCSCP6</td><td class="s2td">TCheckBox9<td class="s4td">Button16</td><td class="s5td">Ширина колонок в кратком режиме не более ... пикселей</td></tr>
+<tr><td class="s3td">TCSCP7</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td">окошко, где указываются пиксели</td></tr>
+<tr><td class="s3td">TCSCP8</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">Метод сортировки</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Дерево</td></tr>
+<tr><td class="s3td">TCSCP9</td><td class="s2td">TCheckBox2<td class="s4td">Button3</td><td class="s5td">Всегда загружать полное дерево каталогов</td></tr>
+<tr><td class="s3td">TCSCP10</td><td class="s2td">TCheckBox1<td class="s4td">Button2</td><td class="s5td">Нажать Enter для открытия каталога в другой панели</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Сортировка каталогов</td></tr>
+<tr><td class="s3td">TCSCP11</td><td class="s2td">TRadioButton2<td class="s4td">Button14</td><td class="s5td">Всегда по имени</td></tr>
+<tr><td class="s3td">TCSCP12</td><td class="s2td">TRadioButton1<td class="s4td">Button13</td><td class="s5td">Как файлов (также и по времени)</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Всплывающие подсказки</td></tr>
+<tr><td class="s3td">TCSCP13</td><td class="s2td">TCheckBox8<td class="s4td">Button11</td><td class="s5td">Над кнопками панели инструментов</td></tr>
+<tr><td class="s3td">TCSCP14</td><td class="s2td">TCheckBox7<td class="s4td">Button10</td><td class="s5td">Над кнопками дисков (метки дисков, для сетевых - путь)</td></tr>
+<tr><td class="s3td">TCSCP15</td><td class="s2td">TCheckBox6<td class="s4td">Button9</td><td class="s5td">Над именами файлов, не помещающимися в панели</td></tr>
+<tr><td class="s3td">TCSCP16</td><td class="s2td">TCheckBox5<td class="s4td">Button8</td><td class="s5td">Подсказки/комментарии в стиле Win32 (если доступно)</td></tr>
+<tr><td class="s3td">TCSCP17</td><td class="s2td">TCheckBox4<td class="s4td">Button6</td><td class="s5td">Комментарии из descript.ion/files.bbs</td></tr>
+<tr><td class="s3td">TCSCP18</td><td class="s2td">TCheckBox3<td class="s4td">Button5</td><td class="s5td">Комментарии из Проводника (OLE2)</td></tr>
+<tr><td class="s3td">TCSCP19</td><td class="s2td">TButton1<td class="s4td">Button7</td><td class="s5td">[+] (Дополнительные данные по типам файлов)</td></tr>
+<tr><td class="s3td">TCSCP20</td><td class="s2td">TButton31<td class="s4td">Button25</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSCP21</td><td class="s2td">TButton30<td class="s4td">Button24</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSCP22</td><td class="s2td">TButton28<td class="s4td">Button22</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSCP23</td><td class="s2td">TButton29<td class="s4td">Button23</td><td class="s5td">Применить</td></tr>
+<tr><td class="sel2td" colspan="4"><strong>Дополнительные данные по типам файлов</strong></td></tr>
+<tr><td class="s3td">TCSCPDTF</td><td class="s2td">TDlgCustomColors<td class="s4td">TDlgCustomColors</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCSCPDTF1</td><td class="s2td">TMyListBox1<td class="s4td">LCLListBox1</td><td class="s5td">окно списка типов данных</td></tr>
+<tr><td class="s3td">TCSCPDTF2</td><td class="s2td">TButton5<td class="s4td">Button5</td><td class="s5td">Добавить</td></tr>
+<tr><td class="s3td">TCSCPDTF3</td><td class="s2td">TButton4<td class="s4td">Button4</td><td class="s5td">Правка</td></tr>
+<tr><td class="s3td">TCSCPDTF4</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">Удалить</td></tr>
+<tr><td class="s3td">TCSCPDTF5</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSCPDTF6</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Отмена</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: ЗНАЧКИ</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Показ значков, связанных с типом файлов</td></tr>
+<tr><td class="s3td">TCSIC1</td><td class="s2td">TRadioButton1<td class="s4td">Button11</td><td class="s5td">Все ассоциированные + EXE/LNK (медленно)</td></tr>
+<tr><td class="s3td">TCSIC2</td><td class="s2td">TRadioButton4<td class="s4td">Button14</td><td class="s5td">Все ассоциированные</td></tr>
+<tr><td class="s3td">TCSIC3</td><td class="s2td">TRadioButton3<td class="s4td">Button13</td><td class="s5td">Только стандартные</td></tr>
+<tr><td class="s3td">TCSIC4</td><td class="s2td">TRadioButton2<td class="s4td">Button12</td><td class="s5td">Не показывать значки</td></tr>
+<tr><td class="s3td">TCSIC5</td><td class="s2td">TCheckBox8<td class="s4td">Button10</td><td class="s5td">Если EXE/LNK не на дискетах</td></tr>
+<tr><td class="s3td">TCSIC6</td><td class="s2td">TCheckBox7<td class="s4td">Button9</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSIC7</td><td class="s2td">TCheckBox6<td class="s4td">Button8</td><td class="s5td">Показывать специальные значки для обычных папок</td></tr>
+<tr><td class="s3td">TCSIC8</td><td class="s2td">TCheckBox5<td class="s4td">Button7</td><td class="s5td">Показывать специальные значки для виртуальных папок и сети</td></tr>
+<tr><td class="s3td">TCSIC9</td><td class="s2td">TCheckBox4<td class="s4td">Button6</td><td class="s5td">Показывать оверлейные значки (например, для ярлыков)</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Размер</td></tr>
+<tr><td class="s3td">TCSIC10</td><td class="s2td">Edit1<td class="s4td">Edit1</td><td class="s5td">32x32 (изменение размера значков)</td></tr>
+<tr><td class="s3td">TCSIC11</td><td class="s2td">TOwnerdrawPanel1<td class="s4td">Window4</td><td class="s5td">показ иконки</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Значки в главном меню</td></tr>
+<tr><td class="s3td">TCSIC12</td><td class="s2td">TCheckBox3<td class="s4td">Button4</td><td class="s5td">Показывать значки для команд в главном мен</td></tr>
+<tr><td class="s3td">TCSIC13</td><td class="s2td">TCheckBox2<td class="s4td">Button3</td><td class="s5td">Показывать значки с обрамлением в виде к</td></tr>
+<tr><td class="s3td">TCSIC14</td><td class="s2td">TCheckBox1<td class="s4td">Button2</td><td class="s5td">Показывать выбранные пункты в виде нажатых кнопок</td></tr>
+<tr><td class="s3td">TCSIC15</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">16x16 (выбор размера значков главного меню)</td></tr>
+<tr><td class="s3td">TCSIC16</td><td class="s2td">TButton30<td class="s4td">Button19</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSIC17</td><td class="s2td">TButton29<td class="s4td">Button18</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSIC18</td><td class="s2td">TButton27<td class="s4td">Button16</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSIC19</td><td class="s2td">TButton28<td class="s4td">Button17</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: ШРИФТЫ</strong></td></tr>
+<tr><td class="s3td">TCSF1</td><td class="s2td">TButton3<td class="s4td">Button9</td><td class="s5td">Шрифт файловых панелей (Изменить шрифт )</td></tr>
+<tr><td class="s3td">TCSF2</td><td class="s2td">TButton2<td class="s4td">Button6</td><td class="s5td">Шрифт основного окна (Изменить шрифт )</td></tr>
+<tr><td class="s3td">TCSF3</td><td class="s2td">TButton1<td class="s4td">Button3</td><td class="s5td">Шрифт в диалоговых окнах (Изменить шрифт )</td></tr>
+<tr><td class="s3td">TCSF4</td><td class="s2td">TButton30<td class="s4td">Button13</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSF5</td><td class="s2td">TButton29<td class="s4td">Button12 </td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSF6</td><td class="s2td">TButton27<td class="s4td">Button10</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSF7</td><td class="s2td">TButton28<td class="s4td">Button11</td><td class="s5td">Применить</td></tr>
+<tr><td class="sel2td" colspan="4"><strong>Диалог выбора шрифта для всех 3-х кнопок</strong></td></tr>
+<tr><td class="s3td">TCSFFP1</td><td class="s2td">Edit1<td class="s4td">Edit1</td><td class="s5td">Выбор шрифта</td></tr>
+<tr><td class="s3td">TCSFFP2</td><td class="s2td">ComboLBox1<td class="s4td">ComboLBox1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSFFP3</td><td class="s2td">Edit2<td class="s4td">Edit2</td><td class="s5td">Выбор начертания</td></tr>
+<tr><td class="s3td">TCSFFP4</td><td class="s2td">ComboLBox2<td class="s4td">ComboLBox2</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSFFP5</td><td class="s2td">Edit3<td class="s4td">Edit3</td><td class="s5td">Выбор размера</td></tr>
+<tr><td class="s3td">TCSFFP6</td><td class="s2td">ComboLBox3<td class="s4td">ComboLBox3</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSFFP7</td><td class="s2td">Button4<td class="s4td">Button4</td><td class="s5td">Образец</td></tr>
+<tr><td class="s3td">TCSFFP8</td><td class="s2td">ComboBox5<td class="s4td">ComboBox5</td><td class="s5td">Набор символов</td></tr>
+<tr><td class="s3td">TCSFFP9</td><td class="s2td">Button5<td class="s4td">Button5</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSFFP10</td><td class="s2td">Button6<td class="s4td">Button6</td><td class="s5td">Отмена</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: ЦВЕТА</strong></td></tr>
+<tr><td class="s3td">TCSCL1</td><td class="s2td">TMyComboBox8<td class="s4td">LCLComboBox8</td><td class="s5td">Текст</td></tr>
+<tr><td class="s3td">TCSCL2</td><td class="s2td">TButton8<td class="s4td">Button11</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSCL3</td><td class="s2td">TMyComboBox7<td class="s4td">LCLComboBox7</td><td class="s5td">Фон 1</td></tr>
+<tr><td class="s3td">TCSCL4</td><td class="s2td">TButton7<td class="s4td">Button10</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSCL5</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">Фон 2</td></tr>
+<tr><td class="s3td">TCSCL6</td><td class="s2td">TButton1<td class="s4td">Button2</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSCL7</td><td class="s2td">TMyComboBox6<td class="s4td">LCLComboBox6</td><td class="s5td">Выделение</td></tr>
+<tr><td class="s3td">TCSCL8</td><td class="s2td">TButton6<td class="s4td">Button9</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSCL9</td><td class="s2td">TMyComboBox5<td class="s4td">LCLComboBox5</td><td class="s5td">Курсор</td></tr>
+<tr><td class="s3td">TCSCL10</td><td class="s2td">TButton5<td class="s4td">Button8</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSCL11</td><td class="s2td">TMyComboBox4<td class="s4td">LCLComboBox4</td><td class="s5td">Текст под курсором</td></tr>
+<tr><td class="s3td">TCSCL12</td><td class="s2td">TButton4<td class="s4td">Button7</td><td class="s5td"></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Другие:</td></tr>
+<tr><td class="s3td">TCSCL13</td><td class="s2td">TMyComboBox2<td class="s4td">LCLComboBox2</td><td class="s5td">Просмотрщик (Lister):</td></tr>
+<tr><td class="s3td">TCSCL14</td><td class="s2td">TMyComboBox3<td class="s4td">LCLComboBox3</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSCL15</td><td class="s2td">TButton2<td class="s4td">Button3</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSCL16</td><td class="s2td">TCheckBox3<td class="s4td">Button12</td><td class="s5td">Инверсный курсор</td></tr>
+<tr><td class="s3td">TCSCL17</td><td class="s2td">TCheckBox1<td class="s4td">Button4</td><td class="s5td">Инверсное выделение</td></tr>
+<tr><td class="s3td">TCSCL18</td><td class="s2td">TCheckBox2<td class="s4td">Button5</td><td class="s5td">Определить цвета для типов файлов (галочка)</td></tr>
+<tr><td class="s3td">TCSCL19</td><td class="s2td">TButton3<td class="s4td">Button6</td><td class="s5td">Определить цвета для типов файлов (кнопка)</td></tr>
+<tr><td class="s3td">TCSCL20</td><td class="s2td">TOwnerdrawPanel1<td class="s4td">Window5</td><td class="s5td">Образец</td></tr>
+<tr><td class="s3td">TCSCL21</td><td class="s2td">TButton37<td class="s4td">Button16</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSCL22</td><td class="s2td">TButton36<td class="s4td">Button15</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSCL23</td><td class="s2td">TButton34<td class="s4td">Button13</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSCL24</td><td class="s2td">TButton35<td class="s4td">Button14</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Диалог - Определить цвета для типов файлов</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSCLTF1</td><td class="s2td">TMyListBox1<td class="s4td">LCLListBox1</td><td class="s5td">окно списка цвета типов файлов</td></tr>
+<tr><td class="s3td">TCSCLTF2</td><td class="s2td">TButton5<td class="s4td">Button5</td><td class="s5td">Добавить</td></tr>
+<tr><td class="s3td">TCSCLTF3</td><td class="s2td">TButton4<td class="s4td">Button4</td><td class="s5td">Правка</td></tr>
+<tr><td class="s3td">TCSCLTF4</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">Удалить</td></tr>
+<tr><td class="s3td">TCSCLTF5</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td">TCSCLTF6</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Отмена</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: ТАБУЛЯТОРЫ</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Показывать типы (расширения) файлов</td></tr>
+<tr><td class="s3td">TCSTB1</td><td class="s2td">TRadioButton2<td class="s4td">Button10</td><td class="s5td">Сразу после имени</td></tr>
+<tr><td class="s3td">TCSTB2</td><td class="s2td">TRadioButton1<td class="s4td">Button9</td><td class="s5td">Выровненными (по Tab)</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Позиции табуляторов</td></tr>
+<tr><td class="s3td">TCSTB3</td><td class="s2td">TEdit2<td class="s4td">Edit2</td><td class="s5td">Тип (расширение):</td></tr>
+<tr><td class="s3td">TCSTB4</td><td class="s2td">TScrollBar2<td class="s4td">ScrollBar2</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSTB5</td><td class="s2td">TEdit5<td class="s4td">Edit5</td><td class="s5td">Размер:</td></tr>
+<tr><td class="s3td">TCSTB6</td><td class="s2td">TScrollBar5<td class="s4td">ScrollBar5</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSTB7</td><td class="s2td">TEdit4<td class="s4td">Edit4</td><td class="s5td">Дата/время:</td></tr>
+<tr><td class="s3td">TCSTB8</td><td class="s2td">TScrollBar4<td class="s4td">ScrollBar4</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSTB9</td><td class="s2td">TEdit3<td class="s4td">Edit3</td><td class="s5td">Атрибуты:</td></tr>
+<tr><td class="s3td">TCSTB10</td><td class="s2td">TScrollBar3<td class="s4td">ScrollBar3</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSTB11</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td">Комментарии:</td></tr>
+<tr><td class="s3td">TCSTB12</td><td class="s2td">TScrollBar1<td class="s4td">ScrollBar1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSTB13</td><td class="s2td">TCheckBox2<td class="s4td">Button3</td><td class="s5td">Выравнивать колонки по ширине панели</td></tr>
+<tr><td class="s3td">TCSTB14</td><td class="s2td">TCheckBox4<td class="s4td">Button5</td><td class="s5td">Показывать столетие в дате (20хх)</td></tr>
+<tr><td class="s3td">TCSTB15</td><td class="s2td">TCheckBox3<td class="s4td">Button4</td><td class="s5td">12-часовой формат времени (АМ/РМ)</td></tr>
+<tr><td class="s3td">TCSTB16</td><td class="s2td">TCheckBox1<td class="s4td">Button2</td><td class="s5td">Выводить внизу число папок</td></tr>
+<tr><td class="s3td">TCSTB17</td><td class="s2td">TMyComboBox2<td class="s4td">LCLComboBox2</td><td class="s5td">Размеры в панелях:</td></tr>
+<tr><td class="s3td">TCSTB18</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">В строке состояния:</td></tr>
+<tr><td class="s3td">TCSTB19</td><td class="s2td">TButton1<td class="s4td">Button6</td><td class="s5td">По умолчанию</td></tr>
+<tr><td class="s3td">TCSTB20</td><td class="s2td">TButton30<td class="s4td">Button14</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSTB21</td><td class="s2td">TButton29<td class="s4td">Button13</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSTB22</td><td class="s2td">TButton27<td class="s4td">Button11</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSTB23</td><td class="s2td">TButton28<td class="s4td">Button12</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: ВКЛАДКИ ПАПОК</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Заголовки вкладок</td></tr>
+<tr><td class="s3td">TCSTF1</td><td class="s2td">TCheckBox4<td class="s4td">Button5</td><td class="s5td">Показывать заголовок вкладки, даже если она одна</td></tr>
+<tr><td class="s3td">TCSTF2</td><td class="s2td">TCheckBox11<td class="s4td">Button12</td><td class="s5td">Размещать вкладки в несколько рядов</td></tr>
+<tr><td class="s3td">TCSTF3</td><td class="s2td">TCheckBox10<td class="s4td">Button11</td><td class="s5td">Все вкладки имеют одинаковую ширину</td></tr>
+<tr><td class="s3td">TCSTF4</td><td class="s2td">TCheckBox9<td class="s4td">Button10</td><td class="s5td">Ограничить размер заголовка до: ... символов</td></tr>
+<tr><td class="s3td">TCSTF5</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td">окно ввода количества символов</td></tr>
+<tr><td class="s3td">TCSTF6</td><td class="s2td">TCheckBox8<td class="s4td">Button9</td><td class="s5td">Подтверждать закрытие всех вкладок</td></tr>
+<tr><td class="s3td">TCSTF7</td><td class="s2td">TCheckBox7<td class="s4td">Button8</td><td class="s5td">Закрывать вкладку по двойному щелчку</td></tr>
+<tr><td class="s3td">TCSTF8</td><td class="s2td">TCheckBox6<td class="s4td">TCheckBox6</td><td class="s5td">Ctrl+вверх делает новую вкладку активной</td></tr>
+<tr><td class="s3td">TCSTF9</td><td class="s2td">TCheckBox5<td class="s4td">Button7</td><td class="s5td">Открывать новую вкладку рядом с текущей</td></tr>
+<tr><td class="s3td">TCSTF10</td><td class="s2td">TCheckBox3<td class="s4td">Button6</td><td class="s5td">Отмечать заблокированные вкладки звёздочкой *</td></tr>
+<tr><td class="s3td">TCSTF11</td><td class="s2td">TCheckBox2<td class="s4td">Button3</td><td class="s5td">Делать панель активной при щелчке по одной из её вкладок</td></tr>
+<tr><td class="s3td">TCSTF12</td><td class="s2td">TCheckBox1<td class="s4td">Button2</td><td class="s5td">Всегда показывать букву диска в заголовке вкладки</td></tr>
+<tr><td class="s3td">TCSTF13</td><td class="s2td">TButton30<td class="s4td">Button16</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSTF14</td><td class="s2td">TButton29<td class="s4td">Button15</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSTF15</td><td class="s2td">TButton27<td class="s4td">Button13</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSTF16</td><td class="s2td">TButton28<td class="s4td">Button14</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: НАБОРЫ КОЛОНОК</strong></td></tr>
+<tr><td class="s3td">TCSSC1</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">Настройка колонок для FS-плагина < Общие наборы колонок ></td></tr>
+<tr><td class="s3td">TCSSC2</td><td class="s2td">TMyListBox2<td class="s4td">LCLListBox2</td><td class="s5td">окно списка наборов</td></tr>
+<tr><td class="s3td">TCSSC3</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Новый</td></tr>
+<tr><td class="s3td">TCSSC4</td><td class="s2td">TButton4<td class="s4td">Button4</td><td class="s5td">Правка</td></tr>
+<tr><td class="s3td">TCSSC5</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">Удалить</td></tr>
+<tr><td class="s3td">TCSSC6</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Копировать</td></tr>
+<tr><td class="s3td">TCSSC7</td><td class="s2td">TButton30<td class="s4td">Button8 </td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSSC8</td><td class="s2td">TButton29<td class="s4td">Button7 </td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSSC9</td><td class="s2td">TButton27<td class="s4td">Button5 </td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSSC10</td><td class="s2td">TButton28<td class="s4td">Button6</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Окно настройки набора колонок</strong></td></tr>
+<tr><td class="s3td">TCSSCSC</td><td class="s2td">TCustomColumnForm<td class="s4td"></td><td class="s5td">Класс окна настройки набора колонок</td></tr>
+<tr><td class="s3td">TCSSCSC1</td><td class="s2td">TPanel2<td class="s4td">Edit1</td><td class="s5td">Настройка набора номер</td></tr>
+<tr><td class="s3td">TCSSCSC2</td><td class="s2td">TAltEdit1<td class="s4td">Button6</td><td class="s5td">Имя:</td></tr>
+<tr><td class="s3td">TCSSCSC3</td><td class="s2td">TButton4<td class="s4td">Button9</td><td class="s5td">Последняя кнопка [+]</td></tr>
+<tr><td class="s3td">TCSSCSC4</td><td class="s2td">TButton7<td class="s4td">Button8</td><td class="s5td">Добавить колонку</td></tr>
+<tr><td class="s3td">TCSSCSC5</td><td class="s2td">TButton8<td class="s4td">Button2</td><td class="s5td">Удалить текущую колонку</td></tr>
+<tr><td class="s3td">TCSSCSC6</td><td class="s2td">TCheckBox3<td class="s4td">Button1</td><td class="s5td">Выравнивать по ширине панели</td></tr>
+<tr><td class="s3td">TCSSCSC7</td><td class="s2td">TCheckBox2<td class="s4td">Button5</td><td class="s5td">Горизонтальная полоса прокрутки</td></tr>
+<tr><td class="s3td">TCSSCSC8</td><td class="s2td">TButton3<td class="s4td">Button4</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSSCSC9</td><td class="s2td">TButton2<td class="s4td">Button3</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSSCSC10</td><td class="s2td">TButton1<td class="s4td">LCLListBox2</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: ЯЗЫК (LANGUAGE)</strong></td></tr>
+<tr><td class="s3td">TCSLG1</td><td class="s2td">TMyListBox2<td class="s4td"></td><td class="s5td">Окно списка языков</td></tr>
+<tr><td class="s3td">TCSLG2</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td">Окно файла главного меню</td></tr>
+<tr><td class="s3td">TCSLG3</td><td class="s2td">TButton3<td class="s4td">Button4</td><td class="s5td">Кнопка выбора файла главного меню</td></tr>
+<tr><td class="s3td">TCSLG4</td><td class="s2td">TButton2<td class="s4td">Button3</td><td class="s5td">Правка</td></tr>
+<tr><td class="s3td">TCSLG5</td><td class="s2td">TButton1<td class="s4td">Button2</td><td class="s5td">Скачать</td></tr>
+<tr><td class="s3td">TCSLG6</td><td class="s2td">TButton31<td class="s4td">Button8</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSLG7</td><td class="s2td">TButton30<td class="s4td">Button7</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSLG8</td><td class="s2td">TButton28<td class="s4td">Button5</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSLG9</td><td class="s2td">TButton29<td class="s4td">Button6</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: ОСНОВНЫЕ ОПЕРАЦИИ</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Главная копия программы</td></tr>
+<tr><td class="s3td">TCSBO1</td><td class="s2td">TCheckBox7<td class="s4td">Button8</td><td class="s5td">Запрет одновременного запуска нескольких копий TotalCmd</td></tr>
+<tr><td class="s3td">TCSBO2</td><td class="s2td">TCheckBox6<td class="s4td">Button7</td><td class="s5td">Сворачивать в системный трей (рядом с часами)</td></tr>
+<tr><td class="s3td">TCSBO3</td><td class="s2td">TCheckBox5<td class="s4td">Button6</td><td class="s5td">При смене диска всегда переходить в корневой каталог</td></tr>
+<tr><td class="s3td">TCSBO4</td><td class="s2td">TCheckBox3<td class="s4td">Button4</td><td class="s5td">Выполнять запуск программ и открытие файлов одиночным...</td></tr>
+<tr><td class="s3td">TCSBO5</td><td class="s2td">TCheckBox4<td class="s4td">Button5</td><td class="s5td">При переименовании выделять только имя файла...</td></tr>
+<tr><td class="s3td">TCSBO6</td><td class="s2td">TCheckBox2<td class="s4td">Button3</td><td class="s5td">Автозавершение путей</td></tr>
+<tr><td class="s3td">TCSBO7</td><td class="s2td">TCheckBox1<td class="s4td">Button2</td><td class="s5td">Автоподстановка имён</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Выделение мышью</td></tr>
+<tr><td class="s3td">TCSBO8</td><td class="s2td">TRadioButton6<td class="s4td">Button30</td><td class="s5td">Правой кнопкой (как в NC. FAR)</td></tr>
+<tr><td class="s3td">TCSBO9</td><td class="s2td">TRadioButton5<td class="s4td">Button29</td><td class="s5td">Левой кнопкой (как принято в Windows)</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Выделять (по Num + и др.)</td></tr>
+<tr><td class="s3td">TCSBO10</td><td class="s2td">TRadioButton4<td class="s4td">Button27</td><td class="s5td">Только файлы</td></tr>
+<tr><td class="s3td">TCSBO11</td><td class="s2td">TRadioButton3<td class="s4td">Button26</td><td class="s5td">Файлы и каталоги</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Коррекция времени на NTFS</td></tr>
+<tr><td class="s3td">TCSBO12</td><td class="s2td">TCheckBox111<td class="s4td">Button16</td><td class="s5td">Игнорировать разницу в 1 ч</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Сохранять при выходе</td></tr>
+<tr><td class="s3td">TCSBO13</td><td class="s2td">TCheckBox17<td class="s4td">Button24</td><td class="s5td">Состояние каталогов</td></tr>
+<tr><td class="s3td">TCSBO14</td><td class="s2td">TCheckBox16<td class="s4td">Button23</td><td class="s5td">Состояние (вид) панелей</td></tr>
+<tr><td class="s3td">TCSBO15</td><td class="s2td">TCheckBox15<td class="s4td">Button22</td><td class="s5td">Историю команд</td></tr>
+<tr><td class="s3td">TCSBO16</td><td class="s2td">TCheckBox14<td class="s4td">Button21</td><td class="s5td">Историю каталогов</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Подсчитывать место, занимаемое подкаталогами</td></tr>
+<tr><td class="s3td">TCSBO17</td><td class="s2td">TCheckBox13<td class="s4td">Button19</td><td class="s5td">При выделении ПРОБЕЛОМ</td></tr>
+<tr><td class="s3td">TCSBO18</td><td class="s2td">TCheckBox12<td class="s4td">Button18</td><td class="s5td">Перед копированием/удалением</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Комментарии к файлам</td></tr>
+<tr><td class="s3td">TCSBO19</td><td class="s2td">TRadioButton1<td class="s4td">Button13</td><td class="s5td">files.bbs</td></tr>
+<tr><td class="s3td">TCSBO20</td><td class="s2td">TRadioButton2<td class="s4td">Button14</td><td class="s5td">descript.ion</td></tr>
+<tr><td class="s3td">TCSBO21</td><td class="s2td">TCheckBox8<td class="s4td">Button10</td><td class="s5td">Кодировка DOS</td></tr>
+<tr><td class="s3td">TCSBO22</td><td class="s2td">TCheckBox9<td class="s4td">Button11</td><td class="s5td">Копировать комментарии с файл</td></tr>
+<tr><td class="s3td">TCSBO23</td><td class="s2td">TCheckBox10<td class="s4td">Button12</td><td class="s5td">Читать из обоих типов</td></tr>
+<tr><td class="s3td">TCSBO24</td><td class="s2td">TButton30<td class="s4td">Button34</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSBO25</td><td class="s2td">TButton29<td class="s4td">Button33</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSBO26</td><td class="s2td">TButton27<td class="s4td">Button31</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSBO27</td><td class="s2td">TButton28<td class="s4td">Button32</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: ПРАВКА/ПРОСМОТР</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Просмотр по F3</td></tr>
+<tr><td class="s3td">TCSEV1</td><td class="s2td">TRadioButton3<td class="s4td">Button10</td><td class="s5td">Файл под курсором - внутренней программой</td></tr>
+<tr><td class="s3td">TCSEV2</td><td class="s2td">TRadioButton2<td class="s4td">Button9</td><td class="s5td">Выделенные файлы - внутренней программе</td></tr>
+<tr><td class="s3td">TCSEV3</td><td class="s2td">TRadioButton1<td class="s4td">Button8</td><td class="s5td">Внешней программой просмотра:</td></tr>
+<tr><td class="s3td">TCSEV4</td><td class="s2td">TButton4<td class="s4td">Button7</td><td class="s5td">По типам файлов...</td></tr>
+<tr><td class="s3td">TCSEV5</td><td class="s2td">TEdit2<td class="s4td">Edit2</td><td class="s5td">по</td></tr>
+<tr><td class="s3td">TCSEV6</td><td class="s2td">TButton3<td class="s4td">Button6</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCSEV7</td><td class="s2td">TButton2<td class="s4td">Button5</td><td class="s5td">Настройка программы просмотра</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Правка по F4</td></tr>
+<tr><td class="s3td">TCSEV8</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td">Программа-Редактор:</td></tr>
+<tr><td class="s3td">TCSEV9</td><td class="s2td">TButton1<td class="s4td">Button2</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCSEV10</td><td class="s2td">TButton32<td class="s4td">Button15</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSEV11</td><td class="s2td">TButton31<td class="s4td">Button14</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSEV12</td><td class="s2td">TButton29<td class="s4td">Button12</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSEV13</td><td class="s2td">TButton30<td class="s4td">Button13</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Диалог файловые ассоциации (кнопка: По типам файлов...</strong></td></tr>
+<tr><td class="s3td">TCSEVAS</td><td class="s2td">TASSOCIATEDLG<td class="s4td">TASSOCIATEDLG</td><td class="s5td">класс окна файловые ассоциации</td></tr>
+<tr><td class="s3td">TCSEVAS1</td><td class="s2td">ComboLBox1<td class="s4td">ComboLBox1</td><td class="s5td"> список программ</td></tr>
+<tr><td class="s3td">TCSEVAS2</td><td class="s2td">Edit1<td class="s4td">Edit1</td><td class="s5td">открывать с помощью:</td></tr>
+<tr><td class="s3td">TCSEVAS3</td><td class="s2td">Edit2<td class="s4td">Edit2</td><td class="s5td">окно выбора расширения</td></tr>
+<tr><td class="s3td">TCSEVAS4</td><td class="s2td">TMyComboBox2<td class="s4td">LCLComboBox2</td><td class="s5td">кнопка в окне выбора расширения [\/]</td></tr>
+<tr><td class="s3td">TCSEVAS5</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">Обзор...</td></tr>
+<tr><td class="s3td">TCSEVAS6</td><td class="s2td">TButton5<td class="s4td">Button5</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSEVAS7</td><td class="s2td">TButton4<td class="s4td">Button4</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSEVAS8</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Справка</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Диалог настройки внутренней программы просмотра (кнопка: Настройка программы просмотра)</strong></td></tr>
+<tr><td class="s3td">TCSEVIV</td><td class="s2td">TCSEVTLISTCONF<td class="s4td">TLISTCONF</td><td class="s5td">Класс диалога</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Вид при запуске</td></tr>
+<tr><td class="s3td">TCSEVIV1</td><td class="s2td">TMyRadioButton8<td class="s4td">Button10</td><td class="s5td">Текст</td></tr>
+<tr><td class="s3td">TCSEVIV2</td><td class="s2td">TMyRadioButton7<td class="s4td">Button9</td><td class="s5td">Двоичный</td></tr>
+<tr><td class="s3td">TCSEVIV3</td><td class="s2td">TMyRadioButton6<td class="s4td">Button8</td><td class="s5td">HEX</td></tr>
+<tr><td class="s3td">TCSEVIV4</td><td class="s2td">TMyRadioButton5<td class="s4td">Button7</td><td class="s5td">Автовыбор</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Шрифт при запуске</td></tr>
+<tr><td class="s3td">TCSEVIV5</td><td class="s2td">TMyRadioButton4<td class="s4td">Button5</td><td class="s5td">ANSI</td></tr>
+<tr><td class="s3td">TCSEVIV6</td><td class="s2td">TMyRadioButton3<td class="s4td">Button4</td><td class="s5td">ASCII</td></tr>
+<tr><td class="s3td">TCSEVIV7</td><td class="s2td">TMyRadioButton2<td class="s4td">Button3</td><td class="s5td">Пользовательский</td></tr>
+<tr><td class="s3td">TCSEVIV8</td><td class="s2td">TMyRadioButton1<td class="s4td">Button2</td><td class="s5td">Автовыбор</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Шрифт</td></tr>
+<tr><td class="s3td">TCSEVIV9</td><td class="s2td">TCheckBox9<td class="s4td">Button31</td><td class="s5td">ANSI: по умолчанию</td></tr>
+<tr><td class="s3td">TCSEVIV10</td><td class="s2td">TButton8<td class="s4td">Button30</td><td class="s5td">кнопка шрифта (Microsoft Sans Serif.-15.b)</td></tr>
+<tr><td class="s3td">TCSEVIV11</td><td class="s2td">TCheckBox8<td class="s4td">Button29</td><td class="s5td">ASCII: по умолчанию</td></tr>
+<tr><td class="s3td">TCSEVIV12</td><td class="s2td">TButton7<td class="s4td">Button28</td><td class="s5td">кнопка шрифта (Microsoft Sans Serif.-15.b)</td></tr>
+<tr><td class="s3td">TCSEVIV13</td><td class="s2td">TCheckBox7<td class="s4td">Button27</td><td class="s5td">Пользовательский по умолчанию</td></tr>
+<tr><td class="s3td">TCSEVIV14</td><td class="s2td">TButton6<td class="s4td">Button26</td><td class="s5td">кнопка шрифта (Microsoft Sans Serif.-15.b)</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Ширина строки (в символах)</td></tr>
+<tr><td class="s3td">TCSEVIV15</td><td class="s2td">TEdit4<td class="s4td">Edit4</td><td class="s5td">Текст:</td></tr>
+<tr><td class="s3td">TCSEVIV16</td><td class="s2td">TEdit3<td class="s4td">Edit3</td><td class="s5td">Двоичный:</td></tr>
+<tr><td class="s3td">TCSEVIV17</td><td class="s2td">TEdit2<td class="s4td">Edit2</td><td class="s5td">Результаты поиска В строке от начала листа:</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Мультимедиа</td></tr>
+<tr><td class="s3td">TCSEVIV18</td><td class="s2td">TCheckBox6<td class="s4td">Button19</td><td class="s5td">Использовать плагины / Выводить графику</td></tr>
+<tr><td class="s3td">TCSEVIV19</td><td class="s2td">TCheckBox4<td class="s4td">Button16</td><td class="s5td">Воспроизводить мультимедиа</td></tr>
+<tr><td class="s3td">TCSEVIV20</td><td class="s2td">TCheckBox1<td class="s4td">Button13</td><td class="s5td">RTF как текст</td></tr>
+<tr><td class="s3td">TCSEVIV21</td><td class="s2td">TCheckBox5<td class="s4td">Button18</td><td class="s5td">IrfanView/XnView для неподдерживаемых изображений</td></tr>
+<tr><td class="s3td">TCSEVIV22</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td">Путь:</td></tr>
+<tr><td class="s3td">TCSEVIV23</td><td class="s2td">TButton2<td class="s4td">Button17</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCSEVIV24</td><td class="s2td">TCheckBox3<td class="s4td">Button15</td><td class="s5td">Выводить HTML как текст со ссылками</td></tr>
+<tr><td class="s3td">TCSEVIV25</td><td class="s2td">TCheckBox2<td class="s4td">Button14</td><td class="s5td">Ссылки HTML в {фигурных скобках}</td></tr>
+<tr><td class="s3td">TCSEVIV26</td><td class="s2td">TButton1<td class="s4td">Button12</td><td class="s5td">LS-плагины</td></tr>
+<tr><td class="s3td"> TCSEVIV27</td><td class="s2td">TButton5<td class="s4td">Button23</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td"> TCSEVIV28 </td><td class="s2td">TButton4<td class="s4td">Button22</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td"> TCSEVIV29</td><td class="s2td">TButton3<td class="s4td">Button20</td><td class="s5td">Справка</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: ОПЕРАЦИИ С ФАЙЛАМИ</strong></td></tr>
+<tr><td class="s3td">TCSOF1</td><td class="s2td">TCheckBox1<td class="s4td">Button1</td><td class="s5td">Автоматический выбор способа копирования (рекомендуется)</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Способ копирования (только для опытных пользователей!)</td></tr>
+<tr><td class="s3td">TCSOF2</td><td class="s2td">TRadioButton3<td class="s4td">Button10</td><td class="s5td">Только стандартный способ (надёжно, но не очень быстро)</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Размер буфера для маленьких файлов:</td></tr>
+<tr><td class="s3td">TCSOF3</td><td class="s2td">TEdit6<td class="s4td">Edit6</td><td class="s5td">Источник и получатель на одном диске:</td></tr>
+<tr><td class="s3td">TCSOF4</td><td class="s2td">TEdit5<td class="s4td">Edit5</td><td class="s5td">Источник и получатель на разных дисках</td></tr>
+<tr><td class="s3td">TCSOF5</td><td class="s2td">TRadioButton2<td class="s4td">Button9</td><td class="s5td">Также использовать режим больших файлов (без кэша)</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Размер буфера для больших файлов:</td></tr>
+<tr><td class="s3td">TCSOF6</td><td class="s2td">TEdit4<td class="s4td">Edit4</td><td class="s5td">Источник и получатель на одном диске:</td></tr>
+<tr><td class="s3td">TCSOF7</td><td class="s2td">TEdit3<td class="s4td">Edit3</td><td class="s5td">Источник и получатель на разных дисках</td></tr>
+<tr><td class="s3td">TCSOF8</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td">Следующие логические диски находятся на одном жёстком диске</td></tr>
+<tr><td class="s3td">TCSOF9</td><td class="s2td">TCheckBox6<td class="s4td">Button11</td><td class="s5td">Использовать режим совместимости для следующих дисков</td></tr>
+<tr><td class="s3td">TCSOF10</td><td class="s2td">TEdit2<td class="s4td">Edit2</td><td class="s5td">Введите буквы дисков, т.е. CDEF. или</td></tr>
+<tr><td class="s3td">TCSOF11</td><td class="s2td">TCheckBox5<td class="s4td">Button7</td><td class="s5td">USB флэш-диски</td></tr>
+<tr><td class="s3td">TCSOF12</td><td class="s2td">TRadioButton1<td class="s4td">Button8</td><td class="s5td">Выполнять копирование/вставку Проводником (при проблемах)</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Общие настройки копирования и удаления</td></tr>
+<tr><td class="s3td">TCSOF13</td><td class="s2td">TCheckBox4<td class="s4td">Button5</td><td class="s5td">Копировать дату/время каталогов</td></tr>
+<tr><td class="s3td">TCSOF14</td><td class="s2td">TCheckBox3<td class="s4td">Button4</td><td class="s5td">Удалять Проводником (быстрее, но игнорирует комментарии</td></tr>
+<tr><td class="s3td">TCSOF15</td><td class="s2td">TCheckBox2<td class="s4td">Button3</td><td class="s5td">удаление в Корзину (с Shift - окончательно)</td></tr>
+<tr><td class="s3td">TCSOF16</td><td class="s2td">TButton33<td class="s4td">Button18</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSOF17</td><td class="s2td">TButton32<td class="s4td">Button17</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSOF18</td><td class="s2td">TButton30<td class="s4td">Button15</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSOF19</td><td class="s2td">TButton31<td class="s4td">Button16</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: АВТООБНОВЛЕНИЕ</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Автообновление при переключении на ТС</td></tr>
+<tr><td class="s3td">TCSAU1</td><td class="s2td">TEdit3<td class="s4td">Edit3</td><td class="s5td">Не обновлять следующие диски:</td></tr>
+<tr><td class="s3td">TCSAU2</td><td class="s2td">TEdit2<td class="s4td">Edit2</td><td class="s5td">Не запоминать следующие диски при выходе</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Автообновление при изменениях в файловой системе</td></tr>
+<tr><td class="s3td">TCSAU3</td><td class="s2td">TCheckBox6<td class="s4td">Button7</td><td class="s5td">Обновлять при создании, удалении и переименовании файлов</td></tr>
+<tr><td class="s3td">TCSAU4</td><td class="s2td">TCheckBox5<td class="s4td">Button6</td><td class="s5td">Также обновлять при изменении размера, даты или атрибутов</td></tr>
+<tr><td class="s3td">TCSAU5</td><td class="s2td">TCheckBox4<td class="s4td">Button5</td><td class="s5td">Добавлять файлы в КОНЕЦ списка (по умолчанию: сортировать)</td></tr>
+<tr><td class="s3td">TCSAU6</td><td class="s2td">TCheckBox3<td class="s4td">Button4</td><td class="s5td">Не реагировать на изменения, если окно ТС неактивно</td></tr>
+<tr><td class="s3td">TCSAU7</td><td class="s2td">TCheckBox2<td class="s4td">Button3</td><td class="s5td">Обновлять строку состояния (общее количество файлов)</td></tr>
+<tr><td class="s3td">TCSAU8</td><td class="s2td">TCheckBox1<td class="s4td">Button2</td><td class="s5td">Обновлять информацию о свободном дисковом пространстве</td></tr>
+<tr><td class="s3td">TCSAU9</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td">Не обновлять следующие диски:</td></tr>
+<tr><td class="s3td">TCSAU10</td><td class="s2td">TButton30<td class="s4td">Button12</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSAU11</td><td class="s2td">TButton29<td class="s4td">Button11</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSAU12</td><td class="s2td">TButton27<td class="s4td">Button9</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSAU13</td><td class="s2td">TButton28<td class="s4td">Button10</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: БЫСТРЫЙ ПОИСК</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Поиск в текущем каталоге</td></tr>
+<tr><td class="s3td">TCSFS1</td><td class="s2td">TRadioButton5<td class="s4td">Button9</td><td class="s5td">Ctrl+Alt+буква</td></tr>
+<tr><td class="s3td">TCSFS2</td><td class="s2td">TRadioButton4<td class="s4td">Button8</td><td class="s5td">Alt+буква</td></tr>
+<tr><td class="s3td">TCSFS3</td><td class="s2td">TRadioButton3<td class="s4td">Button7</td><td class="s5td">Только буква</td></tr>
+<tr><td class="s3td">TCSFS4</td><td class="s2td">TRadioButton2<td class="s4td">Button6</td><td class="s5td">Буква (с диалогом поиска)</td></tr>
+<tr><td class="s3td">TCSFS5</td><td class="s2td">TRadioButton1<td class="s4td">Button5</td><td class="s5td">Отключён</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Точное соответствие имени:</td></tr>
+<tr><td class="s3td">TCSFS6</td><td class="s2td">TCheckBox2<td class="s4td">Button3</td><td class="s5td">Начало (имя должно начинаться с набранных символов)</td></tr>
+<tr><td class="s3td">TCSFS7</td><td class="s2td">TCheckBox1<td class="s4td">Button2</td><td class="s5td">Конец (последние символы до набранной точки должны со</td></tr>
+<tr><td class="s3td">TCSFS8</td><td class="s2td">TButton30<td class="s4td">Button13</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSFS9</td><td class="s2td">TButton29<td class="s4td">Button12</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSFS10</td><td class="s2td">TButton27<td class="s4td">Button10</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSFS11</td><td class="s2td">TButton28<td class="s4td">Button11</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: FTP</strong></td></tr>
+<tr><td class="s3td">TCSFTP1</td><td class="s2td">TEdit7<td class="s4td">Edit7</td><td class="s5td">Количество попыток при занятом FTP-сервере</td></tr>
+<tr><td class="s3td">TCSFTP2</td><td class="s2td">TEdit6<td class="s4td">Edit6</td><td class="s5td">Задержка между попытками (секунд)</td></tr>
+<tr><td class="s3td">TCSFTP3</td><td class="s2td">TMyComboBox2<td class="s4td">LCLComboBox2</td><td class="s5td">Режим по умолчанию: (Двоичный (zip. doc и т.д.))</td></tr>
+<tr><td class="s3td">TCSFTP4</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">Открывать новые соединен</td></tr>
+<tr><td class="s3td">TCSFTP5</td><td class="s2td">TCheckBox8<td class="s4td">Button10</td><td class="s5td">Создать файл отчёта: (в активной панели)</td></tr>
+<tr><td class="s3td">TCSFTP6</td><td class="s2td">TEdit5<td class="s4td">Edit5</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSFTP7</td><td class="s2td">TButton1<td class="s4td">Button9</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCSFTP8</td><td class="s2td">TCheckBox7<td class="s4td">Button8</td><td class="s5td">Выполнять все загрузки в фоновом режиме</td></tr>
+<tr><td class="s3td">TCSFTP9</td><td class="s2td">TCheckBox6<td class="s4td">Button7</td><td class="s5td">По умолчанию использовать пассивный режим</td></tr>
+<tr><td class="s3td">TCSFTP10</td><td class="s2td">TCheckBox3<td class="s4td">Button4</td><td class="s5td">Режим PORT: использовать только порты:</td></tr>
+<tr><td class="s3td">TCSFTP11</td><td class="s2td">TEdit4<td class="s4td">Edit4</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSFTP12</td><td class="s2td">TEdit3<td class="s4td">Edit3</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSFTP13</td><td class="s2td">TCheckBox1<td class="s4td">Button2</td><td class="s5td">Режим PORT: внешний адрес (IP/DNS/HTTP):</td></tr>
+<tr><td class="s3td">TCSFTP14</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSFTP15</td><td class="s2td">TCheckBox5<td class="s4td">Button6</td><td class="s5td">Сжимать данные при пересылке (MODE Z)</td></tr>
+<tr><td class="s3td">TCSFTP16</td><td class="s2td">TCheckBox4<td class="s4td">Button5</td><td class="s5td">Не в LAN-сети</td></tr>
+<tr><td class="s3td">TCSFTP17</td><td class="s2td">TCheckBox2<td class="s4td">Button3</td><td class="s5td">Автовозобновление, если данные не поступали в течении</td></tr>
+<tr><td class="s3td">TCSFTP18</td><td class="s2td">TEdit2<td class="s4td">Edit2</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSFTP19</td><td class="s2td">TButton31<td class="s4td">Button14</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSFTP20</td><td class="s2td">TButton30<td class="s4td">Button13</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSFTP21</td><td class="s2td">TButton28<td class="s4td">Button11</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSFTP22</td><td class="s2td">TButton29<td class="s4td">Button12</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: ПЛАГИНЫ</strong></td></tr>
+<tr><td class="s3td">TCSPL1</td><td class="s2td">TButton1<td class="s4td">Button2</td><td class="s5td">Скачать новые плагины с сайта... [>>]</td></tr>
+<tr><td class="s3td">TCSPL2</td><td class="s2td">TButton5<td class="s4td">Button10</td><td class="s5td">Архиваторные плагины (.WCX)... Настройка [>>]</td></tr>
+<tr><td class="s3td">TCSPL3</td><td class="s2td">TButton4<td class="s4td">Button8</td><td class="s5td">Плагины файловой системы (.WFX)... Настройка [>>]</td></tr>
+<tr><td class="s3td">TCSPL4</td><td class="s2td">TButton3<td class="s4td">Button6</td><td class="s5td">Плагины внутреннего просмотрщика (.WLX)... Настройка [>>]</td></tr>
+<tr><td class="s3td">TCSPL5</td><td class="s2td">TButton2<td class="s4td">Button4</td><td class="s5td">Информационные плагины (.WDX)... Настройка [>>]</td></tr>
+<tr><td class="s3td">TCSPL6</td><td class="s2td">TButton30<td class="s4td">Button14</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSPL7</td><td class="s2td">TButton29<td class="s4td">Button13</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSPL8</td><td class="s2td">TButton27<td class="s4td">Button11</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSPL9</td><td class="s2td">TButton28<td class="s4td">Button12</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Диалог файловые ассоциации (кнопка: Архиваторные плагины (.WCX)... Настройка [>>])</strong></td></tr>
+<tr><td class="s3td">TCSPLWCX</td><td class="s2td">TASSOCIATEDLG<td class="s4td">TASSOCIATEDLG</td><td class="s5td">класс окна файловые ассоциации</td></tr>
+<tr><td class="s3td">TCSPLWCX1</td><td class="s2td">ComboLBox1<td class="s4td">ComboLBox1</td><td class="s5td"> список программ</td></tr>
+<tr><td class="s3td">TCSPLWCX2</td><td class="s2td">Edit1<td class="s4td">Edit1</td><td class="s5td">открывать с помощью:</td></tr>
+<tr><td class="s3td">TCSPLWCX3</td><td class="s2td">Edit2<td class="s4td">Edit2</td><td class="s5td">окно выбора расширения</td></tr>
+<tr><td class="s3td">TCSPLWCX4</td><td class="s2td">TMyComboBox2<td class="s4td">LCLComboBox2</td><td class="s5td">кнопка в окне выбора расширения [\/]</td></tr>
+<tr><td class="s3td">TCSPLWCX5</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">Обзор...</td></tr>
+<tr><td class="s3td">TCSPLWCX6</td><td class="s2td">TButton5<td class="s4td">Button5</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSPLWCX7</td><td class="s2td">TButton4<td class="s4td">Button4</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSPLWCX8</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Справка</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Диалог плагины файловой системы (кнопка: Плагины файловой системы (.WFX)... Настройка [>>])</strong></td></tr>
+<tr><td class="s3td">TCSPLWFX</td><td class="s2td">TFsPluginConfigForm<td class="s4td">TFsPluginConfigForm</td><td class="s5td">класс окна плагинов файловой системы</td></tr>
+<tr><td class="s3td">TCSPLWFX1</td><td class="s2td">TListBox1<td class="s4td">LCLListBox1</td><td class="s5td">список установленных плагинов</td></tr>
+<tr><td class="s3td">TCSPLWFX2</td><td class="s2td">TButton5<td class="s4td">Button5</td><td class="s5td">Добавить</td></tr>
+<tr><td class="s3td">TCSPLWFX3</td><td class="s2td">TButton4<td class="s4td">Button4</td><td class="s5td">Удалить</td></tr>
+<tr><td class="s3td">TCSPLWFX4</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Переименовать</td></tr>
+<tr><td class="s3td">TCSPLWFX5</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSPLWFX6</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Отмена</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Диалог плагины внутреннего просмотрщика (кнопка: Плагины внутреннего просмотрщика (.WLX)... Настройка [>>])</strong></td></tr>
+<tr><td class="s3td">TCSPLWLX</td><td class="s2td">TFsPluginConfigForm<td class="s4td">TFsPluginConfigForm</td><td class="s5td">класс окна плагинов внутреннего просмотрщика</td></tr>
+<tr><td class="s3td">TCSPLWFL1</td><td class="s2td">TListBox1<td class="s4td">LCLListBox1</td><td class="s5td">список установленных плагинов</td></tr>
+<tr><td class="s3td">TCSPLWFL2</td><td class="s2td">TScrollBar1<td class="s4td">ScrollBar1</td><td class="s5td">вверх/низ</td></tr>
+<tr><td class="s3td">TCSPLWLX3</td><td class="s2td">TButton5<td class="s4td">Button5</td><td class="s5td">Добавить</td></tr>
+<tr><td class="s3td">TCSPLWLX4</td><td class="s2td">TButton4<td class="s4td">Button4</td><td class="s5td">Удалить</td></tr>
+<tr><td class="s3td">TCSPLWLX5</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Переименовать</td></tr>
+<tr><td class="s3td">TCSPLWLX6</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSPLWLX7</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Отмена</td></tr>
+<tr><td class="sel2td" colspan="4"><strong>Диалог WDX плагинов (см. WLX)</strong></td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: ЭСКИЗЫ</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Эскизы: общие настройки</td></tr>
+<tr><td class="s3td">TCSGR1</td><td class="s2td">TEdit7<td class="s4td">Edit8</td><td class="s5td">Расположение базы данных (если пусто - кэширование отключено</td></tr>
+<tr><td class="s3td">TCSGR2</td><td class="s2td">TButton4<td class="s4td">Button16</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCSGR3</td><td class="s2td">TButton5<td class="s4td">Button17</td><td class="s5td">По умолчанию</td></tr>
+<tr><td class="s3td">TCSGR4</td><td class="s2td">TCheckBox9<td class="s4td">Button15</td><td class="s5td">Копировать/удалять эскизы с файлами</td></tr>
+<tr><td class="s3td">TCSGR5</td><td class="s2td">TCheckBox8<td class="s4td">Button14</td><td class="s5td">Дополнительные поля под эскизами (напр., размер картинки):</td></tr>
+<tr><td class="s3td">TCSGR6</td><td class="s2td">TButton3<td class="s4td">Button13</td><td class="s5td">Добавить...</td></tr>
+<tr><td class="s3td">TCSGR7</td><td class="s2td">TEdit6<td class="s4td">Edit6</td><td class="s5td">Размер эскизов:</td></tr>
+<tr><td class="s3td">TCSGR8</td><td class="s2td">TEdit5<td class="s4td">Edit5</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSGR9</td><td class="s2td">TButton2<td class="s4td">Button12</td><td class="s5td">По типу файлов</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Загрузка эскизов</td></tr>
+<tr><td class="s3td">TCSGR10</td><td class="s2td">TCheckBox3<td class="s4td">Button4</td><td class="s5td">При помощи LS-плагинов для:</td></tr>
+<tr><td class="s3td">TCSGR11</td><td class="s2td">TEdit3<td class="s4td">Edit3</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSGR12</td><td class="s2td">TCheckBox4<td class="s4td">Button5</td><td class="s5td">Методом Проводника (OLE2) для:</td></tr>
+<tr><td class="s3td">TCSGR13</td><td class="s2td">TEdit4<td class="s4td">Edit4</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSGR14</td><td class="s2td">TCheckBox1<td class="s4td">Button2</td><td class="s5td">При помощи IrfanView/XnView для:</td></tr>
+<tr><td class="s3td">TCSGR15</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSGR16</td><td class="s2td">TCheckBox2<td class="s4td">Button3</td><td class="s5td">В виде первых строк текста для:</td></tr>
+<tr><td class="s3td">TCSGR17</td><td class="s2td">TEdit2<td class="s4td">Edit2</td><td class="s5td"></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Сжать базу данных эскизов</td></tr>
+<tr><td class="s3td">TCSGR18</td><td class="s2td">TCheckBox7<td class="s4td">Button10</td><td class="s5td">Удалить эскизы для отсутствующих файлов</td></tr>
+<tr><td class="s3td">TCSGR19</td><td class="s2td">TCheckBox5<td class="s4td">Button7</td><td class="s5td">Удалить эскизы для извлечённых CD-дисков</td></tr>
+<tr><td class="s3td">TCSGR20</td><td class="s2td">TCheckBox6<td class="s4td">Button8</td><td class="s5td">Удалить эскизы для недоступных дисков (напр., сетевых или USB)</td></tr>
+<tr><td class="s3td">TCSGR21</td><td class="s2td">TButton1<td class="s4td">Button9</td><td class="s5td">Запуск</td></tr>
+<tr><td class="s3td">TCSGR22</td><td class="s2td">TButton31<td class="s4td">Button21</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSGR23</td><td class="s2td">TButton30<td class="s4td">Button29</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSGR24</td><td class="s2td">TButton28<td class="s4td">Button18</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSGR25</td><td class="s2td">TButton29<td class="s4td">Button19</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Предупреждение об изменении размеров эскизов</strong></td></tr>
+<tr><td class="s3td">TCSGRW</td><td class="s2td">#32770<td class="s4td"></td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCSGRW1</td><td class="s2td">Button1<td class="s4td"></td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSGRW2</td><td class="s2td">Button2<td class="s4td"></td><td class="s5td">Отмена</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: ФАЙЛ ОТЧЁТА</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Отчёт о файловых операциях</td></tr>
+<tr><td class="s3td">TCSFR1</td><td class="s2td">TCheckBox10<td class="s4td">Button18</td><td class="s5td">Создать файл отчёта:</td></tr>
+<tr><td class="s3td">TCSFR2</td><td class="s2td">TEdit3<td class="s4td">Edit3</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSFR3</td><td class="s2td">TButton1<td class="s4td">Button17</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Протоколируемые действия</td></tr>
+<tr><td class="s3td">TCSFR4</td><td class="s2td">TCheckBox9<td class="s4td">Button15</td><td class="s5td">Копирование / Перемещение / Создание ярлыков</td></tr>
+<tr><td class="s3td">TCSFR5</td><td class="s2td">TCheckBox8<td class="s4td">Button14</td><td class="s5td">Удаление</td></tr>
+<tr><td class="s3td">TCSFR6</td><td class="s2td">TCheckBox7<td class="s4td">Button13</td><td class="s5td">Создание/Удаление каталогов</td></tr>
+<tr><td class="s3td">TCSFR7</td><td class="s2td">TCheckBox6<td class="s4td">Button12</td><td class="s5td">Упаковка/Распаковка/Проверка архивов</td></tr>
+<tr><td class="s3td">TCSFR8</td><td class="s2td">TCheckBox5<td class="s4td">Button11</td><td class="s5td">Плагины файловой системы</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Протоколировать операции со статусом:</td></tr>
+<tr><td class="s3td">TCSFR9</td><td class="s2td">TCheckBox4<td class="s4td">Button9</td><td class="s5td">Успешные операции</td></tr>
+<tr><td class="s3td">TCSFR10</td><td class="s2td">TCheckBox3<td class="s4td">Button8</td><td class="s5td">Ошибки</td></tr>
+<tr><td class="s3td">TCSFR11</td><td class="s2td">TCheckBox2<td class="s4td">Button7</td><td class="s5td">Пропущенные файлы (при выборе «Пропустить». «Пропусти</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Смена файла отчёта:</td></tr>
+<tr><td class="s3td">TCSFR12</td><td class="s2td">TRadioButton3<td class="s4td">Button5</td><td class="s5td">Никогда (всё сохранять в один файл отчёта)</td></tr>
+<tr><td class="s3td">TCSFR13</td><td class="s2td">TRadioButton2<td class="s4td">Button4</td><td class="s5td">Каждый день после полуночи</td></tr>
+<tr><td class="s3td">TCSFR14</td><td class="s2td">TRadioButton1<td class="s4td">Button3</td><td class="s5td">Когда размер файла отчёта превысит</td></tr>
+<tr><td class="s3td">TCSFR15</td><td class="s2td">TEdit2<td class="s4td">Edit2</td><td class="s5td">Кбайт</td></tr>
+<tr><td class="s3td">TCSFR16</td><td class="s2td">TCheckBox1<td class="s4td">Button2</td><td class="s5td">Хранить не более\</td></tr>
+<tr><td class="s3td">TCSFR17</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td">экземпляров файла отчёта</td></tr>
+<tr><td class="s3td">TCSFR18</td><td class="s2td">TButton31<td class="s4td">Button22</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSFR19</td><td class="s2td">TButton30<td class="s4td">Button21</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSFR20</td><td class="s2td">TButton28<td class="s4td">Button19</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSFR21</td><td class="s2td">TButton29<td class="s4td">Button20</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: СПИСОК ИСКЛЮЧЕНИЙ</strong></td></tr>
+<tr><td class="s3td">TCSLE1</td><td class="s2td">TCheckBox1<td class="s4td">Button4</td><td class="s5td">Исключить (не показывать) следующие файлы и каталоги:</td></tr>
+<tr><td class="s3td">TCSLE2</td><td class="s2td">TMyMemo1<td class="s4td">Edit2</td><td class="s5td">окно исключающих файлов/каталогов</td></tr>
+<tr><td class="s3td">TCSLE3</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td">Сохранить в:</td></tr>
+<tr><td class="s3td">TCSLE4</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCSLE5</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Добавить все выделенные с путями</td></tr>
+<tr><td class="s3td">TCSLE6</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">Добавить все выделенные</td></tr>
+<tr><td class="s3td">TCSLE7</td><td class="s2td">TButton31<td class="s4td">Button8</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSLE8</td><td class="s2td">TButton30<td class="s4td">Button7</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSLE9</td><td class="s2td">TButton28<td class="s4td">Button5</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSLE10</td><td class="s2td">TButton29<td class="s4td">Button6</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: АРХИВАТОРЫ</strong></td></tr>
+<tr><td class="s3td">TCSAZ1</td><td class="s2td">TCheckBox4<td class="s4td">Button20</td><td class="s5td">Входить в архивы, как в каталоги</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">ARJ</td></tr>
+<tr><td class="s3td">TCSAZ2</td><td class="s2td">TEdit5<td class="s4td">Edit5</td><td class="s5td">Архиватор ARJ:</td></tr>
+<tr><td class="s3td">TCSAZ3</td><td class="s2td">TButton5<td class="s4td">Button17</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCSAZ4</td><td class="s2td">TCheckBox3<td class="s4td">Button16</td><td class="s5td">По возможности использовать внутренний распаковщик</td></tr>
+<tr><td class="s3td">TCSAZ5</td><td class="s2td">TCheckBox2<td class="s4td">Button15</td><td class="s5td">Передавать длинные имена (ARJ 2.55 или новее: не для WinN</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">LHA</td></tr>
+<tr><td class="s3td">TCSAZ6</td><td class="s2td">TEdit4<td class="s4td">Edit4</td><td class="s5td">Архиватор LHA:</td></tr>
+<tr><td class="s3td">TCSAZ7</td><td class="s2td">TButton4<td class="s4td">Button13</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCSAZ8</td><td class="s2td">TMyCheckBox3<td class="s4td">Button12</td><td class="s5td">По возможности использовать внутренний распаковщик</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">RAR</td></tr>
+<tr><td class="s3td">TCSAZ9</td><td class="s2td">TEdit3<td class="s4td">Edit3</td><td class="s5td">Архиватор RAR:</td></tr>
+<tr><td class="s3td">TCSAZ10</td><td class="s2td">TButton3<td class="s4td">Button10</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCSAZ11</td><td class="s2td">TMyCheckBox2<td class="s4td">Button9</td><td class="s5td">По возможности использовать внутренний распаковщик</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">UC2</td></tr>
+<tr><td class="s3td">TCSAZ12</td><td class="s2td">TEdit2<td class="s4td">Edit2</td><td class="s5td">Архиватор UC2:</td></tr>
+<tr><td class="s3td">TCSAZ13</td><td class="s2td">TButton2<td class="s4td">Button7</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">АСЕ</td></tr>
+<tr><td class="s3td">TCSAZ14</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td">АСЕ (>= 1,2Ь):</td></tr>
+<tr><td class="s3td">TCSAZ15</td><td class="s2td">TButton1<td class="s4td">Button5</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCSAZ16</td><td class="s2td">TMyCheckBox1<td class="s4td">Button4</td><td class="s5td">По возможности использовать внутренний распаковщик</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">TAR</td></tr>
+<tr><td class="s3td">TCSAZ17</td><td class="s2td">TCheckBox1<td class="s4td">Button2</td><td class="s5td">Создавать TAR-архивы для Linux (иначе - для SunOS)</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Дополнительные архиваторы</td></tr>
+<tr><td class="s3td">TCSAZ18</td><td class="s2td">TButton6<td class="s4td">Button19</td><td class="s5td">Настройка архиваторных плагинов »</td></tr>
+<tr><td class="s3td">TCSAZ19</td><td class="s2td">TButton35<td class="s4td">Button24</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSAZ20</td><td class="s2td">TButton34<td class="s4td">Button23</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSAZ21</td><td class="s2td">TButton32<td class="s4td">Button21</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSAZ22</td><td class="s2td">TButton33<td class="s4td">Button22</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: АРХИВАТОР ZIP</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">ZIP</td></tr>
+<tr><td class="s3td">TCSZP1</td><td class="s2td">TEdit4<td class="s4td">Edit4</td><td class="s5td">ZIP-упаковщик:</td></tr>
+<tr><td class="s3td">TCSZP2</td><td class="s2td">TButton2<td class="s4td">Button19</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCSZP3</td><td class="s2td">TCheckBox7<td class="s4td">Button18</td><td class="s5td">Применять внутр. упаковщик</td></tr>
+<tr><td class="s3td">TCSZP4</td><td class="s2td">TCheckBox6<td class="s4td">Button17</td><td class="s5td">Использовать Zip-NT 2.0.1</td></tr>
+<tr><td class="s3td">TCSZP5</td><td class="s2td">TEdit3<td class="s4td">Edit3</td><td class="s5td">ZIP-распаковщик</td></tr>
+<tr><td class="s3td">TCSZP6</td><td class="s2td">TButton1<td class="s4td">Button16</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCSZP7</td><td class="s2td">TCheckBox5<td class="s4td">Button15</td><td class="s5td">По возможности использовать внутренний распаковщик</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Степень сжатия внутреннего ZIP-упаковщика (0-9)</td></tr>
+<tr><td class="s3td">TCSZP8</td><td class="s2td">TRadioButton6<td class="s4td">Button13</td><td class="s5td">Нормальное (6)</td></tr>
+<tr><td class="s3td">TCSZP9</td><td class="s2td">TRadioButton5<td class="s4td">Button12</td><td class="s5td">Максимальное (9)</td></tr>
+<tr><td class="s3td">TCSZP10</td><td class="s2td">TRadioButton4<td class="s4td">Button11</td><td class="s5td">Быстрое (1)</td></tr>
+<tr><td class="s3td">TCSZP11</td><td class="s2td">TRadioButton3<td class="s4td">Button10</td><td class="s5td">Другое:</td></tr>
+<tr><td class="s3td">TCSZP12</td><td class="s2td">TEdit2<td class="s4td">Edit2</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSZP13</td><td class="s2td">TScrollBar1<td class="s4td">ScrollBar1</td><td class="s5td"></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Временный каталог для внутреннего ZIP-упаковщика</td></tr>
+<tr><td class="s3td">TCSZP14</td><td class="s2td">TRadioButton2<td class="s4td">Button8</td><td class="s5td">По умолчанию (переменная окружения TEMP)</td></tr>
+<tr><td class="s3td">TCSZP15</td><td class="s2td">TRadioButton1<td class="s4td">Button7</td><td class="s5td">О Другой:</td></tr>
+<tr><td class="s3td">TCSZP16</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td"></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Дополнительные установки при упаковке/распаковке</td></tr>
+<tr><td class="s3td">TCSZP17</td><td class="s2td">TCheckBox4<td class="s4td">Button5</td><td class="s5td">Имена в формате 8.3</td></tr>
+<tr><td class="s3td">TCSZP18</td><td class="s2td">TCheckBox3<td class="s4td">Button4</td><td class="s5td">Дата архива по новейшему файлу</td></tr>
+<tr><td class="s3td">TCSZP19</td><td class="s2td">TCheckBox2<td class="s4td">Button3</td><td class="s5td">Открывать неполные ZIP</td></tr>
+<tr><td class="s3td">TCSZP20</td><td class="s2td">TCheckBox1<td class="s4td">Button2</td><td class="s5td">Работать с повреждёнными ZIF</td></tr>
+<tr><td class="s3td">TCSZP21</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">Упаковка юникодных имён:</td></tr>
+<tr><td class="s3td">TCSZP22</td><td class="s2td">TButton32<td class="s4td">Button23</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSZP23</td><td class="s2td">TButton31<td class="s4td">Button22</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSZP24</td><td class="s2td">TButton29<td class="s4td">Button20</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSZP25</td><td class="s2td">TButton30<td class="s4td">Button21</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>НАСТРОЙКА: РАЗНОЕ</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Запрашивать подтверждение при:</td></tr>
+<tr><td class="s3td">TCSMC1</td><td class="s2td">TCheckBox6<td class="s4td">Button34</td><td class="s5td">удалении непустых каталогов</td></tr>
+<tr><td class="s3td">TCSMC2</td><td class="s2td">TCheckBox10<td class="s4td">Button38</td><td class="s5td">перезаписи (замене) файлов</td></tr>
+<tr><td class="s3td">TCSMC3</td><td class="s2td">TCheckBox9<td class="s4td">Button37</td><td class="s5td">перезаписи/удалении файлов «только для чтения»</td></tr>
+<tr><td class="s3td">TCSMC4</td><td class="s2td">TCheckBox8<td class="s4td">Button36</td><td class="s5td">перезаписи/удалении скрытых и системных файлов</td></tr>
+<tr><td class="s3td">TCSMC5</td><td class="s2td">TCheckBox7<td class="s4td">Button35</td><td class="s5td">перетаскивании файлов мышью (Drag&Drop)</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Переопределить горячие клавиши</td></tr>
+<tr><td class="s3td">TCSMC6</td><td class="s2td">TRadioButton2<td class="s4td">Button27</td><td class="s5td">Клавиша:</td></tr>
+<tr><td class="s3td">TCSMC7</td><td class="s2td">TBitBtn1<td class="s4td">Button24</td><td class="s5td">[\/]</td></tr>
+<tr><td class="s3td">TCSMC8</td><td class="s2td">TCheckBox5<td class="s4td">Button32</td><td class="s5td">Ctrl +</td></tr>
+<tr><td class="s3td">TCSMC9</td><td class="s2td">TCheckBox4<td class="s4td">Button31</td><td class="s5td">Alt +</td></tr>
+<tr><td class="s3td">TCSMC10</td><td class="s2td">TCheckBox3<td class="s4td">Button30</td><td class="s5td">Shift +</td></tr>
+<tr><td class="s3td">TCSMC11</td><td class="s2td">TCheckBox2<td class="s4td">Button25</td><td class="s5td">Win +</td></tr>
+<tr><td class="s3td">TCSMC12</td><td class="s2td">TMyComboBox2<td class="s4td">LCLComboBox3</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSMC13</td><td class="s2td">TRadioButton1<td class="s4td">Button26</td><td class="s5td">Псевдоним:</td></tr>
+<tr><td class="s3td">TCSMC14</td><td class="s2td">Edit1<td class="s4td">LCLComboBox2</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSMC15</td><td class="s2td">TAltEdit1<td class="s4td">Edit7</td><td class="s5td">Команда:</td></tr>
+<tr><td class="s3td">TCSMC16</td><td class="s2td">TBitBtn2<td class="s4td">Button28</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSMC17</td><td class="s2td">TBitBtn3<td class="s4td">Button29</td><td class="s5td"></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Звуки</td></tr>
+<tr><td class="s3td">TCSMC18</td><td class="s2td">TButton1<td class="s4td">Button22</td><td class="s5td">Настроить>></td></tr>
+<tr><td class="s3td">TCSMC19</td><td class="s2td">TCheckBox1<td class="s4td">Button21</td><td class="s5td">При операциях с длительностью:</td></tr>
+<tr><td class="s3td">TCSMC20</td><td class="s2td">TEdit1<td class="s4td">Edit5</td><td class="s5td">></td></tr>
+<tr><td class="s3td">TCSMC21</td><td class="s2td">TButton30<td class="s4td">Button23</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCSMC22</td><td class="s2td">TButton29<td class="s4td">Button22</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSMC23</td><td class="s2td">TButton27<td class="s4td">Button20</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td">TCSMC24</td><td class="s2td">TButton28<td class="s4td">Button21</td><td class="s5td">Применить</td></tr>
+
+<tr><td class="sel3td" colspan="4"><strong>Примечание: необходимо учитывать, что инстанции кнопок "<font class="S81">OK</font>", "<font class="S81">Отмена</font>", "<font class="S81">Справка</font>", "<font class="S81">Применить</font>" в окне "НАСТРОЙКА" могут меняться в зависимости от перехода на другую страницу настроек или при вызове дополнительных диалогов.<br>В таблице указаны абсолютные инстанции кнопок, получаемые после открытия окна при запуске определённой <a class="le" href="add_commands.htm#8"><b>команды</b></a></strong></td></tr>
+
+<tr><td class="selcntr" colspan="4"><strong>ОКНО ВЫБОР КОМАНДЫ</strong></td></tr>
+<tr><td class="s3td">TCTEAMSEL</td><td class="s2td">TCmdSelForm<td class="s4td">TCmdSelForm</td><td class="s5td">класс окна выбора команды</td></tr>
+<tr><td class="s3td">TCTEAMSEL1</td><td class="s2td">TMyListBox2<td class="s4td">LCLListBox2</td><td class="s5td">Категория</td></tr>
+<tr><td class="s3td">TCTEAMSEL2</td><td class="s2td">TMyListBox1<td class="s4td">LCLListBox1</td><td class="s5td">Команда</td></tr>
+<tr><td class="s3td">TCTEAMSEL3</td><td class="s2td">TAltEdit1<td class="s4td">Edit1</td><td class="s5td">Фильтр</td></tr>
+<tr><td class="s3td">TCTEAMSEL4</td><td class="s2td">TButton6<td class="s4td">Button2</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCTEAMSEL5</td><td class="s2td">TButton5<td class="s4td">Button1</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">при пункте UserCmd.ini, Wcmd_Rus.ini</td></tr>
+<tr><td class="s3td">TCTEAMSEL6</td><td class="s2td">TButton4<td class="s4td">Button4</td><td class="s5td">Новая</td></tr>
+<tr><td class="s3td">TCTEAMSEL7</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">Правка</td></tr>
+<tr><td class="s3td">TCTEAMSEL8</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Удалить</td></tr>
+<tr><td class="s3td">TCTEAMSEL9</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Сменить имя/Копия</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>ввод новой команды (кнопка Новая)</strong></td></tr>
+<tr><td class="s3td">TCTEAMNEW</td><td class="s2td">TSTDTREEDLG<td class="s4td">TSTDTREEDLG</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCTEAMNEW1</td><td class="s2td">TAltEdit1<td class="s4td">Edit1</td><td class="s5td">Новое имя команды (em_xyz):</td></tr>
+<tr><td class="s3td">TCTEAMNEW2</td><td class="s2td">TButton3<td class="s4td">Button4</td><td class="s5td">Ок</td></tr>
+<tr><td class="s3td">TCTEAMNEW3</td><td class="s2td">TButton1<td class="s4td">Button2</td><td class="s5td">Отмена</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Изменение пользовательской команды (кнопка Правка...) см. классы НАСТРОЙКА ПАНЕЛИ ИНСТРУМЕНТОВ (для одного значка)</strong></td></tr>
+<tr><td class="sel2td" colspan="4"><strong>смена/копия пользовательской команды (кнопка Сменить имя/Копия)		см. TCTEAMNEW</strong></td></tr>
+<tr><td class="s3td">TCTEAMNEW4</td><td class="s2td">TMyCheckBox1<td class="s4td">Button6</td><td class="s5td">Сохранить копию существующей команды</td></tr>
+
+<tr class="selcntr"><td colspan="4">КОПИРОВАНИЕ/ПЕРЕМЕЩЕНИЕ</td></tr>
+<tr><td class="s3td">TCCOPY</td><td class="s2td">TInpComboDlg<td class="s4td">TInpComboDlg</td><td class="s5td">Класс окна</td></tr>
+<tr><td class="s3td">TCCOPY1</td><td class="s2td">TAltEdit1<td class="s4td">Edit2</td><td class="s5td">Копировать файлы в:</td></tr>
+<tr><td class="s3td">TCCOPY2</td><td class="s2td">TButton2<td class="s4td">TButton2</td><td class="s5td">Опции</td></tr>
+<tr><td class="s3td">TCCOPY3</td><td class="s2td">Edit1<td class="s4td">Edit1</td><td class="s5td">Только файлы типа:</td></tr>
+<tr><td class="s3td">TCCOPY4</td><td class="s2td">TMyComboBox1 при ShowCopyOptions=0<br>TMyComboBox2 при<br>ShowCopyOptions=1<td class="s4td">LCLComboBox1 при<br>ShowCopyOptions=0<br>LCLComboBox2 при<br>ShowCopyOptions=1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCCOPY5</td><td class="s2td">TMyCheckBox1<td class="s4td">Button7</td><td class="s5td">Копировать права доступа NTFS (нужны админ, права)</td></tr>
+<tr><td class="s3td">TCCOPY6</td><td class="s2td">TButton5<td class="s4td">Button10</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td">TCCOPY7</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">F2 В очередь</td></tr>
+<tr><td class="s3td">TCCOPY8</td><td class="s2td">TButton4<td class="s4td">Button9</td><td class="s5td">Дерево</td></tr>
+<tr><td class="s3td">TCCOPY9</td><td class="s2td">TButton3<td class="s4td">Button8</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCCOPY10</td><td class="s2td">TMyGroupBox1<td class="s4td">Button3</td><td class="s5td">Дополнительные настройки</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Настройки перезаписи</td></tr>
+<tr><td class="s3td">TCCOPY11</td><td class="s2td">TCheckBox3<td class="s4td">Button6</td><td class="s5td">Пропустить файлы, недоступные для чтения</td></tr>
+<tr><td class="s3td">TCCOPY12</td><td class="s2td">TCheckBox2<td class="s4td">Button5</td><td class="s5td">Переписать'удалить скрытые'системные'только для чтения</td></tr>
+<tr><td class="s3td">TCCOPY13</td><td class="s2td">TCheckBox1<td class="s4td">Button4</td><td class="s5td">Копировать во все выделенные папки/ссылки целевой панели</td></tr>
+
+<tr class="selcntr"><td colspan="4">КОПИРОВАНИЕ/ПЕРЕМЕЩЕНИЕ НА/С FTP</td></tr>
+<tr><td class="s3td"><a name="TCCOPYFTP"></a>TCCOPYFTP</td><td class="s2td">TCheckEditBox<td class="s4td">TCheckEditBox</td><td class="s5td">Класс окна</td></tr>
+<tr><td class="s3td"><a name="TCCOPYFTP1"></a>TCCOPYFTP1</td><td class="s2td">TAltEdit1<td class="s4td">Edit1</td><td class="s5td">Закачать как: / Загрузить в:</td></tr>
+<tr><td class="s3td"><a name="TCCOPYFTP2"></a>TCCOPYFTP2</td><td class="s2td">TMyCheckBox3<td class="s4td">Button6</td><td class="s5td">Закачать в фоновом режиме (отдельный поток) / Загрузить в фоновом режиме (отдельный поток)</td></tr>
+<tr><td class="s3td"><a name="TCCOPYFTP3"></a>TCCOPYFTP3</td><td class="s2td">TMyCheckBox2<td class="s4td">Button2</td><td class="s5td">Сохранять дату/время создания файлов</td></tr>
+<tr><td class="s3td"><a name="TCCOPYFTP4"></a>TCCOPYFTP4</td><td class="s2td">TMyCheckBox1<td class="s4td">Button1</td><td class="s5td">Перевести имена файлов в нижний регистр / Загрузить позже (добавить в список загрузок)</td></tr>
+<tr><td class="s3td"><a name="TCCOPYFTP5"></a>TCCOPYFTP5</td><td class="s2td">TButton3<td class="s4td">Button5	</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td"><a name="TCCOPYFTP6"></a>TCCOPYFTP6</td><td class="s2td">TButton2<td class="s4td">Button4	</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td"><a name="TCCOPYFTP7"></a>TCCOPYFTP7</td><td class="s2td">TButton1<td class="s4td">Button3	</td><td class="s5td">Дерево</td></tr>
+
+<tr class="selcntr"><td colspan="4">ВНУТРЕННИЕ АССОЦИАЦИИ</td></tr>
+<tr><td class="s3td">TCIASS</td><td class="s2td">TDlgCustomColors<td class="s4td">TDlgCustomColors</td><td class="s5td">класс окна внутренних ассоциаций</td></tr>
+<tr><td class="s3td">TCIASS1</td><td class="s2td">TMyListBox1<td class="s4td">LCLListBox1</td><td class="s5td">правка):</td></tr>
+<tr><td class="s3td">TCIASS2</td><td class="s2td">TButton5<td class="s4td">Button5</td><td class="s5td">Добавить...</td></tr>
+<tr><td class="s3td">TCIASS3</td><td class="s2td">TButton4<td class="s4td">Button4</td><td class="s5td">Правка...</td></tr>
+<tr><td class="s3td">TCIASS4</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">Удалить</td></tr>
+<tr><td class="s3td">TCIASS5</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCIASS6</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Отмена</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>диалог выбора маски (кнопка Добавить...)</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCMASK</td><td class="s2td">TCOMBOINPUT<td class="s4td">TCOMBOINPUT</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCMASK1</td><td class="s2td">Edit1<td class="s4td">Edit1</td><td class="s5td">':')</td></tr>
+<tr><td class="s3td">TCMASK2</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCMASK3</td><td class="s2td">TListBox1<td class="s4td">LCLListBox1</td><td class="s5td">или выберите тип файлов по шаблону:</td></tr>
+<tr><td class="s3td">TCMASK4</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Шаблон...</td></tr>
+<tr><td class="s3td">TCMASK5</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCMASK6</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Отмена</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Редактирование свойств типа файлов (кнопка Правка)</strong></td></tr>
+<tr><td class="s3td">TCETYPE</td><td class="s2td">TEditTypeForm<td class="s4td">TEditTypeForm</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCETYPE1</td><td class="s2td">TButton10<td class="s4td">Button11</td><td class="s5td">Изменить значок...</td></tr>
+<tr><td class="s3td">TCETYPE2</td><td class="s2td">TAltEdit1<td class="s4td">Edit1</td><td class="s5td">Название типа:</td></tr>
+<tr><td class="s3td">TCETYPE3</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCETYPE4</td><td class="s2td">TAltEdit3<td class="s4td">Edit3</td><td class="s5td">Описание типа:</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Действия:</td></tr>
+<tr><td class="s3td">TCETYPE5</td><td class="s2td">TAltEdit2<td class="s4td">Edit2</td><td class="s5td">Открыть</td></tr>
+<tr><td class="s3td">TCETYPE6</td><td class="s2td">TButton1<td class="s4td">Button4</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCETYPE7</td><td class="s2td">TBkGndListBox1<td class="s4td">LCLListBox1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCETYPE8</td><td class="s2td">TButton9<td class="s4td">Button10</td><td class="s5td">Создать...</td></tr>
+<tr><td class="s3td">TCETYPE9</td><td class="s2td">TButton8<td class="s4td">Button9</td><td class="s5td">Изменить...</td></tr>
+<tr><td class="s3td">TCETYPE10</td><td class="s2td">TButton7<td class="s4td">Button8</td><td class="s5td">Удалить</td></tr>
+<tr><td class="s3td">TCETYPE11</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">По умолчанию</td></tr>
+<tr><td class="s3td">TCETYPE12</td><td class="s2td">TScrollBar1<td class="s4td">ScrollBar1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCETYPE12</td><td class="s2td">TButton5<td class="s4td">Button5</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td">TCETYPE13</td><td class="s2td">TButton6<td class="s4td">Button6</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCETYPE14</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Справка</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Изменить значок (кнопка Изменить значок...)</strong></td></tr>
+<tr><td class="s3td">TCCICON</td><td class="s2td">TChooseIcon<td class="s4td">TChooseIcon</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCCICON1</td><td class="s2td">TAltEdit1<td class="s4td">Edit2</td><td class="s5td">Имя файла со значком:</td></tr>
+<tr><td class="s3td">TCCICON2</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCCICON3</td><td class="s2td">TListBox1<td class="s4td">LCLListBox1</td><td class="s5td">значки</td></tr>
+<tr><td class="s3td">TCCICON4</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td">номер значка</td></tr>
+<tr><td class="s3td">TCCICON5</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCCICON6</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td"></td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Изменение действия... (кнопка Создать... или Изменить... )</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCEACT</td><td class="s2td">TEdActionForm<td class="s4td">TEdActionForm</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCEACT1</td><td class="s2td">TAltEdit3<td class="s4td">Edit7</td><td class="s5td">Действие:</td></tr>
+<tr><td class="s3td">TCEACT2</td><td class="s2td">TAltEdit2<td class="s4td">Edit6</td><td class="s5td">Описание (в контекстном меню):</td></tr>
+<tr><td class="s3td">TCEACT3</td><td class="s2td">TAltEdit1<td class="s4td">Edit5</td><td class="s5td">Команда (программа):</td></tr>
+<tr><td class="s3td">TCEACT4</td><td class="s2td">TButton4<td class="s4td">Button5</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCEACT5</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCEACT6</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCEACT7</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Справка</td></tr>
+
+<tr class="selcntr"><td colspan="4">ИЗМЕНЕНИЕ АТРИБУТОВ</td></tr>
+<tr><td class="s3td">TCATTR</td><td class="s2td">TATTRIBDLG<td class="s4td">TATTRIBDLG</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCATTR1</td><td class="s2td">TCheckBox2<td class="s4td">Button17</td><td class="s5td">Обрабатывать содержимое каталогов</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Изменение атрибутов</td></tr>
+<tr><td class="s3td">TCATTR2</td><td class="s2td">TMyCheckBox5<td class="s4td">Button16</td><td class="s5td">a Архивный</td></tr>
+<tr><td class="s3td">TCATTR3</td><td class="s2td">TMyCheckBox4<td class="s4td">Button15</td><td class="s5td">r Только для чтения</td></tr>
+<tr><td class="s3td">TCATTR4</td><td class="s2td">TMyCheckBox3<td class="s4td">Button14</td><td class="s5td">h Скрытый</td></tr>
+<tr><td class="s3td">TCATTR5</td><td class="s2td">TMyCheckBox2<td class="s4td">Button13</td><td class="s5td">s Системный</td></tr>
+<tr><td class="s3td">TCATTR6</td><td class="s2td">TMyCheckBox1<td class="s4td">Button4</td><td class="s5td">Изменение даты/времени:</td></tr>
+<tr><td class="s3td">TCATTR7</td><td class="s2td">TButton2<td class="s4td">Button3</td><td class="s5td">Текущие</td></tr>
+<tr><td class="s3td">TCATTR8</td><td class="s2td">TEdit2<td class="s4td">Edit2</td><td class="s5td">Дата:</td></tr>
+<tr><td class="s3td">TCATTR9</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td">Время:</td></tr>
+<tr><td class="s3td">TCATTR10</td><td class="s2td">TButton1<td class="s4td">Button2</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCATTR11</td><td class="s2td">TCheckBox1<td class="s4td">Button6</td><td class="s5td">Использовать плагины:</td></tr>
+<tr><td class="s3td">TCATTR12</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">F2 Шаблоны...</td></tr>
+<tr><td class="s3td">TCATTR13</td><td class="s2td">TScrollBox1<td class="s4td">Window1</td><td class="s5td">Плагин: Свойство: Значение:</td></tr>
+<tr><td class="s3td">TCATTR14</td><td class="s2td">TButton5<td class="s4td">Button8</td><td class="s5td">Добавить атрибут</td></tr>
+<tr><td class="s3td">TCATTR15</td><td class="s2td">TButton4<td class="s4td">Button7</td><td class="s5td">Удалить атрибут</td></tr>
+<tr><td class="s3td">TCATTR16</td><td class="s2td">TButton3<td class="s4td">Button5</td><td class="s5td">Загрузить из файла под курсором</td></tr>
+<tr><td class="s3td">TCATTR17</td><td class="s2td">TButton8<td class="s4td">Button11</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCATTR18</td><td class="s2td">TButton7<td class="s4td">Button10</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCATTR19</td><td class="s2td">TButton6<td class="s4td">Button9</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">дополнительные при нажатии на кнопку Добавить атрибут</td></tr>
+<tr><td class="s3td">TCATTR20</td><td class="s2td">TMyComboBox3<td class="s4td">LCLComboBox3</td><td class="s5td">Плагин:</td></tr>
+<tr><td class="s3td">TCATTR21</td><td class="s2td">TMyComboBox2<td class="s4td">LCLComboBox2</td><td class="s5td">Свойство:</td></tr>
+<tr><td class="s3td">TCATTR22</td><td class="s2td">TAltEdit1<td class="s4td">Edit3</td><td class="s5td">Значение:</td></tr>
+<tr><td class="s3td">TCATTR23</td><td class="s2td">TButton5<td class="s4td">Button8</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCATTR24</td><td class="s2td">TButton4<td class="s4td">Button7</td><td class="s5td">[+]</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Изменение даты/времени: (кнопка [>>])</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCATTRD</td><td class="s2td">TDateTimePickForm<td class="s4td">TDateTimePickForm</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCATTRD1</td><td class="s2td">TDateTimePickControl2<td class="s4td">SysDateTimePick32-2</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCATTRD2</td><td class="s2td">TDateTimePickControl1<td class="s4td">SysDateTimePick32-1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCATTRD3</td><td class="s2td">msctls_updown32-1<td class="s4td">msctls_updown32-1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCATTRD4</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCATTRD5</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Отмена</td></tr>
+
+<tr class="selcntr"><td colspan="4">ИЗМЕНЕНИЕ АТРИБУТОВ на FTP</td></tr>
+<tr><td class="s3td"><a name="TCATRFTP"></a>TCATRFTP	</td><td class="s2td">	TChmodForm	<td class="s4td">	TChmodForm	</td><td class="s5td">	класс окна	</td></tr>
+<tr><td>	</td><td>	<td></td><td class="s5td">	Владелец	</td></tr>
+<tr><td class="s3td"><a name="TCATRFTP1"></a>TCATRFTP1	</td><td class="s2td">	TMyCheckBox9	<td class="s4td">	Button18	</td><td class="s5td">	Чтение	</td></tr>
+<tr><td class="s3td"><a name="TCATRFTP2"></a>TCATRFTP2</td><td class="s2td">	TMyCheckBox8	<td class="s4td">	Button17	</td><td class="s5td">	Запись	</td></tr>
+<tr><td class="s3td"><a name="TCATRFTP3"></a>TCATRFTP3	</td><td class="s2td">	TMyCheckBox7	<td class="s4td">	Button16	</td><td class="s5td">	Выполнение	</td></tr>
+<tr><td class="s3td"><a name="TCATRFTP4"></a>TCATRFTP4	</td><td class="s2td">	TCheckBox3	<td class="s4td">	Button15	</td><td class="s5td">	Бит SET UID	</td></tr>
+<tr><td>	</td><td>	<td></td><td class="s5td">	Член группы	</td></tr>
+<tr><td class="s3td"><a name="TCATRFTP5"></a>TCATRFTP5	</td><td class="s2td">	TMyCheckBox6	<td class="s4td">	Button13	</td><td class="s5td">	Чтение	</td></tr>
+<tr><td class="s3td"><a name="TCATRFTP6"></a>TCATRFTP6	</td><td class="s2td">	TMyCheckBox5	<td class="s4td">	Button12	</td><td class="s5td">	Запись	</td></tr>
+<tr><td class="s3td"><a name="TCATRFTP7"></a>TCATRFTP7	</td><td class="s2td">	TMyCheckBox4	<td class="s4td">	Button11	</td><td class="s5td">	Выполнение	</td></tr>
+<tr><td class="s3td"><a name="TCATRFTP8"></a>TCATRFTP8	</td><td class="s2td">	TCheckBox2	<td class="s4td">	Button10	</td><td class="s5td">	Бит SET UID	</td></tr>
+<tr><td>	</td><td>	<td></td><td class="s5td">	Прочие	</td></tr>
+<tr><td class="s3td"><a name="TCATRFTP9"></a>TCATRFTP9</td><td class="s2td">	TMyCheckBox3	<td class="s4td">	Button8	</td><td class="s5td">	Чтение	</td></tr>
+<tr><td class="s3td"><a name="TCATRFTP10"></a>TCATRFTP10	</td><td class="s2td">	TMyCheckBox2	<td class="s4td">	Button7	</td><td class="s5td">	Запись	</td></tr>
+<tr><td class="s3td"><a name="TCATRFTP11"></a>TCATRFTP11	</td><td class="s2td">	TMyCheckBox1	<td class="s4td">	Button6	</td><td class="s5td">	Выполнение	</td></tr>
+<tr><td class="s3td"><a name="TCATRFTP12"></a>TCATRFTP12	</td><td class="s2td">	TCheckBox1	<td class="s4td">	Button5	</td><td class="s5td">	Бит SET UID	</td></tr>
+<tr><td class="s3td"><a name="TCATRFTP13"></a>TCATRFTP13	</td><td class="s2td">	TEdit1	<td class="s4td">	Edit1	</td><td class="s5td">	поле флага	</td></tr>
+<tr><td class="s3td"><a name="TCATRFTP14"></a>TCATRFTP14	</td><td class="s2td">	TButton3	<td class="s4td">	Button3	</td><td class="s5td">	OK	</td></tr>
+<tr><td class="s3td"><a name="TCATRFTP15"></a>TCATRFTP15	</td><td class="s2td">	TButton2	<td class="s4td">	Button2	</td><td class="s5td">	Отмена	</td></tr>
+<tr><td class="s3td"><a name="TCATRFTP16"></a>TCATRFTP16	</td><td class="s2td">	TButton1	<td class="s4td">	Button1	</td><td class="s5td">	Справка	</td></tr>
+
+
+<tr class="selcntr"><td colspan="4">КОММЕНТАРИЙ К ФАЙЛУ</td></tr>
+<tr><td class="s3td">TCCOMM</td><td class="s2td">TCmtEditForm<td class="s4td">TCmtEditForm</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCCOMM1</td><td class="s2td">TMemo1<td class="s4td">Edit1</td><td class="s5td">Правка комментария к:</td></tr>
+<tr><td class="s3td">TCCOMM2</td><td class="s2td">TCheckBox1<td class="s4td">Button1</td><td class="s5td">Шрифт OEM (DOS)</td></tr>
+<tr><td class="s3td">TCCOMM3</td><td class="s2td">TButton3<td class="s4td">Button4</td><td class="s5td">F2 OK</td></tr>
+<tr><td class="s3td">TCCOMM4</td><td class="s2td">TButton2<td class="s4td">Button3</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCCOMM5</td><td class="s2td">TButton1<td class="s4td">Button2</td><td class="s5td">Справка</td></tr>
+
+<tr class="selcntr"><td colspan="4">ПОИСК ФАЙЛОВ</td></tr>
+<tr><td class="seltd" colspan="4"><strong>Вкладка: Общие параметры</strong></td></tr>
+<tr><td class="s3td">TCFIND</td><td class="s2td">TFindFile<td class="s4td">TFindFile</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCFIND1</td><td class="s2td">TMyTabbedNotebook1<td class="s4td">SysTabControl32-1</td><td class="s5td">Общие параметры</td></tr>
+<tr><td class="s3td">TCFIND2</td><td class="s2td">Edit3<td class="s4td">Edit3</td><td class="s5td">Искать файлы</td></tr>
+<tr><td class="s3td">TCFIND3</td><td class="s2td">TMyComboBox4<td class="s4td">LCLComboBox4</td><td class="s5td">[\/]</td></tr>
+<tr><td class="s3td">TCFIND4</td><td class="s2td">Edit2<td class="s4td">Edit2</td><td class="s5td">Место поиска</td></tr>
+<tr><td class="s3td">TCFIND5</td><td class="s2td">TMyComboBox3<td class="s4td">LCLComboBox3</td><td class="s5td">[\/]</td></tr>
+<tr><td class="s3td">TCFIND6</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCFIND7</td><td class="s2td">TButton3<td class="s4td">Button15</td><td class="s5td">Диски...</td></tr>
+<tr><td class="s3td">TCFIND8</td><td class="s2td">TCheckBox3<td class="s4td">Button5</td><td class="s5td">Рег.выраж.</td></tr>
+<tr><td class="s3td">TCFIND9</td><td class="s2td">TCheckBox6<td class="s4td">Button8</td><td class="s5td">Только в выделенных файлах/каталогах</td></tr>
+<tr><td class="s3td">TCFIND10</td><td class="s2td">TCheckBox12<td class="s4td">Button14</td><td class="s5td">Искать также в архивах (кроме UC2)</td></tr>
+<tr><td class="s3td">TCFIND11</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">Глубина вложенности подкаталогов</td></tr>
+<tr><td class="s3td">TCFIND12</td><td class="s2td">TCheckBox11<td class="s4td">Button13</td><td class="s5td">С текстом:</td></tr>
+<tr><td class="s3td">TCFIND13</td><td class="s2td">Edit1<td class="s4td">Edit1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCFIND14</td><td class="s2td">TMyComboBox2<td class="s4td">LCLComboBox2</td><td class="s5td">[\/]</td></tr>
+<tr><td class="s3td">TCFIND15</td><td class="s2td">TCheckBox10<td class="s4td">Button12</td><td class="s5td">Только слова целиком</td></tr>
+<tr><td class="s3td">TCFIND16</td><td class="s2td">TCheckBox9<td class="s4td">Button11</td><td class="s5td">Учитывать регистр символов</td></tr>
+<tr><td class="s3td">TCFIND17</td><td class="s2td">TCheckBox8<td class="s4td">Button10</td><td class="s5td">В кодировке ASCII (DOS)</td></tr>
+<tr><td class="s3td">TCFIND18</td><td class="s2td">TCheckBox7<td class="s4td">Button9</td><td class="s5td">Файлы. НЕ содержащие этот текст</td></tr>
+<tr><td class="s3td">TCFIND19</td><td class="s2td">TCheckBox5<td class="s4td">Button7</td><td class="s5td">UTF-16</td></tr>
+<tr><td class="s3td">TCFIND20</td><td class="s2td">TCheckBox4<td class="s4td">Button6</td><td class="s5td">НЕХ-код</td></tr>
+<tr><td class="s3td">TCFIND21</td><td class="s2td">TCheckBox2<td class="s4td">Button4</td><td class="s5td">Регулярные выражения</td></tr>
+<tr><td class="s3td">TCFIND22</td><td class="s2td">TCheckBox1<td class="s4td">Button3</td><td class="s5td">UTF</td></tr>
+<tr><td class="s3td">TCFIND23</td><td class="s2td">TButton14<td class="s4td">Button46</td><td class="s5td">Начать поиск</td></tr>
+<tr><td class="s3td">TCFIND24</td><td class="s2td">TButton13<td class="s4td">Button45</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCFIND25</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Справка</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>Вкладка: Дополнительно</strong></td></tr>
+<tr><td class="s3td">TCFIND26</td><td class="s2td">TCheckBox5<td class="s4td">Button18</td><td class="s5td">Дата между</td></tr>
+<tr><td class="s3td">TCFIND27</td><td class="s2td">TEdit4<td class="s4td">Edit4</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCFIND28</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCFIND29</td><td class="s2td">TEdit3<td class="s4td">Edit3</td><td class="s5td">и</td></tr>
+<tr><td class="s3td">TCFIND30</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCFIND31</td><td class="s2td">TCheckBox4<td class="s4td">Button17</td><td class="s5td">Не старше</td></tr>
+<tr><td class="s3td">TCFIND32</td><td class="s2td">TEdit2<td class="s4td">Edit2</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCFIND33</td><td class="s2td">TScrollBar2<td class="s4td">ScrollBar2</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCFIND34</td><td class="s2td">TMyComboBox3<td class="s4td">LCLComboBox3</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCFIND35</td><td class="s2td">TMyComboBox3<td class="s4td">LCLComboBox3</td><td class="s5td">[\/]</td></tr>
+<tr><td class="s3td">TCFIND36</td><td class="s2td">TCheckBox3<td class="s4td">Button16</td><td class="s5td">Размер файла</td></tr>
+<tr><td class="s3td">TCFIND37</td><td class="s2td">TMyComboBox2<td class="s4td">LCLComboBox2</td><td class="s5td">[\/]</td></tr>
+<tr><td class="s3td">TCFIND38</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCFIND39</td><td class="s2td">TScrollBar1<td class="s4td">TScrollBar1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCFIND40</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">[\/]</td></tr>
+<tr><td class="s3td">TCFIND41</td><td class="s2td">TCheckBox2<td class="s4td">Button15</td><td class="s5td">Атрибуты:</td></tr>
+<tr><td class="s3td">TCFIND42</td><td class="s2td">TMyCheckBox10<td class="s4td">Button14</td><td class="s5td">Архивный</td></tr>
+<tr><td class="s3td">TCFIND43</td><td class="s2td">TMyCheckBox9<td class="s4td">Button13</td><td class="s5td">Скрытый</td></tr>
+<tr><td class="s3td">TCFIND44</td><td class="s2td">TMyCheckBox8<td class="s4td">Button12</td><td class="s5td">Каталог</td></tr>
+<tr><td class="s3td">TCFIND45</td><td class="s2td">TMyCheckBox1<td class="s4td">Button4</td><td class="s5td">Зашиф.</td></tr>
+<tr><td class="s3td">TCFIND46</td><td class="s2td">TMyCheckBox7<td class="s4td">Button11</td><td class="s5td">Для чтения</td></tr>
+<tr><td class="s3td">TCFIND47</td><td class="s2td">TMyCheckBox6<td class="s4td">Button1</td><td class="s5td">Системный</td></tr>
+<tr><td class="s3td">TCFIND48</td><td class="s2td">TMyCheckBox2<td class="s4td">Button5</td><td class="s5td">Сжатый</td></tr>
+<tr><td class="s3td">TCFIND49</td><td class="s2td">TCheckBox1<td class="s4td">Button9</td><td class="s5td">Поиск дубликатов:</td></tr>
+<tr><td class="s3td">TCFIND50</td><td class="s2td">TCheckBox4<td class="s4td">Button7</td><td class="s5td">по имени</td></tr>
+<tr><td class="s3td">TCFIND51</td><td class="s2td">TCheckBox3<td class="s4td">Button6</td><td class="s5td">по размеру</td></tr>
+<tr><td class="s3td">TCFIND52</td><td class="s2td">TCheckBox5<td class="s4td">Button8</td><td class="s5td">по содержимому</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Плагины</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>Вкладка: Плагины</strong></td></tr>
+<tr><td class="s3td">TCFIND53</td><td class="s2td">TCheckBox1<td class="s4td">Button4</td><td class="s5td">Поиск с плагинами Объединять:</td></tr>
+<tr><td class="s3td">TCFIND54</td><td class="s2td">TRadioButton2<td class="s4td">Button3</td><td class="s5td">И: все правила</td></tr>
+<tr><td class="s3td">TCFIND55</td><td class="s2td">TRadioButton1<td class="s4td">Button2</td><td class="s5td">ИЛИ: хотя бы одно</td></tr>
+<tr><td class="s3td">TCFIND56</td><td class="s2td">TMyComboBox3<td class="s4td">LCLComboBox3</td><td class="s5td">Плагин:</td></tr>
+<tr><td class="s3td">TCFIND57</td><td class="s2td">TMyComboBox2<td class="s4td">LCLComboBox2</td><td class="s5td">Свойство:</td></tr>
+<tr><td class="s3td">TCFIND58</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">Операция:</td></tr>
+<tr><td class="s3td">TCFIND59</td><td class="s2td">TAltEdit1<td class="s4td">Edit1</td><td class="s5td">Значение:</td></tr>
+<tr><td class="s3td">TCFIND60</td><td class="s2td">TButton3<td class="s4td">Button6</td><td class="s5td">Новое правило</td></tr>
+<tr><td class="s3td">TCFIND61</td><td class="s2td">TButton2<td class="s4td">Button5</td><td class="s5td">Удалить правило</td></tr>
+
+<tr><td class="seltd" colspan="4"><strong>Вкладка: Шаблоны Поиска</strong></td></tr>
+<tr><td class="s3td">TCFIND62</td><td class="s2td">TListBox1<td class="s4td">LCLListBox1</td><td class="s5td">Сохранённые шаблоны поиска:</td></tr>
+<tr><td class="s3td">TCFIND63</td><td class="s2td">TPanel1<td class="s4td">Window2</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCFIND64</td><td class="s2td">TButton4<td class="s4td">Button4</td><td class="s5td">Загрузить</td></tr>
+<tr><td class="s3td">TCFIND65</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">Сохранить</td></tr>
+<tr><td class="s3td">TCFIND66</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Удалить</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">при получении результатов поиска</td></tr>
+<tr><td class="s3td">TCFIND67</td><td class="s2td">TButton9<td class="s4td">Button41</td><td class="s5td">Просмотр</td></tr>
+<tr><td class="s3td">TCFIND68</td><td class="s2td">TButton12<td class="s4td">Button44</td><td class="s5td">Новый поиск</td></tr>
+<tr><td class="s3td">TCFIND69</td><td class="s2td">TButton11<td class="s4td">Button43</td><td class="s5td">Перейти к файлу</td></tr>
+<tr><td class="s3td">TCFIND70</td><td class="s2td">TButton10<td class="s4td">Button42</td><td class="s5td">Файлы на панель</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">--- во вкладках Дополнительно, Плагины, Шаблон поиска (при получении результатов поиска)</td></tr>
+<tr><td class="s3td">TCFIND71</td><td class="s2td">TButton11<td class="s4td">Button41</td><td class="s5td">Просмотр</td></tr>
+<tr><td class="s3td">TCFIND72</td><td class="s2td">TButton14<td class="s4td">Button44</td><td class="s5td">Новый поиск</td></tr>
+<tr><td class="s3td">TCFIND73</td><td class="s2td">TButton13<td class="s4td">Button43</td><td class="s5td">Перейти к файлу</td></tr>
+<tr><td class="s3td">TCFIND74</td><td class="s2td">TButton12<td class="s4td">Button42</td><td class="s5td">Файлы на панель</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Сохранение шаблона (кнопка Сохранить)</strong></td></tr>
+<tr><td class="s3td">TCFINDSAVE</td><td class="s2td">TSTDTREEDLG<td class="s4td">TSTDTREEDLG</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCFINDSAVE1</td><td class="s2td">TAltEdit1<td class="s4td">Edit1</td><td class="s5td">Имя шаблона</td></tr>
+<tr><td class="s3td">TCFINDSAVE2</td><td class="s2td">TButton3<td class="s4td">Button4</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCFINDSAVE3</td><td class="s2td">TButton1<td class="s4td">Button2</td><td class="s5td">Отмена</td></tr>
+
+<tr class="selcntr"><td colspan="4">НАСТРОЙКА ПАНЕЛИ ИНСТРУМЕНТОВ</td></tr>
+<tr><td class="s3td">TCCUZBAR</td><td class="s2td">TBUTTONCHANGEDLG<td class="s4td">TBUTTONCHANGEDLG</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCCUZBAR1</td><td class="s2td">TMyPanel1<td class="s4td">Window1</td><td class="s5td">Панель:</td></tr>
+<tr><td class="s3td">TCCUZBAR2</td><td class="s2td">TButton8<td class="s4td">Button15</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCCUZBAR3</td><td class="s2td">TListBox2<td class="s4td">LCLListBox2</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCCUZBAR4</td><td class="s2td">TButton6<td class="s4td">Button13</td><td class="s5td">Добавить</td></tr>
+<tr><td class="s3td">TCCUZBAR5</td><td class="s2td">TButton7<td class="s4td">Button14</td><td class="s5td">Удалить</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Вид кнопок</td></tr>
+<tr><td class="s3td">TCCUZBAR6</td><td class="s2td">TEdit2<td class="s4td">Edit2</td><td class="s5td">Размер:</td></tr>
+<tr><td class="s3td">TCCUZBAR7</td><td class="s2td">TCheckBox1<td class="s4td">Button3</td><td class="s5td">Стиль XP/Vista/</td></tr>
+<tr><td class="s3td">TCCUZBAR8</td><td class="s2td">TCheckBox3<td class="s4td">Button5</td><td class="s5td">Плоские</td></tr>
+<tr><td class="s3td">TCCUZBAR9</td><td class="s2td">TCheckBox2<td class="s4td">Button4</td><td class="s5td">Маленькие</td></tr>
+<tr><td class="s3td">TCCUZBAR10</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCCUZBAR11</td><td class="s2td">TAltEdit5<td class="s4td">Edit7</td><td class="s5td">Команда:</td></tr>
+<tr><td class="s3td">TCCUZBAR12</td><td class="s2td">TBitBtn1<td class="s4td">Button1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCCUZBAR13</td><td class="s2td">TButton5<td class="s4td">Button12</td><td class="s5td">Изменить >></td></tr>
+<tr><td class="s3td">TCCUZBAR14</td><td class="s2td">TAltEdit4<td class="s4td">Edit6</td><td class="s5td">Параметры:</td></tr>
+<tr><td class="s3td">TCCUZBAR15</td><td class="s2td">TAltEdit3<td class="s4td">Edit5</td><td class="s5td">Путь запуска:</td></tr>
+<tr><td class="s3td">TCCUZBAR16</td><td class="s2td">TAltEdit2<td class="s4td">Edit4</td><td class="s5td">Файл значка:</td></tr>
+<tr><td class="s3td">TCCUZBAR17</td><td class="s2td">TButton4<td class="s4td">Button10</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCCUZBAR18</td><td class="s2td">TListBox1<td class="s4td">LCLListBox1</td><td class="s5td">Значок:</td></tr>
+<tr><td class="s3td">TCCUZBAR19</td><td class="s2td">TAltEdit1<td class="s4td">Edit3</td><td class="s5td">Подсказка:</td></tr>
+<tr><td class="s3td">TCCUZBAR20</td><td class="s2td">TCheckBox5<td class="s4td">Button11</td><td class="s5td">в свёрнутом виде</td></tr>
+<tr><td class="s3td">TCCUZBAR21</td><td class="s2td">TCheckBox4<td class="s4td">Button6</td><td class="s5td">в полный экран</td></tr>
+<tr><td class="s3td">TCCUZBAR22</td><td class="s2td">TButton3<td class="s4td">Button9</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td">TCCUZBAR23</td><td class="s2td">TButton2<td class="s4td">Button8</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCCUZBAR24</td><td class="s2td">TButton1<td class="s4td">Button7</td><td class="s5td">Справка</td></tr>
+
+<tr class="selcntr"><td colspan="4">НАСТРОЙКА ПАНЕЛИ ИНСТРУМЕНТОВ (для одного значка)</td></tr>
+<tr><td class="s3td">TCONEBAR</td><td class="s2td">TONEBUTTONCHANGEDLG<td class="s4td">TONEBUTTONCHANGEDLG</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCONEBAR1</td><td class="s2td">TAltEdi5<td class="s4td">Edi5</td><td class="s5td">Команда:</td></tr>
+<tr><td class="s3td">TCONEBAR2</td><td class="s2td">TBitBtn1<td class="s4td">Button1</td><td class="s5td">кнопка выбора команды</td></tr>
+<tr><td class="s3td">TCONEBAR3</td><td class="s2td">TButton5<td class="s4td">Button8</td><td class="s5td">Изменить >></td></tr>
+<tr><td class="s3td">TCONEBAR4</td><td class="s2td">TAltEdit4<td class="s4td">Edit4</td><td class="s5td">Параметры:</td></tr>
+<tr><td class="s3td">TCONEBAR5</td><td class="s2td">TAltEdit3<td class="s4td">Edit3</td><td class="s5td">Путь запуска:</td></tr>
+<tr><td class="s3td">TCONEBAR6</td><td class="s2td">TAltEdit2<td class="s4td">Edit2</td><td class="s5td">Файл значка:</td></tr>
+<tr><td class="s3td">TCONEBAR7</td><td class="s2td">TButton4<td class="s4td">Button6</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCONEBAR8</td><td class="s2td">TListBox1<td class="s4td">LCLListBox1</td><td class="s5td">Значок:</td></tr>
+<tr><td class="s3td">TCONEBAR9</td><td class="s2td">TAltEdit1<td class="s4td">Edit1</td><td class="s5td">Подсказка:</td></tr>
+<tr><td class="s3td">TCONEBAR10</td><td class="s2td">TCheckBox2<td class="s4td">Button7</td><td class="s5td">в свёрнутом виде</td></tr>
+<tr><td class="s3td">TCONEBAR11</td><td class="s2td">TCheckBox1<td class="s4td">Button2</td><td class="s5td">в полный экран</td></tr>
+<tr><td class="s3td">TCONEBAR12</td><td class="s2td">TButton3<td class="s4td">Button5</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td">TCONEBAR13</td><td class="s2td">TButton2<td class="s4td">Button4</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCONEBAR14</td><td class="s2td">TButton1<td class="s4td">Button3</td><td class="s5td">Справка</td></tr>
+
+<tr class="selcntr"><td colspan="4">СРАВНЕНИЕ СОДЕРЖИМОГО ФАЙЛОВ</td></tr>
+<tr><td class="s3td">TCCOMP</td><td class="s2td">TFileCompForm<td class="s4td">TFileCompForm</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCCOMP1</td><td class="s2td">TAltEdit2<td class="s4td">Edit2</td><td class="s5td">окно 1-го файла</td></tr>
+<tr><td class="s3td">TCCOMP2</td><td class="s2td">TButton10<td class="s4td">Button16</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCCOMP3</td><td class="s2td">TAltEdit1<td class="s4td">Edit1</td><td class="s5td">окно 2-го файла</td></tr>
+<tr><td class="s3td">TCCOMP4</td><td class="s2td">TButton9<td class="s4td">Button15</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCCOMP5</td><td class="s2td">TButton11<td class="s4td">Button17</td><td class="s5td">Сравнить</td></tr>
+<tr><td class="s3td">TCCOMP6</td><td class="s2td">TButton8<td class="s4td">Button14</td><td class="s5td">Следующее отличие</td></tr>
+<tr><td class="s3td">TCCOMP7</td><td class="s2td">TButton7<td class="s4td">Button13</td><td class="s5td">Предыдущее отличие</td></tr>
+<tr><td class="s3td">TCCOMP8</td><td class="s2td">TButton6<td class="s4td">Button12</td><td class="s5td">Шрифт</td></tr>
+<tr><td class="s3td">TCCOMP9</td><td class="s2td">TButton5<td class="s4td">Button7</td><td class="s5td">Редактирование</td></tr>
+<tr><td class="s3td">TCCOMP10</td><td class="s2td">TButton4<td class="s4td">Button6</td><td class="s5td">Копировать -></td></tr>
+<tr><td class="s3td">TCCOMP11</td><td class="s2td">TButton3<td class="s4td">Button5</td><td class="s5td">Копировать <-</td></tr>
+<tr><td class="s3td">TCCOMP12</td><td class="s2td">TButton2<td class="s4td">Button4</td><td class="s5td">Откат</td></tr>
+<tr><td class="s3td">TCCOMP13</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">ANSI<->ANSI</td></tr>
+<tr><td class="s3td">TCCOMP14</td><td class="s2td">TCheckBox3<td class="s4td">Button10</td><td class="s5td">Двоичный</td></tr>
+<tr><td class="s3td">TCCOMP15</td><td class="s2td">TCheckBox4<td class="s4td">Button11</td><td class="s5td">3 галочки</td></tr>
+<tr><td class="s3td">TCCOMP16</td><td class="s2td">TCheckBox2<td class="s4td">Button3</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCCOMP17</td><td class="s2td">TCheckBox1<td class="s4td">Button2</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCCOMP18</td><td class="s2td">TBitBtn2<td class="s4td">Button9</td><td class="s5td">кнопка Поиск (F7)</td></tr>
+<tr><td class="s3td">TCCOMP19</td><td class="s2td">TBitBtn1<td class="s4td">Button8</td><td class="s5td">кнопка Найти далее (F3)</td></tr>
+<tr><td class="s3td">TCCOMP20</td><td class="s2td">TOwnListBox2<td class="s4td">Window4</td><td class="s5td">левая панель</td></tr>
+<tr><td class="s3td">TCCOMP21</td><td class="s2td">TOwnListBox1<td class="s4td">Window3</td><td class="s5td">правая панель</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>диалог поиска (кнопки Поиск (F7) и Найти далее (F3))</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSEARCH</td><td class="s2td">TSEARCHTEXT<td class="s4td">TSEARCHTEXT</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCSEARCH1</td><td class="s2td">Edit1<td class="s4td">Edit1</td><td class="s5td">Введите строку для поиска</td></tr>
+<tr><td class="s3td">TCSEARCH2</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCSEARCH3</td><td class="s2td">TCheckBox5<td class="s4td">Button8</td><td class="s5td">Только слова целиком</td></tr>
+<tr><td class="s3td">TCSEARCH4</td><td class="s2td">TCheckBox3<td class="s4td">Button4</td><td class="s5td">В обратном направлении</td></tr>
+<tr><td class="s3td">TCSEARCH5</td><td class="s2td">TCheckBox4<td class="s4td">Button7</td><td class="s5td">Учитывать регистр</td></tr>
+<tr><td class="s3td">TCSEARCH6</td><td class="s2td">TCheckBox2<td class="s4td">Button3</td><td class="s5td">О НЕХ-код</td></tr>
+<tr><td class="s3td">TCSEARCH7</td><td class="s2td">TButton3<td class="s4td">Button6</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td">TCSEARCH8</td><td class="s2td">TButton2<td class="s4td">Button5</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSEARCH9</td><td class="s2td">TButton1<td class="s4td">Button2</td><td class="s5td">Справка</td></tr>
+
+<tr class="selcntr"><td colspan="4">LISTER</td></tr>
+<tr><td class="s3td">TCLISTER</td><td class="s2td">TLister<td class="s4td">TLister</td><td class="s5td">класс окна</td></tr>
+
+<tr class="selcntr"><td colspan="4">УПАКОВКА ФАЙЛОВ</td></tr>
+<tr><td class="s3td">TCPACK</td><td class="s2td">TDLGZIP<td class="s4td">TDLGZIP</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCPACK1</td><td class="s2td">TAltEdit1<td class="s4td">Edit1</td><td class="s5td">Упаковать файлы (1 шт.) в архив:</td></tr>
+<tr><td class="s3td">TCPACK2</td><td class="s2td">TCheckBox7<td class="s4td">Button23</td><td class="s5td">Сохранять пути</td></tr>
+<tr><td class="s3td">TCPACK3</td><td class="s2td">TCheckBox6<td class="s4td">Button22</td><td class="s5td">Учитывать подкаталоги</td></tr>
+<tr><td class="s3td">TCPACK4</td><td class="s2td">TCheckBox5<td class="s4td">Button21</td><td class="s5td">Многотомные архивы (ZIP. ARJ. RAR. АСЕ)</td></tr>
+<tr><td class="s3td">TCPACK5</td><td class="s2td">TCheckBox4<td class="s4td">Button5</td><td class="s5td">Удалить исходные файлы после упаковки</td></tr>
+<tr><td class="s3td">TCPACK6</td><td class="s2td">TCheckBox3<td class="s4td">Button4</td><td class="s5td">Самораспаковывающийся архив</td></tr>
+<tr><td class="s3td">TCPACK7</td><td class="s2td">TCheckBox1<td class="s4td">Button1</td><td class="s5td">Отдельные архивы для каждого выбранного файла/ка тале</td></tr>
+<tr><td class="s3td">TCPACK8</td><td class="s2td">TCheckBox2<td class="s4td">Button2</td><td class="s5td">Шифровать</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Архиватор</td></tr>
+<tr><td class="s3td">TCPACK9</td><td class="s2td">TRadioButton10<td class="s4td">Button17</td><td class="s5td">ZIP</td></tr>
+<tr><td class="s3td">TCPACK10</td><td class="s2td">TRadioButton9<td class="s4td">Button16</td><td class="s5td">ARJ*</td></tr>
+<tr><td class="s3td">TCPACK11</td><td class="s2td">TRadioButton8<td class="s4td">Button15</td><td class="s5td">LHA*</td></tr>
+<tr><td class="s3td">TCPACK12</td><td class="s2td">TRadioButton7<td class="s4td">Button14</td><td class="s5td">RAR*</td></tr>
+<tr><td class="s3td">TCPACK13</td><td class="s2td">TRadioButton6<td class="s4td">Button13</td><td class="s5td">UC2*</td></tr>
+<tr><td class="s3td">TCPACK14</td><td class="s2td">TRadioButton5<td class="s4td">Button11</td><td class="s5td">ACE*</td></tr>
+<tr><td class="s3td">TCPACK15</td><td class="s2td">TRadioButton3<td class="s4td">Button9</td><td class="s5td">TAR</td></tr>
+<tr><td class="s3td">TCPACK16</td><td class="s2td">TRadioButton2<td class="s4td">Button8</td><td class="s5td">GZ</td></tr>
+<tr><td class="s3td">TCPACK17</td><td class="s2td">TRadioButton1<td class="s4td">Button7</td><td class="s5td">TGZ</td></tr>
+<tr><td class="s3td">TCPACK18</td><td class="s2td">TRadioButton4<td class="s4td">Button10</td><td class="s5td">-></td></tr>
+<tr><td class="s3td">TCPACK19</td><td class="s2td">TComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td"></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">* Внешний упаковщик</td></tr>
+<tr><td class="s3td">TCPACK20</td><td class="s2td">TButton2<td class="s4td">Button12</td><td class="s5td">Настройка >></td></tr>
+<tr><td class="s3td">TCPACK21</td><td class="s2td">TButton5<td class="s4td">Button20</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCPACK22</td><td class="s2td">TButton4<td class="s4td">Button19</td><td class="s5td">Дерево</td></tr>
+<tr><td class="s3td">TCPACK23</td><td class="s2td">TButton3<td class="s4td">Button18</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCPACK24</td><td class="s2td">TButton1<td class="s4td">Button3</td><td class="s5td">Справка</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Диалог упаковки</strong></td></tr>
+<tr><td class="s3td">TCPACKD</td><td class="s2td">TDLG2FILEACTIONMIN<td class="s4td">TDLG2FILEACTIONMIN</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCPACKD1</td><td class="s2td">TButton1<td class="s4td">Button2</td><td class="s5td">Пауза/Старт</td></tr>
+<tr><td class="s3td">TCPACKD2</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCPACKD3</td><td class="s2td">TButton2<td class="s4td">Button1</td><td class="s5td">В фоне</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Диалог выбора упаковки при одинаковых именах</strong></td></tr>
+<tr><td class="s3td">TCPACKRP</td><td class="s2td">TOverWriteForm<td class="s4td">TOverWriteForm</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCPACKRP1</td><td class="s2td">TButton8<td class="s4td">Button14</td><td class="s5td">Заменить</td></tr>
+<tr><td class="s3td">TCPACKRP2</td><td class="s2td">TButton7<td class="s4td">Button13</td><td class="s5td">Заменить всё</td></tr>
+<tr><td class="s3td">TCPACKRP3</td><td class="s2td">TButton6<td class="s4td">Button12</td><td class="s5td">Пропустить</td></tr>
+<tr><td class="s4td">TCPACKRP4</td><td class="s2td">TButton5<td class="s4td">Button11</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s5td">TCPACKRP5</td><td class="s2td">TButton4<td class="s4td">Button10</td><td class="s5td">Заменить более старые</td></tr>
+<tr><td class="s6td">TCPACKRP6</td><td class="s2td">TButton3<td class="s4td">Button9</td><td class="s5td">Пропустить всё</td></tr>
+<tr><td class="s7td">TCPACKRP7</td><td class="s2td">TButton2<td class="s4td">Button8</td><td class="s5td">Переименовать</td></tr>
+<tr><td class="s8td">TCPACKRP8</td><td class="s2td">TButton1<td class="s4td">Button7</td><td class="s5td">Дополнительно >></td></tr>
+
+<tr class="selcntr"><td colspan="4">ДЕРЕВО КАТАЛОГОВ</td></tr>
+<tr><td class="s3td">TCDIRTR</td><td class="s2td">TCHANGETREEDLG<td class="s4td">TCHANGETREEDLG</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCDIRTR1</td><td class="s2td">TMyListBox2-1<td class="s4td">LCLListBox1</td><td class="s5td">список</td></tr>
+<tr><td class="s3td">TCDIRTR2</td><td class="s2td">TMyPanel1<td class="s4td">Window2</td><td class="s5td">Быстрый поиск:</td></tr>
+<tr><td class="s3td">TCDIRTR3</td><td class="s2td">TButton4<td class="s4td">Button4</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td">TCDIRTR4</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCDIRTR5</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Печать...</td></tr>
+<tr><td class="s3td">TCDIRTR6</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Справка</td></tr>
+
+<tr class="selcntr"><td colspan="4">ПРЕДВАРИТЕЛЬНЫЙ ПРОСМОТР</td></tr>
+<tr><td class="s3td">TCPREVIEW</td><td class="s2td">TPrintDlg<td class="s4td">TPrintDlg</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCPREVIEW1</td><td class="s2td">TOwnerdrawPanel1<td class="s4td">Window3</td><td class="s5td">лист</td></tr>
+<tr><td class="s3td">TCPREVIEW2</td><td class="s2td">TMyComboBox5<td class="s4td">LCLComboBox5</td><td class="s5td">Шрифт:</td></tr>
+<tr><td class="s3td">TCPREVIEW3</td><td class="s2td">Edit1<td class="s4td">Edit1</td><td class="s5td">[\/]</td></tr>
+<tr><td class="s3td">TCPREVIEW4</td><td class="s2td">TMyComboBox4<td class="s4td">LCLComboBox4</td><td class="s5td"></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Вид:</td></tr>
+<tr><td class="s3td">TCPREVIEW5</td><td class="s2td">TMyComboBox2<td class="s4td">LCLComboBox2</td><td class="s5td">[\/]</td></tr>
+<tr><td class="s3td">TCPREVIEW6</td><td class="s2td">TScrollBar1<td class="s4td">ScrollBar1</td><td class="s5td">[<>]</td></tr>
+<tr><td class="s3td">TCPREVIEW7</td><td class="s2td">TMyComboBox3<td class="s4td">LCLComboBox3</td><td class="s5td">[\/] (По ширине страницы)</td></tr>
+<tr><td class="s3td">TCPREVIEW8</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">[\/] (Document)</td></tr>
+<tr><td class="s3td">TCPREVIEW9</td><td class="s2td">TButton3<td class="s4td">Button4</td><td class="s5td">Настройка>></td></tr>
+<tr><td class="s3td">TCPREVIEW10</td><td class="s2td">TButton1<td class="s4td">Button2</td><td class="s5td">Поля...</td></tr>
+<tr><td class="s3td">TCPREVIEW11</td><td class="s2td">TButton2<td class="s4td">Button3</td><td class="s5td">Печать...</td></tr>
+<tr><td class="s3td">TCPREVIEW12</td><td class="s2td">TCheckBox1<td class="s4td">Button1</td><td class="s5td">с двух сторон</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Настройка полей и колонтитула (кнопка Поля)</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCMARG</td><td class="s2td">TMarginsDlg<td class="s4td">TMarginsDlg</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Поля</td></tr>
+<tr><td class="s3td">TCMARG1</td><td class="s2td">TEdit5<td class="s4td">Edit6</td><td class="s5td">Левое:</td></tr>
+<tr><td class="s3td">TCMARG2</td><td class="s2td">TEdit3<td class="s4td">Edit4</td><td class="s5td">Верхнее:</td></tr>
+<tr><td class="s3td">TCMARG3</td><td class="s2td">TEdit1<td class="s4td">Edit2</td><td class="s5td">Колонтитул:</td></tr>
+<tr><td class="s3td">TCMARG4</td><td class="s2td">TEdit4<td class="s4td">Edit5</td><td class="s5td">Правое:</td></tr>
+<tr><td class="s3td">TCMARG5</td><td class="s2td">TEdit2<td class="s4td">Edit3</td><td class="s5td">Нижнее:</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Колонтитул</td></tr>
+<tr><td class="s3td">TCMARG6</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td">Текст шаблона:</td></tr>
+<tr><td class="s3td">TCMARG7</td><td class="s2td">TButton2<td class="s4td">Button3</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCMARG8</td><td class="s2td">TButton1<td class="s4td">Button2</td><td class="s5td">Отмена</td></tr>
+
+<tr class="selcntr"><td colspan="4">ПЕЧАТЬ</td></tr>
+<tr><td class="s3td">TCPRINT</td><td class="s2td">#32770<td class="s4td">#32770</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Принтер</td></tr>
+<tr><td class="s3td">TCPRINT1</td><td class="s2td">ComboBox1<td class="s4td">ComboBox1</td><td class="s5td">Имя:</td></tr>
+<tr><td class="s3td">TCPRINT2</td><td class="s2td">Button2<td class="s4td">Button2</td><td class="s5td">Свойства...</td></tr>
+<tr><td class="s3td">TCPRINT3</td><td class="s2td">Static3<td class="s4td">Static3</td><td class="s5td">Состояние:</td></tr>
+<tr><td class="s3td">TCPRINT4</td><td class="s2td">Static5<td class="s4td">Static5</td><td class="s5td">Тип:</td></tr>
+<tr><td class="s3td">TCPRINT5</td><td class="s2td">Static7<td class="s4td">Static7</td><td class="s5td">Место:</td></tr>
+<tr><td class="s3td">TCPRINT6</td><td class="s2td">Static9<td class="s4td">Static9</td><td class="s5td">Комментарий:</td></tr>
+<tr><td class="s3td">TCPRINT7</td><td class="s2td">Button3<td class="s4td">Button3</td><td class="s5td">Печать в Файл</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Все</td></tr>
+<tr><td class="s3td">TCPRINT8</td><td class="s2td">Button5<td class="s4td">Button5</td><td class="s5td">Диапазон печати</td></tr>
+<tr><td class="s3td">TCPRINT9</td><td class="s2td">Button6<td class="s4td">Button6</td><td class="s5td">Страницы</td></tr>
+<tr><td class="s3td">TCPRINT10</td><td class="s2td">Edit1<td class="s4td">Edit1</td><td class="s5td">с:</td></tr>
+<tr><td class="s3td">TCPRINT11</td><td class="s2td">Edit2<td class="s4td">Edit2</td><td class="s5td">по:</td></tr>
+<tr><td class="s3td">TCPRINT12</td><td class="s2td">Button7<td class="s4td">Button7</td><td class="s5td">Выделенный Фрагмент</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Копии</td></tr>
+<tr><td class="s3td">TCPRINT13</td><td class="s2td">Edit3<td class="s4td">Edit3</td><td class="s5td">Число копий:</td></tr>
+<tr><td class="s3td">TCPRINT14</td><td class="s2td">msctls_updown32-1<td class="s4td">msctls_updown32-1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCPRINT15</td><td class="s2td">Button10<td class="s4td">Button10</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td">TCPRINT16</td><td class="s2td">Button11<td class="s4td">Button11</td><td class="s5td">Отмена</td></tr>
+
+<tr class="selcntr"><td colspan="4">НАСТРОЙКА ПЕЧАТИ</td></tr>
+<tr><td class="s3td">TCSTPRINT</td><td class="s2td"><td class="s4td">#32770</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Принтер</td></tr>
+<tr><td class="s3td">TCSTPRINT1</td><td class="s2td">ComboBox1<td class="s4td">ComboBox1</td><td class="s5td">Имя:</td></tr>
+<tr><td class="s3td">TCSTPRINT2</td><td class="s2td">Button2<td class="s4td">Button2</td><td class="s5td">Свойства...</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Бумага</td></tr>
+<tr><td class="s3td">TCSTPRINT3</td><td class="s2td">ComboBox2<td class="s4td">ComboBox2</td><td class="s5td">Размер:</td></tr>
+<tr><td class="s3td">TCSTPRINT4</td><td class="s2td">ComboBox3<td class="s4td">ComboBox3</td><td class="s5td">Подача:</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Ориентация</td></tr>
+<tr><td class="s3td">TCSTPRINT5</td><td class="s2td">Button5<td class="s4td">Button5</td><td class="s5td">Книжная</td></tr>
+<tr><td class="s3td">TCSTPRINT6</td><td class="s2td">Button6<td class="s4td">Button6</td><td class="s5td">Альбомная</td></tr>
+<tr><td class="s3td">TCSTPRINT7</td><td class="s2td">Button9<td class="s4td">Button9</td><td class="s5td">Сеть...</td></tr>
+<tr><td class="s3td">TCSTPRINT8</td><td class="s2td">Button7<td class="s4td">Button7</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td">TCSTPRINT9</td><td class="s2td">Button8<td class="s4td">Button8</td><td class="s5td">Отмена</td></tr>
+
+<tr class="selcntr"><td colspan="4">СОЕДИНЕНИЕ С FTP-СЕРВЕРОМ</td></tr>
+<tr><td class="s3td">TCONNECT</td><td class="s2td">TCONNECT<td class="s4td">TCONNECT</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCONNECT1</td><td class="s2td">TMyListBox1<td class="s4td">LCLListBox1</td><td class="s5td">Соединиться с:</td></tr>
+<tr><td class="s3td">TCONNECT2</td><td class="s2td">TButton10<td class="s4td">Button10</td><td class="s5td">Соединиться</td></tr>
+<tr><td class="s3td">TCONNECT3</td><td class="s2td">TButton9<td class="s4td">Button9</td><td class="s5td">Добавить...</td></tr>
+<tr><td class="s3td">TCONNECT4</td><td class="s2td">TButton8<td class="s4td">Button8</td><td class="s5td">Новый URL...</td></tr>
+<tr><td class="s3td">TCONNECT5</td><td class="s2td">TButton7<td class="s4td">Button7</td><td class="s5td">Копировать...</td></tr>
+<tr><td class="s3td">TCONNECT6</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Новая папка...</td></tr>
+<tr><td class="s3td">TCONNECT7</td><td class="s2td">TButton6<td class="s4td">Button6</td><td class="s5td">Изменить...</td></tr>
+<tr><td class="s3td">TCONNECT8</td><td class="s2td">TButton5<td class="s4td">Button5</td><td class="s5td">Удалить</td></tr>
+<tr><td class="s3td">TCONNECT9</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Шифровать..</td></tr>
+<tr><td class="s3td">TCONNECT10</td><td class="s2td">TButton4<td class="s4td">Button4</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCONNECT11</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">Справка</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td"></td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>НАСТРОЙКА FTP-СОЕДИНЕНИЯ (кнопка Добавить...)</strong></td></tr>
+<tr><td class="s3td">TCCONDET</td><td class="s2td">TDETAILS<td class="s4td">TDETAILS</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Общие</td></tr>
+<tr><td class="s3td">TCCONDET1</td><td class="s2td">TAltEdit6<td class="s4td">Edit6</td><td class="s5td">Имя соединения:</td></tr>
+<tr><td class="s3td">TCCONDET2</td><td class="s2td">TAltEdit5<td class="s4td">Edit5</td><td class="s5td">Сервер [:Порт]:</td></tr>
+<tr><td class="s3td">TCCONDET3</td><td class="s2td">TCheckBox4<td class="s4td">Button6</td><td class="s5td">SSUTLS</td></tr>
+<tr><td class="s3td">TCCONDET4</td><td class="s2td">TButton5<td class="s4td">Button8</td><td class="s5td">Анонимное соединение (пароль-адрес E-mai</td></tr>
+<tr><td class="s3td">TCCONDET5</td><td class="s2td">TAltEdit4<td class="s4td">Edit4</td><td class="s5td">Учётная запись:</td></tr>
+<tr><td class="s3td">TCCONDET6</td><td class="s2td">TAltEdit1<td class="s4td">Edit1</td><td class="s5td">Пароль</td></tr>
+<tr><td class="s3td">TCCONDET7</td><td class="s2td">TCheckBox3<td class="s4td">Button5</td><td class="s5td">Использовать главный пароль для защиты пароля</td></tr>
+<tr><td class="s3td">TCCONDET8</td><td class="s2td">TAltEdit3<td class="s4td">Edit3</td><td class="s5td">Удалённый каталог</td></tr>
+<tr><td class="s3td">TCCONDET9</td><td class="s2td">TAltEdit2<td class="s4td">Edit2</td><td class="s5td">Локальный катало</td></tr>
+<tr><td class="s3td">TCCONDET10</td><td class="s2td">TButton4<td class="s4td">Button7</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCCONDET11</td><td class="s2td">TCheckBox2<td class="s4td">Button3</td><td class="s5td">Пассивный режим обмена (как Web-браузер)</td></tr>
+<tr><td class="s3td">TCCONDET12</td><td class="s2td">TCheckBox1<td class="s4td">Button2</td><td class="s5td">Использовать брандмауэр или прокси-сервер</td></tr>
+<tr><td class="s3td">TCCONDET13</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">Определить новый...</td></tr>
+<tr><td class="s3td">TCCONDET14</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Изменить...</td></tr>
+<tr><td class="s3td">TCCONDET15</td><td class="s2td">TButton2<td class="s4td">Button4</td><td class="s5td">Расширенные -></td></tr>
+<tr><td class="s3td">TCCONDET16</td><td class="s2td">TButton8<td class="s4td">Button14</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCCONDET17</td><td class="s2td">TButton7<td class="s4td">Button13</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCCONDET18</td><td class="s2td">TButton6<td class="s4td">Button12</td><td class="s5td">Справка</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>ftp (кнопка Анонимное соединение (пароль-адрес E-mail)</strong></td></tr>
+<tr><td class="s3td">TCCNDED</td><td class="s2td">TSTDTREEDLG<td class="s4td">TSTDTREEDLG</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCCNDED1</td><td class="s2td">TAltEdit1<td class="s4td">Edit1</td><td class="s5td">Укажите в качестве пароля адрес E-mail:</td></tr>
+<tr><td class="s3td">TCCNDED2</td><td class="s2td">TButton3<td class="s4td">Button4</td><td class="s5td">OK</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>НАСТРОЙКИ БРАНДМАУЭРА (кнопка Изменить...)</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCSFD</td><td class="s2td">TFireWallDlg<td class="s4td">TFireWallDlg</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Способ соединения</td></tr>
+<tr><td class="s3td">TCSFD1</td><td class="s2td">TMyRadioButton10<td class="s4td">Button11</td><td class="s5td">Послать команду USER user@hostname</td></tr>
+<tr><td class="s3td">TCSFD2</td><td class="s2td">TMyRadioButton9<td class="s4td">Button10</td><td class="s5td">Послать команду SITE (с входом в систему)</td></tr>
+<tr><td class="s3td">TCSFD3</td><td class="s2td">TMyRadioButton8<td class="s4td">Button9</td><td class="s5td">Послать команду OPEN</td></tr>
+<tr><td class="s3td">TCSFD4</td><td class="s2td">TMyRadioButton7<td class="s4td">Button8</td><td class="s5td">USER user@firewalluser@hostname I PASS pass@firewallpas</td></tr>
+<tr><td class="s3td">TCSFD5</td><td class="s2td">TMyRadioButton6<td class="s4td">Button7</td><td class="s5td">Прозрачный</td></tr>
+<tr><td class="s3td">TCSFD6</td><td class="s2td">TMyRadioButton5<td class="s4td">Button6</td><td class="s5td">HTTP-прокси с поддержкой FTP</td></tr>
+<tr><td class="s3td">TCSFD7</td><td class="s2td">TMyRadioButton4<td class="s4td">Button5</td><td class="s5td">SOCKS4</td></tr>
+<tr><td class="s3td">TCSFD8</td><td class="s2td">TMyRadioButton3<td class="s4td">Button4</td><td class="s5td">SOCKS5 (базовая аутентификация)</td></tr>
+<tr><td class="s3td">TCSFD9</td><td class="s2td">TMyRadioButton2<td class="s4td">Button3</td><td class="s5td">USER user@hostname firewalluser PASS pass ACCT firewallpc</td></tr>
+<tr><td class="s3td">TCSFD10</td><td class="s2td">TMyRadioButton1<td class="s4td">Button2</td><td class="s5td">HTTP CONNECT</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Соединение через брандмауэр</td></tr>
+<tr><td class="s3td">TCSFD11</td><td class="s2td">TEdit3<td class="s4td">Edit3</td><td class="s5td">Сервер [:Порт]:</td></tr>
+<tr><td class="s3td">TCSFD12</td><td class="s2td">TEdit2<td class="s4td">Edit2</td><td class="s5td">Учётная запись:</td></tr>
+<tr><td class="s3td">TCSFD13</td><td class="s2td">TEdit1<td class="s4td">Edit1</td><td class="s5td">Пароль:</td></tr>
+<tr><td class="s3td">TCSFD14</td><td class="s2td">TButton3<td class="s4td">Button14</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td">TCSFD15</td><td class="s2td">TButton2<td class="s4td">Button13</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCSFD16</td><td class="s2td">TButton1<td class="s4td">Button12</td><td class="s5td">Справка</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Настройка FTP-соединения</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td"></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Расширенные (вкладка)</td></tr>
+<tr><td class="s3td">TCCONDET19</td><td class="s2td">TAltEdit1<td class="s4td">Edit1</td><td class="s5td">Послать команды:</td></tr>
+<tr><td class="s3td">TCCONDET20</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">Тип сервера:</td></tr>
+<tr><td class="s3td">TCCONDET21</td><td class="s2td">TCheckBox3<td class="s4td">Button3</td><td class="s5td">Посылать команду для поддержания соединения активным:</td></tr>
+<tr><td class="s3td">TCCONDET22</td><td class="s2td">Edit1<td class="s4td">Edit3</td><td class="s5td">Команда:</td></tr>
+<tr><td class="s3td">TCCONDET23</td><td class="s2td">TMyComboBox3<td class="s4td">LCLComboBox3</td><td class="s5td">[\/]</td></tr>
+<tr><td class="s3td">TCCONDET24</td><td class="s2td">TAltEdit2<td class="s4td">Edit2</td><td class="s5td">Посылать каждые:</td></tr>
+<tr><td class="s3td">TCCONDET25</td><td class="s2td">TMyComboBox2<td class="s4td">LCLComboBox2</td><td class="s5td">Кодировка имён файлов:</td></tr>
+<tr><td class="s3td">TCCONDET26</td><td class="s2td">TCheckBox2<td class="s4td">Button2</td><td class="s5td">Получение списка командой MLSD (затенено = автовыбор)</td></tr>
+<tr><td class="s3td">TCCONDET27</td><td class="s2td">TCheckBox1<td class="s4td">Button1</td><td class="s5td">Запоминать содержимое всех посещённых каталогов (в кэше)</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">ftp (кнопка Новый URL...)</td></tr>
+<tr><td class="s3td">TCCNDNEW</td><td class="s2td">TNewConnDlg<td class="s4td">TNewConnDlg</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCCNDNEW1</td><td class="s2td">Edit1<td class="s4td">Edit1</td><td class="s5td">Соединиться с... (указать сервер или URL):</td></tr>
+<tr><td class="s3td">TCCNDNEW2</td><td class="s2td">TMyComboBox2<td class="s4td">LCLComboBox2</td><td class="s5td">[\/]</td></tr>
+<tr><td class="s3td">TCCNDNEW3</td><td class="s2td">TMyCheckBox2<td class="s4td">Button6</td><td class="s5td">Анонимное соединение</td></tr>
+<tr><td class="s3td">TCCNDNEW4</td><td class="s2td">TMyCheckBox1<td class="s4td">Button3</td><td class="s5td">Использовать брандмауэр или прокси-сервер</td></tr>
+<tr><td class="s3td">TCCNDNEW5</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">Определить новый...</td></tr>
+<tr><td class="s3td">TCCNDNEW6</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Изменить...</td></tr>
+<tr><td class="s3td">TCCNDNEW7</td><td class="s2td">TButton4<td class="s4td">Button5</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td">TCCNDNEW8</td><td class="s2td">TButton3<td class="s4td">Button4</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCCNDNEW9</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Справка</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Total Commander (кнопка Новая папка...)</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCCNDF</td><td class="s2td">TSTDTREEDLG<td class="s4td">TSTDTREEDLG</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCCNDF1</td><td class="s2td">TAltEdit1<td class="s4td">Edit1</td><td class="s5td">Создать новый каталог (папку):</td></tr>
+<tr><td class="s3td">TCCNDF2</td><td class="s2td">TButton3<td class="s4td">Button4</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td">TCCNDF3</td><td class="s2td">TButton1<td class="s4td">Button2</td><td class="s5td">Отмена</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Total Commander (кнопка Шифровать...)</strong></td></tr>
+<tr><td class="s3td">TCCNDEN</td><td class="s2td">TCTExtMsgForm<td class="s4td">TExtMsgForm</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCCNDEN1</td><td class="s2td">TButton2<td class="s4td">Button9</td><td class="s5td">Защитить подключения главным паролем.</td></tr>
+<tr><td class="s3td">TCCNDEN2</td><td class="s2td">TButton1<td class="s4td">Button8</td><td class="s5td">Отмена</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Шифрование (кнопка Защитить подключения главным паролем)</strong></td></tr>
+<tr><td class="s3td">TCCRYPT</td><td class="s2td">TCryptOptions<td class="s4td">TCryptOptions</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td">Опции</td></tr>
+<tr><td class="s3td">TCCRYPT1</td><td class="s2td">TRadioButton3<td class="s4td">Button4</td><td class="s5td">Защитить только выбранные подключения</td></tr>
+<tr><td class="s3td">TCCRYPT2</td><td class="s2td">TRadioButton2<td class="s4td">Button3</td><td class="s5td">Защитить все незащищённые подключения</td></tr>
+<tr><td class="s3td">TCCRYPT3</td><td class="s2td">TRadioButton1<td class="s4td">Button2</td><td class="s5td">Защитить все подключения</td></tr>
+<tr><td class="s3td">TCCRYPT4</td><td class="s2td">TCheckBox1<td class="s4td">Button5</td><td class="s5td">Выводить диалог для подтверждения каждого изменения</td></tr>
+<tr><td class="s3td">TCCRYPT5</td><td class="s2td">TButton2<td class="s4td">Button7</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td">TCCRYPT6</td><td class="s2td">TButton1<td class="s4td">Button6</td><td class="s5td">Отмена</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>(Загрузка) (команда Диспетчер фоновой пересылки)</strong></td></tr>
+<tr><td class="s3td">TCTRNS</td><td class="s2td">#32770<td class="s4td">#32770</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCTRNS1</td><td class="s2td">Button1<td class="s4td">Button1</td><td class="s5td">[+]</td></tr>
+<tr><td class="s3td">TCTRNS2</td><td class="s2td">Button2<td class="s4td">Button2</td><td class="s5td">[-]</td></tr>
+<tr><td class="s3td">TCTRNS3</td><td class="s2td">Button3<td class="s4td">Button3</td><td class="s5td">Пауза</td></tr>
+<tr><td class="s3td">TCTRNS4</td><td class="s2td">Button4<td class="s4td">Button4</td><td class="s5td">Лимит скорости</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Total Commander (команда Загрузить по списку)</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCNLD</td><td class="s2td">TSTDTREEDLG<td class="s4td">TSTDTREEDLG</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCNLD1</td><td class="s2td">TAltEdit1<td class="s4td">Edit1</td><td class="s5td">Имя списка загрузок:</td></tr>
+<tr><td class="s3td">TCNLD2</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCNLD3</td><td class="s2td">TButton4<td class="s4td">Button4</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCNLD4</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Отмена</td></tr>
+
+<tr class="selcntr"><td colspan="4">ПРИ ВКЛЮЧЁННОМ FTP (на панели главного окна)</td></tr>
+<tr><td class="s3td">TCFTPVIEW1</td><td class="s2td">TPanel2<td class="s4td">Window2</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCFTPVIEW2</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">Режим обмена</td></tr>
+<tr><td class="s3td">TMyListBox</td><td class="s2td">1<td class="s4td">1</td><td class="s5td">Список</td></tr>
+<tr><td class="s3td">TCNEWF</td><td class="s2td">TCOMBOINPUT<td class="s4td">TCOMBOINPUT</td><td class="s5td">Total Commander (команда создания каталога F7)</td></tr>
+<tr><td class="s3td">TCNEWF1</td><td class="s2td">Edit1<td class="s4td">Edit1</td><td class="s5td">Создать новый каталог (папку):</td></tr>
+<tr><td class="s3td">TCNEWF2</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TCNEWF3</td><td class="s2td">TButton2<td class="s4td">Button3</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCNEWF4</td><td class="s2td">TButton1<td class="s4td">Button2</td><td class="s5td">Отмена</td></tr>
+
+<tr class="selcntr"><td colspan="4">ГРУППОВОЕ ПЕРЕИМЕНОВАНИЕ</td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCRENAME</td><td class="s2td">TMultiRename<td class="s4td">TMultiRename</td><td class="s5td">класс окна</td></tr>
+<tr><td class="seltd" colspan="4"><strong>Маска для: имени файла</strong></td></tr>
+<tr><td class="s3td">TCRENAME1</td><td class="s2td">Edit3<td class="s4td">Edit6</td><td class="s5td"> </td></tr>
+<tr><td class="s3td">TCRENAME2</td><td class="s2td">TMyComboBox6<td class="s4td">LCLComboBox6</td><td class="s5td">[\/]</td></tr>
+<tr><td class="s3td">TCRENAME3</td><td class="s2td">TMyGroupBox5<td class="s4td">Button16</td><td class="s5td">[N] Имя</td></tr>
+<tr><td class="s3td">TCRENAME4</td><td class="s2td">TAltEdit1<td class="s4td">Edit5</td><td class="s5td">Расширения</td></tr>
+<tr><td class="s3td">TCRENAME5</td><td class="s2td">TMyGroupBox1<td class="s4td">Button15</td><td class="s5td">[Е] Тип</td></tr>
+<tr><td class="seltd" colspan="4"><strong>Поиск и замена</strong></td></tr>
+<tr><td class="s3td">TCRENAME6</td><td class="s2td">Edit1<td class="s4td">Edit1</td><td class="s5td">Найти:</td></tr>
+<tr><td class="s3td">TCRENAME7</td><td class="s2td">TMyComboBox3<td class="s4td">LCLComboBox3</td><td class="s5td">[\/]</td></tr>
+<tr><td class="s3td">TCRENAME8</td><td class="s2td">Edit2<td class="s4td">Edit2</td><td class="s5td">Заменить на:</td></tr>
+<tr><td class="s3td">TCRENAME9</td><td class="s2td">TMyComboBox4<td class="s4td">LCLComboBox4</td><td class="s5td">[\/]</td></tr>
+<tr><td class="s3td">TCRENAME10</td><td class="s2td">TCheckBox3<td class="s4td">Button11</td><td class="s5td">^ [ ]</td></tr>
+<tr><td class="s3td">TCRENAME11</td><td class="s2td">TCheckBox2<td class="s4td">Button10</td><td class="s5td">1x [ ]</td></tr>
+<tr><td class="s3td">TCRENAME12</td><td class="s2td">TCheckBox1<td class="s4td">Button9</td><td class="s5td">[E]</td></tr>
+<tr><td class="s3td">TCRENAME13</td><td class="s2td">TCheckBox5<td class="s4td">Button13</td><td class="s5td">Рег.выраж.</td></tr>
+<tr><td class="s3td">TCRENAME14</td><td class="s2td">TCheckBox4<td class="s4td">Button12</td><td class="s5td">Подстан.</td></tr>
+<tr><td class="s3td">TCRENAME15</td><td class="s2td">TMyComboBox2<td class="s4td">LCLComboBox2</td><td class="s5td">Верхний/нижний регистр</td></tr>
+<tr><td class="s3td">TCRENAME16</td><td class="s2td">TButton5<td class="s4td">Button5</td><td class="s5td">[?]</td></tr>
+<tr><td class="s3td">TCRENAME17</td><td class="s2td">TBitBtn1<td class="s4td">Button6</td><td class="s5td">[=]</td></tr>
+<tr><td class="seltd" colspan="4"><strong>Вид счётчика [С]</strong></td></tr>
+<tr><td class="s3td">TCRENAME18</td><td class="s2td">TEdit2<td class="s4td">Edit4</td><td class="s5td">Начать с:</td></tr>
+<tr><td class="s3td">TCRENAME19</td><td class="s2td">TScrollBar2<td class="s4td">ScrollBar2</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCRENAME20</td><td class="s2td">TEdit1<td class="s4td">Edit3</td><td class="s5td">Шаг:</td></tr>
+<tr><td class="s3td">TCRENAME21</td><td class="s2td">TScrollBar1<td class="s4td">ScrollBar1</td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCRENAME22</td><td class="s2td">TMyComboBox5<td class="s4td">LCLComboBox5</td><td class="s5td">К-во цифр:</td></tr>
+<tr><td class="s3td">TCRENAME23</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">F2 Шаблоны...</td></tr>
+<tr><td class="s3td">TCRENAME24</td><td class="s2td">THeaderClick1<td class="s4td">Window3</td><td class="s5td">Старое имя</td></tr>
+<tr><td class="s3td">TCRENAME25</td><td class="s2td">TBkGndListBox1<td class="s4td">LCLListBox1</td><td class="s5td">Список</td></tr>
+<tr><td class="s3td">TCRENAME26</td><td class="s2td">TButton4<td class="s4td">Button4</td><td class="s5td">Выполнить</td></tr>
+<tr><td class="s3td">TCRENAME27</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Откат</td></tr>
+<tr><td class="s3td">TCRENAME28</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Протокол</td></tr>
+<tr><td class="s3td">TCRENAME29</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">Закрыть</td></tr>
+
+<tr><td class="sel2td" colspan="4"><strong>Выбор дисков (кнопка Диски...)</strong></td></tr>
+<tr><td class="s3td"></td><td class="s2td"><td class="s4td"></td><td class="s5td"></td></tr>
+<tr><td class="s3td">TCDRIVE</td><td class="s2td">TDriveSelBox<td class="s4td">TDriveSelBox</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCDRIVE1</td><td class="s2td">TListBox1<td class="s4td">LCLListBox1</td><td class="s5td">Искать на дисках:</td></tr>
+<tr><td class="s3td">TCDRIVE2</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">Все локальные</td></tr>
+<tr><td class="s3td">TCDRIVE3</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td">TCDRIVE4</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Отмена</td></tr>
+
+<tr class="selcntr"><td colspan="4">РАСПАКОВКА ФАЙЛОВ</td></tr>
+<tr><td class="s3td">TCUNPACK1</td><td class="s2td">TAltEdit1<td class="s4td">Edit2</td><td class="s5td">Распаковать файлы по указанной ниже маске из архива в:</td></tr>
+<tr><td class="s3td">TCUNPACK2</td><td class="s2td">Edit1<td class="s4td">Edit1</td><td class="s5td">Маска для распаковки</td></tr>
+<tr><td class="s3td">TCUNPACK3</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">[\/]</td></tr>
+<tr><td class="s3td">TCUNPACK4</td><td class="s2td">TCheckBox3<td class="s4td">Button7</td><td class="s5td">Учитывать подкаталоги</td></tr>
+<tr><td class="s3td">TCUNPACK5</td><td class="s2td">TCheckBox2<td class="s4td">Button6</td><td class="s5td">Заменять существующие файлы</td></tr>
+<tr><td class="s3td">TCUNPACK6</td><td class="s2td">TCheckBox1<td class="s4td">Button1</td><td class="s5td">Распаковать каждый архив в отдельный каталог</td></tr>
+<tr><td class="s3td">TCUNPACK7</td><td class="s2td">TButton4<td class="s4td">Button5</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td">TCUNPACK8</td><td class="s2td">TButton3<td class="s4td">Button4</td><td class="s5td">Дерево</td></tr>
+<tr><td class="s3td">TCUNPACK9</td><td class="s2td">TButton2<td class="s4td">Button3</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TCUNPACK10</td><td class="s2td">TButton1<td class="s4td">Button2</td><td class="s5td">Справка</td></tr>
+<tr><td class="seltd" colspan="4"><strong>Поддиалог распаковки файлов</strong></td></tr>
+<tr><td class="s3td"><a name="TCUNZPACK"></a>TCUNZPACK</td><td class="s2td">TDLGUNZIP<td class="s4td">TDLGUNZIP</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td"><a name="TCUNZPACK1"></a>TCUNZPACK1</td><td class="s2td">TAltEdit1<td class="s4td">Edit1</td><td class="s5td">Распаковать файлы в:</td></tr>
+<tr><td class="s3td"><a name="TCUNZPACK2"></a>TCUNZPACK2</td><td class="s2td">TCheckBox2<td class="s4td">Button6</td><td class="s5td">Учитывать подкаталоги</td></tr>
+<tr><td class="s3td"><a name="TCUNZPACK3"></a>TCUNZPACK3</td><td class="s2td">TCheckBox1<td class="s4td">Button5</td><td class="s5td">Заменять существующие файлы</td></tr>
+<tr><td class="s3td"><a name="TCUNZPACK4"></a>TCUNZPACK4</td><td class="s2td">TButton4<td class="s4td">Button4</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td"><a name="TCUNZPACK5"></a>TCUNZPACK5</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">Дерево</td></tr>
+<tr><td class="s3td"><a name="TCUNZPACK6"></a>TCUNZPACK6</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td"><a name="TCUNZPACK7"></a>TCUNZPACK7</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Справка</td></tr>
+
+<tr class="selcntr"><td colspan="4">ДОБАВИТЬ ВЫДЕЛЕНИЕ</td></tr>
+<tr><td class="s3td">TCMARK</td><td class="s2td">TCOMBOINPUT<td class="s4td">TCOMBOINPUT</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCMARK1</td><td class="s2td">Edit1<td class="s4td">Edit1</td><td class="s5td">Укажите маску файлов (разделитель - '</td></tr>
+<tr><td class="s3td">TCMARK2</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">[\/]</td></tr>
+<tr><td class="s3td">TCMARK3</td><td class="s2td">TListBox1<td class="s4td">LCLListBox1</td><td class="s5td">список</td></tr>
+<tr><td class="s3td">TCMARK4</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Шаблон...</td></tr>
+<tr><td class="s3td">TCMARK5</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCMARK6</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Отмена</td></tr>
+<tr class="selcntr"><td colspan="4">ЗАДАТЬ ФИЛЬТР</td></tr>
+<tr><td class="s3td">TCFILTER</td><td class="s2td">TCOMBOINPUT<td class="s4td">TCOMBOINPUT</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCFILTER1</td><td class="s2td">Edit1<td class="s4td">Edit1</td><td class="s5td">Укажите шаблон(ы) файлов (например: s*.doc</td></tr>
+<tr><td class="s3td">TCFILTER2</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">[\/]</td></tr>
+<tr><td class="s3td">TCFILTER3</td><td class="s2td">TListBox1<td class="s4td">LCLListBox1</td><td class="s5td">или выберите тип файлов по шаблону:</td></tr>
+<tr><td class="s3td">TCFILTER4</td><td class="s2td">TButton1<td class="s4td">Button1</td><td class="s5td">Шаблон...</td></tr>
+<tr><td class="s3td">TCFILTER5</td><td class="s2td">TButton3<td class="s4td">Button3</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td">TCFILTER6</td><td class="s2td">TButton2<td class="s4td">Button2</td><td class="s5td">Отмена</td></tr>
+
+<tr class="selcntr"><td colspan="4">НАСТРОЙКА МЕНЮ "ЗАПУСК"</td></tr>
+<tr><td class="s3td">TCUMENU</td><td class="s2td">TUSERMENUCHANGE<td class="s4td">TUSERMENUCHANGE</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td">TCUMENU1</td><td class="s2td">TListBox1<td class="s4td">LCLListBox1</td><td class="s5td">список</td></tr>
+<tr><td class="s3td">TCUMENU2</td><td class="s2td">TAltEdit3<td class="s4td">Edit3</td><td class="s5td">Команда:</td></tr>
+<tr><td class="s3td">TCUMENU3</td><td class="s2td">TBitBtn1<td class="s4td">Button1</td><td class="s5td">кнопка выбора команды</td></tr>
+<tr><td class="s3td">TCUMENU4</td><td class="s2td">TButton1<td class="s4td">Button4</td><td class="s5td">[>>]</td></tr>
+<tr><td class="s3td">TAltEdit2</td><td class="s2td">TAltEdit2<td class="s4td">Edit2</td><td class="s5td">Параметры:</td></tr>
+<tr><td class="s3td">TAltEdit3</td><td class="s2td">TAltEdit1<td class="s4td">Edit1</td><td class="s5td">Путь запуска:</td></tr>
+<tr><td class="s3td">TAltEdit4</td><td class="s2td">TMyComboBox1<td class="s4td">LCLComboBox1</td><td class="s5td">Горячая клавиша</td></tr>
+<tr><td class="s3td">TAltEdit5</td><td class="s2td">TCheckBox2<td class="s4td">Button3</td><td class="s5td">в свёрнутом виде</td></tr>
+<tr><td class="s3td">TAltEdit6</td><td class="s2td">TCheckBox1<td class="s4td">Button2</td><td class="s5td">в полный экран</td></tr>
+<tr><td class="s3td">TAltEdit7</td><td class="s2td">TButton8<td class="s4td">Button11</td><td class="s5td">Добавить...</td></tr>
+<tr><td class="s3td">TAltEdit8</td><td class="s2td">TButton7<td class="s4td">Button10</td><td class="s5td">Подменю...</td></tr>
+<tr><td class="s3td">TAltEdit9</td><td class="s2td">TButton6<td class="s4td">Button9</td><td class="s5td">Удалить</td></tr>
+<tr><td class="s3td">TAltEdit10</td><td class="s2td">TButton5<td class="s4td">Button8</td><td class="s5td">Переименовать</td></tr>
+<tr><td class="s3td">TAltEdit11</td><td class="s2td">TButton4<td class="s4td">Button7</td><td class="s5td">ОК</td></tr>
+<tr><td class="s3td">TAltEdit12</td><td class="s2td">TButton3<td class="s4td">Button6</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td">TAltEdit13</td><td class="s2td">TButton2<td class="s4td">Button5</td><td class="s5td">Справка</td></tr>
+
+<tr class="selcntr"><td colspan="4">СОЗДАНИЕ ФАЙЛА (вызов по Shift+F4)</td></tr>
+<tr><td class="s3td"><a name="TCUMENU"></a>TCEDIT</td><td class="s2td">TCheckEditBox<td class="s4td">TCheckEditBox</td><td class="s5td">класс окна</td></tr>
+<tr><td class="s3td"><a name="TCUMENU"></a>TCEDIT1</td><td class="s2td">TAltEdit1<td class="s4td">Edit1</td><td class="s5td">Введите имя редактируемого файла</td></tr>
+<tr><td class="s3td"><a name="TCUMENU"></a>TCEDIT2</td><td class="s2td">TButton3<td class="s4td">Button5</td><td class="s5td">OK</td></tr>
+<tr><td class="s3td"><a name="TCUMENU"></a>TCEDIT3</td><td class="s2td">TButton2<td class="s4td">Button4</td><td class="s5td">Отмена</td></tr>
+<tr><td class="s3td"><a name="TCUMENU"></a>TCEDIT3</td><td class="s2td">TButton1<td class="s4td">Button3</td><td class="s5td">Дерево</td></tr>
+</td></tr></table>
+</p>
+<p></p>
+
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

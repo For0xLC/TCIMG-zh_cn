@@ -1,0 +1,19 @@
+[OPTIONS]
+Compatibility=1.1
+Compiled file=..\TCIMG.chm
+Contents file=TCIMG.hhc
+Default Window=Help Window
+Default topic=html\index.htm
+Display compile progress=Yes
+Enhanced decompilation=Yes
+Full-text search=Yes
+Index file=TCIMG.hhk
+Language=Chinese
+Title=TCIMG-ÖÐÎÄ°ïÖúÎÄµµ-0xLC
+Default Font=Segoe UI,12,204
+; Error Log file=Error.txt
+
+[WINDOWS]
+Help Window="","TCIMG.hhc","TCIMG.hhk","html/index.htm",,,,,,0x63520,,0x10000c,[0,0,1024,768],0x80000,,,,,,0
+
+[INFOTYPES]

@@ -1,0 +1,433 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Описание программы TCIMG</title>
+<meta http-equiv="content-Type" content="text/html; charset=windows-1251">
+<link type="text/css" rel="stylesheet" href="css/i.css">
+</head>
+<body background="images/LiteJade.jpg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="images/bgl_mblue.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px;white-space: nowrap"><big><strong>Описание программы TCIMG</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="images/bgs_grey.gif"></td></tr>
+</table>
+<hr>
+<p align="center"><img src="images/TCIMGb.png" width="600" height="128" border="0"></p>
+<p align="center"><b>31.8.0.0</b><br><br>12.06.2012 - 20.01.2023<br><br>© Averin Andrey<br><br><a class="ext" target="_blank" href="http://tc-image.3dn.ru/forum/5-498-1">Домашняя страница</a><br><br>AutoIt 3.3.16.1<br><a href="http://tcimg.dreamlair.net/TCIMG_ONLINE.html" target="_blank"><img src="images/online.gif" border="0" title="Главная страница онлайн справки"></a>&nbsp;&nbsp;<a class="xxx" target="_blank" href="http://tcimg.dreamlair.net/TCIMG_ONLINE.html">Онлайн справка</a>&nbsp;&nbsp;<a href="http://tcimg.dreamlair.net/TCIMG_ONLINE.html" target="_blank"><img src="images/online.gif" border="0" title="Главная страница онлайн справки"></a><br><br>Версия справки 0.9.3.6</p>
+<br>
+<hr>
+<a name="1"></a><H1>Описание</H1>
+• TCIMG - Универсальная утилита командной строки, которая позволяет выполнять различные задачи в системе.<br>• Мощное средство для расширения функциональности Total Commander и других программ.<br>• Направлена на автоматизацию монотонных действий, связанных с файловыми, системными, программными, оконными операциями.<br>• Облегчает работу с другими программами, скриптами, шаблонами, передовая им списки информации, пути объектов и дополнительных данных.<br>• Полностью портабельна, т.е. не требует установки и не вносит в реестр или куда-либо ещё дополнительную информацию.<br>• Утилита представляет из себя скомпилированный AutoIt3-скрипт.<br>• Утилиту разрешено распространять только с указанием сайта поддержки: http://tc-image.3dn.ru<br>• Поддержка <a class="le" href="support.htm"><b>проекта</b></a><br><br><!-- <hr><a href="https://vk.com/sochirealtys" target="_blank"><img align="middle" alt="" border="0" src="images/ssss.png" width="100%" /></a> --><br><hr><br>Перед использованием рекомендуется <a class="le" href="faq.htm"><b>прочитать ответы на основные вопросы</b></a>.<br>Дополнительные темы:<br>&nbsp;&nbsp;&bull; <a class="le" target="_blank" href="http://tcimg.dreamlair.net/TCIMG_Chinese.html"><b>Онлайн справка на китайском языке</b></a><br>&nbsp;&nbsp;&bull; <a class="le" target="_blank" href="http://tc-image.3dn.ru/forum/5-498-1"><b>Обсуждение №1</b> (tc-image.3dn.ru)</a><br>&nbsp;&nbsp;&bull; <a class="le" target="_blank" href="http://forum.ru-board.com/topic.cgi?forum=5&topic=50714#1"><b>Обсуждение №2</b> (forum.ru-board.com)</a><br>&nbsp;&nbsp;&bull; <a class="le" target="_blank" href="https://t.me/tcimg"><b>Обсуждение №3</b> (Telegram)</a><br>&nbsp;&nbsp;&bull; <a class="le" target="_blank" href="http://tc-image.3dn.ru/forum/5-964-1"><b>Расширение функционала</b></a><br>&nbsp;&nbsp;&bull; <a class="le" target="_blank" href="http://tc-image.3dn.ru/forum/5-1051-1"><b>Подключение программ и скриптов</b></a><br>&nbsp;&nbsp;&bull; <a class="le" target="_blank" href="http://tc-image.3dn.ru/forum/11-446-1"><b>Заказ кнопок</b></a><br>&nbsp;&nbsp;&bull; <a class="le" target="_blank" href="http://tc-image.3dn.ru/forum/5-875-1"><b>Развитие справки утилиты</b></a><br><br><hr><br>TCIMG включает в себя:<br>&nbsp;&nbsp;&bull; Более <a class="le" href="html/par/all_com.htm"><b>550</b></a> команд<br>&nbsp;&nbsp;&bull; Более <a class="le" href="html/par/all_com.htm"><b>800</b></a> параметров<br>&nbsp;&nbsp;&bull; Более <a class="le" href="html/par/par_aa_functions.htm"><b>300</b></a> дополнительных функций<br>&nbsp;&nbsp;&bull; Более <b>15 000</b> примеров применения
+<br><br>
+<hr><br>
+<a name="2"></a><H1>Основные возможности утилиты</H1>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Копирует/Перемещает/Удаляет/Переименовывает объекты</b></font> <a class="le" href="html/com_copys.htm" title="copys"><span class="S20">[1]</span></a> <a class="le" href="html/com_scand.htm" title="scand"><span class="S20">[2]</span></a> <a class="le" href="html/com_moves.htm" title="moves"><span class="S20">[3]</span></a> <a class="le" href="html/com_filer.htm" title="filer"><span class="S20">[4]</span></a> <a class="le" href="html/com_filep.htm" title="filep"><span class="S20">[5]</span></a> <a class="le" href="html/com_filel.htm" title="filel"><span class="S20">[6]</span></a> <a class="le" href="html/com_renms.htm" title="renms"><span class="S20">[7]</span></a> <a class="le" href="html/com_renmz.htm" title="renmz"><span class="S20">[8]</span></a> <a class="le" href="html/com_delss.htm" title="delss"><span class="S20">[9]</span></a> <a class="le" href="html/com_empty.htm" title="empty"><span class="S20">[10]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> с различными проверками на существование, MD5<br>
+<font class="S31">+</font> с настраиваемыми условиями<br>
+<font class="S31">+</font> с преобразованием базового имени и расширения<br>
+<font class="S31">+</font> с поддержкой буфера обмена<br>
+<font class="S31">+</font> с добавлением различной информации: дата, версия, счётчик<br>
+<font class="S31">+</font> с проверкой длины объектов<br>
+<font class="S31">+</font> в именные создаваемые папки<br>
+<font class="S31">+</font> в папки по типам файлов<br>
+<font class="S31">+</font> в папки на заданный уровень вложенности<br>
+<font class="S31">+</font> с установкой или снятием атрибутов<br>
+<font class="S31">+</font> с установкой даты модификации, создания и последнего доступа<br>
+<font class="S31">+</font> с регулярными выражениями<br>
+<font class="S31">+</font> с исправлением кодировки имён<br>
+<font class="S31">+</font> по заданному количеству<br>
+<font class="S31">+</font> с установкой расширения по содержимому файлов<br>
+<font class="S31">+</font> с вводом информации через различные диалоги<br>
+<font class="S31">+</font> с тестированием объекта с регулярным выражением<br>
+<font class="S31">+</font> относительно содержимого файлов<br>
+<font class="S31">+</font> с отображением прогресс бара<br>
+<font class="S31">+</font> с добавлением случайных данных<br>
+<font class="S31">+</font> более 100 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Создает списки файлов и каталогов</b></font> <a class="le" href="html/com_lists.htm" title="lists"><span class="S20">[1]</span></a> <a class="le" href="html/com_slist.htm" title="slist"><span class="S20">[2]</span></a> <a class="le" href="html/com_sends.htm" title="sends"><span class="S20">[3]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> с различными преобразованиями пути<br>
+<font class="S31">+</font> заданных и выделенных объектов<br>
+<font class="S31">+</font> с рекурсией и заданных уровней вложенности<br>
+<font class="S31">+</font> с добавлением системной информации<br>
+<font class="S31">+</font> с получением информации из содержимого файлов<br>
+<font class="S31">+</font> с выбором данных из диалогов<br>
+<font class="S31">+</font> с регулярными выражениями<br>
+<font class="S31">+</font> с различной цифровой, буквенной сортировкой<br>
+<font class="S31">+</font> с добавлением значений тегов<br>
+<font class="S31">+</font> с тестированием пути по заданным условиям<br>
+<font class="S31">+</font> со вставкой из шаблонов<br>
+<font class="S31">+</font> с поиском и заменой заданных фраз<br>
+<font class="S31">+</font> с сохранением в заданной кодировке<br>
+<font class="S31">+</font> с передачей списка другим командам<br>
+<font class="S31">+</font> более 50 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Создает/Изменяет ярлыки</b></font> <a class="le" href="html/com_clink.htm" title="clink"><span class="S20">[1]</span></a> <a class="le" href="html/com_glink.htm" title="glink"><span class="S20">[2]</span></a> <a class="le" href="html/com_urllnk.htm" title="urllnk"><span class="S20">[3]</span></a> <a class="le" href="html/com_lnkbt.htm" title="lnkbt"><span class="S20">[4]</span></a> <a class="le" href="html/com_ledit.htm" title="ledit"><span class="S20">[5]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> обычные с заданными условиями пути, имени, рабочего каталога, горячей клавиши, значка...<br>
+<font class="S31">+</font> с относительными путями запуска<br>
+<font class="S31">+</font> из кнопок Total Commander<br>
+<font class="S31">+</font> со свойствами запуска "от администратора"<br>
+<font class="S31">+</font> с преобразованием имени<br>
+<font class="S31">+</font> с установкой атрибутов и дат модификации<br>
+<font class="S31">+</font> с диалогом группового изменения ярлыков<br>
+<font class="S31">+</font> с открытие относительных путей ярлыков в Total Commander<br>
+<font class="S31">+</font> более 20 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Создает файлы и каталоги</b></font> <a class="le" href="html/com_creat.htm" title="creat"><span class="S20">[1]</span></a> <a class="le" href="html/com_folds.htm" title="folds"><span class="S20">[2]</span></a> <a class="le" href="html/com_strct.htm" title="strct"><span class="S20">[3]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> по списку из фала и буфера обмена<br>
+<font class="S31">+</font> по заданным маскам и шаблонам<br>
+<font class="S31">+</font> с проверкой длины пути<br>
+<font class="S31">+</font> с заданной кодировкой и расширением<br>
+<font class="S31">+</font> с необходимой нумерацией и количеством<br>
+<font class="S31">+</font> с различными заменами имени и содержимого<br>
+<font class="S31">+</font> с открытием созданных объектов в программах<br>
+<font class="S31">+</font> с содержимым буфера обмена и пустые<br>
+<font class="S31">+</font> создание пустой структуры файлов и каталогов<br>
+<font class="S31">+</font> проверяет контрольные суммы: MD5, SHA3 (более 20 методов)<br>
+<font class="S31">+</font> более 50 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Устанавливает/Изменяет дату файлам и каталогам</b></font> <a class="le" href="html/com_modfs.htm" title="modfs"><span class="S20">[1]</span></a> <a class="le" href="html/com_modfx.htm" title="modfx"><span class="S20">[2]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> преобразует текущие даты модификации, создания и последнего доступа<br>
+<font class="S31">+</font> устанавливает новые даты из буфера обмена или списка<br>
+<font class="S31">+</font> относительно другого объекта<br>
+<font class="S31">+</font> с рекурсией и заданных уровней вложенности<br>
+<font class="S31">+</font> с диалогом группового изменения дат объектов<br>
+<font class="S31">+</font> более 20 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Устанавливает/Изменяет атрибуты файлам и каталогам</b></font> <a class="le" href="html/com_attrb.htm" title="attrb"><span class="S20">[1]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> с различными условиями поиска, масками и шаблонами<br>
+<font class="S31">+</font> с рекурсией и заданных уровней вложенности<br>
+<font class="S31">+</font> более 20 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Кодирует/Декодирует файлы</b></font> <a class="le" href="html/com_encod.htm" title="encod"><span class="S20">[1]</span></a> <a class="le" href="html/com_decod.htm" title="decod"><span class="S20">[2]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> методами MIME (Base64), UUEncode, XXEncode<br>
+<font class="S31">+</font> групповое или одиночное преобразование файлов<br>
+<font class="S31">+</font> более 20 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Шифрует/Расшифровывает файлы с указанными ключом и алгоритмом</b></font> <a class="le" href="html/com_encry.htm" title="encry"><span class="S20">[1]</span></a> <a class="le" href="html/com_decry.htm" title="decry"><span class="S20">[2]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> с поддержкой алгоритмов AES, AES128, AES192, AES256, DES, DESX, 3DES, 3DES112, RC2, RC4, RC5, SEAL<br>
+<font class="S31">+</font> групповое или одиночное преобразование файлов<br>
+<font class="S31">+</font> более 20 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Собирает/Разбивает файлы на части</b></font> <a class="le" href="html/com_splis.htm" title="splis"><span class="S20">[1]</span></a> <a class="le" href="html/com_joinf.htm" title="joinf"><span class="S20">[2]</span></a> <a class="le" href="html/com_joinz.htm" title="joinz"><span class="S20">[3]</span></a> <a class="le" href="html/com_maskz.htm" title="maskz"><span class="S20">[4]</span></a> <a class="le" href="html/com_maskx.htm" title="maskx"><span class="S20">[5]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> разбивает по заданному размеру (байты, килобайты, мегабайты, гигабайты)<br>
+<font class="S31">+</font> с различными условиями проверки<br>
+<font class="S31">+</font> маскирует файлы и каталоги внутри заданного файла<br>
+<font class="S31">+</font> более 20 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Упаковывает/Распаковывает ZIP архивы</b></font> <a class="le" href="html/com_zpack.htm" title="zpack"><span class="S20">[1]</span></a> <a class="le" href="html/com_zunpk.htm" title="zunpk"><span class="S20">[2]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> создание именных архивов с заданными именами<br>
+<font class="S31">+</font> более 20 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Поддерживает работу с буфером обмена</b></font> <a class="le" href="html/com_bufsr.htm" title="bufsr"><span class="S20">[1]</span></a> <a class="le" href="html/com_clptx.htm" title="clptx"><span class="S20">[2]</span></a> <a class="le" href="html/com_clpget.htm" title="clpget"><span class="S20">[3]</span></a> <a class="le" href="html/com_clptoo.htm" title="clptoo"><span class="S20">[4]</span></a> <a class="le" href="html/com_clpclr.htm" title="clpclr"><span class="S20">[5]</span></a> <a class="le" href="html/com_xclip.htm" title="xclip"><span class="S20">[6]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> записывает текст в буфер обмена<br>
+<font class="S31">+</font> возвращает текст из буфера обмена<br>
+<font class="S31">+</font> изменяет, дописывает информацию в буфер обмена<br>
+<font class="S31">+</font> преобразовывает поиском и заменой с поддержкой регулярных выражений и заменой на функции<br>
+<font class="S31">+</font> кодирует, декодирует<br>
+<font class="S31">+</font> шифрует, расшифровывает<br>
+<font class="S31">+</font> сохраняет, очищает<br>
+<font class="S31">+</font> временно следит и сохраняет информацию<br>
+<font class="S31">+</font> более 100 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Объединяет/Преобразовывает текстовые файлы</b></font> <a class="le" href="html/com_stext.htm" title="stext"><span class="S20">[1]</span></a> <a class="le" href="html/com_extra.htm" title="extra"><span class="S20">[2]</span></a> <a class="le" href="html/com_textx.htm" title="textx"><span class="S20">[3]</span></a> <a class="le" href="html/com_txtss.htm" title="txtss"><span class="S20">[4]</span></a> <a class="le" href="html/com_chset.htm" title="chset"><span class="S20">[5]</span></a> <a class="le" href="html/com_count.htm" title="count"><span class="S20">[6]</span></a> <a class="le" href="html/com_xlsxt.htm" title="xlsxt"><span class="S20">[7]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> с предварительным форматированием<br>
+<font class="S31">+</font> с различными вставками заданной информации<br>
+<font class="S31">+</font> с обработкой регулярных выражений<br>
+<font class="S31">+</font> с построчным преобразованием<br>
+<font class="S31">+</font> с поиском и заменой по списку или из буфера обмена<br>
+<font class="S31">+</font> с сохранением в заданной кодировке<br>
+<font class="S31">+</font> объединение по типу содержимого<br>
+<font class="S31">+</font> с сортировкой и удалением дубликатов строк<br>
+<font class="S31">+</font> с подсчётом заданных фраз в тексте<br>
+<font class="S31">+</font> со вставкой выбираемых разделителей между содержимым<br>
+<font class="S31">+</font> с разбивкой файла по регулярным выражения, секциям, строкам...<br>
+<font class="S31">+</font> пакетное и одиночное изменение данных<br>
+<font class="S31">+</font> более 100 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Изменяет INI файлы</b></font> <a class="le" href="html/com_inisr.htm" title="inisr"><span class="S20">[1]</span></a> <a class="le" href="html/com_iniss.htm" title="iniss"><span class="S20">[2]</span></a> <a class="le" href="html/com_inidk.htm" title="inidk"><span class="S20">[3]</span></a> <a class="le" href="html/com_iniwr.htm" title="iniwr"><span class="S20">[4]</span></a> <a class="le" href="html/com_iniww.htm" title="iniww"><span class="S20">[5]</span></a> <a class="le" href="html/com_inids.htm" title="inids"><span class="S20">[6]</span></a> <a class="le" href="html/com_inidx.htm" title="inidx"><span class="S20">[7]</span></a> <a class="le" href="html/com_inidz.htm" title="inidz"><span class="S20">[8]</span></a> <a class="le" href="html/com_inidc.htm" title="inidc"><span class="S20">[9]</span></a> <a class="le" href="html/com_inidl.htm" title="inidl"><span class="S20">[10]</span></a> <a class="le" href="html/com_inidd.htm" title="inidd"><span class="S20">[11]</span></a> <a class="le" href="html/com_iniws.htm" title="iniws"><span class="S20">[12]</span></a> <a class="le" href="html/com_inirs.htm" title="inirs"><span class="S20">[13]</span></a> <a class="le" href="html/com_inirz.htm" title="inirz"><span class="S20">[14]</span></a> <a class="le" href="html/com_inist.htm" title="inist"><span class="S20">[15]</span></a> <a class="le" href="html/com_inivr.htm" title="inivr"><span class="S20">[16]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> переименование секций<br>
+<font class="S31">+</font> удаление секции с условиями<br>
+<font class="S31">+</font> очистка заданных или всех секций<br>
+<font class="S31">+</font> замещение секции<br>
+<font class="S31">+</font> сортировка секций<br>
+<font class="S31">+</font> удаление, запись ключа с условиями<br>
+<font class="S31">+</font> замена ключей по списку<br>
+<font class="S31">+</font> более 10 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Управляет окнами</b></font> <a class="le" href="html/com_activ.htm" title="activ"><span class="S20">[1]</span></a> <a class="le" href="html/com_amenu.htm" title="amenu"><span class="S20">[2]</span></a> <a class="le" href="html/com_buttn.htm" title="buttn"><span class="S20">[3]</span></a> <a class="le" href="html/com_iconw.htm" title="iconw"><span class="S20">[4]</span></a> <a class="le" href="html/com_keybd.htm" title="keybd"><span class="S20">[5]</span></a> <a class="le" href="html/com_mxmnz.htm" title="mxmnz"><span class="S20">[6]</span></a> <a class="le" href="html/com_ontop.htm" title="ontop"><span class="S20">[7]</span></a> <a class="le" href="html/com_rsize.htm" title="rsize"><span class="S20">[8]</span></a> <a class="le" href="html/com_ssize.htm" title="ssize"><span class="S20">[9]</span></a> <a class="le" href="html/com_thide.htm" title="thide"><span class="S20">[10]</span></a> <a class="le" href="html/com_title.htm" title="title"><span class="S20">[11]</span></a> <a class="le" href="html/com_tityn.htm" title="tityn"><span class="S20">[12]</span></a> <a class="le" href="html/com_trans.htm" title="trans"><span class="S20">[13]</span></a> <a class="le" href="html/com_wdrag.htm" title="wdrag"><span class="S20">[14]</span></a> <a class="le" href="html/com_whide.htm" title="whide"><span class="S20">[15]</span></a> <a class="le" href="html/com_wmenu.htm" title="wmenu"><span class="S20">[16]</span></a> <a class="le" href="html/com_wpull.htm" title="wpull"><span class="S20">[17]</span></a> <a class="le" href="html/com_wshow.htm" title="wshow"><span class="S20">[18]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> скрывает и восстанавливает меню окна<br>
+<font class="S31">+</font> вызвать заданный пункт главного меню окна<br>
+<font class="S31">+</font> изменяет, сохраняет и восстанавливает размеры окна<br>
+<font class="S31">+</font> скрывает и восстанавливает заголовок окна<br>
+<font class="S31">+</font> разворачивает/сворачивает и восстанавливает окно<br>
+<font class="S31">+</font> изменяет текст заголовка окна<br>
+<font class="S31">+</font> скрывает и показывает элемент окна<br>
+<font class="S31">+</font> изменяет атрибут окна "поверх всех окон"<br>
+<font class="S31">+</font> устанавливает прозрачность окна<br>
+<font class="S31">+</font> активирует окно (передаёт ему фокус)<br>
+<font class="S31">+</font> эмулирует нажатие мыши на указанном элементе интерфейса<br>
+<font class="S31">+</font> устанавливает текст в заданный элемент<br>
+<font class="S31">+</font> эмулирует нажатие клавиш в активном окне<br>
+<font class="S31">+</font> устанавливает значок окну<br>
+<font class="S31">+</font> скрывает и восстанавливает значок на панели задач<br>
+<font class="S31">+</font> более 50 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Управляет процессами</b></font> <a class="le" href="html/com_resrt.htm" title="resrt"><span class="S20">[1]</span></a> <a class="le" href="html/com_close.htm" title="close"><span class="S20">[2]</span></a> <a class="le" href="html/com_closp.htm" title="closp"><span class="S20">[3]</span></a> <a class="le" href="html/com_storc.htm" title="storc"><span class="S20">[4]</span></a> <a class="le" href="html/com_procw.htm" title="procw"><span class="S20">[5]</span></a> <a class="le" href="html/com_prior.htm" title="prior"><span class="S20">[6]</span></a> <a class="le" href="html/com_freez.htm" title="freez"><span class="S20">[7]</span></a> <a class="le" href="html/com_dumpp.htm" title="dumpp"><span class="S20">[8]</span></a> <a class="le" href="html/com_logpr.htm" title="logpr"><span class="S20">[9]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> завершает/перезапускает процесс<br>
+<font class="S31">+</font> завершает процесс, относительно заданных параметров запуска<br>
+<font class="S31">+</font> изменяет приоритет процесса<br>
+<font class="S31">+</font> замораживает/размораживает процесс<br>
+<font class="S31">+</font> следит за процессом или процессами и записывает информацию в файл<br>
+<font class="S31">+</font> выгружает память процесса<br>
+<font class="S31">+</font> ожидание завершения заданных процессов<br>
+<font class="S31">+</font> более 50 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Запускает программы/утилиты/скрипты</b></font> <a class="le" href="html/com_start.htm" title="start"><span class="S20">[1]</span></a> <a class="le" href="html/com_cmdbt.htm" title="cmdbt"><span class="S20">[2]</span></a> <a class="le" href="html/com_runhp.htm" title="runhp"><span class="S20">[3]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> в зависимости от разрядности и названия системы<br>
+<font class="S31">+</font> позволяет передавать в параметры список объектов в цикле<br>
+<font class="S31">+</font> позволяет передавать в параметры часть пути объектов<br>
+<font class="S31">+</font> позволяет передавать в параметры строку из буфера обмена<br>
+<font class="S31">+</font> сворачивает/разворачивает/скрывает окно при запуске<br>
+<font class="S31">+</font> ожидать завершения работы программы<br>
+<font class="S31">+</font> использовать прогресс бар для отображения хода работы<br>
+<font class="S31">+</font> устанавливать приоритет запущенной программе<br>
+<font class="S31">+</font> считывает информацию консольных утилит и скриптов<br>
+<font class="S31">+</font> более 50 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Открывает файлы/ссылки в программах</b></font> <a class="le" href="html/com_opens.htm" title="opens"><span class="S20">[1]</span></a> <a class="le" href="html/com_openz.htm" title="openz"><span class="S20">[2]</span></a> <a class="le" href="html/com_openn.htm" title="openn"><span class="S20">[3]</span></a> <a class="le" href="html/com_runhp.htm" title="runhp"><span class="S20">[4]</span></a> <a class="le" href="html/com_brwsr.htm" title="brwsr"><span class="S20">[5]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> в ассоциируемых программах по типу<br>
+<font class="S31">+</font> в заданных программах и проводнике<br>
+<font class="S31">+</font> с передачей различных параметров и списков<br>
+<font class="S31">+</font> с ожиданием завершения<br>
+<font class="S31">+</font> в свёрнутом/развёрнутом окне<br>
+<font class="S31">+</font> открытие файлов плиткой и изменением размеров/заголовка окна<br>
+<font class="S31">+</font> запуск справочных файлов CHM, с вводом строки для поиска и перехода в раздел<br>
+<font class="S31">+</font> более 50 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Действия в системе</b></font> <a class="le" href="html/com_block.htm" title="block"><span class="S20">[1]</span></a> <a class="le" href="html/com_drive.htm" title="drive"><span class="S20">[2]</span></a> <a class="le" href="html/com_eject.htm" title="eject"><span class="S20">[3]</span></a> <a class="le" href="html/com_fontf.htm" title="fontf"><span class="S20">[4]</span></a> <a class="le" href="html/com_fontwd.htm" title="fontwd"><span class="S20">[5]</span></a> <a class="le" href="html/com_langs.htm" title="langs"><span class="S20">[6]</span></a> <a class="le" href="html/com_lnkey.htm" title="lnkey"><span class="S20">[7]</span></a> <a class="le" href="html/com_mhint.htm" title="mhint"><span class="S20">[8]</span></a> <a class="le" href="html/com_monof.htm" title="monof"><span class="S20">[9]</span></a> <a class="le" href="html/com_monrs.htm" title="monrs"><span class="S20">[10]</span></a> <a class="le" href="html/com_propes.htm" title="propes"><span class="S20">[11]</span></a> <a class="le" href="html/com_rempty.htm" title="rempty"><span class="S20">[12]</span></a> <a class="le" href="html/com_runcm.htm" title="runcm"><span class="S20">[13]</span></a> <a class="le" href="html/com_shutd.htm" title="shutd"><span class="S20">[14]</span></a> <a class="le" href="html/com_sound.htm" title="sound"><span class="S20">[15]</span></a> <a class="le" href="html/com_taskb.htm" title="taskb"><span class="S20">[16]</span></a> <a class="le" href="html/com_trayk.htm" title="trayk"><span class="S20">[17]</span></a> <a class="le" href="html/com_trayx.htm" title="trayx"><span class="S20">[18]</span></a> <a class="le" href="html/com_winmn.htm" title="winmn"><span class="S20">[19]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> блокирует клавиатуру и мышь<br>
+<font class="S31">+</font> включает/выключает/изменяет громкость в системе<br>
+<font class="S31">+</font> выдвигает/задвигает лоток CD-привода<br>
+<font class="S31">+</font> безопасно извлекает устройства usb<br>
+<font class="S31">+</font> отображает начертание шрифтов в системе<br>
+<font class="S31">+</font> переключает раскладку клавиатуры<br>
+<font class="S31">+</font> изменяет разрешение монитора<br>
+<font class="S31">+</font> гасит/включает монитор<br>
+<font class="S31">+</font> очищает корзину на всех дисках<br>
+<font class="S31">+</font> завершает работу операционной системы<br>
+<font class="S31">+</font> скрывает/показывает панель задач<br>
+<font class="S31">+</font> очищает трей от "пустых" значков<br>
+<font class="S31">+</font> более 50 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Действия с мышью</b></font> <a class="le" href="html/com_clicx.htm" title="clicx"><span class="S20">[1]</span></a> <a class="le" href="html/com_csize.htm" title="csize"><span class="S20">[2]</span></a> <a class="le" href="html/com_mouse.htm" title="mouse"><span class="S20">[3]</span></a> <a class="le" href="html/com_posxy.htm" title="posxy"><span class="S20">[4]</span></a> <a class="le" href="html/com_startm.htm" title="startm"><span class="S20">[5]</span></a> <a class="le" href="html/com_stopm.htm" title="stopm"><span class="S20">[6]</span></a> <a class="le" href="html/com_xsize.htm" title="xsize"><span class="S20">[7]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> цикличное нажимает по заданным координатам<br>
+<font class="S31">+</font> изменяет, сохраняет и восстанавливает координаты<br>
+<font class="S31">+</font> записывает в буфер обмена текущие координаты<br>
+<font class="S31">+</font> ограничивает/освобождает курсор в указанных координатах<br>
+<font class="S31">+</font> более 10 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Действия в реестре</b></font> <a class="le" href="html/com_regcr.htm" title="regcr"><span class="S20">[1]</span></a> <a class="le" href="html/com_regdl.htm" title="regdl"><span class="S20">[2]</span></a> <a class="le" href="html/com_regim.htm" title="regim"><span class="S20">[3]</span></a> <a class="le" href="html/com_regup.htm" title="regup"><span class="S20">[4]</span></a> <a class="le" href="html/com_regwr.htm" title="regwr"><span class="S20">[5]</span></a> <a class="le" href="html/com_regxt.htm" title="regxt"><span class="S20">[6]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> рекурсивно копирует раздел реестра<br>
+<font class="S31">+</font> удаляет раздел/параметр реестра<br>
+<font class="S31">+</font> импортирует reg файл в реестр<br>
+<font class="S31">+</font> открывает ветку реестра<br>
+<font class="S31">+</font> создание раздела/параметра в реестре<br>
+<font class="S31">+</font> экспортирует раздел/параметр в файл<br>
+<font class="S31">+</font> более 10 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Действия в интернете</b></font> <a class="le" href="html/com_brwsr.htm" title="brwsr"><span class="S20">[1]</span></a> <a class="le" href="html/com_downh.htm" title="downh"><span class="S20">[2]</span></a> <a class="le" href="html/com_downl.htm" title="downl"><span class="S20">[3]</span></a> <a class="le" href="html/com_intcn.htm" title="intcn"><span class="S20">[4]</span></a> <a class="le" href="html/com_picup.htm" title="picup"><span class="S20">[5]</span></a> <a class="le" href="html/com_picus.htm" title="picus"><span class="S20">[6]</span></a> <a class="le" href="html/com_upldf.htm" title="upldf"><span class="S20">[7]</span></a> <a class="le" href="html/com_uplds.htm" title="uplds"><span class="S20">[8]</span></a> <a class="le" href="html/com_urlra.htm" title="urlra"><span class="S20">[9]</span></a> <a class="le" href="html/com_urlrf.htm" title="urlrf"><span class="S20">[10]</span></a> <a class="le" href="html/com_urlxt.htm" title="urlxt"><span class="S20">[11]</span></a> <a class="le" href="html/com_websc.htm" title="websc"><span class="S20">[12]</span></a> <a class="le" href="html/com_webss.htm" title="webss"><span class="S20">[13]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> включает/отключает интернет соединение<br>
+<font class="S31">+</font> открывает ссылку в браузере<br>
+<font class="S31">+</font> закачивает ссылки по списку<br>
+<font class="S31">+</font> объединяет содержимое страниц интернета с сохранением в файл<br>
+<font class="S31">+</font> создает скриншоты Web страниц<br>
+<font class="S31">+</font> загружает изображения, файлы на хостинги<br>
+<font class="S31">+</font> более 50 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Действия с FTP</b></font> <a class="le" href="html/com_ftpcn.htm" title="ftpcn"><span class="S20">[1]</span></a> <a class="le" href="html/com_ftpgf.htm" title="ftpgf"><span class="S20">[2]</span></a> <a class="le" href="html/com_ftpgo.htm" title="ftpgo"><span class="S20">[3]</span></a> <a class="le" href="html/com_ftplf.htm" title="ftplf"><span class="S20">[4]</span></a> <a class="le" href="html/com_ftpls.htm" title="ftpls"><span class="S20">[5]</span></a> <a class="le" href="html/com_ftpset.htm" title="ftpset"><span class="S20">[6]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> создаёт зашифрованную базу данных паролей и серверов<br>
+<font class="S31">+</font> передаёт файлы и каталоги на FTP<br>
+<font class="S31">+</font> создаёт различные списки объектов заданных каталогов FTP<br>
+<font class="S31">+</font> более 50 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Действия с иконками</b></font> <a class="le" href="html/com_icovw.htm" title="icovw"><span class="S20">[1]</span></a> <a class="le" href="html/com_icofs.htm" title="icofs"><span class="S20">[2]</span></a> <a class="le" href="html/com_lbicl.htm" title="lbicl"><span class="S20">[3]</span></a> <a class="le" href="html/com_exics.htm" title="exics"><span class="S20">[4]</span></a> <a class="le" href="html/com_iconv.htm" title="iconv"><span class="S20">[5]</span></a> <a class="le" href="html/com_iconn.htm" title="iconn"><span class="S20">[6]</span></a> <a class="le" href="html/com_icomm.htm" title="icomm"><span class="S20">[7]</span></a> <a class="le" href="html/com_icods.htm" title="icods"><span class="S20">[8]</span></a> <a class="le" href="html/com_iclds.htm" title="iclds"><span class="S20">[9]</span></a> <a class="le" href="html/com_icache.htm" title="icache"><span class="S20">[10]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> извлекает значки из файлов DLL, ICL<br>
+<font class="S31">+</font> удаляет/добавляет форматы в иконки файлы DLL, ICL<br>
+<font class="S31">+</font> извлекает из иконки изображения<br>
+<font class="S31">+</font> конвертирует изображения в иконку ICO<br>
+<font class="S31">+</font> создаёт иконки из списка изображений<br>
+<font class="S31">+</font> назначает папкам иконки<br>
+<font class="S31">+</font> обновляет кэш иконок окон проводника<br>
+<font class="S31">+</font> просматривает/редактирует значки в библиотеке<br>
+<font class="S31">+</font> более 50 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Действия с изображениями</b></font> <a class="le" href="html/com_imgcn.htm" title="imgcn"><span class="S20">[1]</span></a> <a class="le" href="html/com_imgfs.htm" title="imgfs"><span class="S20">[2]</span></a> <a class="le" href="html/com_picss.htm" title="picss"><span class="S20">[3]</span></a> <a class="le" href="html/com_imgjs.htm" title="imgjs"><span class="S20">[4]</span></a> <a class="le" href="html/com_imgnz.htm" title="imgnz"><span class="S20">[5]</span></a> <a class="le" href="html/com_imgcr.htm" title="imgcr"><span class="S20">[6]</span></a> <a class="le" href="html/com_imgcg.htm" title="imgcg"><span class="S20">[7]</span></a> <a class="le" href="html/com_imgtz.htm" title="imgtz"><span class="S20">[8]</span></a> <a class="le" href="html/com_imgtx.htm" title="imgtx"><span class="S20">[9]</span></a> <a class="le" href="html/com_symxx.htm" title="symxx"><span class="S20">[10]</span></a> <a class="le" href="html/com_scren.htm" title="scren"><span class="S20">[11]</span></a> <a class="le" href="html/com_imgvw.htm" title="imgvw"><span class="S20">[12]</span></a> <a class="le" href="html/com_imgth.htm" title="imgth"><span class="S20">[13]</span></a> <a class="le" href="html/com_imght.htm" title="imght"><span class="S20">[14]</span></a> <a class="le" href="html/com_iclip.htm" title="iclip"><span class="S20">[15]</span></a> <a class="le" href="html/com_clipi.htm" title="clipi"><span class="S20">[16]</span></a> <a class="le" href="html/com_sdesk.htm" title="sdesk"><span class="S20">[17]</span></a> <a class="le" href="html/com_sdess.htm" title="sdess"><span class="S20">[18]</span></a> <a class="le" href="html/com_exifs.htm" title="exifs"><span class="S20">[19]</span></a> <a class="le" href="html/com_gifcs.htm" title="gifcs"><span class="S20">[20]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> создаёт изображения из буфера обмена<br>
+<font class="S31">+</font> создаёт изображения из заданного текста или из списка строк<br>
+<font class="S31">+</font> создаёт изображения символов по шаблону<br>
+<font class="S31">+</font> добавляет информацию в exif для изображения<br>
+<font class="S31">+</font> записывает изображение в буфер обмена<br>
+<font class="S31">+</font> преобразование изображений<br>
+<font class="S31">+</font> создаёт градиентное изображения и с заданным цветом<br>
+<font class="S31">+</font> накладывает фильтры на изображения<br>
+<font class="S31">+</font> разрезает изображения на равные отрезки<br>
+<font class="S31">+</font> склеивает изображения в одно изображение<br>
+<font class="S31">+</font> просматривает изображения<br>
+<font class="S31">+</font> заменяет указанные цвета в изображениях<br>
+<font class="S31">+</font> создаёт скриншоты<br>
+<font class="S31">+</font> устанавливает обои на рабочий стол<br>
+<font class="S31">+</font> сменяет обои на рабочем столе через заданный промежуток времени<br>
+<font class="S31">+</font> извлекает изображения из GIF, TIF, TIFF<br>
+<font class="S31">+</font> более 100 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Действия с MP3 файлами</b></font> <a class="le" href="html/com_mp3is.htm" title="mp3is"><span class="S20">[1]</span></a> <a class="le" href="html/com_mp3ws.htm" title="mp3ws"><span class="S20">[2]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> извлечение из MP3 файлов обложек JPG, PNG, GIF<br>
+<font class="S31">+</font> преобразование тегов MP3 файлов<br>
+<font class="S31">+</font> более 10 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Подключает функции Autoit</b></font> <a class="le" href="html/com_exect.htm" title="exect"><span class="S20">[1]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> математические функции <a class="le" href="html/par/par_aa_math.htm" title="math"><span class="S20">[&#8679;]</span></a><br>
+<font class="S31">+</font> строковые функции <a class="le" href="html/par/par_aa_strinjs.htm" title="strings"><span class="S20">[&#8679;]</span></a><br>
+<font class="S31">+</font> функции проверки и преобразований переменных <a class="le" href="html/par/par_aa_varconv.htm" title="var"><span class="S20">[&#8679;]</span></a><br>
+<font class="S31">+</font> функции среды окружения <a class="le" href="html/par/par_aa_environment.htm" title="environment"><span class="S20">[&#8679;]</span></a><br>
+<font class="S31">+</font> функции для работы с файлами, каталогами и дисками <a class="le" href="html/par/par_aa_file.htm" title="file"><span class="S20">[&#8679;]</span></a><br>
+<font class="S31">+</font> функции для работы с INI файлами <a class="le" href="html/par/par_aa_ini.htm" title="ini"><span class="S20">[&#8679;]</span></a><br>
+<font class="S31">+</font> функции для работы с окнами <a class="le" href="html/par/par_aa_windows.htm" title="windows"><span class="S20">[&#8679;]</span></a><br>
+<font class="S31">+</font> функции для работы с процессами <a class="le" href="html/par/par_aa_process.htm" title="process"><span class="S20">[&#8679;]</span></a><br>
+<font class="S31">+</font> функции для работы с мышью <a class="le" href="html/par/par_aa_mouse.htm" title="mouse"><span class="S20">[&#8679;]</span></a><br>
+<font class="S31">+</font> функции для работы с реестром <a class="le" href="html/par/par_aa_reg.htm" title="reg"><span class="S20">[&#8679;]</span></a><br>
+<font class="S31">+</font> функции для работы с сетью <a class="le" href="html/par/par_aa_net.htm" title="net"><span class="S20">[&#8679;]</span></a><br>
+<font class="S31">+</font> функции для работы с DLL <a class="le" href="html/par/par_aa_dll.htm" title="dll"><span class="S20">[&#8679;]</span></a><br>
+<font class="S31">+</font> дополнительные функции <a class="le" href="html/par/par_aa_others.htm" title="others"><span class="S20">[&#8679;]</span></a><br>
+<font class="S31">+</font> UDF функции для работы с массивами <a class="le" href="html/par/par_aa_array.htm" title="udf array"><span class="S20">[&#8679;]</span></a><br>
+<font class="S31">+</font> UDF функции <a class="le" href="html/par/par_aa_others_udf.htm" title="udf others"><span class="S20">[&#8679;]</span></a><br>
+<font class="S31">+</font> более 300 различных функций<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Расширяет функционал Total Commander</b></font>  <a class="le" href="html/par/par_tc.htm" title="Total Commander"><span class="S20">[&#8679;]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> вызов внутренних/пользовательских команд <a class="le" href="html/com_tcimg.htm" title="tcimg"><span class="S20">[1]</span></a> <a class="le" href="html/com_tcprm.htm" title="tcprm"><span class="S20">[2]</span></a> <a class="le" href="html/com_swcmd.htm" title="swcmd"><span class="S20">[3]</span></a><br>
+<font class="S31">+</font> действия с меню <a class="le" href="html/com_amenu.htm" title="amenu"><span class="S20">[1]</span></a> <a class="le" href="html/com_menuc.htm" title="menuc"><span class="S20">[2]</span></a> <a class="le" href="html/com_menug.htm" title="menug"><span class="S20">[3]</span></a> <a class="le" href="html/com_menuw.htm" title="menuw"><span class="S20">[4]</span></a> <a class="le" href="html/com_menux.htm" title="menux"><span class="S20">[5]</span></a> <a class="le" href="html/com_tcmnu.htm" title="tcmnu"><span class="S20">[6]</span></a> <a class="le" href="html/com_tctcm.htm" title="tctcm"><span class="S20">[7]</span></a><br>
+<font class="S31">+</font> действия с выделением объектов <a class="le" href="html/com_desel.htm" title="desel"><span class="S20">[1]</span></a> <a class="le" href="html/com_markc.htm" title="markc"><span class="S20">[2]</span></a> <a class="le" href="html/com_markp.htm" title="markp"><span class="S20">[3]</span></a> <a class="le" href="html/com_marks.htm" title="marks"><span class="S20">[4]</span></a> <a class="le" href="html/com_markz.htm" title="markz"><span class="S20">[5]</span></a> <a class="le" href="html/com_marlr.htm" title="marlr"><span class="S20">[6]</span></a> <a class="le" href="html/com_seldb.htm" title="seldb"><span class="S20">[7]</span></a><br>
+<font class="S31">+</font> действия с архивами <a class="le" href="html/com_arhvup.htm" title="arhvup"><span class="S20">[1]</span></a> <a class="le" href="html/com_arwcx.htm" title="arwcx"><span class="S20">[2]</span></a><br>
+<font class="S31">+</font> действия с вкладками <a class="le" href="html/com_dutab.htm" title="dutab"><span class="S20">[1]</span></a> <a class="le" href="html/com_tabac.htm" title="tabac"><span class="S20">[2]</span></a> <a class="le" href="html/com_tabcl.htm" title="tabcl"><span class="S20">[3]</span></a> <a class="le" href="html/com_tabnm.htm" title="tabnm"><span class="S20">[4]</span></a> <a class="le" href="html/com_tabsv.htm" title="tabsv"><span class="S20">[5]</span></a> <a class="le" href="html/com_tabwh.htm" title="tabwh"><span class="S20">[6]</span></a><br>
+<font class="S31">+</font> действия с файловыми панелями <a class="le" href="html/com_click.htm" title="click"><span class="S20">[1]</span></a> <a class="le" href="html/com_gotom.htm" title="gotom"><span class="S20">[2]</span></a> <a class="le" href="html/com_goton.htm" title="goton"><span class="S20">[3]</span></a> <a class="le" href="html/com_horiz.htm" title="horiz"><span class="S20">[4]</span></a> <a class="le" href="html/com_itemh.htm" title="itemh"><span class="S20">[5]</span></a> <a class="le" href="html/com_itemw.htm" title="itemw"><span class="S20">[6]</span></a> <a class="le" href="html/com_modfn.htm" title="modfn"><span class="S20">[7]</span></a> <a class="le" href="html/com_modof.htm" title="modof"><span class="S20">[8]</span></a> <a class="le" href="html/com_modon.htm" title="modon"><span class="S20">[9]</span></a> <a class="le" href="html/com_panel.htm" title="panel"><span class="S20">[10]</span></a> <a class="le" href="html/com_quickp.htm" title="quickp"><span class="S20">[11]</span></a> <a class="le" href="html/com_sizeb.htm" title="sizeb"><span class="S20">[12]</span></a> <a class="le" href="html/com_sprtr.htm" title="sprtr"><span class="S20">[13]</span></a> <a class="le" href="html/com_thumb.htm" title="thumb"><span class="S20">[14]</span></a><br>
+<font class="S31">+</font> действия с панелью инструментов <a class="le" href="html/com_barbf.htm" title="barbf"><span class="S20">[1]</span></a> <a class="le" href="html/com_barbl.htm" title="barbl"><span class="S20">[2]</span></a> <a class="le" href="html/com_barbt.htm" title="barbt"><span class="S20">[3]</span></a> <a class="le" href="html/com_bardl.htm" title="bardl"><span class="S20">[4]</span></a> <a class="le" href="html/com_barex.htm" title="barex"><span class="S20">[5]</span></a> <a class="le" href="html/com_barjn.htm" title="barjn"><span class="S20">[6]</span></a> <a class="le" href="html/com_barnw.htm" title="barnw"><span class="S20">[7]</span></a> <a class="le" href="html/com_barpl.htm" title="barpl"><span class="S20">[8]</span></a> <a class="le" href="html/com_barsf.htm" title="barsf"><span class="S20">[9]</span></a> <a class="le" href="html/com_barsl.htm" title="barsl"><span class="S20">[10]</span></a> <a class="le" href="html/com_barsp.htm" title="barsp"><span class="S20">[11]</span></a> <a class="le" href="html/com_barss.htm" title="barss"><span class="S20">[12]</span></a> <a class="le" href="html/com_barsw.htm" title="barsw"><span class="S20">[13]</span></a> <a class="le" href="html/com_bartr.htm" title="bartr"><span class="S20">[14]</span></a> <a class="le" href="html/com_barupd.htm" title="barupd"><span class="S20">[15]</span></a> <a class="le" href="html/com_barupv.htm" title="barupv"><span class="S20">[16]</span></a> <a class="le" href="html/com_buttc.htm" title="buttc"><span class="S20">[17]</span></a><br>
+<font class="S31">+</font> действия с элементами окна <a class="le" href="html/com_drawn.htm" title="drawn"><span class="S20">[1]</span></a> <a class="le" href="html/com_drawy.htm" title="drawy"><span class="S20">[2]</span></a> <a class="le" href="html/com_elmof.htm" title="elmof"><span class="S20">[3]</span></a> <a class="le" href="html/com_elmon.htm" title="elmon"><span class="S20">[4]</span></a> <a class="le" href="html/com_buttn.htm" title="buttn"><span class="S20">[5]</span></a><br>
+<font class="S31">+</font> действия с комментариями <a class="le" href="html/com_comns.htm" title="comns"><span class="S20">[1]</span></a> <a class="le" href="html/com_comnt.htm" title="comnt"><span class="S20">[2]</span></a> <a class="le" href="html/com_descl.htm" title="descl"><span class="S20">[3]</span></a> <a class="le" href="html/com_descf.htm" title="descf"><span class="S20">[4]</span></a><br>
+<font class="S31">+</font> действия с ассоциациями <a class="le" href="html/com_assor.htm" title="assor"><span class="S20">[1]</span></a> <a class="le" href="html/com_assoc.htm" title="assoc"><span class="S20">[2]</span></a> <a class="le" href="html/com_assyn.htm" title="assyn"><span class="S20">[3]</span></a><br>
+<font class="S31">+</font> действия со шрифтами <a class="le" href="html/com_sizef.htm" title="sizef"><span class="S20">[1]</span></a> <a class="le" href="html/com_sfont.htm" title="sfont"><span class="S20">[2]</span></a><br>
+<font class="S31">+</font> навигация, переход к объектам <a class="le" href="html/com_focusp.htm" title="focusp"><span class="S20">[1]</span></a> <a class="le" href="html/com_parll.htm" title="parll"><span class="S20">[2]</span></a> <a class="le" href="html/com_patha.htm" title="patha"><span class="S20">[3]</span></a> <a class="le" href="html/com_pathb.htm" title="pathb"><span class="S20">[4]</span></a> <a class="le" href="html/com_pathl.htm" title="pathl"><span class="S20">[5]</span></a> <a class="le" href="html/com_pathm.htm" title="pathm"><span class="S20">[6]</span></a> <a class="le" href="html/com_pathr.htm" title="pathr"><span class="S20">[7]</span></a> <a class="le" href="html/com_paths.htm" title="paths"><span class="S20">[8]</span></a> <a class="le" href="html/com_patht.htm" title="patht"><span class="S20">[9]</span></a> <a class="le" href="html/com_pathu.htm" title="pathu"><span class="S20">[10]</span></a><br>
+<font class="S31">+</font> различные действия <a class="le" href="html/com_allpr.htm" title="allpr"><span class="S20">[1]</span></a> <a class="le" href="html/com_autrn.htm" title="autrn"><span class="S20">[2]</span></a> <a class="le" href="html/com_multi.htm" title="multi"><span class="S20">[3]</span></a> <a class="le" href="html/com_openmn.htm" title="openmn"><span class="S20">[4]</span></a> <a class="le" href="html/com_openup.htm" title="openup"><span class="S20">[5]</span></a> <a class="le" href="html/com_rstart.htm" title="rstart"><span class="S20">[6]</span></a> <a class="le" href="html/com_rundfr.htm" title="rundfr"><span class="S20">[7]</span></a> <a class="le" href="html/com_sizen.htm" title="sizen"><span class="S20">[8]</span></a> <a class="le" href="html/com_sslnk.htm" title="sslnk"><span class="S20">[9]</span></a> <a class="le" href="html/com_tclnk.htm" title="tclnk"><span class="S20">[10]</span></a> <a class="le" href="html/com_wcfull.htm" title="wcfull"><span class="S20">[11]</span></a><br>
+<font class="S31">+</font> более 100 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Автоматизация запуска команд</b></font> <br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> циклы и условия в командной строке <a class="le" href="html/com_cycles.htm" title="cycles"><span class="S20">[1]</span></a> <a class="le" href="html/com_ifthen.htm" title="ifthen"><span class="S20">[2]</span></a> <a class="le" href="html/com_slects.htm" title="slects"><span class="S20">[3]</span></a> <a class="le" href="html/com_swcths.htm" title="swcths"><span class="S20">[4]</span></a><br>
+<font class="S31">+</font> преобразование и передача информации командам <a class="le" href="html/com_sends.htm" title="sends"><span class="S20">[1]</span></a> <a class="le" href="html/com_slist.htm" title="slist"><span class="S20">[2]</span></a> <a class="le" href="html/com_listx.htm" title="listx"><span class="S20">[3]</span></a><br>
+<font class="S31">+</font> создание, преобразование 1D и 2D массивов и запись в файл <a class="le" href="html/com_anf2d.htm" title="anf2d"><span class="S20">[1]</span></a> <a class="le" href="html/com_arr2d.htm" title="arr2d"><span class="S20">[2]</span></a> <a class="le" href="html/com_asave.htm" title="asave"><span class="S20">[3]</span></a><br>
+<font class="S31">+</font> запуск команд по списку и через меню <a class="le" href="html/com_cmdcm.htm" title="cmdcm"><span class="S20">[1]</span></a> <a class="le" href="html/com_cmd64.htm" title="cmd64"><span class="S20">[2]</span></a> <a class="le" href="html/com_macro.htm" title="macro"><span class="S20">[3]</span></a> <a class="le" href="html/com_zmenu.htm" title="zmenu"><span class="S20">[4]</span></a> <a class="le" href="html/com_zmenz.htm" title="zmenz"><span class="S20">[5]</span></a><br>
+<font class="S31">+</font> запуск команд, в зависимости от зажатых клавиш до вызова <a class="le" href="html/com_hotkiy.htm" title="&#60;HOTKEY=...&#62;"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> запуск команд, в зависимости от зажатых клавиш после вызова <a class="le" href="html/com_pressy.htm" title="&#60;PRESS=...&#62;"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> запуск команд, относительно заданного времени <a class="le" href="html/com_timess.htm" title="&#60;TIME=...&#62;"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> запуск параметров в другом процессе утилиты или с другим именем процесса <a class="le" href="html/com_dubls.htm" title="dubls"><span class="S20">[1]</span></a> <a class="le" href="html/com_renew.htm" title="renew"><span class="S20">[2]</span></a><br>
+<font class="S31">+</font> контейнер для хранения данных <a class="le" href="html/com_inbox.htm" title="inbox"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> различные диалоги ввода и вывода <a class="le" href="html/add/add_dialog.htm" title="dialogs"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> более 100 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Приложения и просмотрщики</b></font> <a class="le" href="html/par/par_prog.htm" title="programs"><span class="S20">[1]</span></a><br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> захват информации с элементов окна <a class="le" href="html/com_captxt.htm" title="captxt"><span class="S20">[1]</span></a> <a class="le" href="html/com_wntxt.htm" title="wntxt"><span class="S20">[2]</span></a><br>
+<font class="S31">+</font> запись клавиатурных нажатий в файл <a class="le" href="html/com_keylg.htm" title="keylg"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> просмотр и выбор цвета <a class="le" href="html/com_color.htm" title="color"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> аудио плеер с основными возможностями <a class="le" href="html/com_plays.htm" title="plays"><span class="S20">[1]</span></a> <a class="le" href="html/com_playn.htm" title="playn"><span class="S20">[2]</span></a><br>
+<font class="S31">+</font> интернет радио <a class="le" href="html/com_radio.htm" title="radio"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> просмотр медиафайлов <a class="le" href="html/com_video.htm" title="video"><span class="S20">[1]</span></a> <a class="le" href="html/com_vidos.htm" title="vidos"><span class="S20">[2]</span></a> <a class="le" href="html/com_swfvw.htm" title="swfvw"><span class="S20">[3]</span></a><br>
+<font class="S31">+</font> просмотр шрифтов <a class="le" href="html/com_fonts.htm" title="fonts"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> просмотр и конвертер символов <a class="le" href="html/com_symvw.htm" title="symvw"><span class="S20">[1]</span></a> <a class="le" href="html/com_symcn.htm" title="symcn"><span class="S20">[2]</span></a> <a class="le" href="html/com_symss.htm" title="symss"><span class="S20">[3]</span></a><br>
+<font class="S31">+</font> просмотр текстовых файлов <a class="le" href="html/com_textv.htm" title="textv"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> таймер. секундомер. будильник <a class="le" href="html/com_timesx.htm" title="timesx"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> календарь и сравнение дат <a class="le" href="html/com_cldar.htm" title="cldar"><span class="S20">[1]</span></a> <a class="le" href="html/com_diffd.htm" title="diffd"><span class="S20">[2]</span></a><br>
+<font class="S31">+</font> генерация паролей <a class="le" href="html/com_pasgen.htm" title="pasgen"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> просмотр буфера обмена <a class="le" href="html/com_vclip.htm" title="vclip"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> плавающая панель инструментов <a class="le" href="html/com_xbarx.htm" title="xbarx"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> информационная строка <a class="le" href="html/com_infow.htm" title="infow"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> тестирование регулярных выражений и параметров TCIMG <a class="le" href="html/com_regex.htm" title="regex"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> более 50 параметров и подпараметров<br>
+</div></div></div></div>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='images/TCIMG2.gif';}else{hidn.style.display='none';btn.src=orimg;}"><img id="bot" src="images/TCIMG.gif"/>
+&nbsp;<font class="S21"><b>Получение и преобразование различной информации</b></font> <br>
+</div><div style="display: none"><div id="fut"><div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S31">+</font> получение данных системы и файлов <a class="le" href="html/com_infos.htm" title="infos"><span class="S20">[1]</span></a> <a class="le" href="html/add/add_info.htm" title="info"><span class="S20">[2]</span></a><br>
+<font class="S31">+</font> получение данных с помощью WMI, CMD <a class="le" href="html/com_nfsis.htm" title="nfsis"><span class="S20">[1]</span></a> <a class="le" href="html/com_cmdbt.htm" title="cmdbt"><span class="S20">[2]</span></a><br>
+<font class="S31">+</font> получение информации из файлов по шаблону <a class="le" href="html/com_extxs.htm" title="extxs"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> получение информации из функций скриптов VBS, JS, AU3 <a class="le" href="html/com_funvb.htm" title="funvb"><span class="S20">[1]</span></a> <a class="le" href="html/com_funjs.htm" title="funjs"><span class="S20">[2]</span></a> <a class="le" href="html/com_funau.htm" title="funau"><span class="S20">[3]</span></a><br>
+<font class="S31">+</font> получение информации каталогов <a class="le" href="html/add/add_lissts.htm" title="lists"><span class="S20">[1]</span></a> <a class="le" href="html/add/add_xfolder.htm" title="xfolder"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> получение случайной информации <a class="le" href="html/add/add_randms.htm" title="random"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> преобразование информации <a class="le" href="html/add/add_lissts.htm" title="lists"><span class="S20">[1]</span></a> <a class="le" href="html/add/add_lines.htm" title="lines"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> получение данных файла заданного WDX-плагина <a class="le" href="html/com_inplg.htm" title="inplg"><span class="S20">[1]</span></a><br>
+<font class="S31">+</font> более 1000 параметров и подпараметров<br>
+</div></div></div></div>
+
+<br><hr><br>
+<a name="3"></a><H1>Спасибо</H1>
+<span><big>Выражаю искреннюю благодарность всем, кто напрямую или косвенно помогал и повлиял на развитие проекта, отдельное спасибо: Loopback, LonerD, GGG8, ХарВик, shveicar, Yashied, asmadeus, amel27, madmasles, CreatoR, Ward, thesittingbull, Metchnik, InnI, wakillon, Yaroslav, Abel11, chip642, Deus-V, inververs, sims, BezDNaU, Veosys, getaumy, UEZ, homer77, wpitty, JKT, vakula, boriska, =BD=, G.Sandler, Mrakobes, mopodede, Skif_off, wpitty, Rustamer, wpitty, Mchoff, iifoks447, Andarin, oshizelly, Egorkaru, coherent, Атос, yug78, vanhallen, mopodede, Афи, Axel, addhaloka, Matros, Finn, Aleks431, Zmy, Паразит, TarasBY, Userrr, Jury Abel', VikTor1985, HA3APET, alexxxxx, konuk2007, Lupo73, Prog@ndy, Avada, monoceres, авторам библиотеки MediaInfo, авторам Carl Worth и Behdad Esfahbod библиотек Cairo, авторам библиотеки librhash, авторам библиотеки Bass, авторам библиотеки FFmpeg, автору Zenden за утилиту ImgUpload, Slava10779, maK, zep, Rako1, zzzten, Nuker-Hoax, regist123, shusler, <b>sibirnik</b>, Romario, Lord_NEVR, Ли Чжицзюнь (&#26446;&#24535;&#20891;), ruizone (&#29790;), alexostrov, CaptainFlint, Thomasmolover, eukalyptus, Tuape, Helpmister, NIKZZZZ, smit0966, rediffusion, zybrevl, Rioran, I95, Vimann, And000010, VasRoman, MonarchLFV, jktgeorge, Mario Arhivario, Songbird, Malkey, Placetoload, ziabriev, Antonij72, weaponx, Angelfuze, Pendelgrast, smit0966, Jacob, Rakosvist, Karbucho, Karolinka69, SLIM, ogenry, VladMo, jentoso, Kindom, Megakrok, Altruumann, vaskamy, Alizadombej, Krasovskii, Kurolesova, Svetka99, AkulaBig, Proudhawk, Yymn7, vruzin, Xprajs, Danyfirex, моим близким друзьям и родственникам: одним спасибо, что поддерживали, другим - за то, что не мешали!</big></span>
+<br><br><hr><br>
+<a name="4"></a><H1>Лицензия</H1>
+<br>
+Все права на пакет TCIMG принадлежат автору - Аверину Андрею Александровичу<br>TCIMG РАСПРОСТРАНЯЕТСЯ НА УСЛОВИЯХ "КАК ЕСТЬ". НИКАКИХ ГАРАНТИЙ В ЯВНОМ ИЛИ СКРЫТОМ ВИДЕ НЕ ПРЕДОСТАВЛЯЕТСЯ. ВЫ ИСПОЛЬЗУЕТЕ TCIMG НА СВОЙ РИСК. АВТОР НЕ БЕРЕТ НА СЕБЯ ОТВЕТСТВЕННОСТЬ ЗА ПОТЕРЮ ДАННЫХ, УЩЕРБ, ПОТЕРЮ ПРИБЫЛИ ИЛИ ЛЮБЫЕ ДРУГИЕ ПОТЕРИ, ПРОИЗОШЕДШИЕ ВО ВРЕМЯ ИСПОЛЬЗОВАНИЯ ИЛИ НЕПРАВИЛЬНОГО ИСПОЛЬЗОВАНИЯ ДАННОГО ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ. ПОЛЬЗОВАТЕЛЬ ЕДИНОЛИЧНО НЕСЕТ ОТВЕТСТВЕННОСТЬ ЗА ИСПОЛЬЗОВАНИЕ ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ TCIMG. АВТОР НЕ НЕСЕТ ОТВЕТСТВЕННОСТИ ПО ЛЮБЫМ ТРЕБОВАНИЯМ ТРЕТЬИХ ЛИЦ, КОТОРЫЕ МОГУТ ВОЗНИКНУТЬ В СВЯЗИ С ИСПОЛЬЗОВАНИЕМ ПОЛЬЗОВАТЕЛЕМ ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ TCIMG.<br>Если Вы не согласны с условиями или условия противоречат законам вашей страны, то должны немедленно удалить файлы TCIMG с ваших устройств хранения информации и прекратить пользоваться данным программным продуктом.<br>ЗАПРЕЩАЕТСЯ использовать, копировать, эмулировать, создавать новые версии, сдавать в наем или аренду, продавать, изменять, декомпилировать, дизассемблировать, изучать код программы другими способами. Никому НЕ разрешается модифицировать ее никаким образом. Под модификацией понимается изменение, добавление кода. TCIMG предназначена для личного пользования. Запрещается модифицировать, перепечатывать, воспроизводить, копировать, распространять, продавать, перепродавать или использовать любым другим способом в коммерческих целях КОД ПРОГРАММЫ. Запрещается использовать данную утилиту в целях любой нелегальной или запрещённой деятельности.<br>Ни одно частное лицо или организация не может брать плату за распространение TCIMG без письменного разрешения автора.<br><hr><br><!-- <a href="https://vk.com/sochirealtys" target="_blank"><img align="middle" alt="" border="0" src="images/ssss.png" width="100%" /></a>-->
+<hr><a name="END"></a><img vspace=-6 height=14 src="images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru" target="_blank"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

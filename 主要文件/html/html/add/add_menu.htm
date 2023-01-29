@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Редактирование главного меню Total Commander</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №5</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Редактирование главного меню Total Commander:</font></p>
+<hr><br>
+
+Файл меню — это обычный текстовый файл, который описывает главное меню <font class="S1"><b>Wcmd_Rus.mnu</b></font>. Если вы хотите изменить главное меню вручную, то должны сохранить его с новым именем, <b>иначе новый вариант с вашими изменениями будет записан поверх прежнего!!!</b>
+<br><br>
+<div style="margin-left: 21pt; text-indent: 0pt;"><span style="margin-left: -21pt; text-indent: 0pt; position: absolute;"><span style="font-size: 12pt;"><b>•</b></span></span>
+Каждое подменю начинается с команды <b>POPUP</b>, за ней в двойных кавычках (<b>"</b>) следует заголовок подменю. Всплывающие меню могут сами иметь подменю. Символ в заголовке, перед которым стоит знак амперсанда <font class="S81">&<b></b></font>, будет подчёркнут. Теперь с помощью сочетания <font class="S51"><b>Alt+символ</b></font> можно будет быстро перейти к этому меню. Пример всплывающего меню:
+<p class="codeheader" style="padding:6px;white-space: nowrap"><b>POPUP</b> "<font class="S81">&</font><font class="S41">Файлы</font>"</p>
+<br /></div>
+
+<div style="margin-left: 21pt; text-indent: 0pt;"><span style="margin-left: -21pt; text-indent: 0pt; position: absolute;"><span style="font-size: 12pt;"><b>•</b></span></span>
+Пункт меню определяется следующим образом: После команды <b>MENUITEM</b> следует текст пункта меню в <b>двойных кавычках</b>, затем <b>запятая</b> и, наконец, идентификатор команды, которая будет выполняться при выборе пункта меню. Список идентификаторов для встроенных команд можно найти в <font class="S1"><b>totalcmd.inc</b></font>. Total Commander использует этот файл для преобразования идентификаторов в числа. Перевод команд на другие языки можно найти в файлах <font class="S1"><b>wcmd_lng.inc</b></font>, находящихся в подкаталоге Language\ каталога программы (например, для русского языка это будет файл <font class="S1"><b>wcmd_rus.inc</b></font>). Также вы можете воспользоваться диалогом <b>Выбор команды</b>, где перечислены как встроенные, так и пользовательские команды. В тексте пункта меню символы <font class="S41"><b>\t</b></font> будут преобразованы в символы табуляции. Пример пункта меню:
+<p class="codeheader" style="padding:6px;white-space: nowrap"><b>MENUITEM</b> "<font class="S81">&</font><font class="S41">Упаковать...<font class="S51">\t</font>ALT+F5"</font><font class="S81">,</font> <font class="S1">cm_PackFiles</font></p>
+<br /></div>
+
+<div style="margin-left: 21pt; text-indent: 0pt;">
+<span style="margin-left: -21pt; text-indent: 0pt; position: absolute;">
+<span style="font-size: 12pt;"><b>•</b></span></span>
+Командой <b>MENUITEM SEPARATOR</b> можно добавить горизонтальную линию-разделитель.
+<br /></div>
+<br>
+<div style="margin-left: 21pt; text-indent: 0pt;"><span style="margin-left: -21pt; text-indent: 0pt; position: absolute;"><span style="font-size: 12pt;"><b>•</b></span></span>
+Каждое всплывающее меню (POPUP) заканчивается командой <b>END_POPUP</b>. Пример:
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<b>POPUP</b> "<font class="S81">&</font><font class="S41">Файлы</font>"<br>
+&nbsp;&nbsp;<b>MENUITEM</b> "<font class="S81">&</font><font class="S41">Изменить атрибуты...</font>"<font class="S81">,</font> <font class="S1">cm_SetAttrib</font><br>
+&nbsp;&nbsp;<b>MENUITEM</b> "<font class="S81">&</font><font class="S41">Упаковать...<font class="S51">\t</font>ALT+F5</font>"<font class="S81">,</font> <font class="S1">cm_PackFiles</font><br>
+&nbsp;&nbsp;<b>MENUITEM SEPARATOR</b><br>
+&nbsp;&nbsp;<b>POPUP</b> "<font class="S81">&</font><font class="S41">Ещё команды</font>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>MENUITEM</b> "<font class="S81">&</font><font class="S41">Открыть с помощью...</font>"<font class="S81">,</font> <font class="S1">cm_Associate</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>MENUITEM</b> "<font class="S81">&</font><font class="S41">Подсчитать занимаемое место...</font>"<font class="S81">,</font> <font class="S1">cm_GetFileSpace</font><br>
+&nbsp;&nbsp;<b>END_POPUP</b><br>
+<b>END_POPUP</b><br>
+</p>
+<br /></div>
+
+<div style="margin-left: 21pt; text-indent: 0pt;"><span style="margin-left: -21pt; text-indent: 0pt; position: absolute;"><span style="font-size: 12pt;"><b>•</b></span></span>
+Пункт меню, созданный командой <font class="S1"><b>cm_SrcCustomViewMenu</b></font> (Пользовательский набор колонок), отображается как подменю, содержимое которого формируется автоматически на основе пользовательских установок и в файле меню не редактируется.
+<br /></div>
+
+<br><b>Специальные команды:</b><br><br>
+
+<div style="margin-left: 21pt; text-indent: 0pt;"><span style="margin-left: -21pt; text-indent: 0pt; position: absolute;"><span style="font-size: 12pt;"><b>•</b></span></span>
+Команда <b>STARTMENU</b> вставляет меню <b>Запуск</b> в <b>панель главного меню</b> в указанном месте. <br>Настройка меню <b>Запуск</b> выполняется в отдельном диалоговом окне.
+<br /></div>
+<br>
+<div style="margin-left: 21pt; text-indent: 0pt;"><span style="margin-left: -21pt; text-indent: 0pt; position: absolute;"><span style="font-size: 12pt;"><b>•</b></span></span>
+Командой <b>HELP_BREAK</b> вставляется разрыв главного меню. После этого разрыва все меню будут выровнены по правому краю. <b>Примечание</b>: STARTMENU не может располагаться сразу же после HELP_BREAK!
+<br /></div>
+
+<br><b>Идентификаторы:</b><br><br>
+
+Все строковые идентификаторы встроенных команд начинаются с символов <font class="S81"><b>cm_</b></font> (аббревиатура для "command"), пользовательских — с символов <font class="S81"><b>em_</b></font>. Идентификаторы, которые начинаются с <b>cm_Src</b>, работают с текущим каталогом. Идентификаторы вида <b>cm_Left</b>... предназначены для левой, а <b>cm_Right</b>... — для правой файловой панели.
+<br><br>
+Из встроенных команд могут использоваться только те, которые явным образом присутствуют в <font class="S1"><b>totalcmd.inc</b></font>! Вы можете также непосредственно указывать числа, заданные в <font class="S1"><b>totalcmd.inc</b></font>, в десятичном или шестнадцатеричном представлении (в шестнадцатеричном перед числом ставится знак доллара $ ). Однако для использования внешнего меню необходимо наличие файла <font class="S1"><b>totalcmd.inc</b></font>.
+<br><br>
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

@@ -1,0 +1,4 @@
+﻿TCIMG.tch *所有命令的描述和基础 htm 
+TCIMG.txt *含以下章节：\n  [DESCRIPTION] - 实用程序的描述。\n  [AUTHOR] - 实用程序版本。\n  [THANKS] - 致谢。\n  [SUPPORT] - 支持。\n  [OPPORTUNITIES] - 主要特点。\n  [LICENSE] - 执照。\n  [CONFIGURATION] - TCIMG.ini 键的描述。\n  [EXAMPLES1] ... [EXAMPLESN] - 示例。\n  {HISTORY} - 历史（大括号）\n其余信息留作比较和历史记录。Â
+TCIMG.hhc *帮助结构
+TCIMG.hhp *编译说明

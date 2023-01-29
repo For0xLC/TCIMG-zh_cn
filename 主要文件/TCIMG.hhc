@@ -1,0 +1,1391 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="TCIMG-中文帮助文档">
+<!-- Sitemap 1.0 -->
+
+</HEAD><BODY>
+
+<OBJECT type="text/site properties"><param name="Window Styles" value="0x800027"><param name="ImageType" value="Folder"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="TCIMG简介"><param name="Local" value="html/index.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FAQ"><param name="Local" value="html/faq.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="所有文件"><param name="Local" value="html/files.htm"><param name="ImageNumber" value="37"></OBJECT>
+</UL>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="所有命令"><!--Management--><param name="Local" value="html/html/par/all_com.htm"><param name="ImageNumber" value="7"></OBJECT>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Total Commander"><!--Management--><param name="Local" value="html/html/par/par_tc.htm"><param name="ImageNumber" value="3"></OBJECT>
+<UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="调用"><!--Management--><param name="Local" value="html/html/par/par_tc_comm.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+</UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="调用内部命令"><param name="Local" value="html/html/com_tcimg.htm"><param name="ImageNumber" value="37"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="带参数调用内部命令"><param name="Local" value="html/html/com_tcprm.htm"><param name="ImageNumber" value="37"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="轮流执行命令"><param name="Local" value="html/html/com_swcmd.htm"><param name="ImageNumber" value="37"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="菜单"><!--Management--><param name="Local" value="html/html/par/par_tc_menu.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="按序号禁用菜单项"><param name="Local" value="html/html/com_menug.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="按命令禁用菜单项"><param name="Local" value="html/html/com_menux.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="设置菜单高亮色"><param name="Local" value="html/html/com_menuc.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="调用菜单项"><param name="Local" value="html/html/com_amenu.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="结构化MUN菜单"><param name="Local" value="html/html/com_tcmnu.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="创建TC菜单"><param name="Local" value="html/html/com_tctcm.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="重建图标映射-WCMICONS.INC"><param name="Local" value="html/html/com_menuw.htm"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="选择"><!--Management--><param name="Local" value="html/html/par/par_tc_marks.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="选择对象"><param name="Local" value="html/html/com_marks.htm"><param name="ImageNumber" value="35"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="选择同名对象"><param name="Local" value="html/html/com_markc.htm"><param name="ImageNumber" value="35"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="隔行选择"><param name="Local" value="html/html/com_markz.htm"><param name="ImageNumber" value="35"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="按范围选择对象"><param name="Local" value="html/html/com_markn.htm"><param name="ImageNumber" value="35"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="定位选择"><param name="Local" value="html/html/com_markp.htm"><param name="ImageNumber" value="35"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="选择所选同名对象"><param name="Local" value="html/html/com_marlr.htm"><param name="ImageNumber" value="35"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="选择重复项"><param name="Local" value="html/html/com_seldb.htm"><param name="ImageNumber" value="35"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="取消选择"><param name="Local" value="html/html/com_desel.htm"><param name="ImageNumber" value="35"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="压缩包"><!--Management--><param name="Local" value="html/html/par/par_tc_arhive.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="跳出压缩包"><param name="Local" value="html/html/com_arhvup.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="调用WCX压缩"><param name="Local" value="html/html/com_arwcx.htm"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="标签"><!--Management--><param name="Local" value="html/html/par/par_tc_tab.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="关闭所有标签"><param name="Local" value="html/html/com_tabcl.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="关闭重复标签"><param name="Local" value="html/html/com_dutab.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="保存标签"><param name="Local" value="html/html/com_tabsv.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="切换标签"><param name="Local" value="html/html/com_tabac.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="更改标签尺寸"><param name="Local" value="html/html/com_tabwh.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="标签编号"><param name="Local" value="html/html/com_tabnm.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="标签排序"><param name="Local" value="html/html/com_tabsr.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="重命名标签"><param name="Local" value="html/html/com_tabrn.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="锁定/解锁标签"><param name="Local" value="html/html/com_tabck.htm"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件面板"><!--Management--><param name="Local" value="html/html/par/par_tc_fpanels.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="放大预览面板"><param name="Local" value="html/html/com_quickp.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="放大文件面板"><param name="Local" value="html/html/com_panel.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="面板同步滚动"><param name="Local" value="html/html/com_tctwo.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="水平滚动条-长度"><param name="Local" value="html/html/com_horiz.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="竖直滚动条-位置"><param name="Local" value="html/html/com_posin.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="修改列表项宽度"><param name="Local" value="html/html/com_itemw.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="修改文件面板项高度"><param name="Local" value="html/html/com_itemh.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="修改文件面板宽度"><param name="Local" value="html/html/com_sprtr.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="更改图标尺寸"><param name="Local" value="html/html/com_sizeb.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="更改缩略图尺寸"><param name="Local" value="html/html/com_thumb.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="点击文件面板项"><param name="Local" value="html/html/com_click.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="移动光标"><param name="Local" value="html/html/com_goton.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="定位光标"><param name="Local" value="html/html/com_gotoc.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="选区内移动光标"><param name="Local" value="html/html/com_gotom.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="开启显示模式"><param name="Local" value="html/html/com_modon.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="关闭显示模式"><param name="Local" value="html/html/com_modof.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="切换显示模式"><param name="Local" value="html/html/com_modfn.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="重命名显示信息"><param name="Local" value="html/html/com_sizen.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="更改活跃面板宽度"><param name="Local" value="html/html/com_awide.htm"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="跳转"><!--Management--><param name="Local" value="html/html/par/par_tc_go.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="左面板跳转"><param name="Local" value="html/html/com_pathl.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="右面板跳转"><param name="Local" value="html/html/com_pathr.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="活跃面板跳转"><param name="Local" value="html/html/com_patha.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="对侧面板跳转"><param name="Local" value="html/html/com_patht.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="左面板新标签跳转"><param name="Local" value="html/html/com_pathm.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="右面板新标签跳转"><param name="Local" value="html/html/com_paths.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="活跃面板新标签跳转"><param name="Local" value="html/html/com_pathb.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="对侧面板新标签跳转"><param name="Local" value="html/html/com_pathu.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="平行目录跳转"><param name="Local" value="html/html/com_parll.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="移动焦点到对侧面板"><param name="Local" value="html/html/com_focusp.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="移动焦点到指定面板"><param name="Local" value="html/html/com_focus.htm"><param name="ImageNumber" value="19"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="工具栏"><!--Management--><param name="Local" value="html/html/par/par_tc_bar.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="切换工具栏"><param name="Local" value="html/html/com_barsw.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="删除工具栏换行符"><param name="Local" value="html/html/com_bartr.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="工具栏添加/删除/替换按钮"><param name="Local" value="html/html/com_barbt.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="工具栏删除按钮"><param name="Local" value="html/html/com_bardl.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="工具栏添加按钮"><param name="Local" value="html/html/com_barpl.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="更新顶部工具栏"><param name="Local" value="html/html/com_barupd.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="更新垂直工具栏"><param name="Local" value="html/html/com_barupv.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Bar内搜索"><param name="Local" value="html/html/com_barex.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="新建Bar文件"><param name="Local" value="html/html/com_barnw.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Bar按钮排序-列表"><param name="Local" value="html/html/com_barbl.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Bar按钮排序-文件"><param name="Local" value="html/html/com_barbf.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Bar按钮按命令排序-列表"><param name="Local" value="html/html/com_barsl.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Bar按钮按命令排序-文件"><param name="Local" value="html/html/com_barsf.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="按组分割Bar文件-列表"><param name="Local" value="html/html/com_barss.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="按组分割Bar文件-文件"><param name="Local" value="html/html/com_barsp.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="合并Bar文件"><param name="Local" value="html/html/com_barjn.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="修改工具栏按钮尺寸"><param name="Local" value="html/html/com_buttc.htm"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="字体"><!--Management--><param name="Local" value="html/html/par/par_tc_font.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="设置字号"><param name="Local" value="html/html/com_sizef.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="使用字体"><param name="Local" value="html/html/com_sfont.htm"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="窗口绘制"><!--Management--><param name="Local" value="html/html/par/par_tc_ew.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="停止绘制"><param name="Local" value="html/html/com_drawn.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="允许绘制"><param name="Local" value="html/html/com_drawy.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="启用窗口元素"><param name="Local" value="html/html/com_elmon.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="禁用窗口元素"><param name="Local" value="html/html/com_elmof.htm"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件备注"><!--Management--><param name="Local" value="html/html/par/par_tc_comment.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="修改备注-列表"><param name="Local" value="html/html/com_comns.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="修改备注-对象"><param name="Local" value="html/html/com_comnt.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="删除无效备注-列表"><param name="Local" value="html/html/com_descl.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="删除无效备注-对象"><param name="Local" value="html/html/com_descf.htm"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件关联"><!--Management--><param name="Local" value="html/html/par/par_tc_assoc.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="修改内部关联"><param name="Local" value="html/html/com_assoc.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="应用内部关联"><param name="Local" value="html/html/com_assor.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="开关内部关联"><param name="Local" value="html/html/com_assyn.htm"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="托盘设置"><!--Management--><param name="Local" value="html/html/par/par_tc_setting.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="设置TC最小化至托盘"><param name="Local" value="html/html/com_tctray.htm"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="杂项"><!--Management--><param name="Local" value="html/html/par/par_tc_others.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="重启TC"><param name="Local" value="html/html/com_rstart.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="重启TC并切换32/64位"><param name="Local" value="html/html/com_tc3264.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="打开快捷方式（支持相对路径）"><param name="Local" value="html/html/com_tclnk.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="内部关联打开快捷方式"><param name="Local" value="html/html/com_sslnk.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="注释autorun.cfg指定项"><param name="Local" value="html/html/com_autrn.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="完整拼接Wincmd.ini"><param name="Local" value="html/html/com_wcfull.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="格式化对话框"><param name="Local" value="html/html/com_rundfr.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="用F4打开文件"><param name="Local" value="html/html/com_openup.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="用F4打开文件-自定义菜单"><param name="Local" value="html/html/com_openmn.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="调用右键菜单项"><param name="Local" value="html/html/com_cmenu.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="调用TC批量重命名"><param name="Local" value="html/html/com_multi.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="为TC所有程序创建菜单"><param name="Local" value="html/html/com_allpr.htm"></OBJECT>
+</UL>
+
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件/文件夹"><!--Management--><param name="Local" value="html/html/par/par_ff.htm"><param name="ImageNumber" value="3"></OBJECT>
+<UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="复制"><!--Management--><param name="Local" value="html/html/par/par_ff_copy.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+</UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="复制-列表"><param name="Local" value="html/html/com_copys.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="复制-对象"><param name="Local" value="html/html/com_copyy.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="条件复制"><param name="Local" value="html/html/com_scand.htm"></OBJECT>
+
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="移动"><!--Management--><param name="Local" value="html/html/par/par_ff_move.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="移动-列表"><param name="Local" value="html/html/com_moves.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="移动-对象"><param name="Local" value="html/html/com_movee.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="交换同一目录下文件名"><param name="Local" value="html/html/com_filer.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="交换文件名"><param name="Local" value="html/html/com_filep.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="交换文件名-列表"><param name="Local" value="html/html/com_filel.htm"></OBJECT>
+
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="重命名"><!--Management--><param name="Local" value="html/html/par/par_ff_rename.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="重命名-列表"><param name="Local" value="html/html/com_renms.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="重命名-对象"><param name="Local" value="html/html/com_renmm.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="交换文件名-重命名"><param name="Local" value="html/html/com_renmz.htm"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="删除"><!--Management--><param name="Local" value="html/html/par/par_ff_del.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="删除-列表"><param name="Local" value="html/html/com_delss.htm"><param name="ImageNumber" value="12"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="删除-对象"><param name="Local" value="html/html/com_delsm.htm"><param name="ImageNumber" value="12"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="删除空文件夹-路径列表"><param name="Local" value="html/html/com_empty.htm"><param name="ImageNumber" value="8"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="删除空文件夹-目录"><param name="Local" value="html/html/com_emptt.htm"><param name="ImageNumber" value="8"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="生成列表"><!--Management--><param name="Local" value="html/html/par/par_ff_list.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="对象生成列表"><param name="Local" value="html/html/com_lists.htm"><param name="ImageNumber" value="35"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="路径生成列表"><param name="Local" value="html/html/com_listt.htm"><param name="ImageNumber" value="35"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="快捷方式"><!--Management--><param name="Local" value="html/html/par/par_ff_link.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="创建LNK快捷方式-列表"><param name="Local" value="html/html/com_clink.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="创建LNK快捷方式-对象"><param name="Local" value="html/html/com_clint.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="修改LNK内容-列表"><param name="Local" value="html/html/com_glink.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="修改LNK内容-文件"><param name="Local" value="html/html/com_glint.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="创建URL快捷方式"><param name="Local" value="html/html/com_urllnk.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="为TC按钮创建快捷方式"><param name="Local" value="html/html/com_lnkbt.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="编辑快捷方式"><param name="Local" value="html/html/com_ledit.htm"><param name="ImageNumber" value="19"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="创建文件/文件夹"><!--Management--><param name="Local" value="html/html/par/par_ff_create.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="创建文件"><param name="Local" value="html/html/com_creat.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="创建文件夹"><param name="Local" value="html/html/com_folds.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Checksum 校验"><param name="Local" value="html/html/com_chesh.htm"><param name="ImageNumber" value="31"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="创建空文件/空文件夹"><!--Management--><param name="Local" value="html/html/par/par_ff_struct.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="创建目录结构"><param name="Local" value="html/html/com_strct.htm"><param name="ImageNumber" value="23"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="更改日期"><!--Management--><param name="Local" value="html/html/par/par_ff_date.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="更改日期-列表"><param name="Local" value="html/html/com_modfs.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="更改日期-对象"><param name="Local" value="html/html/com_modft.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="编辑对象日期"><param name="Local" value="html/html/com_modfx.htm"><param name="ImageNumber" value="41"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="更改属性"><!--Management--><param name="Local" value="html/html/par/par_ff_attrib.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="更改属性-列表"><param name="Local" value="html/html/com_attrb.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="更改属性-对象"><param name="Local" value="html/html/com_attrf.htm"><param name="ImageNumber" value="41"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件编解码"><!--Management--><param name="Local" value="html/html/par/par_ff_coded.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件编码-列表"><param name="Local" value="html/html/com_encod.htm"><param name="ImageNumber" value="36"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件编码-文件"><param name="Local" value="html/html/com_enctd.htm"><param name="ImageNumber" value="36"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件解码-列表"><param name="Local" value="html/html/com_decod.htm"><param name="ImageNumber" value="35"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件解码-文件"><param name="Local" value="html/html/com_dectd.htm"><param name="ImageNumber" value="35"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件加解密"><!--Management--><param name="Local" value="html/html/par/par_ff_encrypt.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件加密-列表"><param name="Local" value="html/html/com_encry.htm"><param name="ImageNumber" value="36"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件加密-文件"><param name="Local" value="html/html/com_encrd.htm"><param name="ImageNumber" value="36"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件解密-列表"><param name="Local" value="html/html/com_decry.htm"><param name="ImageNumber" value="35"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件解密-文件"><param name="Local" value="html/html/com_decrd.htm"><param name="ImageNumber" value="35"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="分割、检索、查重"><!--Management--><param name="Local" value="html/html/par/par_ff_splits.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件查重"><param name="Local" value="html/html/com_sdupl.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件分割-列表"><param name="Local" value="html/html/com_splis.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件分割-文件"><param name="Local" value="html/html/com_split.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件合并-列表"><param name="Local" value="html/html/com_joinz.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件合并-文件"><param name="Local" value="html/html/com_joinf.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="提取二进制文件信息-列表"><param name="Local" value="html/html/com_exbns.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="提取二进制文件信息-文件"><param name="Local" value="html/html/com_exbnf.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="隐藏文件/文件夹到多媒体文件"><param name="Local" value="html/html/com_maskz.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="从多媒体文件提取文件/文件夹"><param name="Local" value="html/html/com_maskx.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="更改文件大小-列表"><param name="Local" value="html/html/com_reszs.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="更改文件大小-文件"><param name="Local" value="html/html/com_reszf.htm"><param name="ImageNumber" value="39"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="压缩/解压"><!--Management--><param name="Local" value="html/html/par/par_ff_arhive.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="压缩-列表"><param name="Local" value="html/html/com_zpack.htm"><param name="ImageNumber" value="5"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="压缩-对象"><param name="Local" value="html/html/com_zpacf.htm"><param name="ImageNumber" value="5"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="解压-列表"><param name="Local" value="html/html/com_zunpk.htm"><param name="ImageNumber" value="6"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="解压-文件"><param name="Local" value="html/html/com_zunpf.htm"><param name="ImageNumber" value="6"></OBJECT>
+</UL>
+
+
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="剪贴板"><!--Management--><param name="Local" value="html/html/par/par_clip.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="转换剪贴板内容"><param name="Local" value="html/html/com_bufsr.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="读剪贴板内容"><param name="Local" value="html/html/com_clpget.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="截取剪贴板内容"><param name="Local" value="html/html/com_clpgt.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="剪贴板写文件"><param name="Local" value="html/html/com_clptx.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="剪贴板写旧文本"><param name="Local" value="html/html/com_clptoo.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="剪贴板写截断旧文本"><param name="Local" value="html/html/com_clpto.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="剪贴板写文本"><param name="Local" value="html/html/com_clpup.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="清空剪贴板"><param name="Local" value="html/html/com_clpclr.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="TCIMG命令创建TC按钮"><param name="Local" value="html/html/com_butup.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="监视剪贴板"><param name="Local" value="html/html/com_xclip.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="列表选择写剪贴板"><param name="Local" value="html/html/com_clipb.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="剪贴板浏览器"><param name="Local" value="html/html/com_vclip.htm"><param name="ImageNumber" value="27"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文本"><!--Management--><param name="Local" value="html/html/par/par_test.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="格式化合并文本文件"><param name="Local" value="html/html/com_stext.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="从文本文件提取信息-列表"><param name="Local" value="html/html/com_extra.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="从文本文件提取信息-文件"><param name="Local" value="html/html/com_extrf.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="从XLSX文件提取信息-列表"><param name="Local" value="html/html/com_xlsxt.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="从XLSX文件提取信息-文件"><param name="Local" value="html/html/com_xlsxf.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="修改文本文件内容-列表"><param name="Local" value="html/html/com_textx.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="修改文本文件内容-文件"><param name="Local" value="html/html/com_textt.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="分割文本文件-列表"><param name="Local" value="html/html/com_txtss.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="分割文本文件-文件"><param name="Local" value="html/html/com_txtsp.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="短语计数"><param name="Local" value="html/html/com_count.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="设置HTML编码"><param name="Local" value="html/html/com_chset.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Word拼写检查"><param name="Local" value="html/html/com_words.htm"><param name="ImageNumber" value="39"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="INI"><!--Management--><param name="Local" value="html/html/par/par_ini.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="重命名字段"><param name="Local" value="html/html/com_inisr.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="？重命名相关字段"><param name="Local" value="html/html/com_iniss.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="删除键"><param name="Local" value="html/html/com_inidk.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="写入值"><param name="Local" value="html/html/com_iniwr.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="比较现有值写入值"><param name="Local" value="html/html/com_iniww.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="删除字段"><param name="Local" value="html/html/com_inids.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="批量删除字段"><param name="Local" value="html/html/com_inidn.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="字段键值为空时删除字段"><param name="Local" value="html/html/com_inidx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="条件删除字段"><param name="Local" value="html/html/com_inidz.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="清空字段键值"><param name="Local" value="html/html/com_inidc.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="批量清空字段键值"><param name="Local" value="html/html/com_inidl.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="清空所有字段键值"><param name="Local" value="html/html/com_inidd.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="替换字段键值"><param name="Local" value="html/html/com_inirs.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="替换字段下相同键的值"><param name="Local" value="html/html/com_inirz.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="写字段内容"><param name="Local" value="html/html/com_iniws.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="字母升序排列字段"><param name="Local" value="html/html/com_inist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="字段键与值交换"><param name="Local" value="html/html/com_inivr.htm"><param name="ImageNumber" value="17"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="窗口"><!--Management--><param name="Local" value="html/html/par/par_win.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="隐藏菜单栏"><param name="Local" value="html/html/com_wmenu.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="隐藏系统菜单"><param name="Local" value="html/html/com_smenu.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="唤起菜单项"><param name="Local" value="html/html/com_amenu.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="鼠标移至标题栏并拖动"><param name="Local" value="html/html/com_wdrag.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="保存窗口尺寸"><param name="Local" value="html/html/com_ssize.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="恢复窗口尺寸"><param name="Local" value="html/html/com_rsize.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="隐藏/还原窗口标题"><param name="Local" value="html/html/com_tityn.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="最大化/还原窗口"><param name="Local" value="html/html/com_mxmnz.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="移动窗口"><param name="Local" value="html/html/com_wpull.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="修改窗口标题"><param name="Local" value="html/html/com_title.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="隐藏窗口元素"><param name="Local" value="html/html/com_whide.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="还原隐藏的窗口元素"><param name="Local" value="html/html/com_wshow.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="窗口置顶"><param name="Local" value="html/html/com_ontop.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="设置窗口透明度"><param name="Local" value="html/html/com_trans.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="激活窗口"><param name="Local" value="html/html/com_activ.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="模拟点击/置文本"><param name="Local" value="html/html/com_buttn.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="模拟按键"><param name="Local" value="html/html/com_keybd.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="最小化/还原所有窗口"><param name="Local" value="html/html/com_winmn.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="置窗口图标"><param name="Local" value="html/html/com_iconw.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="隐藏/恢复任务栏图标"><param name="Local" value="html/html/com_thide.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="窗口刷新"><param name="Local" value="html/html/com_redrw.htm"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="运行和进程"><!--Management--><param name="Local" value="html/html/par/par_process.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="运行程序"><param name="Local" value="html/html/com_start.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="打开文件/链接-列表"><param name="Local" value="html/html/com_opens.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="打开文件/链接-对象"><param name="Local" value="html/html/com_openf.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="指定程序打开文件"><param name="Local" value="html/html/com_openz.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="指定程序打开文件-支持菜单"><param name="Local" value="html/html/com_openn.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="打开CHM文件"><param name="Local" value="html/html/com_runhp.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="打开CHM文件并跳转到指定链接"><param name="Local" value="html/html/com_runch.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="重启进程"><param name="Local" value="html/html/com_resrt.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="结束进程"><param name="Local" value="html/html/com_close.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="条件结束进程"><param name="Local" value="html/html/com_closp.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="运行/结束程序"><param name="Local" value="html/html/com_storc.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="等待进程结束"><param name="Local" value="html/html/com_procw.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="调整进程优先级"><param name="Local" value="html/html/com_prior.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="冻结/解冻进程"><param name="Local" value="html/html/com_freez.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="释放进程内存"><param name="Local" value="html/html/com_dumpp.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="监视进程"><param name="Local" value="html/html/com_logpr.htm"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="系统"><!--Management--><param name="Local" value="html/html/par/par_sistem.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="清空回收站"><param name="Local" value="html/html/com_rempty.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="调整系统音量"><param name="Local" value="html/html/com_sound.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="弹出CD托盘"><param name="Local" value="html/html/com_drive.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="切换输入语言1"><param name="Local" value="html/html/com_langs.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="切换输入语言2"><param name="Local" value="html/html/com_lnkey.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="安全弹出设备"><param name="Local" value="html/html/com_eject.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="关闭显示屏"><param name="Local" value="html/html/com_monof.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="更改屏幕分辨率"><param name="Local" value="html/html/com_monrs.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="注销/关机/重启"><param name="Local" value="html/html/com_shutd.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="显示安全对话框"><param name="Local" value="html/html/com_propes.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="调用系统对话框/程序"><param name="Local" value="html/html/com_runcm.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="键盘鼠标锁定"><param name="Local" value="html/html/com_block.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="显示系统字体"><param name="Local" value="html/html/com_fontf.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Word显示系统字体"><param name="Local" value="html/html/com_fontwd.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="隐藏/显示任务栏"><param name="Local" value="html/html/com_taskb.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="清除托盘空图标"><param name="Local" value="html/html/com_trayx.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="右击托盘图标"><param name="Local" value="html/html/com_trayk.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="隐藏开始菜单"><param name="Local" value="html/html/com_syssm.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="启用菜单项提示"><param name="Local" value="html/html/com_mhint.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="关闭系统缩放"><param name="Local" value="html/html/com_scale.htm"><param name="ImageNumber" value="31"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="注册表"><!--Management--><param name="Local" value="html/html/par/par_reg.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="打开分支"><param name="Local" value="html/html/com_regup.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="导入REG文件"><param name="Local" value="html/html/com_regim.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="导出REG文件"><param name="Local" value="html/html/com_regxt.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="删除项/值"><param name="Local" value="html/html/com_regdl.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="复制表项"><param name="Local" value="html/html/com_regcr.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="新建表项"><param name="Local" value="html/html/com_regwr.htm"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="获取信息"><!--Management--><param name="Local" value="html/html/par/par_info.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WDX插件展示文件信息"><param name="Local" value="html/html/com_inplg.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="显示文件信息"><param name="Local" value="html/html/com_versn.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="显示系统设备"><param name="Local" value="html/html/com_device.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="获取各种信息"><param name="Local" value="html/html/com_infos.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="获取系统信息"><param name="Local" value="html/html/com_nfsis.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="按模板从文件中获取信息-列表"><param name="Local" value="html/html/com_extxs.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="按模板从文件中获取信息-文件"><param name="Local" value="html/html/com_extxt.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="从VBS脚本获取信息"><param name="Local" value="html/html/com_funvb.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="从JS脚本获取信息"><param name="Local" value="html/html/com_funjs.htm"><param name="ImageNumber" value="31"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="从AU3脚本获取信息"><param name="Local" value="html/html/com_funau.htm"><param name="ImageNumber" value="31"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="网络"><!--Management--><param name="Local" value="html/html/par/par_net.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="启用/禁用网络连接"><param name="Local" value="html/html/com_intcn.htm"><param name="ImageNumber" value="15"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="浏览链接"><param name="Local" value="html/html/com_brwsr.htm"><param name="ImageNumber" value="15"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="下载链接-列表"><param name="Local" value="html/html/com_downl.htm"><param name="ImageNumber" value="15"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="下载链接-单独"><param name="Local" value="html/html/com_downh.htm"><param name="ImageNumber" value="15"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="合并网页到文件"><param name="Local" value="html/html/com_urlxt.htm"><param name="ImageNumber" value="15"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="转换网页内容到文件-列表"><param name="Local" value="html/html/com_urlra.htm"><param name="ImageNumber" value="15"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="转换网页内容到文件-单独"><param name="Local" value="html/html/com_urlrf.htm"><param name="ImageNumber" value="15"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="网页截图-列表"><param name="Local" value="html/html/com_websc.htm"><param name="ImageNumber" value="15"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="网页截图-单独"><param name="Local" value="html/html/com_webss.htm"><param name="ImageNumber" value="15"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="上传图片-列表"><param name="Local" value="html/html/com_picus.htm"><param name="ImageNumber" value="15"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="上传图片-文件"><param name="Local" value="html/html/com_picup.htm"><param name="ImageNumber" value="15"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="上传文件-列表"><param name="Local" value="html/html/com_uplds.htm"><param name="ImageNumber" value="15"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="上传文件-文件"><param name="Local" value="html/html/com_upldf.htm"><param name="ImageNumber" value="15"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FTP"><!--Management--><param name="Local" value="html/html/par/par_net.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="建立FTP连接"><param name="Local" value="html/html/com_ftpset.htm"><param name="ImageNumber" value="13"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="连接到FTP服务器"><param name="Local" value="html/html/com_ftpcn.htm"><param name="ImageNumber" value="13"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="传输文件/文件夹-列表"><param name="Local" value="html/html/com_ftpgo.htm"><param name="ImageNumber" value="13"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="传输文件/文件夹-对象"><param name="Local" value="html/html/com_ftpgf.htm"><param name="ImageNumber" value="13"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="创建FTP目录列表-列表"><param name="Local" value="html/html/com_ftpls.htm"><param name="ImageNumber" value="13"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="创建FTP目录列表-单独"><param name="Local" value="html/html/com_ftplf.htm"><param name="ImageNumber" value="13"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="鼠标操作"><!--Management--><param name="Local" value="html/html/par/par_mouse.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="限制鼠标位置"><param name="Local" value="html/html/com_stopm.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="解除鼠标限制"><param name="Local" value="html/html/com_startm.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="鼠标现行坐标"><param name="Local" value="html/html/com_posxy.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="循环点击坐标"><param name="Local" value="html/html/com_clicx.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="移动鼠标"><param name="Local" value="html/html/com_mouse.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="保存鼠标坐标"><param name="Local" value="html/html/com_csize.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="恢复鼠标坐标"><param name="Local" value="html/html/com_xsize.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="获取选中区域坐标"><param name="Local" value="html/html/com_xypos.htm"><param name="ImageNumber" value="19"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="图标"><!--Management--><param name="Local" value="html/html/par/par_icon.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="浏览文件图标"><param name="Local" value="html/html/com_icovw.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="指定文件夹图标-列表"><param name="Local" value="html/html/com_icofs.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="指定文件夹图标-单独"><param name="Local" value="html/html/com_icoft.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="新建图标库"><param name="Local" value="html/html/com_lbicl.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="从文件提取图标-列表"><param name="Local" value="html/html/com_exics.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="从文件提取图标-文件"><param name="Local" value="html/html/com_exicn.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="图片转换到图标-列表"><param name="Local" value="html/html/com_iconv.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="图片转换到图标-文件"><param name="Local" value="html/html/com_iconf.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="从图片列表新建图标"><param name="Local" value="html/html/com_iconn.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="图标提取图片-列表"><param name="Local" value="html/html/com_icomm.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="图标提取图片-文件"><param name="Local" value="html/html/com_icomf.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="添加/删除图标尺寸-列表"><param name="Local" value="html/html/com_icods.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="添加/删除图标尺寸-文件"><param name="Local" value="html/html/com_icodf.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="添加/删除图标尺寸到图标库-列表"><param name="Local" value="html/html/com_iclds.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="添加/删除图标尺寸到图标库-文件"><param name="Local" value="html/html/com_icldf.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="更新缓存图标"><param name="Local" value="html/html/com_icache.htm"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="图像"><!--Management--><param name="Local" value="html/html/par/par_image.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="图像调整-列表"><param name="Local" value="html/html/com_imgcn.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="图像调整-文件"><param name="Local" value="html/html/com_imgcf.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="应用滤镜-列表"><param name="Local" value="html/html/com_imgfs.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="应用滤镜-文件"><param name="Local" value="html/html/com_imgff.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="替换颜色-列表"><param name="Local" value="html/html/com_picss.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="替换颜色-文件"><param name="Local" value="html/html/com_picsf.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="图像切片-列表"><param name="Local" value="html/html/com_imgjs.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="图像切片-文件"><param name="Local" value="html/html/com_imgjf.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="图像拼接"><param name="Local" value="html/html/com_imgnz.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="新建纯色图片"><param name="Local" value="html/html/com_imgcr.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="新建渐变图片"><param name="Local" value="html/html/com_imgcg.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="从文本行新建图片"><param name="Local" value="html/html/com_imgtz.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="从文本新建图片"><param name="Local" value="html/html/com_imgtx.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="创建符号图标"><param name="Local" value="html/html/com_symxx.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="截图"><param name="Local" value="html/html/com_scren.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="查看图片"><param name="Local" value="html/html/com_imgvw.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="查看缩略图"><param name="Local" value="html/html/com_imgth.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="查看HTML中图片的缩略图"><param name="Local" value="html/html/com_imght.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="预览图片1"><param name="Local" value="html/html/com_imgwh.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="悬停预览图片"><param name="Local" value="html/html/com_prevw.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="预览图片2"><param name="Local" value="html/html/com_imggo.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="预览图片3"><param name="Local" value="html/html/com_imgup.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="复制图像到剪贴板"><param name="Local" value="html/html/com_iclip.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="导出剪贴板到图片"><param name="Local" value="html/html/com_clipi.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="设为桌面壁纸"><param name="Local" value="html/html/com_sdesk.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="批量设为桌面壁纸"><param name="Local" value="html/html/com_sdess.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="添加EXIF信息-列表"><param name="Local" value="html/html/com_exifs.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="添加EXIF信息-文件"><param name="Local" value="html/html/com_exiff.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="GIF-提取图片-列表"><param name="Local" value="html/html/com_gifcs.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="GIF-提取图片-文件"><param name="Local" value="html/html/com_gifcn.htm"><param name="ImageNumber" value="33"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="从图片列表新建GIF"><param name="Local" value="html/html/com_gifnn.htm"><param name="ImageNumber" value="33"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="MP3标签"><!--Management--><param name="Local" value="html/html/par/par_sound.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="MP3提取封面-列表"><param name="Local" value="html/html/com_mp3is.htm"><param name="ImageNumber" value="29"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="MP3提取封面-文件"><param name="Local" value="html/html/com_mp3im.htm"><param name="ImageNumber" value="29"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="转换MP3标签-列表"><param name="Local" value="html/html/com_mp3ws.htm"><param name="ImageNumber" value="29"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="转换MP3标签-文件"><param name="Local" value="html/html/com_mp3wf.htm"><param name="ImageNumber" value="29"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="音频"><!--Management--><param name="Local" value="html/html/par/par_sound.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="从文本创建WAV音频-列表"><param name="Local" value="html/html/com_txwvs.htm"><param name="ImageNumber" value="29"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="从文本创建WAV音频-文本"><param name="Local" value="html/html/com_txwvf.htm"><param name="ImageNumber" value="29"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="自动化"><!--Management--><param name="Local" value="html/html/par/par_automat.htm"><param name="ImageNumber" value="3"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="循环与条件"><!--Management--><param name="Local" value="html/html/par/par_forif.htm"><param name="ImageNumber" value="2"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="循环<FOR>...<NEXT>"><param name="Local" value="html/html/com_cycles.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="条件<IF>...<ENDIF>"><param name="Local" value="html/html/com_ifthen.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="条件<SELECT>...<ENDSELECT>"><param name="Local" value="html/html/com_slects.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="条件<SWITCH>...<ENDSWITCH>"><param name="Local" value="html/html/com_swcths.htm"><param name="ImageNumber" value="17"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="数据传递（系列命令）"><!--Management--><param name="Local" value="html/html/par/par_ssend.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="主要命令sends"><param name="Local" value="html/html/com_sends.htm"><param name="ImageNumber" value="37"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="其余命令只有全局变量不同"><param name="Local" value="html/html/com_sends.htm"><param name="ImageNumber" value="37"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="aends"><param name="Local" value="html/html/com_aends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="bends"><param name="Local" value="html/html/com_bends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="cends"><param name="Local" value="html/html/com_cends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="dends"><param name="Local" value="html/html/com_dends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="eends"><param name="Local" value="html/html/com_eends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="fends"><param name="Local" value="html/html/com_fends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="gends"><param name="Local" value="html/html/com_gends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="hends"><param name="Local" value="html/html/com_hends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="iends"><param name="Local" value="html/html/com_iends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="jends"><param name="Local" value="html/html/com_jends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="kends"><param name="Local" value="html/html/com_kends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="lends"><param name="Local" value="html/html/com_lends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="mends"><param name="Local" value="html/html/com_mends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="nends"><param name="Local" value="html/html/com_nends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="oends"><param name="Local" value="html/html/com_oends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="pends"><param name="Local" value="html/html/com_pends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="qends"><param name="Local" value="html/html/com_qends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="rends"><param name="Local" value="html/html/com_rends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="tends"><param name="Local" value="html/html/com_tends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="uends"><param name="Local" value="html/html/com_uends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="vends"><param name="Local" value="html/html/com_vends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="wends"><param name="Local" value="html/html/com_wends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="xends"><param name="Local" value="html/html/com_xends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="yends"><param name="Local" value="html/html/com_yends.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="zends"><param name="Local" value="html/html/com_zends.htm"><param name="ImageNumber" value="17"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="列表传递（系列命令）"><!--Management--><param name="Local" value="html/html/par/par_llisst.htm"><param name="ImageNumber" value="2"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="主要命令slist"><param name="Local" value="html/html/com_slist.htm"><param name="ImageNumber" value="37"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="其余命令只有全局变量不同"><param name="Local" value="html/html/com_slist.htm"><param name="ImageNumber" value="37"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="alist"><param name="Local" value="html/html/com_alist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="blist"><param name="Local" value="html/html/com_blist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="clist"><param name="Local" value="html/html/com_clist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="dlist"><param name="Local" value="html/html/com_dlist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="elist"><param name="Local" value="html/html/com_elist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="flist"><param name="Local" value="html/html/com_flist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="glist"><param name="Local" value="html/html/com_glist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="hlist"><param name="Local" value="html/html/com_hlist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ilist"><param name="Local" value="html/html/com_ilist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="jlist"><param name="Local" value="html/html/com_jlist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="klist"><param name="Local" value="html/html/com_klist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="llist"><param name="Local" value="html/html/com_llist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="mlist"><param name="Local" value="html/html/com_mlist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="nlist"><param name="Local" value="html/html/com_nlist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="olist"><param name="Local" value="html/html/com_olist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="plist"><param name="Local" value="html/html/com_plist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="qlist"><param name="Local" value="html/html/com_qlist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="rlist"><param name="Local" value="html/html/com_rlist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="tlist"><param name="Local" value="html/html/com_tlist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ulist"><param name="Local" value="html/html/com_ulist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="vlist"><param name="Local" value="html/html/com_vlist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="wlist"><param name="Local" value="html/html/com_wlist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="xlist"><param name="Local" value="html/html/com_xlist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ylist"><param name="Local" value="html/html/com_ylist.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="zlist"><param name="Local" value="html/html/com_zlist.htm"><param name="ImageNumber" value="17"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="附加信息传递（系列命令）"><!--Management--><param name="Local" value="html/html/par/par_xlisxx.htm"><param name="ImageNumber" value="2"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="主要命令listx"><param name="Local" value="html/html/com_listx.htm"><param name="ImageNumber" value="37"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="其余命令只有全局变量不同"><param name="Local" value="html/html/com_listx.htm"><param name="ImageNumber" value="37"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="aistx"><param name="Local" value="html/html/com_aistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="bistx"><param name="Local" value="html/html/com_bistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="cistx"><param name="Local" value="html/html/com_cistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="distx"><param name="Local" value="html/html/com_distx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="eistx"><param name="Local" value="html/html/com_eistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="fistx"><param name="Local" value="html/html/com_fistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="gistx"><param name="Local" value="html/html/com_gistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="histx"><param name="Local" value="html/html/com_histx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="iistx"><param name="Local" value="html/html/com_iistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="jistx"><param name="Local" value="html/html/com_jistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="kistx"><param name="Local" value="html/html/com_kistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="mistx"><param name="Local" value="html/html/com_mistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="nistx"><param name="Local" value="html/html/com_nistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="oistx"><param name="Local" value="html/html/com_oistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="pistx"><param name="Local" value="html/html/com_pistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="qistx"><param name="Local" value="html/html/com_qistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ristx"><param name="Local" value="html/html/com_ristx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="sistx"><param name="Local" value="html/html/com_sistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="tistx"><param name="Local" value="html/html/com_tistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="uistx"><param name="Local" value="html/html/com_uistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="vistx"><param name="Local" value="html/html/com_vistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="wistx"><param name="Local" value="html/html/com_wistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="xistx"><param name="Local" value="html/html/com_xistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="yistx"><param name="Local" value="html/html/com_yistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="zistx"><param name="Local" value="html/html/com_zistx.htm"><param name="ImageNumber" value="17"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="创建二维数组"><!--Management--><param name="Local" value="html/html/par/par_2dinf.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="主要命令anf2d"><param name="Local" value="html/html/com_anf2d.htm"><param name="ImageNumber" value="37"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="其余命令只有全局变量不同"><param name="Local" value="html/html/com_anf2d.htm"><param name="ImageNumber" value="37"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="bnf2d"><param name="Local" value="html/html/com_bnf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="cnf2d"><param name="Local" value="html/html/com_cnf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="dnf2d"><param name="Local" value="html/html/com_dnf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="enf2d"><param name="Local" value="html/html/com_enf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="fnf2d"><param name="Local" value="html/html/com_fnf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="gnf2d"><param name="Local" value="html/html/com_gnf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="hnf2d"><param name="Local" value="html/html/com_hnf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="inf2d"><param name="Local" value="html/html/com_inf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="jnf2d"><param name="Local" value="html/html/com_jnf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="knf2d"><param name="Local" value="html/html/com_knf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="lnf2d"><param name="Local" value="html/html/com_lnf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="mnf2d"><param name="Local" value="html/html/com_mnf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="nnf2d"><param name="Local" value="html/html/com_nnf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="onf2d"><param name="Local" value="html/html/com_onf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="pnf2d"><param name="Local" value="html/html/com_pnf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="qnf2d"><param name="Local" value="html/html/com_qnf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="rnf2d"><param name="Local" value="html/html/com_rnf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="snf2d"><param name="Local" value="html/html/com_snf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="tnf2d"><param name="Local" value="html/html/com_tnf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="unf2d"><param name="Local" value="html/html/com_unf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="vnf2d"><param name="Local" value="html/html/com_vnf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="wnf2d"><param name="Local" value="html/html/com_wnf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="xnf2d"><param name="Local" value="html/html/com_xnf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ynf2d"><param name="Local" value="html/html/com_ynf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="znf2d"><param name="Local" value="html/html/com_znf2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="变换二维数组"><!--Management--><param name="Local" value="html/html/par/par_2darr.htm"><param name="ImageNumber" value="2"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="主要命令arr2d"><param name="Local" value="html/html/com_arr2d.htm"><param name="ImageNumber" value="37"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="其余命令只有全局变量不同"><param name="Local" value="html/html/com_arr2d.htm"><param name="ImageNumber" value="37"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="brr2d"><param name="Local" value="html/html/com_brr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="crr2d"><param name="Local" value="html/html/com_crr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="drr2d"><param name="Local" value="html/html/com_drr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="err2d"><param name="Local" value="html/html/com_err2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="frr2d"><param name="Local" value="html/html/com_frr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="grr2d"><param name="Local" value="html/html/com_grr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="hrr2d"><param name="Local" value="html/html/com_hrr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="irr2d"><param name="Local" value="html/html/com_irr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="jrr2d"><param name="Local" value="html/html/com_jrr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="krr2d"><param name="Local" value="html/html/com_krr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="lrr2d"><param name="Local" value="html/html/com_lrr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="mrr2d"><param name="Local" value="html/html/com_mrr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="nrr2d"><param name="Local" value="html/html/com_nrr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="orr2d"><param name="Local" value="html/html/com_orr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="prr2d"><param name="Local" value="html/html/com_prr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="qrr2d"><param name="Local" value="html/html/com_qrr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="rrr2d"><param name="Local" value="html/html/com_rrr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="srr2d"><param name="Local" value="html/html/com_srr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="trr2d"><param name="Local" value="html/html/com_trr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="urr2d"><param name="Local" value="html/html/com_urr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="vrr2d"><param name="Local" value="html/html/com_vrr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="wrr2d"><param name="Local" value="html/html/com_wrr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="xrr2d"><param name="Local" value="html/html/com_xrr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="yrr2d"><param name="Local" value="html/html/com_yrr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="zrr2d"><param name="Local" value="html/html/com_zrr2d.htm"><param name="ImageNumber" value="17"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="保存数组到文件"><param name="Local" value="html/html/com_asave.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="指定程序查看数组元素"><param name="Local" value="html/html/com_xopen.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="数据储存容器"><param name="Local" value="html/html/com_inbox.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="延时"><param name="Local" value="html/html/com_pause.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="运行命令"><param name="Local" value="html/html/com_cmdcm.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="运行Base64编码命令"><param name="Local" value="html/html/com_cmd64.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="从文件运行多行命令"><param name="Local" value="html/html/com_macro.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="创建调用TCIMG命令的菜单"><param name="Local" value="html/html/com_zmenu.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="调用zmenu菜单"><param name="Local" value="html/html/com_zmenz.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="启用全局变量"><param name="Local" value="html/html/com_global.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="锁定全局变量"><param name="Local" value="html/html/com_noglob.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="启用/禁用相对路径转换"><param name="Local" value="html/html/com_envgt.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="调用前按键触发<HOTKEY=...>"><param name="Local" value="html/html/com_hotkiy.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="调用后按键触发<PRESS=...>"><param name="Local" value="html/html/com_pressy.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="调用后按键触发<PRESW=...>"><param name="Local" value="html/html/com_presww.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="定时触发<TiME=...>"><param name="Local" value="html/html/com_timess.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="非命令字符串"><param name="Local" value="html/html/com_string.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="传递字符串"><param name="Local" value="html/html/com_carry.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="清理TCIMG临时文件夹"><param name="Local" value="html/html/com_tempxx.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="清理指定TCIMG临时文件夹"><param name="Local" value="html/html/com_tempz.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="结束TCIMG"><param name="Local" value="html/html/com_toexit.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="启动另一TCIMG执行命令"><param name="Local" value="html/html/com_dubls.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="以不同进程名运行TCIMG"><param name="Local" value="html/html/com_renew.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="返回对象的全路径"><param name="Local" value="html/html/com_cname.htm"><param name="ImageNumber" value="41"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Autoit"><!--Management--><param name="Local" value="html/html/par/par_aa_functions.htm"><param name="ImageNumber" value="3"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="执行函数表达式"><param name="Local" value="html/html/com_exect.htm"><param name="ImageNumber" value="17"></OBJECT>
+
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="数学函数"><!--Management--><param name="Local" value="html/html/par/par_aa_math.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Abs"><param name="Local" value="html/html/fun/abs.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ACos"><param name="Local" value="html/html/fun/acos.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ASin"><param name="Local" value="html/html/fun/asin.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ATan"><param name="Local" value="html/html/fun/atan.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="BitAND"><param name="Local" value="html/html/fun/bitand.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="BitNOT"><param name="Local" value="html/html/fun/bitnot.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="BitOR"><param name="Local" value="html/html/fun/bitor.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="BitRotate"><param name="Local" value="html/html/fun/bitrotate.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="BitShift"><param name="Local" value="html/html/fun/bitshift.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="BitXOR"><param name="Local" value="html/html/fun/bitxor.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Ceiling"><param name="Local" value="html/html/fun/ceiling.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Cos"><param name="Local" value="html/html/fun/cos.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Exp"><param name="Local" value="html/html/fun/exp.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Floor"><param name="Local" value="html/html/fun/floor.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Log"><param name="Local" value="html/html/fun/log.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Mod"><param name="Local" value="html/html/fun/mod.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Random"><param name="Local" value="html/html/fun/random.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Round"><param name="Local" value="html/html/fun/round.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Sin"><param name="Local" value="html/html/fun/sin.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Sqrt"><param name="Local" value="html/html/fun/sqrt.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Tan"><param name="Local" value="html/html/fun/tan.htm"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="变量转换"><!--Management--><param name="Local" value="html/html/par/par_aa_varconv.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Asc"><param name="Local" value="html/html/fun/asc.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="AscW"><param name="Local" value="html/html/fun/ascw.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Assign"><param name="Local" value="html/html/fun/assign.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Binary"><param name="Local" value="html/html/fun/binary.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="BinaryLen"><param name="Local" value="html/html/fun/binarylen.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="BinaryMid"><param name="Local" value="html/html/fun/binarymid.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="BinaryToString"><param name="Local" value="html/html/fun/binarytostrinj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Chr"><param name="Local" value="html/html/fun/chr.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ChrW"><param name="Local" value="html/html/fun/chrw.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Dec"><param name="Local" value="html/html/fun/dec.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Eval"><param name="Local" value="html/html/fun/eval.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Execute"><param name="Local" value="html/html/fun/execute.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Hex"><param name="Local" value="html/html/fun/hex.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="HWnd"><param name="Local" value="html/html/fun/hwnd.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Int"><param name="Local" value="html/html/fun/int.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IsArray"><param name="Local" value="html/html/fun/isarray.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IsBinary"><param name="Local" value="html/html/fun/isbinary.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IsBool"><param name="Local" value="html/html/fun/isbool.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IsDeclared"><param name="Local" value="html/html/fun/isdeclared.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IsDllStruct"><param name="Local" value="html/html/fun/isdllstruct.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IsFloat"><param name="Local" value="html/html/fun/isfloat.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IsHWnd"><param name="Local" value="html/html/fun/ishwnd.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IsInt"><param name="Local" value="html/html/fun/isint.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IsNumber"><param name="Local" value="html/html/fun/isnumber.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IsPtr"><param name="Local" value="html/html/fun/isptr.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IsString"><param name="Local" value="html/html/fun/isstrinj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Number"><param name="Local" value="html/html/fun/number.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Ptr"><param name="Local" value="html/html/fun/ptr.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="String"><param name="Local" value="html/html/fun/strinj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringToBinary"><param name="Local" value="html/html/fun/strinjtobinary.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="UBound"><param name="Local" value="html/html/fun/ubound.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="VarGetType"><param name="Local" value="html/html/fun/vargettype.htm"></OBJECT>
+
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="字符串"><!--Management--><param name="Local" value="html/html/par/par_aa_strinjs.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringAddCR"><param name="Local" value="html/html/fun/strinjaddcr.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringCompare"><param name="Local" value="html/html/fun/strinjcompare.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringInStr"><param name="Local" value="html/html/fun/strinjinstr.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringIsAlNum"><param name="Local" value="html/html/fun/strinjisalnum.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringIsAlpha"><param name="Local" value="html/html/fun/strinjisalpha.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringIsDigit"><param name="Local" value="html/html/fun/strinjisdigit.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringIsFloat"><param name="Local" value="html/html/fun/strinjisfloat.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringFormat"><param name="Local" value="html/html/fun/strinjformat.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringFromASCIIArray"><param name="Local" value="html/html/fun/strinjfromasciiarray.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringIsASCII"><param name="Local" value="html/html/fun/strinjisascii.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringIsInt"><param name="Local" value="html/html/fun/strinjisint.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringIsLower"><param name="Local" value="html/html/fun/strinjislower.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringIsSpace"><param name="Local" value="html/html/fun/strinjisspace.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringIsUpper"><param name="Local" value="html/html/fun/strinjisupper.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringIsXDigit"><param name="Local" value="html/html/fun/strinjisxdigit.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringLeft"><param name="Local" value="html/html/fun/strinjleft.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringLen"><param name="Local" value="html/html/fun/strinjlen.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringLower"><param name="Local" value="html/html/fun/strinjlower.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringMid"><param name="Local" value="html/html/fun/strinjmid.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringRegExp"><param name="Local" value="html/html/fun/strinjrejexp.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringRegExpReplace"><param name="Local" value="html/html/fun/strinjrejexpreplace.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringReplace"><param name="Local" value="html/html/fun/strinjreplace.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringReverse"><param name="Local" value="html/html/fun/strinjreverse.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringRight"><param name="Local" value="html/html/fun/strinjright.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringSplit"><param name="Local" value="html/html/fun/strinjjplit.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringStripCR"><param name="Local" value="html/html/fun/strinjstripcr.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringStripWS"><param name="Local" value="html/html/fun/strinjstripws.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringToASCIIArray"><param name="Local" value="html/html/fun/strinjtoasciiarray.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringTrimLeft"><param name="Local" value="html/html/fun/strinjtrimleft.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringTrimRight"><param name="Local" value="html/html/fun/strinjtrimright.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StringUpper"><param name="Local" value="html/html/fun/strinjupper.htm"></OBJECT>
+
+</UL>
+
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="环境变量"><!--Management--><param name="Local" value="html/html/par/par_aa_environment.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ClipGet"><param name="Local" value="html/html/fun/clipget.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ClipPut"><param name="Local" value="html/html/fun/clipput.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="EnvGet"><param name="Local" value="html/html/fun/envget.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="EnvSet"><param name="Local" value="html/html/fun/envset.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="EnvUpdate"><param name="Local" value="html/html/fun/envupdate.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="MemGetStats"><param name="Local" value="html/html/fun/memgetstats.htm"></OBJECT>
+
+</UL>
+
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文件、目录、磁盘"><!--Management--><param name="Local" value="html/html/par/par_aa_file.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DriveGetDrive"><param name="Local" value="html/html/fun/drivjgetdrivj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DriveGetFileSystem"><param name="Local" value="html/html/fun/drivjgetfilesystem.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DriveGetLabel"><param name="Local" value="html/html/fun/drivjgetlabel.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DriveSetLabel"><param name="Local" value="html/html/fun/drivjsetlabel.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DriveGetSerial"><param name="Local" value="html/html/fun/drivjgetserial.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DriveGetType"><param name="Local" value="html/html/fun/drivjgettype.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DriveMapAdd"><param name="Local" value="html/html/fun/drivjmapadd.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DriveMapDel"><param name="Local" value="html/html/fun/drivjmapdel.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DriveMapGet"><param name="Local" value="html/html/fun/drivjmapget.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DriveSpaceFree"><param name="Local" value="html/html/fun/drivjspacefree.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DriveSpaceTotal"><param name="Local" value="html/html/fun/drivjspacetotal.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DriveStatus"><param name="Local" value="html/html/fun/drivjstatus.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DirCopy"><param name="Local" value="html/html/fun/dircopy.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DirCreate"><param name="Local" value="html/html/fun/dirjreate.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DirMove"><param name="Local" value="html/html/fun/dirmove.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DirRemove"><param name="Local" value="html/html/fun/dirremove.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DirGetSize"><param name="Local" value="html/html/fun/dirgetsize.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileOpen"><param name="Local" value="html/html/fun/fileopen.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileClose"><param name="Local" value="html/html/fun/fileclosj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileRead"><param name="Local" value="html/html/fun/filejead.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileReadLine"><param name="Local" value="html/html/fun/filejeadline.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileReadToArray"><param name="Local" value="html/html/fun/filejeadtoarray.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileWrite"><param name="Local" value="html/html/fun/filewrite.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileWriteLine"><param name="Local" value="html/html/fun/filewriteline.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileCopy"><param name="Local" value="html/html/fun/filecopy.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileMove"><param name="Local" value="html/html/fun/filemove.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileDelete"><param name="Local" value="html/html/fun/filedelete.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileRecycle"><param name="Local" value="html/html/fun/filejecycle.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileFindFirstFile"><param name="Local" value="html/html/fun/filefindfirstfile.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileFindNextFile"><param name="Local" value="html/html/fun/filefindnextfile.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileGetAttrib"><param name="Local" value="html/html/fun/filegetattrib.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileSetAttrib"><param name="Local" value="html/html/fun/filesetattrib.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileGetTime"><param name="Local" value="html/html/fun/filegettime.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileSetTime"><param name="Local" value="html/html/fun/filesettime.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileGetSize"><param name="Local" value="html/html/fun/filegetsize.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileGetVersion"><param name="Local" value="html/html/fun/filegetversion.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileExists"><param name="Local" value="html/html/fun/fileexists.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileGetLongName"><param name="Local" value="html/html/fun/filegetlongname.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileGetShortName"><param name="Local" value="html/html/fun/filegetshortname.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileChangeDir"><param name="Local" value="html/html/fun/filechangedir.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileSelectFolder"><param name="Local" value="html/html/fun/fileselectfolder.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileSaveDialog"><param name="Local" value="html/html/fun/filesavedialog.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FileOpenDialog"><param name="Local" value="html/html/fun/fileopendialog.htm"></OBJECT>
+
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="INI"><!--Management--><param name="Local" value="html/html/par/par_aa_ini.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IniDelete"><param name="Local" value="html/html/fun/inidelete.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IniRead"><param name="Local" value="html/html/fun/iniread.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IniReadSection"><param name="Local" value="html/html/fun/inireadsection.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IniReadSectionNames"><param name="Local" value="html/html/fun/inireadsectionnames.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IniRenameSection"><param name="Local" value="html/html/fun/inirenamesection.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IniWrite"><param name="Local" value="html/html/fun/iniwjite.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IniWriteSection"><param name="Local" value="html/html/fun/iniwjitesection.htm"></OBJECT>
+
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="窗口"><!--Management--><param name="Local" value="html/html/par/par_aa_windows.htm"><param name="ImageNumber" value="3"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="控件"><!--Management--><param name="Local" value="html/html/par/par_aa_control.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ControlClick"><param name="Local" value="html/html/fun/controlclicj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ControlCommand"><param name="Local" value="html/html/fun/controlcommand.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ControlDisable"><param name="Local" value="html/html/fun/controldisable.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ControlEnable"><param name="Local" value="html/html/fun/controlenable.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ControlFocus"><param name="Local" value="html/html/fun/controlfojus.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ControlGetFocus"><param name="Local" value="html/html/fun/controlgetfojus.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ControlGetHandle"><param name="Local" value="html/html/fun/controlgethandle.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ControlGetPos"><param name="Local" value="html/html/fun/controlgetpos.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ControlGetText"><param name="Local" value="html/html/fun/controlgettext.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ControlHide"><param name="Local" value="html/html/fun/controlhide.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ControlShow"><param name="Local" value="html/html/fun/controlshow.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ControlListView"><param name="Local" value="html/html/fun/controllisjview.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ControlMove"><param name="Local" value="html/html/fun/controlmove.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ControlSend"><param name="Local" value="html/html/fun/controlsend.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ControlSetText"><param name="Local" value="html/html/fun/controlsettext.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="StatusbarGetText"><param name="Local" value="html/html/fun/statusbargettext.htm"></OBJECT>
+
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinActivate"><param name="Local" value="html/html/fun/winactijate.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinActive"><param name="Local" value="html/html/fun/winactije.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinClose"><param name="Local" value="html/html/fun/winclosj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinExists"><param name="Local" value="html/html/fun/winexists.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinFlash"><param name="Local" value="html/html/fun/winflash.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinGetCaretPos"><param name="Local" value="html/html/fun/wingetcaretpos.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinGetClassList"><param name="Local" value="html/html/fun/wingetclasslisj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinGetClientSize"><param name="Local" value="html/html/fun/wingetclientsize.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinGetHandle"><param name="Local" value="html/html/fun/wingethandle.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinGetPos"><param name="Local" value="html/html/fun/wingetpos.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinGetProcess"><param name="Local" value="html/html/fun/wingetprocess.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinGetState"><param name="Local" value="html/html/fun/wingetstate.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinGetText"><param name="Local" value="html/html/fun/wingettext.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinGetTitle"><param name="Local" value="html/html/fun/wingettitlj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinKill"><param name="Local" value="html/html/fun/winkill.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinList"><param name="Local" value="html/html/fun/winlisj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinMenuSelectItem"><param name="Local" value="html/html/fun/winmenuselectitem.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinMinimizeAll"><param name="Local" value="html/html/fun/winminimizeall.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinMinimizeAllUndo"><param name="Local" value="html/html/fun/winminimizeallundo.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinMove"><param name="Local" value="html/html/fun/winmove.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinSetOnTop"><param name="Local" value="html/html/fun/winsetontoj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinSetState"><param name="Local" value="html/html/fun/winsetstate.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinSetTitle"><param name="Local" value="html/html/fun/winsettitlj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinSetTrans"><param name="Local" value="html/html/fun/winsettranj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinWait"><param name="Local" value="html/html/fun/winwait.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinWaitActive"><param name="Local" value="html/html/fun/winwaitactije.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinWaitClose"><param name="Local" value="html/html/fun/winwaitclosj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="WinWaitNotActive"><param name="Local" value="html/html/fun/winwaitnotactije.htm"></OBJECT>
+
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="进程"><!--Management--><param name="Local" value="html/html/par/par_aa_process.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ProcessClose"><param name="Local" value="html/html/fun/processclosj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ProcessExists"><param name="Local" value="html/html/fun/processexists.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ProcessGetStats"><param name="Local" value="html/html/fun/processgetstats.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ProcessList"><param name="Local" value="html/html/fun/processlisj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ProcessSetPriority"><param name="Local" value="html/html/fun/processsetpriojity.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ProcessWait"><param name="Local" value="html/html/fun/processwait.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ProcessWaitClose"><param name="Local" value="html/html/fun/processwaitclosj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Run"><param name="Local" value="html/html/fun/run.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="RunWait"><param name="Local" value="html/html/fun/runwait.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="RunAs"><param name="Local" value="html/html/fun/runas.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="RunAsWait"><param name="Local" value="html/html/fun/runaswait.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ShellExecute"><param name="Local" value="html/html/fun/shellexecute.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ShellExecuteWait"><param name="Local" value="html/html/fun/shellexecutewait.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Shutdown"><param name="Local" value="html/html/fun/shutjown.htm"></OBJECT>
+
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="鼠标"><!--Management--><param name="Local" value="html/html/par/par_aa_mouse.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="MouseClick"><param name="Local" value="html/html/fun/mousjclicj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="MouseClickDrag"><param name="Local" value="html/html/fun/mousjclicjdrag.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="MouseDown"><param name="Local" value="html/html/fun/mousjdown.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="MouseUp"><param name="Local" value="html/html/fun/mousjup.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="MouseGetCursor"><param name="Local" value="html/html/fun/mousjgetcursor.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="MouseGetPos"><param name="Local" value="html/html/fun/mousjgetpos.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="MouseMove"><param name="Local" value="html/html/fun/mousjmove.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="MouseWheel"><param name="Local" value="html/html/fun/mousjwheel.htm"></OBJECT>
+
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="注册表"><!--Management--><param name="Local" value="html/html/par/par_aa_reg.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="RegDelete"><param name="Local" value="html/html/fun/regdelete.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="RegEnumKey"><param name="Local" value="html/html/fun/regenumkey.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="RegEnumVal"><param name="Local" value="html/html/fun/regenumval.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="RegRead"><param name="Local" value="html/html/fun/regread.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="RegWrite"><param name="Local" value="html/html/fun/regwjite.htm"></OBJECT>
+
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="网络"><!--Management--><param name="Local" value="html/html/par/par_aa_net.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="FtpSetProxy"><param name="Local" value="html/html/fun/ftpsjtproxy.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="HttpSetProxy"><param name="Local" value="html/html/fun/httpsetproxy.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="HttpSetUserAgent"><param name="Local" value="html/html/fun/httpsetuseragent.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="InetClose"><param name="Local" value="html/html/fun/inetclosj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="InetGet"><param name="Local" value="html/html/fun/inetget.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="InetGetInfo"><param name="Local" value="html/html/fun/inetgetinfo.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="InetGetSize"><param name="Local" value="html/html/fun/inetgetsize.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="InetRead"><param name="Local" value="html/html/fun/inetread.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Ping"><param name="Local" value="html/html/fun/ping.htm"></OBJECT>
+
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DLL"><!--Management--><param name="Local" value="html/html/par/par_aa_dll.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DllCall"><param name="Local" value="html/html/fun/dllcall.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DllClose"><param name="Local" value="html/html/fun/dllclosj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DllOpen"><param name="Local" value="html/html/fun/dllopen.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DllStructCreate"><param name="Local" value="html/html/fun/dllstructjreate.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DllStructGetData"><param name="Local" value="html/html/fun/dllstructgetdata.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DllStructGetPtr"><param name="Local" value="html/html/fun/dllstructgetptr.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DllStructGetSize"><param name="Local" value="html/html/fun/dllstructgetsize.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="DllStructSetData"><param name="Local" value="html/html/fun/dllstructsetdata.htm"></OBJECT>
+
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="杂项"><!--Management--><param name="Local" value="html/html/par/par_aa_others.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="TimerInit"><param name="Local" value="html/html/fun/timerinit.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="TimerDiff"><param name="Local" value="html/html/fun/timerdiff.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Sleep"><param name="Local" value="html/html/fun/sleep.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ToolTip"><param name="Local" value="html/html/fun/tooltip.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="MsgBox"><param name="Local" value="html/html/fun/msgbox.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="InputBox"><param name="Local" value="html/html/fun/inputbox.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="SplashTextOn"><param name="Local" value="html/html/fun/splashtexton.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="SplashOff"><param name="Local" value="html/html/fun/splashoff.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ProgressOn"><param name="Local" value="html/html/fun/progresson.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ProgressSet"><param name="Local" value="html/html/fun/progressset.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ProgressOff"><param name="Local" value="html/html/fun/progressoff.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="SoundPlay"><param name="Local" value="html/html/fun/sounjplay.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Beep"><param name="Local" value="html/html/fun/beep.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="CDTray"><param name="Local" value="html/html/fun/cdtray.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Send"><param name="Local" value="html/html/fun/send.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="SendKeepActive"><param name="Local" value="html/html/fun/sendkeepactije.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="BlockInput"><param name="Local" value="html/html/fun/blocjinput.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="PixelChecksum"><param name="Local" value="html/html/fun/pixelchecksum.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="PixelGetColor"><param name="Local" value="html/html/fun/pixelgetcoloj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="PixelSearch"><param name="Local" value="html/html/fun/pixelsearch.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="TraySetState"><param name="Local" value="html/html/fun/traysetstate.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="TraySetIcon"><param name="Local" value="html/html/fun/trayseticon.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="TrayTip"><param name="Local" value="html/html/fun/traytip.htm"></OBJECT>
+
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="额外说明"><!--Management--><param name="Local" value="html/html/par/par_aa_plus.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Default"><param name="Local" value="html/html/fun/default.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Null"><param name="Local" value="html/html/fun/null.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="条件选择"><param name="Local" value="html/html/fun/ternary.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="宏"><param name="Local" value="html/html/fun/makros.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="操作符"><param name="Local" value="html/html/fun/operators.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="$CmdLine"><param name="Local" value="html/html/fun/cmdline.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="语言代码"><param name="Local" value="html/html/fun/oslangcodes.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="字体"><param name="Local" value="html/html/fun/fonts.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="AutoIt参数设置Opt"><param name="Local" value="html/html/fun/autoitsetoption.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="CLSID列表"><param name="Local" value="html/html/fun/clsid.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ASCII字符代码"><param name="Local" value="html/html/fun/ascii.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="控件操作"><param name="Local" value="html/html/fun/controls.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="窗口标题和文本"><param name="Local" value="html/html/fun/windowsadvanced.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Autoit错误列表"><param name="Local" value="html/html/fun/autoit_er.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Autoit限度值"><param name="Local" value="html/html/fun/autoit_lim.htm"></OBJECT>
+
+</UL>
+
+
+
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="UDF函数"><!--Management--><param name="Local" value="html/html/par/par_aa_udf.htm"><param name="ImageNumber" value="3"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="数组"><!--Management--><param name="Local" value="html/html/par/par_aa_array.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayAdd"><param name="Local" value="html/html/fun/_ArrayAdd.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayConcatenate"><param name="Local" value="html/html/fun/_ArrayConcatenate.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayCreate"><param name="Local" value="html/html/fun/_ArrayJreate.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayDelete"><param name="Local" value="html/html/fun/_ArrayDelete.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayDublElem"><param name="Local" value="html/html/fun/_ArrayDublElem.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayDisplay"><param name="Local" value="html/html/fun/_ArrayDisplay.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayExtract"><param name="Local" value="html/html/fun/_ArrayExtract.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayFindAll"><param name="Local" value="html/html/fun/_ArrayFindAll.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayInsert"><param name="Local" value="html/html/fun/_ArrayInsert.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayMax"><param name="Local" value="html/html/fun/_ArrayMax.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayMaxIndex"><param name="Local" value="html/html/fun/_ArrayMaxIndex.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayMin"><param name="Local" value="html/html/fun/_ArrayMin.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayMinIndex"><param name="Local" value="html/html/fun/_ArrayMinIndex.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayPermute"><param name="Local" value="html/html/fun/_ArrayPermute.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayPop"><param name="Local" value="html/html/fun/_ArrayPop.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayPush"><param name="Local" value="html/html/fun/_ArrayPush.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayReverse"><param name="Local" value="html/html/fun/_ArrayReverse.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArraySearch"><param name="Local" value="html/html/fun/_ArraySearch.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArraySort"><param name="Local" value="html/html/fun/_ArraySort.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArraySwap"><param name="Local" value="html/html/fun/_ArraySwap.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayToClip"><param name="Local" value="html/html/fun/_ArrayToClip.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayToString"><param name="Local" value="html/html/fun/_ArrayToStrinj.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayTrim"><param name="Local" value="html/html/fun/_ArrayTrim.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayUnique"><param name="Local" value="html/html/fun/_ArrayUnique.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ArrayRandomize"><param name="Local" value="html/html/fun/_ArrayRandomize.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ReDim"><param name="Local" value="html/html/fun/_ReDim.htm"></OBJECT>
+
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="杂项"><!--Management--><param name="Local" value="html/html/par/par_aa_others_udf.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_CmdCm"><param name="Local" value="html/html/fun/_CmdCm.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_Exit"><param name="Local" value="html/html/fun/_Exit.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_GTR"><param name="Local" value="html/html/fun/_GTR.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_InScript"><param name="Local" value="html/html/fun/_InScript.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_MsgBox"><param name="Local" value="html/html/fun/_MsgBox.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_PathFull"><param name="Local" value="html/html/fun/_PathFull.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_SendM"><param name="Local" value="html/html/fun/_SendM.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_StringConv"><param name="Local" value="html/html/fun/_StrinjConv.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_StringDuplication"><param name="Local" value="html/html/fun/_StrinjDuplication.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_Swap"><param name="Local" value="html/html/fun/_Swap.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="_ViewValues"><param name="Local" value="html/html/fun/_ViewValues.htm"></OBJECT>
+
+</UL>
+
+
+</UL>
+
+
+
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="杂项"><!--Management--><param name="Local" value="html/html/par/par_others.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="组合对话框"><param name="Local" value="html/html/com_shape.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="设置对话框样式"><param name="Local" value="html/html/com_style.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="对话框处理"><param name="Local" value="html/html/com_dilog.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="设置进度条样式"><param name="Local" value="html/html/com_stylp.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="加载自定义字体"><param name="Local" value="html/html/com_fontx.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文本框"><param name="Local" value="html/html/com_infbx.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="HTML超文本文本框"><param name="Local" value="html/html/com_infht.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="带时间的文本框"><param name="Local" value="html/html/com_posts.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="拆分窗口中查看对象"><param name="Local" value="html/html/com_winls.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="设置formt<>参数的模板"><param name="Local" value="html/html/com_formt.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="设置@@Translit参数的模板"><param name="Local" value="html/html/com_tslit.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="添加tcg模板信息"><param name="Local" value="html/html/com_tcgup.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="提示音-哔"><param name="Local" value="html/html/com_beepss.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="播放音频"><param name="Local" value="html/html/com_sndps.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="朗读文本"><param name="Local" value="html/html/com_voice.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="进度条图像"><param name="Local" value="html/html/com_imgpr.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="TCIMG托盘图标"><param name="Local" value="html/html/com_itray.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="秒表"><param name="Local" value="html/html/com_watch.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="创建/修改进度窗口"><param name="Local" value="html/html/com_prgrs.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Winamp播放器控制"><param name="Local" value="html/html/com_wnamp.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="删除VLC播放文件"><param name="Local" value="html/html/com_delvlc.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="移动VLC播放文件"><param name="Local" value="html/html/com_movlc.htm"><param name="ImageNumber" value="19"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="TCIMG"><!--Management--><param name="Local" value="html/html/par/par_others.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="设置TCIMG进程优先级"><param name="Local" value="html/html/com_priot.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="设置TCIMG语言"><param name="Local" value="html/html/com_slang.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="编译TCIMG帮助文档"><param name="Local" value="html/html/com_chelp.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="获取TCIMG示例"><param name="Local" value="html/html/com_exmpl.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="清理TCIMG.ini无效键值"><param name="Local" value="html/html/com_clear.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="卸载TCIMG内存页"><param name="Local" value="html/html/com_dumpxx.htm"><param name="ImageNumber" value="41"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="实用工具"><!--Management--><param name="Local" value="html/html/par/par_prog.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="获取窗口信息1"><param name="Local" value="html/html/com_captxt.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="获取窗口信息2"><param name="Local" value="html/html/com_wntxt.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="键盘记录器"><param name="Local" value="html/html/com_keylg.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="颜色选取器"><param name="Local" value="html/html/com_color.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="音频播放器"><param name="Local" value="html/html/com_plays.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="音频播放控制"><param name="Local" value="html/html/com_playn.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="收音机"><param name="Local" value="html/html/com_radio.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="视频播放器"><param name="Local" value="html/html/com_video.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="播放视频"><param name="Local" value="html/html/com_vidos.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="播放SWF文件"><param name="Local" value="html/html/com_swfvw.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="字体浏览器"><param name="Local" value="html/html/com_fonts.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="字符浏览器"><param name="Local" value="html/html/com_symvw.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="字符格式转换器"><param name="Local" value="html/html/com_symcn.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="字符图像"><param name="Local" value="html/html/com_symss.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文本查看器"><param name="Local" value="html/html/com_textv.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="计时器/秒表/时钟"><param name="Local" value="html/html/com_timesx.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="日历"><param name="Local" value="html/html/com_cldar.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="日期计算器"><param name="Local" value="html/html/com_diffd.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="密码生成器"><param name="Local" value="html/html/com_pasgen.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="变位词生成器"><param name="Local" value="html/html/com_genwd.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="悬浮工具栏"><param name="Local" value="html/html/com_xbarx.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="状态栏"><param name="Local" value="html/html/com_infow.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="正则测试器"><param name="Local" value="html/html/com_regex.htm"><param name="ImageNumber" value="27"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="文本朗读器"><param name="Local" value="html/html/com_spech.htm"><param name="ImageNumber" value="27"></OBJECT>
+</UL>
+</UL>
+
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="调用"><!--Management--><param name="Local" value="html/html/par/par_utilities.htm"><param name="ImageNumber" value="1"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="运行脚本"><param name="Local" value="html/html/com_scrpt.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="执行CMD命令"><param name="Local" value="html/html/com_cmdbt.htm"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="调用NirCmd"><param name="Local" value="html/html/com_nirmc.htm"></OBJECT>
+</UL>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="附录"><!--Management--><param name="Local" value="html/html/par/par_add.htm"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="01-keybd-模拟按键"><param name="Local" value="html/html/add/add_sendkey.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="02-RegExp-正则表达式"><param name="Local" value="html/html/add/add_regexp.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="03-HotKey-键值列表"><param name="Local" value="html/html/add/add_hotkey.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="04-Autorun插件"><param name="Local" value="html/html/add/add_autorun.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="05-Menu-TC菜单"><param name="Local" value="html/html/add/add_menu.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="06-Drawing-窗口绘制参数"><param name="Local" value="html/html/add/add_draw.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="07-Parameters-TC命令行参数"><param name="Local" value="html/html/add/add_param.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="08-Path-路径变量"><param name="Local" value="html/html/add/add_path.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="09-PartPath-路径截取"><param name="Local" value="html/html/add/add_partpath.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="10-Info参数"><param name="Local" value="html/html/add/add_info.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="11-xfolder参数"><param name="Local" value="html/html/add/add_xfolder.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="12-[tc]参数"><param name="Local" value="html/html/add/add_tc.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="13-Commands-TC内部命令"><param name="Local" value="html/html/add/add_commands.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="14-Lang-语言代码"><param name="Local" value="html/html/add/add_lang.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="15-Format参数"><param name="Local" value="html/html/add/add_format.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="16-Test参数"><param name="Local" value="html/html/add/add_test.htm"><param name="ImageNumber" value="9"></OBJECT>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="17-Class_10.5-TC类名"><param name="Local" value="html/html/add/add_class_10_5.htm"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Class_10"><param name="Local" value="html/html/add/add_class_10.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Class_9.51"><param name="Local" value="html/html/add/add_class_95.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Class_9.00"><param name="Local" value="html/html/add/add_class.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Class_8.51"><param name="Local" value="html/html/add/add_class_old2.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Class_8.01"><param name="Local" value="html/html/add/add_class_old.htm"><param name="ImageNumber" value="9"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="18-Dialog-各种对话框"><param name="Local" value="html/html/add/add_dialog.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="19-NirCmd"><param name="Local" value="html/html/add/add_nircmd.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="20-tclink-相对路径快捷方式"><param name="Local" value="html/html/add/add_rlink.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="21-Color-颜色表"><param name="Local" value="html/html/add/add_color.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="22-Lists-对象列表"><param name="Local" value="html/html/add/add_lissts.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="23-Global-全局变量"><param name="Local" value="html/html/add/add_gloobal.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="24-String-字符串处理"><param name="Local" value="html/html/add/add_lines.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="25-Programs-小程序推荐"><param name="Local" value="html/html/add/add_program.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="26-ASCII表"><param name="Local" value="html/html/add/add_ascii.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="27-Launcher-TCIMG启动器"><param name="Local" value="html/html/add/add_launcher.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="28-Code-文本编码表"><param name="Local" value="html/html/add/add_coddes.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="29-Exif标签"><param name="Local" value="html/html/add/add_exif.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="30-rndm参数"><param name="Local" value="html/html/add/add_randms.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="31-TCG-tcg模板"><param name="Local" value="html/html/add/add_tcg.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="32-FirstAction.exe"><param name="Local" value="html/html/add/add_action.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="33-Audio-ID3信息"><param name="Local" value="html/html/add/add_audio.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="34-GetDetailsOf方法获取文件信息"><param name="Local" value="html/html/add/add_details.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="35-System-各种系统常量"><param name="Local" value="html/html/add/add_system.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="36-Pid_Handle-句柄"><param name="Local" value="html/html/add/add_pidhndl.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="37-Ex_Text-从文件提取文本"><param name="Local" value="html/html/add/add_gettxt.htm"><param name="ImageNumber" value="9"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="38-Ext_Plus-从内容判断文件类型"><param name="Local" value="html/html/add/add_extplus.htm"><param name="ImageNumber" value="9"></OBJECT>
+</UL>
+</UL>
+
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="配置文件TCIMG.ini"><param name="Local" value="html/config.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="语言文件TCIMG_.lng"><param name="Local" value="html/lng.htm"><param name="ImageNumber" value="39"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="最近的更新日志"><param name="Local" value="html/history.htm"><param name="ImageNumber" value="36"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="V20.0到V30.0的更新日志"><param name="Local" value="html/history2.htm"><param name="ImageNumber" value="35"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="V10.1到V19.6的更新日志"><param name="Local" value="html/history1.htm"><param name="ImageNumber" value="35"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="V10.0及之前的更新日志"><param name="Local" value="html/history0.htm"><param name="ImageNumber" value="35"></OBJECT>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="分类示例"><!--Management--><param name="Local" value="html/html/par/par_tems.htm"><param name="ImageNumber" value="21"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="音视频处理"><param name="Local" value="html/html/tem/tem_video.htm"><param name="ImageNumber" value="21"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="图像处理"><param name="Local" value="html/html/tem/tem_image.htm"><param name="ImageNumber" value="21"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="变位词"><param name="Local" value="html/html/tem/tem_anagram.htm"><param name="ImageNumber" value="21"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="压缩包处理"><param name="Local" value="html/html/tem/tem_arhives.htm"><param name="ImageNumber" value="21"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="集成使用"><!--Management--><param name="Local" value="html/html/par/par_int.htm"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="其他脚本"><param name="Local" value="html/html/int/scripting.htm"><param name="ImageNumber" value="41"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="AkelPad"><param name="Local" value="html/html/int/akelpad.htm"><param name="ImageNumber" value="41"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="其他TC工具"><!--Management--><param name="Local" value="html/html/par/par_my_util.htm"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="MENUIMG"><param name="Local" value="html/html/util/menuimg.htm"><param name="ImageNumber" value="13"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="BARMENUIMG"><param name="Local" value="html/html/util/barmenuimg.htm"><param name="ImageNumber" value="13"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="BARIMG"><param name="Local" value="html/html/util/barimg.htm"><param name="ImageNumber" value="13"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="RCMENUIMG"><param name="Local" value="html/html/util/rcmenuimg.htm"><param name="ImageNumber" value="13"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="TCIMGCMCOLOR"><param name="Local" value="html/html/util/tcimgcmcolor.htm"><param name="ImageNumber" value="13"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="CopyXlsInText"><param name="Local" value="html/html/util/copyxlsintext.htm"><param name="ImageNumber" value="13"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="其他程序"><!--Management--><param name="Local" value="html/html/par/par_cmm.htm"></OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="IrfanView"><param name="Local" value="html/html/cmm/cmm_irfanview.htm"><param name="ImageNumber" value="19"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Convert ImageMagick"><param name="Local" value="html/html/cmm/cmm_magick.htm"><param name="ImageNumber" value="19"></OBJECT>
+</UL>
+
+<LI><OBJECT type="text/sitemap"><param name="Name" value="项目赞助"><param name="Local" value="html/support.htm"><param name="ImageNumber" value="23"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="VK支持"><param name="Local" value="html/vk.htm"><param name="ImageNumber" value="15"></OBJECT>
+</UL>
+
+
+</BODY></HTML>

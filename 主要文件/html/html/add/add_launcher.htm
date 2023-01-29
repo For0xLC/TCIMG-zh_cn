@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Лаунчер - запуск утилиты с заданными параметрами</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №27</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Лаунчер <b>TCIMGGO.exe</b> - запуск утилиты с заданными параметрами.</font></p>
+<hr><br>
+С версии 10.3 в архив с утилитой входит файл TCIMGGO.exe, который позволяет запускать TCIMG.exe с заданными параметрами.<br>
+<br>
+Для того, чтобы настроить запуск с нужными параметрами необходимо:<br>
+<b>1.</b> Дублировать файл TCIMGGO.exe<br>
+<b>2.</b> Переименовать базовое имя файла дубликата (к примеру, в TIMESX.exe).<br>
+<b>3.</b> В TCIMG.ini (TCIMGU.ini) в секции [Commands] прописать именной ключ. Именем ключа является базовое имя (без расширения) переименованного лаунчера (в нашем случае TIMESX)<br>
+<b>4. </b>В ключе прописать необходимые параметры вызова.<br>
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:180">
+<font class="S81"><b>[</b></font><b>Commands</b><font class="S81"><b>]</b></font><br>
+<b>TIMESX</b><font class="S81"><b>=</b></font>timesx<br>
+<b>COLOR</b><font class="S81"><b>=</b></font>color=fullcolor
+</p>
+</div>
+Теперь при запуске TIMESX.exe будет запускаться "Таймер. Секундомер. Будильник." (команда <a href="../com_timesx.htm">timesx</a>)<br><br>
+Если переименовать дубликат TCIMGGO.exe в COLOR.exe и прописать параметры, то будет запускаться приложение "Просмотр и выбор цвета"<br><br>
+Дальнейшая настройка вызова зависит от задачи и фантазии.<br>
+<br><hr class="hr-blue"><br>
+Добавлено в версии 26.2<br><br>
+По умолчанию TCIMGGO.exe запускает утилиту TCIMG.exe с заданными параметрами и завершает свой процесс.<br>
+Для того чтобы TCIMGGO.exe оставался в системе и ожидал завершения запущенного TCIMG.exe необходимо вначале строки параметров прописать символ "<font class="S51"><b>@</b></font>"
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:180">
+<font class="S81"><b>[</b></font><b>Commands</b><font class="S81"><b>]</b></font><br>
+<b>TIMESX</b><font class="S81"><b>=</b></font><font class="S51"><b>@</b></font>timesx<br>
+<b>COLOR</b><font class="S81"><b>=</b></font><font class="S51"><b>@</b></font>color=fullcolor
+</p>
+</div>
+
+<br><hr class="hr-blue"><br>
+TCIMGGO.exe<br>
+&nbsp;&nbsp;• Может быть сколько угодно дубликатов файла.<br>
+&nbsp;&nbsp;• Файлы могут находится как в одной папке с TCIMG.exe, так и в подпапках утилиты на любом уровне.<br>
+
+
+<br><hr class="hr-blue"><br>
+
+<!-- В архиве <a href="http://tcimg.dreamlair.net/Progi/TCIMGGO.zip"><b>TCIMGGO.zip</b></a> есть несколько файлов TCIMGGO.exe с разными значками.<br> -->
+<!-- Вы можете подобрать любой под ту или иную команду. -->
+
+
+
+<br><br><br>
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

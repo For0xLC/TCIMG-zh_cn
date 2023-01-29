@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Программы захвата различной информации</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №35</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Различная системная информация</font></p>
+<hr>
+<a name="1"></a><br>
+
+<b>1. CLSID (GUID) Список расположения Shell диалогов в Windows 10</b><br>
+&nbsp;&nbsp;&nbsp;(<font class="S51"><b><sup>*</sup></b></font> звёздочкой отмечены команды работающие на Windows 7, зависит от системы и от установленных компонентов)
+<br><br>
+
+<span class="section">Для запуска можно воспользоваться командой cmdbt:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<a class="le" href="../com_cmdbt.htm"><span class="S51">cmdbt</span></a><span class="S8">=</span>explorer<span class="S101">~~</span>shell<span class="S8">:::</span><span class="S111">{</span>3080F90E-D7AD-11D9-BD98-0000947B0257<span class="S111">}</span></span><font class="S1"> ;; переключатель окон (WIN+TAB)</font><br>
+</p>
+
+<div align="center">
+<table class="param" width="99%" cellspacing="0" cellpadding="5">
+<tr class="sltr"><td width="40%">Команда</td><td>Описание</td></tr>
+<tr><td class="s3td">Shell:::{88C6C381-2E85-11D0-94DE-444553540000}</td><td class="s5td">Папка кэша ActiveX</td></tr>
+<tr><td class="s3td">Shell:::{D4480A50-BA28-11d1-8E75-00C04FA31A86} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Мастер добавления в сетевого окружения</td></tr>
+<tr><td class="s3td">Shell:::{D20EA4E1-3957-11d2-A40B-0C5020524153} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Администрирование</td></tr>
+<tr><td class="s3td">Shell:::{21EC2020-3AEA-1069-A2DD-08002B30309D} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Все элементы панели управления</td></tr>
+<tr><td class="s3td">Shell:::{5ED4F38C-D3FF-4D61-B506-6820320AEBFE}</td><td class="s5td">Все настройки</td></tr>
+<tr><td class="s3td">Shell:::{ED7BA470-8E54-465E-825C-99712043E01C} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Все задачи</td></tr>
+<tr><td class="s3td">Shell:::{4234D49B-0245-4DF3-B780-3893943456E1}</td><td class="s5td">Все Приложения</td></tr>
+<tr><td class="s3td">Shell:::{C57A6066-66A3-4D91-9EB9-41532179F0A5} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Проводник</td></tr>
+<tr><td class="s3td">Shell:::{9C60DE1E-E5FC-40F4-A487-460851A8D915} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Автозапуск</td></tr>
+<tr><td class="s3td">Shell:::{B98A2BEA-7D42-4558-8BD1-832F41BAC6FD} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Резервное копирование и восстановление</td></tr>
+<tr><td class="s3td">Shell:::{D9EF8727-CAC2-4E60-809E-86F80A666C91} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Шифрование диска BitLocker</td></tr>
+<tr><td class="s3td">Shell:::{28803F59-3A75-4058-995F-4EE5503B023C} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Устройства Bluetooth</td></tr>
+<tr><td class="s3td">Shell:::{85BBD920-42A0-1069-A2E4-08002B30309D}</td><td class="s5td">Портфель</td></tr>
+<tr><td class="s3td">Shell:::{0CD7A5C0-9F37-11CE-AE65-08002B2E1262}</td><td class="s5td">Cabinet Shell Folder</td></tr>
+<tr><td class="s3td">Shell:::{64693913-1C21-4F30-A98F-4E52906D3B56}</td><td class="s5td">CLSID_AppInstanceFolder</td></tr>
+<tr><td class="s3td">Shell:::{B2952B16-0E07-4E5A-B993-58C52CB94CAE}</td><td class="s5td">CLSID_DBFolder</td></tr>
+<tr><td class="s3td">Shell:::{1BEF2128-2F96-4500-BA7C-098DC0049CB2}</td><td class="s5td">CLSID_DBFolderBoth</td></tr>
+<tr><td class="s3td">Shell:::{9343812E-1C37-4A49-A12E-4B2D810D956B} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">CLSID_Поиск</td></tr>
+<tr><td class="s3td">Shell:::{A00EE528-EBD9-48B8-944A-8942113D46AC}</td><td class="s5td">CLSID_StartMenuCommandingProviderFolder</td></tr>
+<tr><td class="s3td">Shell:::{98F275B4-4FFF-11E0-89E2-7B86DFD72085}</td><td class="s5td">CLSID_StartMenuLauncherProviderFolder</td></tr>
+<tr><td class="s3td">Shell:::{E345F35F-9397-435C-8F95-4E922C26259E}</td><td class="s5td">CLSID_StartMenuPathCompleteProviderFolder</td></tr>
+<tr><td class="s3td">Shell:::{DAF95313-E44D-46AF-BE1B-CBACEA2C3065}</td><td class="s5td">CLSID_StartMenuProviderFolder</td></tr>
+<tr><td class="s3td">Shell:::{437FF9C0-A07F-4FA0-AF80-84B6C6440A16} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Command Folder</td></tr>
+<tr><td class="s3td">Shell:::{D34A6CA6-62C2-4C34-8A7C-14709C1AD938} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Общие папки Common Places FS Folder</td></tr>
+<tr><td class="s3td">Shell:::{E88DCCE0-B7B3-11d1-A9F0-00AA0060FA31}</td><td class="s5td">CompressedFolder</td></tr>
+<tr><td class="s3td">Shell:::{38A98528-6CBF-4CA9-8DC0-B1E1D10F7B1B} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Текущие подключения</td></tr>
+<tr><td class="s3td">Shell:::{26EE0668-A00A-44D7-9371-BEB064C98683} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Панель управления</td></tr>
+<tr><td class="s3td">Shell:::{5399E694-6CE5-4D6C-8FCE-1D8870FDCBA0} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Панель управления\Все элементы панели управления</td></tr>
+<tr><td class="s3td">Shell:::{1206F5F1-0569-412C-8FEC-3204630DFB70} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Диспетчер учетных данных</td></tr>
+<tr><td class="s3td">Shell:::{17CD9488-1228-4B2F-88CE-4298E93E0966} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Программы по умолчанию</td></tr>
+<tr><td class="s3td">Shell:::{B155BDF8-02F0-451E-9A26-AE317CFD7779} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Папка делегата, которая появляется в компьютере</td></tr>
+<tr><td class="s3td">Shell:::{DFFACDC5-679F-4156-8947-C5C76BC0B67F}</td><td class="s5td">Папка delegate, которая появляется в папке файлов пользователей</td></tr>
+<tr><td class="s3td">Shell:::{00021400-0000-0000-C000-000000000046}</td><td class="s5td">Рабочий стол</td></tr>
+<tr><td class="s3td">Shell:::{C2B136E2-D50E-405C-8784-363C582BF43E}</td><td class="s5td">DeviceCenter инициализация</td></tr>
+<tr><td class="s3td">Shell:::{AEE2420F-D50E-405C-8784-363C582BF45A}</td><td class="s5td">DevicePairingFolder инициализация</td></tr>
+<tr><td class="s3td">Shell:::{A8A91A66-3A7D-4424-8D24-04E180695C7A} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Устройства и принтеры</td></tr>
+<tr><td class="s3td">Shell:::{C555438B-3C23-4769-A71F-B6D3D9B6053A} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Дисплей</td></tr>
+<tr><td class="s3td">Shell:::{D2035EDF-75CB-4EF1-95A7-410D9EE17170}</td><td class="s5td">Источник данных каталога содержимого DLNA</td></tr>
+<tr><td class="s3td">Shell:::{8FD8B88D-30E1-4F25-AC2B-553D3D65F0EA}</td><td class="s5td">DXP</td></tr>
+<tr><td class="s3td">Shell:::{D555645E-D4F8-4C29-A827-D93C859C4F2A} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Центр специальных возможностей </td></tr>
+<tr><td class="s3td">Shell:::{2559A1F5-21D7-11D4-BDAF-00C04F60B9F0} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Электронная почта</td></tr>
+<tr><td class="s3td">Shell:::{9113A02D-00A3-46B9-BC5F-9C04DADDD5D7}</td><td class="s5td">Расширение хранения данных источника</td></tr>
+<tr><td class="s3td">Shell:::{418C8B64-5463-461D-88E0-75E2AFA3C6FA}</td><td class="s5td">Результаты папки проводника браузера</td></tr>
+<tr><td class="s3td">Shell:::{323CA680-C24D-4099-B94D-446DD2D7249E} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Избранное</td></tr>
+<tr><td class="s3td">Shell:::{877CA5AC-CB41-4842-9C69-9136E42D47E2}</td><td class="s5td">Индекс резервного копирования файлов</td></tr>
+<tr><td class="s3td">Shell:::{6DFD7C5C-2451-11D3-A299-00C04F8EF6AF} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Параметры папок</td></tr>
+<tr><td class="s3td">Shell:::{F6B6E965-E9B2-444B-9286-10C9152EDBC5}</td><td class="s5td">История файлов</td></tr>
+<tr><td class="s3td">Shell:::{2F6CE85C-F9EE-43CA-90C7-8A9BD53A2467}</td><td class="s5td">FileHistoryDataSource</td></tr>
+<tr><td class="s3td">Shell:::{0AFACED1-E828-11D1-9187-B532F1E9575D} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Папка "Мои документы"</td></tr>
+<tr><td class="s3td">Shell:::{93412589-74D4-4E4E-AD0E-E0CB621440FD} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Параметры шрифта</td></tr>
+<tr><td class="s3td">Shell:::{BD84B380-8CA2-1069-AB1D-08000948F534}</td><td class="s5td">Шрифты</td></tr>
+<tr><td class="s3td">Shell:::{3936E9E4-D92C-4EEE-A85A-BC16D5EA0819}</td><td class="s5td">Часто используемые папки</td></tr>
+<tr><td class="s3td">Shell:::{1D2680C9-0E2A-469D-B787-065558BC7D43} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Кэш Fusion</td></tr>
+<tr><td class="s3td">Shell:::{ED228FDF-9EA8-4870-83B1-96B02CFE0D52} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Игры</td></tr>
+<tr><td class="s3td">Shell:::{15EAE92E-F17A-4431-9F28-805E482DAFD4} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Установка программ</td></tr>
+<tr><td class="s3td">Shell:::{FF393560-C2A7-11CF-BFF4-444553540000}</td><td class="s5td">История</td></tr>
+<tr><td class="s3td">Shell:::{6785BFAC-9D2D-4BE5-B7E2-59937E8FB80A} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Домашняя группа</td></tr>
+<tr><td class="s3td">Shell:::{67CA7650-96E6-4FDD-BB43-A8E774F73A57} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Домашняя группа</td></tr>
+<tr><td class="s3td">Shell:::{B4FB3F98-C1EA-428D-A78A-D1F5659CBA93} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Домашняя группа</td></tr>
+<tr><td class="s3td">Shell:::{11016101-E366-4D22-BC06-4ADA335C892B}</td><td class="s5td">История IE и источник данных оболочки каналы для поиска Windows</td></tr>
+<tr><td class="s3td">Shell:::{9A096BB5-9DC3-4D1C-8526-C3CBF991EA4E}</td><td class="s5td">IE RSS-каналы папки</td></tr>
+<tr><td class="s3td">Shell:::{D450A8A1-9568-45C7-9C0E-B4F9FB4537BD} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Установленные обновления</td></tr>
+<tr><td class="s3td">Shell:::{BF782CC9-5A52-4A17-806C-2A894FFEEAC5}</td><td class="s5td">Язык</td></tr>
+<tr><td class="s3td">Shell:::{328B0346-7EAF-4BBE-A479-7CB88A095F5B}</td><td class="s5td">LayoutFolder</td></tr>
+<tr><td class="s3td">Shell:::{031E4825-7B94-4DC3-B131-E946B44C8DD5} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Библиотеки</td></tr>
+<tr><td class="s3td">Shell:::{896664F7-12E1-490F-8782-C0835AFD98FC}</td><td class="s5td">Папка библиотеки делегата, которая появляется в папке файлов пользователей</td></tr>
+<tr><td class="s3td">Shell:::{A5A3563A-5755-4A6F-854E-AFA3230B199F}</td><td class="s5td">Папка библиотеки</td></tr>
+<tr><td class="s3td">Shell:::{267CF8A9-F4E3-41E6-95B1-AF881BE130FF}</td><td class="s5td">Расположение папки</td></tr>
+<tr><td class="s3td">Shell:::{1FA9085F-25A2-489B-85D4-86326EEDCD87} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Управление беспроводными сетями</td></tr>
+<tr><td class="s3td">Shell:::{289AF617-1CC3-42A6-926C-E6A863F0E3BA}</td><td class="s5td">Медиасерверы</td></tr>
+<tr><td class="s3td">Shell:::{63DA6EC0-2E98-11CF-8D82-444553540000}</td><td class="s5td">Microsoft FTP-папка</td></tr>
+<tr><td class="s3td">Shell:::{89D83576-6BD1-4C86-9454-BEB04E94C819}</td><td class="s5td">Microsoft Office Outlook</td></tr>
+<tr><td class="s3td">Shell:::{450D8FBA-AD25-11D0-98A8-0800361B1103} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Мои документы</td></tr>
+<tr><td class="s3td">Shell:::{208D2C60-3AEA-1069-A2D7-08002B30309D} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Сеть (WORKGROUP)</td></tr>
+<tr><td class="s3td">Shell:::{F02C1A0D-BE21-4350-88B0-7367FC96EF3C} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Сеть</td></tr>
+<tr><td class="s3td">Shell:::{8E908FC9-BECC-40F6-915B-F4CA0E70D03D} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Центр управления сетями и общим доступом</td></tr>
+<tr><td class="s3td">Shell:::{7007ACC7-3202-11D1-AAD2-00805FC1270E} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Сетевые подключения</td></tr>
+<tr><td class="s3td">Shell:::{992CFFA0-F557-101A-88EC-00DD010CCC48} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Сетевые подключения</td></tr>
+<tr><td class="s3td">Shell:::{05D7B0F4-2121-4EFF-BF6B-ED3F69B894D9} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Значки области уведомлений</td></tr>
+<tr><td class="s3td">Shell:::{BD7A2E7B-21CB-41B2-A086-B309680C6B7E}</td><td class="s5td">Автономные файлы</td></tr>
+<tr><td class="s3td">Shell:::{AFDB1F70-2A4C-11D2-9039-00C04F8EEB3E} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Автономные файлы папки</td></tr>
+<tr><td class="s3td">Shell:::{018D5C66-4533-4307-9B53-224DE2ED1FE6}</td><td class="s5td">OneDrive</td></tr>
+<tr><td class="s3td">Shell:::{ED834ED6-4B5A-4BFE-8F11-A626DCB6A921} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Персонализация</td></tr>
+<tr><td class="s3td">Shell:::{45E8E0E8-7AE9-41AD-A9E8-594972716684}</td><td class="s5td">Фотографии</td></tr>
+<tr><td class="s3td">Shell:::{35786D3C-B075-49B9-88DD-029876E11C01} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Переносные устройства</td></tr>
+<tr><td class="s3td">Shell:::{025A5937-A6BE-4686-A844-36FE4BEC8B6D} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Параметры электропитания</td></tr>
+<tr><td class="s3td">Shell:::{9DB7A13C-F208-4981-8353-73CC61AE2783}</td><td class="s5td">Предыдущие версии</td></tr>
+<tr><td class="s3td">Shell:::{A3C3D402-E56C-4033-95F7-4885E80B0111}</td><td class="s5td">Папка делегата результаты предыдущих версий</td></tr>
+<tr><td class="s3td">Shell:::{F8C2AB3B-17BC-41DA-9758-339D7DBF2D88} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Папка результатов предыдущих версий</td></tr>
+<tr><td class="s3td">Shell:::{2227A280-3AEA-1069-A2DE-08002B30309D} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Принтеры</td></tr>
+<tr><td class="s3td">Shell:::{863AA9FD-42DF-457B-8E4D-0DE1B8015C60} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Принтеры</td></tr>
+<tr><td class="s3td">Shell:::{ED50FC29-B964-48A9-AFB3-15EBB9B97F36} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Папка printhood делегата</td></tr>
+<tr><td class="s3td">Shell:::{7B81BE6A-CE2B-4676-A29E-EB907A5126C5} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Программы и компоненты</td></tr>
+<tr><td class="s3td">Shell:::{4336A54D-038B-4685-AB02-99BB52D3FB8B} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Общие папки</td></tr>
+<tr><td class="s3td">Shell:::{22877A6D-37A1-461A-91B0-DBDA5AAEBC99} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Последние папки</td></tr>
+<tr><td class="s3td">Shell:::{4564B25E-30CD-4787-82BA-39E73A750B14}</td><td class="s5td">Recent Items Instance Folder</td></tr>
+<tr><td class="s3td">Shell:::{9FE63AFD-59CF-4419-9775-ABCC3849F861} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Восстановление</td></tr>
+<tr><td class="s3td">Shell:::{645FF040-5081-101B-9F08-00AA002F954E} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Корзина</td></tr>
+<tr><td class="s3td">Shell:::{241D7C96-F8BF-4F85-B01F-E2B043341A4B} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Подключения к компьютерам и программам на рабочем месте</td></tr>
+<tr><td class="s3td">Shell:::{F5FB2C77-0E2F-4A16-A381-3E560C68BC83}</td><td class="s5td">Съемные диски</td></tr>
+<tr><td class="s3td">Shell:::{A6482830-08EB-41E2-84C1-73920C2BADB9}</td><td class="s5td">Съемные устройства хранения</td></tr>
+<tr><td class="s3td">Shell:::{2965E715-EB66-4719-B53F-1672673BBEFA} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Папка результатов</td></tr>
+<tr><td class="s3td">Shell:::{2559A1F3-21D7-11D4-BDAF-00C04F60B9F0} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Выполнить</td></tr>
+<tr><td class="s3td">Shell:::{04731B67-D933-450A-90E6-4ACD2E9408FE}</td><td class="s5td">Поиск</td></tr>
+<tr><td class="s3td">Shell:::{2559A1F0-21D7-11D4-BDAF-00C04F60B9F0} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Поиск</td></tr>
+<tr><td class="s3td">Shell:::{72B36E70-8700-42D6-A7F7-C9AB3323EE51}</td><td class="s5td">Папка поиска</td></tr>
+<tr><td class="s3td">Shell:::{BB64F8A7-BEE7-4E1A-AB8D-7D8273F7FDB6} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Безопасность и обслуживание (Центр обслуживания)</td></tr>
+<tr><td class="s3td">Shell:::{2559A1F7-21D7-11D4-BDAF-00C04F60B9F0} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Настройка доступа к программам и умолчаний</td></tr>
+<tr><td class="s3td">Shell:::{E7E4BC40-E76A-11CE-A9BB-00AA004AE837}</td><td class="s5td">Просмотр DocObject Shell</td></tr>
+<tr><td class="s3td">Shell:::{0E5AAE11-A475-4C5B-AB00-C66DE400274E}</td><td class="s5td">Папка файловой системы оболочки</td></tr>
+<tr><td class="s3td">Shell:::{F3364BA0-65B9-11CE-A9BA-00AA004AE837}</td><td class="s5td">Папка файловой системы оболочки</td></tr>
+<tr><td class="s3td">Shell:::{3080F90D-D7AD-11D9-BD98-0000947B0257} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Показать Рабочий стол</td></tr>
+<tr><td class="s3td">Shell:::{58E3C745-D971-4081-9034-86E34B30836A} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Распознавание речи</td></tr>
+<tr><td class="s3td">Shell:::{48E7CAAB-B918-4E58-A94D-505519C795DC}</td><td class="s5td">Меню «Пуск»</td></tr>
+<tr><td class="s3td">Shell:::{F942C606-0914-47AB-BE56-1321B8035096}</td><td class="s5td">Дисковые пространства</td></tr>
+<tr><td class="s3td">Shell:::{EDC978D6-4D53-4B2F-A265-5805674BE568}</td><td class="s5td">StreamBackedFolder</td></tr>
+<tr><td class="s3td">Shell:::{F5175861-2688-11D0-9C5E-00AA00A45957}</td><td class="s5td">Папка подписки</td></tr>
+<tr><td class="s3td">Shell:::{3080F90E-D7AD-11D9-BD98-0000947B0257} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Представление задач, TaskView или Временная шкала</td></tr>
+<tr><td class="s3td">Shell:::{9C73F5E5-7AE7-4E32-A8E8-8D23B85255BF} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Центр синхронизации</td></tr>
+<tr><td class="s3td">Shell:::{289978AC-A101-4341-A817-21EBA7FD046D}</td><td class="s5td">Папка конфликтов центра синхронизации</td></tr>
+<tr><td class="s3td">Shell:::{BC48B32F-5910-47F5-8570-5074A8A5636A}</td><td class="s5td">Папки синхронизации результатов делегата</td></tr>
+<tr><td class="s3td">Shell:::{71D99464-3B6B-475C-B241-E15883207529}</td><td class="s5td">Папка результатов синхронизации</td></tr>
+<tr><td class="s3td">Shell:::{F1390A9A-A3F4-4E5D-9C5F-98F3BD8D935C}</td><td class="s5td">Синхронизация папки установки делегата</td></tr>
+<tr><td class="s3td">Shell:::{2E9E59C0-B437-4981-A647-9C34B9B90891} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Синхронизация папки установки</td></tr>
+<tr><td class="s3td">Shell:::{BB06C0E4-D293-4F75-8A90-CB05B6477EEE} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Система</td></tr>
+<tr><td class="s3td">Shell:::{3F6BC534-DFA1-4AB4-AE54-EF25A74E0107}</td><td class="s5td">Восстановление системы</td></tr>
+<tr><td class="s3td">Shell:::{0DF44EAA-FF21-4412-828E-260A8728E7F1} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Свойство панели задач и меню "Пуск"</td></tr>
+<tr><td class="s3td">Shell:::{7BD29E00-76C1-11CF-9DD0-00A0C9034933}</td><td class="s5td">Временные файлы Интернета</td></tr>
+<tr><td class="s3td">Shell:::{871C5380-42A0-1069-A2EA-08002B30309D} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Интернет (Запуск Explorer)</td></tr>
+<tr><td class="s3td">Shell:::{5B934B42-522B-4C34-BBFE-37A3EF7B9C90}</td><td class="s5td">Это устройство</td></tr>
+<tr><td class="s3td">Shell:::{20D04FE0-3AEA-1069-A2D8-08002B30309D} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Этот компьютер</td></tr>
+<tr><td class="s3td">Shell:::{5E5F29CE-E0A8-49D3-AF32-7A7BDC173478}</td><td class="s5td">Этот компьютер</td></tr>
+<tr><td class="s3td">Shell:::{C58C4893-3BE0-4B45-ABB5-A63E4B8C8651} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Устранение неполадок</td></tr>
+<tr><td class="s3td">Shell:::{60632754-C523-4B62-B45C-4172DA012619} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Учетные записи пользователей</td></tr>
+<tr><td class="s3td">Shell:::{7A9D77BD-5403-11D2-8785-2E0420524153} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Учетные записи пользователей</td></tr>
+<tr><td class="s3td">Shell:::{1F3427C8-5C10-4210-AA03-2EE45287D668} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">User Pinned</td></tr>
+<tr><td class="s3td">Shell:::{59031A47-3F72-44A7-89C5-5595FE6B30EE} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Папка и файлы пользователя</td></tr>
+<tr><td class="s3td">Shell:::{D8559EB9-20C0-410E-BEDA-7ED416AECC2A} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Защитник Windows</td></tr>
+<tr><td class="s3td">Shell:::{67718415-C450-4F3C-BF8A-B487642DC39B} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Компоненты Windows</td></tr>
+<tr><td class="s3td">Shell:::{4026492F-2F69-46B8-B9BF-5654FC07E423} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Брандмауэр Windows</td></tr>
+<tr><td class="s3td">Shell:::{5EA4F148-308C-46D7-98A9-49041B1DD468} <font class="S51"><b><sup>*</sup></b></font></td><td class="s5td">Центр мобильности Windows</td></tr>
+<tr><td class="s3td">Shell:::{2559A1F2-21D7-11D4-BDAF-00C04F60B9F0}</td><td class="s5td">Безопасность Windows</td></tr>
+<tr><td class="s3td">Shell:::{ECDB0924-4208-451E-8EE0-373C0956DE16}</td><td class="s5td">Рабочие папки</td></tr>
+<tr><td class="s3td">Shell:::{87630419-6216-4FF8-A1F0-143562D16D5C} </td><td class="s5td">Папка оболочки WWan</td></tr>
+</td></tr></table>
+</div>
+<br>
+<br><hr class="hr-blue">
+<a name="2"></a><br>
+
+
+<b>2. Список идентификаторов известных GUID папок.</b><br>
+&nbsp;&nbsp;&nbsp;(Получение пути зависит от системы и установленных компонентов)<br>
+<br>
+<span class="section">Для получения всех абсолютных путей GUID можно воспользоваться командой infos:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<a class="le" href="../com_infos.htm"><span class="S51">infos</span></a><span class="S8">=</span>2<span class="S8">||</span>23</span><font class="S1"> ;; отображение информации системных GUID папок</font><br>
+</p>
+
+<span class="section">Для получения заданного абсолютного пути GUID можно воспользоваться командой infos:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<a class="le" href="../com_sends.htm"><span class="S51">sends</span></a><span class="S8">=</span>@<span class="S8">&lt</span><a class="le" href="add_info.htm#s260"><font class="S01">&#105;&#110;&#102;&#111;</font><font class="S21">=</font><span class="S81">s</span><font class="S91">260</font></a><font class="S81"><b>|</b></font>39<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALSENDS"><span class="S121">GLOBA&#76SENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь папки Music (пользовательский путь)</font><br>
+<br>
+<a class="le" href="../com_sends.htm"><span class="S51">sends</span></a><span class="S8">=</span>@<span class="S8">&lt</span><a class="le" href="add_info.htm#s260"><font class="S01">&#105;&#110;&#102;&#111;</font><font class="S21">=</font><span class="S81">s</span><font class="S91">260</font></a><font class="S81"><b>|</b></font>39<font class="S81"><b>|</b></font>1<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALSENDS"><span class="S121">GLOBA&#76SENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь папки Music (путь по умолчанию системы)</font><br>
+<br>
+<a class="le" href="../com_sends.htm"><span class="S51">sends</span></a><span class="S8">=</span>@<span class="S8">&lt</span><a class="le" href="add_info.htm#s260"><font class="S01">&#105;&#110;&#102;&#111;</font><font class="S21">=</font><span class="S81">s</span><font class="S91">260</font></a><font class="S81"><b>|</b></font>{4BD8D571-6D19-48D3-BE97-422220080E43}<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALSENDS"><span class="S121">GLOBA&#76SENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь папки Music (пользовательский путь)</font><br>
+<br>
+<a class="le" href="../com_sends.htm"><span class="S51">sends</span></a><span class="S8">=</span>@<span class="S8">&lt</span><a class="le" href="add_info.htm#s260"><font class="S01">&#105;&#110;&#102;&#111;</font><font class="S21">=</font><span class="S81">s</span><font class="S91">260</font></a><font class="S81"><b>|</b></font>{4BD8D571-6D19-48D3-BE97-422220080E43}<font class="S81"><b>|</b></font>1<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALSENDS"><span class="S121">GLOBA&#76SENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь папки Music (путь по умолчанию системы)</font><br>
+<br>
+</p>
+<br>
+<font class="S19">Если какой-то GUID папки нет в таблице, высылайте, вставлю.</font>
+<br><br>
+<div align="center">
+<table class="param" width="80%" cellspacing="0" cellpadding="5">
+<tr class="sltr"><td width="1%">Номер</td><td width="40%">Команда</td><td>Описание</td></tr>
+<tr><td>1</td><td class="s3td">{DE61D971-5EBC-4F02-A3A9-6C82895E5C04}</td><td class="s5td">AddNewPrograms</td></tr>
+<tr><td>2</td><td class="s3td">{724EF170-A42D-4FEF-9F26-B60E846FBA4F}</td><td class="s5td">AdminTools</td></tr>
+<tr><td>3</td><td class="s3td">{A305CE99-F527-492B-8B1A-7E76FA98D6E4}</td><td class="s5td">AppUpdates</td></tr>
+<tr><td>4</td><td class="s3td">{9E52AB10-F80D-49DF-ACB8-4330F5687855}</td><td class="s5td">CDBurning</td></tr>
+<tr><td>5</td><td class="s3td">{DF7266AC-9274-4867-8D55-3BD661DE872D}</td><td class="s5td">ChangeRemovePrograms</td></tr>
+<tr><td>6</td><td class="s3td">{D0384E7D-BAC3-4797-8F14-CBA229B392B5}</td><td class="s5td">CommonAdminTools</td></tr>
+<tr><td>7</td><td class="s3td">{C1BAE2D0-10DF-4334-BEDD-7AA20B227A9D}</td><td class="s5td">CommonOEMLinks</td></tr>
+<tr><td>8</td><td class="s3td">{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}</td><td class="s5td">CommonPrograms</td></tr>
+<tr><td>9</td><td class="s3td">{A4115719-D62E-491D-AA7C-E74B8BE3B067}</td><td class="s5td">CommonStartMenu</td></tr>
+<tr><td>10</td><td class="s3td">{82A5EA35-D9CD-47C5-9629-E15D2F714E6E}</td><td class="s5td">CommonStartup</td></tr>
+<tr><td>11</td><td class="s3td">{B94237E7-57AC-4347-9151-B08C6C32D1F7}</td><td class="s5td">CommonTemplates</td></tr>
+<tr><td>12</td><td class="s3td">{0AC0837C-BBF8-452A-850D-79D08E667CA7}</td><td class="s5td">ComputerFolder</td></tr>
+<tr><td>13</td><td class="s3td">{4BFEFB45-347D-4006-A5BE-AC0CB0567192}</td><td class="s5td">ConflictFolder</td></tr>
+<tr><td>14</td><td class="s3td">{6F0CD92B-2E97-45D1-88FF-B0D186B8DEDD}</td><td class="s5td">ConnectionsFolder</td></tr>
+<tr><td>15</td><td class="s3td">{56784854-C6CB-462B-8169-88E350ACB882}</td><td class="s5td">Contacts</td></tr>
+<tr><td>16</td><td class="s3td">{82A74AEB-AEB4-465C-A014-D097EE346D63}</td><td class="s5td">ControlPanelFolder</td></tr>
+<tr><td>17</td><td class="s3td">{2B0F765D-C0E9-4171-908E-08A611B84FF6}</td><td class="s5td">Cookies</td></tr>
+<tr><td>18</td><td class="s3td">{915221FB-9EFE-4BDA-8FD7-F78DCA774F87}</td><td class="s5td">Credentials</td></tr>
+<tr><td>19</td><td class="s3td">{B88F4DAA-E7BD-49A9-B74D-02885A5DC765}</td><td class="s5td">Crypto</td></tr>
+<tr><td>20</td><td class="s3td">{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}</td><td class="s5td">Desktop</td></tr>
+<tr><td>21</td><td class="s3td">{5CE4A5E9-E4EB-479D-B89F-130C02886155}</td><td class="s5td">DeviceMetadataStore</td></tr>
+<tr><td>22</td><td class="s3td">{FDD39AD0-238F-46AF-ADB4-6C85480369C7}</td><td class="s5td">Documents</td></tr>
+<tr><td>23</td><td class="s3td">{7B0DB17D-9CD2-4A93-9733-46CC89022E7C}</td><td class="s5td">DocumentsLibrary</td></tr>
+<tr><td>24</td><td class="s3td">{374DE290-123F-4565-9164-39C4925E467B}</td><td class="s5td">Downloads</td></tr>
+<tr><td>25</td><td class="s3td">{1777F761-68AD-4D8A-87BD-30B759FA33DD}</td><td class="s5td">Favorites</td></tr>
+<tr><td>26</td><td class="s3td">{FD228CB7-AE11-4AE3-864C-16F3910AB8FE}</td><td class="s5td">Fonts</td></tr>
+<tr><td>27</td><td class="s3td">{CAC52C1A-B53D-4EDC-92D7-6B2E8AC19434}</td><td class="s5td">Games</td></tr>
+<tr><td>28</td><td class="s3td">{054FAE61-4DD8-4787-80B6-090220C4B700}</td><td class="s5td">GameTasks</td></tr>
+<tr><td>29</td><td class="s3td">{D9DC8A3B-B784-432E-A781-5A1130A75963}</td><td class="s5td">History</td></tr>
+<tr><td>30</td><td class="s3td">{52528A6B-B9E3-4ADD-B60D-588C2DBA842D}</td><td class="s5td">HomeGroup</td></tr>
+<tr><td>31</td><td class="s3td">{BCB5256F-79F6-4CEE-B725-DC34E402FD46}</td><td class="s5td">ImplicitAppShortcuts</td></tr>
+<tr><td>32</td><td class="s3td">{352481E8-33BE-4251-BA85-6007CAEDCF9D}</td><td class="s5td">InternetCache</td></tr>
+<tr><td>33</td><td class="s3td">{4D9F7874-4E0C-4904-967B-40B0D20C3E4B}</td><td class="s5td">InternetFolder</td></tr>
+<tr><td>34</td><td class="s3td">{1B3EA5DC-B587-4786-B4EF-BD1DC332AEAE}</td><td class="s5td">Libraries</td></tr>
+<tr><td>35</td><td class="s3td">{BFB9D5E0-C6A9-404C-B2B2-AE6DB6AF4968}</td><td class="s5td">Links</td></tr>
+<tr><td>36</td><td class="s3td">{F1B32785-6FBA-4FCF-9D55-7B8E7F157091}</td><td class="s5td">LocalAppData</td></tr>
+<tr><td>37</td><td class="s3td">{A520A1A4-1780-4FF6-BD18-167343C5AF16}</td><td class="s5td">LocalAppDataLow</td></tr>
+<tr><td>38</td><td class="s3td">{2A00375E-224C-49DE-B8D1-440DF7EF3DDC}</td><td class="s5td">LocalizedResourcesDir</td></tr>
+<tr><td>39</td><td class="s3td">{4BD8D571-6D19-48D3-BE97-422220080E43}</td><td class="s5td">Music</td></tr>
+<tr><td>40</td><td class="s3td">{2112AB0A-C86A-4FFE-A368-0DE96E47012E}</td><td class="s5td">MusicLibrary</td></tr>
+<tr><td>41</td><td class="s3td">{C5ABBF53-E17F-4121-8900-86626FC2C973}</td><td class="s5td">NetHood</td></tr>
+<tr><td>42</td><td class="s3td">{D20BEEC4-5CA8-4905-AE3B-BF251EA09B53}</td><td class="s5td">NetworkFolder</td></tr>
+<tr><td>43</td><td class="s3td">{2C36C0AA-5812-4B87-BFD0-4CD0DFB19B39}</td><td class="s5td">OriginalImages</td></tr>
+<tr><td>44</td><td class="s3td">{69D2CF90-FC33-4FB7-9A0C-EBB0F0FCB43C}</td><td class="s5td">PhotoAlbums</td></tr>
+<tr><td>45</td><td class="s3td">{33E28130-4E1E-4676-835A-98395C3BC3BB}</td><td class="s5td">Pictures</td></tr>
+<tr><td>46</td><td class="s3td">{A990AE9F-A03B-4E80-94BC-9912D7504104}</td><td class="s5td">PicturesLibrary</td></tr>
+<tr><td>47</td><td class="s3td">{DE92C1C7-837F-4F69-A3BB-86E631204A23}</td><td class="s5td">Playlists</td></tr>
+<tr><td>48</td><td class="s3td">{76FC4E2D-D6AD-4519-A663-37BD56068185}</td><td class="s5td">PrintersFolder</td></tr>
+<tr><td>49</td><td class="s3td">{9274BD8D-CFD1-41C3-B35E-B13F55A758F4}</td><td class="s5td">PrintHood</td></tr>
+<tr><td>50</td><td class="s3td">{5E6C858F-0E22-4760-9AFE-EA3317B67173}</td><td class="s5td">Profile</td></tr>
+<tr><td>51</td><td class="s3td">{62AB5D82-FDC1-4DC3-A9DD-070D1D495D97}</td><td class="s5td">ProgramData</td></tr>
+<tr><td>52</td><td class="s3td">{905E63B6-C1BF-494E-B29C-65B732D3D21A}</td><td class="s5td">ProgramFiles</td></tr>
+<tr><td>53</td><td class="s3td">{F7F1ED05-9F6D-47A2-AAAE-29D317C6F066}</td><td class="s5td">ProgramFilesCommon</td></tr>
+<tr><td>54</td><td class="s3td">{6365D5A7-0F0D-45E5-87F6-0DA56B6A4F7D}</td><td class="s5td">ProgramFilesCommonX64</td></tr>
+<tr><td>55</td><td class="s3td">{DE974D24-D9C6-4D3E-BF91-F4455120B917}</td><td class="s5td">ProgramFilesCommonX86</td></tr>
+<tr><td>56</td><td class="s3td">{6D809377-6AF0-444B-8957-A3773F02200E}</td><td class="s5td">ProgramFilesX64</td></tr>
+<tr><td>57</td><td class="s3td">{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}</td><td class="s5td">ProgramFilesX86</td></tr>
+<tr><td>58</td><td class="s3td">{A77F5D77-2E2B-44C3-A6A2-ABA601054A51}</td><td class="s5td">Programs</td></tr>
+<tr><td>59</td><td class="s3td">{10C07CD0-EF91-4567-B850-448B77CB37F9}</td><td class="s5td">Protect</td></tr>
+<tr><td>60</td><td class="s3td">{DFDF76A2-C82A-4D63-906A-5644AC457385}</td><td class="s5td">Public</td></tr>
+<tr><td>61</td><td class="s3td">{C4AA340D-F20F-4863-AFEF-F87EF2E6BA25}</td><td class="s5td">PublicDesktop</td></tr>
+<tr><td>62</td><td class="s3td">{ED4824AF-DCE4-45A8-81E2-FC7965083634}</td><td class="s5td">PublicDocuments</td></tr>
+<tr><td>63</td><td class="s3td">{3D644C9B-1FB8-4F30-9B45-F670235F79C0}</td><td class="s5td">PublicDownloads</td></tr>
+<tr><td>64</td><td class="s3td">{DEBF2536-E1A8-4C59-B6A2-414586476AEA}</td><td class="s5td">PublicGameTasks</td></tr>
+<tr><td>65</td><td class="s3td">{48DAF80B-E6CF-4F4E-B800-0E69D84EE384}</td><td class="s5td">PublicLibraries</td></tr>
+<tr><td>66</td><td class="s3td">{3214FAB5-9757-4298-BB61-92A9DEAA44FF}</td><td class="s5td">PublicMusic</td></tr>
+<tr><td>67</td><td class="s3td">{B6EBFB86-6907-413C-9AF7-4FC2ABF07CC5}</td><td class="s5td">PublicPictures</td></tr>
+<tr><td>68</td><td class="s3td">{E555AB60-153B-4D17-9F04-A5FE99FC15EC}</td><td class="s5td">PublicRingtones</td></tr>
+<tr><td>69</td><td class="s3td">{2400183A-6185-49FB-A2D8-4A392A602BA3}</td><td class="s5td">PublicVideos</td></tr>
+<tr><td>70</td><td class="s3td">{52A4F021-7B75-48A9-9F6B-4B87A210BC8F}</td><td class="s5td">QuickLaunch</td></tr>
+<tr><td>71</td><td class="s3td">{AE50C081-EBD2-438A-8655-8A092E34987A}</td><td class="s5td">Recent</td></tr>
+<tr><td>72</td><td class="s3td">{BD85E001-112E-431E-983B-7B15AC09FFF1}</td><td class="s5td">Recorded TV</td></tr>
+<tr><td>73</td><td class="s3td">{1A6FDBA2-F42D-4358-A798-B74D745926C5}</td><td class="s5td">RecordedTVLibrary</td></tr>
+<tr><td>74</td><td class="s3td">{B7534046-3ECB-4C18-BE4E-64CD4CB7D6AC}</td><td class="s5td">RecycleBinFolder</td></tr>
+<tr><td>75</td><td class="s3td">{8AD10C31-2ADB-4296-A8F7-E4701232C972}</td><td class="s5td">ResourceDir</td></tr>
+<tr><td>76</td><td class="s3td">{C870044B-F49E-4126-A9C3-B52A1FF411E8}</td><td class="s5td">Ringtones</td></tr>
+<tr><td>77</td><td class="s3td">{3EB685DB-65F9-4CF6-A03A-E3EF65729F3D}</td><td class="s5td">RoamingAppData</td></tr>
+<tr><td>78</td><td class="s3td">{B250C668-F57D-4EE1-A63C-290EE7D1AA1F}</td><td class="s5td">SampleMusic</td></tr>
+<tr><td>79</td><td class="s3td">{C4900540-2379-4C75-844B-64E6FAF8716B}</td><td class="s5td">SamplePictures</td></tr>
+<tr><td>80</td><td class="s3td">{15CA69B3-30EE-49C1-ACE1-6B5EC372AFB5}</td><td class="s5td">SamplePlaylists</td></tr>
+<tr><td>81</td><td class="s3td">{859EAD94-2E85-48AD-A71A-0969CB56A6CD}</td><td class="s5td">SampleVideos</td></tr>
+<tr><td>82</td><td class="s3td">{4C5C32FF-BB9D-43B0-B5B4-2D72E54EAAA4}</td><td class="s5td">SavedGames</td></tr>
+<tr><td>83</td><td class="s3td">{7D1D3A04-DEBB-4115-95CF-2F29DA2920DA}</td><td class="s5td">SavedSearches</td></tr>
+<tr><td>84</td><td class="s3td">{EE32E446-31CA-4ABA-814F-A5EBD2FD6D5E}</td><td class="s5td">SEARCH_CSC</td></tr>
+<tr><td>85</td><td class="s3td">{98EC0E18-2098-4D44-8644-66979315A281}</td><td class="s5td">SEARCH_MAPI</td></tr>
+<tr><td>86</td><td class="s3td">{190337D1-B8CA-4121-A639-6D472D16972A}</td><td class="s5td">SearchHome</td></tr>
+<tr><td>87</td><td class="s3td">{8983036C-27C0-404B-8F08-102D10DCFD74}</td><td class="s5td">SendTo</td></tr>
+<tr><td>88</td><td class="s3td">{7B396E54-9EC5-4300-BE0A-2482EBAE1A26}</td><td class="s5td">SidebarDefaultParts</td></tr>
+<tr><td>89</td><td class="s3td">{A75D362E-50FC-4FB7-AC2C-A8BEAA314493}</td><td class="s5td">SidebarParts</td></tr>
+<tr><td>90</td><td class="s3td">{625B53C3-AB48-4EC1-BA1F-A1EF4146FC19}</td><td class="s5td">StartMenu</td></tr>
+<tr><td>91</td><td class="s3td">{B97D20BB-F46A-4C97-BA10-5E3608430854}</td><td class="s5td">Startup</td></tr>
+<tr><td>92</td><td class="s3td">{43668BF8-C14E-49B2-97C9-747784D784B7}</td><td class="s5td">SyncManagerFolder</td></tr>
+<tr><td>93</td><td class="s3td">{289A9A43-BE44-4057-A41B-587A76D7E7F9}</td><td class="s5td">SyncResultsFolder</td></tr>
+<tr><td>94</td><td class="s3td">{0F214138-B1D3-4A90-BBA9-27CBC0C5389A}</td><td class="s5td">SyncSetupFolder</td></tr>
+<tr><td>95</td><td class="s3td">{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}</td><td class="s5td">System</td></tr>
+<tr><td>96</td><td class="s3td">{54EED2E0-E7CA-4FDB-9148-0F4247291CFA}</td><td class="s5td">SystemCertificates</td></tr>
+<tr><td>97</td><td class="s3td">{D65231B0-B2F1-4857-A4CE-A8E7C6EA7D27}</td><td class="s5td">SystemX86</td></tr>
+<tr><td>98</td><td class="s3td">{A63293E8-664E-48DB-A079-DF759E0509F7}</td><td class="s5td">Templates</td></tr>
+<tr><td>99</td><td class="s3td">{5B3749AD-B49F-49C1-83EB-15370FBD4882}</td><td class="s5td">TreeProperties</td></tr>
+<tr><td>100</td><td class="s3td">{9E3995AB-1F9C-4F13-B827-48B24B6C7174}</td><td class="s5td">UserPinned</td></tr>
+<tr><td>101</td><td class="s3td">{0762D272-C50A-4BB0-A382-697DCD729B80}</td><td class="s5td">UserProfiles</td></tr>
+<tr><td>102</td><td class="s3td">{5CD7AEE2-2219-4A67-B85D-6C9CE15660CB}</td><td class="s5td">UserProgramFiles</td></tr>
+<tr><td>103</td><td class="s3td">{BCBD3057-CA5C-4622-B42D-BC56DB0AE516}</td><td class="s5td">UserProgramFilesCommon</td></tr>
+<tr><td>104</td><td class="s3td">{F3CE0F7C-4901-4ACC-8648-D5D44B04EF8F}</td><td class="s5td">UsersFiles</td></tr>
+<tr><td>105</td><td class="s3td">{A302545D-DEFF-464B-ABE8-61C8648D939B}</td><td class="s5td">UsersLibraries</td></tr>
+<tr><td>106</td><td class="s3td">{18989B1D-99B5-455B-841C-AB7C74E4DDFC}</td><td class="s5td">Videos</td></tr>
+<tr><td>107</td><td class="s3td">{491E922F-5643-4AF4-A7EB-4E7A138D8174}</td><td class="s5td">VideosLibrary</td></tr>
+<tr><td>108</td><td class="s3td">{F38BF404-1D43-42F2-9305-67DE0B28FC23}</td><td class="s5td">Windows</td></tr>
+
+</td></tr></table>
+</div>
+<br>
+
+<br><br>
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

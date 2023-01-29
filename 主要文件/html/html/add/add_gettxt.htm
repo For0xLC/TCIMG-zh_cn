@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Извлечение текста из файлов различных форматов</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №37</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Извлечение текста из файлов различных форматов.</font></p>
+<hr><br>
+Извлечение текста используется в различных параметрах и командах:
+<br><br>
+1. В команде <a class="le" href="../com_sends.htm"><span class="S4"><b>sends</b></span></a> и подобных.
+<br><br>
+<span class="section">Примеры команд:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<font class="S1"> ;; преобразовать содержимое html, chm файла (и другие форматы) под курсором в txt, сохранить в активной панели в именной файл txt</font><br>
+<span class="S0"><a class="le" href="../com_sends.htm"><span class="S4">sends</span></a><span class="S8">=</span>`<a class="le" href="../add/add_param.htm"><span class="S23">%P%N</span></a> <a class="le" href="../com_creat.htm"><span class="S4">creat</span></a>="<a class="le" href="../add/add_param.htm"><span class="S23">%p</span></a>"<span class="S8">||</span>"<a class="le" href="../add/add_param.htm"><span class="S23">%O</span></a>".txt<span class="S8">||</span>content<span class="S8">&lt;</span><a class="le" href="../add/add_gloobal.htm#GLOBALSENDS"><span class="S121">GLOBA&#76;SENDS</span></a><span class="S8">&lt;</span>x1<span class="S8">&gt;</span><span class="S8">&gt;</span><span class="S8">||</span>code<span class="S8">&lt;</span>4<span class="S8">&gt;</span></span><br>
+<br>
+<font class="S1"> ;; преобразовать содержимое html, chm файла (и другие форматы) под курсором в txt, сохранить в активной панели в файл и просмотреть</font><br>
+<span class="S0"><a class="le" href="../com_sends.htm"><span class="S4">sends</span></a><span class="S8">=</span>`<a class="le" href="../add/add_param.htm"><span class="S23">%P%N</span></a> <a class="le" href="../com_creat.htm"><span class="S4">creat</span></a>="<a class="le" href="../add/add_param.htm"><span class="S23">%p</span></a>"<span class="S8">||</span>"<a class="le" href="../add/add_param.htm"><span class="S23">%O</span></a>".txt<span class="S8">||</span>content<span class="S8">&lt;</span><a class="le" href="../add/add_gloobal.htm#GLOBALSENDS"><span class="S121">GLOBA&#76;SENDS</span></a><span class="S8">&lt;</span>x1<span class="S8">&gt;</span><span class="S8">&gt;</span><span class="S8">||</span>code<span class="S8">&lt;</span>4<span class="S8">&gt;</span> <a class="le" href="../com_textv.htm"><span class="S4">textv</span></a>=<a class="le" href="../add/add_gloobal.htm#GLOBALCREAT"><span class="S121">GLOBA&#76;CREAT</span></a><span class="S8">&lt;</span>1<span class="S8">&gt;</span><span class="S8">||</span>viewtext<span class="S8">&lt;</span><a class="le" href="../add/add_gloobal.htm#GLOBALCREAT"><span class="S121">GLOBA&#76;CREAT</span></a><span class="S8">&lt;</span>1<span class="S8">&gt;</span>|0|0|0|0|Consolas<span class="S8">&gt;</span><span class="S8">||</span>pos<span class="S8">&lt;</span>1<span class="S8">&gt;</span></span><br>
+</p>
+<br>
+2. В команде <a class="le" href="../com_spech.htm"><span class="S4"><b>spech</b></span></a>.<br>
+<br>&nbsp;&nbsp;При открытии или перетаскивании файла в окно программы из этих форматов будет извлечён текст.
+<br>
+<br>
+3. В параметре <a class="le" href="add_info.htm#t38"><span class="S4"><b>info</b></span></a>
+<br><br>
+<span class="section">Примеры команд:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<font class="S1"> ;; для выделенных файлов получить 2D массив: путь и извлечённый текст (типы файлов в Дополнении №37)</font><br>
+<span class="S0"><span class="S51">anf2d</span><span class="S8">=</span><a class="le" href="add/add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span>1<span class="S8">||</span><a class="le" href="add_lines.htm###"><span class="S51">##</span></a><span class="S51">@@</span>t38<span class="S8">::</span><span class="S11">//</span><span class="S8">||</span>progres<span class="S8">&lt;</span><span class="S8">&gt;</span> <a class="le" href="add_gloobal.htm#GLOBALANF2D"><span class="S121">GLOBA&#76;ANF2D</span></a><span class="S8">&lt;</span>a<span class="S8">&gt;</span></span><br>
+</p>
+<hr align="left" width=70%>
+<br>
+Поддерживаемые форматы из которых извлекается текст:<br>
+
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> HTM, HTML, XHTML</font> - HTML (см. Дополнение <a class="le" href="add_format.htm#74"><span class="S4"><font size="2"><b>№15</b></font></span></a>)
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> MHT, MHTML</font> - WEB archive (см. Дополнение <a class="le" href="add_format.htm#74"><span class="S4"><font size="2"><b>№15</b></font></span></a>)
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> CHM</font> - HTML Help (см. Дополнение <a class="le" href="add_format.htm#74"><span class="S4"><font size="2"><b>№15</b></font></span></a>)
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> HHK</font> -	 HTML Help Index.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> HHC</font> -	 HTML Help Table Of Contents.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> RTF</font> -	 RICH text.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> WRI</font> - Windows 3.1 Write.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> MP3</font> - MPEG Layer3 - извлечение текста песни.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> EPUB</font> - Electronic Publication.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> FB2, FB2.ZIP, FBZ, FB3</font> - FictionBook (FictionBook archive).
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> SXW, STW, STI, STC, STD, SXC, SXI, SXD, SXG, SXM </font> - OpenOffice Format ("Documents", "Presentations", "Tables").
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> EML</font> - E-Mail Message.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> CSV</font> - Tables Text Format.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> TXTZ</font> - Compressed eBook File.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> HTMLZ</font> - Zipped HTML EBook.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> UUE, XXE, B64</font> - B64/MIME/UUE/XXE/BinHex.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> TMDX, PSW, PWD, TMVX</font> - TextMaker SoftMaker.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> PMDX, PMVX</font> - PlanMaker SoftMaker.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> PRVX</font> - Presentations SoftMaker.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> DOCX, DOCM, DOTX, XPS</font> - Microsoft Word Open XML Document.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> XLSX, XLSM, XLAM, XLTM, XLTX, DIF</font> - Microsoft Excel Open XML Document.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> PPTX, PPTM, POTX, POTM, PPSX, PPSM</font> - Microsoft PowerPoint XML Document.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> VSDX, VSSX, VSTX, VSDM, VSTM, SVG, SVGZ</font> - Microsoft Visio XML Document.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> ODT, OTT, FODT, UOT</font> - OpenDocument Text Format.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> ODS, OTS, FODTS, UOS</font> - OpenDocument Flat XML Spreadsheet.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> ODP, OTP, OTG, OTR, ODG, FODP, PRDX, PRSX, UOP</font> - OpenDocument XML Apache Impress.
+<br><br>
+<hr align="left" width=30%>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> DOC, DOT, WPS, ASD</font> - работает, если установлен Microsoft Word.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> XLS, XLT, XLSB, SLK, XLA, DBF</font> - работает, если установлен Microsoft Exel.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> PPT, POT, PPS</font> - работает, если установлен Microsoft PowerPoint.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> VSD, VDW, VSS, VST</font> - работает, если установлен Microsoft Visio.
+<br><br>
+<hr align="left" width=30%>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> XML</font> - (некоторые xml файлы, созданные MS Office).
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> ADML</font> - Microsoft System Files.
+
+<br><br>
+<hr align="left" width=30%>
+Файлы субтитров: 
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> SRT</font> - Sub Ripper.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> SUB</font> - 9 форматов: Sub Sonic, Sub Viewer 1.0, Sub Viewer 2.0, DVDSubtitle, MicroDVD, MPSub, Philips SVCD Designer, Sofni, SonicDVD Creator.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> SSA</font> - Sub Station Alpha.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> ASS</font> - Advanced SubStation Alpha.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> XML</font> - Timed Text.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> TXT</font> - 18 форматов: TM Player, Ulead DVD Workshop 2.0, Wincaps Text Timecoded, Adobe Encore DVD, Captions, Cavena, CPC-600, DVD Junior, DVD Subtitle System, FAB Subtitler, I-Author Script, Inscriber CG, MAC DVD Studio Pro, MicroDVD, Pinnacle Impression, PowerPixel, QuickTime Text, SubCreator 1.x.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> TTS</font> - Turbo Titler.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> VSF</font> - ViPlay Subtitle File.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> SBV</font> - YouTube Captions File.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> ZEG</font> - ZeroG Subtitles Format.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> XAS</font> - Advanced Subtitles.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> AQT</font> - AQTitle.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> ASC</font> - Cheetah.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> DKS</font> - DKS Subtitle Format.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> JSS</font> - JACOSub 2.7+.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> LRC, VKT</font> - Karaoke Lyrics.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> SCR</font> - MacSUB.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> MPL</font> - MPlayer, MPlayer2.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> OVR</font> - OVR Script.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> PAN</font> - Panimator.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> PJS</font> - Phoenix Japanimation Society.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> PSB</font> - PowerDivX.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> RT</font> - RealTime.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> SAMI, SMI</font> - SAMI Captioning.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> S2K</font> - Sasami Script.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> SBT</font> - SBT Subtitle Format.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> SST</font> - Sonic Scenarist.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> SON</font> - Spruce DVDMaestro.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> STL</font> - Spruce Subtitle File.
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> SSTS</font> - Stream SubText Script.
+
+<br><br>
+<hr align="left" width=30%>
+<font class="S121">Извлечение из изображений работает на Windows 10 и выше.</font><br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> BMP, GIF, PNG, JPG, JPEG, JPE, TIF, TIFF, DIB, RLE</font> - изображения (чем лучше качество, тем больше вероятность получить точный текст).
+<br><br>
+<hr align="left" width=30%>
+<font class="S121">Файлы для которых требуются дополнительные утилиты:</font><br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> HLP</font> - Microsoft Help Format (для распаковки используются cmdTotal + hlp.wcx).
+<br>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b> SVGZ</font> - Microsoft Visio XML Document (для распаковки используются 7-Zip или cmdTotal + Total7zip.wcx).
+<br><br>
+Дополнительные файлы прописываются в <a class="le" href="../../config.htm#Programs"><font class="S1"><b>TCIMG.ini</b></font></a> (TCIMGU.ini) в секции <span class="S8"><b>[</b></span><a href="../../config.htm#Programs"><b>Programs</b></a><span class="S8"><b>]</b></span>.<br>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<b><font class="S81">[</font>Programs<font class="S81">]</font></b><br>
+<font class="S21">;  7-ZIP - свободный файловый архиватор</font>, <a href="https://www.7-zip.org/" target="_blank">скачать</a>.<br>
+<b>7-ZIP<font class="S81">=</font></b>%COMMANDER_PATH%\Programs\Arhive\7-Zip\7z.exe<br>
+<br>
+<font class="S21">; cmdTotal - инструмент командной строки для распаковки архивов с использованием плагинов,</font> <a href="http://wincmd.ru/plugring/cmdtotal.html" target="_blank">скачать</a>.<br>
+<b>cmdTotal<font class="S81">=</font></b>%COMMANDER_PATH%\Utilities\Images\cmdTotal\cmdTotal.exe<br>
+<br>
+<font class="S21">; Total7zip - архиваторный плагин на основе 7-ZIP</font>, <a href="http://wincmd.ru/plugring/Total7zip.html" target="_blank">скачать</a><br>
+<b>Total7zip<font class="S81">=</font></b>%COMMANDER_PATH%\Plugins\Wcx\Total7zip\Total7zip.wcx<br>
+<br>
+<font class="S21">; hlp - архиваторный плагин для распаковки HLP файлов</font>, <a href="http://wincmd.ru/plugring/hlp.html" target="_blank">скачать</a><br>
+<b>hlp<font class="S81">=</font></b>%COMMANDER_PATH%\Plugins\Wcx\Hlp\hlp.wcx<br>
+</p>
+
+
+
+<br><br>
+<hr align="left" width=30%>
+<br>&nbsp;&nbsp;<font class="S91"><b>&#10644;</b></font> Другие файлы txt, ini, и.т.д. считываются как текстовые.
+<br>
+<br>
+<hr align="left" width=70%>
+<br>
+<span class="section">Дополнение:</span>
+<br>
+<br>&nbsp;&nbsp;<font class="S21"><b>&#9193;</b></font> Это не 100%-е извлечение, идеального получения текста, думаю, не существует (тестировал 10-ки утилит на заявленных типах файлов, но ни одна не справилась на 100%), т.к. программы в одни и те же типы файлов записывают информацию по разному: со своей кодировкой, шифрованием, разметкой..., что затрудняет выявление текста. Но <font class="S21"><b>Вы можете помочь!!!</b></font>
+<br>
+<br>&nbsp;&nbsp;<font class="S21"><b>&#9193;</b></font> Функционал извлечения текста тестируется, будет улучшаться по мере нахождения неточностей.
+<br>
+<br>&nbsp;&nbsp;<font class="S21"><b>&#9193;</b></font> Если из каких-либо файлов некорректно извлекается текстовая информация, то вы можете их прислать для исправления форматирования (кроме изображений).
+<br>
+<br>&nbsp;&nbsp;<font class="S21"><b>&#9193;</b></font> Если нужно извлечь текст из других типов файлов, которых нет выше - сообщайте, возможно получиться это реализовать.
+<br>
+<br>&nbsp;&nbsp;<font class="S21"><b>&#9193;</b></font> Для извлечения текста из "больших" файлов требуется время, т.к. ряд типов являются 7-zip, zip, chm или другими архивами и перед получением текста их приходится распаковывать, а затем получать и форматировать текст.
+ 
+<!-- .PDF, .MOBI, CBZ, PML, SNB, AZW3. ONE, .VSD, .VSS, .VST, .VDX, .VSX, .VTX Visio Drawing XML File -->
+
+<br><br>
+
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

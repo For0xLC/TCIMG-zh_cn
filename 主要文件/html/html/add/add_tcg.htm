@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Синтаксис файлов tcg</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №31</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Дополнение к командам, использующих подключение шаблонов из файлов .tcg</font></p>
+<hr><br>
+
+Файлы .tcg - специальные файлы, в секциях которых можно прописывать шаблоны с различной информацией и подключать их в командах...<br><br>
+
+
+<b>В файлах могут использоваться:</b>
+<br><br>
+<a name="1"></a><b>1.</b> Секции в квадратных скобках (как у стандартного ini файла).<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:200">
+<font class="S81"><b>[</b></font><b>Section</b><font class="S81"><b>]</b></font><br>
+InfoLine1<br>
+InfoLine2<br>
+InfoLine3<br>
+...<br>
+InfoLineN<br>
+</p>
+</div>
+<br>
+<hr class="hr-blue"><br>
+
+
+<a name="2"></a><b>2.</b> Секции в фигурных скобках.<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+Используется для передачи специальных шаблонов.<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:200">
+<font class="S81"><b>{</b></font><b>Section</b><font class="S81"><b>}</b></font><br>
+InfoLine1<br>
+InfoLine2<br>
+InfoLine3<br>
+...<br>
+InfoLineN<br>
+</p>
+</div>
+<br>
+<hr class="hr-blue"><br>
+
+
+<a name="3"></a><b>3.</b> Использование в файле(ах) секций с квадратными и фигурными скобками.<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+Для получение точного содержимого секций рекомендуется завершать информацию секции "пустым" именем с используемыми скобками <b>[---]</b> или <b>{---}</b> :<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:200">
+<font class="S81"><b>[</b></font><b>Section</b><font class="S81"><b>]</b></font><br>
+InfoLine1<br>
+InfoLine2<br>
+InfoLine3<br>
+...<br>
+InfoLineN<br>
+<font class="S81"><b>[</b></font><b>---</b><font class="S81"><b>]</b></font><br>
+<font class="S81"><b>{</b></font><b>Section</b><font class="S81"><b>}</b></font><br>
+InfoLine1<br>
+InfoLine2<br>
+InfoLine3<br>
+...<br>
+InfoLineN<br>
+<font class="S81"><b>{</b></font><b>---</b><font class="S81"><b>}</b></font><br>
+</p>
+</div>
+<br>
+<hr class="hr-blue"><br>
+
+
+<a name="4"></a><b>4.</b> Подключение нескольких файлов .tcg.<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+• Те файлы .tcg, которые входят в состав утилиты (их содержимое) автоматически включаются<br>
+• В TCIMG.ini (TCIMGU.ini) в секции [Setting] в ключе TCG можно подключить другие (пользовательские) .tcg файлы: прописывается либо полный путь, либо имя файла, который находится в папке с утилитой или в папке ...\Files\Tcg\ <br>
+• Файлы разделяются <font class="S81"><b>/</b></font><br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:200">
+<b>TCG</b><font class="S81"><b>=</b></font>User1.tcg<font size="+1" class="S81"><b>/</b></font>User2.tcg
+</p>
+</div>
+<br>
+<hr class="hr-blue"><br>
+
+
+<a name="5"></a><b>5.</b> Использование содержимого секций.<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+• Если необходимо получить содержимое секции с квадратными скобками, то в параметре tcg<> и других прописывается имя секции без скобок:<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:200">
+<b>tcg</b><font class="S81"><b>&#60;</b></font>NameSection<font class="S81"><b>&#62;</b></font><br>
+<b>butfrom</b><font class="S81"><b>&#60;</b></font><b>@</b>NameSection<font class="S81"><b>&#62;</b></font><br>
+<b>TCGINFO</b><font class="S81"><b>&#60;</b></font><b>@</b>NameSection<font class="S81"><b>&#62;</b></font>
+</p>
+• Если необходимо получить содержимое секции с фигурными скобками, то в параметре tcg<> и других прописывается имя секции с фигурными скобками:<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:200">
+<b>tcg</b><font class="S81"><b>&#60;</b></font><font class="S51"><b>{</b></font>NameSection<font class="S51"><b>}</b></font><font class="S81"><b>&#62;</b></font><br>
+<b>butfrom</b><font class="S81"><b>&#60;</b></font><b>@</b><font class="S51"><b>{</b></font>NameSection<font class="S51"><b>}</b></font><font class="S81"><b>&#62;</b></font><br>
+<b>TCGINFO</b><font class="S81"><b>&#60;</b></font><b>@</b><font class="S51"><b>{</b></font>NameSection<font class="S51"><b>}</b></font><font class="S81"><b>&#62;</b></font>
+</p>
+</div>
+<br>
+<hr class="hr-blue"><br>
+
+
+<a name="6"></a><b>6.</b> Комментарии.<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+• Комментарии могут быть в любом месте, кроме имени секции.<br>
+• Синтаксис: <font class="S21"><b>пробел;;пробел комментарий</b></font><br>
+• Комментарии <font class="S81"><b>НЕ МОГУТ НАХОДИТСЯ</b></font> после имени секции!!!<br>
+• При считывании секции все комментарии удаляются.<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:680">
+<font class="S21">&nbsp;;; пример запуска с различными параметрами и методами через команду start<br></font>
+[tm_StartPrograms]<br>
+start=%PROGRAMFILES%\Windows~~NT\Accessories\wordpad.exe<font class="S21"> ;; запуск wordpad.exe</font><br>
+start=%COMMANDER_PATH%\Programs\Players\VLC\vlc.exe||&&wait<font class="S21"> ;; ожидать закрытия программы</font><br>
+pause=5000<font class="S21"> ;; пауза перед вызовом следующей команды</font><br>
+start=%%COMMANDER_PATH%%\Test.bat||&&hide<font class="S21"> ;; запустить батник, скрыть окно</font><br>
+</p>
+</div>
+<br>
+<hr class="hr-blue"><br>
+
+
+<a name="7"></a><b>7.</b> Приоритет считывания секций.<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+• Если есть одинаковые имена секций, то считывается содержимое первой.<br>
+• Приоритет №1 имеют файлы прописанные в TCIMG.ini в секции [TCG]<br>
+• Приоритет №2 имеют файлы прописанные в TCIMG.ini в секции [Setting] в ключе TCG<br>
+• Приоритет №3 имеют файлы входящие в состав утилиты, см. ниже<br>
+</div>
+<br>
+<hr class="hr-blue"><br>
+
+
+<a name="8"></a><b>8.</b> Теги.<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+• Тег <font class="S21"><b>##center##</b></font> заменяется в командах текущим текстом.<br>
+</div>
+<br>
+<hr class="hr-blue"><br>
+
+
+<a name="9"></a><b>9.</b> Редактирование шаблона.<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+• После имени секции через разделитель <font class="S81"><b>|</b></font> могут быть прописаны параметры Parameters, позволяющие редактировать шаблон.<br>
+• Parameters - это один или серия параметров таких же как и в Дополнении <a class="le" href="add_format.htm"> <b>№15</b></a>, в которых убран тег formt<>.<br>
+• При <font class="S51">Parameters=0</font> секция возвращается "как есть", без удаления пустых строк.<br>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:200">
+<b>tcg</b><font class="S81"><b>&#60;</b></font>NameSection<font class="S81"><b>|</b></font>Parameters<font class="S81"><b>&#62;</b></font><br>
+</p>
+</div>
+<br>
+<hr class="hr-blue"><br>
+
+<a name="10"></a><b>10.</b> Временное добавление информации (шаблонов) из файла(ов).<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+• Для добавления информации используется команда <a class="le" href="../com_tcgup.htm"> <b>tcgup</b></a><br>
+• Добавить информацию можно из одного или нескольких файлов.<br>
+• Добавить информацию можно в начало или в конец содержимого всех заданных tcg файлов.<br>
+• Добавленная информация сохраняется до завершения работы утилиты.<br>
+</div>
+
+
+<br>
+<hr class="hr-blue"><br>
+<a name="end"></a>
+Рекомендуется:<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+• Имена секций во всех файлах .tcg не должны повторяться.<br>
+• Структурировать информацию: распределять секции по темам в отдельные файлы:<br>
+&nbsp;&nbsp;(как это сделано в файлах, входящих в состав TCIMG)<br>
+&nbsp;&nbsp;<font class="S121"><b>&#9650;</b></font> TCIMG.tcg - файл tm_ , pm_ , sm_ , am_ команд<br>
+&nbsp;&nbsp;<font class="S121"><b>&#9650;</b></font> MENU.tcg - файл шаблонов меню<br>
+&nbsp;&nbsp;<font class="S121"><b>&#9650;</b></font> HTML.tcg - файл шаблонов html<br>
+&nbsp;&nbsp;<font class="S121"><b>&#9650;</b></font> BUTTON.tcg - файл шаблонов кнопок Total Commander (автор Jury Abel')<br>
+&nbsp;&nbsp;<font class="S121"><b>&#9650;</b></font> SHAPED.tcg - файл шаблонов секций с фигурными скобками<br>
+&nbsp;&nbsp;<font class="S121"><b>&#9650;</b></font> MISC.tcg - файл для различных шаблонов<br>
+&nbsp;&nbsp;<font class="S121"><b>&#9650;</b></font> AllMenu.tcg - файл шаблона редактируемого меню (автор Jury Abel')<br>
+</div>
+
+
+
+
+
+
+<p></p>
+
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

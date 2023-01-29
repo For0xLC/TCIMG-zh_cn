@@ -1,0 +1,559 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>TCIMG FAQ</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="css/i.css">
+</head>
+<body background="images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="images/bgl_mblue.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>TCIMG FAQ</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="images/bgs_grey.gif"></td></tr></table>
+<hr><a name="ONLINE1"></a>
+<a name="up"></a>
+<a class="le" href="#0"><b>引言</b></a><br>
+<a class="le" href="#1"><b>&nbsp;&nbsp;1. TCIMG 的用途</b></a><br>
+<a class="le" href="#2"><b>&nbsp;&nbsp;2. 如何使用 TCIMG？</b></a><br>
+<a class="le" href="#3"><b>&nbsp;&nbsp;3. TCIMG 上手容易吗？</b></a><br>
+<a class="le" href="#4"><b>&nbsp;&nbsp;4. 如何在 Total Commander 中创建带参数的按钮？</b></a><br>
+<a class="le" href="#5"><b>&nbsp;&nbsp;5. 如何分享 Total Commander 中的按钮？</b></a><br>
+<a class="le" href="#6"><b>&nbsp;&nbsp;6. 调用 TCIMG 可能出现的错误</b></a><br>
+<a class="le" href="#7"><b>&nbsp;&nbsp;7. 调用 TCIMG 的命令行结构</b></a><br>
+<a class="le" href="#8"><b>&nbsp;&nbsp;8. TCIMG 的参数需要加引号吗？</b></a><br>
+<a class="le" href="#9"><b>&nbsp;&nbsp;9. TCIMG 中没有想要的命令，可以添加新命令吗？</b></a><br>
+<a class="le" href="#10"><b>10. TCIMG 窗口支持其他语言吗？</b></a><br>
+<a class="le" href="#11"><b>11. TCIMG 是否携带病毒？</b></a><br>
+<a class="le" href="#12"><b>12. 如何在 Total Commander 中为 TCIMG 命令添加快捷键？</b></a><br>
+<a class="le" href="#13"><b>13. 能否在其他程序中调用TCIMG？</b></a><br>
+<a class="le" href="#14"><b>14. 如何更新TCIMG？</b></a><br>
+<a class="le" href="#15"><b>15. 如何保留 TCIMG 的设置并更新？</b></a><br>
+<a class="le" href="#16"><b>16. 使用 TCIMG 时是否需要在系统中注册文件？</b></a><br>
+<a class="le" href="#17"><b>17. TCIMG 收费吗?</b></a><br>
+<a class="le" href="#18"><b>18. 可以在项目中使用"TCIMG"吗？</b></a><br>
+<a class="le" href="#19"><b>19. TCIMG 能否在旧版本的Total Commander上正常使用？</b></a><br>
+<a class="le" href="#20"><b>20. 能否提供 TCIMG 所在文件夹的相对路径？</b></a><br>
+<a class="le" href="#21"><b>21. 可以在Total Commander中使用 TCIMG 的路径变量吗？</b></a><br>
+<a class="le" href="#22"><b>22. 如何查看%t， %p等参数传递的内容？</b></a><br>
+<a class="le" href="#23"><b>23. 如何解决“文件名中带有特殊字符，TCIMG 无法识别”？</b></a><br>
+<a class="le" href="#24"><b>24. 能否不借助TC和快捷方式，以指定的参数启动 TCIMG？</b></a><br>
+<a class="le" href="#25"><b>25. 如果文件名太长，TCIMG 出错怎么解决?</b></a><br>
+<a class="le" href="#26"><b>26. 如何解决“操作%AppData%文件夹中的文件后无法复制”？</b></a><br>
+<a class="le" href="#27"><b>27. 如何解决一些命令在处理带有感叹号的文件名时失效的问题？</b></a><br>
+<a class="le" href="#28"><b>28. 能否在 TCIMG 中执行其他脚本、程序、模板？</b></a><br>
+<p></p>
+
+<!-- Вступление -->
+<hr>
+<!-- <a href="https://vk.com/sochirealtys" target="_blank"><img align="middle" alt="" border="0" src="images/ssss.png" width="100%" /></a> -->
+<hr>
+<h2 style="font-weight: normal"><a href="#1"><img align=left src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="0"></a><b><font class="S91">引言</font></b></h2>
+在为Total Commander编写了大量的vbs自动化脚本后，我产生了一个想法：创建一个包含大部分功能的实用程序。从一开始的只有十几个命令，到如今"TCIMG"已经包含数百个命令和参数，可以解决各种问题。此外，TCIMG还可以被其它应用程序调用(如AkelPad等)。<br>
+这么做有许多好处：<br>
+- 无需为每个具体问题编写新的脚本 - 自带若干命令或参数。<br>
+- 自带一个多功能库(超过4000个函数)，在添加新的命令或扩展功能时，无需像写脚本一样添加相同的内容。<br>
+- 代码简洁，没有多余的库、函数和变量，不使用 Include，所有 UDF 函数都针对特定需求重写。所有的大文本都储存在单独的文件中，只在所需的命令中连接。<br>
+- 避免修改某个函数时影响到其他命令和参数的稳定性。<br>
+- 一行命令行中，可以执行不同的方法与命令，充分体现TCIMG的灵活性和功能。<br>
+- 许多命令能够创建/保存/转换初始或最终的数据列表，并传递到其它命令，以解决复杂的任务。<br>
+- 所有需要翻译成其他语言的文本都存放在独立的“TCIMG_*.lng”文件中<br>
+- 本人作为使用者，喜欢实验，所以大多数设置都存放在独立的文件中，所有人都可以自定义不同的功能<br>
+- 节省大量的时间和存储空间...<br>
+- Ph.D<br>
+此外，对比vbs，Autoit功能更强大，更高效，例如支持剪贴板，正则表达式，系统，库，资源，窗口类，Internet，编码，INI文件，图像，压缩等操作。<br>
+虽然 TCIMG 是为我自己编写的，但我认为它对你很有用，能够简化你的工作。<br>
+以下是关于"TCIMG"的常见问题。
+
+<!-- 1. TCIMG 的用途 -->
+
+<br>
+<hr>
+<b><font class="S91">0.</font></b>
+任何命令都需要经过测试。执行 TCIMG 命令前先在测试文件和测试目录上测试，确保命令正常执行后再使用。 <font class="S21"><b>记得复制和保存数据!!!</b></font>
+<br>
+<hr>
+
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#2"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="1"></a><b><font class="S91">1. TCIMG 的用途</font></b></h2>
+TCIMG专为TC、其他应用程序和操作系统的自动化任务而设计。每个电脑用户总有面临重复而单调的任务(如文件操作、批量重命名、创建文件夹、获取信息...)的时候，这些任务通常需要花费几个小时甚至几天的时间。TC简化了这些任务，而"TCIMG"则进一步扩展TC的功能，能够通过一次点击完成大多数任务。
+
+<!-- 2. 如何使用 TCIMG？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#3"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="2"></a><b><font class="S91">2. 如何使用 TCIMG？</font></b></h2>
+1) 将下载的TCIMG压缩包解压到任意文件夹中，建议解压到Total Commander的运行目录中，这样就可以使用Total Commander的内部环境变量(详见<a class="le" href="html/add/add_commands.htm#3"> <b>附录13</b></a> ) 。这样，将TC移动到USB设备或另一台设备上时，所有的按钮依旧能够正常使用。<br> 此外，可以将所有文件复制到Total Commander的根目录下(与TOTALCMD.exe在同一目录)。这样能够使用 <b><font class="S81" size="-1">%COMMANDER_PATH%\TCIMG.exe</font></b>作为 TCIMG 的路径。<br>2) 在工具栏上创建一个按钮并添加所需功能。 <a class="le" href="#4">以下内容</a> 将介绍如何操作。
+
+
+<!-- 3. TCIMG 上手容易吗？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#4"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="3"></a><b><font class="S91">3. TCIMG 上手容易吗？</font></b></h2>
+上手难度和常见软件差不多。帮助文档中有 <b>15091</b> 个命令示例并且随着版本的更新而增加。如果有需求，浏览过帮助文档的相应部分后，先看一下所给的示例 - 说不定能直接找到解决方案。如果没有，也能参考示例，举一反三，拼接出特定的命令和参数。<br>
+想要更深入地理解 TCIMG，就需要仔细阅读本文档，也许乍一看，会觉得 TCIMG 的语法复杂，其实这只是因为不熟悉。无论如何，你可以在以下网站的 TCIMG 专题中询问问题或提出建议：<br>
+&nbsp;&nbsp;&bull; <a class="le" target="_blank" href="http://tc-image.3dn.ru/forum/5-498-1"><b>论坛 NO.1</b> (tc-image.3dn.ru)</a><br>
+&nbsp;&nbsp;&bull; <a class="le" target="_blank" href="http://forum.ru-board.com/topic.cgi?forum=5&topic=50714#1"><b>论坛 NO.2</b> (forum.ru-board.com)</a><br>
+&nbsp;&nbsp;&bull; <a class="le" target="_blank" href="https://t.me/tcimg"><b>论坛 NO.3</b> (Telegram)</a><br>
+&nbsp;&nbsp;&bull; <a class="le" target="_blank" href="http://tc-image.3dn.ru/forum/5-964-1"><b>新功能请求</b></a><br>
+&nbsp;&nbsp;&bull; <a class="le" target="_blank" href="http://tc-image.3dn.ru/forum/5-1051-1"><b>拓展功能和脚本</b></a><br>
+&nbsp;&nbsp;&bull; <a class="le" target="_blank" href="http://tc-image.3dn.ru/forum/11-446-1"><b>TC 按钮</b></a><br>
+&nbsp;&nbsp;&bull; <a class="le" target="_blank" href="http://tc-image.3dn.ru/forum/5-875-1"><b>帮助文档翻译</b></a><br>
+
+
+<!-- 4. 如何在 Total Commander 中创建带参数的按钮？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#5"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="4"></a><b><font class="S91">如何在 Total Commander 中创建带参数的按钮？</font></b></h2>
+1) 鼠标左键拖动"TCIMG.exe"到Total Commander工具栏上的空白区域来创建一个按钮。<br>
+<p align="center"><img src="images/faq01.png"></p>
+<a name="change"></a>
+2) 更改设置,右键单击刚创建的按钮,在菜单中选择"更改": 
+<p align="center"><img src="images/faq02.png"></p>
+3) 出现“更改单个按钮”的对话框: 
+<p align="center"><img src="images/faq03.png"></p>
+修改以下字段：<br>
+&nbsp;&nbsp;<span class="S81"><b>1)</b></span> <b>命令：</b> 建议删除TCIMG路径周围的引号(除非路径中带有空格)。 <br>
+&nbsp;&nbsp;<span class="S81"><b>2)</b></span> <b>参数：</b> 插入一行TCIMG命令：
+<p></p>
+<a href="javascript:ClipBoard();"><IMG NAME="botton" title="复制到剪贴板" style='margin: 5px 4px 4px 10px;' src='images/copy.gif'" border="0" align='right'></a>
+<p id="copytext" class="codebox"><span><span class="S1">
+<big><span class="S0"><a class="le" href="html/com_copys.htm"><span class="S51">copys</span></a><span class="S8">=</span><a class="le" href="html/add/add_param.htm">%L</a><span class="S8">||</span>"<a class="le" href="html/add/add_param.htm">%t</a></span>"<font class="S61">//</font>0 ;; 复制所选对象到目标面板，不覆盖已有文件。</big>
+<br>
+</span></span></p>
+<textarea ID="holdtext" STYLE="display:none;"></textarea><SCRIPT LANGUAGE="JavaScript">function ClipBoard() {holdtext.innerText = copytext.innerText;Copied = holdtext.createTextRange();Copied.execCommand("Copy");} </SCRIPT>
+本文档中的所有示例中， <u>参数</u> 和 <u>注释</u> 通过 " ;; " (1个空格,2个分号,1个空格)分隔。<br>
+在 <b>参数</b> 中复制以上命令。
+<br>
+&nbsp;&nbsp;<span class="S81"><b>3)</b></span> <b>启动路径：</b> 建议留空。<br>
+&nbsp;&nbsp;<span class="S81"><b>4)</b></span> <b>图标文件：</b> 更改按钮图标。<br>
+&nbsp;&nbsp;<span class="S81"><b>5)</b></span> <b>提示：</b> 关于命令的提示或者示例中" ;; "以后的内容。<br>
+
+至此，新按钮创建完毕：
+
+<p align="center"><img src="images/faq04.png"></p>
+<p align="center"><img src="images/faq05.png"></p>
+
+创建新按钮，只需要重复以上操作。当然，也可以直接复制粘贴已有的按钮，再修改“参数”项。<br>
+此外，可以使用 <a class="le" href="html/com_butup.htm"><b>butup</b></a> 命令创建新按钮。
+
+<!-- 5. 如何分享 Total Commander 中的按钮？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#6"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="5"></a><b><font class="S91">5. 如何分享 Total Commander 中的按钮？</font></b></h2>
+右键单击新建按钮，单击“复制”
+
+<p align="center"><img src="images/faq06.png"></p>
+
+按钮的信息将写入剪贴板，以下是某一按钮的信息: 
+
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+TOTALCMD#BAR#DATA<br>
+%COMMANDER_PATH%\TCIMG.exe<br>
+copys=%L||"%t"//0<br>
+Wcmicons.dll，1744<br>
+复制所选对象到目标面板，不覆盖已有文件。<br>
+<br>
+-1<br>
+</p>
+可以将按钮的信息以文本形式分享给其他人：粘贴到网页上、发送消息、保存为文本文件并发送...<br>
+要在工具栏中插入复制的按钮，先右键单击工具栏的空白区域（或按钮之间的间隙），在弹出的菜单中，单击“粘贴”（如果剪贴板中没有按钮信息,则不会出现“粘贴”）：
+
+<p align="center"><img src="images/faq07.png"></p>
+
+工具栏上将出现一个新按钮：
+
+<p align="center"><img src="images/faq08.png"></p>
+
+然后再更改新的按钮配置 (如图， <a class="le" href="#change">如上</a>)，即:<br>
+- 检查TCIMG的路径。<br>
+- 更改图标(若图标不存在，则不显示图标)。<br>
+- 更改提示(必要的话)。<br>
+在 <a class="le" href="http://tc-image.3dn.ru/"><b>该网站</b></a>的“<a class="le" href="http://tc-image.3dn.ru/forum/11"><b>TC 按钮</b></a>”分区里可以找到许多现成的定制按钮。
+
+<!-- 6. 调用 TCIMG 可能出现的错误 -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#7"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="6"></a><b><font class="S91">6. 调用 TCIMG 可能出现的错误</font></b></h2>
+以下是可能出现的错误类型：<br>
+<span class="S81"><b>1)</b></span> 找不到文件：
+<p align="center"><img src="images/faq09.png"></p>
+检查TCIMG路径是否正确（"命令"字段）。<br>
+<span class="S81"><b>2)</b></span> 此功能无法在压缩文件中使用：
+<p align="center"><img src="images/faq10.png"></p>
+大多数命令无法在压缩文件中执行。<br>
+支持压缩文件的命令必须在命令之前添加参数 <a class="le" href="html/add/add_param.htm"><b>%Z</b></a>。
+
+<p></p>
+<a href="javascript:ClipBoard2();"><IMG NAME="botton" title="复制到剪贴板" style='margin: 5px 4px 4px 10px;' src='images/copy.gif'" border="0" align='right'></a>
+<p id="copytext2" class="codebox"><span><span class="S1">
+<big><span class="S0"><a class="le" href="html/add/add_param.htm"><font class="S81"><b>%Z</b></font></a><a class="le" href="html/com_infos.htm"><span class="S51">infos</span></a><span class="S8">=</span>1<span class="S8">||</span>2</span> ;; 显示Total Commander面板信息<br></big>
+</span></span></p>
+<textarea ID="holdtext2" STYLE="display:none;"></textarea><SCRIPT LANGUAGE="JavaScript">function ClipBoard2() {holdtext2.innerText = copytext2.innerText;Copied = holdtext2.createTextRange();Copied.execCommand("Copy");} </SCRIPT>
+
+<span class="S81"><b>3)</b></span> Error:
+<p align="center"><img src="images/faq11.png"></p>
+出现此错误类型有多种可能：<br>
+&nbsp;&nbsp;&nbsp;- 参数不正确：缺少参数、缺少分隔符...<br>
+&nbsp;&nbsp;&nbsp;- 条件错误：指定的应该是文件夹而不是文件、缺少必需的参数...<br>
+&nbsp;&nbsp;&nbsp;- 代码错误。请通过 <a class="le" href="http://tc-image.3dn.ru/forum/5-498-1"><b>TCIMG</b></a> 网站、mail、ICQ...等方式提交错误，最好附上详细说明和错误提示（如 <a class="le" href="#5">以上截图</a> 所示)
+<br>
+<span class="S81"><b>4)</b></span> NOT FILE:
+<p align="center"><img src="images/faq15.png"></p>
+文件夹中缺少必要文件 <a class="le" href="files.htm"><b>文件列表</b></a><br><br>
+
+<span class="S81"><b>5)</b></span> Function Not Realised! em_CommandTCIMG888
+<p align="center"><img src="images/faq16.png"></p>
+与 Total Commander 相关的命令（如 <a class="le" href="html/com_tcprm.htm"><b>tcprm</b></a>）中需要调用参数时，都会先在 %COMMANDER_PATH%\UserCmd.ini 中创建一个临时命令 [em_CommandTCIMG888]，再执行该命令。<br>出现以上错误，可能是由于：<br>
+&nbsp;&nbsp;- 没有足够时间创建和执行命令。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<u>增加</u> TCIMG.ini 中 [Setting] 字段下的 <b>PauseTcPrm</b> 值以解决问题。<br>
+&nbsp;&nbsp;- 写入 UserCmd.ini 文件时出错。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<u>删除</u> UserCmd.ini 文件“写”的限制属性（如"只读""隐藏"...）或给予该文件“完全访问”的权限。<br>
+若依旧报错，请检查 TCIMG 是否为最新版本。
+<br><br>
+<span class="S81"><b>5)</b></span> 该命令无法正常工作：<br>
+在一些版本的 Total Commander 中，<a class="le" href="html/com_buttn.htm"><b>buttn</b></a> 命令可能执行失败。<br>
+无法操作应用程序的窗口: 有些命令对部分应用程序的窗口无效（如浏览器、第三方应用程序...）<br>
+遇到类似问题，请提交给我， 或许可以解决问题。
+
+<hr>
+如果出现错误，请检查 TCIMG 是否为最新版本。<br>
+最新版本的下载地址： <a class="le" href="http://wincmd.ru/plugring/TCIMG.html" target="_blank"><b>TCIMG</b></a>.
+
+<!-- 7. 调用 TCIMG 的命令行结构 -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#8"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="7"></a><b><font class="S91">7. 调用 TCIMG 的命令行结构</font></b></h2>
+命令行结构：<br>
+&nbsp;&nbsp;- 单命令，命令和参数之间用等号连接：<br>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+Command=StringParameters
+</p>
+&nbsp;&nbsp;- 多命令，命令和参数之间用等号连接，不同命令间用<u>空格</u>分隔：<br>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+Command<font class="S81">1</font>=StringParameters<font class="S81">1</font>&nbsp;Command<font class="S81">2</font>=StringParameters<font class="S81">2</font>&nbsp;...&nbsp;Command<font class="S81">N</font>=StringParameters<font class="S81">N</font>
+</p>
+
+<font class="S81"><b>StringParameters(命令参数)</b>中不能含有空格或双引号！</font><br>
+如果参数中需要使用引号，请用两个单引号( ' ) '' 代替。<br>如果参数中需要使用空格，请用两个波浪号<b>~~</b>代替。<br>
+<br>
+<font class="S81"><b>*</b></font> 在特殊情况下可以使用引号。注意，使用引号时避免与其他命令或参数“交叉”。<br>以下示例是关于TC参数“<a class="le" href="html/add/add_param.htm"><b>%O</b></a>”的使用，它必须用引号括住，以免路径中携带空格引起错误：
+<br>
+
+<p></p>
+<a href="javascript:ClipBoard3();"><IMG NAME="botton" title="复制到剪贴板" style='margin: 5px 4px 4px 10px;' src='images/copy.gif'" border="0" align='right'></a>
+<p id="copytext3" class="codebox"><span><span class="S1"><span class="S1">
+<big><span class="S0"><a class="le" href="html/com_creat.htm"><span class="S51">creat</span></a><span class="S8">=</span><a class="le" href="html/add/add_param.htm">%p</a><span class="S8">||</span>"<a class="le" href="html/add/add_param.htm">%O</a>"</span> ;; 在来源面板中创建一个与所选文件同名但不同后缀的文件</big><br>
+</span></span></span></p>
+<textarea ID="holdtext3" STYLE="display:none;"></textarea><SCRIPT LANGUAGE="JavaScript">function ClipBoard3() {holdtext3.innerText = copytext3.innerText;Copied = holdtext3.createTextRange();Copied.execCommand("Copy");} </SCRIPT>
+</span></span></p>
+
+<font class="S81"><b>*</b></font> 如果<b>禁用</b> NTFS 的 8.3 格式名称命名文件或文件夹，则必须添加引号。 否则，Total Commander的<a class="le" href="html/add/add_param.htm">命令行参数</a>（如<b>%p</b>、<b>%t</b>、<b>%n</b> ...）将不会传递短路径作为参数，传递的路径中可能会带有空格（例如 C:\Program Files\ 的短路径形式为 C:\PROGRA~1\），因此必须添加引号：
+<p></p>
+<a href="javascript:ClipBoard4();"><IMG NAME="botton" title="复制到剪贴板" style='margin: 5px 4px 4px 10px;' src='images/copy.gif'" border="0" align='right'></a>
+<p id="copytext4" class="codebox"><span><span class="S1"><span class="S1">
+<big><span class="S0"><a class="le" href="html/com_creat.htm"><span class="S51">creat</span></a><span class="S8">=</span>"<a class="le" href="html/add/add_param.htm">%p</a>"<span class="S8">||</span>"<a class="le" href="html/add/add_param.htm">%O</a>"</span> ;; 在来源面板中创建一个与所选文件同名但不同后缀的文件</big><br>
+</span></span></span></p>
+<textarea ID="holdtext4" STYLE="display:none;"></textarea><SCRIPT LANGUAGE="JavaScript">function ClipBoard4() {holdtext4.innerText = copytext4.innerText;Copied = holdtext4.createTextRange();Copied.execCommand("Copy");} </SCRIPT>
+</span></span></p>
+<a name="7com"></a><br>
+<hr align="left" width=80%>
+29.8 版中添加了在命令行中使用注释的功能：<br>
+注释的语法：
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<font class="S20">(§注释内容§)</font>
+</p>
+- 注释不影响命令的执行
+<br>- 注释可以出现多次，如：
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+Command=<font class="S20">(§注释一§)</font>StringParameters<font class="S20">(§注释二§)</font>
+</p>
+在 <a class="le" href="config.htm"><font class="S1"><b>TCIMG.ini</b></font></a> 的 <span class="S8"><b>[</b></span><a href="config.htm#Setting"><b>Setting</b></a><span class="S8"><b>]</b></span> 键下修改 <a class="le" href="config.htm#Comment"><font class="S91"><b>Comment</b></font></a> 的值，可以启用/禁用命令行注释功能。
+
+
+<hr align="left" width=80%>
+
+不加参数启动TCIMG时，会出现以下对话框：
+<p align="center"><img src="images/faq13.gif"></p>
+
+
+<!-- 8. TCIMG 的参数需要加引号吗？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#9"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="8"></a><b><font class="S91">8. TCIMG 的参数需要加引号吗？</font></b></h2>
+不需要。
+
+
+<!-- 9. TCIMG 中没有想要的命令，可以添加新命令吗？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#10"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="9"></a><b><font class="S91">9. TCIMG 中没有想要的命令，可以添加新命令吗？</font></b></h2>
+可以。TCIMG中许多命令和参数产生自用户的需求，感谢以下<a class="le" href="index.htm#3"><font class="S0">用户</font></a>。如果需要，请在 <a class="le" href="http://tc-image.3dn.ru/forum/5-498-1"><b>TCIMG</b></a> 主题中或<a class="le" href="http://tc-image.3dn.ru/forum/11-446-1"><b>定制按钮</b></a>主题中提出详细的需求。 如果需求不是严格的个人需求，可能会成为 TCIMG 中的一个命令或参数。
+
+<!-- 10. TCIMG 窗口支持其他语言吗？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#11"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="10"></a><b><font class="S91">10. TCIMG 窗口支持其他语言吗？</font></b></h2>
+支持。但我没法将 TCIMG 翻译成多国语言，而每个人都可以尝试翻译。 <a class="le" href="lng.htm"><span class="S4"><b>详见 Language</b></span></a><br>
+当然，你也可以尝试翻译TCIMG的帮助文档。<a class="le" href="html\com_chelp.htm"><b>详见 chelp</b></a>
+
+
+<!-- 11. TCIMG 是否携带病毒？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#12"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="11"></a><b><font class="S91">11. TCIMG 是否携带病毒？</font></b></h2>
+请100%放心，官网下载的 TCIMG.exe 不会携带病毒，且 TCIMG 代码中不含任何恶意代码。建议将 TCIMG.exe 添加到信任列表。
+
+<!-- 12. 如何在 Total Commander 中为 TCIMG 命令添加快捷键？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#13"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="12"></a><b><font class="S91">12. 如何在 Total Commander 中为 TCIMG 命令添加快捷键？</font></b></h2>
+例如以下命令：
+<p></p>
+<a href="javascript:ClipBoard5();"><IMG NAME="botton" title="复制到剪贴板" style='margin: 5px 4px 4px 10px;' src='images/copy.gif'" border="0" align='right'></a>
+<p id="copytext5" class="codebox"><big><span><span class="S1">
+<span class="S0"><span class="S51">rs&#116;ar&#116;</span><span class="S8"></span></span> ;; 重启 Total Commander</big>
+<textarea ID="holdtext5" STYLE="display:none;"></textarea><SCRIPT LANGUAGE="JavaScript">function ClipBoard5() {holdtext5.innerText = copytext5.innerText;Copied = holdtext5.createTextRange();Copied.execCommand("Copy");} </SCRIPT>
+ </span></span></p>
+1) 在 <b>UserCmd.ini</b> 中新建命令 em_Restart ：
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:320">
+[<font class="S81">em_Restart</font>]<br>
+cmd=%COMMANDER_PATH%\TCIMG.exe<br>
+param=rstart
+</p>
+2) 将该命令与快捷键关联：<br>
+可以在“设置->其他->快捷键”中为用户命令绑定快捷键：
+<p align="center"><img src="images/faq14.png"></p>
+或者修改 <b>Wincmd.ini</b> 中的 <font class="S81">[Shortcuts]</font> 与 <font class="S81">[ShortcutsWin]（涉及WIN键）</font>字段，如：
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:200">
+[<font class="S81">Shortcuts</font>]<br>
+A+1=em_Restart
+</p>
+将 ALT+1 同 em_Restart 命令绑定。
+
+<!-- 13. 能否在其他程序中调用TCIMG？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#14"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="13"></a><b><font class="S91">13. 能否在其他程序中调用TCIMG？</font></b></h2>
+当然可以。在系统、脚本、其它应用程序中，都可以调用"TCIMG"。它不需要注册模块和库。在<a class="le" href="html/par/par_int.htm"><b>集成部分</b></a>有一些例子。
+
+
+<!-- 14. 如何更新TCIMG？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#15"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="14"></a><b><font class="S91">14. 如何更新TCIMG？</font></b></h2>
+最新版本下载地址：<a class="le" href="http://wincmd.ru/plugring/TCIMG.html"><b>TCIMG</b></a><br>
+直接覆盖旧版本文件即可.<br>
+更新日志：<a class="le" href="history.htm"><b>更新历史</b></a><br>
+更多内容：<a class="le" href="http://tc-image.3dn.ru/forum/5-498-1"><b>TCIMG 论坛</b></a>
+
+
+<!-- 15. 如何保留 TCIMG 的设置并更新？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#16"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="15"></a><b><font class="S91">15. 如何保留 TCIMG 的设置并更新？</font></b></h2>
+自3.7版本以后，TCIMG 的用户配置将独立于 <font class="S1"><b>TCIMG.ini</b></font> 与 <font class="S1"><b>TCIMG_Russian.lng</b></font>。<br>
+请使用以下方式保存用户配置：<br>
+<font class="S81"><b>1.</b></font> 在 TCIMG.exe 所在目录中新建 <b>TCIMGU.ini</b> 文件，并将 TCIMG.ini 中的需要修改的字段和键值复制到 TCIMGU.ini 中。 <br>
+<font class="S81"><b>2.</b></font> 在 .\Files\Lng\ 目录下新建 <b>TCIMGU.lng</b> 文件，并将 TCIMG_Russian.lng 中需要修改的字段和键值复制到 TCIMGU.lng 中。 <a class="le" href="lng.htm"><span class="S4"><b>详见 Language</b></span></a><br>
+<br>
+<font class="S81"><b>注意！</b></font>文本文件的编码格式必须是 <b>1200 UTF16 LE</b>(Unicode Little Endian)。<br>
+<font size=-1 class="S20">可以直接创建 tcimg.ini 的副本，改名为 TCIMGU.ini，再进行修改。</font>
+<br><br>
+<b>TCIMGU.ini</b> 和 <b>TCIMGU.lng</b> 是用户配置文件。TCIMG 将优先从 TCIMGU.ini 和 TCIMGU.lng 中读取键值。 
+<br><br>
+TCIMG 更新并增加新的字段时，无须将新字段复制到用户配置文件中，<b>TCIMGU.ini</b> 和 <b>TCIMGU.lng</b> 可以只保存部分字段配置。
+<br><br>
+<font class="S81"><b>3.</b></font> 为了使更新不会影响到 <font class="S1"><b>TCIMG.tcg</b></font> 中的多行命令，请在 TCIMG 文件夹或"...\Files\Tcg\"目录下创建新的 *.tcg 文件(如  <b>TCIMGU.tcg</b>），并在 <b>TCIMGU.ini</b> 的 [Setting] 字段下添加 <b>TCG</b> 配置项（详见<a class="le" href="html/add/add_tcg.htm"> <b>附录31</b></a>）。
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:420">
+[<font class="S81">Setting</font>]<br>
+...<br>
+<b>TCG<font class="S81">=</font></b>TCIMGU.tcg
+</p>
+若有多个文件，请用“ <font class="S81"><b>/</b></font> ”符号分隔：
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:420">
+[<font class="S81">Setting</font>]<br>
+...<br>
+<b>TCG<font class="S81">=</font></b>TCIMGU1.tcg<font class="S81"><b>/</b></font>TCIMGU2.tcg
+</p>
+若文件位于 TCIMG 文件夹或“.\Files\Tcg\”以外，请使用完整的绝对（或相对）路径，如：
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:420">
+[<font class="S81">Setting</font>]<br>
+...<br>
+<b>TCG<font class="S81">=</font></b>C:\1\css.tcg<font class="S81"><b>/</b></font>%COMMANDER_PATH%\1\css22.tcg
+</p>
+<br>
+<font class="S81"><b>4.</b></font> 自16.5版本后 <font class="S1"><b>TCIMG.ini</b></font> 中的 [Setting] 字段下新增键 LNG。<br>
+可以使用 "LNG= " 指定 *.lng 文件。<br>
+指定lng文件时，使用 TCIMG 文件夹下路径、绝对路径或相对路径。<br>
+若有多个文件，请用“ <font class="S81"><b>/</b></font> ”符号分隔：<br>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:620">
+[<font class="S81">Setting</font>]<br>
+...<br>
+<b>LNG<font class="S81">=</font></b>TCIMGL1.lng<font class="S81"><b>/</b></font>TCIMGL2.lng<font class="S81"><b>/</b></font>C:\1\SSS.lng<font class="S81"><b>/</b></font>%COMMANDER_PATH%\1\LLL.lng
+</p>
+
+
+<!-- 16. 使用 TCIMG 时是否需要在系统中注册文件？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#17"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="16"></a><b><font class="S91">16. 使用 TCIMG 时是否需要在系统中注册文件？</font></b></h2>
+不需要。TCIMG 是完全便携的软件，可以在USB等移动硬件上运行，不会在系统中留下痕迹。 
+
+
+<!-- 17. TCIMG 收费吗? -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#18"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="17"></a><b><font class="S91">17. TCIMG 收费吗?</font></b></h2>
+完全免费。<br>
+可以在<a class="le" href="support.htm"><b>支持页面</b></a>赞助作者开发。
+
+
+<!-- 18. 可以在项目中使用"TCIMG"吗？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#19"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="18"></a><b><font class="S91">18. 可以在项目中使用"TCIMG"吗？</font></b></h2>
+可以。但请遵从以下条件：<br>
+1. 传播不能违背许可内容。<a class="le" href="index.htm#4"><b>许可</b></a><br>
+2. 在项目的介绍或描述中应提及 TCIMG 和官方网站。<br>
+3. 如果 TCIMG 使您获利，请<a class="le" href="support.htm"><b>支持我</b></a>。
+
+
+<!-- 19. TCIMG 能否在旧版本的Total Commander上正常使用？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#20"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="19"></a><b><font class="S91">19. TCIMG 能否在旧版本的Total Commander上正常使用？</font></b></h2>
+TCIMG 在 TC8.1 以及更高版本上进行过测试，大多数命令适用于所有版本。对于调用Total Commander窗口相关的命令，请参考以下文件：<a class="le" href="html/add/add_class_old.htm"><b><font class="S1"><b>TCIMG3264_8_01.ini</b></font></b></a>、<a class="le" href="html/add/add_class_old2.htm"><b><font class="S1"><b>TCIMG3264_8_5.ini</b></font></b></a>、<a class="le" href="html/add/add_class.htm"><b><font class="S1"><b>TCIMG3264.ini</b></font></b></a> (TC 9.0)、<a class="le" href="html/add/add_class_95.htm"><b><font class="S1"><b>TCIMG3264_9_5.ini</b></font></b></a>、<a class="le" href="html/add/add_class_10.htm"><b><font class="S1"><b>TCIMG3264_10.ini</b></font></b></a>
+<br>
+如果没有特殊需求，建议更新到更新版本的 Total Commander。如果某些功能失效，请连同TC的版本号一同提交给我，我将尝试修复。
+
+
+<!-- 20. 能否提供 TCIMG 所在文件夹的相对路径？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#21"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="20"></a><b><font class="S91">20. 能否提供 TCIMG 所在文件夹的相对路径？</font></b></h2>
+自 5.0 版本后，TCIMG 自带内部路径变量：<br>
+<font class="S81"><b>%TCIMG_PATH%</b></font> - TCIMG 文件夹的路径（不带"\"）<br>
+<font class="S81"><b>%TCIMG_DRIVE%</b></font> - TCIMG所在驱动器的盘符（如 D: ）<br>
+自 6.4 版本后，又添加了以下变量：<br>
+<font class="S81"><b>%TCIMG_TEMP%</b></font> - Temp 临时文件夹的路径，位于 TCIMG 目录下。同“%TCIMG_PATH%\Temp”。清理该文件夹请使用命令 <a class="le" href="html/com_tempxx.htm"><b>tempxx</b></a><br>
+自 8.3 版本后，又添加了以下变量：<br>
+<font class="S81"><b>%TCIMG_INI%</b></font> - TCIMG.ini 的路径<br>
+自 8.5 版本后，又添加了以下变量：<br>
+<font class="S81"><b>%TCIMG_EXE%</b></font> - TCIMG.exe 的路径<br>
+以上变量未在系统中注册，仅在调用 TCIMG 时使用。<br>
+更多路径变量详见<a class="le" href="html/add/add_path.htm"><b>附录8</b>。
+
+<!-- 21. 可以在Total Commander中使用 TCIMG 的路径变量吗？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#22"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="21"></a><b><font class="S91">21. 可以在Total Commander中使用 TCIMG 的路径变量吗？</font></b></h2>
+
+可以，需要借助 <a class="le" href="html\add\add_autorun.htm"><span class="S4"><b>Autorun</b></span></a> 插件。<br>
+在 <font class="S1"><b>autorun.cfg</b></font> 中添加对应变量名以及路径即可：<br>
+<span class="section">示例：</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:480">
+<font class="S21"><b>SetEnv</b></font> <font class="S41"><b>/A</b></font> <b>TCIMG_DRIVE</b> <font class="S81"><b>"</b></font><a class="le" href="html/add/add_commands.htm#3"><span class="S7">%COMMANDER_DRIVE%</span></a><font class="S81"><b>"</b></font><br>
+<font class="S21"><b>SetEnv</b></font> <font class="S41"><b>/A</b></font> <b>TCIMG_EXE</b> <font class="S81"><b>"</b></font><a class="le" href="html/add/add_commands.htm#3"><span class="S7">%COMMANDER_PATH%</span></a>\TCIMG.exe<font class="S81"><b>"</b></font><br>
+<font class="S21"><b>SetEnv</b></font> <font class="S41"><b>/A</b></font> <b>TCIMG_PATH</b> <font class="S81"><b>"</b></font><a class="le" href="html/add/add_commands.htm#3"><span class="S7">%COMMANDER_PATH%</span></a><font class="S81"><b>"</b></font><br>
+<font class="S21"><b>SetEnv</b></font> <font class="S41"><b>/A</b></font> <b>TCIMG_TEMP</b> <font class="S81"><b>"</b></font><a class="le" href="html/add/add_commands.htm#3"><span class="S7">%COMMANDER_PATH%</span></a>\Temp<font class="S81"><b>"</b></font><br>
+<font class="S21"><b>SetEnv</b></font> <font class="S41"><b>/A</b></font> <b>TCIMG_INI</b> <font class="S81"><b>"</b></font><a class="le" href="html/add/add_commands.htm#3"><span class="S7">%COMMANDER_PATH%</span></a>\TCIMG.ini<font class="S81"><b>"</b></font><br>
+</p>
+这样当TC启动后，便可以使用相应的路径变量，如:<br>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:200">
+TOTALCMD#BAR#DATA<br>
+%TCIMG_EXE%<br>
+<br>
+%TCIMG_EXE%<br>
+TCIMG<br>
+</p>
+
+<!-- 22. 如何查看%t， %p等参数传递的内容？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#23"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="22"></a><b><font class="S91">22. 如何查看%t， %p等参数传递的内容？</font></b></h2>
+要查看 <a class="le" href="html/add/add_param.htm"><b>Total Commander 参数</b></a>传递的内容，可以在命令前添加一个问号 <b>?</b> ，这样就能够在弹出的对话框中查看和修改传递的参数。<br>
+如果在其他程序中调用 TCIMG，需要查看命令行参数时，可以使用全局变量 <a class="le" href="html/fun/cmdline.htm"><span class="S6"><b>$CmdLine</b></span></a> 和 <a class="le" href="html/fun/cmdline.htm"><span class="S6"><b>$CmdLineRaw</b></span></a> 返回命令行参数。
+
+
+<!-- 23. 如何解决“文件名中带有特殊字符，TCIMG 无法识别”？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#24"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="23"></a><b><font class="S91">23. 如何解决“文件名中带有特殊字符，TCIMG 无法识别”？</font></b></h2>
+大多数示例中使用%L参数传递数据，这种情况下，Total Commander 会以 ANSI 编码创建列表。如果文件/文件夹名中带有特殊字符(&#256;， &#525;， &#372;， &#462; ...)，那么这些特殊字符将会丢失，并生成错误的文件列表，导致一些命令无法正常执行。<br>
+可以使用以下的 <a class="le" href="html/add/add_param.htm"><b>Total Commander参数</b></a>：%UL、%UF 、%WL、%WF，它们都支持Unicode。
+
+<!-- 24. 能否不借助TC和快捷方式，以指定的参数启动 TCIMG？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#25"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="24"></a><b><font class="S91">24. 能否不借助TC和快捷方式，以指定的参数启动 TCIMG？</font></b></h2>
+自10.3版本起，TCIMG 中新增"TCIMGGO.exe"(启动器)，允许 TCIMG 带参数启动，参考<a class="le" href="html/add/add_launcher.htm"><b>附录27</b></a>
+
+<!-- 25. 如果文件名太长，TCIMG 出错怎么解决? -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#26"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="25"></a><b><font class="S91">25. 如果文件名太长，TCIMG 出错怎么解决？</font></b></h2>
+大多数示例使用 %L 参数传递对象列表，在这种情况下，Total Commander 会以 ANSI 编码创建列表。如果文件/文件夹名超过259个字符(完整路径)，由于%L和%UL参数的长度有限制(TC10 中是固定的)，Total Commander 将传递截断的路径给"TCIMG"。出现这种情况，建议使用 %WL 参数来获取路径。<br>P.S. 不建议创建多级文件夹结构和使用长文件名。大多数程序遇到此类情况时都会遇到问题...</a>
+
+<!-- 26. 如何解决“操作%AppData%文件夹中的文件后无法复制”？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#27"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="26"></a><b><font class="S91">26. 如何解决“操作%AppData%文件夹中的文件后无法复制”？</font></b></h2>
+如 %PUBLIC%、%WINDIR%、%TEMP%、%APPDATA%、%USERPROFILE%、%ALLUSERSPROFILE%、%LOCALAPPDATA% 等与系统有关的特殊文件夹(或系统变量)或其他程序(如 Total Commander 中的 %COMMANDER_PATH%、%COMMANDER_DRIVE%...)，在 TCIMG 命令中，这些相对路径都会转换成绝对路径。<br>
+可以使用 <a class="le" href="html/com_envgt.htm"><b>envgt</b></a> 来禁用此功能。
+
+<!-- 27. 如何解决一些命令在处理带有感叹号的文件名时失效的问题？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#28"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="27"></a><b><font class="S91">27. 如何解决一些命令在处理带有感叹号的文件名时失效的问题？</font></b></h2>
+在编写TCIMG之初， <font class="S61"><b>!!</b></font> 被用在许多命令中充当分隔符。随着时间推移，我发现这是个错误的做法。<br>
+自17.2版本以后，新的分隔符 <font class="S61"><b>//</b></font> 加入到这些命令中，以解决这个问题。<br>
+在一些命令中， <font class="S61"><b>??</b></font> 和 <font class="S61"><b>|</b></font> 也被用作分隔符。<br>
+P.S. 感叹号“ ! ”出现在文件名中是符合规范的，因此最好采用 <font class="S61"><b>//</b></font> 作为命令分隔符。
+
+<!-- 28. 能否在 TCIMG 中执行其他脚本、程序、模板？ -->
+
+<br>
+<hr>
+<h2 style="font-weight: normal"><a href="#up"><img align=left src="images/up1.gif" border="0" title="回到顶部"></a>&nbsp;<a href="#28"><img align=middle src="images/down1.gif" border="0" title="下一个"></a>&nbsp;<a name="28"></a><b><font class="S91">28. 能否在 TCIMG 中执行其他脚本、程序、模板？</font></b></h2>
+可以.为此我们专门设计了许多命令来拓展用户功能：<br>
+&nbsp;&nbsp;• <a class="le" href="html/com_funau.htm"><span class="S51">funau</span></a>、<a class="le" href="html/com_funjs.htm"><span class="S51">funjs</span></a>、<a class="le" href="html/com_funvb.htm"><span class="S51">funvb</span></a> 命令可以调用 AU3, JS, VBS 脚本，并获取特定函数的返回值。<br>
+&nbsp;&nbsp;• 参数 <a class="le" href="html/add/add_lines.htm#?Y"><span class="S51">?Y</span></a> 可以传参调用 AU3, JS, VBS 脚本中的函数来转换信息。<br>
+&nbsp;&nbsp;• <a class="le" href="html/com_scrpt.htm"><span class="S51">scrpt</span></a> 命令可以运行 AU3, A3X, VBS, JS, HTA, PS1, AHK 等脚本。<br>
+&nbsp;&nbsp;• TCIMG.exe 是编译好的 AutoIt3 脚本，内置AutoIt解释器，能够更好地运行 AU3, A3X 脚本（即不需要另外安装 AutoIt3.exe）, 同时也涵盖了AutoIt3的所有功能。<br>
+&nbsp;&nbsp;• <a class="le" href="html/com_cmdbt.htm"><span class="S51">cmdbt</span></a> 命令可以运行命令行命令、脚本、程序并获取信息流。<br>
+&nbsp;&nbsp;• <a class="le" href="html/com_start.htm"><span class="S51">start</span></a> 命令可以带不同参数和条件运行程序。<br>
+&nbsp;&nbsp;• 在 <font class="S1"><b>TCIMG.ini</b></font> (TCIMGU.ini) 中可以添加模板、程序路径、更改键值。<br>
+&nbsp;&nbsp;• 几乎所有的窗口命令都有能够更改的设置（颜色、字体、大小等）<br>
+<br>
+P.S. 如果您有有趣的示例、脚本、模板、项目等，您可以将它们发送给我.如果能够发挥作用，它们都有机会被添加到TCIMG中。<br>
+
+
+<br><br>
+<hr><img vspace=-6 height=14 src="images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> &copy; </font><a href="http://tc-image.3dn.ru" target="_blank"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a>
+<hr>
+<!-- <a href="https://vk.com/sochirealtys" target="_blank"><img align="middle" alt="" border="0" src="images/ssss.png" width="100%" /></a> -->
+</body></html>

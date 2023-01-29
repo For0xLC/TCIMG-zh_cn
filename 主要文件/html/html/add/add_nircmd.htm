@@ -1,0 +1,1270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Параметры NirCmd</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №19</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Дополнение к команде <a href="../com_nirmc.htm">nirmc</a>.</font></p>
+<hr><br>
+<table border="0" class="utilcaption">
+<tr>
+<td>Русская справка к версии NirCmd v2.00 <br>
+Copyright (c) 2003 - 2013 Nir Sofer</table>
+Скачать актуальную версию можно <a href="http://www.nirsoft.net/utils/nircmd.html">здесь</a>.
+<p>
+<a id="description"></a><h4 class="utilsubject">Описание</h4>
+NirCmd - маленькая утилита для командной строки, которая позволяет Вам выполнить некоторые полезные задачи, не отображая никакого пользовательского интерфейса. Выполняя NirCmd с простой опцией командной строки, Вы можете
+записать и удалить значения ключи в реестре, записать значения в INI файл, позвонить
+по вашей учетной интернет-записи или соединяться с VPN сетью, перезапускать
+Windows или завершать работу компьютера, создавать ярлык к файлу, изменять дату
+создания/модификации файла, изменять ваши параметры настройки экрана, выключать ваш монитор, открывать
+лоток вашего CD-ROM привода, и многое другое...<p>
+<a id="examples"></a><h4 class="utilsubject">Примеры того, что Вы можете сделать с NirCmd</h4>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr>
+<td width="50%">Открыть лоток CD-ROM привода J:<td class="commandline" nowrap>nircmd.exe cdrom open j:
+<tr>
+<td>Закрыть лоток CD-ROM привода Y:<td class="commandline" nowrap>nircmd.exe cdrom close y:
+<tr>
+<td>Увеличить системную громкость на 2000 единиц (из 65535)<td class="commandline" nowrap>nircmd.exe changesysvolume 2000
+<tr>
+<td>Уменьшить системную громкость на 5000 единиц (из 65535)<td class="commandline" nowrap>nircmd.exe changesysvolume -5000
+<tr>
+<td>Установить громкость в самое высокое значение<td class="commandline" nowrap>nircmd.exe setsysvolume 65535
+<tr>
+<td>Выключить системную громкость<td class="commandline" nowrap>nircmd.exe mutesysvolume 1
+<tr>
+<td>Включить системную громкость<td class="commandline" nowrap>nircmd.exe mutesysvolume 0
+<tr>
+<td>Переключить системную громкость между между выключенным и включенным состоянием.<td class="commandline" nowrap>nircmd.exe mutesysvolume 2
+<tr>
+<td>Создать ярлык на вашем Рабочем столе, который переключает системную громкость между между выключенным и включенным состоянием.<td class="commandline">nircmd.exe cmdshortcut "~$folder.desktop$" "Switch Volume" mutesysvolume 2
+<tr>
+<td>Выключить монитор<td class="commandline" nowrap>nircmd.exe monitor off
+<tr>
+<td>Запустить хранитель экрана по умолчанию<td class="commandline" nowrap>nircmd.exe screensaver
+<tr>
+<td>Перевести ваш компьютер в 'standby' режим<td class="commandline" nowrap>nircmd.exe standby
+<tr>
+<td>Выход текущего пользователя<td class="commandline" nowrap>nircmd.exe exitwin logoff
+<tr>
+<td>Спросить, хотите ли Вы перезагрузиться, и если Вы отвечаете 'Да' - перезагрузить компьютер.<td class="commandline" nowrap>nircmd.exe qboxcom "Do you want to reboot ?" "question" exitwin reboot
+<tr>
+<td>Выключить ваш компьютер<td class="commandline" nowrap>nircmd.exe exitwin poweroff
+<tr>
+<td>Выключить все компьютеры, определенные в computers.txt !<td class="commandline" nowrap>multiremote copy "c:\temp\computers.txt" exitwin poweroff force
+<tr>
+<td>Звонить на подключение "My Internet"<td class="commandline" nowrap>nircmd.exe rasdial "My Internet"
+<tr>
+<td>Разъединить подключение "My Internet"<td class="commandline" nowrap>nircmd.exe rashangup "My Internet"
+<tr>
+<td>Сделать окна вашего Internet Explorer-а прозрачными на 75 %! (192 / 256)<td class="commandline" nowrap>nircmd.exe win trans ititle "internet explorer" 192
+<tr>
+<td>Свернуть все ваши окна Internet Explorer-а<td class="commandline" nowrap>nircmd.exe win min class "IEFrame"
+<tr>
+<td>Закрыть все ваши окна Internet Explorer-а<td class="commandline" nowrap>nircmd.exe win close class "IEFrame"
+<tr>
+<td>Закрыть все ваши окна Проводника (Мой компьютер, папки, и т.д.)<td class="commandline" nowrap>nircmd.exe win close class "CabinetWClass"
+<tr>
+<td>Скрыть все ваши окна Internet Explorer-а<td class="commandline" nowrap>nircmd.exe win hide class "IEFrame"
+<tr>
+<td>Показать все ваши окна Internet Explorer-а (после того, как Вы сделали их скрытыми в предыдущем примере)<td class="commandline" nowrap>nircmd.exe win show class "IEFrame"
+<tr>
+<td>Центрировать все окна верхнего уровня<td class="commandline" nowrap>nircmd.exe win center alltop
+<tr>
+<td>Удалить область заголовка окна Мой компьютер.<td class="commandline" nowrap>nircmd.exe win -style title "my computer" 0x00C00000
+<tr>
+<td>Возвратить область заголовка окна Мой компьютер, которое Вы удаляли в предыдущем примере.<td class="commandline" nowrap>nircmd.exe win +style title "my computer" 0x00C00000
+<tr>
+<td>Заставить окно Мой компьютер отображать справа налево (Для еврейского и арабского языков)<td class="commandline" nowrap>nircmd win +exstyle title "my computer" 0x00400000
+<tr>
+<td>Установить все дочерние окна окна Мой компьютер, чтобы отображать справа налево (Для еврейского и арабского языков)<td class="commandline" nowrap>nircmd win child title "my computer" +exstyle all 0x00400000
+<tr>
+<td>Создать ярлык на вашем Рабочем столе, который закрывает, все ваши окна Internet Explorer-а<td class="commandline">nircmd.exe cmdshortcut " "~$folder.desktop$ "Close All IE" win close class "IEFrame"
+<tr>
+<td>Создать ярлык на вашем Рабочем столе, который скрывает, все ваши окна Internet Explorer-а<td class="commandline">nircmd.exe cmdshortcut " "~$folder.desktop$ "Hide All IE" win hide class "IEFrame"
+<tr>
+<td>Создать ярлык на вашем Рабочем столе, который снова покажет все ваши окна Internet Explorer-а<td class="commandline">nircmd.exe cmdshortcut " "~$folder.desktop$ "Show All IE" win show class "IEFrame"
+<tr>
+<td>Установить Windows Калькулятор, как самое верхнее окно (выше всех других окон)<td class="commandline" nowrap>nircmd.exe win settopmost title "Calculator" 1
+<tr>
+<td>Установить Windows Калькулятор в нормальное окно (не самое верхнее окно)<td class="commandline" nowrap>nircmd.exe win settopmost title "Calculator" 0
+<tr>
+<td>Создать ярлык для Windows Калькулятор в меню Пуск-&gt; Программы-&gt;Calculators <td class="commandline">nircmd.exe shortcut "f:\winnt\system32\calc.exe" "~$folder.programs$\Calculators" "Windows Calculator"
+<tr>
+<td>Скрыть окно Рабочего стола<td class="commandline" nowrap>nircmd.exe win hide class progman
+<tr>
+<td>Показать окно Рабочего стола (После того, как оно было скрыто в предыдущем примере)<td class="commandline" nowrap>nircmd.exe win show class progman
+<tr>
+<td>Скрыть кнопку Пуск на системном трее<td class="commandline" nowrap>nircmd.exe win child class "Shell_TrayWnd" hide class "button"
+<tr>
+<td>Показать кнопку Пуск на системном трее<td class="commandline" nowrap>nircmd.exe win child class "Shell_TrayWnd" show class "button"
+<tr>
+<td>Скрыть часы на системном трее<td class="commandline" nowrap>nircmd.exe win child class "Shell_TrayWnd" hide class "TrayClockWClass"
+<tr>
+<td>Показать часы на системном трее<td class="commandline" nowrap>nircmd.exe win child class "Shell_TrayWnd" show class "TrayClockWClass"
+<tr>
+<td>Убить (закончить) все процессы Internet Explorer-а<td class="commandline" nowrap>nircmd.exe killprocess iexplore.exe
+<tr>
+<td>Создать ярлык на вашем Рабочем столе, который открывает лоток CD-ROM привода K:, когда Вы запустите его.<td class="commandline">nircmd.exe cmdshortcut "~$folder.desktop$" "Open CDROM" cdrom open k:
+<tr>
+<td>Создать ярлык на вашем Рабочем столе к вебсайту NirSoft<td class="commandline" nowrap>nircmd.exe urlshortcut "http://www.nirsoft.net" "~$folder.desktop$" "NirSoft"
+<tr>
+<td>Добавить вебсайт NirSoft в ваше Избранное в папку Links.<td class="commandline">nircmd.exe urlshortcut "http://www.nirsoft.net" "~$folder.favorites$\Links" "NirSoft"
+<tr>
+<td>Создать ярлык на вашем Рабочем столе к вебсайту NirSoft всех компьютеров, перечисленных в computers.txt<td class="commandline">nircmd.exe multiremote copy "c:\temp\computers.txt" urlshortcut "http://www.nirsoft.net" "~$folder.common_desktop$" "NirSoft"<tr>
+<td>Установить режим дисплея в 800x600x24бита цвета<td class="commandline" nowrap>nircmd.exe setdisplay 800 600 24
+<tr>
+<td>Создать ярлык на вашем Рабочем столе, который устанавливает режим дисплея в 800x600x24бита цвета<td class="commandline">nircmd.exe cmdshortcut "~$folder.desktop$" &amp;quot800x600x24" setdisplay 800 600 24
+<tr>
+<td>Скопировать все ярлыки с вашего Рабочего стола в другую папку (f:\temp\desktop).<td class="commandline">nircmd.exe execmd copy "~$folder.desktop$\*.lnk" f:\temp\desktop
+<tr>
+<td>Перезапустите ваш Apache сервер (под Windows NT/2000/XP.03)<td class="commandline" nowrap>nircmd.exe service restart apache
+<tr>
+<td>Создать ярлык на вашем Рабочем столе, который перезапускает, Apache сервер<td class="commandline">nircmd.exe cmdshortcut "~$folder.desktop$" "Restart Apache" service restart apache
+<tr>
+<td>Перезапустить ваши IIS<td class="commandline" nowrap>nircmd.exe service restart w3svc
+<tr>
+<td>Перезапустить MySql<td class="commandline" nowrap>nircmd.exe service restart MySql
+<tr>
+<td>Открыть нужный ключ/значение реестра в RegEdit<td class="commandline">nircmd.exe regedit "HKLM\Software\Microsoft\Windows\CurrentVersion" "CommonFilesDir"
+<tr>
+<td>Открыть ключ реестра, который Вы скопировали в буфер обмена, в RegEdit.<td class="commandline">nircmd regedit "~$clipboard$"
+<tr>
+<td>Отключить хранитель экрана<td class="commandline" nowrap>nircmd.exe regsetval sz "HKCU\control panel\desktop" "ScreenSaveActive" 0
+<tr>
+<td>Разрешить хранитель экрана<td class="commandline" nowrap>nircmd.exe regsetval sz "HKCU\control panel\desktop" "ScreenSaveActive" 1
+<tr>
+<td>Изменить дату/время файла с указанным именем (время создания и время модификации)<td class="commandline">nircmd.exe setfiletime "c:\temp\myfile.txt" "24-06-2003 17:57:11" "22-11-2005 10:21:56"
+<tr>
+<td>Скопировать путь к вашей папке Рабочего стола в буфер обмена<td class="commandline">nircmd.exe clipboard set ~$folder.desktop$
+<tr>
+<td>Скопировать путь к вашей папке меню Пуск в буфер обмена<td class="commandline">nircmd.exe clipboard set ~$folder.start_menu$
+<tr>
+<td>Скопировать содержание info1.txt (простой текстовый файл) в буфер обмена<td class="commandline">nircmd.exe clipboard readfile "c:\My Files\info1.txt"
+<tr>
+<td>Добавить текстовое содержание буфера обмена в info1.txt<td class="commandline">nircmd.exe clipboard addfile "c:\My Files\info1.txt"
+<tr>
+<td>Очистить буфер обмена<td class="commandline">nircmd.exe clipboard clear
+<tr>
+<td>Создать все папки, определенные в "c:\temp\folders.txt". Путь/имя папок разделены символами CRLF.<td class="commandline">nircmd.exe paramsfile "c:\temp\folders.txt" "" "" execmd md ~$fparam.1$
+<tr>
+<td>Инсталлировать указанную .NET трансляцию{блок} в глобальный кэш трансляции{блока} (как gacutil)<br>
+Install the specified .NET assembly in the global assembly cache (like gacutil)<td class="commandline">nircmd.exe gac install "C:\temp\MyAssembly\bin\MyAssembly.dll"
+<tr>
+<td>Очистить Корзину на всех приводах.<td class="commandline" nowrap>nircmd.exe emptybin
+<tr>
+<td>Ответить 'Yes' в стандартное окно сообщения Windows.<td class="commandline" nowrap>
+	nircmd.exe dlg &quot;&quot; &quot;&quot; click yes&nbsp;
+</tr>
+</table>
+
+<p>
+<a id="sysreq"></a><h4 class="utilsubject">Системные требования</h4>
+Эта утилита может работать во всех 32-разрядных операционных системах Windows: Windows 9x/ME, Windows NT, Windows 2000, и Windows XP. Однако, некоторые из команд NirCmd работают только в Windows NT/2000/XP.<p><a id="verhistory"></a></p>
+<p>
+<h4 class="utilsubject">Лицензия</h4>
+Эта утилита выпущена как свободно распространяемое программное обеспечение. Вам разрешают свободно распространять эту утилиту с помощью гибких дисков, CD-ROM, Интернета, или любым другим способом, пока Вы не изменяете ничто в нем. Если Вы распространяете эту утилиту, Вы должны включить все файлы в дистрибутивный пакет, без всякой модификации!<p>
+<a id="using"></a><h4 class="utilsubject">Использование утилиты NirCmd</h4>
+Эта утилита - автономно выполняемая, и она не требует никакой инсталляции, или дополнительных DLL-ок. Только скопируйте .exe файл в любую папку, которую Вы хотите, и выполните его с нужной опцией командной строки, согласно вашим потребностям. Рекомендуем скопировать .exe файл из NirCmd (nircmd.exe) в ваш каталог Windows, или в любую другую папку, перечисленную в вашей переменной среды PATH, таким образом Вам не надо будет набирать полный путь nircmd каждый раз, когда Вы хотите использовать ее. Начинаясь с версии 1.50, также доступна консольная версия NirCmd (nircmdc.exe). В консольной версии, все сообщения об ошибках идут в консольное окно, вместо того, чтобы использовать окно сообщений.<p>
+<h4 class="utilsubject">Общий синтаксис NirCmd</h4>
+<p>
+<span class="commandline">nircmd.exe {showerror} [команда] [параметры команды]</span><br>
+Параметр <span class="commandline">showerror</span> является дополнительным. Если Вы определите этот параметр, то сообщение об ошибках будет отображено на экране, если ошибка произойдет в ходе выполнения команды. Иначе, любая ошибка будет игнорироваться. Например:<br>
+nircmd.exe showerror rasdial "dial1"<br>
+nircmd.exe rasdial "dial1"<br>
+В вышеупомянутых двух примерах, NirCmd будет пробовать звонить с "dial1" входом. Если процесс набора номера будет неудавшимся в первом примере, то сообщение об ошибках, описывающее проблему будет отображено. Если процесс набора номера будет неудавшимся на втором примере, то сообщение об ошибках не будет отображено.</p>
+
+<p>
+<a id="spstrseq"></a>
+<h4 class="utilsubject">Специальные последовательности строки</h4>
+Начинаясь с версии 1.20, NirCmd позволяет Вам вставлять специальные символы в любой параметр в командах NirCmd.<br>
+Следующая таблица описывает специальные последовательности строки, которые Вы можете использовать:<br>
+&nbsp;<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="utiltableheader"><th width="80" nowrap>
+Последовательность<th>
+Описание<tr>
+<td>~n
+<td>Символы новой строки (CR-LF)
+
+<tr>
+<td>~q
+<td>Символ кавычки ( " )
+<tr>
+<td>~t
+<td>Символ табуляции<tr>
+<td>~xnn
+<td>Позволяет Вам представить любой символ, представив его ASCII код - HEX числом с двумя цифрами.<br>
+Например:<br>
+~x41 символ ( A)<br>
+~x27 символ апострофа ( ' )<tr>
+<td>~$variable$
+<td>Представляет системную переменную. Для получения дополнительной информации об
+этой опции, <a href="#sysvar">читайте ниже</a><tr>
+<td>~~
+<td>Представляет одиночный символ ( ~ )</table>
+<p>
+<span class="section">Пример:</span><br>
+<span class="commandline">
+infobox "This is the first line~n~qThis is a second line, in quotes~q" "Example&quot;
+</span>
+<br>
+Вышеупомянутый пример отображает окно сообщений, содержащее 2 строки.<p>
+<a id="sysvar"></a>
+<h4 class="utilsubject">Системные переменные</h4>
+Начинаясь с версии 1.40, NirCmd обеспечивает специальные переменные, который представляют папки и другие переменные
+в вашей системе. Каждая переменная начинается с символа '~', сопровождаемого именем переменной,
+заключенным в символы '$'. Например: ~$folder.desktop$
+представляет папку вашего Рабочего стола.<p>
+Следующая таблица определяет переменные, которые Вы можете использовать:<br>
+&nbsp;
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="utiltableheader">
+<th nowrap>Имя переменной
+<th nowrap>Описание<tr>
+<td>clipboard
+<td>Представляет текст, который Вы скопировали в буфер обмена.<tr>
+<td>param.paramname
+<td>Когда Вы определяете переменную param, окно ввода появится на экране, и попросит, чтобы Вы набрали текст для этой переменной. Текст, который Вы набрали, будет вставлен в командную строку.<br>
+Например: в следующей команде, Вас попросят набрать 2 параметра (1 и 2), и текст, который Вы набрали, появится в окне сообщений.<br>
+nircmd infobox ~$param.1$ ~$param.2$<tr>
+<td>fparam.number
+<td>Определяет параметр, загруженный из текстового файла. Для получения дополнительной информации, см. <a href="#paramsfile">команду paramsfile</a>
+<tr>
+<td>sys.varname
+<td>Вы можете использовать эту опцию, чтобы представить любую переменную среды на вашей системе.<br>
+Например:<br>
+~$sys.username$, ~$sys.windir$, ~$sys.computername$, ~$sys.logonserver$, ~$sys.temp$, и т.д....
+<tr>
+<td>nir.exefile
+<td>Представляет полный путь .exe файла текущего, выполняемого NirCmd (например: c:\winnt\nircmd.exe)
+<tr>
+<td>folder.nircmd
+<td>Представляет папку, из которой выполняется NirCmd.<tr>
+<td>folder.desktop
+<td>Представляет папку Рабочего стола пользователя.<tr>
+<td>folder.start_menu
+<td>Представляет папку меню Пуск пользователя.<tr>
+<td>folder.programs
+<td>Представляет папку Программы пользователя (под папкой меню Пуск).<tr>
+<td>folder.startup
+<td>Представляет папку запуска пользователя.<br>
+Represents the user's startup folder.
+
+<tr>
+<td>folder.recent
+<td>Представляет последнюю использованную папку пользователя.<br>
+Represents the user's recent folder.
+
+<tr>
+<td>folder.favorites
+<td>Представляет папку Избранное пользователя.<tr>
+<td>folder.cookies
+<td>Представляет папку Cookies пользователя.<tr>
+<td>folder.appdata
+<td>Представляет папку Application Data пользователя. (Например: C:\Documents and Settings\Administrator\Application Data)
+
+<tr>
+<td>folder.common_desktop
+<td>Представляет общую папку Рабочего стола.<tr>
+<td>folder.common_start_menu
+<td>Представляет общую папку меню Пуск.
+
+<tr>
+<td>folder.common_programs
+<td>Представляет общую папку Программы.
+
+<tr>
+<td>folder.common_startup
+<td>Представляет общую папку запуска.<br>
+Represents the common startup folder.
+
+<tr>
+<td>folder.common_favorites
+<td>Представляет общую папку Избранное.
+
+<tr>
+<td>folder.windows
+<td>Представляет папку Windows. (например: C:\Windows)<tr>
+<td>folder.system
+<td>Представляет системную папку. (например: C:\Windows\System32)
+</table>
+<p>
+<span class="section">Примеры:</span><ul>
+<li>Создать ярлык под папкой меню Пуск-Программы:<br>
+<span class="commandline">
+shortcut "c:\winnt\system32\calc.exe" "~$folder.programs$\My Programs"
+"Calculator"
+</span>
+
+<li>Удалить ярлык с Рабочего стола пользователя:<br>
+<span class="commandline">
+execmd del "~$folder.desktop$\calc.lnk"
+</span>
+
+<li>Показать текущего вошедшего пользователя:<br>
+<span class="commandline">
+infobox "The current logged-on user is ~$sys.username$" "logged-on user"
+</span>
+</ul>
+
+<p>
+<h4 class="utilsubject">Выполнение команд NirCmd на удаленных компьютерах</h4>
+Начинаясь с версии 1.40 Вы можете выполнять все команды NirCmd в удаленных компьютерах. Однако, Вы должны знать о следующих ограничениях и проблемах:<ul>
+<li>Эта опция доступна только для Windows NT, Windows 2000 и Windows XP. Вы не можете использовать ее на машинах Windows 9x.
+<li>Вы должны войти на удаленную машину как администратор.
+<li>Служба планировщика в удаленной машине должно быть запущена. (по умолчанию, служба планировщика автоматически запущена во всех NT/2000/XP машинах, таким образом Вы не должны слишком волноваться об этом)<li>Из-за некоторых ограничений службы планировщика, Вы должны ожидать до 60 секундам, пока команда фактически не выполниться на удаленной машине.<li>Команда на удаленной машине выполняется под 'СИСТЕМНОЙ' учетной записью, и таким образом некоторые команды, возможно, не работают таким же образом, как когда Вы выполняете их локально.</ul>
+<p>
+Есть 2 команды для того, чтобы выполнить NirCmd в удаленных машинах:<ul>
+<li><a href="#command_remote">remote</a> - для того, чтобы выполнять команду на единственном удаленном компьютере.
+<li><a href="#command_multiremote">multiremote</a> - для того, чтобы выполнять команду на нескольких удаленных компьютерах.</ul>
+
+<p>
+<a id="commands"></a><h4 class="utilsubject">Команды NirCmd</h4>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="utiltableheader">
+<th nowrap>Команда
+<th nowrap>Синтаксис и описание
+<a name="command_remote"></a>
+<tr><a id="remote"></a>
+<td class="tablecol1">remote<td>
+<h6 class="commandsyntax">remote {copy} [\\computer] [NirCmd command]</h6>
+<p>Выполняет команду NirCmd в удаленном компьютере. Если параметр <span class="commandsyntax">{copy}</span> определен, NirCmd, скопирует себя в каталог Windows удаленной машины. Вы должны определить этот параметр, если NirCmd не существует в каталоге Windows удаленной машины.<br>
+<br>
+<span class="section">Примеры:</span>
+<br>
+<span class="commandline">
+remote copy \\comp1 exitwin poweroff
+<br>remote \\comp2 infobox "This is a message from NirCmd" "Hello !"
+<br>remote \\comp3 lockws
+</span>
+</p>
+<a name="command_multiremote"></a>
+<tr><a id="multiremote"></a>
+<td class="tablecol1">multiremote<td>
+<h6 class="commandsyntax">multiremote {copy} [computers file] [NirCmd command]</h6>
+<p>Выполняет команду NirCmd в нескольких удаленных машинах. Если параметр <span class="commandsyntax">{copy}</span> определен, NirCmd, скопирует себя к каталогу Windows удаленных машин. Вы должны определить этот параметр, если NirCmd не существует в каталоге Windows удаленных машин.<br>
+Параметр <span class="commandsyntax">[computers file]</span> - файл, который содержит список компьютеров, отделенных символами Enter (CRLF).<br>
+Пример файла списка компьютеров:</p>
+<pre class="srcbg">
+\\comp1
+\\comp2
+\\winxp1
+\\winxp2
+\\nirsoft
+</pre>
+Команда, определенная в <span class="commandsyntax">[NirCmd command]</span>
+выполнится на всех компьютерах, определенных в файле компьютеров.<br>
+<br><span class="section">Примеры:</span>
+<ul>
+<li>Выключить все компьютеры, определенные в computers.txt<br>
+<span class="commandline">multiremote "c:\temp\computers.txt" exitwin poweroff force</span>
+
+<li>Блокировать все компьютеры, определенные в computers.txt<br>
+<span class="commandline">multiremote "c:\temp\computers.txt" lockws</span>
+
+<li>Скопировать NirCmd на все компьютеры, определенные в computers.txt, и затем выключить их мониторы.<br>
+<span class="commandline">multiremote copy "c:\temp\computers.txt" monitor off</span>
+<li>Скопировать NirCmd на все компьютеры, определенные в computers.txt, и выполнить, утилиту WinUpdatesList, чтобы сохранять информацию Windsows Updates на всех компьютерах.<br>
+<span class="commandline">multiremote copy "c:\temp\computers.txt" exec hide c:\temp\wul.exe /shtml &amp;quotc:\temp\wul_~$sys.computername$.html"</span>
+
+<tr><a id="cmdwait"></a>
+<td class="tablecol1">cmdwait<td>
+<h6 class="commandsyntax">cmdwait [Number of Milliseconds] [NirCmd Command]</h6>
+Ждать указанное число миллисекунд, и затем выполните указанную команду NirCmd.<p>
+<span class="section">Пример:</span>
+<br>
+<span class="commandline">
+cmdwait 1000 monitor off
+</span>
+
+<tr><a id="paramsfile"></a>
+<td class="tablecol1">paramsfile<td>
+<h6 class="commandsyntax">paramsfile [Parameters File] [Delimiters] [Quote Character] [NirCmd Command]</h6>
+Эта мощная команда позволяет Вам выполнять команду NirCmd многократно, загружая один или более параметров из текстового файла. Текстовый файл может быть с разделителями: запятой, табуляцией, точкой с запятой, или любым символом, который Вы определяете в параметре [Delimiters].
+<p>Вот - пример... Скажем, что Вы имеете следующий текстовый файл, содержащий имена пользователей и пароли, разграниченные запятой:
+<pre class="srcbg">
+user01, 123456
+user02, abcfg
+user03, 5fr23
+user04, 33333
+</pre>
+<p>
+Следующая последовательность команд NirCmd создаст четырех пользователей с указанными именами пользователей и паролями (при использовании команды 'net user', обеспеченной операционной системой Windows 2000/XP )<br>
+nircmd.exe paramsfile "c:\temp\users.txt" "," "" execmd net user ~$fparam.1$ ~$fparam.2$ /add
+<p>~$fparam.1$ определяет первый вход в каждой строке - имени пользователя. ~$fparam.2$ определяет второй вход в каждой строке - пароль.<p>
+<span class="section">Примеры:</span><span class="commandline"><br>
+paramsfile "c:\temp\folders.txt" "" "" execmd md ~$fparam.1$<br>
+paramsfile "c:\temp\shortcuts.txt" "," "~q" shortcut ~$fparam.1$ "~$folder.desktop$" ~$fparam.2$
+</span>
+
+<tr><a id="infobox"></a>
+<td class="tablecol1">infobox<td>
+<h6 class="commandsyntax">infobox [message text] [title]</h6>
+<p>Отображает простое окно сообщений на экране.<br>
+<br>
+<span class="section">Пример:</span><br>
+<span class="commandline">
+infobox "This is a message box !" "message"
+</span>
+
+<tr><a id="qbox"></a>
+<td class="tablecol1">qbox<td>
+<h6 class="commandsyntax">qbox [message text] [title] [program to run]</h6>
+Отображает диалоговое окно вопроса на экране. Если пользователь отвечает "Да", выполнит программу в третьем параметре.<br>
+<br>
+<span class="section">Пример:</span><br>
+<span class="commandline">
+qbox "Do you want to run the calculator ?" "question" "calc.exe"
+</span>
+
+<tr><a id="qboxcom"></a>
+<td class="tablecol1">qboxcom<td>
+<h6 class="commandsyntax">qboxcom [message text] [title] [NirCmd Command]</h6>
+<p>Отображает диалоговое окно вопроса на экране. Если пользователь отвечает "Да", выполнит команду NirCmd в третьем параметре.<br>
+<br>
+<span class="section">Примеры:</span><br>
+<span class="commandline">
+qboxcom "Do you want to lock your workstation ?" "question" lockws<br>
+qboxcom "Do you want to turn off the monitor ?" "monitor" monitor off
+</span>
+
+<tr><a id="script"></a>
+<td class="tablecol1">script<td>
+<h6 class="commandsyntax">script [Script File]</h6>
+Эта команда позволяет Вам выполнять последовательность команд, сохраненных в файле, определенном в параметре <span class="commandsyntax">[Script File]</span>.<br>
+<br>
+<span class="section">Пример:</span><br>
+<span class="commandline">
+script "c:\temp\msg.ncl"<br>
+</span>
+<br>
+Пример сценария:<br>
+<pre class="srcbg">infobox "Hello !" "This is the first message"
+infobox "Hello !" "This is the second message"
+infobox "Hello !" "This is the third message"</pre>
+
+<tr><a id="regedit"></a>
+<td class="tablecol1">regedit<td>
+<h6 class="commandsyntax">regedit [key] [value name]</h6>
+<p>Открывает RegEdit с указанным ключом/значением.<br>
+<br>
+<span class="section">Примеры:</span><span class="commandline"><br>regedit "HKLM\Software\Microsoft\Windows\CurrentVersion" "CommonFilesDir"
+<br>regedit "HKEY_CURRENT_USER\Control Panel\Desktop" "Wallpaper"
+</span>
+
+<tr><a id="regsetval"></a>
+<td class="tablecol1">regsetval<td>
+<h6 class="commandsyntax">regsetval [type] [key] [value name] [value]</h6>
+<p>Запишет значение в реестр. Параметр <span class="commandsyntax">[type]</span> может быть "sz" или "expand_sz" для строк, "dword" для 32-разрядного числа, или "binary" для двоичных данных. Если ключ, который Вы определяете в параметре <span class="commandsyntax">[key]</span>, не будет существовать, то это будет автоматически создан.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>regsetval dword "HKEY_CURRENT_USER\Software\Test" "Value1" "0xaabbccdd"
+<br>regsetval dword "HKCU\Software\Test" "Value2" "10561"
+<br>regsetval sz "HKCU\Software\Test" "Value3" "string value"
+<br>regsetval binary "HKLM\Software\Test" "Value4" "6a cb ab dd 80 86 95"
+</span>
+
+<tr><a id="regdelval"></a>
+<td class="tablecol1">regdelval<td>
+<h6 class="commandsyntax">regdelval [key] [value]</h6>
+<p>Удаляет значение из реестра.<br>
+<br>
+<span class="section">Пример:</span><br>
+<span class="commandline">
+regdelval "HKEY_CURRENT_USER\Software\Test" "Value1"
+</span>
+
+<tr><a id="regdelkey"></a>
+<td class="tablecol1">regdelkey<td>
+<h6 class="commandsyntax">regdelkey [key]</h6>
+<p>Удаляет весь ключ из реестра. Эта команда будет неудачной, если указанный ключ будет иметь один или более подключей.<br>
+<br>
+<span class="section">Пример:</span>
+<br>
+<span class="commandline">
+regdelkey "HKEY_CURRENT_USER\Software\Test"
+</span>
+
+<tr><a id="inisetval"></a>
+<td class="tablecol1">inisetval<td>
+<h6 class="commandsyntax">inisetval [INI filename] [section] [key] [value]</h6>
+<p>Запишет значение в INI файл. Если файл не будет существовать, то он будет автоматически создан.<br>
+<br>
+<span class="section">Пример:</span>
+<br>
+<span class="commandline">
+inisetval "c:\windows\test.ini" "section1" "TestValue" "1"
+</span>
+
+<tr><a id="inidelval"></a>
+<td class="tablecol1">inidelval<td>
+<h6 class="commandsyntax">inidelval [INI filename] [section] [key]</h6>
+Удаляет пару ключ-значение внутри INI файла.<br>
+<br>
+<span class="section">Пример:</span>
+<br>
+<span class="commandline">
+inidelval "c:\windows\test.ini" "section1" "TestValue"
+</span>
+
+<tr><a id="inidelsec"></a>
+<td class="tablecol1">inidelsec<td>
+<h6 class="commandsyntax">inidelval [INI filename] [section]</h6>
+<p>Удаляет весь раздел в INI файле, включая все значения в нем.<br>
+<br>
+<span class="section">Пример:</span>
+<br>
+<span class="commandline">
+inidelsec "c:\windows\test.ini" "section1"
+</span>
+
+<tr><a id="regsvr"></a>
+<td class="tablecol1">regsvr<td>
+<h6 class="commandsyntax">regsvr [reg or unreg] [filename or wildcard] {log file}</h6>
+<p>Регистрирует или дерегистрирует файлы DLL/OCX.<br>
+В первом параметре, определите "reg" для того, чтобы регистрировать файлы, или "unreg" для того, чтобы дерегистрировать файлы.<br>
+Во втором параметре, Вы можете определить отдельный файл, который Вы хотите регистрировать или дерегистрировать, или множественные файлы, при использовании подстановочных знаков.<br>
+Третий параметр является дополнительным, и определяет имя лог файла для сохранения результатов операции регистрации.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>regsvr reg "f:\winnt\system32\fv*.ocx" "c:\temp\log1.txt"
+<br>regsvr unreg "f:\winnt\system32\ab*.dll"
+</span>
+
+<tr><a id="rasdial"></a>
+<td class="tablecol1">rasdial<td>
+<h6 class="commandsyntax">rasdial [Entry Name] {Phonebook File} {User Name} {Password} {Domain}</h6>
+<p>Звонить на RAS вход (VPN или телефонная линия), не отображая никакого пользовательского интерфейса. Кроме параметра <span class="commandsyntax">[Entry Name]</span>, все другие параметры являются дополнительными. Если Вы не определяете дополнительные параметры, или Вы определяете пустую строку (""), используются значения по умолчанию.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline"><br>
+rasdial "My Internet"<br>
+rasdial "VPN1" "" "user1" "abc1234" "domain1"
+</span>
+</p>
+
+<tr><a id="inetdial"></a>
+<td class="tablecol1">inetdial<td>
+<h6 class="commandsyntax">inetdial [Entry Name]</h6>
+<p>Звонить на RAS вход (VPN или телефонная линия), и отображать информационное диалоговое окно в ходе процесса набора номера. Эта команда поддержана только, если установлен Internet Explorer версии 4.0&nbsp; или больше. Знайте, что эта команда не действует на старых версиях Windows 98.<br>
+<br>
+<span class="section">Пример:</span>
+<span class="commandline"><br>
+inetdial "VPN1"
+</span>
+
+<tr><a id="rasdialdlg"></a>
+<td class="tablecol1">rasdialdlg<td>
+<h6 class="commandsyntax">rasdialdlg [Entry Name] {Phonebook File} {Phone Number or IP Address}</h6>
+<p>Отображает RAS вход для набора номера. Параметры <span class="commandsyntax">{Phonebook File}</span> и <span class="commandsyntax">{Phone Number}</span> является дополнительным. Если Вы не определяете параметр <span class="commandsyntax">{Phonebook File}</span>, или Вы определяете пустую строку, используется по умолчанию телефонная книга.<br>
+Эта команда поддержана только на Windows NT, Windows 2000, и Windows XP. Она не поддержана на Windows 98/ME.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline"><br>
+rasdialdlg "Internet1" "" "9876543"<br>
+rasdialdlg "VPN1"
+</span>
+
+<tr><a id="rashangup"></a>
+<td class="tablecol1">rashangup<td>
+<h6 class="commandsyntax">rashangup {Entry Name}</h6>
+<p>Повесить трубку RAS подключения. Вы можете использовать эту команду, чтобы разъединить подключение, которое Вы предварительно создали командами inetdial или rasdial. Если Вы не будете определять<span class="commandsyntax"> </span>параметр <span class="commandsyntax">{Entry Name}</span>, то будут разъединены все активные подключения.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>rashangup "VPN1"
+<br>rashangup
+</span>
+</p>
+
+<tr><a id="setdialuplogon"></a>
+<td class="tablecol1">setdialuplogon<td>
+<h6 class="commandsyntax">setdialuplogon [Entry Name] [User Name] {Password} {Domain} {Phonebook File}</h6>
+<p>Изменяет имя пользователя, пароль и домен пункта модемной связи.<br>
+Параметры: </p>
+<ul>
+<li><span class="commandsyntax">[Entry Name]</span>: имя входа модемной связи
+<li><span class="commandsyntax">[User Name]</span>: имя пользователя для установки указанного входа модемной связи.
+<li><span class="commandsyntax">{Password}</span>: пароль для установки указанного входа модемной связи.
+<li><span class="commandsyntax">{Domain}</span>: имя домена для установки указанного входа модемной связи.
+<li><span class="commandsyntax">{Phonebook File}</span>: файл телефонной книги, содержащий вход, который Вы хотите изменить. Если Вы не определяете этот параметр, используется по умолчанию телефонная книга.</ul>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>setdialuplogon "VPN1" "user1" "asder443" "domain1"
+<br>setdialuplogon "Internet1" "nirs3" "q5r4df7yh5"
+</span>
+
+<tr><a id="exitwin"></a>
+<td class="tablecol1">exitwin<td>
+<h6 class="commandsyntax">exitwin [shutdown type] {additional option}</h6>
+Эта команда заканчивает текущий сеанс Windows. Параметр <span class="commandsyntax">[shutdown type]</span> может быть одним из следующих значений:<ul>
+<li><span class="special2">logoff</span>: закрывает все выполняемые процессы, выходит из системы текущего пользователя, и отображает диалог входа, чтобы позволить другому пользователю войти в систему.<li><span class="special2">reboot</span>: завершает всю систему, и затем перезагружается.
+<li><span class="special2">poweroff</span>: завершает всю систему, и затем выключает питание. (Только для систем, которые поддерживают эту возможность!)
+<li><span class="special2">shutdown</span>: просто завершает всю систему, без перезагрузки и не выключая питание.</ul>
+Вы можете также использовать одну из следующих дополнительных опций:
+<ul>
+<li><span class="special2">force</span>: принуждает все приложения закончить немедленно. Используя эту опцию может, заставил текущую выполняемую прикладную программу потерять данные. Используйте это только в критических случаях!<li><span class="special2">forceifhung</span>: принуждает приложения закончить, если они не отвечают. Эта опция доступна только в Windows 2000/XP.</ul>
+<span class="section">Примеры:</span>
+<span class="commandline"><br>
+exitwin reboot<br>
+exitwin poweroff force<br>
+exitwin logoff forceifhung
+</span>
+
+<tr><a id="initshutdown"></a>
+<td class="tablecol1">initshutdown<td>
+<h6 class="commandsyntax">initshutdown {message} {timeout value in seconds} {force} {reboot}</h6>
+<p>Инициирует завершение работы системы. Эта команда подобна команде exitwin, но она имеет некоторые другие особенности, которые exitwin не поддерживает. Эта команда не поддержана на Windows 95/98/ME. Все параметры этой команды являются дополнительными. Если Вы не определяете никакого параметра, завершение работы системы инициируется без отображения сообщение и без ожидания.<br>
+Параметры:
+</p>
+<ul>
+<li><span class="commandsyntax">{message}</span>: сообщение для отображения перед началом завершения системы.
+<li><span class="commandsyntax">{timeout value in seconds}</span>: число секунд для ожидания перед началом завершения системы.
+<li><span class="commandsyntax">{force}</span>: принуждает все приложения закончить, даже без сохранения вашей работы.
+<li><span class="commandsyntax">{reboot}</span>: перезагрузить после завершения работы системы.</ul>
+<span class="section">Примеры:</span>
+<span class="commandline"><br>
+initshutdown "shutting down the system within 60 seconds" 60 reboot<br>
+initshutdown "" 0 force
+</span>
+
+<tr><a id="abortshutdown"></a>
+<td class="tablecol1">abortshutdown<td>
+<h6 class="commandsyntax">abortshutdown</h6>
+Отменяет завершение работы системы, которое инициировано командой initshutdown. Эта команда не принимает никаких дополнительных параметров.<br>
+<br>
+<span class="section">Пример:</span>
+<span class="commandline"><br>
+abortshutdown
+</span>
+
+<tr><a id="lockws"></a>
+<td class="tablecol1">lockws<td>
+<h6 class="commandsyntax">lockws</h6>
+Блокирует рабочую станцию. После блокировки вашей рабочей станции, Вы должны набрать ваш пароль, чтобы продолжить вашу работу. Эта команда только доступна на Windows 2000 и Windows XP.
+
+<tr><a id="monitor"></a>
+<td class="tablecol1">monitor<td>
+<h6 class="commandsyntax">monitor [action]</h6>
+Изменяет состояние монитора. Параметр <span class="commandsyntax">[action]</span>может содержать следующие значения:<ul>
+<li><span class="special2">off</span>: выключить монитор<li><span class="special2">on</span>: включить монитор
+<li><span class="special2">low</span>: установить монитор в состояние малой мощности.</ul>
+Эта команда работает только в системах, которые поддерживают эту особенность.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline"><br>
+monitor off<br>
+monitor on
+</span>
+
+<tr><a id="screensaver"></a>
+<td class="tablecol1">screensaver<td>
+<h6 class="commandsyntax">screensaver</h6>
+Запускает хранитель экрана по умолчанию.
+
+<tr><a id="standby"></a>
+<td class="tablecol1">standby<td>
+<h6 class="commandsyntax">standby {force}</h6>
+<p>Завершает компьютер и переводит его в режим 'standby'. Если параметр<span class="commandsyntax">{force}</span> определен, система принуждается к переходу в резервный режим, не спрашивая разрешение от всех приложений. Вообще, не рекомендуют использовать этот параметр.<br>
+Эта команда работает только в системах, который поддерживает режим 'standby'.<br>
+<br>
+<span class="section">Примеры:</span><span class="commandline"><br>standby force
+<br>standby
+</span>
+</p>
+
+<tr><a id="hibernate"></a>
+<td class="tablecol1">hibernate<td>
+<h6 class="commandsyntax">hibernate {force}</h6>
+<p>Завершает компьютер и переводит его в 'hibernate' режим. Если параметр <span class="commandsyntax">{force}</span> определен, система принуждается к переходу в 'hibernate' режим, не спрашивая разрешение от всех приложений. Вообще, не рекомендуют использовать этот параметр.<br>
+Эта команда работает только в системах, которые поддержки режим 'hibernate'.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>hibernate force
+<br>hibernate
+</span>
+</p>
+
+<tr><a id="shortcut"></a>
+<td class="tablecol1">shortcut<td>
+<h6 class="commandsyntax">shortcut [filename] [folder] [shortcut title] {arguments} {icon file} {icon resource number} {ShowCmd} {Start In Folder} {Hot Key}</h6>
+Создает ярлык к файлу.<br>
+Параметры:
+<ul>
+<li><span class="commandsyntax">[filename]</span>: создает ярлык к файла с этим именем.
+<li><span class="commandsyntax">[folder]</span>: определят папку - получатель в которой будет создан этот ярлык. Вы можете определить любую допустимую папку, включая специальные переменные, которые представляют системные папки, как ~$folder.desktop$ (папка Рабочего стола), ~$folder.programs$ (папка меню-Пуск-Программы), и т.д....
+<li><span class="commandsyntax">[shortcut title]</span>: текст, отображенный в ярлыке.
+<li><span class="commandsyntax">{arguments}</span>: необязательный параметр - дополнительные параметры для исполняемого файла.
+<li><span class="commandsyntax">{icon file}</span>: необязательный параметр - используйте этот параметр, если Вы хотите, что бы ярлык отображался не с иконкой по умолчанию.
+<li><span class="commandsyntax">{icon resource number}</span>: необязательный параметр - номер ресурса в файле иконки.
+<li><span class="commandsyntax">{ShowCmd}</span>: необязательный параметр - используйте этот параметр, если Вы хотите развернуть или свернуть окно программы. Определите "max", чтобы развернуть окно или "min", чтобы свернуть его.
+<li><span class="commandsyntax">{Start In Folder}</span>: необязательный параметр - определяет папку "Start In". Если Вы не определяете этот параметр, папка "Start In" автоматически заполняется папкой программы, которую Вы определяете в параметр <span class="commandsyntax">[filename]</span>.
+<li><span class="commandsyntax">{Hot Key}</span>: необязательный параметр - определяет вызывающую клавишу, которая активизирует ярлык. Например: Alt+Ctrl+A, Alt+Shift+F8, Alt+Ctrl+Shift+Y</ul>
+<p>
+<span class="section">Примеры:</span>
+<span class="commandline"><br>
+shortcut "f:\winnt\system32\calc.exe" "~$folder.desktop$" "Windows Calculator"<br>
+shortcut "f:\winnt\system32\calc.exe" "~$folder.programs$\Calculators" "Windows Calculator"<br>
+shortcut "f:\Program Files\KaZaA\Kazaa.exe" "c:\temp\MyShortcuts" "Kazaa"<br>
+shortcut "f:\Program Files" "c:\temp\MyShortcuts" "Program Files Folder" "" "f:\winnt\system32\shell32.dll" 45<br>
+shortcut "f:\Program Files" "c:\temp\MyShortcuts" "Program Files Folder" "" "" "" "max"
+</span>
+
+<tr><a id="cmdshortcut"></a>
+<td class="tablecol1">cmdshortcut<td>
+<h6 class="commandsyntax">cmdshortcut [folder] [shortcut title] [command]</h6>
+Создает ярлык к команде NirCmd. Когда Вы активизируете ярлык (дважды нажимая его), выполнится команда, которую Вы определяете в параметре <span class="commandsyntax">[command]</span>.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>cmdshortcut "~$folder.desktop$" "Open CDROM" cdrom open k:
+<br>cmdshortcut "c:\temp" "Turn Monitor Off" monitor off
+</span>
+
+<tr><a id="cmdshortcutkey"></a>
+<td class="tablecol1">cmdshortcutkey<td>
+<h6 class="commandsyntax">cmdshortcutkey [folder] [shortcut title] [hot key] [command]</h6>
+Подобна команде cmdshortcut, но также позволяет Вам определять комбинацию "hot key" для активизации команды.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>cmdshortcutkey "~$folder.desktop$" "Open CDROM" "Ctrl+Shift+K" cdrom open k:
+<br>cmdshortcutkey "c:\temp" "Turn Monitor Off" "Ctrl+Shift+M" monitor off
+</span>
+
+<tr><a id="urlshortcut"></a>
+<td class="tablecol1">urlshortcut<td>
+<h6 class="commandsyntax">urlshortcut [URL] [Folder] [Shortcut Title]</h6>
+Создает ярлык к адресу URL. (Как ярлыки в Избранное Internet Explorer) параметр <span class="commandsyntax">[Folder]</span> определяет папку - получатель, в которой будет создан этот ярлык. Если Вы хотите создать ярлык в вашей папке по умолчанию Избранное, используйте переменную ~$folder.favorites$.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>urlshortcut "http://www.nirsoft.net" "~$folder.favorites$" "NirSoft Web Site"
+<br>urlshortcut "http://www.google.com" "~$folder.favorites$\Search Engines" "Google"
+<br>urlshortcut "http://www.yahoo.com" "c:\temp" "Yahoo"
+</span>
+
+<tr><a id="exec"></a>
+<td class="tablecol1">exec<td>
+<h6 class="commandsyntax">exec [show/hide] [application + command-line]</h6>
+Выполняет приложение, и произвольно определяет один или более параметров командной строки для выполняемого приложения. Параметр <span class="commandsyntax">[show/hide]</span> определяет, будет ли выполняющаяся прикладная программа видима или нет. Если определен 'hide', выполняющаяся прикладная программа не будет видна пользователю.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>exec show "f:\winnt\system32\calc.exe"
+<br>exec hide "c:\temp\wul.exe" /savelangfile
+</span>
+
+<tr><a id="exec2"></a>
+<td class="tablecol1">exec2<td>
+<h6 class="commandsyntax">exec2 [show/hide] [working folder] [application + command-line]</h6>
+Подобна команде exec, но также обеспечивают и другой параметр, [working folder], который определяет рабочую папку по умолчанию для приложения, которое Вы выполняете.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>exec2 show "f:\winnt\system32" "f:\winnt\system32\calc.exe"
+<br>exec2 hide c:\temp "c:\temp\wul.exe" /savelangfile
+</span>
+
+<tr><a id="execmd"></a>
+<td class="tablecol1">execmd<td>
+<h6 class="commandsyntax">execmd [command]</h6>
+Выполняет команду Командной строки (консольное окно), не отображая ни чего на экране.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>execmd del "~$folder.desktop$\calc.lnk"
+<br>execmd mkdir f:\temp\desktop1
+<br>execmd copy "~$folder.desktop$\*.lnk" f:\temp\desktop
+</span>
+
+<tr><a id="shexec"></a>
+<td class="tablecol1">shexec<td>
+<h6 class="commandsyntax">shexec [operation] [filename]</h6>
+Открывает или печатает файл с указанным именем согласно определению расширения файла в реестре. Например: файл с расширением .doc будет открыт в MS Word, файл с расширением .html будет открыт в вашем браузере по умолчанию. Если Вы определите допустимый адрес вебсайта, то вебсайт будет открыт в вашем браузере по умолчанию. Параметр <span class="commandsyntax">[operation]</span> может быть "open" или "print".<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>shexec "open" "c:\my documents\abc.doc"
+<br>shexec "print" "d:\files\1.pdf"
+<br>shexec "open" "http://www.nirsoft.net"
+</span>
+
+<tr><a id="setfiletime"></a>
+<td class="tablecol1">setfiletime<td>
+<h6 class="commandsyntax">setfiletime [filename or wildcard] [Created Date] {Modified Date} {Accessed Date}</h6>
+Изменяет дату создания/модификации/обращения одного или более файлов. Первый параметр может быть единственным именем файла или строкой подстановочных знаков. Параметры дат должны быть определены в следующем формате: "dd-mm-yyyy hh:nn:ss", если параметр даты не определен или Вы определяете пустую строку (""), дата не будет изменена. Если Вы определите "now" как параметр даты, то будет использоваться текущая дата и время.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>setfiletime "c:\temp\*.exe" "15-05-2004 11:22:12" "22-01-2005 21:22:55"
+<br>setfiletime "c:\temp\myfile.txt" "24-06-2003 17:57:11" "" "22-11-2005 10:21:56"
+<br>setfiletime "c:\temp\myfile.txt" now now
+</span>
+
+<tr><a id="setfilefoldertime"></a>
+<td class="tablecol1">setfilefoldertime<td>
+<h6 class="commandsyntax">setfilefoldertime [filename, folder or wildcard] [Created Date] {Modified Date} {Accessed Date}</h6>
+Изменяет дату создания/модификации/обращения одного или более файлов/папок. Эта команда подобна команде setfiletime. Единственное различие - то, что команда setfilefoldertime может также изменить дату папки - только под Windows 2000/XP.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>setfilefoldertime "c:\temp\myfolder" "10-01-2003 11:22:12" "12-11-2002 02:34:11"
+<br>setfilefoldertime "c:\temp\myfolder" now now
+</span>
+
+<tr><a id="emptybin"></a>
+<td class="tablecol1">emptybin<td>
+<h6 class="commandsyntax">emptybin {drive}</h6>
+Освободит Корзину. Параметр {drive} определяет диск Корзины, которую Вы хотите освободить. Если параметр {drive} не будет определен, то будут освобождены все Корзины на всех дисках.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>emptybin f:
+<br>emptybin
+</span>
+
+<tr><a id="setdisplay"></a>
+<td class="tablecol1">setdisplay<td>
+<h6 class="commandsyntax">setdisplay [width] [height] [color bits] {refresh rate} {-updatereg} {-allusers}</h6>
+Изменяет ваши параметры настройки экрана. Параметры <span class="commandsyntax">[width]</span> и <span class="commandsyntax">[height]</span> представляют число пикселей на вашем экране. Параметр <span class="commandsyntax">[color bits]</span> представляет число цветов, которые отображает ваш экран (8 - 256 цветов, 16 - 16bit цвет, 24 - 24bit цвет, и т.д.). <span class="commandsyntax">{refresh rate}</span> - необязательный параметр, который определяет частоту обновления экрана. Если Вы определите параметр <span class="commandsyntax">{-updatereg}</span>, то новые параметры настройки будут сохранены в Реестре. Если Вы определите параметры и <span class="commandsyntax">{-updatereg}</span> и <span class="commandsyntax">{-allusers}</span>, то новые параметры настройки будут сохранены в Реестре для всех пользователей.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>setdisplay 800 600 24 -updatereg
+<br>setdisplay 1024 768 24 90
+<br>setdisplay 1024 768 8
+</span>
+
+<tr><a id="killprocess"></a>
+<td class="tablecol1">killprocess<td>
+<h6 class="commandsyntax">killprocess [process]</h6>
+Заканчивает указанный процесс. В параметре <span class="commandsyntax">[process]</span>, Вы можете определить полный путь имени файла процесса (например: 'C:FilesExplorer.exe') или только имя процесса, без пути (например: iexplore.exe). Вы можете также определить ID процесса, добавляя символ '/' как префикс (например, /1120).<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>killprocess iexplore.exe
+<br>killprocess "c:\winnt\system32\calc.exe"
+<br>killprocess /1830
+</span>
+
+<tr><a id="closeprocess"></a>
+<td class="tablecol1">closeprocess<td>
+<h6 class="commandsyntax">closeprocess [process]</h6>
+<p>Заканчивает указанный процесс, закрывая его окна верхнего уровня. В противоположность команде killprocess, closeprocess не вынуждает процесс быть закрытым немедленно. Вместо этого она посылает WM_CLOSE сообщение всем окнам верхнего уровня указанного процесса. Однако, знайте, что эта команда не будет воздействовать на процесс без пользовательского интерфейса.<br>
+В параметре <span class="commandsyntax">[process]</span>, Вы можете определить полный путь файла процесса (например: 'C:FilesExplorer.exe') или только имя процесса, без пути (например: iexplore.exe). Вы можете также определить ID процесса, добавляя символ '/' как префикс (например: /1120).<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>closeprocess iexplore.exe
+<br>closeprocess "c:\winnt\system32\calc.exe"
+<br>closeprocess /1830
+</span>
+</p>
+
+<tr><a id="memdump"></a>
+<td class="tablecol1">memdump<td>
+<h6 class="commandsyntax">memdump [process] [dump file] [bytes per line] {bytes to read} {start address} {nohex} {noascii}</h6>
+Читает память о процессе согласно параметрам, которые Вы определяете, и запишет это в текстовый файл.<br>
+Параметры:
+<ul>
+<li><span class="commandsyntax">[process]</span>: процесс, дамп памяти которого Вы хотите формировать. Вы можете определить полный путь файла процесса, только имя процесса, или ID процесса, добавляя символ '/' как префикс (например, /520)
+<li><span class="commandsyntax">[dump file]</span>: имя файла, дамп памяти которого Вы хотите сохранить.
+<li><span class="commandsyntax">[bytes per line]</span>: число байтов памяти в строке в сохраненном файле дампа.<li><span class="commandsyntax">{bytes to read}</span>: число байтов для чтения.
+<li><span class="commandsyntax">{start address}</span>: запускает процесс формирования дампа с этого адреса памяти.<li><span class="commandsyntax">{nohex}</span>: необязательный. Если Вы определите этот параметр, то данные памяти не будут сохранены в HEX формате.
+<li><span class="commandsyntax">{noascii}</span>: необязательный. Если Вы определите этот параметр, то данные памяти не будут сохранены в ASCII формате.</ul>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>memdump iexplore.exe "c:\temp\dump.txt" "16" "0x10000" "0x400000"
+<br>memdump calc.exe "c:\temp\calc.txt" "32" "0x30000" "0x400000" nohex
+<br>memdump /525 "c:\temp\dump.txt" "16" "0x100000" "0x120000" noascii
+</span>
+
+<tr><a id="service"></a>
+<td class="tablecol1">service<td>
+<h6 class="commandsyntax">service {\\Computer} [action] [service name]</h6>
+Изменяет состояние и тип запуска служб и драйверов.<br>
+Параметры:
+<ul>
+<li><span class="commandsyntax">{\\Computer}</span>: необязательный. Определяет имя удаленного компьютера. Если Вы опускаете этот параметр, используется локальный компьютер.
+<li><span class="commandsyntax">[action]</span>: действие, которое Вы хотите сделать. Этот параметр может содержать одно из следующих значений:<ul>
+<li><span class="special2">start</span>: запускает указанную службу или драйвер.
+<li><span class="special2">stop</span>: останавливает указанную службу или драйвер.
+<li><span class="special2">pause</span>: приостанавливает указанную службу или драйвер.
+<li><span class="special2">continue</span>: продолжает указанную службу или драйвер.
+<li><span class="special2">restart</span>: останавливает и затем запускает снова указанную службу или драйвер.
+<li><span class="special2">auto</span>: изменяет тип запуска указанной службы или драйвера на Автоматический.
+<li><span class="special2">manual</span>: изменяет тип запуска указанной службы или драйвера на Ручной.
+<li><span class="special2">disabled</span>: изменяет тип запуска указанной службы или драйвера на Отключенный.
+<li><span class="special2">boot</span>: (только для драйверов) изменяет тип запуска указанного драйвера, на 'Загружать'.
+<li><span class="special2">system</span>: (только для драйверов) изменяет тип запуска указанного драйвера на 'Система'.</ul>
+<li><span class="commandsyntax">[service name]</span>: имя службы или драйвера.</ul>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>service start schedule
+<br>service \\remote stop schedule
+<br>service restart w3svc
+</span>
+
+<tr><a id="win"></a>
+<td class="tablecol1">win<td>
+<h6 class="commandsyntax">win [action] [find] [window to find] [Additional Parameters]</h6>
+Для дочерних окон:
+<h6 class="commandsyntax">win child [find] [top window to find] [action] [find] [child window to find] [Additional Parameters]</h6>
+Эта команда позволяет Вам закрывать, скрывать, показывать, развертывать, и свертывать указанное окно.<br>
+Параметры:
+<ul>
+<li><span class="commandsyntax">[action]</span>: действие, которое Вы хотите сделать в указанном окне:<ul>
+<li><span class="special2">child</span>: позволяет Вам совершать действие в дочернем окне указанного окна верхнего уровня.
+<li><span class="special2">close</span>: закрывает указанные окна.<li><span class="special2">hide</span>: скрывает указанные окна.
+<li><span class="special2">show</span>: показывает снова указанные окна. (после того, как они были скрыты командой 'hide')
+<li><span class="special2">hideshow</span>: скрывает указанные окна и затем показывает их снова. Вы можете использовать это действие, чтобы обновить содержание окна.<li><span class="special2">activate</span>: вызывает указанное окно на передний план.<li><span class="special2">max</span>: развертывает указанные окна.
+<li><span class="special2">min</span>: свертывает указанные окна.<li><span class="special2">normal</span>: восстанавливает указанные окна в нормальное состояние, после их свертывания или развертывания.
+<li><span class="special2">trans</span>: делает указанные окна прозрачными. Значение в <span class="commandsyntax">[Additional Parameters]</span> - число 0...255, которое определяет уровень прозрачности. 0 = полностью прозрачное. 255 = полностью непрозрачное.
+<li><span class="special2">setsize</span>: устанавливает размер указанных окон. Значения в <span class="commandsyntax">[Additional Parameters]</span> определяют нужный размер окна - x, y, ширина, высота.
+<li><span class="special2">move</span>: перемещает/изменяет размеры окна. Значения в <span class="commandsyntax">[Additional Parameters]</span> определяют число пикселей для перемещения/изменения: x, y, ширина, высота.<li><span class="special2">center</span>: центрирует указанные окна.
+<li><span class="special2">settopmost</span>: устанавливает самое верхнее состояние указанных окон. Если значение в <span class="commandsyntax">[Additional Parameters]</span> будут 1, то указанные окна станут самыми верхними окнами, если значение будет 0, то самое верхнее состояние будет отменено.
+<li><span class="special2">redraw</span>: перерисует указанные окна.
+<li><span class="special2">settext</span>: изменит заголовок указанных окон.
+<li><span class="special2">focus</span>: установит фокус в указанное окно.
+<li><span class="special2">disable</span>: отключит указанное окно.
+<li><span class="special2">enable</span>: включит указанное окно.<li><span class="special2">+style</span>: добавит биты стиля указанному окну. Значение <span class="commandsyntax">[Additional Parameters]</span> определяет биты стиля для добавления.
+<li><span class="special2">-style</span>: удалит биты стиля указанного окна. Значение <span class="commandsyntax">[Additional Parameters]</span> определяет биты стиля, для удаления.
+<li><span class="special2">+exstyle</span>: добавит расширенные биты стиля указанному окну. Значение <span class="commandsyntax">[Additional Parameters]</span> определяет расширенные биты стиля для добавления.
+<li><span class="special2">-exstyle</span>: удалит расширенные биты стиля стиля указанного окна. Значение <span class="commandsyntax">[Additional Parameters]</span> определяет расширенные биты стиля для удаления.
+<li><span class="special2">postmsg</span>: отправит сообщение указанному окну. 3 значения в <span class="commandsyntax">[Additional Parameters]</span> определяют параметры сообщения: Msg, wParam, lParam.
+<li><span class="special2">sendmsg</span>: пошлет сообщение указанному окну. 3 значения в <span class="commandsyntax">[Additional Parameters]</span> определяют параметры сообщения: Msg, wParam, lParam.
+<li><span class="special2">dlgclick</span>: пошлет команду щелчка кнопки в диалоговом окне. Значение в [<span class="commandsyntax">Additional Parameters</span>] определяет ID управления кнопки, или одну из следующих предопределенных кнопок: yes, no, ok, cancel, retry, ignore, close, help.</li>
+<li><span class="special2">dlgsettext</span>: установит текст в указанное управление в диалоговом окне. Значение в [<span class="commandsyntax">Additional Parameters</span>] определяет ID управления.</li>
+<li><span class="special2">dlgsetfocus</span>: установит фокус в указанное управление в диалоговом окне. Значение в [<span class="commandsyntax">Additional Parameters</span>] определяет ID управления.</ul>
+<li><span class="commandsyntax">[find]</span>: метод поиска окна:<ul>
+<li><span class="special2">handle</span>: находит нужное окно, определяя дескриптор окна в параметре <span class="commandsyntax">[window to find]</span>.
+<li><span class="special2">id</span>: находит нужное дочернее окно, определяя id дочернего окна. Полезно только для дочерних окон.
+<li><span class="special2">class</span>: находит нужное окно, определяя имя класса окна в параметре <span class="commandsyntax">[window to find]</span>.
+<li><span class="special2">title</span>: находит нужное окно, определяя точный заголовок окна в параметре <span class="commandsyntax">[window to find]</span>.
+<li><span class="special2">stitle</span>: находит нужное окно, определяя первые несколько символов окна в параметре <span class="commandsyntax">[window to find]</span>.
+<li><span class="special2">ititle</span>: находит нужное окно, определяя последовательность символов, которая существует в заголовке окна.
+<li><span class="special2">alltop</span>: все окна, которые на верху.
+<li><span class="special2">alltopnodesktop</span>: все окна, которые на верху, кроме рабочего стола и окон системного трея.
+<li><span class="special2">active</span>: текущее активное окно.
+<li><span class="special2">foreground</span>: окно на переднем плане.
+<li><span class="special2">desktop</span>: окно рабочего стола.</ul>
+<li><span class="commandsyntax">[window to find]</span>: определяет окно дескриптором, именем класса, или заголовком, согласно значению предыдущего параметра.</ul>
+<p>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>win close title "calculator"
+<br>win hide stitle "calculat"
+<br>win hide ititle "culat"
+<br>win show class "SciCalc"
+<br>win activate title "my computer"
+<br>win max handle 0x00009c01
+<br>win redraw alltop
+<br>win trans ititle "internet explorer" 192
+<br>win setsize class "IEFrame" 50 50 400 300
+<br>win settopmost class "SciCalc" 1
+<br>win child class "Shell_TrayWnd" hide class "button"
+<br>win child class "Shell_TrayWnd" show class "button"
+<br>win child title "calculator" hide id 128
+<br>win -style title "my computer" 0x00C00000
+<br>win child title "my computer" +exstyle all 0x00400000
+<br>win sendmsg title "calculator" 0x10 0 0<br>
+win dlgclick class "#32770" cancel
+</span>
+
+<tr><a id="cdrom"></a>
+<td class="tablecol1">cdrom<td>
+<h6 class="commandsyntax">cdrom [action] {drive:}</h6>
+Эта команда позволяет Вам открывать и закрывать лоток вашего CD-ROM привода. Параметр <span class="commandsyntax">[action]</span> может быть 'open' или 'close'. Если Вы не определяете параметр <span class="commandsyntax">{drive:}</span>, будет использоваться CD-ROM по умолчанию.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>cdrom open
+<br>cdrom close
+<br>cdrom open J:
+<br>cdrom close R:
+</span>
+
+<tr><a id="clipboard"></a>
+<td class="tablecol1">clipboard<td>
+<h6 class="commandsyntax">clipboard [Action] [Parameter]</h6>
+Позволяет Вам устанавливать значение в буфере обмена и очищать буфер обмена.<p>
+<span class="commandsyntax">[Action]</span> может содержать одно из следующих значений:<ul>
+<li><span class="special2">set</span> - устанавливает указанный текст в буфер обмена.
+<li><span class="special2">readfile</span> - устанавливает содержание указанного текстового файла в буфер обмена.
+<li><span class="special2">clear</span> - очищают буфер обмена.
+<li><span class="special2">writefile</span> - записывает содержание буфера обмена в файл. (только текст)
+<li><span class="special2">addfile</span> - добавляет содержание буфера обмена к файлу. (только текст)</ul>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>clipboard set "123456"
+<br>clipboard set ~$folder.desktop$
+<br>clipboard set ~$folder.start_menu$
+<br>clipboard readfile "c:\temp\info1.txt"
+<br>clipboard addfile "c:\temp\clip1.txt"
+<br>clipboard clear
+</span>
+
+<tr><a id="gac"></a>
+<td class="tablecol1">gac<td>
+<h6 class="commandsyntax">gac [Action] [Parameter]</h6>
+Позволяет Вам устанавливать трансляцию{блок} в Глобальный Кэш Трансляции{Блока}.<br>
+<br>
+<span class="section">Пример:</span>
+<span class="commandline">
+<br>gac install "C:\temp\MyAssembly\bin\Release\6\MyAssembly.dll"
+</span>
+
+<tr><a id="beep"></a>
+<td class="tablecol1">beep<td>
+<h6 class="commandsyntax">beep [Frequency] [Duration]</h6>
+Воспроизводит звуковой сигнал. Параметр <span class="commandsyntax">[Frequency]</span> определяет частоту в герцах. Параметр <span class="commandsyntax">[Duration]</span> определяет продолжительность звука в миллисекундах. Под Windows 95/98/ME, вышеупомянутые параметры игнорируются, и воспроизводиться только стандартный звуковой сигнал (beep) Windows.<br>
+<br>
+<span class="section">Пример:</span>
+<span class="commandline">
+<br>beep 500 2000
+</span>
+
+<tr><a id="stdbeep"></a>
+<td class="tablecol1">stdbeep<td>
+<h6 class="commandsyntax">stdbeep</h6>
+Воспроизводит стандартный звуковой сигнал (beep) Windows.<br>
+<br>
+<span class="section">Пример:</span>
+<span class="commandline">
+<br>stdbeep
+</span>
+
+<tr><a id="setvolume"></a>
+<td class="tablecol1">setvolume<td>
+<h6 class="commandsyntax">setvolume [device] [left-volume] [right-volume]</h6>
+Установит уровень громкости вашего звукового устройства. Параметр <span class="commandsyntax">[device]</span> представляет идентификатор устройства. В большинстве случаев, Вы должны использовать значение '0' для этого параметра. Параметры <span class="commandsyntax">[left-volume]</span> и <span class="commandsyntax">[right-volume]</span> должны содержать значение между 0 (тишина) и 65535 (полная громкость), который представляет уровень громкости для левого и правого каналов.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>setvolume 0 0 0
+<br>setvolume 0 32768 32768
+<br>setvolume 0 0xffff 0
+</span>
+
+<tr><a id="setsysvolume"></a>
+<td class="tablecol1">setsysvolume<td>
+<h6 class="commandsyntax">setsysvolume [volume] {Component} {Device Index}</h6>
+<p>Установите громкость звука для вашей системы. Изменение этого значения также затрагивает параметры настройки громкости звука в 'Панели управления'. Параметр
+<span class="commandsyntax">[volume]</span> должен содержать значение между 0 (тишина) и 65535 (полная громкость).<br>
+<span class="commandsyntax">{Component}</span> - дополнительный параметр, который определяет один из следующих компонентов звука: master, waveout, synth, cd, microphone, phone, aux, line, headphones, wavein. По умолчанию - 'master' (для общей громкости)<br>
+<span class="commandsyntax">{Device Index}</span> - дополнительный параметр, который определяет индекс звукового устройства. Этот параметр полезен, если Вы имеете более одной звуковой платы. Если Вы не определяете этот параметр, используется звуковая плата по умолчанию в Панели управления.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>setsysvolume 0x8000
+<br>setsysvolume 0
+<br>setsysvolume 25000 waveout
+<br>setsysvolume 25000 master 1
+</span>
+</p>
+
+<tr><a id="setsysvolume2"></a>
+<td class="tablecol1">setsysvolume2<td>
+<h6 class="commandsyntax">setsysvolume2 [left volume] [right volume] {Component} {Device Index}</h6>
+Подобна setsysvolume, но вместо того, чтобы устанавливать общую громкость звука, setsysvolume2 устанавливает правый канал и левый канал отдельно.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>setsysvolume2 10000 20000
+<br>setsysvolume2 30000 0
+<br>setsysvolume2 25000 15000 waveout
+<br>setsysvolume2 30000 0 master 1
+</span>
+
+<tr><a id="changesysvolume"></a>
+<td class="tablecol1">changesysvolume<td>
+<h6 class="commandsyntax">changesysvolume [volume change] {Component} {Device Index}</h6>
+Увеличивает или уменьшает громкость. Параметр <span class="commandsyntax">[volume change] </span> определяет число единиц громкости для увеличения или уменьшения (отрицательное значение - для уменьшения, положительное значение - для увеличения).<br>
+<span class="commandsyntax">{Component}</span> - дополнительный параметр, который определяет один из следующих звуковых компонентов: master, waveout, synth, cd, microphone, phone, aux, line, headphones, wavein. По умолчанию - 'master' (для общей громкости)<br>
+<span class="commandsyntax">{Device Index}</span> - дополнительный параметр, который определяет индекс звукового устройства. Этот параметр полезен, если Вы имеете более одной звуковой платы. Если Вы не определяете этот параметр, используется звуковая плата по умолчанию в Панели управления.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>changesysvolume 5000
+<br>changesysvolume -3000
+<br>changesysvolume 0x1000 waveout
+<br>changesysvolume 0x1000 master 1
+</span>
+
+<tr><a id="changesysvolume2"></a>
+<td class="tablecol1">changesysvolume2<td>
+<h6 class="commandsyntax">changesysvolume2 [left volume change] [right volume change] {Component} {Device Index}</h6>
+Подобна changesysvolume, но вместо того, чтобы устанавливать общую громкость звука, changesysvolume2 устанавливает правый канал и левый канал отдельно.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>changesysvolume2 1000 -1000
+<br>changesysvolume2 -3000 0
+<br>changesysvolume2 0 -5000 waveout
+<br>changesysvolume2 -3000 0 master 1
+</span>
+
+<tr><a id="mutesysvolume"></a>
+<td class="tablecol1">mutesysvolume<td>
+<h6 class="commandsyntax">mutesysvolume [action] {Component} {Device Index}</h6>
+<p>Выключит/включит системную громкость.<br>
+В параметре <span class="commandsyntax">[action]</span>, определите 1 для выключить, 0 для включить, или 2 для переключения между выключенным и включенным состоянием.<br>
+Второй параметр является дополнительным, и Вы можете определить один из следующих звуковых компонентов: master, waveout, synth, cd, microphone, phone, aux, line, headphones, wavein. Значение по умолчанию - 'master' (для общей громкости)<br>
+<span class="commandsyntax">{Device Index}</span> - дополнительный параметр, который определяет индекс звукового устройства. Этот параметр полезен, если Вы имеете более одной звуковой платы. Если Вы не определяете этот параметр, используется звуковая плата по умолчанию в Панели управления.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>mutesysvolume 1
+<br>mutesysvolume 0
+<br>mutesysvolume 2 waveout
+<br>mutesysvolume 1 master 1
+</span>
+</p>
+
+<tr><a id="wait"></a>
+<td class="tablecol1">wait<td>
+<h6 class="commandsyntax">wait [milliseconds]</h6>
+Просто ждет указанное число миллисекунд.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>wait 1000
+<br>wait 500
+</span>
+
+<tr><a id="sysrefresh"></a>
+<td class="tablecol1">sysrefresh<td>
+<h6 class="commandsyntax">sysrefresh {Refresh Type}</h6>
+Инициирует общую системную регенерацию. Вы можете использовать эту команду, чтобы обновить вашу систему после изменения ваших системных параметров настройки в реестре (например: изменяя размер иконок Рабочего стола, переменные среды, и т.д...)<br>
+<span class="commandsyntax">{Refresh Type}</span> является дополнительным. Вы можете определить одно из следующих значений: "environment" - чтобы обновить переменные среды, "policy" - для параметров настройки политики, "intl" для локальных параметров настройки.<br>
+<br>
+<span class="section">Примеры:</span>
+<span class="commandline">
+<br>sysrefresh
+<br>sysrefresh environment
+<br>sysrefresh policy
+</span>
+
+<tr><a id="setcursor"></a>
+<td class="tablecol1">setcursor<td>
+<h6 class="commandsyntax">setcursor [X] [Y]</h6>
+Установит позицию курсора мыши. Параметры <span class="commandsyntax">[X]</span> и <span class="commandsyntax">[Y]</span> определяют нужную позицию курсора.<br>
+<br>
+<span class="section">Пример:</span>
+<span class="commandline">
+<br>setcursor 100 50
+</span>
+
+<tr><a id="movecursor"></a>
+<td class="tablecol1">movecursor<td>
+<h6 class="commandsyntax">movecursor [X] [Y]</h6>
+Переместит курсор мыши. Параметры <span class="commandsyntax">[X]</span> и <span class="commandsyntax">[Y] </span>определяют число пикселей для перемещения.<br>
+<br>
+<span class="section">Пример:</span>
+<span class="commandline">
+<br>movecursor 10 10
+</span>
+
+<tr><a id="dlg"></a>
+<td class="tablecol1">dlg</td>
+<td>
+<h6 class="commandsyntax">dlg [Process Name] [Window Title] [Action] [Parameters]</h6>
+Позволяет Вам взаимодействовать со стандартными диалоговыми окнами и окнами сообщения Windows. Когда диалоговое окно открыто, Вы можете использовать эту команду, чтобы &quot;щелкнуть&quot; кнопками ok/cancel/yes/no, или заполнить текстовые поля в диалоговом окне. <br>
+Например, следующие команды заполняют стандартное диалоговое окно 'Run' Windows с процессом 'calc.exe', и затем щелкают кнопкой 'OK'. '12298' - это ID управления текстового поля в диалоговом окне Run. Вы можете найти ID управления, используя утилиту Spy++ от Microsoft, или используя мою утилиту	<a target="winexp" href="http://www.nirsoft.net/utils/winexp.html">WinExplorer</a>.<span class="commandline"><br>
+dlg &quot;explorer.exe&quot; &quot;run&quot; settext 12298 &quot;calc.exe&quot; <br>
+dlg &quot;explorer.exe&quot; &quot;run&quot; click ok </span>
+<p>Следующая команда выберет ответ 'Yes' для любого диалогового окна вопроса процесса Explorer:<span class="commandline"><br>
+dlg &quot;explorer.exe&quot; &quot;&quot; click yes </span></p>
+<p>Следующая команда выберет ответ 'Cancel' для любого диалогового окна вопроса любого процесса: <br>
+<span class="commandline">dlg &quot;&quot; &quot;&quot; click cancel </span></p>
+<p>Описание параметров:</p>
+<ul>
+<li><span class="commandsyntax">[Process Name]</span>: Определяет процесс, который создал нужное окно. Вы можете определить только название процесса или полный путь процесса. Если этот параметр будет пустой строкой (&quot;&quot;), то команда будет выполнена на любом процессе.</li>
+<li><span class="commandsyntax">[Window Title]</span>: Определяет заголовок окна, в котором Вы хотите выполнять действие. Если этот параметр будет пустой строкой (&quot;&quot;), то команда будет выполнена на любом окне, независимо заголовок окна.</li>
+<li><span class="commandsyntax">[Action]</span>: Вы можете определить одну из следующих опций:<ul>
+<li><span class="special2">click</span>: Щелкнуть указанной кнопкой. Вы можете определить одно из следующих предопределенных значений (Только для стандартных диалоговых окон Windows!): yes, no, ok, cancel, retry, ignore, close, help. Вы можете также определить любой ID управления как числовое значение.</li>
+<li><span class="special2">settext</span>: Установить текст указанного управления. Первый параметр этого действия определяет ID управления, а второй параметр определяет текст.</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr><a id="dlgany"></a>
+<td class="tablecol1">dlgany
+</td>
+<td>
+<h6 class="commandsyntax">dlgany [Process Name] [Window Title] [Action] [Parameters] </h6>
+Подобна команде dlg, но также работает и с любым окном, даже если оно не идентифицировано как стандартное диалоговое окно Windows.</td>
+</tr>
+<tr><a id="returnval"></a>
+<td class="tablecol1">returnval </td>
+<td>
+<h6 class="commandsyntax">returnval [Return Value] </h6>
+Эта команда позволяет Вам определять значение возвращаемое NirCmd. Возвращаемое значение может использоваться внешней программой из которой запущен NirCmd. <br>
+Например, в следующей команде, NirCmd возвращает значение 0x30, если пользователь выбирает ответ 'Yes': <br>
+<span class="commandline">qboxcom &quot;Do you want to continue ?&quot; &quot;question&quot; returnval 0x30 </span>
+</td>
+</tr>
+<tr><a id="sendkey"></a>
+<td class="tablecol1">sendkey</td>
+<td>
+<h6 class="commandsyntax">sendkey [Key] [press | down | up] </h6>
+Посылает нажатие клавиши в систему. Операционная система будет вести себя так, как будто пользователь действительно нажимал указанные клавиши. <br>
+Параметр <span class="commandsyntax">[Key]</span> определяет клавишу как виртуальный ключевой код (Например: 0x2e для клавиши DELETE), или как одно из следующих предопределенных значений: a - z и 0 - 9 (для алфавитно-цифровых клавиш), F1 - F24 (для клавиш Fxx), shift, ctrl, alt, enter, esc.<br>
+Второй параметр определяет действие клавиши: 'press', 'down' или 'up'. Для каждой клавиши для действия down, Вы должны также добавить соответствующие действие up.<p>В следующем примере сценария система ведет себя как будь то пользователь нажал Shift+Ctrl+Esc (должен появиться Менеджер задач):
+<span class="commandline"><br>
+sendkey shift down <br>
+sendkey ctrl down <br>
+sendkey esc down <br>
+sendkey shift up <br>
+sendkey ctrl up <br>
+sendkey esc up </span></p>
+<p>Больше примеров:<br>
+<span class="commandline">
+sendkey a press <br>
+sendkey f10 press <br>
+sendkey enter press <br>
+sendkey 0x2e press </span></td>
+</tr>
+<tr><a id="sendmouse"></a>
+<td class="tablecol1">sendmouse</td>
+<td>
+<h6 class="commandsyntax">sendmouse [right | left | middle] [down | up |
+click | dblclick]<br>
+sendmouse [move] [x] [y]<br>
+sendmouse [wheel] [Wheel Value]</h6>
+Посылает указанное действие мыши в систему. Операционная система будет вести себя точно, как будь то пользователь действительно сделал указанное действие мыши.<br>
+Здесь несколько примеров посылки команд мыши:<ul>
+<li>Послать правый щелчок (для большинства приложений, открыть контекстное меню):<span class="commandline"><br>
+sendmouse right click </span></li>
+<li>Послать двойной щелчок левой кнопкой мыши:<span class="commandline"><br>
+sendmouse left dblclick </span></li>
+<li>Нажать левую кнопку мыши, переместите курсор мыши влево на 20 пикселей и вниз на 30 пикселей, а затем отпустить кнопку:
+<span class="commandline"><br>
+sendmouse left down <br>
+sendmouse move -30 20 <br>
+sendmouse left up </span></li>
+<li>Прокрутите колесо мыши на 10 шагов в стандартном колесе мыши. (на стандартной мыши колеса значение колеса должно быть кратным числом 120).<span class="commandline"><br>
+sendmouse wheel 1200 </span></li>
+</ul>
+</td>
+</tr>
+</table>
+<h4 class="utilsubject">Обратная связь</h4>
+<p>Если Вы имеете какую-нибудь проблему, предложение, комментарий, или Вы нашли ошибку в моей утилите, Вы можете послать сообщение на <a href="mailto:nirsofer@yahoo.com">nirsofer@yahoo.com</a>
+</p>
+</BODY>
+</HTML>

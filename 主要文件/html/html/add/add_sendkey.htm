@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Эмуляция клавиатурных нажатий</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+<!-- Изображения для компиляции справки-->
+<a href="../../images/bgl_bgrey.jpg">
+<a href="../../images/bgl_orange.jpg">
+<a href="../../images/bgl_yellow.jpg">
+<a href="../../images/bgl_orchid.jpg">
+<a href="../../images/bgl_mblue.jpg">
+<a href="../../images/bgl_blue.jpg">
+<a href="../../images/bgl_grey.jpg">
+<a href="../../images/bgl_red.jpg">
+<a href="../../images/bgs_grey.gif">
+<a href="../../images/img-.gif">
+<a href="../../images/img+.gif">
+<a href="../../images/online.gif">
+<a href="../../reg.vbs">
+<a href=""></a>
+</head>
+<body background="../../images/LiteImage.jpg">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №1</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Дополнение к командам <a href="../com_keybd.htm">keybd</a>, <a href="../com_buttn.htm">buttn</a>, <a href="../com_zmenu.htm">zmenu</a>, <a href="../com_timess.htm">&#60;TIME=...&#62;</a></font></p>
+<hr><br>
+<b>Синтаксис команды:</b>
+<br><br>
+Синтаксис команды <font class="S41">keybd</font> аналогичен ScriptIt и команде "SendKeys" в Visual Basic. В <font class="S41">keybd</font> <u>пробел заменяется символом <b>№</b></u>. Символы эмулируются как есть, за исключением следующих:<br>
+<br>
+'!'<br>
+Это указывает AutoIt эмулировать клавишу Alt, поэтому "<font color=#ff0000>keybd=0~~This<font class="S01">№</font>is<font class="S01">№</font>text!a</font>" выполнит ввод текста "This is text" и затем нажмёт "Alt+a".<br>
+<br>
+Обратите внимание: некоторые программы очень разборчивы в регистре символов и клавиш Alt, т.е. "!A" отличается от "!a". Первый эмулирует Alt+Shift+A, второй Alt+a. Если сомневаетесь, используйте нижний регистр символов!<br>
+<br>
+'+'<br>
+Это указывает AutoIt эмулировать клавишу Shift, поэтому <font color=#ff0000>keybd=0~~Hell+o</font> выполнит ввод текста "HellO". <font color=#ff0000>keybd=0~~!+a"</font> эмулирует нажатие "Alt+Shift+a".<br>
+<br>
+'^'<br>
+Это указывает AutoIt эмулировать клавишу Ctrl, поэтому <font color=#ff0000>keybd=0~~^!a</font> эмулирует нажатие "Ctrl+Alt+a".<br>
+<br>
+Обратите внимание: некоторые программы очень разборчивы в регистре символов и клавиш Ctrl, т.е. "^A" отличается от "^a". Первый эмулирует Ctrl+Shift+A, второй Ctrl+a. Если сомневаетесь, используйте нижний регистр символов!<br>
+<br>
+'#'<br>
+"Решётка" теперь эмулирует клавишу Windows; поэтому, <font color=#ff0000>keybd=0~~#r</font> эмулирует нажатие Win+r, который запускает диалоговое окно "Выполнить".<br>
+<br>
+<br>
+Некоторые клавиатуры, например Чешская, посылают различные символы при использовании клавиши Shift во включённом и выключенном состоянии Caps Lock. Реализация Send в AutoIt такова, что символы В ВЕРХНЕМ РЕГИСТРЕ отсылаются так, как если бы был нажат Shift, так что <b>оно не будет работать</b>.<br>
+<br>
+Некоторые спец-клавиши могут эмулированы, если заключены в фигурные скобки:<br>
+<br>
+Обратите внимание, Windows не позволяет эмулировать сочетание Ctrl+Alt+Del!<br><br>
+<a name="TABL"></a>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr><th>Команда</th><th>Результат эмуляции</th></tr>
+<tr><td class="s3td">{!}</td><td>!</td></tr>
+<tr><td class="s3td">{#}</td><td>#</td></tr>
+<tr><td class="s3td">{+}</td><td>+</td></tr>
+<tr><td class="s3td">{^}</td><td>^</td></tr>
+<tr><td class="s3td">{{}</td><td>{</td></tr>
+<tr><td class="s3td">{}}</td><td>}</td></tr>
+<tr><td class="s3td">{SPACE}</td><td>SPACE (пробел)</td></tr>
+<tr><td class="s3td">{ENTER}</td><td>Enter основной клавиатуры</td></tr>
+<tr><td class="s3td">{ALT}</td><td>ALT</td></tr>
+<tr><td class="s3td">{BACKSPACE} или {BS}</td><td>Backspace</td></tr>
+<tr><td class="s3td">{DELETE} или {DEL}</td><td>Delete</td></tr>
+<tr><td class="s3td">{UP}</td><td>Стрелка вверх</td></tr>
+<tr><td class="s3td">{DOWN}</td><td>Стрелка вниз</td></tr>
+<tr><td class="s3td">{LEFT}</td><td>Стрелка влево</td></tr>
+<tr><td class="s3td">{RIGHT}</td><td>Стрелка вправо</td></tr>
+<tr><td class="s3td">{HOME}</td><td>Home</td></tr>
+<tr><td class="s3td">{END}</td><td>End</td></tr>
+<tr><td class="s3td">{ESCAPE} или {ESC}</td><td>Esc (Escape)</td></tr>
+<tr><td class="s3td">{INSERT} или {INS}</td><td>Insert (Ins)</td></tr>
+<tr><td class="s3td">{PGUP}</td><td>PageUp</td></tr>
+<tr><td class="s3td">{PGDN}</td><td>PageDown</td></tr>
+<tr><td class="s3td">{F1} - {F12}</td><td>Функциональные клавиши</td></tr>
+<tr><td class="s3td">{TAB}</td><td>Tab</td></tr>
+<tr><td class="s3td">{PRINTSCREEN}</td><td>Клавиша Print Screen (Prt Scr SysRq)</td></tr>
+<tr><td class="s3td">{LWIN}</td><td>Левая клавиша Windows</td></tr>
+<tr><td class="s3td">{RWIN}</td><td>Правая клавиша Windows</td></tr>
+<tr><td class="s3td">{NUMLOCK on}</td><td>Num Lock (on/off/toggle) (включить/выключить/переключить)</td></tr>
+<tr><td class="s3td">{CAPSLOCK off}</td><td>Caps Lock (on/off/toggle) (включить/выключить/переключить)</td></tr>
+<tr><td class="s3td">{SCROLLLOCK toggle}</td><td>Scroll Lock (on/off/toggle) (включить/выключить/переключить)</td></tr>
+<tr><td class="s3td">{BREAK}</td><td>для Ctrl+Break</td></tr>
+<tr><td class="s3td">{PAUSE}</td><td>Pause</td></tr>
+<tr><td></td></tr>
+<tr><td class="s3td">{NUMPAD0} - {NUMPAD9}</td><td>Цифры (цифровая клавиатура)</td></tr>
+<tr><td class="s3td">{NUMPADMULT}</td><td>* (цифровая клавиатура)</td></tr>
+<tr><td class="s3td">{NUMPADADD}</td><td>+ (цифровая клавиатура)</td></tr>
+<tr><td class="s3td">{NUMPADSUB}</td><td>- (цифровая клавиатура)</td></tr>
+<tr><td class="s3td">{NUMPADDIV}</td><td>/ (цифровая клавиатура)</td></tr>
+<tr><td class="s3td">{NUMPADDOT}</td><td>. (цифровая клавиатура)</td></tr>
+<tr><td class="s3td">{NUMPADENTER}</td><td>Enter (цифровая клавиатура)</td></tr>
+<tr><td class="s3td">{APPSKEY}</td><td>Клавиша Windows App</td></tr>
+<tr><td class="s3td">{LALT}</td><td>Левый Alt</td></tr>
+<tr><td class="s3td">{RALT}</td><td>Правый Alt</td></tr>
+<tr><td class="s3td">{LCTRL}</td><td>Левый Ctrl</td></tr>
+<tr><td class="s3td">{RCTRL}</td><td>Правый Ctrl</td></tr>
+<tr><td class="s3td">{LSHIFT}</td><td>Левый Shift</td></tr>
+<tr><td class="s3td">{RSHIFT}</td><td>Правый Shift</td></tr>
+<tr><td class="s3td">{SLEEP}</td><td>Клавиша спящего режима компьютера</td></tr>
+<tr><td class="s3td">{ALTDOWN}</td><td>Удерживать Alt в нажатом состоянии, до {ALTUP}</td></tr>
+<tr><td class="s3td">{SHIFTDOWN}</td><td>Удерживать Shift в нажатом состоянии, до {SHIFTUP}</td></tr>
+<tr><td class="s3td">{CTRLDOWN}</td><td>Удерживать Ctrl в нажатом состоянии, до {CTRLUP}</td></tr>
+<tr><td class="s3td">{LWINDOWN}</td><td>Удерживать левый Windows в нажатом состоянии, до {LWINUP}</td></tr>
+<tr><td class="s3td">{RWINDOWN}</td><td>Удерживать правый Windows в нажатом состоянии, до {RWINUP}</td></tr>
+<tr><td class="s3td">{ASC nnnn}</td><td>Выслать клавишу, указав её номер</td></tr>
+<tr><td class="s3td">{BROWSER_BACK}</td><td>Только в 2000/XP: Кнопка "назад" в окне просмотра</td></tr>
+<tr><td class="s3td">{BROWSER_FORWARD}</td><td>Только в 2000/XP: Кнопка "вперёд" в окне просмотра</td></tr>
+<tr><td class="s3td">{BROWSER_REFRESH}</td><td>Только в 2000/XP: Кнопка "обновить" в окне просмотра</td></tr>
+<tr><td class="s3td">{BROWSER_STOP}</td><td>Только в 2000/XP: Кнопка "остановить" в окне просмотра</td></tr>
+<tr><td class="s3td">{BROWSER_SEARCH}</td><td>Только в 2000/XP: Кнопка "поиск" в окне просмотра</td></tr>
+<tr><td class="s3td">{BROWSER_FAVORITES}</td><td>Только в 2000/XP: Кнопка "избранное" в окне просмотра</td></tr>
+<tr><td class="s3td">{BROWSER_HOME}</td><td class="nobr">Только в 2000/XP: Запускает браузер и переходит на домашнюю страницу</td></tr>
+<tr><td class="s3td">{VOLUME_MUTE}</td><td>Только в 2000/XP: Выключить звук</td></tr>
+<tr><td class="s3td">{VOLUME_DOWN}</td><td>Только в 2000/XP: Уменьшить звук (на 4% от 100)</td></tr>
+<tr><td class="s3td">{VOLUME_UP}</td><td>Только в 2000/XP: Увеличить звук (на 4% от 100)</td></tr>
+<tr><td class="s3td">{MEDIA_NEXT}</td><td>Только в 2000/XP: Следующий трек в медиа-плеере</td></tr>
+<tr><td class="s3td">{MEDIA_PREV}</td><td>Только в 2000/XP: Предыдущий трек в медиа-плеере</td></tr>
+<tr><td class="s3td">{MEDIA_STOP}</td><td>Только в 2000/XP: Остановить воспроизведение в медиа-плеере</td></tr>
+<tr><td class="s3td">{MEDIA_PLAY_PAUSE}</td><td>Только в 2000/XP: Воспроизведение / пауза в медиа-плеере</td></tr>
+<tr><td class="s3td">{LAUNCH_MAIL}</td><td>Только в 2000/XP: Запуск почтовой программы</td></tr>
+<tr><td class="s3td">{LAUNCH_MEDIA}</td><td>Только в 2000/XP: Запуск медиа плеера</td></tr>
+<tr><td class="s3td">{LAUNCH_APP1}</td><td>Только в 2000/XP: Запуск первой программы пользователя</td></tr>
+<tr><td class="s3td">{LAUNCH_APP2}</td><td>Только в 2000/XP: Запуск второй программы пользователя</td></tr>
+</table>
+</div>
+<br>
+Чтобы эмулировать ASCII символ A (тоже, что нажатие ALT+065 на цифровой клавиатуре)<br>
+<p class="codebox"><span class="S4">keybd</span>=0<font class="S81">~~</font><span class="S10">{ASC<font class="S01">№</font>065}</span></p>
+<br>
+(Когда используется двухзначный код ASCII вы должны подставить в начало 0, иначе будет использована устаревшая кодовая страница 437).<br>
+<br>
+Чтобы эмулировать символ UNICODE вводите код символа (десятичный или шестнадцатеричный), например это эмулирует китайский символ<br>
+<p class="codebox"> <span class="S4">keybd</span>=0<font class="S81">~~</font><span class="S10">{ASC<font class="S01">№</font>2709}</span></br>
+<span class="S4">keybd</span>=0<font class="S81">~~</font><span class="S10">{ASC<font class="S01">№</font>0xA95}</span></br></p>
+<br>
+<br>
+Одиночную эмуляцию можно повторить, например:<br>
+<p class="codebox"><span class="S4">keybd</span>=0<font class="S81">~~</font><span class="S10">{DEL<font class="S01">№</font>4}</span><span class="S1"> ;; Эмулирует нажатие клавиши Del 4 раза</span><br>
+<span class="S4">keybd</span>=0<font class="S81">~~</font><span class="S10">{S<font class="S01">№</font>30}</span><span class="S1"> ;; Эмулирует нажатие клавиши 'S' 30 раз</span><br>
+<span class="S4">keybd</span>=0<font class="S81">~~</font><span class="S10">+{TAB<font class="S01">№</font>4}</span><span class="S1"> ;; Эмулирует нажатие Shift+Tab 4 раза</span></p>
+<br>
+Клавиша эмулируется не менее одного раза, даже если указано 0 повторов.<br>
+<br>
+Удерживать клавишу в нажатом состоянии (обычно полезно только для игр)<br>
+<p class="codebox"><span class="S4">keybd</span>=0<font class="S81">~~</font><span class="S10">{a<font class="S01">№</font>down}</span><span class="S1"> ;; Удерживать клавишу A нажатой</span>
+<br><span class="S4">keybd</span>=0<font class="S81">~~</font><span class="S10">{a<font class="S01">№</font>up}</span><span class="S1"> ;; Отпустить клавишу A</span></p>
+<br>
+Устанавливает состояние клавиш CapsLock, NumLock или ScrollLock<br>
+
+<p class="codebox"><span class="S4">keybd</span>=0<font class="S81">~~</font><span class="S10">{NumLock<font class="S01">№</font>on}</span><span class="S1"> ;; Включает NumLock</span>
+<br><span class="S4">keybd</span>=0<font class="S81">~~</font><span class="S10">{CapsLock<font class="S01">№</font>off}</span><span class="S1"> ;; Выключает CapsLock</span>
+<br><span class="S4">keybd</span>=0<font class="S81">~~</font><span class="S10">{ScrollLock<font class="S01">№</font>toggle}</span><span class="S1"> ;; Переключает состояние ScrollLock</span></p>
+</div>
+
+Большинство клавиатур ноутбуков имеют специальную клавишу Fn. Эта клавиша не может быть эмулирована.<br>
+<br>
+<br>
+Например, откройте "Свойства папки" (в панели управления) и попробуйте выполнить следующее:<br><br>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr><th>Команда</th><th>Описание</th></tr>
+<tr><td><span class="S4">keybd</span>=0<font class="S81">~~</font><font class="S101">{TAB}</font></td><td class="nobr">Перейти к следующему элементу управления (кнопка, checkbox и т.д.)</td></tr>
+<tr><td><span class="S4">keybd</span>=0<font class="S81">~~</font><font class="S101">+{TAB}</font></td><td>Перейти к предыдущему элементу управления.</td></tr>
+<tr><td><span class="S4">keybd</span>=0<font class="S81">~~</font><font class="S101">^{TAB}</font></td><td>Перейти к следующей вкладке (на вкладках диалогового окна)</td></tr>
+<tr><td><span class="S4">keybd</span>=0<font class="S81">~~</font><font class="S101">^+{TAB}</font></td><td>Перейти к предыдущей вкладке.</td></tr>
+<tr><td><span class="S4">keybd</span>=0<font class="S81">~~</font><font class="S101">{SPACE}</font></td><td>Можно использовать для переключения флажка или нажатия кнопки.</td></tr>
+<tr><td><span class="S4">keybd</span>=0<font class="S81">~~</font><font class="S101">{+}</font></td><td>Устанавливает галочку (Если это настоящий checkbox.)</td></tr>
+<tr><td><span class="S4">keybd</span>=0<font class="S81">~~</font><font class="S101">{-}</font></td><td>Снимает галочку.</td></tr>
+<tr><td class="nobr"><span class="S4">keybd</span>=0<font class="S81">~~</font><font class="S101">{NumPadMult}</font></td><td>Раскрыть дерево папки SysTreeView32.</td></tr>
+</table>
+</div>
+<br>
+Используйте клавишу Alt+Key для доступа к пунктам меню. Кроме того, откройте Блокнот и выполните следующее:<br>
+Send("!f") Эмулирует Alt+f, для доступа в меню Блокнота (Alt+ф в русской локализации). Попробуйте другие клавиши!<br>
+<br>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr><th>Команда</th><th>Описание</th></tr>
+<tr><td class="nobr"><span class="S4">keybd</span>=0<font class="S81">~~</font><font class="S101">{DOWN}</font></td><td>Перемещение вниз по меню.</td></tr>
+<tr><td><span class="S4">keybd</span>=0<font class="S81">~~</font><font class="S101">{UP}</font></td><td>Перемещение вверх по меню.</td></tr>
+<tr><td><span class="S4">keybd</span>=0<font class="S81">~~</font><font class="S101">{LEFT}</font></td><td>Перемещение влево к новому меню или раскрыть подменю.</td></tr>
+<tr><td class="nobr"><span class="S4">keybd</span>=0<font class="S81">~~</font><font class="S101">{RIGHT}</font></td><td class="nobr">Перемещение вправо к новому меню или свернуть подменю.</td></tr>
+</table>
+</div>
+Посмотрите справку Windows, нажав Win+F1 для ознакомления с полным списком сочетаний клавиш, если вы не знаете назначение Alt+F4, PrintScreen, Ctrl+C и так далее.<br>
+<br>
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

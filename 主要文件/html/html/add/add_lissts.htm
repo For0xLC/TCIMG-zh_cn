@@ -1,0 +1,509 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Получение различных списков</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №22</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+<a name="up"></a>
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Параметры получения различных списков.</font></p>
+<hr><br>
+При определённых задачах автоматизации в работе с файлами и папками всегда требуется передать в команду некий список объектов, над которыми будут производится заданные действия.<br>
+В Total Commander есть внутренние параметры %WL, %F, %P%S... см. Дополнение<a class="le" href="add_param.htm"> <b>№7</b></a>.<br>
+Ниже представлены параметры утилиты, которые позволяют расширить возможности получения списков.<br>
+В большинстве команд все эти параметры подключены и готовы к работе. Если в какой-то команде нет нужного параметра, вы можете сообщить об этом и он будет добавлен.
+<br><br>
+Для включения/отключения перевода относительных путей в абсолютные воспользуйтесь командой <a class="le" href="../com_envgt.htm"><span class="S4"><b>envgt</b></span></a>
+<br><br>
+
+<table width="95%" cellspacing="0" cellpadding="3">
+<tr><td><b>1. PS&#60;&#62;</b>&nbsp;</td><td width="95%"><a class="le" href="#1"><b>Список объектов каталога</b></a></td></tr>
+<tr><td><b>2. FOLDC&#60;&#62;</b>&nbsp;</td><td><a class="le" href="#2"><b>Список объектов содержимого каталогов</b></a></td></tr>
+<tr><td><b>3. FOLDM&#60;&#62;</b>&nbsp;</td><td><a class="le" href="#3"><b>Список выделенных объектов и всех объектов в подпапках</b></a></td></tr>
+<tr><td><b>4. LISTC&#60;&#62;</b>&nbsp;</td><td><a class="le" href="#4"><b>Список объектов из выделенных без дубликатов</b></a></td></tr>
+<tr><td><b>5. LISTF&#60;&#62;</b>&nbsp;</td><td><a class="le" href="#5"><b>Список заданных объектов</b></a></td></tr>
+<tr><td><b>6. INI&#60;&#62;</b>&nbsp;</td><td><a class="le" href="#6"><b>Список элементов INI файла</b></a></td></tr>
+<tr><td><b>7. cliplist</b>&nbsp;</td><td><a class="le" href="#7"><b>Список элементов из буфера обмена</b></a></td></tr>
+<tr><td><b>8. FLST&#60;&#62;</b>&nbsp;</td><td><a class="le" href="#8"><b>Смешанные списки объектов по заданному списку</b></a></td></tr>
+<tr><td><b>9. [tc]</b>&nbsp;</td><td><a class="le" href="add_tc.htm"><b>Списки объектов файловых панелей Total Commander</b></a></td></tr>
+<tr><td style="white-space:nowrap"><b>10. TCGINFO<></b>&nbsp;</td><td><a class="le" href="add_tcg.htm"><b>Списки объектов из шаблона</b></a></td></tr>
+
+<tr><td></td><td>&nbsp;</td></tr>
+<tr><td><b>Примечание</b>&nbsp;</td><td><a class="le" href="#notes1"><b>№1 - Приоритет обработки параметров</b></a></td></tr>
+<tr><td><b>Примечание</b>&nbsp;</td><td><a class="le" href="#notes2"><b>№2 - Маска</b></a></td></tr>
+<tr><td><b>Примечание</b>&nbsp;</td><td><a class="le" href="#notes3"><b>№3 - Атрибуты</b></a></td></tr>
+</table>
+
+<!-- <a class="le" href="#1"><b>1. Список объектов каталога: Подпараметр PS<></b></a><br> -->
+<!-- <a class="le" href="#2"><b>2. Список объектов содержимого каталогов: Подпараметр FOLDC<></b></a><br> -->
+<!-- <a class="le" href="#3"><b>3. Список выделенных объектов и всех объектов в подпапках: Подпараметр FOLDM<></b></a><br> -->
+<!-- <a class="le" href="#4"><b>4. Список объектов из выделенных без дубликатов: Подпараметр LISTC<></b></a><br> -->
+<!-- <a class="le" href="#5"><b>5. Список заданных объектов: Подпараметр LISTF<></b></a><br> -->
+<!-- <a class="le" href="#6"><b>6. Список элементов INI файла: Подпараметр INI<></b></a><br> -->
+<!-- <a class="le" href="#7"><b>7. Список элементов из буфера обмена: Подпараметр cliplist</b></a><br> -->
+<br>
+<a name="1"></a><a name="PS"></a><br>
+<a href="#2"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>1.</b> Список объектов каталога: Подпараметр <b>PS<></b><br></font>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td>
+PS<span class="S8">&lt</span><b>Path</b><span class="S11">//</span><b>Flag</b><span class="S11">//</span><b>Recursion</b><span class="S11">//</span><b>Mask</b><span class="S11">//</span><b>Include</b><span class="S11">//</span><b>Registr</b><span class="S11">//</span><b>Format</b><span class="S11">//</span><b>Lines</b><span class="S8">&gt</span> (рекомендуется), или<br>
+PS<span class="S8">&lt</span><b>Path</b><span class="S11">!!</span><b>Flag</b><span class="S11">!!</span><b>Recursion</b><span class="S11">!!</span><b>Mask</b><span class="S11">!!</span><b>Include</b><span class="S11">!!</span><b>Registr</b><span class="S11">!!</span><b>Format</b><span class="S11">!!</span><b>Lines</b><span class="S8">&gt</span>, где:<br><br>
+<b>Path</b> - путь к каталогу.<br>
+&nbsp;&nbsp;<font class="S21">Остальные параметры являются необязательными</font>.<br>
+<b>Flag</b> :<br>
+&nbsp;&nbsp;0 - получить файлы и папки (по умолчанию).<br>
+&nbsp;-1 - получить папки и файлы.<br>
+&nbsp;&nbsp;1 - только файлы.<br>
+&nbsp;&nbsp;2 - только папки.<br>
+&nbsp;-2 - только папки, включая корневой каталог.<br>
+&nbsp;-3 - получить файлы и папки, включая корневой каталог.<br>
+&nbsp;-4 - получить папки и файлы, включая корневой каталог.<br>
+<b>Recursion<font class="S81">|</font>Attributes</b> - см Примечание <a class="le" href="#notes3"><b>№3</b></a>:<br>
+&nbsp;&nbsp;0 - без рекурсии - корневой каталог.<br>
+&nbsp;-1 - с рекурсией: глубина 125 (по умолчанию).<br>
+&nbsp;&nbsp;N - глубина вложенности.<br>
+<b>Mask</b> - см Примечание <a class="le" href="#notes2"><b>№2</b></a><br>
+<b>Include</b> :<br>
+&nbsp;&nbsp;0 - найти указанные в маске (по умолчанию).<br>
+&nbsp;&nbsp;1 - найти все кроме указанных в маске.<br>
+<b>Registr</b> :<br>
+&nbsp;&nbsp;0 - не учитывать регистр (по умолчанию).<br>
+&nbsp;&nbsp;1 - учитывать регистр (для любых символов).<br>
+<b>Format</b> - пути в возвращаемых данных:<br>
+&nbsp;&nbsp;1 - полный путь (по умолчанию).<br>
+&nbsp;&nbsp;2 - имена файлов с расширением. <br>
+&nbsp;&nbsp;3 - имена файлов без расширения.<br>
+&nbsp;&nbsp;4 - полный путь, отсекая начальный заданный каталог Path.</font><br>
+<b>Lines</b> - получение определённых строк (путей) из списка, может иметь несколько вариантов:<br>
+&nbsp;&nbsp;N - номер строки.<br>
+&nbsp;&nbsp;N1,N2,...NN - список номеров, прописанных через запятую<br>
+&nbsp;&nbsp;N:M - диапазон строк. (M-N - обратный диапазон)<br>
+&nbsp;&nbsp;N:M,N1:M1...NN,MM - список номеров диапазонов (прямых и обратных).<br>
+При отрицательных значениях строки извлекаются относительно последней строки.</font></td></tr>
+</td></tr></table><br>
+<br>
+
+
+
+<br><hr class="hr-blue"><br>
+<a name="2"></a><a name="FOLDC"></a><br>
+
+<a href="#3"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>2.</b> Список объектов содержимого каталогов: Подпараметр <b>FOLDC<></b><br>
+</font>
+<br>
+
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td>
+FOLDC<span class="S8">&lt</span><b>List</b>/<b>cliplist</b><span class="S11">//</span><b>Mode</b><span class="S11">//</span><b>Flag</b><span class="S11">//</span><b>Mask</b><span class="S11">//</span><b>Include</b><span class="S11">//</span><b>Registr</b><span class="S11">//</span><b>Format</b><span class="S11">//</span><b>Lines</b><span class="S8">&gt</span> (рекомендуется), или<br>
+FOLDC<span class="S8">&lt</span><b>List</b>/<b>cliplist</b><span class="S11">!!</span><b>Mode</b><span class="S11">!!</span><b>Flag</b><span class="S11">!!</span><b>Mask</b><span class="S11">!!</span><b>Include</b><span class="S11">!!</span><b>Registr</b><span class="S11">!!</span><b>Format</b><span class="S11">!!</span><b>Lines</b><span class="S8">&gt</span>, где:<br>
+<br>
+
+<b>List</b> - путь\к\списку\каталогов.txt или <b>cliplist</b> - список полных путей каталогов из буфера.<br>
+&nbsp;&nbsp;<font class="S21">Остальные параметры являются необязательными</font>.<br>
+<b>Mode<font class="S81">|</font>Attributes</b> - см Примечание <a class="le" href="#notes3"><b>№3</b></a>:<br>
+&nbsp;&nbsp;0 - получить только содержимое папок.<br>
+&nbsp;&nbsp;1 - получить и файлы (если вошли в список 0 уровня)<br>
+&nbsp;&nbsp;2 - получить и файлы (если вошли в список 0 уровня и применить ту же маску <b>Mask</b>)<br>
+&nbsp;&nbsp;3 - получить только файлы из списка 0 уровня и применить ту же маску <b>Mask</b><br>
+<b>Flag</b> :<br>
+&nbsp;&nbsp;0 - Файлы и папки (по умолчанию только 1-го уровня).<br>
+&nbsp;&nbsp;1 - Только файлы.<br>
+&nbsp;&nbsp;2 - Только папки. <br>
+&nbsp;&nbsp;-1 - все файлы на всю глубину. <br>
+&nbsp;&nbsp;-2 - все папки на всю глубину. <br>
+&nbsp;&nbsp;-3 - все файлы и папки на всю глубину.<br>
+<b>Mask</b> - см Примечание <a class="le" href="#notes2"><b>№2</b></a><br>
+<b>Include</b> :<br>
+&nbsp;&nbsp;0 - найти указанные в маске (по умолчанию).<br>
+&nbsp;&nbsp;1 - найти все кроме указанных в маске.<br>
+<b>Registr</b> :<br>
+&nbsp;&nbsp;0 - не учитывать регистр (по умолчанию).<br>
+&nbsp;&nbsp;1 - учитывать регистр (для любых символов).<br>
+<b>Format</b> - пути в возвращаемых данных:<br>
+&nbsp;&nbsp;1 - полный путь (по умолчанию).<br>
+&nbsp;&nbsp;2 - имена файлов с расширением. <br>
+&nbsp;&nbsp;3 - имена файлов без расширения.</font><br>
+<b>Lines</b> - получение определённых строк (путей) из списка, может иметь несколько вариантов:<br>
+&nbsp;&nbsp;N - номер строки.<br>
+&nbsp;&nbsp;N1,N2,...NN - список номеров, прописанных через запятую<br>
+&nbsp;&nbsp;N:M - диапазон строк. (M-N - обратный диапазон)<br>
+&nbsp;&nbsp;N:M,N1:M1...NN,MM - список номеров диапазонов (прямых и обратных).<br>
+При отрицательных значениях строки извлекаются относительно последней строки.</font></td></tr>
+</td></tr></table><br>
+<br>
+
+
+
+<br><hr class="hr-blue"><br>
+<a name="3"></a><a name="FOLDM"></a><br>
+
+<a href="#4"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>3.</b> Список выделенных объектов и всех объектов в подпапках: Подпараметр <b>FOLDM<></b><br>
+</font>
+<br>
+
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0">
+FOLDM<span class="S8">&lt</span><b>List</b>/<b>cliplist</b><span class="S11">//</span><b>Flag</b><span class="S11">//</span><b>Recursion</b><span class="S11">//</span><b>Mask</b><span class="S11">//</span><b>Include</b><span class="S11">//</span><b>Registr</b><span class="S11">//</span><b>Format</b><span class="S11">//</span><b>Lines</b><span class="S8">&gt</span> (рекомендуется), или<br>
+FOLDM<span class="S8">&lt</span><b>List</b>/<b>cliplist</b><span class="S11">!!</span><b>Flag</b><span class="S11">!!</span><b>Recursion</b><span class="S11">!!</span><b>Mask</b><span class="S11">!!</span><b>Include</b><span class="S11">!!</span><b>Registr</b><span class="S11">!!</span><b>Format</b><span class="S11">!!</span><b>Lines</b><span class="S8">&gt</span>, где:<br>
+<br>
+
+<b>List</b> - путь\к\списку\выделенных\каталогов или <b>cliplist</b> - список полных путей элементов из буфера.<br>
+&nbsp;&nbsp;<font class="S21">Остальные параметры являются необязательными</font>.<br>
+<b>Flag</b> :<br>
+&nbsp;&nbsp;0 - получить файлы и папки, включая пути корневых папок (по умолчанию).<br>
+&nbsp;&nbsp;1 - только файлы, включая пути корневых папок.<br>
+&nbsp;&nbsp;2 - только папки, включая пути корневых папок.<br>
+&nbsp;-3 - получить файлы и папки, НЕ включая пути корневых папок.<br>
+&nbsp;-1 - только файлы, НЕ включая пути корневых папок.<br>
+&nbsp;-2 - только папки, НЕ включая пути корневых папок.<br>
+<b>Recursion<font class="S81">|</font>Attributes</b> - см Примечание <a class="le" href="#notes3"><b>№3</b></a>:<br>
+&nbsp;&nbsp;0 - без рекурсии - корневой каталог.<br>
+&nbsp;-1 - с рекурсией: глубина 125 (по умолчанию).<br>
+&nbsp;&nbsp;N - глубина вложенности.<br>
+<b>Mask</b> - см Примечание <a class="le" href="#notes2"><b>№2</b></a><br>
+<b>Include</b> :<br>
+&nbsp;&nbsp;0 - найти указанные в маске (по умолчанию).<br>
+&nbsp;&nbsp;1 - найти все кроме указанных в маске.<br>
+<b>Registr</b> :<br>
+&nbsp;&nbsp;0 - не учитывать регистр (по умолчанию).<br>
+&nbsp;&nbsp;1 - учитывать регистр (для любых символов).<br>
+<b>Format</b> - пути в возвращаемых данных:<br>
+&nbsp;&nbsp;1 - полный путь (по умолчанию).<br>
+&nbsp;&nbsp;2 - имена файлов с расширением. <br>
+&nbsp;&nbsp;3 - имена файлов без расширения.</font><br>
+<b>Lines</b> - получение определённых строк (путей) из списка, может иметь несколько вариантов:<br>
+&nbsp;&nbsp;N - номер строки.<br>
+&nbsp;&nbsp;N1,N2,...NN - список номеров, прописанных через запятую<br>
+&nbsp;&nbsp;N:M - диапазон строк. (M-N - обратный диапазон)<br>
+&nbsp;&nbsp;N:M,N1:M1...NN,MM - список номеров диапазонов (прямых и обратных).<br>
+При отрицательных значениях строки извлекаются относительно последней строки.</font></td></tr>
+</td></tr></table><br>
+<br>
+
+
+
+<br><hr class="hr-blue"><br>
+<a name="4"></a><a name="LISTC"></a><br>
+
+<a href="#5"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>4.</b> Список объектов из заданных списков без дубликатов: Подпараметр <b>LISTC<></b><br>
+</font>
+<br>
+
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0">
+LISTC<span class="S8">&lt</span><b>List</b>/<b>cliplist</b><span class="S11">//</span><b>Flag</b><span class="S11">//</span><b>Recursion</b><span class="S11">//</span><b>Mask</b><span class="S11">//</span><b>Include</b><span class="S11">//</span><b>Registr</b><span class="S11">//</span><b>Format</b><span class="S11">//</span><b>Lines</b><span class="S8">&gt</span> (рекомендуется), или<br>
+LISTC<span class="S8">&lt</span><b>List</b>/<b>cliplist</b><span class="S11">!!</span><b>Flag</b><span class="S11">!!</span><b>Recursion</b><span class="S11">!!</span><b>Mask</b><span class="S11">!!</span><b>Include</b><span class="S11">!!</span><b>Registr</b><span class="S11">!!</span><b>Format</b><span class="S11">!!</span><b>Lines</b><span class="S8">&gt</span>, где:<br>
+<br>
+
+<b>List</b> - путь\к\списку\списков или <b>cliplist</b> - список полных путей списков из буфера.<br>
+&nbsp;&nbsp;<font class="S21">Остальные параметры являются необязательными</font>.<br>
+<b>Flag</b> :<br>
+&nbsp;&nbsp;0 - получить файлы и папки (по умолчанию).<br>
+&nbsp;&nbsp;1 - только файлы.<br>
+&nbsp;&nbsp;2 - только папки.<br>
+<b>Recursion<font class="S81">|</font>Attributes</b> - см Примечание <a class="le" href="#notes3"><b>№3</b></a>:<br>
+&nbsp;&nbsp;0 - без рекурсии - корневой каталог.<br>
+&nbsp;-1 - с рекурсией: глубина 125 (по умолчанию).<br>
+&nbsp;&nbsp;N - глубина вложенности.<br>
+<b>Mask</b> - см Примечание <a class="le" href="#notes2"><b>№2</b></a><br>
+<b>Include</b> :<br>
+&nbsp;&nbsp;0 - найти указанные в маске (по умолчанию).<br>
+&nbsp;&nbsp;1 - найти все, кроме указанных в маске.<br>
+<b>Registr</b> :<br>
+&nbsp;&nbsp;0 - не учитывать регистр (по умолчанию).<br>
+&nbsp;&nbsp;1 - учитывать регистр (для любых символов).<br>
+<b>Format</b> - пути в возвращаемых данных:<br>
+&nbsp;&nbsp;1 - полный путь (по умолчанию).<br>
+&nbsp;&nbsp;2 - имена файлов с расширением. <br>
+&nbsp;&nbsp;3 - имена файлов без расширения.</font><br>
+<b>Lines</b> - получение определённых строк (путей) из списка, может иметь несколько вариантов:<br>
+&nbsp;&nbsp;N - номер строки.<br>
+&nbsp;&nbsp;N1,N2,...NN - список номеров, прописанных через запятую<br>
+&nbsp;&nbsp;N:M - диапазон строк. (M-N - обратный диапазон)<br>
+&nbsp;&nbsp;N:M,N1:M1...NN,MM - список номеров диапазонов (прямых и обратных).<br>
+При отрицательных значениях строки извлекаются относительно последней строки.</font></td></tr>
+</td></tr></table><br>
+<br>
+
+
+
+<br><hr class="hr-blue"><br>
+<a name="5"></a><br>
+
+<a href="#6"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>5.</b> Список заданных объектов: Подпараметр <b>LISTF<></b><br>
+</font>
+<br>
+
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0">LISTF<span class="S8">&lt</span><b>Path</b><font class="S81"><b>1</b></font>/<b>Path</b><font class="S81"><b>2</b></font>/ ... /<b>Path</b><font class="S81"><b>N</b></font><span class="S8">&gt</span>, где:<br>
+<br>
+
+<b>Path</b>1 ... <b>Path</b>N - полные пути объектов, разделённые <font class="S81"><b>/</b></font><hr align="left" width=300>Так же может использоваться конструкция LISTF<span class="S8">&lt</span>LISTN<span class="S8">&gt</span>, где:<br>
+
+<br>
+LIST1, LIST2 или LISTN означает, что полные пути будут взяты из соответствующих ключей <b>FilesList</b>1, <b>FilesList</b>1 или <b>FilesList</b>N в <a class="le" href="../../config.htm#FilesList1"><font class="S1"><b>TCIMG.ini</b></font></a> в секции <span class="S8">[</span>Setting<span class="S8">]</span>. Пути в ключах разделяются <font class="S81"><b>/</b></font><br>
+<br>
+<span class="section">Пример записи:</span><p class="codeheader" style="padding:6px;white-space: nowrap;width: 300"><b>FilesList</b>1=C:\test1.txt<font class="S81"><b>/</b></font>C:\test2.txt<font class="S81"><b>/</b></font>C:\test3.txt</p></font></td></tr>
+</td></tr></table><br>
+<br>
+
+
+
+<br><hr class="hr-blue"><br>
+<br>
+<a name="6"></a><a name="INI"></a><br>
+<a href="#7"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>6.</b> Список элементов INI файла: Подпараметр <b>INI<></b><br>
+</font>
+<br>
+
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0">
+INI<span class="S8">&lt</span><b>Flag</b><font class="S11">//</font><b>PathINI</b><font class="S11">//</font><b>NameSection</b><font class="S11">//</font><b>Key</b><span class="S8">&gt</span> (рекомендуется), или<br>
+INI<span class="S8">&lt</span><b>Flag</b><font class="S11">!!</font><b>PathINI</b><font class="S11">!!</font><b>NameSection</b><font class="S11">!!</font><b>Key</b><span class="S8">&gt</span>, где:<br>
+<br>
+
+<b>Flag</b> :<br>
+&nbsp;&nbsp;1 - все имена секций со скобками.<br>
+&nbsp;&nbsp;2 - все имена секций без скобок.<br>
+&nbsp;&nbsp;3 - содержимое всех секций.<br>
+&nbsp;&nbsp;4 - содержимое секции <b>NameSection</b> с именем секции.<br>
+&nbsp;&nbsp;5 - содержимое секции <b>NameSection</b> без имени секции.<br>
+&nbsp;&nbsp;6 - список ключей секции <b>NameSection</b>.<br>
+&nbsp;&nbsp;7 - список значений секции <b>NameSection</b>.<br>
+&nbsp;&nbsp;8 - значения ключа <b>Key</b> секции <b>NameSection</b>.<br>
+&nbsp;&nbsp;9 - имя ключа <b>Key</b> и его значение секции <b>NameSection</b> (Key=Value).<br>
+&nbsp;&nbsp;10 - содержимое всех секций без имён секций.<br>
+&nbsp;&nbsp;11 - содержимое всех секций (каждая секция в отдельной ячейке массива для команд sends).<br>
+&nbsp;&nbsp;12 - содержимое всех секций без имён секций (каждая секция в отдельной ячейке массива для команд sends).<br>
+<br>
+Секции возвращаются относительно расположения их в INI файле:<br>
+&nbsp;&nbsp;13 - содержимое заданных секций.<br>
+&nbsp;&nbsp;14 - содержимое заданных секций без имён секций.<br>
+&nbsp;&nbsp;15 - содержимое заданных секций (каждая секция в отдельной ячейке массива для команд sends).<br>
+&nbsp;&nbsp;16 - содержимое заданных секций без имён секций (каждая секция в отдельной ячейке массива для команд sends).<br>
+<br>
+Секции возвращаются относительно заданных имён:<br>
+&nbsp;&nbsp;17 - содержимое заданных секций.<br>
+&nbsp;&nbsp;18 - содержимое заданных секций без имён секций.<br>
+&nbsp;&nbsp;19 - содержимое заданных секций (каждая секция в отдельной ячейке массива для команд sends).<br>
+&nbsp;&nbsp;20 - содержимое заданных секций без имён секций (каждая секция в отдельной ячейке массива для команд sends).<br>
+<br>
+&nbsp;&nbsp;21 - список заданных ключей и их значения (Key=Value) (каждая пара в отдельной ячейке массива для команд sends).<br>
+&nbsp;&nbsp;22 - список значений заданных ключей (Value) (каждое значение в отдельной ячейке массива для команд sends).<br>
+<br>
+&nbsp;&nbsp;23 - содержимое всех секций (построчно).<br>
+<br>
+&nbsp;&nbsp;24, 25, 26, 27 - содержимое всех секций. Flag//PathINI//RegExp//Search//Replace<br>
+<div style="margin-left: 31pt; text-indent: 0pt;">
+RegExp - регулярное выражение:<br>
+&nbsp;&nbsp;(если строка начинается с <b>??</b>Key то регулярное выражение берётся TCIMG.ini из секции [FormatUser] из ключа Key):<br>
+&nbsp;&nbsp;- Flag=24 - секция включается, если нет вхождения.<br>
+&nbsp;&nbsp;- Flag=26 - секция включается, если нет вхождения (каждая секция в отдельной ячейке массива для команд sends).<br>
+&nbsp;&nbsp;- Flag=25 - секция включается, если есть вхождение.<br>
+&nbsp;&nbsp;- Flag=27 - секция включается, если есть вхождение (каждая секция в отдельной ячейке массива для команд sends).<br>
+Search - [необязательный] - регулярное выражение для поиска во включённой секции.<br>
+&nbsp;&nbsp;<b>??</b>Key1,Key2,...KeyN - после <b>??</b> можно прописывать один или несколько ключей через запятую из TCIMG.ini из секции [FormatUser]<br>
+Replace - [необязательный] - шаблон замены.<br>
+</div>
+<br>
+<b>PathINI</b> - путь к INI файлу.<br>
+<b>NameSection</b> - имя секции, используется при Flag=4 и выше.<br>
+<b>Key</b> - имя ключа, используется при Flag=8,Flag=9.<br>
+<br>
+При Flag=21 и Flag=22 в <b>Key</b> прописываются имена ключей через разделитель <b>|</b> (Key1<b>|</b>Key2<b>|</b>...<b>|</b>KeyN)
+<br><br>
+При Flag=13, ... , Flag=20 в <b>NameSection</b> прописываются имена секций через разделитель <b>|</b><br>
+<br>
+При Flag=8 и Flag=9 после <b>Key</b> можно прописать значение, которое будет возвращено, если указанный ключ не найден (<b>Key<font class="S61">//</font>Default</b>)
+<br><br>
+<b>Flag</b> имеет необязательные дополнительные параметры <b>Flag<font class="S81">|</font>Comm<font class="S81">|</font>Mode</b>, где:<br>
+&nbsp;&nbsp;<b>Comm</b> - режим удаления комментариев:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - не удалять комментарии (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - удаление всех комментариев вида <code class="example">; комментарий</code><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2 - удаление комментариев в начале строки вида <code class="example">; комментарий</code><br>
+&nbsp;&nbsp;&nbsp;&nbsp;3 - удаление специальных комментариев в начале строки вида <code class="example">/*@комментарий - для кода html@*/</code><br>
+&nbsp;&nbsp;<b>Mode</b> - режим удаления пустых строк:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - не удалять пустые строки (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - удалять пустые строки.<br>
+
+</td></tr></table><br>
+<br>
+
+
+<br><hr class="hr-blue"><br>
+<a name="7"></a><a name="cliplist"></a><br>
+
+<a href="#8"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>7.</b> Список элементов из буфера обмена: Подпараметр <b>cliplist</b><br>
+</font>
+<br>
+
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td>Без подпараметров
+</td></tr></table><br>
+<br>
+
+<br><hr class="hr-blue"><br>
+<br>
+<a name="8"></a><a name="FLST"></a><br>
+<a href="#9"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>8.</b> Смешанные списки объектов по заданному списку: Подпараметр <b>FLST&#60;&#62;</b><br>
+</font>
+<br>
+
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td>
+FLST<span class="S8">&lt</span><b>PathList</b><span class="S8">&gt</span>, где:<br>
+<br>
+<b>PathList</b> - путь к списку со строками, позволяющие найти нужные элементы.<br>
+&nbsp;&nbsp;возможные варианты строк:<br>
+&nbsp;&nbsp;&bull; <a class="le" href="#PS"><b>PS</b></a>&#60;Path//...&#62; - список объектов каталога.<br>
+&nbsp;&nbsp;&bull; <a class="le" href="#FOLDC"><b>FOLDC</b></a>&#60;List//...&#62; - список объектов содержимого каталогов.<br>
+&nbsp;&nbsp;&bull; <a class="le" href="#FOLDM"><b>FOLDM</b></a>&#60;List//...&#62; - список заданных объектов и всех объектов в подпапках.<br>
+&nbsp;&nbsp;&bull; <a class="le" href="#LISTC"><b>LISTC</b></a>&#60;List//...&#62; - список объектов из заданных без дубликатов.<br>
+&nbsp;&nbsp;&bull; <a class="le" href="#LISTF"><b>LISTF</b></a>&#60;Path1/...&#62; - список заданных объектов.<br>
+&nbsp;&nbsp;&bull; <a class="le" href="#LISTF"><b>INI</b></a>&#60;Flag//...&#62; - список элементов INI файла.<br>
+&nbsp;&nbsp;&bull; cliplist - список элементов из буфера обмена.<br>
+&nbsp;&nbsp;&bull; <a class="le" href="add_tc.htm"> <b>[tc]</b></a> - списки объектов файловых панелей Total Commander.<br>
+&nbsp;&nbsp;&bull; <a class="le" href="add_tcg.htm"> <b>TCGINFO</b></a>&#60;&#62; - списки объектов из шаблона.<br>
+&nbsp;&nbsp;&bull; <font class="S81"><b>@</b></font>Path - если строка начинается с "@", то путь объекта добавляется как есть.<br>
+&nbsp;&nbsp;&bull; в файле списка могут использоваться комментарии в начале строки "пробел;;пробел - комментарий".
+
+<br><br>
+<span class="section">Пример записи в файле списка:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width: 300">
+<font class="S21">&nbsp;;;&nbsp;комментарий</font><br>
+PS&#60;$f207//1//0&#62;<br>
+PS&#60;$f210//1//-1//au3|vbs|js&#62;<br>
+PS&#60;%TCIMG_PATH%\Files\Ini//1//0&#62;<br>
+@<a class="le" href="add_path.htm#$f213"><span class="S4"><b>$f213</b></span></a>\TCIMG_Russian.lng<br>
+[tc=AL]<br>
+</p>
+
+<span class="section">Пример запуска:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width: 300">
+<a class="le" href="../com_slist.htm"><span class="S4"><b>slist</b></span></a>=FLST<$f212\OrfoList.txt> GLOBALSLIST&#60;a&#62;
+</p>
+
+
+</td></tr></table><br>
+<br>
+
+
+
+<br><hr class="hr-blue"><br><br>
+
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0">
+
+
+<p class="section" align="center"><b><big>Примечания:</big></b></p>
+<br>
+
+<!-- Примечание №1 -->
+
+<a name="notes1"></a>
+<b><font class="S91"><b>Примечание №1.</b></font> <font class="S51">Приоритет обработки параметров.</font></b><br>
+<br>
+
+С версии 7.5 параметры PS<>, FOLDC<>, FOLDM<>, LISTC<>, LISTF<>, INI<>, [tc], TCGINFO<> в команды подключаются вместе и имеют приоритет обработки:<br>
+<br>
+
+1) INI<><br>
+2) [tc] см. Дополнение<a class="le" href="add_tc.htm"> <b>№12</b></a><br>
+3) TCGINFO<> см. Дополнение<a class="le" href="add_tcg.htm"> <b>№31</b></a><br>
+4) LISTF<><br>
+5) PS<><br>
+6) FOLDC<><br>
+7) FOLDM<><br>
+8) LISTC<> <br>
+9) cliplist<br>
+<br>
+
+Это позволяет первые параметры обрабатывать внутри последующих:<br>
+<br>
+
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:480">
+<a class="le" href="../com_lists.htm"><span class="S4">lists</span></a>=<font class="S41"><b>FOLDC<</b></font><font class="S81"><b>LISTF<</b></font>%P%N\11\/%P%N\22\/%P%N\33\<font class="S81"><b>></b></font>//1//-4<font class="S41"><b>></b></font><font class="S81"><b>||</b></font>##path<32><br>
+
+</p>
+Сначала обрабатывается параметр LISTF<...>, который создаёт начальный список и передаёт его параметру FOLDC<><br>
+<br>
+
+
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:480">
+<a class="le" href="../com_copys.htm"><span class="S4">copys</span></a>=<font class="S41"><b>FOLDC<</b></font><font class="S81"><b>PS<</b></font>%P%N//2//0<font class="S81"><b>></b></font>//1//1<font class="S41"><b>></b></font><font class="S81"><b>||</b></font>%P%N//0<font class="S81"><b>||</b></font>##&#60;info=f61::&#62;
+</p>
+Сначала обрабатывается параметр PS<...>, который создаёт начальный список и передаёт его параметру FOLDC<><br>
+
+<br><br>
+
+
+<div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div>
+
+<!-- Примечание №2 -->
+
+<a name="notes2"></a><br>
+<b><font class="S91"><b>Примечание №2.</b></font> <font class="S51">Маска.</font></b><br>
+<br>
+Маска может быть либо полная с использованием символов "<font class="S81"><b>*</b></font>" и "<font class="S81"><b>?</b></font>", либо с указанием расширения файлов.<br>
+&nbsp;&nbsp;В качестве разделителя используется символ "<font class="S81"><b>|</b></font>". По умолчанию "<font class="S81"><b>*</b></font>" - найти все файлы.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Для поиска файлов без расширения используется маска "<b>:zeroext:</b>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Пример: <code class="example">*.ini|*.txt</code><br>
+&nbsp;&nbsp;Маска шаблонов. см. Дополнение<a class="le" href="add_dialog.htm#notes8"> <b>№18</b></a>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Пример: <code class="example">[extnd=Arhive]</code><br>
+&nbsp;&nbsp;В версии 10.8 появилась возможность вводить "прямую" маску без преобразования для <u>имени</u> объекта.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Для этого перед маской необходимо прописать <font class="S81">&&</font> , при этом подпараметр <font class="S121">Include=0</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Пример: <code class="example">&&.+\.(?:(?:woff|eof|tff)(?:\d+)?)</code><br>
+&nbsp;&nbsp;В версии 25.4 появилась возможность вводить "прямую" маску без преобразования для <u>пути</u> объекта.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Для этого перед маской необходимо прописать <font class="S81">##</font> , при этом подпараметр <font class="S121">Include=0</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Пример: <code class="example">##(?:.*TCIMG_)([^.\\]*)(?:\.lng)</code><br>
+<hr align="left" width=500>
+&nbsp;&nbsp;<font class="S21">(*UCP)</font> и <font class="S21">(?i)</font> вставляются автоматически (относительно подпараметра <font class="S121">Registr</font>), в начале регулярного выражения они не прописываются.
+<br>
+
+<div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div>
+
+<!-- Примечание №3 -->
+
+<a name="notes3"></a><br>
+<b><font class="S91"><b>Примечание №3.</b></font> <font class="S51">Атрибуты.</font></b><br>
+<br>
+String - строка из букв задаваемых атрибутов - RASHNOTC:<br>
+&nbsp;&nbsp;"R" = READONLY (только для чтения)<br>
+&nbsp;&nbsp;"A" = ARCHIVE (архивный)<br>
+&nbsp;&nbsp;"S" = SYSTEM (системный)<br>
+&nbsp;&nbsp;"H" = HIDDEN (скрытый)<br>
+&nbsp;&nbsp;"N" = NORMAL (нормальный)<br>
+&nbsp;&nbsp;"O" = OFFLINE (оффлайн)<br>
+&nbsp;&nbsp;"T" = TEMPORARY (временный)<br>
+&nbsp;&nbsp;"C" = COMPRESSED (сжатый, имеется в виду сжатие NTFS, а не ZIP)<br>
+String может иметь вид: "SH", "^SH"<br>
+&nbsp;&nbsp;"SH" - найти системные и скрытые объекты.<br>
+&nbsp;&nbsp;"<font class="S81"><b>^</b></font>SH" - найти объекты кроме системных и скрытых.<br>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<font class="S21">; в текущем каталоге найти все файлы без рекурсии, кроме системных и скрытых</font><br>
+<a class="le" href="../com_sends.htm"><span class="S4">sends</span></a>=PS<"%P"//1//0<font class="S81"><b>|</b></font><b>^SH</b>>??-1 GLOBALSENDS&#60;a&#62;
+</p>
+
+
+<div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div>
+<br>
+<!-- <br><br><br><br><br><br><br><br><br><br><br> -->
+
+<a href="#7"><img align=left src="../../images/up2.gif" border="0" title="К предыдущему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;&nbsp;
+<p></p>
+
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br>
+<font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a>
+</body></html>

@@ -1,0 +1,635 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Регулярные выражения</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №2</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Регулярные выражения.</font></p>
+<hr><br>
+<b>Дополнение для команд и параметров, которые используют регулярные выражения.</b>
+<br><br>
+Регулярные выражения - это простой путь найти нужную подстроку в строке. Регулярные выражения - это строки, являющиеся сочетанием обычных символов и символов, имеющих специальное значение, указывающих на то, что может изменяться в целевой строке. Регулярные выражения в AutoIt по умолчанию учитывают регистр.<br>
+<br>
+Регулярные выражения составляются из одного или более простых спецификаторов. Если символа нет в следующей таблице, значит, он соответствует только самому себе.<br>
+<br>
+Символы повтора (*, +, ?, {...} ) будут соответствовать строке наибольшей длины, если сразу же за ними не идёт символ вопросительный знак '?' (в этом случае часть шаблона будет соответствовать строке наименьшей длины).<br>
+<br>
+Обратный слеш - имеет несколько применений:<br>
+&nbsp;&nbsp;1) экранирующий символ для метасимволов: <code class="example">\\, \., \[, \], \{, \}, \*, ...</code>.<br>
+&nbsp;&nbsp;2) позволяет использовать непечатные символы в описании шаблона: <code class="example">\040, \0113, \377, \x{50}, \x50, ...</code>.<br>
+&nbsp;&nbsp;3) указание общего типа символов: <code class="example">\d, \D, \w, \W, ...</code>.<br>
+&nbsp;&nbsp;4) указание границ слова/текста: <code class="example">\A, \z, \Z, \b, ...</code>.<br>
+&nbsp;&nbsp;5) указание ссылки на найденную/ые группу/ы в самом шаблоне и в шаблоне замены.
+<br>
+<br>
+<b>Осторожно</b>: неправильно написанное регулярное выражение может стать причиной зацикливания и даже вызвать сбой работы утилиты.<br>
+<br>
+
+Дополнительные ссылки:<br> 
+1. <a href="https://housecomputer.ru/programming/regexp/pcre.html">Perl совместимые регулярные выражения – PCRE</a><br>
+2. <a href="https://www.autoitscript.com/autoit3/docs/functions/StringRegExp.htm">Regular expression (Autoit help eng.)</a><br>
+3. <a href="https://en.wikipedia.org/wiki/Regular_expression">Regular expression</a>
+
+
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'><big>Метасимволы вне квадратных скобок</big></b><br>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td class="s3td" width="15%"><b>( )</b></td><td width="85%">начало и конец группы, например <font class="S51">(text)</font>. Скобки означают последовательность, используются для применения квантификаторов не к одному символу, а к нескольким, а также для дальнейшего использования найденной последовательности.<br>
+</td></tr><tr><td class="s3td"><b>[ ]</b></td><td>начало и конец описания символьного класса, например: <font class="S51">[a-z]</font>, <font class="S51">[abcЭЮЯ]</font>. Символьный класс возвращает один символ из множества. Изменить это могут повторители.<br>
+</td></tr><tr><td class="s3td"><b>{ }</b></td><td>
+начало и конец повторителей, например:<br>
+&nbsp;&nbsp;<font class="S51">a{8,}</font> - повтор предыдущего символа "<font class="S51">a</font>" от 8 символов и более.<br>
+&nbsp;&nbsp;<font class="S51">[abc]{8,}</font> - повтор предыдущих символов от 8 символов и более.<br>
+&nbsp;&nbsp;<font class="S51">(xyz){3,8}</font> - повтор предыдущей группы от 3-х до 8-ми символов.<br>
+</td></tr><tr><td class="s3td"><b>\</b></td><td>экранирующий символ, позволяет применять метасимвол как обычный символ, например (\\, \., \[, \], \{, \}, \*)<br>
+</td></tr><tr><td class="s3td"><b>^</b></td><td>начало строки (или начало текста в многострочных текстах), например <font class="S51">^text text$</font><br>
+</td></tr><tr><td class="s3td"><b>$</b></td><td>конец строки (или конец текста в многострочных текстах), например <font class="S51">^text text$</font><br>
+</td></tr><tr><td class="s3td"><b>.</b></td><td>любой символ, кроме переноса строки <a class="le" href="../fun/makros.htm#@LF"><font class="S61">@LF</font></a> (по умолчанию). При использовании флага <font class="S91">(?s)</font> - любой символ<br>
+</td></tr><tr><td class="s3td"><b>|</b></td><td>символ "или", обычно внутри группы, например:<br>
+&nbsp;&nbsp;<font class="S51">(10<font class="S81">|</font>20)</font> - или "10" или "20"<br>
+&nbsp;&nbsp;<font class="S51">(abcd<font class="S81">|</font>cdfe)</font> - или "abcd" или "cdfe"<br>
+</td></tr><tr><td class="s3td"><b>?</b></td><td>предыдущий символ либо имеется, либо не имеется, аналогично и для групп. После символа повтора - жадность шаблона - (.*?)<br>
+</td></tr><tr><td class="s3td"><b>*</b></td><td>повтор предыдущего символа или группы 0 и более раз<br>
+</td></tr><tr><td class="s3td"><b>+</b></td><td>повтор предыдущего символа или группы 1 и более раз<br>
+</td></tr></table>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'><big>Метасимволы внутри квадратных скобок</big></b><br>
+<br>
+&nbsp;&nbsp;Часть шаблона, заключенная в квадратные скобки, называется символьным классом.<br>
+&nbsp;&nbsp;Внутри скобок метасимволы теряют свое специальное значение, кроме метасимволов, принадлежащих этому классу.<br>
+&nbsp;&nbsp;Экранировать требуется только 4 символа <font class="S19">"</font><b>\</b><font class="S19">"</font>, <font class="S19">"</font><b>-</b><font class="S19">"</font>, <font class="S19">"</font><b>[</b><font class="S19">"</font>, <font class="S19">"</font><b>]</b><font class="S19">"</font>.<br>
+&nbsp;&nbsp;Если символ "-" находится в конце перечисления, то не требует экранирования.<br>
+&nbsp;&nbsp;В шаблоне могут использоваться метасимволы диапазонов, но не используются метасимволы границ, например \A, \B, \Z, \z, а метасимвол \b означает символ возврата 'backspace'.<br>
+&nbsp;&nbsp;Учтите, что диапазоны, например [а-я] используют UTF-8 последовательность, а не ASCII.<br>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td class="s3td" width="15%"><b>\</b></td><td width="85%">экранирующий символ, позволяет применять метасимвол как обычный символ, например (\\, \., \[, \], \{, \}, \*)<br>
+</td></tr><tr><td class="s3td"><b>^</b></td><td>символ исключения символьного класса, в том случае, когда стоит первым, например:<br>
+&nbsp;&nbsp;<font class="S51">[^3]</font> (все символы, кроме цифры три)<br>
+&nbsp;&nbsp;<font class="S51">[^abc]</font> (все символы, кроме символов "a", "b", "c")<br>
+</td></tr><tr><td class="s3td"><b>-</b></td><td>символ охвата (означает символьный интервал), например:<br>
+&nbsp;&nbsp;<font class="S51">[a-z]</font> (то есть любой из символов от "a" до "z")<br>
+&nbsp;&nbsp;<font class="S51">[a-dx-z]</font> (то есть любой из символов от "a" до "d" и от "x" до "z")<br>
+</td></tr><tr><td class="s3td"><b>[ ]</b></td><td>начало и конец описания символьного класса, например:<br>
+&nbsp;&nbsp;<font class="S51">[ahkpuЯЮЦ]</font><br>
+&nbsp;&nbsp;(?i)<font class="S51">[a-zА-ЯёЁ]</font><br>
+</td></tr></table>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'><big>Метасимволы подстановки</big></b><br>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td class="s3td" width="15%"><b>\1</b> - <b>\9</b></td><td width="85%">ссылка на найденную группу в самом шаблоне и в шаблоне замены.<br>&nbsp;&nbsp;отсчёт групп слева по открывающей скобке "("
+
+</td></tr><tr><td class="s3td"><b>$1</b> - <b>$9</b></td><td>ссылка на найденную группу в шаблоне <u>замены</u> (9 не ограничение)<br>
+</td></tr><tr><td class="s3td"><b>${1}</b> - <b>${9}</b></td><td>ссылка на найденную группу в шаблоне <u>замены</u> (9 не ограничение)<br>&nbsp;&nbsp;например: <font class="S51">${1}12\$345${2}</font> (позволяет предотвращать пересечение цифровых данных)
+</td></tr><tr><td class="s3td"><b>$0</b> <font class="S01">или</font> <b>\0</b></td><td>весь шаблон поиска или все группы (9 не ограничение)<br>
+</td></tr><tr><td class="s3td"><b>\a</b></td><td>символ с десятичным ASCII-кодом 7 Chr(7) (звонок). При выводе воспроизводит звуковой сигнал. BEL (hex 07)<br>
+</td></tr><tr><td class="s3td"><b>\cn</b></td><td>управляющий символ, который генерируется при нажатии комбинации клавиш Ctrl+n, где n- символ<br>&nbsp;&nbsp;например: \cD соответствует Ctrl+D. \cA = \001, \cZ = \032, \cM = \r = \015<br>
+</td></tr><tr><td class="s3td"><b>\e</b></td><td>символ escape Chr(27), (hex 1B)<br>
+</td></tr><tr><td class="s3td"><b>\f</b></td><td>перенос страницы Chr(12), (hex 0C)<br>
+
+</td></tr><tr><td class="s3td"><b>\h</b></td><td>
+любой горизонтальный пробел, табуляция [ \t] - Chr(9), Chr(32), Chr(160) - эквивалентно "<font class="S19">[\x09 \xA0]</font>"
+<hr align="left" width=30%>
+При включённом <a class="le" href="#UCP"><b>UCP</b></a> включаются дополнительные unicode разделители<br>
+"<font class="S19">[\x09 \xA0\x{1680}\x{180E}\x{2000}-\x{200A}\x{202F}\x{205F}\x{3000}]</font>"
+
+</td></tr><tr><td class="s3td"><b>\H</b></td><td>любой символ, который не пробел или табуляция [^\h]<br>
+</td></tr><tr><td class="s3td"><b>\K</b></td><td>слева от \K предшествующее совпадение, т.е. <font class="S51">текст1<font class="S91"><b>\K</b></font>текст2</font>, найти <font class="S51">текст2</font>, перед которым <font class="S51">текст1</font><br>
+</td></tr><tr><td class="s3td"><b>\n</b></td><td>символ переноса на новую строку <a class="le" href="../fun/makros.htm#@LF"><font class="S61">@LF</font></a>, Chr(10), (hex 0A)<br>
+</td></tr><tr><td class="s3td"><b>\N</b></td><td>любой символ, который не символ переноса на новую строку [^\n] (не <a class="le" href="../fun/makros.htm#@LF"><font class="S61">@LF</font></a>), независимо от опции (?s)<br>
+</td></tr><tr><td class="s3td"><b>\Q</b><font class="S01"> ... </font><b>\E</b></td><td>любые метасимволы между \Q и \E воспринимаются как текст. Не исключайте ошибки: \QD:\Edit\1.txt\E<br>
+</td></tr><tr><td class="s3td"><b>\r</b></td><td>символ возврат каретки <a class="le" href="../fun/makros.htm#@CR"><font class="S61">@CR</font></a>, Chr(13) (hex 0D)<br>
+</td></tr><tr><td class="s3td"><b>\R</b></td><td>любой из символов переноса строки. [\n\f\r\v] Chr(10), Chr(11), Chr(12), Chr(13), соответствует "(?>\r\n|\n|\r)"<br>
+</td></tr><tr><td class="s3td"><b>\t</b></td><td>символ табуляции <a class="le" href="../fun/makros.htm#@TAB"><font class="S61">@TAB</font></a>, Chr(9), tab (hex 09)<br>
+</td></tr><tr><td class="s3td"><b>\v</b></td><td>
+вертикальная табуляция (<a class="le" href="../fun/makros.htm#@CR"><font class="S61">@CR</font></a> и <a class="le" href="../fun/makros.htm#@LF"><font class="S61">@LF</font></a> и перенос страницы) [\r\n\f] Chr(10), Chr(11), Chr(12), Chr(13) - эквивалентно "<font class="S19">[\x0A-\x0D]</font>"
+<hr align="left" width=30%>
+При включённом <a class="le" href="#UCP"><b>UCP</b></a> включаются дополнительные unicode разделители<br>
+"<font class="S19">[\x0A-\x0D\x{0085}\x{2028}\x{2029}]</font>"
+</td></tr><tr><td class="s3td"><b>\V</b></td><td>любой символ, который не Chr(10), Chr(11), Chr(12), Chr(13) вертикальная табуляция (перенос строки) [^\v]<br>
+</td></tr><tr><td class="s3td"><b>\x**</b></td><td>где * - любая шестнадцатеричная цифра<br>&nbsp;&nbsp;например: <font class="S51">\x41</font> соответствует латинской букве 'A', <font class="S51">\x50\x65\x72\x6C</font> - слово Perl<br>
+</td></tr><tr><td class="s3td"><b>\x{**..}</b></td><td>где * - любая шестнадцатеричным цифра<br>&nbsp;&nbsp;например: <font class="S51">\x{50}\x{65}\x{72}\x{6C}</font> - слово Perl<br>&nbsp;&nbsp;попробуйте от \x{01} до \x{7F}, что в десятеричной системе означает символы от 1 до 127<br>&nbsp;&nbsp;или в UTF кодировке \x{044F} равный символу "я"<br>
+</td></tr><tr><td class="s3td"><b>\***</b></td><td>где * - любая восьмеричная цифра<br>&nbsp;&nbsp;например, последовательность <font class="S51">\120\145\162\154</font> представляет слово Perl<br>&nbsp;&nbsp;&nbsp;&nbsp;(\120 - восьмеричный код буквы Р, \145 - буквы е, \162 - буквы r, \154 - буквы l)<br>&nbsp;&nbsp;пробел - <font class="S51">\040</font><br>&nbsp;&nbsp;попробуйте от \001 до \177, что в десятеричной системе означает символы от 1 до 127<br>
+
+</td></tr></table>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'><big>Метасимволы для задания диапазонов символов</big></b><br>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td class="s3td" width="15%"><b>\d</b></td><td width="85%">любая десятичная цифра [0-9]<br>
+</td></tr><tr><td class="s3td"><b>\D</b></td><td>любая не цифра [^0-9]<br>
+</td></tr><tr><td class="s3td"><b>\s</b></td><td>
+пустой символ: Chr(9), Chr(10), Chr(12), Chr(13), Chr(32) (перенос страницы, табуляция, возврат каретки, перевод строки и пробел) [\f\n\r\t\v ] - эквивалентно "<font class="S19">[\h\x0A\x0C\x0D]</font>"
+<hr align="left" width=30%>
+При включённом <a class="le" href="#UCP"><b>UCP</b></a>
+"<font class="S19">[x0C\x0D]</font>"
+</td></tr><tr><td class="s3td"><b>\S</b></td><td>любой непробельный символ [^\f\n\r\t\v ]<br>
+</td></tr><tr><td class="s3td"><b>\w</b></td><td>
+любой алфавитно-числовой символ или подчеркивание (только символы латинского алфавита) [0-9a-zA-Z_]<br>
+<hr align="left" width=30%>
+При включённом <a class="le" href="#UCP"><b>UCP</b></a> любой алфавитно-числовой символ Unicode или подчеркивание (включая русские символы и символы других языков)
+</td></tr><tr><td class="s3td"><b>\W</b></td><td>
+любой символ неслова [^0-9a-zA-Z_]<br>
+<hr align="left" width=30%>
+При включённом <a class="le" href="#UCP"><b>UCP</b></a> любой не алфавитно-числовой символ Unicode и подчеркивание (исключая русские символы и символы других языков)
+</td></tr><tr><td class="s3td">
+<b>\p{Name}</b><br>
+<b>\p{^Name}</b><br><br>
+<b>\P{Name}</b><br>
+<b>\P{^Name}</b>
+
+</td><td>
+Только пи включённом <a class="le" href="#UCP"><b>UCP</b></a><br>
+\p{Name} - получает символ со свойством Name, где Name - имя свойства.<br>
+\P{Name} - исключает символ со свойством Name, где Name - имя свойства.<br>
+
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<code class="example">(*UCP)\p{Cyrillic}+</code>&nbsp;&nbsp;<font class="S21">получает слова включающие только кириллические символы</font>
+<br>
+<code class="example">(*UCP)\p{^Cyrillic}+</code>&nbsp;&nbsp;<font class="S21">получает символы исключающие кириллические символы</font>
+<br><br>
+<code class="example">(*UCP)\P{^Cyrillic}+</code>&nbsp;&nbsp;<font class="S21">получает слова включающие только кириллические символы</font>
+<br>
+<code class="example">(*UCP)\P{Cyrillic}+</code>&nbsp;&nbsp;<font class="S21">получает символы исключающие кириллические символы</font>
+</p>
+<span class="section">Языковые свойства:</span>
+<p>
+<table cellspacing="0" cellpadding="3"><tr><td>
+{Arabic}, {Armenian}, {Avestan}, {Balinese}, {Bamum}, {Bassa_Vah}, {Batak}, {Bengali}, {Bopomofo}, {Brahmi}, {Braille}, {Buginese}, {Buhid}, {Canadian_Aboriginal}, {Carian}, {Caucasian_Albanian}, {Chakma}, {Cham}, {Cherokee}, {Common}, {Coptic}, {Cuneiform}, {Cypriot}, {Cyrillic}, {Deseret}, {Devanagari}, {Duployan}, {Egyptian_Hieroglyphs}, {Elbasan}, {Ethiopic}, {Georgian}, {Glagolitic}, {Gothic}, {Grantha}, {Greek}, {Gujarati}, {Gurmukhi}, {Han}, {Hangul}, {Hanunoo}, {Hebrew}, {Hiragana}, {Imperial_Aramaic}, {Inherited}, {Inscriptional_Pahlavi}, {Inscriptional_Parthian}, {Javanese}, {Kaithi}, {Kannada}, {Katakana}, {Kayah_Li}, {Kharoshthi}, {Khmer}, {Khojki}, {Khudawadi}, {Lao}, {Latin}, {Lepcha}, {Limbu}, {Linear_A}, {Linear_B}, {Lisu}, {Lycian}, {Lydian}, {Mahajani}, {Malayalam}, {Mandaic}, {Manichaean}, {Meetei_Mayek}, {Mende_Kikakui}, {Meroitic_Cursive}, {Meroitic_Hieroglyphs}, {Miao}, {Modi}, {Mongolian}, {Mro}, {Myanmar}, {Nabataean}, {New_Tai_Lue}, {Nko}, {Ogham}, {Ol_Chiki}, {Old_Italic}, {Old_North_Arabian}, {Old_Permic}, {Old_Persian}, {Old_South_Arabian}, {Old_Turkic}, {Oriya}, {Osmanya}, {Pahawh_Hmong}, {Palmyrene}, {Pau_Cin_Hau}, {Phags_Pa}, {Phoenician}, {Psalter_Pahlavi}, {Rejang}, {Runic}, {Samaritan}, {Saurashtra}, {Sharada}, {Shavian}, {Siddham}, {Sinhala}, {Sora_Sompeng}, {Sundanese}, {Syloti_Nagri}, {Syriac}, {Tagalog}, {Tagbanwa}, {Tai_Le}, {Tai_Tham}, {Tai_Viet}, {Takri}, {Tamil}, {Telugu}, {Thaana}, {Thai}, {Tibetan}, {Tifinagh}, {Tirhuta}, {Ugaritic}, {Vai}, {Warang_Citi}, {Yi}
+</td></tr></table>
+</p>
+<span class="section">Различные свойства категорий:</span><br>
+Те свойства, которые не совсем понятны пока отмечены *<br>
+Некоторые свойства групп можно посмотреть в "Таблице символов" (charmap.exe) в группировке "Диапазоны Юникода"
+<p>
+<div style="margin-left: 31pt; text-indent: 0pt;">
+<table width="60%" cellspacing="0" cellpadding="3">
+<tr><th width="10%">Свойство</th><th>Описание</th></tr>
+
+<tr><td>C</td><td>Иные, Другие символы</td></tr>
+<tr><td>Cc</td><td>Контрольные *</td></tr>
+<tr><td>Cf</td><td>Форматные, типа &#1757;</td></tr>
+<tr><td>Cn</td><td>Неназначенные в таблице символов, типа U+FE53 (65107)</td></tr>
+<tr><td>Co</td><td>Частного использования, пипа U+E801 (59393)</td></tr>
+<tr><td>Cs</td><td>Суррогатные, символы в диапазоне от U+D800 до U+DFFF</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>L</td><td>Буквенные символы</td></tr>
+<tr><td>Ll</td><td>Буквы в нижнем регистре</td></tr>
+<tr><td>Lm</td><td>Модификаторы буквы *</td></tr>
+<tr><td>Lo</td><td>Буквы не входящие начальный диапазон *</td></tr>
+<tr><td>Lt</td><td>Заглавное письменные *</td></tr>
+<tr><td>Lu</td><td>Буквы в верхнем регистре</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>M</td><td>Mark *</td></tr>
+<tr><td>Mc</td><td>Spacing mark *</td></tr>
+<tr><td>Me</td><td>Enclosing mark *</td></tr>
+<tr><td>Mn</td><td>Non-spacing mark *</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>N</td><td>Числа</td></tr>
+<tr><td>Nd</td><td>Десятичное число</td></tr>
+<tr><td>Nl</td><td>Letter number, типа &#12324; (Ханчжоу цифра четыре)</td></tr>
+<tr><td>No</td><td>Различные цифры, типа &#8531;, &#8532;, &#10102;, &#10103;</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>P</td><td>Знаки препинания :;()-@/"*_{}[]#'!%&\ и др.</td></tr>
+<tr><td>Pc</td><td>Пунктуационные соединители *</td></tr>
+<tr><td>Pd</td><td>Dash punctuation *</td></tr>
+<tr><td>Pe</td><td>Закрывающиеся скобки ) ] } и др.</td></tr>
+<tr><td>Pf</td><td>Финальные кавычки ” » ’ › и др.</td></tr>
+<tr><td>Pi</td><td>Начальные кавычки “ « ‘ ‹ и др.</td></tr>
+<tr><td>Po</td><td>Различная пунктуация</td></tr>
+<tr><td>Ps</td><td>Открывающиеся скобки ( [ { и др.</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>S</td><td>Символы Unicode *</td></tr>
+<tr><td>Sc</td><td>Символ валюты</td></tr>
+<tr><td>Sk</td><td>Символ модификатора *</td></tr>
+<tr><td>Sm</td><td>Математические символы + > = ~ и др.</td></tr>
+<tr><td>So</td><td>Различные символы *</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>Z</td><td>Разделители: пробел, табуляция и др.</td></tr>
+<tr><td>Zl</td><td>Line separator *</td></tr>
+<tr><td>Zp</td><td>Paragraph separator *</td></tr>
+<tr><td>Zs</td><td>Пробел</td></tr>
+
+</table>
+</div>
+
+</p>
+
+
+
+
+
+
+</td></tr></table>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'><big>Границы символов</big></b><br>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td class="s3td" width="15%"><b>\A</b></td><td width="85%">начало текста, не зависит от флага "(?m)" и поэтому может встретится только 1 раз<br>
+</td></tr><tr><td class="s3td"><b>\G</b></td><td>обозначает точку, в которой закончился предыдущий поиск (first matching position in subject)<br>похожий на <font class="S91"><b>\A</b></font>, но несколько раз, если найденные следуют друг за другом от начала
+</td></tr><tr><td class="s3td"><b>\z</b></td><td>абсолютный конец текста, не зависит от флага "(?m)" и поэтому может встретится только 1 раз<br>
+</td></tr><tr><td class="s3td"><b>\Z</b></td><td>конец текста, т. е. граница между любым символом и концом текста или до символа \n, если он в конце строки, не зависит от флага "(?m)" и поэтому может встретится только 1 раз.<br>
+</td></tr><tr><td class="s3td"><b>\b</b></td><td>начало или конец слова, т. е. граница между символами, один из которых удовлетворяет \W, а другой - удовлетворяет \w (только границы слов латинского алфавита)
+<hr align="left" width=30%>
+При включённом <a class="le" href="#UCP"><b>UCP</b></a> границы <b>\b</b> работают для слов Unicode, т.к. \w и \W захватывают символы Unicode.
+</td></tr><tr><td class="s3td"><b>\B</b></td><td>середина слова, т. е. граница между символами, оба которых удовлетворяют \W или оба которых удовлетворяют \w
+<hr align="left" width=30%>
+При включённом <a class="le" href="#UCP"><b>UCP</b></a> серединой слова являются и слова с Unicode символами.
+</td></tr></table>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'><big>Флаги модификаторы</big></b><br>
+<br>
+&nbsp;&nbsp;Ставятся в начало регулярного выражения или группы.<br>
+&nbsp;&nbsp;Состояние модификаторов выключено по умолчанию, соответственно для использования требуется включить.<br>
+&nbsp;&nbsp;Пример использования: (?i)(Text) или ((?-i)Text), допустимо комбинировать (?is)(Text) или ((?imsx)Text)<br>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td class="s3td" width="15%"><b>(?i)</b></td><td width="85%">не учитывать регистр символов.<br>
+</td></tr><tr><td class="s3td"><b>(?-i)</b></td><td>отменяет ранее включенный (?i)<br>
+</td></tr><tr><td class="s3td"><b>(?m)</b></td><td>многострочный поиск.<br>&nbsp;&nbsp;во многострочном тексте символы ^ и $ означают начало и конец строки соответственно, иначе начало и конец текста<br>
+</td></tr><tr><td class="s3td"><b>(?-m)</b></td><td>отменяет ранее включенный (?m)<br>
+</td></tr><tr><td class="s3td"><b>(?s)</b></td><td>точке соответствует любой символ.<br>&nbsp;&nbsp;символ "точка" (.) дополнительно включает в себя перенос строки <a class="le" href="../fun/makros.htm#@LF"><font class="S61">@LF</font></a> (режим "одна строка")<br>
+</td></tr><tr><td class="s3td"><b>(?-s)</b></td><td>отменяет ранее включенный (?s)<br>
+</td></tr><tr><td class="s3td"><b>(?x)</b></td><td>игнорирует пробелы и табуляции в регулярном выражении, кроме тех что в квадратных скобках.<br>&nbsp;&nbsp;пробелы позволяют сделать регулярное выражение легко читаемым.<br>&nbsp;&nbsp;позволяет в конце регулярного выражения добавить комментарий после символа # и до конца строки<br>
+</td></tr><tr><td class="s3td"><b>(?-x)</b></td><td>отменяет ранее включенный (?x)<br>
+</td></tr><tr><td class="s3td"><b>(?J)</b></td><td>allow duplicate names (разрешает дубликаты/двойные названия).<br>&nbsp;&nbsp;подшаблоны могут иметь одинаковые имена
+</td></tr><tr><td class="s3td"><b>(?U)</b></td><td>инвертировать жадность квантификаторов.<br>&nbsp;&nbsp;кванторы становятся ленивыми (не жадными)<br>
+</td></tr><tr><td class="s3td"><b>(?-U)</b></td><td>отменяет ранее включенный (?U)<br>
+</td></tr></table>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'><big>Флаги групп</big></b><br>
+<br>
+Допустимо комбинировать, например <font class="S51">(?im-sx:Text)</font>, флаги sx выключены<br>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td class="s3td" width="15%"><b>(?i:...)</b></td><td width="85%">группа не учитывает регистр символов, например <font class="S51">(?i:Text)</font><br>&nbsp;&nbsp;это работает только для символов латинского алфавита.
+</td></tr><tr><td class="s3td"><b>(?-i:...)</b></td><td>группа учитывает регистр символов, например: <font class="S51">(?-i:Text)</font>
+</td></tr><tr><td class="s3td"><b>(?:...)</b></td><td>исключает группу из найденных, например: <font class="S51">(?:Text)</font>
+</td></tr><tr><td class="s3td"><b>(?&gt;...)</b></td><td>группа не входящая в поиск, но имеет свойство сверхжадного квантификатора, например: <font class="S51">(?>Text)(Text)</font>
+
+<tr><td colspan=2>&nbsp;&nbsp;Следующие 4 группы имеют фиксированную длину, в них нельзя использовать <font class="S91"><b>*</b></font>, <font class="S91"><b>+</b></font>, <font class="S91"><b>{n, m}</b></font></td></tr>
+
+</td></tr><tr><td class="s3td"><b>(?=...)</b></td><td>группа не входящая в поиск, но проверяющая <font class="S51">совпадение</font> образца <font class="S51">справа</font>, например: <font class="S51">(Text)(?=Text)</font>
+</td></tr><tr><td class="s3td"><b>(?!...)</b></td><td>группа не входящая в поиск, но проверяющая <font class="red">не совпадение</font> образца <font class="S51">справа</font>, например: <font class="S51">(Text)(?!Text)</font>
+</td></tr><tr><td class="s3td"><b>(?&lt;=...)</b></td><td>группа не входящая в поиск, но проверяющая <font class="S51">совпадение</font> образца <font class="red">слева</font>, например: <font class="S51">(?&lt;=Text)(Text)</font>, см. также <font class="S91"><b>\K</b></font>
+</td></tr><tr><td class="s3td"><b>(?&lt;!...)</b></td><td>группа не входящая в поиск, но проверяющая <font class="red">не совпадение</font> образца <font class="red">слева</font>, например: <font class="S51">(?&lt;!Text)(Text)</font>
+
+<tr><td colspan=2>&nbsp;&nbsp;Дополнительные группы</td></tr>
+
+</td></tr><tr><td class="s3td"><b>(?&lt;name&gt;...)</b></td><td>именованная ссылка.<br>&nbsp;&nbsp;вызов именованной ссылки \k&lt;name&gt; это тоже что вызов <font class="S91">\1</font> или <font class="S91">$1</font>
+</td></tr><tr><td class="s3td"><b>(?#...)</b></td><td>группа содержащая комментарий<br>&nbsp;&nbsp;например: <font class="S21">(?# это комментарий )</font> (полностью игнорируется интерпретатором)<br>
+
+</td></tr><tr><td class="s3td"><b>(?|...)</b></td><td>группа без захвата со сбросом</font>
+</td></tr></table>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'><big>Повтор предыдущего элемента, применяется к символам и группам (квантификаторы)</big></b><br>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td class="s3td" width="15%"><b>{n}</b></td><td width="85%">повторить предыдущий символ n раз<br>
+</td></tr><tr><td class="s3td"><b>{n,}</b></td><td>повторить предыдущий символ n и более раз ( <font class="S51"><b>{n,}?</b></font> - предпочтительно наименьший захват)<br>
+</td></tr><tr><td class="s3td"><b>{n, m}</b></td><td>повторить предыдущий символ от n до m раз ( <font class="S51"><b>{n,m}?</b></font> - предпочтительно наименьший захват)<br>
+</td></tr><tr><td class="s3td"><b>*</b></td><td>повторить предыдущий символ 0 и более раз. То же что и <font class="S51"><b>{0,}</b></font><br>&nbsp;&nbsp;жадный захват, наибольший, который позволит совпасть оставшейся части шаблона.<br>
+</td></tr><tr><td class="s3td"><b>+</b></td><td>повторить предыдущий символ 1 и более раз. То же что и <font class="S51"><b>{1,}</b></font><br>&nbsp;&nbsp;жадный захват, наибольший, который позволит совпасть оставшейся части шаблона.<br>
+</td></tr><tr><td class="s3td"><b>?</b></td><td>предыдущий символ либо имеется, либо не имеется. То же что и <font class="S51"><b>{0, 1}</b></font><br>&nbsp;&nbsp;второе значение символа <font class="S51"><b>?</b></font> после символа повтора <font class="S51"><b>.*?</b></font> - жадность, см. ниже<br>
+</td></tr><tr><td class="s3td"><b>*?</b></td><td>повторить предыдущий символ 0 и более раз<br>&nbsp;&nbsp;ограничится наименьшим захватом (не жадный), который позволит совпасть оставшейся части шаблона.<br>
+</td></tr><tr><td class="s3td"><b>+?</b></td><td>повторить предыдущий символ 1 и более раз<br>&nbsp;&nbsp;ограничится наименьшим захватом (не жадный), который позволит совпасть оставшейся части шаблона.<br>
+</td></tr><tr><td class="s3td"><b>??</b></td><td>предпочтительно наименьший захват, например: <font class="S51"><b>([a-z]??)g</b></font> для 'gg' возвращает две пустые строки<br>
+</td></tr></table>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'><big>Ревнивая или сверхжадная квантификация</big></b><br>
+<br>
+&nbsp;&nbsp;Захват без возврата к предыдущим шагам поиска.<br>
+&nbsp;&nbsp;Захватывает всё, что удовлетворяет предыдущему символу, не заботясь о совпадении оставшейся части шаблона.<br>
+&nbsp;&nbsp;Символ или диапазон символов следующий за сверхжадным метасимволом не должен поглащаться его диапазоном, иначе такой шаблон никогда не будет найден и является бессмысленным.<br>
+&nbsp;&nbsp;Единственная цель сверхжадного метасимвола - ускорить захват.<br>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td class="s3td" width="15%"><b>*+</b></td><td width="85%">повторить предыдущий символ 0 и более раз.<br>
+</td></tr><tr><td class="s3td"><b>++</b></td><td>повторить предыдущий символ 1 и более раз.<br>
+</td></tr><tr><td class="s3td"><b>{n,}+</b></td><td>повторить предыдущий символ n и более раз.<br>
+</td></tr></table>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'><big>Символьные классы POSIX</big></b><br>
+<br>
+&nbsp;&nbsp;Пример: <font class="S51"><b>[[:upper:]]{2}</b></font> - поиск повтора заглавных букв. Инвертировать диапазон так: <font class="S51"><b>[[:^digit:]]</b></font><br>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td class="s3td" width="15%"><b>[:alnum:]</b></td><td width="85%">
+буквы и цифры,как \w, но без "_" - эквивалентно <font class="S19">[^\W_]</font> или <font class="S19">[0-9A-Za-z]</font>
+<hr align="left" width=30%>
+При включённом <a class="le" href="#UCP"><b>UCP</b></a> буквы и цифры Unicode (такие же, как <font class="S19">[^\W_]</font> или <font class="S19">\p{Xan}</font>)
+
+</td></tr><tr><td class="s3td"><b>[:alpha:]</b></td><td>Буквы ASCII (такие же, как <font class="S19">[^\W\d_]</font> или <font class="S19">[A-Za-z]</font> без "_")
+<hr align="left" width=30%>
+При включённом <a class="le" href="#UCP"><b>UCP</b></a> буквы Unicode (такие же, как <font class="S19">[^\W\d_]</font> или <font class="S19">\p{L}</font>)
+
+</td></tr><tr><td class="s3td"><b>[:ascii:]</b></td><td>символы от Chr(0) до Chr(127)
+</td></tr><tr><td class="s3td"><b>[:blank:]</b></td><td>пробел и символ табуляции Chr(9) и Chr(32), тоже что <font class="S19">[\t ]</font>
+<hr align="left" width=30%>
+При включённом <a class="le" href="#UCP"><b>UCP</b></a> горизонтальные пробелы Unicode (то же, что и \h)
+</td></tr><tr><td class="s3td"><b>[:cntrl:]</b></td><td>управляющие символы от Chr(0) до Chr(31) и Chr(127)
+</td></tr><tr><td class="s3td"><b>[:digit:]</b></td><td>десятичные цифры, тоже что \d, <font class="S19">[0-9]</font>
+<hr align="left" width=30%>
+При включённом <a class="le" href="#UCP"><b>UCP</b></a> десятичные цифры Unicode (такие же, как <font class="S19">\d</font> или <font class="S19">\p{Nd}</font>)
+</td></tr><tr><td class="s3td"><b>[:graph:]</b></td><td>тоже что символы, отображаемые при печати <font class="S19">[:print:]</font>, но кроме пробела (от Chr(33) до Chr(126) )
+</td></tr><tr><td class="s3td"><b>[:lower:]</b></td><td>прописные буквы <font class="S19">[a-z]</font>
+<hr align="left" width=30%>
+При включённом <a class="le" href="#UCP"><b>UCP</b></a> Unicode строчные буквы (такие же, как <font class="S19">\p{Ll}</font>)
+</td></tr><tr><td class="s3td"><b>[:print:]</b></td><td>символы, отображаемые при печати, включая пробел (от Chr(32) до Chr(126) )
+</td></tr><tr><td class="s3td"><b>[:punct:]</b></td><td>символы, отображаемые при печати, кроме букв и цифр Chr=(33-47, 58-64, 91-96, 123-126), те, что не входят ни в <font class="S19">[:alnum:]</font>, ни в <font class="S19">[:cntrl:]</font>
+</td></tr><tr><td class="s3td"><b>[:space:]</b></td><td>пробельные символы (как \s, но включая символ VT: Chr(11) ) от Chr(9) до Chr(13) и Chr(32). Тоже что <font class="S19">[\f\n\r\t\v ]</font>
+</td></tr><tr><td class="s3td"><b>[:upper:]</b></td><td>заглавные буквы <font class="S19">[A-Z]</font>
+<hr align="left" width=30%>
+При включённом <a class="le" href="#UCP"><b>UCP</b></a> Unicode прописные буквы (такие же, как <font class="S19">\P{Lu}</font>)
+</td></tr><tr><td class="s3td"><b>[:word:]</b></td><td>Символы ASCII "Word" (такие же, как <font class="S19">\w</font> или <font class="S19">[[:alnum:]_]</font>).
+<hr align="left" width=30%>
+При включённом <a class="le" href="#UCP"><b>UCP</b></a> символы Unicode "word" (такие же, как <font class="S19">\w</font> или <font class="S19">[[:alnum:]_]</font> или <font class="S19">\p{Xwd}</font>)
+</td></tr><tr><td class="s3td"><b>[:xdigit:]</b></td><td>шестнадцатеричные цифры [0-9A-Fa-f]<br>
+</td></tr></table>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'><big>Обратные ссылки</big></b><br>
+<br>
+Обратные ссылки позволяют повторно использовать содержимое ранее захваченной группы.
+<br><br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td class="s3td" width="15%"><b>\n</b><br><b>\1 ... \9</b></td><td width="85%">
+Ссылается на предыдущую группу захвата по ее абсолютному числу.<br>
+Предупреждение: если номер группы <b>n</b> не существует, он вычисляется как символ со значением <b>n</b> при условии, что <b>n</b> является допустимым восьмеричным значением, иначе происходит ошибка.<br>
+Из-за этой двусмысленности данная форма не рекомендуется.<br>
+Отдавайте предпочтение следующим формам для безопасной семантики.<br>
+</td></tr><tr><td class="s3td"><b>\<font class="S81">g</font>n</b></td><td>
+Ссылается на предыдущую группу захвата по ее абсолютному числу.
+
+</td></tr><tr><td class="s3td"><b>\<font class="S81">g</font>{n}</b></td><td>
+Ссылается на предыдущую группу захвата по ее абсолютному числу. Аналогично приведенному выше, но четко разграничивает, где заканчивается <b>n</b>: полезно, когда следующий символ(ы) является(являются) цифрами.
+</td></tr><tr><td class="s3td"><b>\<font class="S81">g</font>-n</b></td><td>
+Ссылается на предыдущую группу захвата по ее относительному номеру.
+</td></tr><tr><td class="s3td"><b>\k<name></b></td><td>
+Ссылается на предыдущую группу захвата по ее имени.
+</td></tr></table>
+<br>
+
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='../../images/img-.gif';}else{hidn.style.display='none';btn.src=orimg; }"><img id="bot" src="../../images/img+.gif"/>
+Примеры обратных ссылок:
+</div><div style="display: none"><div id="fut">
+У круглых скобок есть еще одно замечательное свойство - они "запоминают" часть регулярного выражения.<br>
+Сослаться на запомненную часть можно с помощью конструкции <font class="S91"><b>\n</b></font>, где <font class="S91"><b>n</b></font> - номер запомненной части (нумерация идет слева направо и с единицы).<br>
+Так же следует учитывать, что то выражение с "или" <code class="example">(xxx|yyy)</code> также сохраняется.<br>
+<hr align="left" width=500>
+1. Рассмотрим пример: <code class="example">(\d)\d([a-z])\1\2</code><br>
+a) Первым символом ожидается цифра <code class="example">(\d)</code>. Она окружена круглыми скобками, то есть "<u>запомнена</u>". Так как она первая слева, то и имеет номер <font class="S51"><b>1</b></font>. (если в строке первая цифра 3, то будет запомнена цифра 3, если первая 1, то 1)<br>
+b) Вторым символом ожидается также цифра <code class="example">\d</code>. Она не окружена скобками, то есть <u>не участвует в запоминании</u> и к ней нельзя обратиться.<br>
+c) Третьей символом ожидается прописная латинская буква <code class="example">([a-z])</code>. Она запомнена и запомнена под номером <font class="S51"><b>2</b></font>.<br>
+&nbsp;&nbsp;Далее идет обращение к <u>запомненным</u> "кусочкам":<br>
+d) Четвертым символом ожидает тот же символ, что и на первой позиции<code class="example"> \1</code>.<br>
+e) Пятым - тот же, что на третьей<code class="example"> \2</code>.<br>
+&nbsp;&nbsp;В итоге: строка "<font class="S19">11a1a</font>" соответствует шаблону, строка "<font class="S19">12a1a</font>" - тоже, а вот строка "<font class="S19">21a1a</font>" - не соответствует.
+<hr align="left" width=500>
+Если мы хотим отказаться от сохранения, то мы может поставить после открывающей скобки <code class="example">?:</code><br>
+2. Рассмотрим пример: <code class="example">(?:\d)\d([a-z])\1</code><br>
+В этом случае строки "<font class="S19">12aa</font>" и "<font class="S19">21aa</font>" будут соответствовать шаблону, а "<font class="S19">11ab</font>" - нет<br>
+</div></div></div>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'><big>Ссылки на ... </big></b><br>
+<br>
+Группы захвата подпрограмм - это подшаблоны, которые могут быть вызваны (возможно, рекурсивно) точно так же, как подпрограммы в языке программирования. Подшаблон просто повторно запускается в текущей точке сопоставления. 
+<br><br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td class="s3td" width="15%"><b>(?R) или (?0)</b></td><td width="85%">
+Рекурсирует во все регулярное выражение.
+</td></tr><tr><td class="s3td"><b>(?n)</b></td><td>
+Вызывает подшаблон по абсолютному номеру.
+</td></tr><tr><td class="s3td"><b>(?+n)</b></td><td>
+Вызывает подшаблон по относительному номеру.
+</td></tr><tr><td class="s3td"><b>(?-n)</b></td><td>
+Вызывает подшаблон по относительному номеру.
+</td></tr><tr><td class="s3td"><b>(?&name)</b></td><td>
+Вызывает подшаблон по имени.
+</td></tr></table>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'><big>Условные подмаски</big></b><br>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td class="s3td" width="15%"><b>(?(condition)yes-pattern)</b></td><td width="85%">например:<br>
+&nbsp;&nbsp;<font class="S51">(?(условие)шаблон_при_успехе)</font><br>
+&nbsp;&nbsp;<font class="S51">(?(если)то)</font><br>
+&nbsp;&nbsp;<font class="S51">(?(?=[a-z])\d)</font><br></td></tr>
+<tr><td class="s3td"><b>(?(condition)yes-pattern|no-pattern)</b></td><td>например:<br>
+&nbsp;&nbsp;<font class="S51">(?(условие)шаблон_при_успехе|шаблон_при_не_успехе)</font><br>
+&nbsp;&nbsp;<font class="S51">(?(если)то|иначе)</font><br>
+&nbsp;&nbsp;<font class="S51">(?(?<=\d)a|b)</font><br>
+&nbsp;&nbsp;<font class="S51">(?:(?>(?=[^a-z]*[a-z])())?(?:(?=\1)aa|(?!\1)1))</font><br></td></tr>
+<tr><td class="s3td"><b>(?=[\w]+)| (?R)</b></td><td>рекурсивный вызов<br></td></tr>
+
+<tr class="seltr"><td colspan=2><font class="S0"><b>Инверсия. Получение значений, кроме заданного шаблона...</b></font></td></tr>
+
+<tr><td class="s3td">
+<b>(?(?=pattern)|.+?)</b><br>
+<font class="S0">или</font><br>
+<b>(?(?=pattern)(*ACCEPT)|.+?)</b>
+
+</td><td>например:<br>
+<font class="S51">[[:upper:]]</font> - найдёт заглавные буквы.<br>
+<font class="S51">(?(?=[[:upper:]])|.+?)</font> - найдёт всё, кроме заглавные букв.<br>
+если не найдено, то возвращает пустое значение.
+</td></tr>
+
+<tr><td class="s3td"><b>(?(?=pattern)(*FAIL)|.+?)</b>
+<font class="S0">или</font><br>
+<b>(?(?=pattern)(*F)|.+?)</b>
+</td><td>например:<br>
+<font class="S51">[[:upper:]]</font> - найдёт заглавные буквы.<br>
+<font class="S51">(?(?=[[:upper:]])(*FAIL)|.+?)</font> - найдёт всё, кроме заглавные букв.<br>
+если не найдено, то (*FAIL) не возвращает пустое значение.
+
+</td></tr></table>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'><big>Регулирование возврата</big></b><br>
+<br>
+Те методы, которые не совсем понятны пока отмечены *
+<br>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td class="s3td" width="15%"><b>(*ACCEPT)</b></td><td width="85%">
+Принудительно обеспечивает немедленный успех сопоставления в текущей подпрограмме или шаблоне верхнего уровня.
+</td></tr><tr><td class="s3td"><b>(*FAIL) <font class="S0">или</font> (*F)</b></td><td>
+Приводит к немедленному сбою сопоставления.
+</td></tr><tr><td class="s3td"><b>(*MARK:name) <font class="S0">или</font> (*:name)</b></td><td>
+*
+</td></tr><tr><td class="s3td"><b>(*COMMIT)</b></td><td>
+*
+</td></tr><tr><td class="s3td"><b>(*PRUNE)</b></td><td>
+*
+</td></tr><tr><td class="s3td"><b>(*PRUNE:name)</b></td><td>
+*
+</td></tr><tr><td class="s3td"><b>(*SKIP)</b></td><td>
+*
+</td></tr><tr><td class="s3td"><b>(*SKIP:name)</b></td><td>
+*
+</td></tr><tr><td class="s3td"><b>(*THEN)</b></td><td>
+*
+</td></tr><tr><td class="s3td"><b>(*THEN:name)</b></td><td>
+*
+</td></tr></table>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'><big>Необычные настройки и опции</big></b><br>
+<br>
+Настройки пока не до конца изучены, как только появятся примеры, добавится описания применения...
+<br><br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td class="s3td" width="15%"><b>(?J)</b></td><td width="85%">
+Позволяет дублировать имена групп или подгрупп.
+</td></tr><tr><td class="s3td"><b>(?X)</b></td><td>
+Приводит к тому, что некоторые последовательности вне контекста вызывают ошибку.
+</td></tr><tr><td class="s3td"><b>(*J)</b></td><td>
+Обеспечивает совместимость с javascript.
+</td></tr><tr><td class="s3td"><b>(*LIMIT_MATCH=n)</b></td><td>
+Ограничивает количество совпадений до n.
+</td></tr><tr><td class="s3td"><b>(*LIMIT_RECURSION=n)</b></td><td>
+Ограничивает количество рекурсии до n.
+</td></tr><tr><td class="s3td"><b>(*NO_START_OPT)</b></td><td>
+Отключает некоторые оптимизации.
+</td></tr></table>
+<br>
+
+
+
+
+
+<br>
+<a name="UCP"></a>
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'><big>Unicode Category Properties (UCP)</big></b><br>
+<br>
+&nbsp;&nbsp;AutoIt использует движок PCRE. PCRE означает "Perl-совместимые регулярные выражения" и является наиболее полным доступным движком с открытым исходным кодом.<br>
+&nbsp;&nbsp;В версии AutoIt 3.3.16.0 обновлён движок PCRE до версии 8.44.<br>
+&nbsp;&nbsp;Эта реализация включает поддержку Unicode Category Properties (UCP), которая позволяет выполнять точную обработку большинства человеческих языков.<br>
+&nbsp;&nbsp;Однако для поддержания совместимости с предыдущими версиями и поддержания максимальной скорости сопоставления поддержка UCP по умолчанию не включена.<br>
+&nbsp;&nbsp;Вы можете включить его, добавив строку <b>(*UCP)</b> в самом начале вашего шаблона поиска (pattern).<br>
+&nbsp;&nbsp;Если параметр UCP включен, он изменяет действие ряда элементов регулярных выражений.<br>
+&nbsp;&nbsp;Выше в элементах указано, где это применимо и какие изменения при этом действуют.<br>
+&nbsp;&nbsp;UCP он заставляет последовательности, такие как \w, \W, \v, \V, \h, \H и другие, использовать свойства Unicode для определения типов символов, вместо того чтобы распознавать только символы ASCII c кодами менее 128 через таблицу поиска. Они соответственно влияют на \b, \B ...<br>
+&nbsp;&nbsp;UCP позволяет подключать специальные свойства символов: \p{Name}, \P{Name}, которые облегчают работу с Unicode последовательностями.<br>
+&nbsp;&nbsp;В команде <a class="le" href="../com_regex.htm"><span class="S51"><b><big>regex</big></b></span></a> в библиотеке Library_Example есть примеры применения данной возможности.
+
+
+
+<br><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'>Эти флаги не действуют в AutoIt3</b><br>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td width="15%">\p</td>
+<td width="85%">любой символ пунктуации<br>
+</td></tr><tr><td>\l</td><td>означает, что следующий символ регулярного выражения преобразуется в нижний регистр.<br>
+</td></tr><tr><td>\u</td><td>означает, что следующий символ регулярного выражения преобразуется в верхний регистр.<br>
+</td></tr><tr><td>\L...\Е</td><td>означает, что все символы в регулярном выражении между \L и \Е преобразуются в нижний регистр.<br>
+</td></tr><tr><td>\U...\Е</td><td>означает, что все символы в регулярном выражении между \U и \Е преобразуются в верхний регистр.<br>
+</td></tr><tr><td>\x</td><td>любой шестнадцатеричный символ<br>
+</td></tr><tr><td>\<</td><td>начало слова, т. е. граница между символом, удовлетворяющим \W и символом, удовлетворяющим \w<br>
+</td></tr><tr><td>\></td><td>конец слова, т. е. граница между символом, удовлетворяющим \w и символом, удовлетворяющим \W<br>
+</td></tr><tr><td>{,n}</td><td>повторить предыдущий символ от 0 до n раз<br>
+</td></tr></table>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<b class='section'>Примеры конструкций</b><br>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td class="s3td" width="15%"><b>.*</b></td><td width="85%">повтор любого символа, а значит весь текст<br>
+</td></tr><tr><td class="s3td"><b>[ ... ]</b></td><td>одиночный символ множества, например [aeiou] - любой из строчных гласных<br>
+</td></tr><tr><td class="s3td"><b>[^ ... ]</b></td><td>ни один из символов множества, например [^aeiou] - ни один из строчных гласных<br>
+</td></tr><tr><td class="s3td"><b>[0-9A-Fa-f]{6}</b></td><td>шестнадцатеричное число, например FF0000<br>
+</td></tr><tr><td class="s3td"><b>[А-яЁё]</b></td><td>диапазон для русских букв. Или так [А-Яа-яЁё]<br>
+</td></tr></table>
+<br>
+
+
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="seltr"><td colspan=3><div align="center"><b>Примеры</b></div></b></td></tr>
+<tr class="sl2tr"><td>Найти</td><td>Заменить</td><td>Описание</td></tr>
+<tr><td class="s3td"><b>(\r\n|\r|\n){2,}</b></td><td class="s4td"><b>\1</b></td><td class="s5td">удаляет пустые строки</td></tr>
+<tr><td class="s3td"><b>(?&lt;![^\s\A])([А-яЁё]+)[\h]+\1</b></td><td class="s4td"><b>\1</b></td><td class="s5td">удаляет повторы слов</td></tr>
+<tr><td class="s3td"><b>[A-ZА-ЯЁ]{2,}?[a-zа-яё]+</b></td><td class="s4td"><b></b></td><td class="s5td">выявляет файлы, в которых есть ошибки вида "НАйти"- не преднамеренный повтор заглавной буквы</td></tr>
+<tr><td class="s3td"><b>(.{35,}?)\h</b></td><td class="s4td"><b>'<font class="S91">$1</font>'&<a class="le" href="../fun/makros.htm#@CRLF"><font class="S61">@CRLF</font></a></b></td><td class="s5td">выполняет перенос строки на границе первого попавшегося пробела после каждых 35 символов</td></tr>
+<tr><td class="s3td"><b>(*UCP)(?si)(https?://[\w.:]+/?[\w/?&:,=.~;@–\-+!*_#%()]*)</b></td><td class="s4td"><b></b></td><td class="s5td">найти ссылки, в которые могут входить русские символы и символы Unicode</td></tr>
+<tr><td class="s3td"><b>[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})</b></td><td class="s4td"><b></b></td><td class="s5td">найти почтовые ящики</td></tr>
+
+<!-- <tr><td class="s3td"><b>1111111111</b></td><td class="s4td"><b>2222222222</b></td><td class="s5td">33333333333333</td></tr> -->
+
+</td></tr></table>
+<br><br><br>
+
+
+<hr class="hr-blue"><br><br>
+<b>Для изучении на практике регулярных выражений рекомендую команду <a class="le" href="../com_regex.htm"><span class="S51"><b><big>regex</big></b></span></a></b>
+<br><br>
+
+<p align="center"><img src="../../images/regexp.png" border="0"></p>
+
+
+<br> <b>1.</b> Просмотреть все примеры из библиотеки шаблонов Library_Example, но и другие тоже конечно ) 
+
+<br><br> <p align="center"><img src="../../images/regexp1.png" border="0"></p> <br><br> 
+
+ <b>2.</b> Обратить внимание на примеры "Замены" , в ряде случаев необходимо просто нахождение строки. <br> Ну а далее дело в усидчивости и терпения. Тем более что изучение и понимание регулярных выражений ведёт к экономии времени в автоматизации действий. <br><br> Они есть везде, где простым поиском (заменой) сложно решить задачу одним кликом. <br> Они есть во многих программах и позволяют быстро отсеять ненужное, оставив необходимое: <br><br> в Total Commander - в групповом переименовании, в диалоге поиска... 
+
+<br><br> <p align="center"><img src="../../images/regexp3.png" border="0"></p> 
+
+<br><br> в AkelPad, в текстовых редакторах... 
+
+<br><br> <p align="center"><img src="../../images/regexp2.png" border="0"></p> <br><br> 
+
+На первый взгляд - это что-то непонятное и необъятное, на самом деле дорогу осилит идущий. <br><br> Игнорирование и не изучение регулярных выражений отбрасывает назад <br><br> <b>Вот несколько советов:</b> <br> <span style="color:red">1.</span> Не старайтесь изучить сразу всё. Не обязательно знать все правила, чтобы использовать регулярные выражения. <br> <span style="color:red">2.</span> При решении какой-либо задачи с помощью регулярных выражений: <br> &nbsp;&nbsp;a) Пробуйте сами <br> &nbsp;&nbsp;б) Если не получается ещё раз прочитайте соответствующую литературу <br> &nbsp;&nbsp;в) Если не получается спросите <br> &nbsp;&nbsp;(важен порядок изучения) <br> <span style="color:red">3.</span> Изучайте на примерах. В интернете можно найти достаточно примеров. <br> <span style="color:red">4.</span> Записывайте, сохраняйте "пройденные" примеры (конструкции) <br><br> 
+
+<hr class="hr-blue">
+<br>
+Рассмотрим простой пример (задачу можно выполнить даже без регулярных выражений) <br><br> Есть строка <span style="color:0; background: #cee2d3"><b>coverAbout</b></span> <br> Необходимо оставить только <span style="color:#FFFFFF; background:green"><b>About</b></span> <br><br> Пункты действий соответствуют номерам на картинке. <br><br> 1. Устанавливаем радио кнопку "Замена" <br> 2. В поле Текста вводим строку <span style="color:0; background: #cee2d3"><b>coverAbout</b></span> <br> 3. Создаём условия поиска в поле шаблона <span style="color:Gold;background:blue"><b>cover(About)</b></span> <br> 4. Вводим условия замены <span style="color:#FFFFFF">[bgcolor=red]$1[/bgcolor]</span> <br> 5. Нажимаем "Тест" <br> 6. Если всё правильно, то в поле "Результаты поиска" будет результат <span style="color:#FFFFFF">[bgcolor=green]About[/bgcolor]</span> <br> ---- <br> 7. Для дополнительной справки <br> 8. Можно сохранить шаблон 
+
+<br><br> <p align="center"><img src="../../images/regexp4.png" border="0"></p> <br><br> 
+
+</span>
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

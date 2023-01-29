@@ -1,0 +1,1256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Преобразование строки</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №24</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Дополнение к командам, использующих преобразование строки. </font></p>
+<hr><br>
+
+
+Параметры могут использоваться в любом порядке несколько раз.<br>
+&nbsp;&nbsp;• Разделитель между параметрами <font class="S81"><b>||</b></font><br>
+&nbsp;&nbsp;• В специальных параметрах clip<> и convert<> разделитель <font class="S81"><b>;;</b></font><br>
+&nbsp;&nbsp;• В функции <a class="le" href="../fun/_StrinjConv.htm"><b>_StringConv</b></a> разделитель по умолчанию <font class="S81"><b>¤¤</b></font>, но может быть и задан в 3-м параметре.
+<br><br>
+Общие теги для всех параметров:<br><br>
+
+<b>cliptext</b> - в любом месте тег cliptext будет заменён содержимым буфера обмена.<br>
+<b>:NUMBER:</b> - в любом месте тег :NUMBER: будет заменён последовательным номером при обработке списков.<br>
+<b>:LISTNUM:</b> - в любом месте тег :LISTNUM: будет заменён последовательным номером при обработке списков.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(теги :NUMBER: и :LISTNUM: подключены не во всех командах... сообщайте - добавлю).<br>
+<b>:BEGIN:</b> - в любом месте тег :BEGIN: будет заменён начальной строкой (строкой до преобразования параметров).<br>
+<b>enum[]</b> - буквенный или числовой счётчик будет заменён значением, <a class="le" href="#ENUM"><b>описание</b></a><br>
+<b>@@</b> - если после первых спец символов (<span class="S51">^^</span>, <span class="S51">$$</span>, <span class="S51">##</span> и других) прописано @@ , то последующая строка будет сначала обработана параметром <a class="le" href="add_info.htm"><span class="S4"><b>info</b></span></a><br>
+
+
+<b>path<></b> - если передается путь и нужно получить часть пути:<br>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='../../images/img-.gif';}else{hidn.style.display='none';btn.src=orimg; }"><img id="bot" src="../../images/img+.gif"/>&nbsp;&nbsp;Описание</div><div style="display: none"><div id="fut">Параметр path<span class="S8">&lt</span><b>Number</b><font class="S81">|</font><b>LongShort</b><font class="S81">|</font><b>Conversion</b><font class="S81">|</font><b>Max</b><span class="S8">&gt</span>, где:<br><b>Number</b> - номер части пути. см. Дополнение<a class="le" href="add_partpath.htm"> <b>№9</b></a>.<br><b>LongShort</b><br>&nbsp;&nbsp;1 - перевод пути в короткое имя.<br>&nbsp;&nbsp;0 - перевод пути в длинное имя.<br><b>Conversion</b><br>&nbsp;&nbsp;1 - перевод пути из абсолютного в относительный.<br>&nbsp;&nbsp;2 - удаляется относительная часть пути.<br>&nbsp;&nbsp;5 - перевод пути из относительного в абсолютный (игнорируются повторяющиеся знаки %, относящиеся к переменным окружения).<br>&nbsp;&nbsp;7 - перевод пути из абсолютного в относительный, относительно внутренних переменных утилиты.<br><b>Max</b> - число, на которое обрезается имя при <b>Number</b> = 4,5,6,7.</div></div></div>
+<br>
+В версии 10.6 появилась возможность использовать ряд функций Autoit :<br>
+<a class="le" href="../fun/chr.htm"><span class="S4"><font size="2"><b>Chr()</b></font></span></a> и <a class="le" href="../fun/chrw.htm"><span class="S4"><font size="2"><b>ChrW()</b></font></span></a> заменяются соответствующими символами.<br>
+<a class="le" href="../fun/clipget.htm"><span class="S4"><font size="2"><b>ClipGet()</b></font></span></a> заменяется содержимым буфера обмена.<br>
+<a class="le" href="../fun/number.htm"><span class="S4"><font size="2"><b>Number()</b></font></span></a> позволяет производить математические действия.<br>
+<a class="le" href="../fun/strinjleft.htm"><span class="S4"><font size="2"><b>StringLeft()</b></font></span></a> позволяет получать указанное число символов строки слева.<br>
+<a class="le" href="../fun/strinjright.htm"><span class="S4"><font size="2"><b>StringRight()</b></font></span></a> позволяет получать указанное число символов строки справа.<br>
+<a class="le" href="../fun/strinjmid.htm"><span class="S4"><font size="2"><b>StringMid()</b></font></span></a> позволяет получать часть символов строки.<br>
+<a class="le" href="../fun/strinjlen.htm"><span class="S4"><font size="2"><b>StringLen()</b></font></span></a> позволяет получать количество символов строки.<br>
+
+<br><br>
+<div align="center">
+<table class="param" width="95%" cellspacing="0" cellpadding="3">
+<tr>
+<td width="2%"><font class="S91">!! ==</font>&nbsp;</td><td width="48%"><a class="le" href="#!!">Поиск и замена</a></td>
+<!-- <td width="2%"><font class="S91">!!</font>&nbsp;</td><td width="48%"><a class="le" href="#SearchReplace">Поиск и замена</a></td> -->
+<td width="2%"><font class="S91">&&</font>&nbsp;</td><td width="48%"><a class="le" href="#&&">Поиск и замена с регулярным выражением</a></td>
+<!-- <td width="2%"><font class="S91">&&</font>&nbsp;</td><td width="48%"><a class="le" href="#RegExp">Поиск и замена с регулярным выражением</a></td> -->
+</tr>
+
+<tr>
+<td><font class="S91">&nbsp;</td><td></td>
+<td><font class="S91">&*</font>&nbsp;</td><td><a class="le" href="#&*">Поиск и замена с регулярными выражениями по списку</a></td>
+</tr>
+
+<tr>
+<td><font class="S91">&#</font>&nbsp;</td><td><a class="le" href="#&#">Поиск с регулярным выражением и замена по списку</a></td>
+<td><font class="S91">&?</font>&nbsp;</td><td><a class="le" href="#&?">Поиск с регулярным выражением</a></td>
+</tr>
+
+<tr>
+<td><font class="S91">&#62;&#62;</font>&nbsp;</td><td><a class="le" href="#Ziro">Без преобразования и без вставки</a></td>
+<td><font class="S91">?#</font>&nbsp;</td><td><a class="le" href="#?#">Поиск по нескольким регулярным выражениям</a></td>
+</tr>
+
+<tr>
+<td><font class="S91">^^</font>&nbsp;</td><td><a class="le" href="#^^">Вставка в начало</a></td>
+<!-- <td><font class="S91">^^</font>&nbsp;</td><td><a class="le" href="#BeginLine">Вставка в начало</a></td> -->
+<td><font class="S91">$$</font>&nbsp;</td><td><a class="le" href="#$$">Вставка в конец</a></td>
+<!-- <td><font class="S91">$$</font>&nbsp;</td><td><a class="le" href="#EndLine">Вставка в конец</a></td> -->
+</tr>
+<tr>
+<td><font class="S91">??</font>&nbsp;</td><td><a class="le" href="#??">Изменение регистра символов</a></td>
+<!-- <td><font class="S91">??</font>&nbsp;</td><td><a class="le" href="#Registr">Изменение регистра символов</a></td> -->
+<td><font class="S91">@@</font>&nbsp;</td><td><a class="le" href="#@@">Транслитерация</a></td>
+<!-- <td><font class="S91">@@</font>&nbsp;</td><td><a class="le" href="#Translit">Транслитерация</a></td> -->
+</tr>
+<tr>
+<td><font class="S91">##</font>&nbsp;</td><td><a class="le" href="###">Замещение</a></td>
+<!-- <td><font class="S91">##</font>&nbsp;</td><td><a class="le" href="#FullReplace">Замещение</a></td> -->
+<td><font class="S91">#?</font>&nbsp;</td><td><a class="le" href="##?">Замещение с условием</a></td>
+<!-- <td><font class="S91">#?</font>&nbsp;</td><td><a class="le" href="#FullReplaceU">Замещение с условием</a></td> -->
+</tr>
+<tr>
+<td><font class="S91">#A</font>&nbsp;</td><td><a class="le" href="#A">Вставка в начало</a> (не для всех команд)</td>
+<td><font class="S91">?A</font>&nbsp;</td><td><a class="le" href="#?A">Возвращает число символов строки слева</a></td>
+</tr>
+<tr>
+<td><font class="S91">#B</font>&nbsp;</td><td><a class="le" href="#B">Преобразует строку в бинарные данные</a></td>
+<td><font class="S91">?B</font>&nbsp;</td><td><a class="le" href="#?B">Удаляет/Добавляет строку к строке с условиями</a></td>
+</tr>
+<tr>
+<td><font class="S91">#C</font>&nbsp;</td><td><a class="le" href="#C">Шифрование строки</a></td>
+<td><font class="S91">?C</font>&nbsp;</td><td><a class="le" href="#?C">Преобразует строку Unicode в строку</a></td>
+</tr>
+<tr>
+<td><font class="S91">#D</font>&nbsp;</td><td><a class="le" href="#D">Декодирование строки b64 xxe uue</a></td>
+<td><font class="S91">?D</font>&nbsp;</td><td><a class="le" href="#?D">Преобразует Unicode строку в строку</a></td>
+</tr>
+<tr>
+<td><font class="S91">#E</font>&nbsp;</td><td><a class="le" href="#E">Кодирование строки b64 xxe uue</a></td>
+<td><font class="S91">?E</font>&nbsp;</td><td><a class="le" href="#?E">Меняет местами заданные строки</a></td>
+</tr>
+<tr>
+<td><font class="S91">#F</font>&nbsp;</td><td><a class="le" href="#F">Расшифровывание текста построчно</a></td>
+<td><font class="S91">?F</font>&nbsp;</td><td><a class="le" href="#?F">Преобразование с помощью шаблонов</a></td>
+</tr>
+<tr>
+<td><font class="S91">#G</font>&nbsp;</td><td><a class="le" href="#G">Удаление пробельных символов в строке</a></td>
+<td><font class="S91">?G</font>&nbsp;</td><td><a class="le" href="#?G">Перемещает строку в заданную позицию</a></td>
+</tr>
+<tr>
+<td><font class="S91">#H</font>&nbsp;</td><td><a class="le" href="#H">Контрольная сумма строки</a></td>
+<td><font class="S91">?H</font>&nbsp;</td><td><a class="le" href="#?H">Группировка и разгруппировка строки номеров</a></td>
+</tr>
+<tr>
+<td><font class="S91">#i</font>&nbsp;</td><td><a class="le" href="#i">Получение данных по списку</a></td>
+<td><font class="S91">?i</font>&nbsp;</td><td><a class="le" href="#?I">Получение данных</a></td>
+</tr>
+<tr>
+<td><font class="S91">#J</font>&nbsp;</td><td><a class="le" href="#J">Xor кодирование/декодирование строки</a></td>
+<td><font class="S91">?J</font>&nbsp;</td><td><a class="le" href="#?J">Перемещает строку с заменой</a></td>
+</tr>
+<tr>
+<td><font class="S91">#K</font>&nbsp;</td><td><a class="le" href="#K">Дублирование строки</a></td>
+<td><font class="S91">?K</font>&nbsp;</td><td><a class="le" href="#?K">Дублирование строк</a></td>
+</tr>
+<tr>
+<td><font class="S91">#L</font>&nbsp;</td><td><a class="le" href="#L">Извлечение строк</a></td>
+<td><font class="S91">?L</font>&nbsp;</td><td><a class="le" href="#?L">Удаляет количество символов строки слева</a></td>
+</tr>
+<tr>
+<td><font class="S91">#M</font>&nbsp;</td><td><a class="le" href="#M">Шифрование текста построчно</a></td>
+<td><font class="S91">?M</font>&nbsp;</td><td><a class="le" href="#?M">Извлекает часть символов в строке</a></td>
+</tr>
+<tr>
+<td><font class="S91">#N</font>&nbsp;</td><td><a class="le" href="#N">Замена на счётчик</a></td>
+<td><font class="S91">?N</font>&nbsp;</td><td><a class="le" href="#?N">Удаляет дубликаты между разделителем</a></td>
+</tr>
+<tr>
+<td><font class="S91">#O</font>&nbsp;</td><td><a class="le" href="#O">Преобразование строки относительно её длины</a></td>
+<td><font class="S91">?O</font>&nbsp;</td><td><a class="le" href="#?O">Считывание строки из секции [Lines]</a></td>
+</tr>
+<tr>
+<td><font class="S91">#P</font>&nbsp;</td><td><a class="le" href="#P">Перевод относительного пути в абсолютный</a></td>
+<td><font class="S91">?P</font>&nbsp;</td><td><a class="le" href="#?P">Перемешивает строки случайным образом</a></td>
+</tr>
+<tr>
+<td><font class="S91">#Q</font>&nbsp;</td><td><a class="le" href="#Q">Кодирование строки в Hex строку</a></td>
+<td><font class="S91">?Q</font>&nbsp;</td><td><a class="le" href="#?Q">Поиск и замена из файла</a></td>
+</tr>
+<tr>
+<td><font class="S91">#R</font>&nbsp;</td><td><a class="le" href="#R">Расшифровывание строки</a></td>
+<td><font class="S91">?R</font>&nbsp;</td><td><a class="le" href="#?R">Удаляет количество символов строки справа</a></td>
+</tr>
+<tr>
+<td><font class="S91">#S</font>&nbsp;</td><td><a class="le" href="#SString">Пользовательские шаблоны</a></td>
+<td><font class="S91">?S</font>&nbsp;</td><td><a class="le" href="#?S">Замена символов ASCII-кодами</a></td>
+</tr>
+<tr>
+<td><font class="S91">#T</font>&nbsp;</td><td><a class="le" href="#T">Преобразовывает бинарные данные в строку</a></td>
+<td><font class="S91">?T</font>&nbsp;</td><td><a class="le" href="#?T">Преобразование заданных строк</a></td>
+</tr>
+<tr>
+<td><font class="S91">#U</font>&nbsp;</td><td><a class="le" href="#U">Декодирование Hex строки</a></td>
+<td><font class="S91">?U</font>&nbsp;</td><td><a class="le" href="#?U">Замена функций Autoit значениями</a></td>
+</tr>
+<tr>
+<td><font class="S91">#V</font>&nbsp;</td><td><a class="le" href="#V">Реверс строки</a></td>
+<td><font class="S91">?V</font>&nbsp;</td><td><a class="le" href="#?V">Выполняет выражение Autoit</a></td>
+</tr>
+<tr>
+<td><font class="S91">#W</font>&nbsp;</td><td><a class="le" href="#W">Разжатие строки бинарных данных</a></td>
+<td><font class="S91">?W</font>&nbsp;</td><td><a class="le" href="#?W">Замена символов юникод-кодами</a></td>
+</tr>
+<tr>
+<td><font class="S91">#X</font>&nbsp;</td><td><a class="le" href="#X">Сжатие строки бинарных данных</a></td>
+<td><font class="S91">?X</font>&nbsp;</td><td><a class="le" href="#?X">Получение содержимого страницы интернета</a></td>
+</tr>
+<tr>
+<td><font class="S91">#Y</font>&nbsp;</td><td><a class="le" href="#Y">Получение из строки заданных символов</a></td>
+<td><font class="S91">?Y</font>&nbsp;</td><td><a class="le" href="#?Y">Преобразование с помощью функций js, vbs, au3</a></td>
+</tr>
+<tr>
+<td><font class="S91">#Z</font>&nbsp;</td><td><a class="le" href="#Z">Вставка в конец</a> (не для всех команд)</td>
+<td><font class="S91">?Z</font>&nbsp;</td><td><a class="le" href="#?Z">Возвращает число символов строки справа</a></td>
+</tr>
+<tr>
+<td><font class="S91">#0</font>&nbsp;</td><td><a class="le" href="#0">Преобразует кириллическую кодировку в ANSI</a></td>
+<td><font class="S91">?0</font>&nbsp;</td><td><a class="le" href="#?0">Получение данных из массива</a></td>
+</tr>
+<tr>
+<td><font class="S91">#1</font>&nbsp;</td><td><a class="le" href="#1">Преобразует кодировку UTF8 в ANSI</a></td>
+<td><font class="S91">?1</font>&nbsp;</td><td><a class="le" href="#?1">Получение данных из файла</a></td>
+</tr>
+<tr>
+<td><font class="S91">#2</font>&nbsp;</td><td><a class="le" href="#2">Преобразует кодировку KOI8 в ANSI</a></td>
+<td><font class="S91">?2</font>&nbsp;</td><td><a class="le" href="#?2">Получение данных из секции ini файла</a></td>
+</tr>
+<tr>
+<td><font class="S91">#3</font>&nbsp;</td><td><a class="le" href="#3">Преобразует кодировку 866 в ANSI</a></td>
+<td><font class="S91">?3</font>&nbsp;</td><td><a class="le" href="#?3">Получение данных из ключа ini файла</a></td>
+</tr>
+<tr>
+<td><font class="S91">#4</font>&nbsp;</td><td><a class="le" href="#4">Преобразует кодировку ISO8859 в ANSI</a></td>
+<td><font class="S91">?4</font>&nbsp;</td><td><a class="le" href="#?4">Получение данных из строки</a></td>
+</tr>
+<tr>
+<td><font class="S91">#5</font>&nbsp;</td><td><a class="le" href="#5">Преобразует строку алгоритмом ROT13</a></td>
+<td><font class="S91">?5</font>&nbsp;</td><td><a class="le" href="#?5">Получение кода таблиц(ы) htm</a></td>
+</tr>
+<tr>
+<td><font class="S91">#6</font>&nbsp;</td><td><a class="le" href="#6">Преобразует строку алгоритмом ROT47</a></td>
+<td><font class="S91">?6</font>&nbsp;</td><td><a class="le" href="#?6">Онлайн перевод</a></td>
+</tr>
+<tr>
+<td><font class="S91">#6</font>&nbsp;</td><td><a class="le" href="#7"></a></td>
+<td><font class="S91">?7</font>&nbsp;</td><td><a class="le" href="#?7">Преобразование с помощью шаблонов. Разделитель.</a></td>
+</tr>
+
+</table>
+</div>
+
+<br><br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr style="text-align:left;">
+<th width="10%">Параметр</th>
+<th width="90%">Описание</th>
+</tr>
+<tr><td class="s3td" width="15%">Search<span class="S11">!!</span>Replace<span class="S11">!!</span>N<span class="S11">!!</span>R<br><br><font class="S51">==</font>Search<span class="S11">!!</span>Replace<span class="S11">!!</span>N<span class="S11">!!</span>R</td><td width="85%"><a name="SearchReplace"></a><a name="!!"></a><a name="=="></a><font class="S0"><font class="S3"><b>Поиск и замена</b></font>. <b>Search</b> - "что искать" и <b>Replace</b> - "чем заменять" разделяются <span class="S11">!!</span><br>Для поиска или замены фразы из файла используется подпараметр <span class="S8">[</span>rfile=<b>Path</b><span class="S8">]</span> или <span class="S8">&#60;</span>rfile=<b>Path</b><span class="S8">&#62;</span>, где <b>Path</b> - полный путь к файлу.<br><b>N</b> - [необязательный] Количество выполняемых замен. Используется отрицательное число, чтобы выполнить замену справа.<br><b>R</b> - [необязательный] Флаг установки чувствительности к регистру. 0 - не учитывать регистр (по умолчанию); 1 - учитывать регистр ; 2 - не учитывать регистр, используется основное / быстрое сравнение; 0 = выполнить замену всех найденных строк (по умолчанию)<br>Возможно использование параметра <b>rndm</b><span class="S8">[</span>Number<font class="S81">|</font>...<span class="S8">]</span> см. Дополнение<a class="le" href="add_randms.htm"> <b>№30</b></a>.<a name="P"></a><hr align="left" width=70%>Если фраза поиска или замены начинается с <font class="S81">&#35;P</font>, то относительный путь (последующая строка) будет переведён в абсолютный.<br>Если фраза поиска или замены начинается с <font class="S81">&#35;PS</font>, то относительный путь (последующая строка) будет переведён в абсолютный, в котором слеш заменяется двойным.
+<hr align="left" width=70%>
+т.к. в Search (поиск) в начало могут попасть специальные символы, которые используются в утилите (<font class="S51">##</font>, <font class="S51">??</font>, <font class="S51">**</font>, <font class="S51">$$</font>, и.т.д), то в таких случаях перед строкой добавляется <font class="S51"><b>==</b></font>
+</font></td></tr>
+<tr><td class="s3td"><span class="S51">&&</span>Pattern<span class="S11">!!</span>Replace<span class="S11">!!</span>N</td><td><a name="RegExp"></a><a name="&&"></a><font class="S0"><font class="S3"><b>Поиск и замена с регулярным выражением</b></font>. см. Дополнение<a class="le" href="add_regexp.htm"> <b>№2</b></a><br> Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">&&</span>, то последующая строка параметра разделённая символами <span class="S11">!!</span> означает поиск и замену с регулярными выражениями, где:<br>&nbsp;&nbsp;<b>Pattern</b> - строка регулярного выражения, образец для поиска (шаблон)<br>&nbsp;&nbsp;<b>Replace</b> - строка замены регулярного выражения. Чтобы вставить текст группы используйте, \0 - \9 (или $0 - $9) как обратную ссылку.<br>&nbsp;&nbsp;<b>N</b> - [необязательный] количество замен в строке. По умолчанию 0 - выполняет замену всех найденных образцов.
+</font></td></tr>
+
+
+<tr><td class="s3td"><span class="S51">&?</span>Pattern<span class="S11">!!</span>Flag<span class="S11">!!</span>N<span class="S11">!!</span>Delim</td><td><a name="RegSearch"></a><a name="&?"></a><font class="S0">
+<font class="S3"><b>Поиск с регулярным выражением.</b></font> см. Дополнение<a class="le" href="add_regexp.htm"> <b>№2</b></a><br>
+&nbsp;&nbsp;<b>Pattern</b> - строка регулярного выражения, образец для поиска (шаблон).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Если pattern начинается с <font class="S51"><b>??</b></font>Key то регулярное выражение берётся TCIMG.ini из секции [FormatUser] из ключа Key<br>
+&nbsp;&nbsp;<b>Flag</b> - [необязательный] режим поиска:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - возвращается 1, если совпадение найдено или 0, если не найдено.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - поиск до первого совпадения, возвращается полное совпадение с шаблоном.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3 - возвращаются все совпадения, разделённые переносом строки (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;Для получения заданных совпадений, прописываются номера или диапазоны номеров через запятую:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><font class="S51">a</font></b>K1,K2,...,N1:M1,...,N2:M2 - найти совпадения заданных номеров.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><font class="S51">b</font></b>K1,K2,...,N1:M1,...,N2:M2 - найти совпадения, кроме заданных номеров.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• <font class="S51">a</font> и <font class="S51">b</font> обязательные символы, которые прописываются в начале.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• K1,K2,... - числа; N1:M1 - диапазоны чисел.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• числа и диапазоны могут располагаться в любом порядке (для <font class="S51">a</font> - это будет определять последовательность полученных совпадений).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• при отрицательных числах отсчёт ведётся с конца.<br>
+&nbsp;&nbsp;<b>N</b> - [необязательный] позиция строки, начиная с которой будут искаться совпадения (по умолчанию 1).<br>
+&nbsp;&nbsp;<b>Delim</b> - [необязательный] разделитель (символ или строка) между найденными совпадениями (по умолчанию перенос строки).
+<hr align="left" width=300>
+При Flag=1 и Flag=3, если ничего не найдено, возвращается пустая строка.
+</font></td></tr>
+
+
+
+
+<tr><td class="s3td"><span class="S51">?#</span>Search<font class="S121"><b>1</b></font><font class="S81"><b>¤</b></font>...<font class="S81"><b>¤</b></font>Search<font class="S121"><b>N</b></font></td><td><a name="RegSearchN"></a><a name="?#"></a><font class="S0">
+<font class="S3"><b>Поиск по нескольким регулярным выражениям и последовательное объединение полученных данных.</b></font> см. Дополнение<a class="le" href="add_regexp.htm"> <b>№2</b></a><br>
+<font class="S91"><b>Search</b></font> - может быть 2-х вариантов:<br>
+&nbsp;&nbsp;<font class="S51"><b>1</b></font>. Pattern<span class="S11">!!</span>Flag<span class="S11">!!</span>N<span class="S11">!!</span>Delim<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Pattern</b> - строка регулярного выражения, образец для поиска (шаблон).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Flag</b> режим поиска:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - возвращается 1, если совпадение найдено или 0, если не найдено.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - поиск до первого совпадения, возвращается полное совпадение с шаблоном.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 - возвращаются все совпадения, разделённые переносом строки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>N</b> - [необязательный] позиция строки, начиная с которой будут искаться совпадения (по умолчанию 1).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Delim</b> - [необязательный] разделитель (символ или строка) между найденными совпадениями (по умолчанию перенос строки).
+<hr align="left" width=300>
+При Flag=1 и Flag=3, если ничего не найдено, возвращается пустая строка.<br><br>
+&nbsp;&nbsp;<font class="S51"><b>2</b></font>. Если в Search нет разделителя <font class="S61"><b>!!</b></font>, то строка является вставкой между данными предыдущего и последующего поиска.
+</font></td></tr>
+
+
+
+
+<tr><td class="s3td"><span class="S51">&#</span>Pattern<span class="S11">!!</span>List<span class="S11">!!</span>Count</td><td><a name="RegSearchReplaceList"></a><a name="&#"></a><font class="S0">
+<font class="S3"><b>Поиск с регулярным выражением и последовательная замена по списку.</b></font> см. Дополнение<a class="le" href="add_regexp.htm"> <b>№2</b></a><br>
+&nbsp;&nbsp;<b>Pattern</b> - строка регулярного выражения, образец для поиска (шаблон).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Если pattern начинается с ??Key то регулярное выражение берётся TCIMG.ini из секции [FormatUser] из ключа Key<br>
+
+&nbsp;&nbsp;<b>List</b> - список строк для поиска, возможны варианты:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;String - строка фраз для замены, прописанных через разделитель <font class="S21"><b>|</b></font>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;File - путь к файлу со списком строк для замены.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$GLOBALNAME - список строк из глобального массива.<br>
+&nbsp;&nbsp;<b>Count</b> - [необязательный] <br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - замены производятся по кругу строк из списка List (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - замены производятся пока не закончатся строки в списке List.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;N>1 - производятся N последовательных замен.
+
+<!-- <hr align="left" width=300> -->
+
+</font></td></tr>
+
+
+<tr><td class="s3td"><span class="S51">&*</span>Parameters</td>
+<td><a name="&*"></a><font class="S0"><font class="S3"><b>Поиск и замена с регулярными выражениями по списку</b></font>. см. Дополнение<a class="le" href="add_regexp.htm"> <b>№2</b></a><br>
+
+
+Parameters - <b>FilePath</b>(<b><font class="S81">|</font></b><b>Section</b>) , где:<br>
+<br>
+&nbsp;&nbsp;<b>FilePath</b> - путь к файлу списка (<u>обязательный</u> параметр, остальные необязательные).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;В списке должны быть прописаны пары поиска и замены, разделённые "<font class="S81"><b><big>||</big></b></font>" .<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Каждая пара с новой строки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;В файле могут использоваться комментарии, но в них <u>НЕ должно быть двух подряд вертикальных черт</u> (труб).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Если замена не прописана, то происходит удаление строки поиска.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;В замене можно использовать теги "@CRLF", "@CR", "@LF", "@TAB" означающие переносы строки и табуляцию.<br>
+&nbsp;&nbsp;<b>$GLOBALNAME2D</b> - может использоваться для передачи данных 2D массив из 2-х колонок, в котором:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;в 0-й колонке в ячейках регулярное выражение для поиска.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;в 1-й колонке в соответствующих ячейках данные для замены.
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:300">
+найти<font class="S81"><b>||</b></font>заменить<br>
+<font class="S21">; правильный комментарий</font><br>
+\d+<font class="S81"><b>||</b></font>$1xx<br>
+<font class="S21"><strike>; НЕПРАВИЛЬНЫЙ <font class="S81">||</font> комментарий</strike></font><br>
+(?i)[a-z]+<font class="S81"><b>||</b></font><br>
+.+<font class="S81"><b>||</b></font>$0<font class="S121">@CRLF</font>line<br>
+</p>
+</div>
+&nbsp;&nbsp;<b>Section</b> - [необязательный] если в файле пары прописаны в секции, то указывается имя секции (в ином случае прописывается символ <b>#</b>) (по умолчанию без секции).<br>
+</td></tr>
+
+
+
+<tr><td class="s3td"><span class="S51">^^</span>BeginLine</td><td><a name="BeginLine"></a><a name="^^"></a><font class="S0"><font class="S3"><b>Вставка в начало</b></font>. Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">^^</span>, то последующая строка параметра будет вставлена в начало.</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">$$</span>EndLine</td><td><a name="EndLine"></a><a name="$$"></a><font class="S0"><font class="S3"><b>Вставка в конец</b></font>. Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">$$</span>, то последующая строка параметра будет вставлена в конец.</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">??</span>N(Pattern<span class="S11">!!</span>Replace)</td><td><a name="Registr"></a><a name="??"></a><font class="S0"><font class="S3"><b>Изменение регистра символов</b></font>. Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">??</span>, то последующая цифра будет означать: <br>&nbsp;&nbsp;1 - перевести символы во "все строчные".<br>&nbsp;&nbsp;2 - во "ВСЕ ЗАГЛАВНЫЕ".<br>&nbsp;&nbsp;3 - "Как в предложении".<br>&nbsp;&nbsp;7 - "Как в предложении" (обрабатывается построчно).<br>&nbsp;&nbsp;4 - "Начало Слов С Заглавной" (обрабатывается построчно).<br>&nbsp;&nbsp;8 - "Начало Слов С Заглавной (Перед *Любым #Символом)" (обрабатывается построчно).<br>&nbsp;&nbsp;5 - "Инвертировать регистр символов".<br>&nbsp;&nbsp;6 - оставить как есть. Указывается при изменение регистра в других параметрах.<br>&nbsp;11 - перевести символы в верхний и нижний регистр случайным образом.<br>&nbsp;12 - перевести символы в верхний и нижний регистр чередованием.<hr align="left" width=300>Для того, чтобы произвести данное действие над частью строки, используется регулярное выражение идущее после цифры, где:<br>&nbsp;&nbsp;<b>Pattern</b> - строка регулярных выражений, образец для поиска (шаблон)<br>&nbsp;&nbsp;<b>Replace</b> - строка замены регулярного выражения. Чтобы вставить текст группы используйте, \0 - \9 (или $0 - $9) как обратную ссылку.<br>см. Дополнение<a class="le" href="add_regexp.htm"> <b>№2</b></a>.<br><hr align="left" width=300>Если в строке отсутствует <b>!!Replace</b> , то будет произведён поиск всех фраз по шаблону <b>Pattern</b> и изменён их регистр относительно первого параметра ??N</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">@@</span>Translit(<span class="S11">!!</span>1)</td><td><a name="Translit"></a><a name="@@"></a><font class="S0"><font class="S3"><b>Транслитерация</b></font>. Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">@@</span>, то последующая строка параметра будет означать ИМЯ шаблона транслита.<br>В текущей строке заданные символы (фразы) шаблона, прописанные в ключе Source_Name заменяются соответствующими символами (фразами), прописанными в ключе Target_Name<br>Шаблоны настраиваются в секции <span class="S8">[</span><b>Translit</b><span class="S8">]</span> в <a class="le" href="../../config.htm#Translit"><font class="S1"><b>TCIMG.ini</b></font></a>.<br><hr align="left" width=70%>В некоторых шаблонах, чтобы избежать (пересекающихся с шаблоном) ошибочных замен, необходима двойная обработка, когда искомые фразы заменяются специальным набором, а затем соответствующими заменами.<br>Для двойной обработки необходимо прописать к имени шаблона <b>!!1</b></font></td></tr>
+
+<tr><td class="s3td"><span class="S51">##</span>FullReplace</td><td><a name="FullReplace"></a><a name="##"></a><font class="S0"><font class="S3"><b>Замещение</b></font>. Если фраза вначале или после разделителя <span class="S8">||</span> начинается с символов <span class="S51">##</span>, то последующей строкой <b>FullReplace</b> параметра будет замещена существующая строка.</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#?</span>FullReplace</td><td><a name="FullReplaceU"></a><a name="#?"></a><font class="S0"><font class="S3"><b>Замещение с условием</b></font>. Если фраза вначале или после разделителя <span class="S8">||</span> начинается с символов <span class="S51">#?</span>, то последующей строкой <b>FullReplace</b> параметра будет замещена существующая строка, если FullReplace <u>не пустая строка</u>.</font></td></tr>
+
+<tr><td class="s3td">
+<span class="S51">#L</span>String(<font class="S81">|</font>Mode)
+<br>
+<br>
+<span class="S51">#L</span><font class="S61"><b>#</b></font>String(<font class="S81">~</font>Mode)
+<br>
+<br>
+<span class="S51">#L</span><font class="S61"><b>@</b></font>String(<font class="S81">~</font>Mode)
+
+
+</td><td><a name="L"></a><a name="#L"></a><font class="S0"><font class="S3"><b>Извлечение строк</b></font>. Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">#L</span>, то последующая строка <b>String</b> будет означать номер или список номеров извлекаемых строк, может иметь несколько вариантов:
+<br>
+<hr align="left" width=30%>
+<b>1)</b> <span class="S51">#L</span>String(<font class="S81">|</font>Mode)<br>
+&nbsp;&nbsp;String - получение строк заданных номеров<br>
+&nbsp;&nbsp;N - номер строки.<br>&nbsp;&nbsp;N1,N2,...NN - список номеров, прописанных через запятую<br>&nbsp;&nbsp;N:M - диапазон строк. (M:N - обратный диапазон)<br>&nbsp;&nbsp;N:M,N1:M1...NN,MM - список номеров диапазонов (прямых и обратных).<br>При отрицательных значениях строки извлекаются относительно последней строки.<br>
+<hr align="left" width=30%>
+<b>2)</b> <span class="S51">#L</span><font class="S61"><b>#</b></font>String(<font class="S81">~</font>Mode)<br>
+&nbsp;&nbsp;String - получение строк <u>кроме</u> заданных номеров<br>
+&nbsp;&nbsp;принцип такой же как описан в варианте 1.<br>
+<hr align="left" width=30%>
+<b>3)</b> <span class="S51">#L</span><font class="S61"><b>@</b></font>String(<font class="S81">~</font>Mode)
+&nbsp;&nbsp;String - получение строк чередующихся номеров, где String:<br>
+&nbsp;&nbsp;@Start|End|Step|InArow<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start - минимальное значение диапазона.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End - максимальное значение диапазона (при <font class="S51">-1</font> все строки до конца).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Step - шаг чередования (по умолчанию 1).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InArow - количество подряд номеров (по умолчанию 1).<br>
+
+
+<br>
+<b>Mode</b> <font class="S81">[</font>необязательный<font class="S81">]</font> - удаление пустых строк:<br>&nbsp;&nbsp;0 - не удалять пустые строки (по умолчанию)<br>&nbsp;&nbsp;1 - удалять пустые строки перед извлечением строк<br>&nbsp;&nbsp;2 - удалять пустые строки после извлечения строк</font><br>
+<br>
+При <font class="S51">#L</font>0 возвращается 0 так как нулевой строки не существует.</td></tr>
+
+<tr><td class="s3td"><span class="S51">#G</span>Number</td><td><a name="G"></a><a name="#G"></a><font class="S0"><font class="S3"><b>Удаление пробельных символов в строке</b></font>. Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">#G</span>, то последующий номер <b>Number</b> будет означать режим удаления пробелов в строке:<br><b>Number</b> может быть <u>суммой следующих флагов</u>:<br>&nbsp;&nbsp;1 = удаляет пробельные символы в начале строки<br>&nbsp;&nbsp;2 = удаляет пробельные символы в конце строки<br>&nbsp;&nbsp;4 = удаляет повтор (или многократный повтор) пробельных символов в строке<br>&nbsp;&nbsp;8 = удаляет все пробельные символы (не требуется суммировать флаги)<br>Пробельные символы включают в себя Chr(9), Chr(10), Chr(11), Chr(12), Chr(13), Chr(32), которые являются - табуляция, перевод строки, вертикальная табуляция, перевод страницы, возврат каретки и обычный пробел соответственно. А также символ Chr(0).</td></tr>
+
+<tr><td class="s3td"><span class="S51">#V</span><br><span class="S51">#VS</span><br><span class="S51">#VW</span></td><td><a name="V"></a><a name="#V"></a><font class="S0"><font class="S3"><b>Реверс строки</b></font>. Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">#V</span>, то в текущей строке будет произведено изменение порядка символов на обратный.<br>
+<span class="S51">#VS</span> - построчный реверс (т.е. каждая строка обрабатывается отдельно).<br>
+<span class="S51">#VW</span> - пословный реверс (т.е. каждое слово обрабатывается отдельно).
+</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#K</span>Count~Delim<span class="S11">!!</span>String<br><span class="S51">#K</span>Min<font class="S81"><b>:</b></font>Max~Delim<span class="S11">!!</span>String</td><td><a name="K"></a><a name="#K"></a><font class="S0"><font class="S3"><b>Дублирование строки</b></font>. Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">#K</span>, то заданная строка <b>String</b> будет размножена <b>Count</b> раз.<br>
+<br>
+Параметр <font class="S91"><span class="S51">#K</span>Count~Delim1~Mode~Delim2<span class="S11">!!</span>String</font><br>
+&nbsp;&nbsp;<b>Count</b> - число: количество дубликатов.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- могут использоваться математические действия.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- может быть случайным числом из диапазона Min:Max, Min - минимальное число, Max - максимальное.<br>
+&nbsp;&nbsp;<b>Delim1</b> - [необязательный] разделитель между дубликатами строк.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- по умолчанию <font class="S51"><b>-1</b></font> разделителя нет.<br>
+&nbsp;&nbsp;<b>Mode</b> - режим:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - заменяется текущая строка (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - вставляется в конец текущей строки через разделитель Delim2.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2 - вставляется в начало текущей строки через разделитель Delim2.<br>
+&nbsp;&nbsp;<b>Delim2</b> - [необязательный] разделитель в режиме Mode=1 и Mode=2 (по умолчанию разделителя нет).<br>
+<hr align="left" width=70%>
+&nbsp;&nbsp;&nbsp;&nbsp;- Если String не указан, то дублируется текущая строка.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- В Delim1 и Delim2 могут использоваться функции Autoit.
+<!-- <hr align="left" width=70%> -->
+<!-- &nbsp;&nbsp;Min:Max - случайный диапазон, Min - минимальное число, Max - максимальное.<br> -->
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;в Min и Max могут использоваться математические действия. -->
+<hr align="left" width=70%>
+&nbsp;&nbsp;Так же может быть задействована структура, позволяющая вставлять счётчик при дублировании строки:<br>
+&nbsp;&nbsp;<span class="S51">#K</span>Count<font class="S81">|</font><font class="S21">Symbol</font><font class="S81">|</font><font class="S121">Begin</font><font class="S81">|</font><font class="S91">Step</font><span class="S11">!!</span>String<br>
+&nbsp;&nbsp;<span class="S51">#K</span>Min<font class="S81"><b>:</b></font>Max<font class="S81">|</font><font class="S21">Symbol</font><font class="S81">|</font><font class="S121">Begin</font><font class="S81">|</font><font class="S91">Step</font><span class="S11">!!</span>String<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21">Symbol</font> - символ или строка, которая будет заменена счётчиком.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121">Begin</font> - начальное число счётчика.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S91">Step</font> - шаг счётчика.
+</font>
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?K</span>CountV<font class="S81">|</font>CountG<font class="S81">|</font>Delim</td><td><a name="#?K"></a><font class="S0"><font class="S3"><b>Дублирование строк</b></font>. Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">?K</span>, то каждая строка будет размножена.<br>
+
+&nbsp;&nbsp;<b>CountV</b> - количество получаемых строк каждой строки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(отсчёт с 2-х, при 1 дублирования не происходит).<br>
+&nbsp;&nbsp;<b>CountG</b> - [необязательный] количество получаемых строк каждой строки горизонтально.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(отсчёт с 2-х, при 1 дублирования не происходит).<br>
+&nbsp;&nbsp;<b>Delim</b> - [необязательный] разделитель между горизонтальными дубликатами строк (по умолчанию разделителя нет).<br>
+<hr align="left" width=70%>
+&nbsp;&nbsp;- В CountV и CountG могут использоваться математические действия.<br>
+&nbsp;&nbsp;- В Delim могут использоваться функции Autoit.
+
+</font>
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?F</span>Parameters</td><td><a name="?F"></a><font class="S0"><font class="S3"><b>Преобразование с помощью шаблонов</b></font>.<br>
+&nbsp;&nbsp;Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">?F</span>, то в последующей строке параметра <b>Parameters</b> прописываются имена шаблонов для преобразования аналогично параметру formt<>, см. Дополнение<a class="le" href="add_format.htm"> <b>№15</b></a>
+</td></tr>
+<tr><td class="s3td"><span class="S51">#S</span>Parameters</td><td><a name="SString"></a><a name="S"></a><a name="#S"></a><font class="S0"><font class="S3"><b>Преобразование с помощью шаблонов</b></font>.
+<br>
+&nbsp;&nbsp;Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">#S</span>, то в последующей строке параметра <b>Parameters</b> прописываются имена шаблонов для преобразования аналогично параметру formt<>, см. Дополнение<a class="le" href="add_format.htm"> <b>№15</b></a><br>
+&nbsp;&nbsp;Отличается от параметра <b>?F</b> тем, что работает при использовании параметра <font class="S21">[double]</font> в командах <a class="le" href="../com_renms.htm"><span class="S4"><b>renms</b></span></a>, <a class="le" href="../com_copys.htm"><span class="S4"><b>copys</b></span></a>, <a class="le" href="../com_moves.htm"><span class="S4"><b>moves</b></span></a> при переименовании однотипных имён (к примеру при увеличении чисел в имени).
+</td></tr>
+<tr><td class="s3td"><span class="S51">?7</span><span class="S11">!!</span>Delim<span class="S11">!!</span>Parameters</td><td><a name="?7"></a><font class="S0"><font class="S3"><b>Преобразование строки с помощью шаблонов. Разделитель</b></font>.<br>
+&nbsp;&nbsp;<b>Delim</b> - разделитель (символ или строка).<br>
+&nbsp;&nbsp;<b>Parameters</b> - имена шаблонов для преобразования аналогично параметру formt<>, см. Дополнение<a class="le" href="add_format.htm"> <b>№15</b></a><br>
+<hr align="left" width=70%>
+Заданный разделитель в строке заменяется на перенос строки и данные передаются в параметр formt<>.<br>
+После преобразования перенос заменяется на заданный разделитель.
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">#N</span>Search<span class="S11">!!</span>Enum</td><td><a name="N"></a><a name="#N"></a><font class="S0"><font class="S3"><b>Замена на счётчик</b></font>. Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">#N</span>, то последующая строка параметра будет означать замену на отдельный счётчик каждой найденной подстроки <b>Search</b><span class="S11">!!</span><b>Enum</b><span class="S11">!!</span><b>Direction</b><span class="S11">!!</span><b>Registr</b>, где:<br>&nbsp;&nbsp;<b>Search</b> - "что искать"<br>&nbsp;&nbsp;<b>Enum</b> - строка "чем заменять", в которую в необходимом месте включается счётчик формата<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>tnum</b><span class="S8">[</span>Begin<font class="S81">|</font>Step<font class="S81">|</font>Numbers<span class="S8">]</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>enum</b><span class="S8">[</span>Letter<font class="S81">|</font>Step<font class="S81">|</font>Numbers<span class="S8">]</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;или <b>rndm</b><span class="S8">[</span>Number<font class="S81">|</font>Length<span class="S8">]</span> см. описание <a class="le" href="#TNUM"><b>ниже</b></a><br>&nbsp;&nbsp;необязательные параметры:<br>&nbsp;&nbsp;<b>Direction</b> - направление замены:<br>&nbsp;&nbsp;&nbsp;&nbsp;1 - справа (по умолчанию)<br>&nbsp;&nbsp;&nbsp;-1 - слева<br>&nbsp;&nbsp;<b>Registr</b> - чувствительности к регистру:<br>&nbsp;&nbsp;&nbsp;&nbsp;0 - не учитывать регистр (по умолчанию)<br>&nbsp;&nbsp;&nbsp;&nbsp;1 - учитывать</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#E</span>CODED</td><td><a name="E"></a><a name="#E"></a><font class="S0"><font class="S3"><b>Кодирование строки (текстовый формат)</b></font>. Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">#E</span>, то последующая строка CODED будет означать метод кодировки:<br>
+<div style="margin-left: 31pt; text-indent: 0pt;">
+<table width="50%" cellspacing="0" cellpadding="3"><tr>
+<td class="s3td" width="2%">b64</td><td>кодирование MIME Base64</td></tr>
+<td class="s3td">b64-</td><td>кодирование MIME Base64, убрав переносы строк</td></tr>
+<td class="s3td">b64=</td><td>построчное кодирование MIME Base64</td></tr>
+<td class="s3td">b64+</td><td>кодирование MIME Base64 с добавлением "оглавления"</td></tr>
+<td class="s3td">xxe</td><td>кодирование XXEncode</td></tr>
+<td class="s3td">xxe~</td><td>кодирование XXEncode, удалив "оглавление"</td></tr>
+<td class="s3td">xxe-</td><td>кодирование XXEncode, удалив "оглавление" и переносы строк</td></tr>
+<td class="s3td">xxe=</td><td>кодировать каждую строку XXEncode</td></tr>
+<td class="s3td">uue</td><td>кодирование UUEncode</td></tr>
+<td class="s3td">uue~</td><td>кодирование UUEncode, удалив "оглавление"</td></tr>
+<td class="s3td">uue- </td><td>кодирование UUEncode, удалив "оглавление" и переносы строк</td></tr>
+<td class="s3td">uue=</td><td>кодировать каждую строку UUEncode</td></tr>
+<td class="s3td">b32</td><td>кодирование Base32</td></tr>
+<td class="s3td">b32=</td><td>построчное кодирование Base32</td></tr>
+<td class="s3td">zb32</td><td>кодирование zBase32</td></tr>
+<td class="s3td">zb32=</td><td>построчное кодирование zBase32</td></tr>
+<td class="s3td">сb32</td><td>кодирование Base32 Crockford</td></tr>
+<td class="s3td">сb32=</td><td>построчное кодирование Base32 Crockford</td></tr>
+<td class="s3td">hb32</td><td>кодирование Base32hex</td></tr>
+<td class="s3td">hb32=</td><td>построчное кодирование Base32hex</td></tr>
+<td class="s3td">gb32</td><td>кодирование Base32 Geohash</td></tr>
+<td class="s3td">gb32=</td><td>построчное кодирование Base32 Geohash</td></tr>
+<td class="s3td">b91</td><td>кодирование Base91</td></tr>
+<td class="s3td">b91=</td><td>построчное кодирование Base91</td></tr>
+<td class="s3td">b128</td><td>кодирование Base128</td></tr>
+<td class="s3td">b128=</td><td>построчное кодирование Base128</td></tr>
+</table>
+</div>
+</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#D</span>CODED</td><td><a name="D"></a><a name="#D"></a><font class="S0"><font class="S3"><b>Декодирование строки (текстовый формат)</b></font>.Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">#D</span>, то последующая строка CODED будет означать метод декодировки:<br>
+<div style="margin-left: 31pt; text-indent: 0pt;">
+<table width="50%" cellspacing="0" cellpadding="3"><tr>
+<td class="s3td" width="2%">b64</td><td>декодирование MIME Base64</td></tr>
+<td class="s3td">b64=</td><td>построчное декодирование MIME Base64</td></tr>
+<td class="s3td">xxe</td><td>декодирование XXEncode</td></tr>
+<td class="s3td">xxe=</td><td>построчное декодирование XXEncode</td></tr>
+<td class="s3td">uue</td><td>декодирование UUEncode</td></tr>
+<td class="s3td">uue=</td><td>построчное декодирование UUEncode</td></tr>
+<td class="s3td">b32</td><td>декодирование Base32</td></tr>
+<td class="s3td">b32=</td><td>построчное декодирование Base32</td></tr>
+<td class="s3td">zb32</td><td>декодирование zBase32</td></tr>
+<td class="s3td">zb32=</td><td>построчное декодирование zBase32</td></tr>
+<td class="s3td">сb32</td><td>декодирование Base32 Crockford</td></tr>
+<td class="s3td">сb32=</td><td>построчное декодирование Base32 Crockford</td></tr>
+<td class="s3td">hb32</td><td>декодирование Base32hex</td></tr>
+<td class="s3td">hb32=</td><td>построчное декодирование Base32hex</td></tr>
+<td class="s3td">gb32</td><td>декодирование Base32 Geohash</td></tr>
+<td class="s3td">gb32=</td><td>построчное декодирование Base32 Geohash</td></tr>
+<td class="s3td">b91</td><td>декодирование Base91</td></tr>
+<td class="s3td">b91=</td><td>построчное декодирование Base91</td></tr>
+<td class="s3td">b128</td><td>декодирование Base128</td></tr>
+<td class="s3td">b128=</td><td>построчное декодирование Base128</td></tr>
+</table>
+</div>
+</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#H</span>HASH<font class="S81">|</font>RG<font class="S81">|</font>LN</td><td><a name="H"></a><a name="#H"></a><font class="S0"><font class="S3">
+<b>Контрольная сумма строки (текстовый формат)</b></font>. Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">#H</span>, то последующая строка HASH будет означать метод возвращения контрольной суммы<br>
+&nbsp;&nbsp;1-й параметр HASH - метод, поддерживаются:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;md5, sha1, sha224, sha256, sha384, sha512, crc32, crc32c, md2, md4<br>
+&nbsp;&nbsp;&nbsp;&nbsp;blake2s, blake224, blake256, blake384, blake512<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bmw224, bmw256, bmw384, bmw512<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cubehash224, cubehash256, cubehash384, cubehash512<br>
+&nbsp;&nbsp;&nbsp;&nbsp;shabal192, shabal224, shabal256, shabal384, shabal512<br>
+&nbsp;&nbsp;&nbsp;&nbsp;echo224, echo256, echo384, echo512<br>
+&nbsp;&nbsp;&nbsp;&nbsp;skein224, skein256, skein384, skein512<br>
+&nbsp;&nbsp;&nbsp;&nbsp;crc16, adler32, tiger, ed2k, whirlpool, ripemd160<br>
+&nbsp;&nbsp;&nbsp;&nbsp;gost, gost_cryptopro, gost12_256, gost12_512<br>
+&nbsp;&nbsp;&nbsp;&nbsp;has160, snefru128, snefru256,edonr256, edonr512<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sha3_224, sha3_256, sha3_384, sha3_512<br>
+&nbsp;&nbsp;2-й параметр RG <font class="S81">[</font>необязательный<font class="S81">]</font> - регистр:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - в верхнем регистре (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - в нижнем регистре.<br>
+&nbsp;&nbsp;2-й параметр LN <font class="S81">[</font>необязательный<font class="S81">]</font> - обработка:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - обрабатывать не построчно (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - обрабатывать построчно.<br>
+</font>
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">#C</span>CRYPT</td><td><a name="CRYPT"></a><a name="C"></a><a name="#C"></a><font class="S0"><font class="S3"><b>Шифрование строки (текстовый формат)</b></font>. Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">#C</span>, то последующая строка CRYPT будет означать метод возвращения шифрованных данных, а именно: <b>Crypt<b>Key</b></b>(|<b>Algorithm</b>), где:<br><br><b>Crypt<b>Key</b></b> - пароль шифрования, может иметь следующие значения:<br>&nbsp;&nbsp;- путь к файлу с паролем (d:\Test\Test.txt)<br>&nbsp;&nbsp;- пароль (12345)<br>&nbsp;&nbsp;<b><font class="S81">-</font>N</b> - означает, что пароль будет взят из <a class="le" href="../../config.htm#Password"><font class="S1"><b>TCIMG.ini</b></font></a> в секции <span class="S8">[</span><b>Password</b><span class="S8">]</span> в соответствующем ключе <b>Password</b><b><font class="S81">N</font></b><br>&nbsp;&nbsp;<b><font class="S81">-</font>Nconvert<span class="S8">&lt</span>SeriesParam<span class="S8">&gt</span></b> - означает, что пароль будет взят из <a class="le" href="../../config.htm#Password"><font class="S1"><b>TCIMG.ini</b></font></a> в секции <span class="S8">[</span><b>Password</b><span class="S8">]</span> в соответствующем ключе <b>Password</b><b><font class="S81">N</font></b> и преобразован в зависимости от условий SeriesParam, где SeriesParam серия параметров для преобразования пароля см. текущее Дополнение <b>№24</b>. Разделитель между параметрами <font class="S81"><b>;;</b></font><br><br><b>Algorithm</b> - Аббревиатура алгоритма шифрования.<br>&nbsp;&nbsp;Поддерживаются: AES, AES128, AES192, AES256, DES, DESX, 3DES, 3DES112, RC2, RC4, RC5, SEAL<br>&nbsp;&nbsp;<b><font class="S81">-</font>N</b> - означает, что пароль будет взят из <a class="le" href="../../config.htm#Password"><font class="S1"><b>TCIMG.ini</b></font></a> в секции <span class="S8">[</span><b>Password</b><span class="S8">]</span> в соответствующем ключе <b>Algorithm</b><b><font class="S81">N</font></b><br>&nbsp;&nbsp;Если не указано, то берётся в ключе <b>Algorithm</b><b><font class="S81">1</font></b><br><br><b><font class="S81">-</font>N</b> - отрицательное число (-1, -2, ... -N).</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#M</span>CRYPT</td><td><a name="MCRYPT"><a name="M"></a><a name="#M"></a><font class="S0"><font class="S3"><b>Шифрование текста построчно (текстовый формат)</b></font><br>Параметры аналогичны<font class="S51"> #C</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#R</span>DECRYPT</td><td><a name="DECRYPT"><a name="R"></a><a name="#R"></a><font class="S0"><font class="S3"><b>Расшифровывание строки (текстовый формат)</b></font>. Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">#R</span>, то последующая строка DECRYPT будет означать метод возвращения дешифрованных данных, а именно: <b>Crypt<b>Key</b></b>(|<b>Algorithm</b>), где:<br><br><b>Crypt<b>Key</b></b> - пароль дешифрования, может иметь следующие значения:<br>&nbsp;&nbsp;- путь к файлу с паролем (d:\Test\Test.txt)<br>&nbsp;&nbsp;- пароль (12345)<br>&nbsp;&nbsp;<b><font class="S81">-</font>N</b> - означает, что пароль будет взят из <a class="le" href="../../config.htm#Password"><font class="S1"><b>TCIMG.ini</b></font></a> в секции <span class="S8">[</span><b>Password</b><span class="S8">]</span> в соответствующем ключе <b>Password</b><b><font class="S81">N</font></b><br>&nbsp;&nbsp;<b><font class="S81">-</font>Nconvert<span class="S8">&lt</span>SeriesParam<span class="S8">&gt</span></b> - означает, что пароль будет взят из <a class="le" href="../../config.htm#Password"><font class="S1"><b>TCIMG.ini</b></font></a> в секции <span class="S8">[</span><b>Password</b><span class="S8">]</span> в соответствующем ключе <b>Password</b><b><font class="S81">N</font></b> и преобразован в зависимости от условий SeriesParam, где SeriesParam серия параметров для преобразования пароля см. текущее Дополнение <b>№24</b>. Разделитель между параметрами <font class="S81"><b>;;</b></font><br><br><b>Algorithm</b> - Аббревиатура алгоритма дешифрования.<br>&nbsp;&nbsp;Поддерживаются: AES, AES128, AES192, AES256, DES, DESX, 3DES, 3DES112, RC2, RC4, RC5, SEAL<br>&nbsp;&nbsp;<b><font class="S81">-</font>N</b> - означает, что пароль будет взят из <a class="le" href="../../config.htm#Password"><font class="S1"><b>TCIMG.ini</b></font></a> в секции <span class="S8">[</span><b>Password</b><span class="S8">]</span> в соответствующем ключе <b>Algorithm</b><b><font class="S81">N</font></b><br>&nbsp;&nbsp;Если не указано, то берётся в ключе <b>Algorithm</b><b><font class="S81">1</font></b><br><br><b><font class="S81">-</font>N</b> - отрицательное число (-1, -2, ... -N).</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#F</span>DECRYPT</td><td><a name="FDECRYPT"><a name="F"></a><a name="#F"></a><font class="S0"><font class="S3"><b>Расшифровывание текста построчно (текстовый формат)</b></font><br>Параметры аналогичны<font class="S51"> #R</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#B</span>NUMBER</td><td><a name="B"></a><a name="#B"></a><font class="S0"><font class="S3"><b>Преобразует строку в бинарные данные</b></font>.<br>NUMBER <font class="S81">[</font>необязательный<font class="S81">]</font> тип преобразования:
+<br>&nbsp;&nbsp;1 - ANSI (по умолчанию)<br>&nbsp;&nbsp;2 - UTF16 Little Endian<br>&nbsp;&nbsp;3 - UTF16 Big Endian<br>&nbsp;&nbsp;4 - UTF8<br>Построчное преобразование (каждую строку отдельно):<br>&nbsp;&nbsp;5 - ANSI<br>&nbsp;&nbsp;6 - UTF16 Little Endian<br>&nbsp;&nbsp;7 - UTF16 Big Endian<br>&nbsp;&nbsp;8 - UTF8</td></tr>
+
+<tr><td class="s3td"><span class="S51">#T</span>NUMBER</td><td><a name="T"></a><a name="#T"></a><font class="S0"><font class="S3"><b>Преобразовывает бинарные данные в строку</b></font>.<br>NUMBER <font class="S81">[</font>необязательный<font class="S81">]</font> тип преобразования:
+<br>&nbsp;&nbsp;1 - ANSI (по умолчанию)<br>&nbsp;&nbsp;2 - UTF16 Little Endian<br>&nbsp;&nbsp;3 - UTF16 Big Endian<br>&nbsp;&nbsp;4 - UTF8<br>Построчное преобразование (каждую строку отдельно):<br>&nbsp;&nbsp;5 - ANSI<br>&nbsp;&nbsp;6 - UTF16 Little Endian<br>&nbsp;&nbsp;7 - UTF16 Big Endian<br>&nbsp;&nbsp;8 - UTF8</td></tr>
+
+<tr><td class="s3td"><span class="S51">#X</span> или <span class="S51">#XS</span></td><td><a name="X"></a><a name="#X"></a><font class="S0"><font class="S3"><b>Сжатие строки бинарных данных</b></font>. Если на обработку поступает не бинарная, а текстовая строка, то она автоматически преобразовывается в бинарную, а затем сжимается.<br>&nbsp;&nbsp;<font class="S51">#XS</font> - позволяет сжимать заданные строки построчно (каждую строку отдельно).</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#W</span> или <span class="S51">#WT</span></td><td><a name="W"></a><a name="#W"></a><a name="WT"></a><font class="S0"><font class="S3"><b>Разжатие строки бинарных данных</b></font>. Для разжатия бинарной строки и преобразование в текстовую используется параметр <span class="S51"><span class="S51">#W</span>T</span><br>Многострочные данные разжимаются построчно (каждую строку отдельно).</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#U</span><br><span class="S51">#US</span></td><td><a name="U"></a><a name="#U"></a><font class="S0"><font class="S3"><b>Декодирование Hex строки с любыми дополнительными символами</b></font>.<br>Строка "<font class="S19">CFF0E8E2E5F2</font>" или "<font class="S19">%CF%F0%E8%E2%E5%F2</font>" или "<font class="S19">=CF=F0=E8=E2=E5=F2</font>"... будет декодирована в строку "<font class="S19">Привет</font>".<br>&nbsp;&nbsp;<span class="S51">#US</span> - декодирует многострочные данные построчно (каждую строку отдельно).</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#Q</span><span class="S11">!!</span>BeginLine<span class="S11">!!</span>EndLine<br><span class="S51">#QP</span><span class="S11">!!</span>BeginLine<span class="S11">!!</span>EndLine<br><span class="S51">#QS</span><span class="S11">!!</span>BeginLine<span class="S11">!!</span>EndLine</td><td><a name="Q"></a><a name="#Q"></a><font class="S0"><font class="S3"><b>Кодирование строки в Hex строку</b></font>.<br><b>&nbsp;&nbsp;BeginLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> - строка (символ) добавляемая к началу каждого кодированного символа.<br><b>&nbsp;&nbsp;EndLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> - строка (символ) добавляемая к концу каждого кодированного символа.<br>&nbsp;&nbsp;<span class="S51">#Q</span> - кодирует только символы.<br>&nbsp;&nbsp;<span class="S51">#QP</span> - кодирует без потери специальных знаков (переносы строк, возврат каретки...).<br>&nbsp;&nbsp;<span class="S51">#QS</span> - построчно кодирует без потери специальных знаков (каждую строку отдельно).</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#0</span></td><td><a name="0"></a><a name="#0"></a><font class="S0"><font class="S3"><b>Преобразует кириллическую кодировку в ANSI 1251</b></font>.<br>Используется, когда кодировка текста заранее неизвестна.<br>Определяет какой из пяти кодировок: KOI8-R, IBM-866, ISO-8859-5, UTF8, HEX принадлежит текст и преобразует в 1251.<br>Строка "<font class="S19">Привет</font>" или "<font class="S19">ЏаЁўҐв</font>" или "<font class="S19">рТЙЧЕФ</font>" или "<font class="S19">ґЮСаЮХ гваЮ</font>" или "<font class="S19">РџСЂРёРІРµС‚</font>" или "<font class="S19">=CF=F0=E8=E2=E5=F2</font>"... будет декодирована в строку "<font class="S19">Привет</font>".<br>Многострочный текст обрабатывается построчно.</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#1</span></td><td><a name="1"></a><a name="#1"></a><font class="S0"><font class="S3"><b>Преобразует кодировку UTF8 в ANSI 1251</b></font>.<br>Строка "<font class="S19">РџСЂРёРІРµС‚</font>" будет декодирована в строку "<font class="S19">Привет</font>".<br>Многострочный текст обрабатывается построчно.</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#2</span></td><td><a name="2"></a><a name="#2"></a><font class="S0"><font class="S3"><b>Преобразует кодировку KOI8 в ANSI 1251</b></font>.<br>Строка "<font class="S19">рТЙЧЕФ</font>" будет декодирована в строку "<font class="S19">Привет</font>".<br>Многострочный текст обрабатывается построчно.</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#3</span></td><td><a name="3"></a><a name="#3"></a><font class="S0"><font class="S3"><b>Преобразует кодировку 866 в ANSI 1251</b></font>.<br>Строка "<font class="S19">ЏаЁўҐв</font>" будет декодирована в строку "<font class="S19">Привет</font>".<br>Многострочный текст обрабатывается построчно.</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#4</span></td><td><a name="4"></a><a name="#4"></a><font class="S0"><font class="S3"><b>Преобразует кодировку ISO8859 в ANSI 1251</b></font>.<br>Строка "<font class="S19">ґЮСаЮХ гваЮ</font>" будет декодирована в строку "<font class="S19">Доброе утро</font>".<br>Многострочный текст обрабатывается построчно.</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#5</span></td><td><a name="5"></a><a name="#5"></a><font class="S0"><font class="S3"><b>Преобразует строку алгоритмом</b></font> <a class="le" href="https://en.wikipedia.org/wiki/ROT13" target="_blank"><b>ROT13</b></a>.<br>Строка "<font class="S19">Good morning</font>" будет преобразована в строку "<font class="S19">Tboq zbeavat</font>".<br>И наоборот строка "<font class="S19">Tboq zbeavat</font>" будет преобразована в строку "<font class="S19">Good morning</font>".<br>Многострочный текст обрабатывается построчно.</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#6</span></td><td><a name="6"></a><a name="#6"></a><font class="S0"><font class="S3"><b>Преобразует строку алгоритмом</b></font> <a class="le" href="https://en.wikipedia.org/wiki/ROT13" target="_blank"><b>ROT47</b></a>.<br>Строка "<font class="S19">Good morning</font>" будет преобразована в строку "<font class="S19">v@@5 >@C?:?8</font>".<br>И наоборот строка "<font class="S19">v@@5 >@C?:?8</font>" будет преобразована в строку "<font class="S19">Good morning</font>".<br>Многострочный текст обрабатывается построчно.</font></td></tr>
+
+
+<tr><td class="s3td"><span class="S51">?C</span>Code<br>или<br><span class="S51">?C</span>Code1-Code2</td><td><a name="?C"></a><font class="S0"><font class="S3"><b>Преобразует строку Unicode в строку</b></font>.<br>1. <b>Code</b> - номер кодировки, в который необходимо преобразовать строку см. Дополнение <a class="le" href="add_coddes.htm"> <b>№28</b></a><br>2. <b>Code1</b>-<b>Code2</b> - номера кодировок, строка из кодировки Code1 будет преобразована в кодировку Code2 </td></tr>
+
+<tr><td class="s3td"><span class="S51">?D</span>Code<br>или<br><span class="S51">?D</span>Code1-Code2</td><td><a name="?D"></a><font class="S0"><font class="S3"><b>Преобразует Unicode строку в строку</b></font>.<br>1. <b>Code</b> - номер кодировки, в который необходимо преобразовать строку см. Дополнение <a class="le" href="add_coddes.htm"> <b>№28</b></a><br>2. <b>Code1</b>-<b>Code2</b> - номера кодировок, строка из кодировки Code1 будет преобразована в кодировку Code2 </td></tr>
+
+<tr><td class="s3td"><span class="S51">?A</span>Number<font class="S81">|</font>LN</td><td><a name="?A"></a><font class="S0"><font class="S3"><b>Возвращает указанное число символов строки слева</b></font>.<br>Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">?A</span>, то последующий номер <b>Number</b> будет означать получение <u>слева</u> заданного количества символов строки.
+<br>&nbsp;&nbsp;2-й параметр LN <font class="S81">[</font>необязательный<font class="S81">]</font> означает построчную обработку.<br>в Number могут использоваться математические действия.
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?Z</span>Number<font class="S81">|</font>LN</td><td><a name="?Z"></a><font class="S0"><font class="S3"><b>Возвращает указанное число символов строки справа</b></font>.<br>Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">?Z</span>, то последующий номер <b>Number</b> будет означать получение <u>справа</u> заданного количества символов строки.
+<br>&nbsp;&nbsp;2-й параметр LN <font class="S81">[</font>необязательный<font class="S81">]</font> означает построчную обработку.<br>в Number могут использоваться математические действия.
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?L</span>Number<font class="S81">|</font>LN</td><td><a name="?L"></a><font class="S0"><font class="S3"><b>Удаляет указанное количество символов строки слева</b></font>.<br>Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">?L</span>, то последующий номер <b>Number</b> будет означать удаление <u>слева</u> заданного количества символов строки.
+<br>&nbsp;&nbsp;2-й параметр LN <font class="S81">[</font>необязательный<font class="S81">]</font> означает построчную обработку.<br>в Number могут использоваться математические действия.
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?R</span>Number<font class="S81">|</font>LN</td><td><a name="?R"></a><font class="S0"><font class="S3"><b>Удаляет указанное количество символов строки справа</b></font>.<br>Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">?R</span>, то последующий номер <b>Number</b> будет означать удаление <u>справа</u> заданного количества символов строки.
+<br>&nbsp;&nbsp;2-й параметр LN <font class="S81">[</font>необязательный<font class="S81">]</font> означает построчную обработку.<br>в Number могут использоваться математические действия.
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?M</span>Start<font class="S8"><b>:</b></font>Count<font class="S8"><b>:</b></font>LN</td><td><a name="?M"></a><font class="S0"><font class="S3"><b>Извлекает часть символов в строке</b></font>.<br>Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">?M</span>, то последующий номер <b>Start</b> будет означать позицию начального символа строки.
+<br><b>Count</b> <font class="S81">[</font>необязательный<font class="S81">]</font> количество извлекаемых символов строки (по умолчанию до конца строки -1).
+<br>Двоеточие - разделитель между Start и Count
+<br>&nbsp;&nbsp;3-й параметр LN <font class="S81">[</font>необязательный<font class="S81">]</font> означает построчную обработку.<br>в Start и Count могут использоваться математические действия.
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?B</span>Number<span class="S11">!!</span>Line</td><td><a name="?B"></a><font class="S0"><font class="S3"><b>Удаляет/Добавляет строку к строке с условиями</b></font>.<br>Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">?B</span>, то последующий номер <b>Number</b> будет означать условие удаления/добавления строки Line.<br>
+<br>&nbsp;&nbsp;1 - удалить в начале фразу Line, если таковая есть (учитывать регистр)
+<br>&nbsp;&nbsp;2 - удалить в начале фразу Line, если таковая есть (не учитывать регистр)
+<br>&nbsp;&nbsp;3 - удалить в конце фразу Line, если таковая есть (учитывать регистр)
+<br>&nbsp;&nbsp;4 - удалить в конце фразу Line, если таковая есть (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;5 - добавить в начало фразу Line, если таковой нет (учитывать регистр)
+<br>&nbsp;&nbsp;6 - добавить в начало фразу Line, если таковой нет (не учитывать регистр)
+<br>&nbsp;&nbsp;7 - добавить в конец фразу Line, если таковой нет (учитывать регистр)
+<br>&nbsp;&nbsp;8 - добавить в конец фразу Line, если таковой нет (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;9 - удалить в начале и в конце фразу Line, если таковая есть (учитывать регистр)
+<br>&nbsp;&nbsp;10 - удалить в начале и в конце фразу Line, если таковая есть (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;11 - добавить в начало и в конец фразу Line, если таковой нет (учитывать регистр)
+<br>&nbsp;&nbsp;12 - добавить в начало и в конец фразу Line, если таковой нет (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;13 - добавить в начало фразу Line, если таковой нет или удалить, если есть (учитывать регистр)
+<br>&nbsp;&nbsp;14 - добавить в начало фразу Line, если таковой нет или удалить, если есть (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;15 - добавить в конец фразу Line, если таковой нет или удалить, если есть (учитывать регистр)
+<br>&nbsp;&nbsp;16 - добавить в конец фразу Line, если таковой нет или удалить, если есть (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;17 - добавить в начало и в конец фразу Line, если таковой нет или удалить, если есть (учитывать регистр)
+<br>&nbsp;&nbsp;18 - добавить в начало и в конец фразу Line, если таковой нет или удалить, если есть (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;19 - удалить в начале фразу Line, если таковая есть, с добавлением фразы Line в конец (учитывать регистр)
+<br>&nbsp;&nbsp;20 - удалить в начале фразу Line, если таковая есть, с добавлением фразы Line в конец (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;21 - удалить в конце фразу Line, если таковая есть, с добавлением фразы Line в начало (учитывать регистр)
+<br>&nbsp;&nbsp;22 - удалить в конце фразу Line, если таковая есть, с добавлением фразы Line в начало (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;23 - добавить в начало фразу Line, если таковая есть (учитывать регистр)
+<br>&nbsp;&nbsp;24 - добавить в начало фразу Line, если таковая есть (не учитывать регистр)
+<br>
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='../../images/img-.gif';}else{hidn.style.display='none';btn.src=orimg; }"><img id="bot" src="../../images/img+.gif"/>&nbsp;&nbsp;Построчное удаление/добавление</div><div style="display: none"><div id="fut">
+<br>&nbsp;&nbsp;51 - построчно удалить в начале фразу Line, если таковая есть (учитывать регистр)
+<br>&nbsp;&nbsp;52 - построчно удалить в начале фразу Line, если таковая есть (не учитывать регистр)
+<br>&nbsp;&nbsp;53 - построчно удалить в конце фразу Line, если таковая есть (учитывать регистр)
+<br>&nbsp;&nbsp;54 - построчно удалить в конце фразу Line, если таковая есть (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;55 - построчно добавить в начало фразу Line, если таковой нет (учитывать регистр)
+<br>&nbsp;&nbsp;56 - построчно добавить в начало фразу Line, если таковой нет (не учитывать регистр)
+<br>&nbsp;&nbsp;57 - построчно добавить в конец фразу Line, если таковой нет (учитывать регистр)
+<br>&nbsp;&nbsp;58 - построчно добавить в конец фразу Line, если таковой нет (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;59 - построчно удалить в начале и в конце фразу Line, если таковая есть (учитывать регистр)
+<br>&nbsp;&nbsp;60 - построчно удалить в начале и в конце фразу Line, если таковая есть (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;61 - построчно добавить в начало и в конец фразу Line, если таковой нет (учитывать регистр)
+<br>&nbsp;&nbsp;62 - построчно добавить в начало и в конец фразу Line, если таковой нет (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;63 - построчно добавить в начало фразу Line, если таковой нет или удалить, если есть (учитывать регистр)
+<br>&nbsp;&nbsp;64 - построчно добавить в начало фразу Line, если таковой нет или удалить, если есть (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;65 - построчно добавить в конец фразу Line, если таковой нет или удалить, если есть (учитывать регистр)
+<br>&nbsp;&nbsp;66 - построчно добавить в конец фразу Line, если таковой нет или удалить, если есть (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;67 - построчно добавить в начало и в конец фразу Line, если таковой нет или удалить, если есть (учитывать регистр)
+<br>&nbsp;&nbsp;68 - построчно добавить в начало и в конец фразу Line, если таковой нет или удалить, если есть (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;69 - построчно удалить в начале фразу Line, если таковая есть, с добавлением фразы Line в конец (учитывать регистр)
+<br>&nbsp;&nbsp;70 - построчно удалить в начале фразу Line, если таковая есть, с добавлением фразы Line в конец (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;71 - построчно удалить в конце фразу Line, если таковая есть, с добавлением фразы Line в начало (учитывать регистр)
+<br>&nbsp;&nbsp;72 - построчно удалить в конце фразу Line, если таковая есть, с добавлением фразы Line в начало (не учитывать регистр)
+<br>
+<br>&nbsp;&nbsp;73 - построчно добавить в начало фразу Line, если таковая есть (учитывать регистр)
+<br>&nbsp;&nbsp;74 - построчно добавить в начало фразу Line, если таковая есть (не учитывать регистр)
+
+</div></div></div>
+</td></tr>
+
+
+
+<tr><td class="s3td"><span class="S51">?S</span><span class="S11">!!</span>BeginLine<span class="S11">!!</span>EndLine</td><td><a name="?S"></a><font class="S0"><font class="S3"><b>Каждый символ строки заменить ASCII-кодом символа</b></font>.<br><b>&nbsp;&nbsp;BeginLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> - строка (символ) добавляемая к началу каждого заменённого символа.<br><b>&nbsp;&nbsp;EndLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> - строка (символ) добавляемая к концу каждого заменённого символа.</font><br>Аналог функции <a class="le" href="../fun/asc.htm"> <b>Asc()</b></a>, только для каждого символа строки.</td></tr>
+
+<tr><td class="s3td"><span class="S51">?W</span><span class="S11">!!</span>BeginLine<span class="S11">!!</span>EndLine</td><td><a name="?W"></a><font class="S0"><font class="S3"><b>Каждый символ строки заменить юникод-кодом символа</b></font>.<br><b>&nbsp;&nbsp;BeginLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> - строка (символ) добавляемая к началу каждого заменённого символа.<br><b>&nbsp;&nbsp;EndLine</b> <font class="S81">[</font>необязательный<font class="S81">]</font> - строка (символ) добавляемая к концу каждого заменённого символа.</font><br>Аналог функции <a class="le" href="../fun/ascw.htm"> <b>AscW()</b></a>, только для каждого символа строки.</td></tr>
+
+<tr><td class="s3td"><span class="S51">?T</span><span class="S11">|</span>Line1<span class="S11">|</span>Line2<span class="S11">|</span> ... <span class="S11">|</span>LineN</td><td>
+<a name="?T"></a><font class="S0"><font class="S3"><b>Преобразование заданных строк</b></font>.<br>
+<b>LineN</b> представляет собой строку: <font class="S21"><b>Symbol</b></font><font class="S81"><b>,</b></font><font class="S51"><b>Numbers</b></font><span class="S11"><b>!!</b></span><font class="S91"><b>Text</b></font> (может использоваться несколько раз, через разделитель <font class="S81"><b>|</b></font>)<br>
+&nbsp;&nbsp;<font class="S21"><b>Symbol</b></font> - символ, определяющий режим добавления текста:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>a</b></font> - добавление текста в начало строк заданных номеров.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>b</b></font> - добавление текста в начало строк, <u>кроме</u> заданных номеров.<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>z</b></font> - добавление текста в конец строк заданных номеров.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>y</b></font> - добавление текста в конец строк, <u>кроме</u> заданных номеров.<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>c</b></font> - поиск и замена с регулярными выражениями в строках заданных номеров.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>x</b></font> - поиск и замена с регулярными выражениями в строках, <u>кроме</u> заданных номеров.<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>d</b></font> - удаление содержимого строк заданных номеров.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>v</b></font> - удаление содержимого строк, <u>кроме</u> заданных номеров.<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>f</b></font> - удаление строк заданных номеров.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>q</b></font> - удаление строк, <u>кроме</u> заданных номеров.<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>e</b></font> - преобразование строк заданных номеров.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>u</b></font> - преобразование строк, <u>кроме</u> заданных номеров.<br><br>
+
+&nbsp;&nbsp;<font class="S51"><b>Numbers</b></font> - номера строк перечисленных через запятую (1<font class="S81"><b>,</b></font>3<font class="S81"><b>,</b></font>8<font class="S81"><b>,</b></font>11).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Может использоваться символ <font class="S81"><b><big>:</big></b></font> , означающий прямой диапазон (5<font class="S81"><b>:</b></font>10 - с 5-й по 10-ю строки)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Могут использоваться отрицательные числа, означающие отсчёт с конца строк. (<font class="S81"><b>-1</b></font> - последняя строка) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Можно использоваться несколько условий (1,3,5:8,10,15:-1)<br><br>
+
+При <font class="S21"><b>Symbol</b></font> = &#34;<font class="S21"><b>a</b></font>&#34;, &#34;<font class="S21"><b>z</b></font>&#34;, &#34;<font class="S21"><b>b</b></font>&#34;, &#34;<font class="S21"><b>y</b></font>&#34;, &#34;<font class="S21"><b>c</b></font>&#34;, &#34;<font class="S21"><b>x</b></font>&#34;, &#34;<font class="S21"><b>e</b></font>&#34;, &#34;<font class="S21"><b>u</b></font>&#34;<br>
+&nbsp;&nbsp;<font class="S91"><b>Text</b></font> - текст (строка), которая добавляется, в ней может использоваться:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Если необходимы <u>кавычки</u>, то используются две одинарных кавычки (апострофа) <b>''</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Если необходим <u>пробел</u> - используются два символа тильды <b>~~</b>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Для специальных знаков могут использоваться Коды ASCII символов и функции <a class="le" href="../fun/chr.htm"><b>Chr</b></a>() и <a class="le" href="../fun/chrw.htm"><b>ChrW</b></a>() см. Дополнение<a class="le" href="add_ascii.htm"> <b>№26</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;• <b>cliptext</b> - в любом месте тег cliptext будет заменён содержимым буфера обмена.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• <b>&#60info&#62</b> - информация переданная параметром см. Дополнение<a class="le" href="add_info.htm"> <b>№10</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;• <b>GLOBALNAME</b> - данные, переданные глобальными переменными. см. Дополнение<a class="le" href="add_gloobal.htm"> <b>№23</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Тег <font class="S51"><b>:NUM:</b></font> будет заменён номером текущей строки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Тег <font class="S51"><b>:0NUM:</b></font> будет заменён номером текущей строки с добавлением начальных нулей, относительно количества строк.<br>
+<br>
+При <font class="S21"><b>Symbol</b></font> = &#34;<font class="S21"><b>c</b></font>&#34; и &#34;<font class="S21"><b>x</b></font>&#34;<br>
+&nbsp;&nbsp;<font class="S91"><b>Text</b></font> является условием поиска и замены. Синтаксис подобный параметру <a class="le" href="add_format.htm"> <b>formt<></b></a><br>
+<br>
+При <font class="S21"><b>Symbol</b></font> = &#34;<font class="S21"><b>d</b></font>&#34;, &#34;<font class="S21"><b>v</b></font>&#34;, &#34;<font class="S21"><b>f</b></font>&#34; и &#34;<font class="S21"><b>q</b></font>&#34;<br>
+&nbsp;&nbsp;<font class="S91"><b>Text</b></font> не прописывается.<br>
+<br>
+При <font class="S21"><b>Symbol</b></font> = &#34;<font class="S21"><b>e</b></font>&#34; и &#34;<font class="S21"><b>u</b></font>&#34;<br>
+&nbsp;&nbsp;<font class="S91"><b>Text</b></font> является условием преобразования. Синтаксис подобный текущему Дополнению №24.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Разделитель между подпараметрами <font class="S81"><b>;;</b></font>
+<hr align="left" width=70%>
+В версии 14.9 добавлено:<br>
+При всех <font class="S21"><b>Symbol</b></font> в <font class="S91"><b>Text</b></font> может использоваться подпараметр <font class="S91"><b>linen</b></font><font class="S81"><b>&#60;</b></font><b>Number</b><font class="S81"><b>&#62;</b></font><br>
+где <b>Number</b> - номер строки. При отрицательных числах строка берётся с конца.<br>
+Параметр будет заменён содержимым строки заданного номера.
+
+<hr align="left" width=70%>
+В версии 14.0 добавлены условия:<br>
+<font class="S21"><b>Symbol</b></font><font class="S81"><b>=</b></font><font class="S121"><b>Len</b></font><font class="S81"><b>,</b></font><font class="S51"><b>Numbers</b></font><span class="S11"><b>!!</b></span><font class="S91"><b>Text</b></font>
+ - строка будет преобразована, если длина строки <u>равна</u> числу <font class="S121"><b>Len</b></font><br>
+<font class="S21"><b>Symbol</b></font><font class="S81"><b>&#62;</b></font><font class="S121"><b>Len</b></font><font class="S81"><b>,</b></font><font class="S51"><b>Numbers</b></font><span class="S11"><b>!!</b></span><font class="S91"><b>Text</b></font>
+ - строка будет преобразована, если длина строки <u>больше</u> числа <font class="S121"><b>Len</b></font><br>
+<font class="S21"><b>Symbol</b></font><font class="S81"><b>&#60;</b></font><font class="S121"><b>Len</b></font><font class="S81"><b>,</b></font><font class="S51"><b>Numbers</b></font><span class="S11"><b>!!</b></span><font class="S91"><b>Text</b></font>
+ - строка будет преобразована, если длина строки <u>меньше</u> числа <font class="S121"><b>Len</b></font><br>
+<font class="S21"><b>Symbol</b></font><font class="S81"><b>?</b></font><font class="S121"><b>Len1</b></font><font class="S81"><b>-</b></font><font class="S121"><b>Len2</b></font><font class="S81"><b>,</b></font><font class="S51"><b>Numbers</b></font><span class="S11"><b>!!</b></span><font class="S91"><b>Text</b></font>
+ - строка будет преобразована, если длина строки входит в прямой <u>диапазон</u> от числа <font class="S121"><b>Len1</b></font> до числа <font class="S121"><b>Len2</b></font> (включая эти числа)
+<hr align="left" width=70%>
+В версии 14.3 добавлены условия:<br>
+<font class="S21"><b>Symbol</b></font><font class="S91"><b>N</b></font><font class="S81"><b>:</b></font><font class="S41"><b>String</b></font><font class="S81"><b>,</b></font><font class="S51"><b>Numbers</b></font><span class="S11"><b>!!</b></span><font class="S91"><b>Text</b></font>, где:<br>
+&nbsp;&nbsp;<font class="S41"><b>String</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;строка для проверки вхождения<br>
+&nbsp;&nbsp;&nbsp;&nbsp;путь к файлу, в котором прописана строка или строки для проверки вхождения<br>
+&nbsp;&nbsp;<font class="S91"><b>N</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - строка будет преобразована, если <u>есть в начале</u> вхождение заданной строки String<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2 - строка будет преобразована, если <u>есть в конце</u> вхождение заданной строки String<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3 - строка будет преобразована, если <u>есть</u> вхождение заданной строки String<br>
+&nbsp;&nbsp;&nbsp;&nbsp;4 - строка будет преобразована, если <u>нет в начале</u> вхождения заданной строки String<br>
+&nbsp;&nbsp;&nbsp;&nbsp;5 - строка будет преобразована, если <u>нет в конце</u> вхождения заданной строки String<br>
+&nbsp;&nbsp;&nbsp;&nbsp;6 - строка будет преобразована, если <u>нет</u> вхождения заданной строки String<br>
+&nbsp;&nbsp;&nbsp;&nbsp;7 - строка будет преобразована, если <u>есть</u> вхождение заданного регулярного выражения String<br>
+&nbsp;&nbsp;&nbsp;&nbsp;8 - строка будет преобразована, если <u>нет</u> вхождения заданного регулярного выражения String<br>
+При многострочном <font class="S41"><b>String</b></font> N с 1 по 6 ищется вхождение любой заданной строки<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;31 - строка будет преобразована, если <u>есть</u> вхождения <u>всех</u> заданных строк String (актуально при многострочном String)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;32 - строка будет преобразована, если <u>нет</u> вхождений <u>всех</u> заданных строк String (актуально при многострочном String)<br>
+<br>
+Если в String необходимо использовать запятую и вертикальную черту, то:<br>
+&nbsp;&nbsp;Вместо запятой используется символ <font class="S81"><b>’</b></font> (правая верхняя одинарная кавычка)<br>
+&nbsp;&nbsp;Вместо вертикальной черты используется символ <font class="S81"><b>¦</b></font><br>
+<hr align="left" width=70%>
+Дополнительные параметры:<br>
+<font class="S21"><b>p</b></font><font class="S121"><b>Start</b></font><b>#</b><font class="S51"><b>Step</b></font> - позволяет задать режим обработки:<br>
+<font class="S121"><b>Start</b></font> - начальный номер обрабатываемой строки (по умолчанию 1)<br>
+<font class="S51"><b>Step</b></font> - шаг (по умолчанию 1)<br>
+или<br>
+<font class="S21"><b>p</b></font><font class="S121"><b>Start</b></font><b>#</b><font class="S51"><b>Step</b></font><b>#</b><font class="S21"><b>InArow</b></font><br>
+<font class="S121"><b>Start</b></font> - начальный номер обрабатываемой строки (по умолчанию 1)<br>
+<font class="S51"><b>Step</b></font> - шаг (по умолчанию 1)<br>
+<font class="S21"><b>InArow</b></font> - количество подряд строк (по умолчанию 1)<br>
+При этом шаг Step должен быть больше количества подряд строк InArow (в ином случае результатом будет ошибка или неправильный вывод...)
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?H</span><span class="S11">|</span>Number<span class="S11">|</span>Delim1<span class="S11">|</span>Delim2</td><td><a name="?H"></a><font class="S0"><font class="S3"><b>Группировка и разгруппировка строки номеров</b></font>.<br>
+<b>&nbsp;&nbsp;Number</b> - режим преобразования.<br>
+&nbsp;&nbsp;&nbsp;Для строки с цифрами:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - преобразует строку "<font class="S19">1,2,3,4,5</font>" в "<font class="S19">1-5</font>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2 - преобразует строку с предварительной сортировкой и удалением дубликатов "<font class="S19">1,4,2,5,3</font>" в "<font class="S19">1-5</font>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;5 - преобразует строку "<font class="S19">1-5</font>" в "<font class="S19">1,2,3,4,5</font>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;6 - преобразует строку "<font class="S19">01-05</font>" в "<font class="S19">01,02,03,04,05</font>" (сохраняя ведущие нули)<br>
+&nbsp;&nbsp;&nbsp;Для строки с цифрами и латинских букв с цифрами:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;7 - преобразует строку с предварительной сортировкой и удалением дубликатов <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<font class="S19">4,s5,dn8,5,s3,2,1,s1,dn7,dn6,dn9,s6,s2,s4,3</font>" ==> "<font class="S19">1-5,dn6-dn9,s1-s6</font>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<font class="S19">s6,4,3,dn7,s2,dn8,5,s3,s5,2,s4,dn9,1,s1,dn6</font>" ==> "<font class="S19">dn6-dn9,s1-s6,1-5</font>"<br>
+<br>
+<b>&nbsp;&nbsp;Delim1</b> <span class="S8">[</span>необязательный<span class="S8">]</span> - строка (символ) разделитель при группировке (по умолчанию дефис <font class="S81"><b>-</b></font> )<br>
+<b>&nbsp;&nbsp;Delim2</b> <span class="S8">[</span>необязательный<span class="S8">]</span> - строка (символ) разделитель между символами (по умолчанию запятая <font class="S81"><b>,</b></font> )<br>
+&nbsp;&nbsp;В Delim1 и Delim2 могут использоваться функций Autoit <a class="le" href="../fun/chr.htm"><span class="S4"><font size="2"><b>Chr()</b></font></span></a> и <a class="le" href="../fun/chrw.htm"><span class="S4"><font size="2"><b>ChrW()</b></font></span></a>, которые заменяются соответствующими символами
+<hr align="left" width=70%>
+Параметр способен преобразовывать более сложные строки<br>
+"<font class="S19">h1,h2,m1,h3,h4,h5,h6,h7,h8,h9,h10,h11,1,2,35,3,4,5,6,7,8,9,10,g11,g12,g13,14,28,m5,m6,m7</font>"<br> в
+"<font class="S19">h1,h2,m1,h3-h11,1,2,35,3-10,g11-g13,14,28,m5-m7</font>" и обратно
+<hr align="left" width=70%>
+Строки обрабатываются построчно, если многострочный текст.
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?E</span><span class="S11">|</span>N1:N2<span class="S11">|</span>N1:N2 ...</td>
+<td><a name="?E"></a><font class="S0"><font class="S3"><b>Меняет местами заданные строки</b></font>.<br>
+&nbsp;&nbsp;<b>N1<font class="S81">:</font>N2</b> - номера строк которые меняются местами.<br>
+&nbsp;&nbsp;Может быть прописано несколько пар через разделитель <font class="S81"><b>|</b></font><br>
+&nbsp;&nbsp;При отрицательных числах отсчёт ведётся с конца.
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?G</span><span class="S11">|</span>N1:N2<span class="S11">|</span>N1:N2 ...</td>
+<td><a name="?G"></a><font class="S0"><font class="S3"><b>Перемещает строку в заданную позицию</b></font>.<br>
+&nbsp;&nbsp;<b>N1<font class="S81">:</font>N2</b> - строка N1 будет перемещена в позицию N2.<br>
+&nbsp;&nbsp;Может быть прописано несколько пар через разделитель <font class="S81"><b>|</b></font><br>
+&nbsp;&nbsp;Необходимо учитывать, что массив строк каждый раз меняется.<br>
+&nbsp;&nbsp;При отрицательных числах отсчёт ведётся с конца.
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?J</span><span class="S11">|</span>N1:N2<span class="S11">|</span>N1:N2 ...</td>
+<td><a name="?J"></a><font class="S0"><font class="S3"><b>Перемещает строку с заменой</b></font>.<br>
+&nbsp;&nbsp;<b>N1<font class="S81">:</font>N2</b> - строка N1 будет перемещена, заменяя строку N2.<br>
+&nbsp;&nbsp;Может быть прописано несколько пар через разделитель <font class="S81"><b>|</b></font><br>
+&nbsp;&nbsp;Необходимо учитывать, что массив строк каждый раз меняется и уменьшается.<br>
+&nbsp;&nbsp;При отрицательных числах отсчёт ведётся с конца.
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?Q</span>Parameters</td>
+<td><a name="?Q"></a><font class="S0"><font class="S3"><b>Поиск и замена из файла</b></font>.<br>
+
+
+Parameters - <b>FilePath</b>(<b><font class="S81">|</font></b><b>Section</b><b><font class="S81">|</font></b><b>Mode</b><b><font class="S81">|</font></b><b>Flag</b><b><font class="S81">|</font>Registr</b><b><font class="S81">|</font>Sort</b><b><font class="S81">|</font>Concurrence</b><b><font class="S81">|</font>SymbolDelim</b><b><font class="S81">|</font>Read</b>) , где:<br>
+<br>
+&nbsp;&nbsp;<b>FilePath</b> - путь к файлу списка (<u>обязательный</u> параметр, остальные необязательные).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;В списке должны быть прописаны пары поиска и замены, разделённые "<font class="S81"><b><big>=</big></b></font>" .<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Каждая пара с новой строки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Если замена не прописана, то происходит удаление строки поиска.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Так же в поиске и замене можно вставлять символы с помощью функций Autoit <a class="le" href="../fun/chr.htm"><span class="S4"><font size="2"><b>Chr()</b></font></span></a> и <a class="le" href="../fun/chrw.htm"><span class="S4"><font size="2"><b>ChrW()</b></font></span></a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;которые заменяются соответствующими символами.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Так же в поиске и замене можно использовать теги "@CRLF", "@CR", "@LF", "@TAB" означающие переносы строки и табуляцию.<br>
+&nbsp;&nbsp;<b>$GLOBALNAME2D</b> - может использоваться для передачи данных 2D массив из 2-х колонок, в котором:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;в 0-й колонке в ячейках данные для поиска.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;в 1-й колонке в соответствующих ячейках данные для замены.
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:300">
+найти<font class="S81"><b>=</b></font>заменить<br>
+привет<font class="S81"><b>=</b></font>пока<br>
+строка ChrW(8618) <font class="S81"><b>=</b></font><br>
+<font class="S61"><b>@CRLF</b></font>найти<font class="S61"><b>@CRLF</b></font><font class="S81"><b>=</b></font><font class="S61"><b>@CRLF</b></font>заменить<font class="S61"><b>@CRLF</b></font><br>
+</p>
+</div>
+&nbsp;&nbsp;<b>Section</b> - если в файле пары прописаны в секции, то указывается имя секции (в ином случае прописывается символ <b>#</b>) (по умолчанию без секции).<br>
+&nbsp;&nbsp;<b>Mode</b> - режим обработки:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - обычный (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - двойная обработка (это гораздо медленнее, но предотвращает пересечения между строками замены).<br>
+&nbsp;&nbsp;<b>Flag</b> - подготовка списка:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - не производить предварительную очистку.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2 - удалить комментарии в секции списка "поиска и замен" (по умолчанию, если указана секция).<br>
+&nbsp;&nbsp;<b>Registr</b> - регистр:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - замена производится без учёта регистра.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - с учётом регистра (по умолчанию).<br>
+&nbsp;&nbsp;<b>Sort</b> - сортировка:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - не сортировать (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - сортировать строки поиска по длине, по убыванию. (Это позволяет заменять последовательно: длинные строки, затем короткие...).<br>
+&nbsp;&nbsp;<b>Concurrence</b> - совпадение:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - поиск любого вхождения в строку (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - поиск точного совпадения со всем текстом. (Только при точном совпадении происходит замена).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;построчный поиск и замена:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2 - поиск точного совпадения со строкой.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3 - поиск точного совпадения со строкой слева.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;4 - поиск точного совпадения со строкой справа.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;5 - поиск точного совпадения со строкой слева с заменой всей строки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;6 - поиск точного совпадения со строкой справа с заменой всей строки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;7 - поиск любого совпадения в строке с заменой всей строки.<br>
+&nbsp;&nbsp;<b>SymbolDelim</b> - символ, разделяющий пары поиска и замены.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;По умолчанию символ "<font class="S81"><b><big>=</big></b></font>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Так же можно вставлять символы с помощью функций Autoit <a class="le" href="../fun/chr.htm"><span class="S4"><font size="2"><b>Chr()</b></font></span></a> и <a class="le" href="../fun/chrw.htm"><span class="S4"><font size="2"><b>ChrW()</b></font></span></a>, которые заменяются соответствующими символами.<br>
+&nbsp;&nbsp;<b>Read</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - информация файла или переменной считывается один раз, запоминается для дальнейшего использования (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - информация файла или переменной считывается каждый раз как только встретится параметр.<br>
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?P</span></td><td><a name="?P"></a><font class="S0"><font class="S3"><b>Перемешивает строки случайным образом</b></font>.<br>
+</td></tr>
+<tr><td class="s3td"><span class="S51">?PS</span><span class="S11">!!</span>Delim</td><td><a name="?PS"></a><font class="S0"><font class="S3"><b>Перемешивает случайным образом фразы между заданным разделителем</b></font>.<br>
+&nbsp;&nbsp;<b>Delim</b> - разделитель (символ или строка), фразы между которым будут перемешаны.<br>
+&nbsp;&nbsp;Многострочный текст обрабатывается построчно.
+</td></tr>
+<tr><td class="s3td"><span class="S51">?O</span><span class="S11">|</span>Key<span class="S11">|</span>Mode<span class="S11">|</span>Delim</td><td><a name="?O"></a><font class="S0"><font class="S3"><b>Считывание строки из TCIMG.ini (TCIMGU.ini) из секции [Lines]</b></font>.<br>
+&nbsp;&nbsp;<b>Key</b> - ключ из секции [Lines]<br>
+&nbsp;&nbsp;<b>Mode</b> - режим:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - заменяется текущая строка (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - вставляется в конец текущей строки через разделитель Delim.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2 - вставляется в начало текущей строки через разделитель Delim.<br>
+&nbsp;&nbsp;<b>Delim</b> - [необязательный] разделитель в режиме Mode=1 и Mode=2 (по умолчанию разделителя нет).<br>
+
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?N</span><br><span class="S51">?N</span><font class="S11">!!</font>Registr<font class="S11">!!</font>Delim<br><span class="S51">?NS</span><br><span class="S51">?NS</span><font class="S11">!!</font>Registr<font class="S11">!!</font>Delim</td><td><a name="?N"></a><a name="?NS"></a><font class="S0"><font class="S3"><b>Удаляет дубликаты между заданным разделителем</b></font> (остаются уникальные в единственном экземпляре).<br>
+&nbsp;&nbsp;<b>Registr</b> - [необязательный] чувствительность к регистру.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - учитывать регистр (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - не учитывать регистр.<br>
+&nbsp;&nbsp;<b>Delim</b> - [необязательный] разделитель (символ или строка), между которым будут удалены дубликаты.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;по умолчанию "пустой разделитель", т.е. удаление одинаковых символов.<br>
+<hr align="left" width=400>
+&nbsp;&nbsp;<span class="S51">?N</span> - многострочный текст обрабатывается построчно.<br>
+&nbsp;&nbsp;<span class="S51">?NS</span> - обрабатывается весь текст.<br>
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">#O</span><font class="S21">=</font>Number<span class="S11">|</span>SeriesParam</td><td><a name="#O"></a><a name="O"></a><font class="S0"><font class="S3"><b>Преобразование строки относительно её длины</b></font>.
+<br>&nbsp;&nbsp;<font class="S21"><b>=</b></font>Number - преобразование, если длина равна заданному числу Number
+<br>&nbsp;&nbsp;<font class="S21"><b>&#62;</b></font>Number - преобразование, если длина больше заданного числа Number
+<br>&nbsp;&nbsp;<font class="S21"><b>&#60;</b></font>Number - преобразование, если длина меньше заданного числа Number
+<br><font class="S21"><b>&#60;&#62;</b></font>Number - преобразование, если длина не равна заданному числу Number
+<br>&nbsp;&nbsp;&nbsp;<font class="S21"><b>?</b></font>Min-Max - преобразование, если длина входит в диапазон Min-Max заданных чисел
+<br>&nbsp;&nbsp;SeriesParam - серия параметров для преобразования. см. Дополнение №24 (Разделитель между параметрами <font class="S21"><b>;;</b></font> )
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?U</span></td><td><a name="?U"></a><font class="S0"><font class="S3"><b>Замена функций Autoit значениями</b></font>.<br>
+
+&nbsp;&nbsp;<a class="le" href="../fun/chr.htm"><span class="S4"><font size="2"><b>Chr()</b></font></span></a> и <a class="le" href="../fun/chrw.htm"><span class="S4"><font size="2"><b>ChrW()</b></font></span></a> заменяются соответствующими символами.<br>
+&nbsp;&nbsp;<a class="le" href="../fun/clipget.htm"><span class="S4"><font size="2"><b>ClipGet()</b></font></span></a> заменяется содержимым буфера обмена.<br>
+&nbsp;&nbsp;<a class="le" href="../fun/number.htm"><span class="S4"><font size="2"><b>Number()</b></font></span></a> позволяет производить математические действия.<br>
+&nbsp;&nbsp;<a class="le" href="../fun/strinjleft.htm"><span class="S4"><font size="2"><b>StringLeft()</b></font></span></a> позволяет получать указанное число символов строки слева.<br>
+&nbsp;&nbsp;<a class="le" href="../fun/strinjright.htm"><span class="S4"><font size="2"><b>StringRight()</b></font></span></a> позволяет получать указанное число символов строки справа.<br>
+&nbsp;&nbsp;<a class="le" href="../fun/strinjmid.htm"><span class="S4"><font size="2"><b>StringMid()</b></font></span></a> позволяет получать часть символов строки.<br>
+&nbsp;&nbsp;<a class="le" href="../fun/strinjlen.htm"><span class="S4"><font size="2"><b>StringLen()</b></font></span></a> позволяет получать количество символов строки.
+</td></tr>
+
+
+<tr><td class="s3td"><span class="S51">&#62;&#62;</span>String</td><td><a name="Ziro"></a><font class="S0"><font class="S3"><b>Без преобразования и без вставки</b></font>. Указанные в строке <b>String</b> данные не будут никуда вставлены.<br>
+Это может понадобиться для сложных вычислений, к примеру в параметре <a class="le" href="#?V">?V</a>
+<br><br>
+
+
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:900">
+<font class="S1"> ;; для выделенных изображений добавить слово 'равно', если ширина в 2 раза больше высоты; если больше, чем в 2 раза, то 'больше'; если меньше, чем в 2 раза, то 'меньше'</font><br>
+
+<span class="S0"><a class="le" href="../com_slist.htm"><span class="S4">slist</span></a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_lines.htm#^^"><span class="S51">^^</span></a>*<span class="S8">||</span><a class="le" href="add_lines.htm#?V"><span class="S51">?V</span></a>|<span class="S8">&gt</span><span class="S8">&gt</span>|<a class="le" href="../fun/assign.htm"><span class="S41"><b>Assign</b></span></a><span class="S24">(</span><span class="S19">'var_n'</span>,<a class="le" href="../fun/number.htm"><span class="S41"><b>Number</b></span></a><span class="S24">(</span><span class="S8">&lt</span><a class="le" href="add_info.htm#i1"><font class="S01">&#105;&#110;&#102;&#111;</font><font class="S21">=</font><span class="S81">i</span><font class="S91">1</font></a><span class="S8">::</span><span class="S8">&gt</span>/<span class="S8">&lt</span><a class="le" href="add_info.htm#i2"><font class="S01">&#105;&#110;&#102;&#111;</font><font class="S21">=</font><span class="S81">i</span><font class="S91">2</font></a><span class="S8">::</span><span class="S8">&gt</span><span class="S24">)</span>,2<span class="S24">)</span><span class="S8">||</span><a class="le" href="add_lines.htm#?V"><span class="S51">?V</span></a>|<span class="S51">^^</span><span class="S121">|</span><span class="S19">'равно'</span>:<span class="S24">(</span><a class="le" href="../com_exect.htm"><span class="S121"><b>$var_n</b></span></a>=2?<span class="S19">'равно'</span>:<span class="S24">(</span><a class="le" href="../com_exect.htm"><span class="S121"><b>$var_n</b></span></a><span class="S8">&gt</span>2<a class="le" href="../fun/ternary.htm"><font size=3 class="S81"><b>?</b></font></a><span class="S19">'больше'</span><a class="le" href="../fun/ternary.htm"><font size=3 class="S81"><b>:</b></font></a><span class="S19">'меньше'</span><span class="S24">)</span> <a class="le" href="add_gloobal.htm#GLOBALSLIST"><span class="S121">GLOBA&#76;SLIST</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span>
+<br>
+<br>
+<font class="S1"> ;; 1) в переменную $var_n записываются данные: </font>?V|<font class="S81">&#62;&#62;</font>|Assign('var_n',Number(&#60;info=i1::&#62;/&#60;info=i2::&#62;),2)<br>
+<font class="S1"> ;; 2) данные переменной $var_n используются в тернарном сравнении: </font> ?V|^^|'равно':($var_n=2?'равно':($var_n&#62;2?'больше':'меньше')
+</p>
+</div>
+</font></td></tr>
+
+
+
+<tr><td class="s3td"><span class="S51">?V<br>?V<font class="S61"><b>|</b></font></span>2Symbols<font class="S61">|</font>String</td><td><a name="?V"></a>
+<font class="S0"><font class="S3"><b>Выполняет/вычисляет выражение Autoit</b></font>. (см. <a class="le" href="../par/par_aa_functions.htm"><b>список</b></a> раздела "Функции Autoit")<br>
+<span class="S51">?V</span> - выполняет выражение Autoit текущей строки.<br>
+<span class="S51">?V</span><font class="S61"><b>|</b></font></span><font class="S21"><b>2Symbols</b></font><font class="S61"><b>|</b></font><font class="S121"><b>String</b></font> - выполняет выражение Autoit заданной строки, где:<br>
+&nbsp;&nbsp;<font class="S21"><b>2Symbols</b></font> - 2 символа параметров Дополнения №24 (<span class="S51">^^</span>, <span class="S51">$$</span>, <span class="S51">##</span> и др.)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;определяет положение в текущей строке вычисленного значения выражения.<br>
+&nbsp;&nbsp;<font class="S121"><b>String</b></font> - строка выражения Autoit.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;в строке важен синтаксис, иначе будет возвращена пустая строка.<br>
+<br>
+<span class="section">Примеры:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:900">
+
+<span class="S51">?V<font class="S61"><b>|</b></font><span class="S51">$$</span><font class="S61"><b>|</b></font></span><a class="le" href="../fun/filegettime.htm"><span class="S41"><b>FileGetTime</b></span></a><span class="S24">(</span><span class="S19">'::'</span>,0,1<span class="S24">)</span><font class="S81">&</font><font class="S19">'<--->'</font>
+<br><br>
+<font class="S1"> ;; Получение различных счётчиков при переименовании</font><br>
+
+<span class="S0"><a class="le" href="../com_renms.htm"><span class="S4">renms</span></a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_lines.htm###"><span class="S51">##</span></a>-test-cntr<span class="S8">&lt</span>1:6|1|1<span class="S8">&gt</span><span class="S8">||</span><a class="le" href="add_lines.htm#?V"><span class="S51">?V</span></a><font class="S61"><b>|</b></font><span class="S51">^^</span><font class="S61"><b>|</b></font><a class="le" href="../fun/ceiling.htm"><span class="S41"><b>Ceiling</b></span></a><span class="S24">(</span><a class="le" href="add_lines.htm"><span class="S51">:NUMBER:</span></a>/6<span class="S24">)</span><span class="S8">||</span>upd<span class="S8">&lt</span>1<span class="S8">&gt</span></span>
+<br>
+<span class="S0"><a class="le" href="../com_renms.htm"><span class="S4">renms</span></a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_lines.htm#$$"><span class="S51">$$</span></a>-cntr<span class="S8">&lt</span>1:6|1|1<span class="S8">&gt</span>-img-<span class="S8">||</span><a class="le" href="add_lines.htm#?V"><span class="S51">?V</span></a><font class="S61"><b>|</b></font><span class="S51">$$</span><font class="S61"><b>|</b></font><a class="le" href="add_lines.htm"><span class="S51">:NUMBER:</span></a>-<a class="le" href="../fun/floor.htm"><span class="S41"><b>Floor</b></span></a><span class="S24">(</span><a class="le" href="add_lines.htm"><span class="S51">:NUMBER:</span></a>/6<span class="S24">)</span>*6<span class="S8">||</span>upd<span class="S8">&lt</span>1<span class="S8">&gt</span></span>
+<br>
+<span class="S0"><a class="le" href="../com_renms.htm"><span class="S4">renms</span></a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_lines.htm#$$"><span class="S51">$$</span></a>-cntr<span class="S8">&lt</span>1:6|1|1<span class="S8">&gt</span>-img-<span class="S8">||</span><a class="le" href="add_lines.htm#?V"><span class="S51">?V</span></a><font class="S61"><b>|</b></font><span class="S51">$$</span><font class="S61"><b>|</b></font><a class="le" href="../fun/mod.htm"><span class="S41"><b>Mod</b></span></a><span class="S24">(</span><a class="le" href="add_lines.htm"><span class="S51">:NUMBER:</span></a>,6<span class="S24">)</span><a class="le" href="../fun/ternary.htm"><font size=3 class="S81"><b>?</b></font></a><a class="le" href="../fun/mod.htm"><span class="S41"><b>Mod</b></span></a><span class="S24">(</span><a class="le" href="add_lines.htm"><span class="S51">:NUMBER:</span></a>,6<span class="S24">)</span><a class="le" href="../fun/ternary.htm"><font size=3 class="S81"><b>:</b></font></a>6<span class="S8">||</span>upd<span class="S8">&lt</span>1<span class="S8">&gt</span></span>
+<br>
+<span class="S0"><a class="le" href="../com_renms.htm"><span class="S4">renms</span></a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_lines.htm#$$"><span class="S51">$$</span></a>-cntr<span class="S8">&lt</span>1:6|1|1<span class="S8">&gt</span>-img-<span class="S8">||</span><a class="le" href="add_lines.htm#?V"><span class="S51">?V</span></a><font class="S61"><b>|</b></font><span class="S8">&gt</span><span class="S8">&gt</span><font class="S61"><b>|</b></font><a class="le" href="../fun/assign.htm"><span class="S41"><b>Assign</b></span></a><span class="S24">(</span><span class="S19">'var_n'</span>,<a class="le" href="add_lines.htm"><span class="S51">:NUMBER:</span></a>-<a class="le" href="../fun/floor.htm"><span class="S41"><b>Floor</b></span></a><span class="S24">(</span><a class="le" href="add_lines.htm"><span class="S51">:NUMBER:</span></a>/6<span class="S24">)</span>*6<span class="S24">)</span>,2<span class="S8">||</span><a class="le" href="add_lines.htm#?V"><span class="S51">?V</span></a>|<span class="S51">^^</span><a class="le" href="com_exect.htm"><span class="S121"><b>$var_n</b></span></a>=0<a class="le" href="../fun/ternary.htm"><font size=3 class="S81"><b>?</b></font></a>6<a class="le" href="../fun/ternary.htm"><font size=3 class="S81"><b>:</b></font></a><a class="le" href="com_exect.htm"><span class="S121"><b>$var_n</b></span></a><span class="S8">||</span>upd<span class="S8">&lt</span>1<span class="S8">&gt</span></span>
+</p>
+</div>
+</font></td></tr>
+
+
+<tr><td class="s3td"><span class="S51">?Y<br>?Y<font class="S61"><b>|</b></font></span>2Symbols<font class="S61">|</font>String</td><td><a name="?Y"></a>
+<font class="S0"><font class="S3"><b>Преобразование с помощью функций js, vbs, au3</b></font>.<br>
+
+<span class="S51">?Y</span> - запускает заданную функцию с параметрами.<br>
+<span class="S51">?Y</span><font class="S61"><b>|</b></font></span><font class="S21"><b>2Symbols</b></font><font class="S61"><b>|</b></font><font class="S121"><b>String</b></font> - выполняет выражение Autoit заданной строки, где:<br>
+&nbsp;&nbsp;<font class="S21"><b>2Symbols</b></font> - 2 символа параметров Дополнения №24 (<span class="S51">^^</span>, <span class="S51">$$</span>, <span class="S51">##</span> и др.)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;определяет положение в текущей строке вычисленного значения выражения.<br>
+&nbsp;&nbsp;<font class="S121"><b>String</b></font> - состоит из Number|Func|Param1|Param2|...|Param8, где:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number - режим запуска:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - для функций vbs скриптов.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - для функций js скриптов.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - для функций au3 скриптов.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Func - имя функции.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Param1|Param2|...|Param8 - параметры, передаваемые функции.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;тег <font class="S21">:TEXT:</font> будет заменён текущим текстом.<br>
+<br>
+Подключение своих скриптов и функций описано в командах <a class="le" href="../com_funvb.htm"><span class="S4"><b>funvb</b></span></a>, <a class="le" href="../com_funjs.htm"><span class="S4"><b>funjs</b></span></a>, <a class="le" href="../com_funau.htm"><span class="S4"><b>funau</b></span></a>
+<br>
+<span class="section">Примеры:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:900">
+<font class="S1"> ;; добавить в конец текстового файла под курсором статистику</font><br>
+<a class="le" href="../com_textt.htm"><span class="S4">textt</span></a><span class="S8">=</span>C:\test.txt<span class="S8">||</span><a class="le" href="add_lines.htm#?Y"><span class="S51">?Y</span></a>|<a class="le" href="add_lines.htm#$$"><span class="S51">$$</span></a>|1|getTextStatistics|<font class="S21">:TEXT:</font><span class="S8">||</span>upd<span class="S8">&lt</span>1<span class="S8">&gt</span>
+</p>
+</div>
+
+</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">?X</span>URL<font class="S61">\\</font>Code</td><td><a name="?X"></a>
+<font class="S0"><font class="S3"><b>Получение содержимого страницы интернета</b></font>.
+<br>&nbsp;&nbsp;<b>URL</b> - ссылка (http://tc-image.3dn.ru/forum/5-498-1)
+<br>&nbsp;&nbsp;<b>Code</b> <font class="S81">[</font>необязательный<font class="S81">]</font> - кодировка получаемых данных:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;1 - ANSI 1251 (по умолчанию)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;2 - UTF-16 LE 1200
+<br>&nbsp;&nbsp;&nbsp;&nbsp;3 - UTF-16 BE 1201
+<br>&nbsp;&nbsp;&nbsp;&nbsp;4 - UTF-8
+<br>&nbsp;&nbsp;URL\\8 - открытие страницы в скрытом браузере IE и получение информации.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;есть возможность получать содержимое из chm файлов (ссылки вида: mk:@MSITStore:Path.chm::URL\\8).
+<br>&nbsp;&nbsp;TITLE\\9 - получение html кода содержимого открытого окна Ex&#112;&#108;orer, CHM, ..., где TITLE - заголовок или хендл окна.
+<br>&nbsp;&nbsp;URL\\10 - получение информации интернета с помощью объекта MSXML2.XMLHTTP.
+
+<hr align="left" width=70%>
+Так же поддерживается:<br>
+&nbsp;&nbsp;$GLOBALNAME\\Code - исходный код html всех URL ссылок, переданных в глобальном массиве
+
+</font></td></tr>
+
+<tr><td class="s3td"><span class="S51">#A</span>String<br><br><font class="S51">#Z</font>String</td><td><a name="A"></a><a name="#A"></a><a name="#Z"></a><a name="Z"></a>
+<font class="S0"><font class="S3"><b>Вставка</b></font>. Вставка после обработки всех параметров переданных команде.<br>
+&nbsp;&nbsp;Параметры подключены в командах:
+<a class="le" href="../com_lists.htm"><span class="S4"><b>lists</b></span></a>,
+<a class="le" href="../com_slist.htm"><span class="S4"><b>slist</b></span></a> (и подобных),
+<a class="le" href="../com_textx.htm"><span class="S4"><b>textx</b></span></a>,
+<a class="le" href="../com_textt.htm"><span class="S4"><b>textt</b></span></a>,
+<a class="le" href="../com_extra.htm"><span class="S4"><b>extra</b></span></a>,
+<a class="le" href="../com_extrf.htm"><span class="S4"><b>extrf</b></span></a>,
+<a class="le" href="../com_urlxt.htm"><span class="S4"><b>urlxt</b></span></a>,
+<a class="le" href="../com_exbns.htm"><span class="S4"><b>exbns</b></span></a>,
+<a class="le" href="../com_exbnf.htm"><span class="S4"><b>exbnf</b></span></a>
+<br>
+&nbsp;&nbsp;<span class="S51">#A</span> - вставка в начало после всех преобразований.<br>
+&nbsp;&nbsp;<span class="S51">#Z</span> - вставка в конец после всех преобразований.<br>
+&nbsp;&nbsp;В String могут использоваться:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• "<b>@CR</b>" - символ возврата каретки Chr(13), "<b>@LF</b>" - символ перевода строки Chr(10), "<b>@CRLF</b>" = @CR & @LF, "<b>@TAB</b>" - символ Tab Chr(9).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• функции Autoit (см. параметр <a class="le" href="#?U"><b>?U</b></a>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• информация глобальных переменных <font class="S91">GLOBALNAME</font>&#60;N&#62;, <font class="S91">GLOBALNAME</font>&#60;xN&#62; (см. Дополнение<a class="le" href="add_gloobal.htm"> <b>№23</b></a>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• информация переменных <font class="S91">$var_...</font> (см. команду<a class="le" href="../com_exect.htm"> <b>exect</b></a>)
+<hr align="left" width=70%>
+Если параметры нужны в какой-либо команде, то сообщите - подключу.
+</font></td></tr>
+
+
+<tr><td class="s3td"><span class="S51">#Y</span>Parameters</td><td><a name="#Y"></a><a name="Y"></a>
+<font class="S0"><font class="S3"><b>Получение из строки заданных символов и их группировка</b></font>.
+<br>Parameters - <b>Mode<font class="S81">:</font>Split<font class="S81">:</font>Delim1<font class="S81">:</font>Delim2</b>, где:
+<br>
+<br>&nbsp;&nbsp;<b>Mode</b> - режим получения символов:
+<br>&nbsp;&nbsp;&nbsp;-1 - вставляется пустая строка (позволяет вставить разделитель Delim2)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;0 - вставляется текущая строка.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;1 - получение из строки чисел.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;2 - получение из строки английских букв.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;3 - получение из строки русских букв.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;RegEx - регулярное выражение для получения нужных символов.
+<br>&nbsp;&nbsp;<b>Split</b> - количество, по сколько символов "разбивать" строку:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;0 - не разбивать.
+<br>&nbsp;&nbsp;<b>Delim1</b> - <span class="S8">[</span>необязательный<span class="S8">]</span> строка (символ) разделитель между группой символов при разбивке Split.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;по умолчанию символ <font class="S81"><b>|</b></font>
+<br>&nbsp;&nbsp;&nbsp;-1 - перенос строки @CRLF
+<br>&nbsp;&nbsp;<b>Delim2</b> - <span class="S8">[</span>необязательный<span class="S8">]</span> строка (символ) добавляемый в конец группы.
+
+<hr align="left" width=70%>
+Может использоваться несколько групп параметров через разделитель <font class="S61"><b>!!</b></font><br>
+<b>Mode<font class="S81">:</font>Split<font class="S81">:</font>Delim1<font class="S81">:</font>Delim2</b><font class="S61"><b>!!</b></font><b>Mode<font class="S81">:</font>Split<font class="S81">:</font>Delim1<font class="S81">:</font>Delim2</b><font class="S61"><b>!!</b></font>...<font class="S61"><b>!!</b></font><b>Mode<font class="S81">:</font>Split<font class="S81">:</font>Delim1<font class="S81">:</font>Delim2</b>
+<hr align="left" width=70%>
+&nbsp;&nbsp;В Delim1 и Delim2 могут использоваться функций Autoit <a class="le" href="../fun/chr.htm"><span class="S4"><font size="2"><b>Chr()</b></font></span></a> и <a class="le" href="../fun/chrw.htm"><span class="S4"><font size="2"><b>ChrW()</b></font></span></a>, которые заменяются соответствующими символами
+</font></td></tr>
+
+
+<tr><td class="s3td"><span class="S51">#J</span>Number<font class="S81">|</font>LN</td><td><a name="#J"></a><a name="J"></a><font class="S0"><font class="S3"><b>Xor кодирование/декодирование строки</b></font>.<br>Если фраза вначале или после разделителя <span class="S8">||</span> начинается с <span class="S51">#J</span>, то последующий номер <b>Number</b> будет означать число модуль побитового сложения кодов символов строки.
+<br>&nbsp;&nbsp;2-й параметр LN <font class="S81">[</font>необязательный<font class="S81">]</font> означает построчную обработку.
+<hr align="left" width=70%>
+В Number могут использоваться математические действия.<br>
+Кодирование/декодирование должно осуществляться с одним и тем же модулем Number.
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?i</span><font class="S81">|</font>Data<font class="S81">|</font>Mode<font class="S81">|</font>Delim</td><td><a name="?i"></a><a name="?I"></a><font class="S0"><font class="S3"><b>Получение данных</b></font>.<br>
+&nbsp;&nbsp;<b>Data</b> - возможны варианты:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;File - путь к текстовому файлу.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$GLOBALNAME - глобальный массив: получение всех строк.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$GLOBALNAME[N] - получение заданной строки глобального массива.<br>
+&nbsp;&nbsp;<b>Mode</b> - режим:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - заменяется текущая строка (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - вставляется в конец текущей строки через разделитель Delim.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2 - вставляется в начало текущей строки через разделитель Delim.<br>
+&nbsp;&nbsp;<b>Delim</b> - [необязательный] разделитель в режиме Mode=1 и Mode=2 (по умолчанию разделителя нет).<br>
+
+<hr align="left" width=70%>
+&nbsp;&nbsp;В Delim могут использоваться функции Autoit.
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">#i</span><font class="S81">|</font>Data<font class="S81">|</font>Mode<font class="S81">|</font>Delim1<font class="S81">|</font>Delim2</td><td><a name="#i"></a><a name="#I"></a><a name="i"></a><a name="I"></a><font class="S0"><font class="S3"><b>Получение данных по списку</b></font>.<br>
+&nbsp;&nbsp;<b>Data</b> - возможны варианты:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;FileList - путь к списку с текстовыми файлами.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$GLOBALNAME - глобальный массив, в котором содержатся пути к текстовым файлам.<br>
+&nbsp;&nbsp;<b>Mode</b> - режим:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - заменяется текущая строка (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - вставляется в конец текущей строки через разделитель Delim2.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2 - вставляется в начало текущей строки через разделитель Delim2.<br>
+&nbsp;&nbsp;<b>Delim1</b> - [необязательный] разделитель между содержимым текстовых файлов (по умолчанию <font class="S51"><b>-1</b></font> разделителя нет).<br>
+&nbsp;&nbsp;<b>Delim2</b> - [необязательный] разделитель в режиме Mode=1 и Mode=2 (по умолчанию разделителя нет).<br>
+
+<hr align="left" width=70%>
+&nbsp;&nbsp;Delim1 и Delim2 могут использоваться функции Autoit.
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?0</span><font class="S61"><b>|</b></font>2Symbols<font class="S61"><b>|</b></font>String<br><span class="S51">?1</span><font class="S61"><b>|</b></font>2Symbols<font class="S61"><b>|</b></font>String<br><span class="S51">?2</span><font class="S61"><b>|</b></font>2Symbols<font class="S61"><b>|</b></font>String<br><span class="S51">?3</span><font class="S61"><b>|</b></font>2Symbols<font class="S61"><b>|</b></font>String<br><span class="S51">?4</span><font class="S61"><b>|</b></font>2Symbols<font class="S61"><b>|</b></font>String<br></td><td><a name="?0"></a><a name="?1"></a><a name="?2"></a><a name="?3"></a><a name="?4"></a>
+<font class="S0"><font class="S3"><b>Получение информации по списку.</b></font>
+
+<br>&nbsp;&nbsp;<span class="S51">?0</span><font class="S81"><b>|</b></font>2Symbols<font class="S81"><b>|</b></font>$GLOBALNAME<font class="S81"><b>|</b></font>Number
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Получение информации из массива, где:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$GLOBALNAME - глобальный массив с данными см. Дополнение<a class="le" href="add_gloobal.htm"> <b>№23</b></a>.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number - номер ячейки массива, из которой будут получены данные.
+
+<br>
+<br>&nbsp;&nbsp;<span class="S51">?1</span><font class="S81"><b>|</b></font>2Symbols<font class="S81"><b>|</b></font>File<font class="S81"><b>|</b></font>Delim<font class="S81"><b>|</b></font>Number
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Получение информации из файла, где:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File - путь к файлу со списком.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delim - разделитель, по которому список делится на части.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number - номер части, из которой будут получены данные.
+
+<br>
+<br>&nbsp;&nbsp;<span class="S51">?2</span><font class="S81"><b>|</b></font>2Symbols<font class="S81"><b>|</b></font>File<font class="S81"><b>|</b></font>Section<font class="S81"><b>|</b></font>Number
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Получение информации из секции ini файла, где:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File - путь к ini файлу.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section - имя секции, в которой прописан список строк.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number - номер строки для получения данных.
+
+<br>
+<br>&nbsp;&nbsp;<span class="S51">?3</span><font class="S81"><b>|</b></font>2Symbols<font class="S81"><b>|</b></font>File<font class="S81"><b>|</b></font>Section<font class="S81"><b>|</b></font>Key<font class="S81"><b>|</b></font>Delim<font class="S81"><b>|</b></font>Number
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Получение информации из ключа ini файла, где:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File - путь к ini файлу.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section - имя секции.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key - имя ключа, в значении которого список данных, прописанных через разделитель.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delim - разделитель, по которому список делится на части.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number - номер части, из которой будут получены данные.
+
+<br>
+<br>&nbsp;&nbsp;<span class="S51">?4</span><font class="S81"><b>|</b></font>2Symbols<font class="S81"><b>|</b></font>String<font class="S81"><b>|</b></font>Delim<font class="S81"><b>|</b></font>Number
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Получение данных из строки, где:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String - строка со списком данных, прописанных через разделитель.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delim - разделитель, по которому список делится на части.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number - номер части, из которой будут получены данные.
+<br>
+<br>&nbsp;&nbsp;<font class="S21"><b>2Symbols</b></font> - 2 символа параметров Дополнения 24 (<span class="S51">^^</span>, <span class="S51">$$</span>, <span class="S51">##</span> и др.)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;определяет положение в текущей строке полученной информации.
+<br>
+<br>&nbsp;&nbsp;Delim - в разделителе могут использоваться:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• "<b>@CR</b>" - символ возврата каретки Chr(13), "<b>@LF</b>" - символ перевода строки Chr(10), "<b>@CRLF</b>" = @CR & @LF, "<b>@TAB</b>" - символ Tab Chr(9).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• функции Autoit (см. параметр <a class="le" href="#?U"><b>?U</b></a>)
+
+<br>
+<br>&nbsp;&nbsp;Данные возвращаются "по кругу": если номер (Number) больше, чем частей, то расчёт ведётся с начала.
+<br>
+<br>
+</font>
+<p class="codeheader" style="position:relative;padding:6px;white-space:nowrap">
+<span class="S0"><a class="le" href="../com_slist.htm"><span class="S4">slist</span></a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_lines.htm#?1"><span class="S51">?1</span></a>|<a class="le" href="add_lines.htm#^^"><span class="S51">^^</span></a>|C:\List.txt|<a class="le" href="../fun/makros.htm#@CRLF"><span class="S6">&#64;CRLF</span></a>|:LISTNUM: <a class="le" href="add_gloobal.htm#GLOBALSLIST"><span class="S121">GLOBA&#76;SLIST</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; добавить в начало путей выделенных объектов фразы из файла</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_slist.htm"><span class="S4">slist</span></a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_lines.htm#?2"><span class="S51">?2</span></a>|<a class="le" href="add_lines.htm#^^"><span class="S51">^^</span></a>|C:\List.ini|Section|:LISTNUM: <a class="le" href="add_gloobal.htm#GLOBALSLIST"><span class="S121">GLOBA&#76;SLIST</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; добавить в начало путей выделенных объектов фразы из файла, прописанных в секции [Section] каждая с новой строки</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_slist.htm"><span class="S4">slist</span></a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_lines.htm#?3"><span class="S51">?3</span></a>|<a class="le" href="add_lines.htm#^^"><span class="S51">^^</span></a>|C:\List.ini|Section2|Key|<a class="le" href="../fun/chr.htm"><span class="S41"><b>Chr</b></span></a><span class="S24">(</span>124<span class="S24">)</span>|:LISTNUM: <a class="le" href="add_gloobal.htm#GLOBALSLIST"><span class="S121">GLOBA&#76;SLIST</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; добавить в начало путей выделенных объектов фразы из ключа Key в секции [Section], прописанных через разделитель |</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_slist.htm"><span class="S4">slist</span></a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_lines.htm#?4"><span class="S51">?4</span></a>|<a class="le" href="add_lines.htm#^^"><span class="S51">^^</span></a>|11\22\33\44\55|\|:LISTNUM: <a class="le" href="add_gloobal.htm#GLOBALSLIST"><span class="S121">GLOBA&#76;SLIST</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; добавить в начало путей выделенных объектов заданные фразы</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_sends.htm"><span class="S4">sends</span></a>=11|22|33|44|55<span class="S4">??</span>-4 <a class="le" href="../com_slist.htm"><span class="S51">slist</span></a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span><a class="le" href="add_lines.htm#?0"><span class="S51">?0</span></a>|<a class="le" href="add_lines.htm#^^"><span class="S51">^^</span></a>|<a class="le" href="add_gloobal.htm#LISTGLOBALSYN"><span class="S91">$GLOB&#65;&#76;SENDS</span></a>|:LISTNUM: <a class="le" href="add_gloobal.htm#GLOBALSLIST"><span class="S121">GLOBA&#76;SLIST</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; добавить в начало путей выделенных объектов фразы из массива</font><br></p>
+
+</td></tr>
+
+<tr><td class="s3td"><span class="S51">?5</span><font class="S81"><b>|</b></font>Line<span class="S11">!!</span>Delim</td><td><a name="?5"></a><font class="S0">
+<font class="S3"><b>Получение кода таблиц(ы) htm, включая вложенные таблицы</b></font>. (тег &#60;table&#62;).
+<br>&nbsp;&nbsp;<b>Line</b> - строка адресов таблиц, прописанных через запятую. Варианты:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;2 - получить код 2-й таблицы 1-го уровня.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;2,3 - получить код 2-й и 3-й таблиц 1-го уровня.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;2/1/2 - получить код вложенной таблицы 3-го уровня по заданному адресу.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;4/2/1,3/1 - получить код вложенных таблиц 3-го и 2-го уровня по заданным адресам.
+<br>&nbsp;&nbsp;<b>Delim</b> - <font class="S81">[</font>необязательный<font class="S81">]</font> разделитель (символ или строка) между заданными таблицами (по умолчанию перенос строки)
+<hr align="left" width=70%>
+Для получения нумерованной адресами структуры всех таблиц кода воспользуйтесь <span class="S51">?5</span><font class="S81"><b>|</b></font>0
+</td></tr>
+
+
+<tr><td class="s3td"><span class="S51">?6</span><font class="S81"><b>|</b></font>Lang1<font class="S81"><b>|</b></font>Lang2<font class="S81"><b>|</b></font>Mode</td><td><a name="?6"></a><font class="S0">
+<font class="S3"><b>Онлайн перевод</b></font> (Временно может не работать).
+<br>&nbsp;&nbsp;<b>Lang1</b> - аббревиатура языка с которого нужно перевести (для автоматического распознавания языка прописывается <font class="S19">'auto'</font>)
+<br>&nbsp;&nbsp;<b>Lang2</b> - аббревиатура языка на который нужно перевести текущий текст. см. Дополнение<a class="le" href="add_lang.htm"> <b>№14</b></a>
+<br>&nbsp;&nbsp;<b>Mode</b> - режим перевода:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;0 - перевод в Google.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;1 - перевод в MS Bing.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;2 - перевод в Yandex.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;3 - перевод в MyMemory (<font class="S19">'auto'</font> не поддерживается).
+<hr align="left" width=70%>
+Подробности в функции <a class="le" href="../fun/_GTR.htm"><b>_GTR</b></a>
+
+
+</td></tr>
+
+
+
+</td></tr></table>
+<p></p>
+<a name="TNUM"></a><br>Дополнение к параметру <a class="le" href="#N">#N</a><br><br>
+
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td class="s3td">tnum<span class="S8">[</span><span class="S8">]</span><br><br>enum<span class="S8">[</span><span class="S8">]</span></td><td><font class="S0"><font class="S3"><b>Цифровой счётчик.</b></font>
+<br>Параметр <font class="S91">tnum</font><span class="S8">[</span><b>Begin</b><font class="S81">|</font><b>Step</b><font class="S81">|</font><b>Count</b><span class="S8">]</span>, где:<br>
+&nbsp;&nbsp;<b>Begin</b> - начальное число.<br>
+&nbsp;&nbsp;<b>Step</b> - шаг счётчика.<br>
+&nbsp;&nbsp;<b>Count</b> - количество цифр в счётчике.
+
+<hr align="left" width=400><font class="S3"><a name="ENUM"></a><b>Буквенный счётчик.</b></font>
+<br>
+Параметр <font class="S91">enum</font><span class="S8">[</span><b>Letter</b><font class="S81">|</font><b>Step</b><font class="S81">|</font><b>Count</b><span class="S8">]</span>, где:<br>
+&nbsp;&nbsp;<b>Letter</b> - буква с которой начать отсчёт.<br>
+&nbsp;&nbsp;<b>Step</b> - шаг счётчика.<br>
+&nbsp;&nbsp;<b>Count</b> - количество букв в счётчике.<br>
+<br>
+Могут применяться 2 варианта:<br>
+&nbsp;&nbsp;1. В котором используются все три подпараметра <span class="S8">[</span>A<font class="S81">|</font>3<font class="S81">|</font>2<span class="S8">]</span> - аналог счётчика в диалоге переименования в Total Commander<br>
+&nbsp;&nbsp;2. В котором используется только первые два <span class="S8">[</span>A+<span class="S8">]</span> или <span class="S8">[</span>A+<font class="S81">|</font>1<span class="S8">]</span> (к символу с которого начинать дописывается <font class="S81"><b>+</b></font>)<br>
+<br>
+Счётчик может быть как латинским, так и кириллицей, в зависимости от заданной буквы <b>Letter</b><br>
+Счётчик может быть как нижнем, так и в верхнем регистре, в зависимости от заданной буквы <b>Letter</b>
+
+<hr align="left" width=400><font class="S3"><b>Буквенный счётчик со своим набором символов.</b></font>
+<br>
+Параметр <font class="S91">enum</font><span class="S8">[</span><b>Key<font class="S51">?</font>Number</b><font class="S81">|</font><b>Step</b><font class="S81">|</font><b>Count</b><span class="S8">]</span>, где:<br>
+
+&nbsp;&nbsp;<b>Key</b> - имя ключа в TCIMG.ini в секции <b><font color="red">[</font>Enum<font color="red">]</font></b>, в котором прописан набор символов через разделитель <font class="S81"><b>|</b></font>.<br>
+&nbsp;&nbsp;<b>Number</b> - номер - с какого элемента из набора начать.<br>
+&nbsp;&nbsp;<b>Step</b> - шаг счётчика.<br>
+&nbsp;&nbsp;<b>Count</b> - количество букв в счётчике.<br>
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:300">
+<b><font color="red">[</font>Enum<font color="red">]</font></b><br>
+<b>Key1<font color="red">=</font>&#10102;<font color="red">|</font>&#10103;<font color="red">|</font>&#10104;<font color="red">|</font>&#10105;<font color="red">|</font>&#10106;<font color="red">|</font>&#10107;<font color="red">|</font>&#10108;<font color="red">|</font>&#10109;<font color="red">|</font>&#10110;</b><br>
+<b>Key2<font color="red">=<big></font>&#10112;<font color="red">|</font>&#10113;<font color="red">|</font>&#10114;<font color="red">|</font>&#10115;<font color="red">|</font>&#10116;<font color="red">|</font>&#10117;<font color="red">|</font>&#10118;<font color="red">|</font>&#10119;<font color="red">|</font>&#10120;</b><br></big>
+
+</p>
+</div>
+</font></td></tr>
+</td></tr>
+<tr><td class="s3td">rndm<span class="S8">[]</span></td><td><font class="S0"><font class="S3"><b>Получение случайных данных.</b></font> см. Дополнение<a class="le" href="add_randms.htm"> <b>№30</b></a>
+</font></td></tr>
+
+</td></tr></table>
+<p></p>
+
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

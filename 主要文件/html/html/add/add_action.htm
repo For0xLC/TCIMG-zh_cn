@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>FirstAction.exe - создание на панели инструментов Total Commander кнопок, позволяющих упростить работу пользователя</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №32</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">FirstAction.exe - создание на панели Total Commander инструментов кнопок, позволяющих упростить работу пользователя.</font></p>
+<hr><br>
+Автор идеи и реализация <b>Jury Abel'</b>
+<br><br>
+FirstAction.exe - лаунчер, который запускает TCIMG с параметрами, прописанными в <a class="le" href="../../config.htm#Commands"><font class="S1"><b>TCIMG.ini</b></font></a>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<font class="S81"><b>[</b></font><b>Commands</b><font class="S81"><b>]</b></font><br>
+<b>FirstAction</b><font class="S81"><b>=</b></font>...
+</p>
+<br>
+<font class="S41"><b>Запуск FirstAction.exe</b></font>
+<br><br>
+• FirstAction.exe - находится в папке TCIMG.
+<br><br>
+• FirstAction.exe - запускает утилиту TCIMG с заданными параметрами, что приводит к созданию на <u>активной</u> панели инструментов Total Commander 2-х кнопок:
+<br><br>
+&nbsp;&nbsp;<img src="../../images/firstaction1.png" border="0"> универсальной кнопки и 
+<br>
+&nbsp;&nbsp;<img src="../../images/firstaction2.png" border="0"> кнопки панели инструментов (в виде выпадающего меню)
+<br><br>
+с заранее созданными кнопками, которые упрощают и ускоряют работу пользователя многократно.
+<br>
+<br>
+<p align="center"><img src="../../images/firstaction3.png" border="0"></p>
+<br>
+• При запуске:<br><br>
+&nbsp;&nbsp;<font size="+1" class="S19"><b>&#8921;</b></font> В папке TCIMG создаются два файла <b>TCIMGU.ini</b> и <b>TCIMGU.lng </b> (если их нет в папке)
+<br>
+&nbsp;&nbsp;<font size="+1" class="S19"><b>&#8921;</b></font> Они являются точной копией TCIMG.ini и будет точная копия <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_LANGUAGE.lng</b></font></a>, где LANGUAGE - выбранный пользователем, в диалоговом окне, язык
+<br>
+&nbsp;&nbsp;<font size="+1" class="S19"><b>&#8921;</b></font> <b>TCIMGU.ini</b> и <b>TCIMGU.lng </b> - являются файлами пользовательских настроек, если они существуют в папке утилиты, то автоматически значения ключей будут браться из них, недостающие из соответствующих TCIMG.ini и TCIMG_LANGUAGE.lng.
+<br>
+&nbsp;&nbsp;<font size="+1" class="S19"><b>&#8921;</b></font> Вы можете вносить свои настройки в TCIMGU.ini или TCIMGU.lng файлы не боясь, что при обновлении утилиты ваши настройки исчезнут.
+
+<br><br>
+<font class="S41"><b>Что позволяет делать FirstAction.exe?</b></font>
+<br><br>
+<b>1.</b> <img src="../../images/firstaction1.png" border="0"> Универсальная кнопка создает и добавляет кнопки TCIMG на активную панель инструментов Total Commander.
+<br>
+&nbsp;&nbsp;&nbsp;<font size="+1" class="S19"><b>&#8921;</b></font> Кнопки создаются из <u>параметров</u> и <u>описания задачи</u> (подсказки), находящихся в буфере обмена.
+<br>
+&nbsp;&nbsp;&nbsp;<font size="+1" class="S19"><b>&#8921;</b></font> В буфере обмена могут находится данные следующих видов:
+<br><br>
+
+
+<span class="section">Пример из справки:</span><p></p>
+<a href="javascript:ClipBoard();"><IMG NAME="botton" title="Копировать в буфер" style='margin: 5px 4px 4px 10px;' src='../../images/copy.gif'" border="0" align='right'></a>
+<p id="copytext" class="codebox"><span class="S0">
+<a class="le" href="../com_copys.htm"><span class="S51">copys</span></a><span class="S8">=</span><a class="le" href="add_param.htm">%L</a><span class="S8">||</span>&#34;<a class="le" href="add_param.htm">%t</a></span>&#34;<font class="S21"> ;; копировать в другую панель выделенное, не заменяя имеющиеся элементы</font>
+</p>
+<textarea ID="holdtext" STYLE="display:none;"></textarea><SCRIPT LANGUAGE="JavaScript">function ClipBoard() {holdtext.innerText = copytext.innerText;Copied = holdtext.createTextRange();Copied.execCommand("Copy");} </SCRIPT>
+
+<br>
+<span class="section">Пример из TCIMG.txt:</span><p></p>
+<a href="javascript:ClipBoard2();"><IMG NAME="botton" title="Копировать в буфер" style='margin: 5px 4px 4px 10px;' src='../../images/copy.gif'" border="0" align='right'></a>
+<p id="copytext2" class="codebox"><span class="S0">
+<font class="S19"><b>&#34;</b></font><a class="le" href="../com_copys.htm"><span class="S51">copys</span></a><span class="S8">=</span><a class="le" href="add_param.htm">%L</a><span class="S8">||</span>&#34;<a class="le" href="add_param.htm">%t</a></span>&#34;<font class="S19"><b>&#34;</b></font><font class="S21"> - копировать в другую панель выделенное, не заменяя имеющиеся элементы</font>
+</p>
+<textarea ID="holdtext2" STYLE="display:none;"></textarea><SCRIPT LANGUAGE="JavaScript">function ClipBoard2() {holdtext2.innerText = copytext2.innerText;Copied = holdtext2.createTextRange();Copied.execCommand("Copy");} </SCRIPT>
+
+<br>
+<span class="section">Пример из 2-x строк:</span><p></p>
+<a href="javascript:ClipBoard3();"><IMG NAME="botton" title="Копировать в буфер" style='margin: 5px 4px 4px 10px;' src='../../images/copy.gif'" border="0" align='right'></a>
+<p id="copytext3" class="codebox"><span class="S0">
+<a class="le" href="../com_copys.htm"><span class="S51">copys</span></a><span class="S8">=</span><a class="le" href="add_param.htm">%L</a><span class="S8">||</span>&#34;<a class="le" href="add_param.htm">%t</a></span>&#34;
+<br>
+<font class="S21">копировать в другую панель выделенное, не заменяя имеющиеся элементы</font></big>
+</p>
+<textarea ID="holdtext3" STYLE="display:none;"></textarea><SCRIPT LANGUAGE="JavaScript">function ClipBoard3() {holdtext3.innerText = copytext3.innerText;Copied = holdtext3.createTextRange();Copied.execCommand("Copy");} </SCRIPT>
+
+<br>
+<span class="section">Пример с чужими путями TCIMG:</span><p></p>
+<a href="javascript:ClipBoard4();"><IMG NAME="botton" title="Копировать в буфер" style='margin: 5px 4px 4px 10px;' src='../../images/copy.gif'" border="0" align='right'></a>
+<p id="copytext4" class="codebox"><span class="S0">
+<font class="S91">TOTALCMD#BAR#DATA</font>
+<br>
+%<a class="le" href="add_commands.htm#3"><span class="S7">%COMMANDER_PATH%</span></a>%\<font class="S81"><b>чужой путь</b></font>\TCIMG.exe
+<br>
+<a class="le" href="../com_copys.htm"><span class="S51">copys</span></a><span class="S8">=</span><a class="le" href="add_param.htm">%L</a><span class="S8">||</span>&#34;<a class="le" href="add_param.htm">%t</a></span>&#34;
+<br>
+Wcmicons.dll,21
+<br>
+<font class="S21">Копировать в другую панель выделенное, не заменяя имеющиеся элементы</font></big>
+<br>
+<br>
+-1
+</p>
+<textarea ID="holdtext4" STYLE="display:none;"></textarea><SCRIPT LANGUAGE="JavaScript">function ClipBoard4() {holdtext4.innerText = copytext4.innerText;Copied = holdtext4.createTextRange();Copied.execCommand("Copy");} </SCRIPT>
+<br>
+&nbsp;&nbsp;&nbsp;<font size="+1" class="S19"><b>&#8921;</b></font> Несмотря на то, что в буфере обмена находится кнопка с "чужими" путями к TCIMG.exe, при нажатии на универсальную кнопку, на вашей панели инструментов появится кнопка с вашими путями к TCIMG.exe
+<br>
+<br>
+
+<b>2.</b> <img src="../../images/firstaction2.png" border="0"> Панель инструментов "в виде выпадающего меню" позволяет:
+
+Продолжение следует от автора идеи...
+
+<br><br>
+<font class="S41"><b>Описание дополнительных файлов, используемых FirstAction.exe</b></font> <a href="../../files.htm#2"><img src="../../images/left.gif" border="0" title="Переход к описанию FirstAction.exe"></a>
+<br><br>
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+<br><br>
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Относительные ярлыки</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №20</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Дополнение к командам <a href="../com_clink.htm">clink</a> и <a href="../com_tclnk.htm">tclnk</a>.</font></p>
+<hr><br>
+<b>Переход по относительным ярлыкам:</b>
+<br><br>
+Относительные ярлыки с расширением lnk открываются в Total Commander как обычно или через контекстное меню.
+Для того, чтобы переход по относительным ярлыкам происходил по двойному клику мыши сразу в панелях Total Commander необходимо:
+<br><br>
+1. Переименовать расширение ярлыка в lnkk (или любое понравившееся), либо воспользоваться командами, которые создают относительные ярлыки сразу с заданным расширением:
+
+<p></p>
+<a href="javascript:ClipBoard();"><IMG NAME="botton" title="Копировать в буфер" style='margin: 5px 4px 4px 10px;' src='../../images/copy.gif'" border="0" align='right'></a>
+<p id="copytext" class="codebox"><span><span class="S1">
+<span class="S0"><span class="S51">clink</span><span class="S8">=</span>%L<span class="S8">||</span>%t<span class="S8">||</span>rlink<span class="S8">&lt</span>lnkk<span class="S8">&gt</span></span> ;; создать относительные ярлыки lnkk выделенным объектам в другой панели<br><br>
+<span class="S0"><span class="S51">clink</span><span class="S8">=</span>%L<span class="S8">||</span>%t<span class="S11">!!</span>1<span class="S8">||</span>rlink<span class="S8">&lt</span>lnkk<span class="S8">&gt</span></span> ;; создать относительные ярлыки lnkk выделенным объектам в другой панели (заменяя одноимённые ярлыки)<br>
+</span></span></p>
+<textarea ID="holdtext" STYLE="display:none;"></textarea><SCRIPT LANGUAGE="JavaScript">function ClipBoard() {holdtext.innerText = copytext.innerText;Copied = holdtext.createTextRange();Copied.execCommand("Copy");} </SCRIPT>
+<br>
+2. Ассоциировать ярлыки в Total Commander, воспользовавшись командой <b>tclnk</b>, т.е. в <font class="S81"><b>Wincmd.ini</b></font> в секции <b>[Associations]</b> прописать: 
+
+<p></p>
+<a href="javascript:ClipBoard2();"><IMG NAME="botton" title="Копировать в буфер" style='margin: 5px 4px 4px 10px;' src='../../images/copy.gif'" border="0" align='right'></a>
+<p id="copytext2" class="codebox"><span><span class="S1">
+<span class="S0">
+<span class="S31">Filter</span><span class="S81">170</span>=;*.lnkk;*.lnk;<br>
+<span class="S31">Filter</span><span class="S81">170</span><span class="S31">_open</span>=""%COMMANDER_PATH%\TCIMG.exe" <span class="S51">tclnk</span>="%1""<br>
+<span class="S31">Filter</span><span class="S81">170</span><span class="S31">.icon</span>=%COMMANDER_PATH%\Wcmicons.dll,2086
+</span></span></span></p>
+<textarea ID="holdtext2" STYLE="display:none;"></textarea><SCRIPT LANGUAGE="JavaScript">function ClipBoard2() {holdtext2.innerText = copytext2.innerText;Copied = holdtext2.createTextRange();Copied.execCommand("Copy");} </SCRIPT>
+<br>
+&bull; <span class="S81">170</span> - номер фильтра, у Вас он может быть другой.<br>
+&bull; необходимо выбрать соответствующую иконку. Это может выглядеть так:<br>
+<br><br><p align="center"><img src="../../images/tclnk.png" border="0"></p>
+
+<br><br>
+Теперь относительные ярлыки можно открывать по двойному клику мыши.
+<br><br>
+Так же относительные ярлыки можно открывать с помощью кнопки:
+
+<p></p>
+<a href="javascript:ClipBoard3();"><IMG NAME="botton" title="Копировать в буфер" style='margin: 5px 4px 4px 10px;' src='../../images/copy.gif'" border="0" align='right'></a>
+<p id="copytext3" class="codebox"><span><span class="S1">
+<span class="S0">
+TOTALCMD#BAR#DATA<br>
+%COMMANDER_PATH%\TCIMG.exe<br>
+<span class="S51">tclnk</span>=%P%N<br>
+%COMMANDER_PATH%\Wcmicons.dll,2084<br>
+Открыть путь ярлыка в Total Commander (поддерживаются относительные пути в ярлыках)<br>
+<br>
+-1
+</span></span></span></p>
+<textarea ID="holdtext3" STYLE="display:none;"></textarea><SCRIPT LANGUAGE="JavaScript">function ClipBoard3() {holdtext3.innerText = copytext3.innerText;Copied = holdtext3.createTextRange();Copied.execCommand("Copy");} </SCRIPT>
+
+
+<p></p>
+
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

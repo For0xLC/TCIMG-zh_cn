@@ -1,0 +1,594 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Параметры [tc] и &#60;tc&#62;</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №12</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Параметры [tc] и &#60;tc&#62;</font></p>
+<hr><br>
+<b>Параметр возвращает в строку параметров команд различную информацию объектов файловых панелей Total Commander.</b>
+<br><br>
+Параметр может быть задействован тогда, когда нет возможности использовать стандартные параметры Total Commander. см. Дополнение<a class="le" href="add_param.htm"> <b>№7</b></a>.<br><br>
+Параметры Total Commander действуют на <b>момент вызова</b> командной строки. Далее в процессе данного вызова нет возможности с помощью них получить дополнительную информацию (при смене каталогов, дополнительном выделении...).
+<br><br>
+Параметр <b>[tc]</b> позволяет получать информацию и передавать их командам во время вызова, а так же в реальном времени.
+<br><br>
+Параметр <b>[tc]</b> позволяет получать различные списки, в отличие от основного минуса Total Commander, который передаёт только один вид списка, даже если прописать <a class="le" href="add_param.htm"><span class="S4"><b>%WL</b></span></a> и <a class="le" href="add_param.htm"><span class="S4"><b>%WF</b></span></a> в одной командной строке)
+<br><br>
+<hr class="hr-blue"><br>
+Конструкция параметра:
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:450">
+<font class="S81"><b>[</b></font><b>tc</b>=Parameter<font class="S81"><b>]</b></font><br>
+</p>
+</div>
+или
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:450">
+<font class="S81"><b>[</b></font><b>tc</b>=Parameter<b>1</b><font class="S81"><b>!!</b></font>Parameter<b>2</b><font class="S81"><b>!!</b></font>...<font class="S81"><b>!!</b></font>Parameter<b>N</b><font class="S81"><b>]</b></font><br>
+</p>
+</div>
+если необходимо что-то вставить между параметрами, то такая строка должна начинаться с <font class="S81"><b>&</b></font>:
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:450">
+<font class="S81"><b>[</b></font><b>tc</b>=Parameter<b>1</b><font class="S81"><b>!!</b></font><font class="S21"><b>&</b></font>String<b>1</b><font class="S81"><b>!!</b></font>Parameter<b>2</b><font class="S81"><b>!!</b></font><font class="S21"><b>&</b></font>String<b>2</b><font class="S81"><b>!!</b></font>...<font class="S81"><b>!!</b></font><font class="S21"><b>&</b></font>String<b>N</b><font class="S81"><b>!!</b></font>Parameter<b>N</b><font class="S81"><b>]</b></font><br>
+</p>
+</div>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:450">
+<font class="S81"><b>&#60;</b></font><b>tc</b>=Parameter<b>1</b><font class="S81"><b>!!</b></font><font class="S21"><b>&</b></font>String<b>1</b><font class="S81"><b>!!</b></font>Parameter<b>2</b><font class="S81"><b>!!</b></font><font class="S21"><b>&</b></font>String<b>2</b><font class="S81"><b>!!</b></font>...<font class="S81"><b>!!</b></font><font class="S21"><b>&</b></font>String<b>N</b><font class="S81"><b>!!</b></font>Parameter<b>N</b><font class="S81"><b>&#62;</b></font><br>
+</p>
+</div>
+<br>
+&nbsp;&nbsp;В String могут использоваться:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• "<b>@CR</b>" - символ возврата каретки Chr(13), "<b>@LF</b>" - символ перевода строки Chr(10), "<b>@CRLF</b>" = @CR & @LF, "<b>@TAB</b>" - символ Tab Chr(9).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• функции Autoit (см. параметр <a class="le" href="add_lines.htm#?U"><b>?U</b></a> Дополнение<a class="le" href="add_lines.htm#?U"> <b>№24</b></a>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• информация глобальных переменных <font class="S91">GLOBALNAME</font>&#60;N&#62;, <font class="S91">GLOBALNAME</font>&#60;xN&#62; (см. Дополнение<a class="le" href="add_gloobal.htm"> <b>№23</b></a>)<br>
+
+<br><hr class="hr-blue"><br>
+<font class="S81"><b>Внимание! Параметр не работает при GetTextMode=0 в Wincmd.ini в секции [Configuration]</b></font><br>
+При любом другом значении есть возможность получать имена объектов.
+<div id="top"><div id="tot" onclick="hidn=this.parentNode.getElementsByTagName('div')[1];btn=this.getElementsByTagName('img')[0];if(hidn.style.display!=''){hidn.style.display='';orimg=btn.src;btn.src='../../images/img-.gif';}else{hidn.style.display='none';btn.src=orimg; }"><img id="bot" src="../../images/img+.gif"/>
+Информация о ключе
+</div><div style="display: none"><div id="fut">
+<b>GetTextMode</b><br>
+Определяет формат данных, возвращаемых в ответ на сообщения LB_GETTEXT. Значения ключа определяют вид разделителя:<br>
+0: пробел; <font class="S81">[при таком разделителе нет возможности получать точные имена объектов и данные колонок]</font><br>
+1: табуляция;<br>
+2: перевод строки в UNIX-формате (символ &#60;CR&#62;);<br>
+3: перевод строки в Windows-формате (символы &#60;CR&#62;&#60;LF&#62;);<br>
+4: аналогично значению 2, но с дополнительными заголовками;<br>
+5: аналогично значению 3, но с дополнительными заголовками.<br>
+Значения 4 и 5 возвращают содержимое полей в следующем формате:<br>
+Имя:&#60;TAB&#62;имя_файла&#60;CR&#62;Размер:&#60;TAB&#62;10 Кб&#60;CR&#62;… и т.д.<br>
+</div></div></div>
+<br>
+Некоторые параметры не работают в режиме "Эскизы"
+<br>
+<br>
+<hr class="hr-blue">
+<br>
+Для параметров требующих выделение при добавлении "<font class="S51"><b>*d</b></font>" или "<font class="S51"><b>*f</b></font>" возвращаются списки либо каталогов, либо файлов.
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:800">
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S4"><b>aends</b></span></a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a>AL<font class="S51"><b>*d</b></font><span class="S8">]</span><span class="S11">!!</span>-1 <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить список путей выделенных папок активной панели</font><br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S4"><b>aends</b></span></a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a>AL<font class="S51"><b>*f</b></font><span class="S8">]</span><span class="S11">!!</span>-1 <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить список путей выделенных файлов активной панели</font><br>
+</p>
+</div>
+<br>
+Для параметров требующих выделение после символа "<font class="S51"><b>*</b></font>" может быть прописана строка номеров и диапазонов через запятую для получения нужных выделенных объектов.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S51"><b>*</b></font>K1,K2,...,N1:M1,...,N2:M2 - для всех выделенных объектов (каталогов и файлов)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S51"><b>*</b></font>K1,K2,...,N1:M1,...,N2:M2<font class="S51"><b>d</b></font> - для всех выделенных каталогов<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S51"><b>*</b></font>K1,K2,...,N1:M1,...,N2:M2<font class="S51"><b>f</b></font> - для всех выделенных файлов<br>
+&nbsp;&nbsp;&nbsp;&nbsp;при отрицательных числах отсчёт ведётся с конца выделения<br>
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:800">
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S4"><b>aends</b></span></a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a>AL*1,2,-1<span class="S8">]</span><span class="S51">??</span>-1 <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76;AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить пути 1-го, 2-го и последнего выделенного объекта</font><br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S4"><b>aends</b></span></a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a>AL*1<span class="S8">]</span><span class="S51">??</span>-1 <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76;AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь 1-го выделенного объекта</font><br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S4"><b>aends</b></span></a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a>AL*2:-1<span class="S8">]</span><span class="S51">??</span>-1 <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76;AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить пути выделенных объектов со 2-го до последнего</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S4"><b>aends</b></span></a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a>AL*1,-1<font class="S51"><b>d</b></font><span class="S8">]</span><span class="S51">??</span>-1 <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76;AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь 1-го и последнего выделенного каталога</font><br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S4"><b>aends</b></span></a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a>AL*1<font class="S51"><b>d</b></font><span class="S8">]</span><span class="S51">??</span>-1 <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76;AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь 1-го выделенного каталога</font><br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S4"><b>aends</b></span></a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a>AL*3<font class="S51"><b>d</b></font><span class="S8">]</span><span class="S51">??</span>-1 <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76;AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь 3-го выделенного каталога</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S4"><b>aends</b></span></a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a>AL*1,-2<font class="S51"><b>f</b></font><span class="S8">]</span><span class="S51">??</span>-1 <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76;AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь 1-го и предпоследнего выделенного файла</font><br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S4"><b>aends</b></span></a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a>AL*1<font class="S51"><b>f</b></font><span class="S8">]</span><span class="S51">??</span>-1 <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76;AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить путь 1-го выделенного файла</font><br>
+</p>
+</div>
+
+<br>
+<hr class="hr-blue">
+<br>
+В некоторых случаях необходимо получить список каталогов без конечного слеша для этого перед параметрами пропишите символ "<font size=3 class="S81"><b>`</b></font>" (апостроф)
+<br>
+<br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:800">
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S4"><b>aends</b></span></a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a><font size=3 class="S81"><b>`</b></font>AL*d<span class="S8">]</span><span class="S11">!!</span>-1 <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76;AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить пути выделенных каталогов без конечного слеша</font><br>
+</p>
+</div>
+<br>
+<hr class="hr-blue">
+<br>
+Для параметров возвращающих временный файл со списком при добавлении в начало символа "<font class="S51"><b>C</b></font>" будет возвращаться информация всех колонок.<br>
+Разделитель между колонками табуляция Chr(9).
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:110%">
+<span class="S0"><a class="le" href="../com_anf2d.htm"><span class="S4"><b>anf2d</b></span></a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a><font class="S51"><b>C</b></font>AL-1<span class="S8">]</span><span class="S8">||</span>2<span class="S8">||</span><span class="S24">(</span><span class="S8">[</span>^\t<span class="S8">]</span><span class="S8">+</span><span class="S24">)</span><span class="S8">||</span>begin<span class="S8">&lt</span>0<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALANF2D"><span class="S121">GLOBA&#76ANF2D</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span> <font class="S1"> ;; получение 2D массива с информацией колонок всех объектов активной файловой панели</font><br>
+<span class="S0"><a class="le" href="../com_anf2d.htm"><span class="S4"><b>anf2d</b></span></a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a><font class="S51"><b>C</b></font>AL*f<span class="S8">]</span><span class="S8">||</span>2<span class="S8">||</span><span class="S24">(</span><span class="S8">[</span>^\t<span class="S8">]</span><span class="S8">+</span><span class="S24">)</span><span class="S8">||</span>begin<span class="S8">&lt</span>0<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALANF2D"><span class="S121">GLOBA&#76ANF2D</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span> <font class="S1"> ;; получение 2D массива с информацией колонок всех выделенных файлов активной файловой панели</font><br>
+</p>
+</div>
+<br>
+</span>
+</span>
+<a name="GLOBALTOTAL"></a>
+<hr class="hr-blue">
+<br>
+Дополнительные параметры <b>Line<font class="S61">|</font><font class="S51">Mode</font><font class="S61">|</font><font class="S21">Number</font></b> , где:
+<br>
+&nbsp;&nbsp;<b>Line</b> - строка параметров.<br>
+&nbsp;&nbsp;<b><font class="S51">Mode</font></b> - [необязательный] режим вывода информации.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - обычный (по умолчанию). Возвращается временный файл или путь.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2 - передача данных в команды напрямую без временного файла.<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• режим актуален для списков.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• при этом все данные записываются в глобальный массив <font class="S91">GLOBALTOTAL</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(в 1-ю ячейку записываются первые данные, во 2-ю ячейку - вторые данные, и.т.д)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3 - в командную строку ничего не возвращается.<br>
+&nbsp;&nbsp;<b><font class="S21">Number</font></b> - [необязательный]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• при использовании этого параметра данные записываются в глобальные переменные <font class="S91">GLOBALTCGET</font><font class="S21">Number</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(если Number=1, то данные записываются в <font class="S91">GLOBALTCGET</font><font class="S21">1</font>, если Number=15, то в <font class="S91">GLOBALTCGET</font><font class="S21">15</font>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(при повторном использовании Number данные в глобальной переменной перезаписываются)
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space:nowrap;width:110%">
+<span class="S0"><a class="le" href="..\com_dilog.htm"><span class="S4"><b>dilog</b></span></a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a>AL-1<font class="S61"><b>|</b></font><font class="S51"><b>3</b></font><font class="S61"><b>|</b></font><font class="S21"><b>1</b></font><span class="S8">]</span> <a class="le" href="add_gloobal.htm#GLOBALTCGET1"><span class="S121">GLOBA&#76TCGET1</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить пути всех объектов в активной файловой панели</font><br>
+<span class="S0"><a class="le" href="..\com_dilog.htm"><span class="S4"><b>dilog</b></span></a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a>AL-1<font class="S61"><b>|</b></font><font class="S51"><b>3</b></font><font class="S61"><b>|</b></font><font class="S21"><b>1</b></font><span class="S8">]</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a>TL-1<font class="S61"><b>|</b></font><font class="S51"><b>3</b></font><font class="S61"><b>|</b></font><font class="S21"><b>2</b></font><span class="S8">]</span> <a class="le" href="add_gloobal.htm#GLOBALTCGET1"><span class="S121">GLOBA&#76TCGET1</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span> <a class="le" href="add_gloobal.htm#GLOBALTCGET2"><span class="S121">GLOBA&#76TCGET2</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получить пути всех объектов в активной и неактивной файловой панели</font><br>
+<span class="S0"><a class="le" href="../com_copys.htm"><span class="S4"><b>copys</b></span></a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a>AL-1<font class="S61"><b>|</b></font><font class="S51"><b>2</b></font><span class="S8">]</span><span class="S8">||</span>"<a class="le" href="add_param.htm"><span class="S23">%t</span></a>"<span class="S11">//</span>0<span class="S8">||</span>upd<span class="S8">&lt</span>3<span class="S8">&gt</span></span><font class="S1"> ;; копировать все объекты активной файловой панели в другую панель</font><br>
+<span class="S0"><a class="le" href="../com_aends.htm"><span class="S4"><b>aends</b></span></a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_tc.htm"><span class="S4">&#116&#99&#61</span></a>CAL-1<font class="S61"><b>|</b></font><font class="S51"><b>2</b></font><span class="S8">]</span><span class="S11">!!</span>-1 <a class="le" href="add_gloobal.htm#GLOBALAENDS"><span class="S121">GLOBA&#76AENDS</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><font class="S1"> ;; получение информации колонок всех объектов в активной файловой панели</font><br>
+</p>
+</div>
+<br>
+Если в каких-то командах не будут работать дополнительные параметры, то сообщайте, добавлю обработку данных...
+<br>
+<br>
+<hr class="hr-blue">
+<br><br>
+<font class="S81"><b>1. Требуется выделение:</b></font>
+<br><br>
+Возвращает временный файл со списком полных <u>путей</u> объектов. Расширенный аналог параметра <a class="le" href="add_param.htm"><b>%WL</b></a>. 
+<br><b>Не добавляет</b> в список объект под курсором, если ничего не выделено.<br><br>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">LL</td><td><font class="S0">временный файл списка путей выделенных объектов левой панели</font></td></tr>
+<tr><td class="s3td">RL</td><td><font class="S0">временный файл списка путей выделенных объектов правой панели</font></td></tr>
+<tr><td class="s3td">AL</td><td class="nobr"><font class="S0">временный файл списка путей выделенных объектов активной панели</font></td></tr>
+<tr><td class="s3td">TL</td><td><font class="S0">временный файл списка путей выделенных объектов другой панели</font></td></tr>
+</td></tr></table>
+</div>
+<br>
+Возвращает временный файл со списком <u>имён</u> объектов. Расширенный аналог параметра <a class="le" href="add_param.htm"><b>%WF</b></a>. 
+<br><b>Не добавляет</b> в список объект под курсором, если ничего не выделено.<br><br>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">LF</td><td><font class="S0">временный файл списка имён выделенных объектов левой панели</font></td></tr>
+<tr><td class="s3td">RF</td><td><font class="S0">временный файл списка имён выделенных объектов правой панели</font></td></tr>
+<tr><td class="s3td">AF</td><td class="nobr"><font class="S0">временный файл списка имён выделенных объектов активной панели</font></td></tr>
+<tr><td class="s3td">TF</td><td><font class="S0">временный файл списка имён выделенных объектов другой панели</font></td></tr>
+</td></tr></table>
+</div>
+<br>
+<div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div>
+<br>
+Возвращает временный файл со списком полных <u>путей</u> объектов. Расширенный аналог параметра <a class="le" href="add_param.htm"><b>%WL</b></a>. 
+<br><b>Добавляет</b> в список объект под курсором, если ничего не выделено.<br><br>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">LM</td><td><font class="S0">временный файл списка путей выделенных объектов левой панели</font></td></tr>
+<tr><td class="s3td">RM</td><td><font class="S0">временный файл списка путей выделенных объектов правой панели</font></td></tr>
+<tr><td class="s3td">AM</td><td class="nobr"><font class="S0">временный файл списка путей выделенных объектов активной панели</font></td></tr>
+<tr><td class="s3td">TM</td><td><font class="S0">временный файл списка путей выделенных объектов другой панели</font></td></tr>
+</td></tr></table>
+</div>
+<br>
+Возвращает временный файл со списком <u>имён</u> объектов. Расширенный аналог параметра <a class="le" href="add_param.htm"><b>%WF</b></a>. 
+<br><b>Добавляет</b> в список объект под курсором, если ничего не выделено.<br><br>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">LG</td><td><font class="S0">временный файл списка имён выделенных объектов левой панели</font></td></tr>
+<tr><td class="s3td">RG</td><td><font class="S0">временный файл списка имён выделенных объектов правой панели</font></td></tr>
+<tr><td class="s3td">AG</td><td class="nobr"><font class="S0">временный файл списка имён выделенных объектов активной панели</font></td></tr>
+<tr><td class="s3td">TG</td><td><font class="S0">временный файл списка имён выделенных объектов другой панели</font></td></tr>
+</td></tr></table>
+</div>
+
+<br><br>
+<font class="S81"><b>2. Требуется выделение:</b></font>
+<br><br>
+Возвращает временный файл со списком полных путей объектов <u>обеих панелей</u>. Аналога нет. 
+<br><b>Не добавляет</b> в список объекты под курсором, если они не выделены.<br><br>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">SL</td><td><font class="S0">временный файл списка путей выделенных объектов обеих панелей.<br>(список состоит из объектов активной и не активной панели)</font></td></tr>
+<tr><td class="s3td">ZL</td><td><font class="S0">временный файл списка путей выделенных объектов обеих панелей.<br>(список состоит из <u>поочерёдных</u> объектов активной и не активной панели.<br>список составляется по наименьшему количеству выделенного одной из панелей)</font></td></tr>
+</td></tr></table>
+</div><br>
+Возвращает временный файл со списком имён объектов <u>обеих панелей</u>. Аналога нет. 
+<br><b>Не добавляет</b> в список объекты под курсором, если они не выделены.<br><br>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">SF</td><td><font class="S0">временный файл списка имён выделенных объектов обеих панелей.<br>(список состоит из объектов активной и не активной панели)</font></td></tr>
+<tr><td class="s3td">ZF</td><td><font class="S0">временный файл списка имён выделенных объектов обеих панелей.<br>(список состоит из <u>поочерёдных</u> объектов активной и не активной панели.<br>список составляется по наименьшему количеству выделенного одной из панелей)</font></td></tr>
+</td></tr></table>
+</div>
+
+<br>
+<div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div>
+<br>
+Возвращает временный файл со списком полных путей объектов <u>обеих панелей</u>. Аналога нет. 
+<br><b>Добавляет</b> в список объекты под курсором, если они не выделены.<br><br>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">SM</td><td><font class="S0">временный файл списка путей выделенных объектов обеих панелей.<br>(список состоит из объектов активной и не активной панели)</font></td></tr>
+<tr><td class="s3td">ZM</td><td><font class="S0">временный файл списка путей выделенных объектов обеих панелей.<br>(список состоит из <u>поочерёдных</u> объектов активной и не активной панели.<br>список составляется по наименьшему количеству выделенного одной из панелей)</font></td></tr>
+</td></tr></table>
+</div>
+<br>
+Возвращает временный файл со списком имён объектов <u>обеих панелей</u>. Аналога нет. 
+<br><b>Добавляет</b> в список объекты под курсором, если они не выделены.<br><br>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">SG</td><td><font class="S0">временный файл списка имён выделенных объектов обеих панелей.<br>(список состоит из объектов активной и не активной панели)</font></td></tr>
+<tr><td class="s3td">ZG</td><td><font class="S0">временный файл списка имён выделенных объектов обеих панелей.<br>(список состоит из <u>поочерёдных</u> объектов активной и не активной панели.<br>список составляется по наименьшему количеству выделенного одной из панелей)</font></td></tr>
+</td></tr></table>
+</div>
+
+
+
+<br><br>
+<font class="S81"><b>3. Не требуется выделение:</b></font>
+<br><br>
+
+Возвращает временный файл со списком полных путей заданных объектов. Аналога нет.
+<br>
+<b>В левой панели.</b><br><br>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">LL-1</td><td><font class="S0">временный файл списка путей всех объектов</font></td></tr>
+<tr><td class="s3td">LL-1f</td><td><font class="S0">временный файл списка путей всех файлов</font></td></tr>
+<tr><td class="s3td">LL-1d</td><td><font class="S0">временный файл списка путей всех папок</font></td></tr>
+<tr><td class="s3td">LL5</td><td><font class="S0">временный файл списка путей первых 5-ти объектов</font></td></tr>
+<tr><td class="s3td">LL5f</td><td><font class="S0">временный файл списка путей первых 5-ти файлов</font></td></tr>
+<tr><td class="s3td">LL5d</td><td><font class="S0">временный файл списка путей первых 5-ти папок</font></td></tr>
+<tr><td class="s3td">LL10-20</td><td class="nobr"><font class="S0">временный файл списка путей с 10-го по 20-й объект включительно</font></td></tr>
+<tr><td class="s3td">LL10-20f</td><td><font class="S0">временный файл списка путей с 10-го по 20-й файл включительно</font></td></tr>
+<tr><td class="s3td">LL10-20d</td><td><font class="S0">временный файл списка путей с 10-ю по 20-ю папку включительно</font></td></tr>
+
+<tr><td class="s3td"></td><td><font class="S0">Для нескольких позиций и диапазонов: <code class="example">K1,K2,...,N1:M1,...,N2:M2</code></font></td></tr>
+<tr><td class="s3td">LL1,2,5,-1,-2</td><td><font class="S0">временный файл списка путей объектов 1-го, 2-го, 5-го, последнего и предпоследнего</font></td></tr>
+<tr><td class="s3td">LL1:9,20:-1d</td><td><font class="S0">временный файл списка путей папок с 1-й по 9-ю, с 20-й и до конца</font></td></tr>
+<tr><td class="s3td">LL3:7,11,12f</td><td><font class="S0">временный файл списка путей файлов с 3-го по 7-й, 11-й и 12-й</font></td></tr>
+</td></tr></table>
+</div>
+
+<br>
+<b>В правой панели.</b><br><br>
+
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">RL-1</td><td><font class="S0">временный файл списка путей всех объектов</font></td></tr>
+<tr><td class="s3td">RL-1f</td><td><font class="S0">временный файл списка путей всех файлов</font></td></tr>
+<tr><td class="s3td">RL-1d</td><td><font class="S0">временный файл списка путей всех папок</font></td></tr>
+<tr><td class="s3td">RL5</td><td><font class="S0">временный файл списка путей первых 5-ти объектов</font></td></tr>
+<tr><td class="s3td">RL5f</td><td><font class="S0">временный файл списка путей первых 5-ти файлов</font></td></tr>
+<tr><td class="s3td">RL5d</td><td><font class="S0">временный файл списка путей первых 5-ти папок</font></td></tr>
+<tr><td class="s3td">RL10-20</td><td class="nobr"><font class="S0">временный файл списка путей с 10-го по 20-й объект включительно</font></td></tr>
+<tr><td class="s3td">RL10-20f</td><td><font class="S0">временный файл списка путей с 10-го по 20-й файл включительно</font></td></tr>
+<tr><td class="s3td">RL10-20d</td><td><font class="S0">временный файл списка путей с 10-ю по 20-ю папку включительно</font></td></tr>
+
+<tr><td class="s3td"></td><td><font class="S0">Для нескольких позиций и диапазонов: <code class="example">K1,K2,...,N1:M1,...,N2:M2</code></font></td></tr>
+<tr><td class="s3td">RL1,2,5,-1,-2</td><td><font class="S0">временный файл списка путей объектов 1-го, 2-го, 5-го, последнего и предпоследнего</font></td></tr>
+<tr><td class="s3td">RL1:9,20:-1d</td><td><font class="S0">временный файл списка путей папок с 1-й по 9-ю, с 20-й и до конца</font></td></tr>
+<tr><td class="s3td">RL3:7,11,12f</td><td><font class="S0">временный файл списка путей файлов с 3-го по 7-й, 11-й и 12-й</font></td></tr>
+
+</td></tr></table>
+</div>
+
+<br>
+<b>В активной панели.</b><br><br>
+
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">AL-1</td><td><font class="S0">временный файл списка путей всех объектов</font></td></tr>
+<tr><td class="s3td">AL-1f</td><td><font class="S0">временный файл списка путей всех файлов</font></td></tr>
+<tr><td class="s3td">AL-1d</td><td><font class="S0">временный файл списка путей всех папок</font></td></tr>
+<tr><td class="s3td">AL5</td><td><font class="S0">временный файл списка путей первых 5-ти объектов</font></td></tr>
+<tr><td class="s3td">AL5f</td><td><font class="S0">временный файл списка путей первых 5-ти файлов</font></td></tr>
+<tr><td class="s3td">AL5d</td><td><font class="S0">временный файл списка путей первых 5-ти папок</font></td></tr>
+<tr><td class="s3td">AL10-20</td><td class="nobr"><font class="S0">временный файл списка путей с 10-го по 20-й объект включительно</font></td></tr>
+<tr><td class="s3td">AL10-20f</td><td><font class="S0">временный файл списка путей с 10-го по 20-й файл включительно</font></td></tr>
+<tr><td class="s3td">AL10-20d</td><td><font class="S0">временный файл списка путей с 10-ю по 20-ю папку включительно</font></td></tr>
+
+<tr><td class="s3td"></td><td><font class="S0">Для нескольких позиций и диапазонов: <code class="example">K1,K2,...,N1:M1,...,N2:M2</code></font></td></tr>
+<tr><td class="s3td">AL1,2,5,-1,-2</td><td><font class="S0">временный файл списка путей объектов 1-го, 2-го, 5-го, последнего и предпоследнего</font></td></tr>
+<tr><td class="s3td">AL1:9,20:-1d</td><td><font class="S0">временный файл списка путей папок с 1-й по 9-ю, с 20-й и до конца</font></td></tr>
+<tr><td class="s3td">AL3:7,11,12f</td><td><font class="S0">временный файл списка путей файлов с 3-го по 7-й, 11-й и 12-й</font></td></tr>
+
+</td></tr></table>
+</div>
+
+<br>
+<b>В другой панели.</b><br><br>
+
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">TL-1</td><td><font class="S0">временный файл списка путей всех объектов</font></td></tr>
+<tr><td class="s3td">TL-1f</td><td><font class="S0">временный файл списка путей всех файлов</font></td></tr>
+<tr><td class="s3td">TL-1d</td><td><font class="S0">временный файл списка путей всех папок</font></td></tr>
+<tr><td class="s3td">TL5</td><td><font class="S0">временный файл списка путей первых 5-ти объектов</font></td></tr>
+<tr><td class="s3td">TL5f</td><td><font class="S0">временный файл списка путей первых 5-ти файлов</font></td></tr>
+<tr><td class="s3td">TL5d</td><td><font class="S0">временный файл списка путей первых 5-ти папок</font></td></tr>
+<tr><td class="s3td">TL10-20</td><td class="nobr"><font class="S0">временный файл списка путей с 10-го по 20-й объект включительно</font></td></tr>
+<tr><td class="s3td">TL10-20f</td><td><font class="S0">временный файл списка путей с 10-го по 20-й файл включительно</font></td></tr>
+<tr><td class="s3td">TL10-20d</td><td><font class="S0">временный файл списка путей с 10-ю по 20-ю папку включительно</font></td></tr>
+
+<tr><td class="s3td"></td><td><font class="S0">Для нескольких позиций и диапазонов: <code class="example">K1,K2,...,N1:M1,...,N2:M2</code></font></td></tr>
+<tr><td class="s3td">TL1,2,5,-1,-2</td><td><font class="S0">временный файл списка путей объектов 1-го, 2-го, 5-го, последнего и предпоследнего</font></td></tr>
+<tr><td class="s3td">TL1:9,20:-1d</td><td><font class="S0">временный файл списка путей папок с 1-й по 9-ю, с 20-й и до конца</font></td></tr>
+<tr><td class="s3td">TL3:7,11,12f</td><td><font class="S0">временный файл списка путей файлов с 3-го по 7-й, 11-й и 12-й</font></td></tr>
+
+</td></tr></table>
+</div>
+
+<br><br>
+Возвращает временный файл со списком имён заданных объектов. Аналога нет.
+<br>
+<b>В левой панели.</b><br><br>
+
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">LF-1</td><td><font class="S0"> временный файл списка имён всех объектов</font></td></tr>
+<tr><td class="s3td">LF-1f</td><td><font class="S0"> временный файл списка имён всех файлов</font></td></tr>
+<tr><td class="s3td">LF-1d</td><td><font class="S0"> временный файл списка имён всех папок</font></td></tr>
+<tr><td class="s3td">LF5</td><td><font class="S0"> временный файл списка имён первых 5-ти объектов</font></td></tr>
+<tr><td class="s3td">LF5f</td><td><font class="S0"> временный файл списка имён первых 5-ти файлов</font></td></tr>
+<tr><td class="s3td">LF5d</td><td><font class="S0"> временный файл списка имён первых 5-ти папок</font></td></tr>
+<tr><td class="s3td">LF10-20</td><td class="nobr"><font class="S0"> временный файл списка имён с 10-го по 20-й объект включительно</font></td></tr>
+<tr><td class="s3td">LF10-20f</td><td><font class="S0"> временный файл списка имён с 10-го по 20-й файл включительно</font></td></tr>
+<tr><td class="s3td">LF10-20d</td><td><font class="S0"> временный файл списка имён с 10-ю по 20-ю папку включительно</font></td></tr>
+
+<tr><td class="s3td"></td><td><font class="S0">Для нескольких позиций и диапазонов: <code class="example">K1,K2,...,N1:M1,...,N2:M2</code></font></td></tr>
+<tr><td class="s3td">LF1,2,5,-1,-2</td><td><font class="S0">временный файл списка имён объектов 1-го, 2-го, 5-го, последнего и предпоследнего</font></td></tr>
+<tr><td class="s3td">LF1:9,20:-1d</td><td><font class="S0">временный файл списка имён папок с 1-й по 9-ю, с 20-й и до конца</font></td></tr>
+<tr><td class="s3td">LF3:7,11,12f</td><td><font class="S0">временный файл списка имён файлов с 3-го по 7-й, 11-й и 12-й</font></td></tr>
+
+</td></tr></table>
+</div>
+
+<br>
+<b>В правой панели.</b><br><br>
+
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">RF-1</td><td><font class="S0"> временный файл списка имён всех объектов</font></td></tr>
+<tr><td class="s3td">RF-1f</td><td><font class="S0"> временный файл списка имён всех файлов</font></td></tr>
+<tr><td class="s3td">RF-1d</td><td><font class="S0"> временный файл списка имён всех папок</font></td></tr>
+<tr><td class="s3td">RF5</td><td><font class="S0"> временный файл списка имён первых 5-ти объектов</font></td></tr>
+<tr><td class="s3td">RF5f</td><td><font class="S0"> временный файл списка имён первых 5-ти файлов</font></td></tr>
+<tr><td class="s3td">RF5d</td><td><font class="S0"> временный файл списка имён первых 5-ти папок</font></td></tr>
+<tr><td class="s3td">RF10-20</td><td class="nobr"><font class="S0"> временный файл списка имён с 10-го по 20-й объект включительно</font></td></tr>
+<tr><td class="s3td">RF10-20f</td><td><font class="S0"> временный файл списка имён с 10-го по 20-й файл включительно</font></td></tr>
+<tr><td class="s3td">RF10-20d</td><td><font class="S0"> временный файл списка имён с 10-ю по 20-ю папку включительно</font></td></tr>
+
+<tr><td class="s3td"></td><td><font class="S0">Для нескольких позиций и диапазонов: <code class="example">K1,K2,...,N1:M1,...,N2:M2</code></font></td></tr>
+<tr><td class="s3td">RF1,2,5,-1,-2</td><td><font class="S0">временный файл списка имён объектов 1-го, 2-го, 5-го, последнего и предпоследнего</font></td></tr>
+<tr><td class="s3td">RF1:9,20:-1d</td><td><font class="S0">временный файл списка имён папок с 1-й по 9-ю, с 20-й и до конца</font></td></tr>
+<tr><td class="s3td">RF3:7,11,12f</td><td><font class="S0">временный файл списка имён файлов с 3-го по 7-й, 11-й и 12-й</font></td></tr>
+
+</td></tr></table>
+</div>
+
+<br>
+<b>В активной панели.</b><br><br>
+
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">AF-1</td><td><font class="S0"> временный файл списка имён всех объектов</font></td></tr>
+<tr><td class="s3td">AF-1f</td><td><font class="S0"> временный файл списка имён всех файлов</font></td></tr>
+<tr><td class="s3td">AF-1d</td><td><font class="S0"> временный файл списка имён всех папок</font></td></tr>
+<tr><td class="s3td">AF5</td><td><font class="S0"> временный файл списка имён первых 5-ти объектов</font></td></tr>
+<tr><td class="s3td">AF5f</td><td><font class="S0"> временный файл списка имён первых 5-ти файлов</font></td></tr>
+<tr><td class="s3td">AF5d</td><td><font class="S0"> временный файл списка имён первых 5-ти папок</font></td></tr>
+<tr><td class="s3td">AF10-20</td><td class="nobr"><font class="S0"> временный файл списка имён с 10-го по 20-й объект включительно</font></td></tr>
+<tr><td class="s3td">AF10-20f</td><td><font class="S0"> временный файл списка имён с 10-го по 20-й файл включительно</font></td></tr>
+<tr><td class="s3td">AF10-20d</td><td><font class="S0"> временный файл списка имён с 10-ю по 20-ю папку включительно</font></td></tr>
+
+<tr><td class="s3td"></td><td><font class="S0">Для нескольких позиций и диапазонов: <code class="example">K1,K2,...,N1:M1,...,N2:M2</code></font></td></tr>
+<tr><td class="s3td">AF1,2,5,-1,-2</td><td><font class="S0">временный файл списка имён объектов 1-го, 2-го, 5-го, последнего и предпоследнего</font></td></tr>
+<tr><td class="s3td">AF1:9,20:-1d</td><td><font class="S0">временный файл списка имён папок с 1-й по 9-ю, с 20-й и до конца</font></td></tr>
+<tr><td class="s3td">AF3:7,11,12f</td><td><font class="S0">временный файл списка имён файлов с 3-го по 7-й, 11-й и 12-й</font></td></tr>
+
+</td></tr></table>
+</div>
+
+<br>
+<b>В другой панели.</b><br><br>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">TF-1</td><td><font class="S0"> временный файл списка имён всех объектов</font></td></tr>
+<tr><td class="s3td">TF-1f</td><td><font class="S0"> временный файл списка имён всех файлов</font></td></tr>
+<tr><td class="s3td">TF-1d</td><td><font class="S0"> временный файл списка имён всех папок</font></td></tr>
+<tr><td class="s3td">TF5</td><td><font class="S0"> временный файл списка имён первых 5-ти объектов</font></td></tr>
+<tr><td class="s3td">TF5f</td><td><font class="S0"> временный файл списка имён первых 5-ти файлов</font></td></tr>
+<tr><td class="s3td">TF5d</td><td><font class="S0"> временный файл списка имён первых 5-ти папок</font></td></tr>
+<tr><td class="s3td">TF10-20</td><td class="nobr"><font class="S0"> временный файл списка имён с 10-го по 20-й объект включительно</font></td></tr>
+<tr><td class="s3td">TF10-20f</td><td><font class="S0"> временный файл списка имён с 10-го по 20-й файл включительно</font></td></tr>
+<tr><td class="s3td">TF10-20d</td><td><font class="S0"> временный файл списка имён с 10-ю по 20-ю папку включительно</font></td></tr>
+
+<tr><td class="s3td"></td><td><font class="S0">Для нескольких позиций и диапазонов: <code class="example">K1,K2,...,N1:M1,...,N2:M2</code></font></td></tr>
+<tr><td class="s3td">TF1,2,5,-1,-2</td><td><font class="S0">временный файл списка имён объектов 1-го, 2-го, 5-го, последнего и предпоследнего</font></td></tr>
+<tr><td class="s3td">TF1:9,20:-1d</td><td><font class="S0">временный файл списка имён папок с 1-й по 9-ю, с 20-й и до конца</font></td></tr>
+<tr><td class="s3td">TF3:7,11,12f</td><td><font class="S0">временный файл списка имён файлов с 3-го по 7-й, 11-й и 12-й</font></td></tr>
+
+</td></tr></table>
+</div>
+<br><br>
+Возвращает путь файловой панели. Аналог параметра <a class="le" href="add_param.htm"><b>%P, %T</b></a>. 
+<br><br>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">LP</td><td><font class="S0">путь левой панели</font></td></tr>
+<tr><td class="s3td">RP</td><td><font class="S0">путь правой панели</font></td></tr>
+<tr><td class="s3td">AP</td><td><font class="S0">путь активной панели</font></td></tr>
+<tr><td class="s3td">TP</td><td><font class="S0">путь другой панели</font></td></tr>
+</td></tr></table>
+<br>
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">LZ</td><td><font class="S0">путь левой панели без конечного слеша</font></td></tr>
+<tr><td class="s3td">RZ</td><td><font class="S0">путь правой панели без конечного слеша</font></td></tr>
+<tr><td class="s3td">AZ</td><td><font class="S0">путь активной панели без конечного слеша</font></td></tr>
+<tr><td class="s3td">TZ</td><td><font class="S0">путь другой панели без конечного слеша</font></td></tr>
+</td></tr></table>
+</div>
+<br><br>
+Возвращает путь заданного объекта. Аналог параметра <a class="le" href="add_param.htm"><b>%P%Т, %T%M</b></a>.
+<br><br>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">LA</td><td><font class="S0">путь активного объекта левой панели</font></td></tr>
+<tr><td class="s3td">LA1, LA2 ... LAN</td><td><font class="S0">путь N-го объекта левой панели</font></td></tr>
+<tr><td class="s3td"></td><td></td></tr>
+<tr><td class="s3td">RA</td><td><font class="S0">путь активного объекта правой панели</font></td></tr>
+<tr><td class="s3td">RA1, RA2 ... RAN</td><td><font class="S0">путь N-го объекта правой панели</font></td></tr>
+<tr><td class="s3td"></td><td></td></tr>
+<tr><td class="s3td">AA</td><td class="nobr"><font class="S0">путь активного объекта активной панели</font></td></tr>
+<tr><td class="s3td">AA1, AA2 ... AAN</td><td><font class="S0">путь N-го объекта активной панели</font></td></tr>
+<tr><td class="s3td"></td><td></td></tr>
+<tr><td class="s3td">TA</td><td><font class="S0">путь активного объекта другой панели</font></td></tr>
+<tr><td class="s3td">TA1, TA2 ... TAN</td><td><font class="S0">путь N-го объекта другой панели</font></td></tr>
+</td></tr></table>
+<br>
+То же самое, что и параметры предыдущей таблицы, но возвращается путь папки без конечного слеша<br>
+<br>
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">LQ</td><td><font class="S0">путь активного объекта левой панели</font></td></tr>
+<tr><td class="s3td">LQ1, LQ2 ... LQN</td><td><font class="S0">путь N-го объекта левой панели</font></td></tr>
+<tr><td class="s3td"></td><td></td></tr>
+<tr><td class="s3td">RQ</td><td><font class="S0">путь активного объекта правой панели</font></td></tr>
+<tr><td class="s3td">RQ1, RQ2 ... RQN</td><td><font class="S0">путь N-го объекта правой панели</font></td></tr>
+<tr><td class="s3td"></td><td></td></tr>
+<tr><td class="s3td">AQ</td><td class="nobr"><font class="S0">путь активного объекта активной панели</font></td></tr>
+<tr><td class="s3td">AQ1, AQ2 ... AQN</td><td><font class="S0">путь N-го объекта активной панели</font></td></tr>
+<tr><td class="s3td"></td><td></td></tr>
+<tr><td class="s3td">TQ</td><td><font class="S0">путь активного объекта другой панели</font></td></tr>
+<tr><td class="s3td">TQ1, TQ2 ... TQN</td><td><font class="S0">путь N-го объекта другой панели</font></td></tr>
+</td></tr></table>
+</div>
+
+<br><br>
+Возвращает имя с расширением заданного объекта. Расширенный аналог параметра <a class="le" href="add_param.htm"><b>%N, %M.%E</b></a>.
+<br><br>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">LN</td><td><font class="S0">имя с расширением активного объекта левой панели</font></td></tr>
+<tr><td class="s3td">LN1, LN2 ... LNN</td><td><font class="S0">имя с расширением N-го объекта левой панели</font></td></tr>
+<tr><td class="s3td">RN</td><td><font class="S0">имя с расширением активного объекта правой панели</font></td></tr>
+<tr><td class="s3td">RN1, RN2 ... RNN</td><td><font class="S0">имя с расширением N-го объекта правой панели</font></td></tr>
+<tr><td class="s3td">AN</td><td class="nobr"><font class="S0">имя с расширением активного объекта активной панели</font></td></tr>
+<tr><td class="s3td">AN1, AN2 ... ANN</td><td><font class="S0">имя с расширением N-го объекта активной панели</font></td></tr>
+<tr><td class="s3td">TN</td><td><font class="S0">имя с расширением активного объекта другой панели</font></td></tr>
+<tr><td class="s3td">TN1, TN2 ... TNN</td><td><font class="S0">имя с расширением N-го объекта другой панели</font></td></tr>
+</td></tr></table>
+</div>
+
+<br><br>
+Возвращает имя без расширения заданного объекта. Расширенный аналог параметра <a class="le" href="add_param.htm"><b>%O, %M</b></a>.
+<br><br>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">LO</td><td><font class="S0">имя без расширения активного объекта левой панели</font></td></tr>
+<tr><td class="s3td">LO1, LO2 ... LON</td><td><font class="S0">имя без расширения N-го объекта левой панели</font></td></tr>
+<tr><td class="s3td">RO</td><td><font class="S0">имя без расширения активного объекта правой панели</font></td></tr>
+<tr><td class="s3td">RO1, RO2 ... RON</td><td><font class="S0">имя без расширения N-го объекта правой панели</font></td></tr>
+<tr><td class="s3td">AO</td><td class="nobr"><font class="S0">имя без расширения активного объекта активной панели</font></td></tr>
+<tr><td class="s3td">AO1, AO2 ... AON</td><td><font class="S0">имя без расширения N-го объекта активной панели</font></td></tr>
+<tr><td class="s3td">TO</td><td><font class="S0">имя без расширения активного объекта другой панели</font></td></tr>
+<tr><td class="s3td">TO1, TO2 ... TON</td><td><font class="S0">имя без расширения N-го объекта другой панели</font></td></tr>
+</td></tr></table>
+</div>
+
+<br><br>
+Возвращает расширение заданного объекта. Расширенный аналог параметра <a class="le" href="add_param.htm"><b>%E</b></a>.
+<br><br>
+<div align="center">
+<table class="param" width="90%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Параметр</td><td>Описание</td></tr>
+<tr><td class="s3td">LE</td><td><font class="S0">расширение активного объекта левой панели</font></td></tr>
+<tr><td class="s3td">LE1, LE2 ... LEN</td><td><font class="S0">расширение N-го объекта левой панели</font></td></tr>
+<tr><td class="s3td">RE</td><td><font class="S0">расширение активного объекта правой панели</font></td></tr>
+<tr><td class="s3td">RE1, RE2 ... REN</td><td><font class="S0">расширение N-го объекта правой панели</font></td></tr>
+<tr><td class="s3td">AE</td><td class="nobr"><font class="S0">расширение активного объекта активной панели</font></td></tr>
+<tr><td class="s3td">AE1, AE2 ... AEN</td><td><font class="S0">расширение N-го объекта активной панели</font></td></tr>
+<tr><td class="s3td">TE</td><td><font class="S0">расширение активного объекта другой панели</font></td></tr>
+<tr><td class="s3td">TE1, TE2 ... TEN</td><td><font class="S0">расширение N-го объекта другой панели</font></td></tr>
+</td></tr></table>
+</div>
+<br>
+<hr class="hr-blue"><br>
+Для значений .P, .A, .N, .O, .E возможно совместное использование.
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:200">
+<font class="S81"><b>[</b></font><b>tc</b>=LA<font class="S81"><b>!!</b></font>TN<font class="S81"><b>]</b></font><br><br>
+<font class="S81"><b>[</b></font><b>tc</b>=LA<font class="S81"><b>!!</b></font>TO<font class="S81"><b>!!</b></font><font class="S21"><b>&</b></font>.<font class="S81"><b>!!</b></font>AE<font class="S81"><b>]</b></font><br><br>
+<font class="S81"><b>[</b></font><b>tc</b>=LA<font class="S81"><b>!!</b></font><font class="S21"><b>&</b></font>Name.<font class="S81"><b>!!</b></font>AE<font class="S81"><b>]</b></font><br>
+</p>
+</div>
+<br>
+
+
+
+
+<p></p>
+
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

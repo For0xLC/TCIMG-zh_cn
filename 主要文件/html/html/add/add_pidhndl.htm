@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Получение PID или HENDL окна</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №36</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Дополнение к командам и параметрам, связанных с окнами и процессами.</font></p>
+<hr><br>
+<b>Универсальное получение PID (идентификатор) процесса или Handle (дескриптор) окна.</b>
+<br><br>
+В тех командах и параметрах, где указано Дополнение №36 <font class="S51">PID</font> и <font class="S51">Handle</font> можно получить относительно любых предложенных вариантов:
+<br>
+<br>&nbsp;&nbsp;<font class="S121"><b>•</b> Получение ИД процесса TCIMG. PID</font>, пример:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@AutoItPID
+<br>
+<br>&nbsp;&nbsp;<font class="S121"><b>•</b> Получение через ИД процесса. PID</font>, пример:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 6328
+<br>
+<br>&nbsp;&nbsp;<font class="S121"><b>•</b> Получение через Дескриптор окна. Handle</font>, примеры:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 0x000102F8
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 66296
+<br>
+<br>&nbsp;&nbsp;<font class="S121"><b>•</b> Получение через Имя процесса. NameProcess</font>, примеры:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Totalcmd.exe
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- AkelPad.exe
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- notepad.exe
+<br>
+<br>&nbsp;&nbsp;<font class="S121"><b>•</b> Получение через Путь процесса. PathProcess</font>, примеры:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- E:\TC IMAGE\Totalcmd.exe
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- E:\TC IMAGE\AkelPad.exe
+<br>
+<br>&nbsp;&nbsp;<font class="S121"><b>•</b> Получение активного окна</font>, примеры:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ACTIVE
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [ACTIVE]
+<br>
+<br>&nbsp;&nbsp;<font class="S121"><b>•</b> Получение через Класс окна. NameClass</font>, примеры:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- TTOTAL_CMD
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- AkelPad4
+<br>
+<br>&nbsp;&nbsp;<font class="S121"><b>•</b> Получение через Класс окна. [CLASS:NameClass]</font>, примеры:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [CLASS:TTOTAL_CMD]
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [CLASS:AkelPad4]
+<br>
+<br>&nbsp;&nbsp;<font class="S121"><b>•</b> Получение через Класс окна {NameClass}</font>, примеры:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;(для программ с множеством дочерних процессов и одинаковых классов позволяет получить верхнее отображаемое/скрытое окно), примеры:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- {MozillaWindowClass}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- {Chrome_WidgetWin_1}
+<br>
+<br>&nbsp;&nbsp;<font class="S121"><b>•</b> Получение через Заголовок окна [TITLE:TextTitle]</font>, примеры:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [TITLE:Справка~~TCIMG]
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [TITLE:Total~~Commander]
+<br>
+<br>&nbsp;&nbsp;<font class="S121"><b>•</b> Получение через Класс и Заголовок окна [CLASS:NameClass;TITLE:TextTitle]</font>, примеры:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [CLASS:HH~~Parent;TITLE:Справка~~TCIMG]
+<br>
+<br>&nbsp;&nbsp;<font class="S121"><b>•</b> Получение через Класс и Заголовок окна NameClass**TextTitle</font>, примеры:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- HH~~Parent**Справка~~TCIMG
+<br>
+<br>&nbsp;&nbsp;<font class="S121"><b>•</b> Получение через Класс окна, с помощью регулярных выражений [REGEXPCLASS:RegExp]</font>, примеры:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [REGEXPCLASS:Afx:400000:b:10003:6:.*]
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [REGEXPCLASS:.*Window.*]
+<br>
+<br>&nbsp;&nbsp;<font class="S121"><b>•</b> Получение через Заголовок окна, с помощью регулярных выражений [REGEXPTITLE:RegExp]</font>, примеры:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [REGEXPTITLE:.*Блокнот]
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [REGEXPTITLE:.*HTML.*]
+<br><br>
+Дополнительные установки для поиска окна, см. <a class="le" href="../fun/windowsadvanced.htm#WINEX"><span class="S4"><b>Раздел поиска окон</b></span></a>
+
+<br><br>
+
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

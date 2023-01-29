@@ -1,0 +1,2152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Дополнение к командам/параметрам, связанным с диалогами ввода и просмотра</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №18</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+<a name="up"></a>
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Дополнение к командам/параметрам, связанным с диалогами ввода и просмотра.</font></p>
+<hr><br>
+
+
+<table width="95%" cellspacing="0" cellpadding="3">
+<tr><td><b>&nbsp;&nbsp;1. [input] , &#60;input&#62;</b>&nbsp;</td><td width="95%"><a class="le" href="#1"><b>Диалог ввода информации в Input</b></a></td></tr>
+<tr><td><b>&nbsp;&nbsp;2. [combo] , &#60;combo&#62;</b>&nbsp;</td><td><a class="le" href="#2"><b>Диалог выбора информации в ComboBox</b></a></td></tr>
+<tr><td><b>&nbsp;&nbsp;3. [group] , &#60;group&#62;</b>&nbsp;</td><td><a class="le" href="#3"><b>Диалог выбора информации в GroupBox</b></a></td></tr>
+<tr><td><b>&nbsp;&nbsp;4. [edits] , &#60;edits&#62;</b>&nbsp;</td><td><a class="le" href="#4"><b>Диалог выбора информации в EditBox</b></a></td></tr>
+<tr><td><b>&nbsp;&nbsp;5. shape</b>&nbsp;</td><td><a class="le" href="#5"><b>Объединение в один диалог</b></a></td></tr>
+<tr><td><b>&nbsp;&nbsp;6. [ssave] , &#60;ssave&#62;</b>&nbsp;</td><td><a class="le" href="#6"><b>Диалог выбора файла для сохранения</b></a></td></tr>
+<tr><td><b>&nbsp;&nbsp;7. [sopen] , &#60;sopen&#62;</b>&nbsp;</td><td><a class="le" href="#7"><b>Диалог выбора файла для открытия</b></a></td></tr>
+<tr><td><b>&nbsp;&nbsp;8. [sicon] , &#60;sicon&#62;</b>&nbsp;</td><td><a class="le" href="#8"><b>Диалог просмотра и выбора значка</b></a></td></tr>
+<tr><td><b>&nbsp;&nbsp;9. [sfold] , &#60;sfold&#62;</b>&nbsp;</td><td><a class="le" href="#9"><b>Диалог выбора каталога</b></a></td></tr>
+<tr><td style="white-space:nowrap"><b>10. [richinput] , &#60;richinput&#62;</b>&nbsp;</td><td width="95%"><a class="le" href="#10"><b>Диалог ввода информации в RichInput</b></a></td></tr>
+<tr><td><b>11. [check] , &#60;check&#62;</b>&nbsp;</td><td><a class="le" href="#11"><b>Диалог выбора информации в CheckBox</b></a></td></tr>
+<tr><td><b>12. [zfold] , &#60;zfold&#62;</b>&nbsp;</td><td><a class="le" href="#12"><b>Диалог выбора каталогов</b></a></td></tr>
+<tr><td><b>13. [fontz] , &#60;fontz&#62;</b>&nbsp;</td><td><a class="le" href="#13"><b>Диалог выбора шрифта</b></a></td></tr>
+<tr><td><b>14. [iconz] , &#60;iconz&#62;</b>&nbsp;</td><td><a class="le" href="#14"><b>Диалог выбора значка</b></a></td></tr>
+<tr><td><b>15. style</b>&nbsp;</td><td><a class="le" href="#15"><b>Установка стиля для диалогов</b></a></td></tr>
+<tr><td><b>16. [lista] , &#60;lista&#62;</b>&nbsp;</td><td><a class="le" href="#16"><b>Диалог редактирования и выбора из списка ListBox</b></a></td></tr>
+<tr><td><b>17. stylp</b>&nbsp;</td><td><a class="le" href="#17"><b>Установка стиля для прогресс бара</b></a></td></tr>
+<tr><td><b>18. [timen]</b>&nbsp;</td><td><a class="le" href="#18"><b>Установка времени ожидания для диалогов</b></a></td></tr>
+<tr><td><b>19. [msgbx] , &#60;msgbx&#62;</b>&nbsp;</td><td><a class="le" href="#19"><b>Окно сообщения MsgBox</b></a></td></tr>
+<tr><td><b>20. [updwn] , &#60;updwn&#62;</b>&nbsp;</td><td><a class="le" href="#20"><b>Диалог выбора числовой информации UpDown</b></a></td></tr>
+<tr><td><b>21. [image] , &#60;image&#62;</b>&nbsp;</td><td><a class="le" href="#21"><b>Диалог выбора изображения</b></a></td></tr>
+<tr><td><b>22. &#60;TRAY&#62;</td><td><a class="le" href="#22"><b>Подсказка в трее</b></a></td></tr>
+<tr><td><b>23. [elect] , &#60;elect&#62;</b>&nbsp;</td><td><a class="le" href="#23"><b>Диалог выбора файлов и папок</b></a></td></tr>
+<tr><td><b>24. [dates] , &#60;dates&#62;</b>&nbsp;</td><td><a class="le" href="#24"><b>Диалог выбора даты и времени</b></a></td></tr>
+
+<tr><td></td><td>&nbsp;</td></tr>
+<tr><td><b>Примечание</b>&nbsp;</td><td><a class="le" href="#notes1"><b>№1 - Передача переменных диалогам</b></a></td></tr>
+<tr><td><b>Примечание</b>&nbsp;</td><td><a class="le" href="#notes2"><b>№2 - Применение тегов ширины и высоты</b></a></td></tr>
+<tr><td><b>Примечание</b>&nbsp;</td><td><a class="le" href="#notes3"><b>№3 - Установка значка окну диалога</b></a></td></tr>
+<tr><td><b>Примечание</b>&nbsp;</td><td><a class="le" href="#notes4"><b>№4 - Подсказки в диалогах GroupBox и CheckBox</b></a></td></tr>
+<tr><td><b>Примечание</b>&nbsp;</td><td><a class="le" href="#notes5"><b>№5 - Сохранение позиций диалогов</b></a></td></tr>
+<tr><td><b>Примечание</b>&nbsp;</td><td><a class="le" href="#notes6"><b>№6 - Установка фона диалогов</b></a></td></tr>
+<tr><td><b>Примечание</b>&nbsp;</td><td><a class="le" href="#notes7"><b>№7 - Установка значения по умолчанию</b></a></td></tr>
+<tr><td><b>Примечание</b>&nbsp;</td><td><a class="le" href="#notes8"><b>№8 - Маска шаблонов. Параметр [extnd=Name]</b></a></td></tr>
+<tr><td><b>Примечание</b>&nbsp;</td><td><a class="le" href="#notes9"><b>№9 - Окно подсказки в диалогах.</b></a></td></tr>
+</table>
+<br><br>
+Диалоги можно использовать в командах (в тех местах где нужно получить данные) или воспользоваться командой <a class="le" href="../com_dilog.htm"><b>dilog</b></a> и далее использовать глобальные переменные для вставки данных в нужные места командной строки.
+<br><br>
+В версии 9.0 добавлена поддержка в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a> пользовательских окончаний ключей (кроме цифр):<br>
+InfoBox, InputBox, FolderBox, OpenBox, GroupBox, ComboBox, EditsBox, Shape, TrayIconHint, Title<br>
+К примеру, использоваться ключи с любым окончанием после основы InputBox,<br>
+в котором есть цифры, латинские символы и знак подчёркивания _ (InputBox_V01=...)
+<br>
+
+
+<!-- 1. Диалог ввода информации: Подпараметр [input] или <input> -->
+
+
+<br><hr class="hr-blue"><a name="1"></a><a name="input"></a><br>
+<a href="#2"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+">
+<b>1.</b> Диалог ввода информации: Подпараметр <b>[input]</b> или <b>&#60;input&#62;</b><br></font>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Ввод информации</b></font>. Подпараметр <span class="S8">[</span>input<span class="S8">]</span> или <span class="S8">&#60;</span>input<span class="S8">&#62;</span>.
+<br>В любом месте строки параметров, где встретится <span class="S8">[</span>input<span class="S8">]</span>, будет вызвано диалоговое окно, в котором можно ввести данные.<hr align="left" width=300>Расширенный вид: <span class="S8">[</span>input=<b>Title</b><a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a><font class="S81">|</font><b>Info</b><font class="S81">|</font><b>Line</b>(<font class="S81">|</font><b>Width</b><font class="S81">|</font><b>Height</b><font class="S81">|</font><b>TextSize</b><font class="S81">|</font><b>Mode</b>)<span class="S8">]</span> позволяет самому настроить окно ввода, где:<br>
+<b>Title</b><a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a> - заголовок окна.<br>
+<b>Info</b> - информация в окне (если необходим символ <b>|</b>, используйте <b>&#38;&#38;</b> ; если необходим перенос, используйте <b>@CRLF</b>).<br>
+<b>Line</b> - начальная строка в окне ввода.<br>
+<b>Width</b> - ширина диалога (минимальный размер 240 px).<br>
+<b>Height</b> - высота диалога (минимальный размер 96 px).<br>
+<b>TextSize</b> - размер шрифта.<br>
+<b>Mode</b> - любое значение отображает "звёздочки" (&#8226;) вместо символов при вводе текста
+
+<hr align="left" width=300>Также поддерживается формат <span class="S8">[</span>input=BOXN<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a> в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>) в соответствующих ключах <b>InputBox</b>1, <b>InputBox</b>2 ... <b>InputBox</b>N, в том же формате <b>Title</b><font class="S81">|</font><b>Info</b><font class="S81">|</font><b>Line</b>(<font class="S81">|</font><b>Width</b><font class="S81">|</font><b>Height</b><font class="S81">|</font><b>TextSize</b><font class="S81">|</font><b>Mode</b>).
+<br>Также могут использоваться ключи с любым окончанием после основы InputBox, в котором есть цифры, латинские символы и знак подчёркивания _
+
+<br><hr align="left" width=300><span class="section">Пример записи:</span><p class="codeheader" style="padding:6px;white-space: nowrap"><b>InputBox</b>1=Ввод расширения<font class="S81"><b>|</b></font>Введите необходимое расширение<font class="S81"><b>|</b></font>txt</p>
+
+<hr align="left" width=300>
+В версии 4.4. появилась возможность настраивать размер, толщину, имя шрифта, фон, цвет в диалоге в <a class="le" href="../../config.htm#Box"><font class="S1"><b>TCIMG.ini</b></font></a> в секции [Box]
+<hr align="left" width=300>
+Установка значка окну <a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a>
+<hr align="left" width=300>
+Установка подсказки окну <a class="re" href="#notes9" title="Установка подсказки окну"><b>**</b></a>
+<hr align="left" width=70%>
+<a name="GLOBALINPUTX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALINPUT"></a>GLOBALINPUT</td><td>
+массив входных данных (в первой ячейке введённые данные)<br>
+если используются несколько диалогов [input] или [richinput] то:<br>
+&nbsp;&nbsp;данные 2-го диалога записываются во 2-ю ячейку<br>
+&nbsp;&nbsp;данные 3-го диалога записываются в 3-ю ячейку<br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в N-ю ячейку<br>
+</td></tr>
+<tr><td class="s3td"><a name="GLOBALINPUT1"></a>GLOBALINPUT<b>1</b><br>...<br>GLOBALINPUT<b>N</b></td><td>
+массив входных <u>построчных</u> данных. Разделитель данных <font class="S51"><b>@RN</b></font><br>
+&nbsp;&nbsp;построчные данные 1-го диалога записываются в переменную GLOBALINPUT<b>1</b><br>
+&nbsp;&nbsp;построчные данные 2-го диалога записываются в переменную GLOBALINPUT<b>2</b><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;построчные данные N-го диалога записываются в переменную GLOBALINPUT<b>N</b><br>
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/dialog_i1.png" border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/dialog_i3.png" border=0></p>
+<br>
+<p align="center"><img src="../../images/dialog_i2.png" border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/dialog_i4.png" border=0></p>
+
+
+<!-- 2. Диалог выбора информации в ComboBox: Подпараметр [combo] или <combo> -->
+
+
+<br>
+<br><hr class="hr-blue">
+<br><a name="2"></a><a name="combo"></a><br>
+<a href="#3"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>2.</b> Диалог выбора информации в ComboBox: Подпараметр <b>[combo]</b> или <b>&#60;combo&#62;</b><br></font>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Выбор информации в ComboBox</b></font>. Подпараметр <span class="S8">[</span>combo<span class="S8">]</span> или <span class="S8">&#60;</span>combo<span class="S8">&#62;</span>.
+<br>В любом месте строки параметров, где встретится <span class="S8">[</span>combo=BOXN<span class="S8">]</span>, будет вызвано диалоговое окно, в котором можно выбрать данные.
+<hr align="left" width=300>
+<span class="S8">[</span>combo=BOXN<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a> в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>) в соответствующих ключах <b>ComboBox</b>1, <b>ComboBox</b>2 ... <b>ComboBox</b>N и позволяет самому настроить окно вывода.
+<br>Также могут использоваться ключи с любым окончанием после основы ComboBox, в котором есть цифры, латинские символы и знак подчёркивания _
+<br><br>
+Синтаксис шаблона: 
+<p class="codeheader" style="padding:6px;white-space: nowrap"><b>ComboBox</b>N=Title<a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a><font class="S81"><b>||</b></font>Info<font class="S81"><b>||</b></font>List<font class="S81"><b>||</b></font>Width<font class="S81"><b>||</b></font>Height<font class="S81"><b>||</b></font>Number<font class="S81"><b>||</b></font>Edit</p></font>
+где:
+<br>
+<b>Title</b><a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a> - заголовок окна.<br><b>Info</b> - информация в окне.<br>
+<b>List</b> - строка-список фраз, выводимых в ComboBox, прописываемых через разделитель <b>|</b><br>
+<b>Width</b> - ширина диалога.<br><b>Height</b> - высота диалога.<br>
+<b>Number</b> - номер фразы из списка List, выводимой первой в ComboBox.<br>
+<b>Edit</b> - 1 - редактируемый ComboBox, 0 - не редактируемый.
+<hr align="left" width=300>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap"><b>ComboBox</b>1=Выбор имени<font class="S81"><b>||</b></font>Выберите или введите своё имя файла:<font class="S81"><b>||</b></font>Name<font class="S11"><b>|</b></font>File<font class="S31"><b>|</b></font>ReadMe<font class="S31"><b>|</b></font>Test<font class="S31"><b>|</b></font>Безымянный<font class="S81"><b>||</b></font>343<font class="S81"><b>||</b></font>117<font class="S81"><b>||</b></font>1<font class="S81"><b>||</b></font>1</p></font>
+<hr align="left" width=300>
+Можно настраивать размер, толщину, имя шрифта, фон, цвет в диалоге в <a class="le" href="../../config.htm#Box"><font class="S1"><b>TCIMG.ini</b></font></a> в секции [Box]<br>
+<hr align="left" width=300>
+Добавлено в версии 13.6<br>
+Можно в пунктах List прописывать комментарии <font class="S21"><b>пробел<<текст>></b></font>, которые выводятся в пунктах, но не передаются при выборе.<br>
+<span class="section">Пример записи комментариев:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<b>ComboBox_X00</b>=Копирование<font class="S81"><b>||</b></font>Выберите папку<font class="S81"><b>||</b></font>$f06 <font class="S21"><<рабочий стол>></font><font class="S61"><b>|</b></font>$f300 <font class="S21"><<папка Total Commander>></font><font class="S81"><b>||</b></font>400<font class="S81"><b>||</b></font>120<font class="S81"><b>||</b></font>1
+</p>
+Чтобы передать символ <font class="S81"><b>|</b></font> используется Chr(124)
+<hr align="left" width=300>
+Добавлено в версии 13.7<br>
+<b>List</b> - может быть следующего формата <b><font class="S31">¤¤</font>Data<font class="S31">¤¤</font>Section<font class="S31">¤¤</font>Delimeter<font class="S31">¤¤</font></b><br>
+&nbsp;&nbsp;<b>Data</b> - данные, которые используются в пунктах, возможны варианты:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;File - путь к файлу, в котором находится информация.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;GLOBALNAME&#60;xN&#62; - информация из глобальных переменных (см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$var_... - значения переменных, созданные командой <a class="le" href="../com_exect.htm"><span class="S41"><b>exect</b></span></a><br>
+&nbsp;&nbsp;<b>Section</b> - имя секции, если секция не используется, то прописывается символ <b>#</b><br>
+&nbsp;&nbsp;<b>Delimeter</b> - разделитель данных для пунктов. Можно использовать в строке: "@CR" - Символ возврата каретки, Chr(13), "@LF" - Символ перевода строки, Chr(10), "@CRLF" = @CR & @LF, "@T&#65B" - Символ Tab, Chr(9)<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<b>ComboBox_X00</b>=Выбор шаблона<font class="S81"><b>||</b></font>Выберите шаблон:<font class="S81"><b>||</b></font><font class="S31">¤¤</font>C:\List.txt<font class="S31">¤¤</font>#<font class="S31">¤¤</font>@CRLF<font class="S31">¤¤</font><font class="S81"><b>||</b></font>383<font class="S81"><b>||</b></font>117<font class="S81"><b>||</b></font>1<font class="S81"><b>||</b></font>1
+</p>
+<hr align="left" width=300>
+Установка значка окну <a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a>
+<hr align="left" width=300>
+Установка подсказки окну <a class="re" href="#notes9" title="Установка подсказки окну"><b>**</b></a>
+
+<hr align="left" width=70%>
+<a name="GLOBALCOMBOX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALCOMBO"></a>GLOBALCOMBO</td><td>
+массив входных данных (в первой ячейке данные выбранного пункта)<br>
+если используются несколько диалогов [combo] то:<br>
+&nbsp;&nbsp;данные 2-го диалога записываются во 2-ю ячейку<br>
+&nbsp;&nbsp;данные 3-го диалога записываются в 3-ю ячейку<br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в N-ю ячейку<br>
+</td></tr>
+<tr><td class="s3td"><a name="GLOBALCOMBO1"></a>GLOBALCOMBO<b>1</b><br>...<br>GLOBALCOMBO<b>N</b></td><td>
+массив входных <u>построчных</u> данных. Разделитель данных <font class="S51"><b>@RN</b></font><br>
+&nbsp;&nbsp;построчные данные 1-го диалога записываются в переменную GLOBALCOMBO<b>1</b><br>
+&nbsp;&nbsp;построчные данные 2-го диалога записываются в переменную GLOBALCOMBO<b>2</b><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;построчные данные N-го диалога записываются в переменную GLOBALCOMBO<b>N</b><br>
+
+</td></tr>
+<tr><td class="s3td"><a name="GLOBALCOMBNX"></a>GLOBALCOMBN<b>1</b><br>...<br>GLOBALCOMBN<b>N</b></td><td>
+массив выходных данных.<br>
+в 1-й ячейке номер выбранного пункта.<br>
+&nbsp;&nbsp;номер 1-го диалога записываются в переменную GLOBALCOMBN<b>1</b><br>
+&nbsp;&nbsp;номер 2-го диалога записываются в переменную GLOBALCOMBN<b>2</b><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;номер N-го диалога записываются в переменную GLOBALCOMBN<b>N</b><br>
+
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/dialog_x1.png" border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/dialog_x4.png" border=0></p>
+<br>
+<p align="center"><img src="../../images/dialog_x2.png" border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/dialog_x3.png" border=0></p>
+
+
+<!-- 3. Диалог выбора информации в GroupBox: Подпараметр [group] или <group> -->
+
+
+<br>
+<br><hr class="hr-blue">
+<br><a name="3"></a><a name="group"></a><br>
+<a href="#4"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>3.</b> Диалог выбора информации в GroupBox: Подпараметр <b>[group]</b> или <b>&#60;group&#62;</b><br></font>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Выбор информации в GroupBox</b></font>. Подпараметр <span class="S8">[</span>group<span class="S8">]</span> или <span class="S8">&#60;</span>group<span class="S8">&#62;</span>.
+<br>В любом месте строки параметров, где встретится <span class="S8">[</span>group=BOXN<span class="S8">]</span>, будет вызвано диалоговое окно, в котором можно выбрать данные.
+<hr align="left" width=300>
+<span class="S8">[</span>group=BOXN<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a> в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>) в соответствующих ключах <b>GroupBox</b>1, <b>GroupBox</b>2 ... <b>GroupBox</b>N и позволяет самому настроить окно вывода.
+<br>Также могут использоваться ключи с любым окончанием после основы ComboBox, в котором есть цифры, латинские символы и знак подчёркивания _
+<br><br>
+Синтаксис шаблона: 
+<p class="codeheader" style="padding:6px;white-space: nowrap"><b>GroupBox</b>N=Title<a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a><font class="S81"><b><#></b></font>Info<font class="S81"><b><#></b></font>Group<font class="S81"><b><#></b></font>LineRadioButtons<font class="S81"><b><#></b></font>Width<font class="S81"><b><#></b></font>Height<font class="S81"><b><#></b></font>TextSize<font class="S81"><b><#></b></font>TextWeight</p></font>
+где:
+<br>
+<b>Title</b><a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a> - заголовок окна.<br>
+<b>Info</b> - информация в окне.<br>
+<b>Group</b> - название группы.<br>
+<b>LineRadioButtons</b> - строка-список радиокнопок, состоящих из пар: название радиокнопки и параметр командной строки, передаваемый при выборе - разделитель внутри и между парами <b><+></b><br>
+<b>Width</b> - ширина диалога.<br>
+<b>Height</b> - высота диалога.<br>
+<b>TextSize</b> - размер шрифта.<br>
+<b>TextWeight</b> - толщина шрифта.<br>
+<hr align="left" width=300>
+<span class="section">Пример записи:</span><p class="codeheader" style="padding:6px;white-space: nowrap"><b>GroupBox</b>1=Выбор режима конвертирования<font class="S81"><b><#></b></font>Конвертировать изображения.<font class="S81"><b><#></b></font>Выберите режим<font class="S81"><b><#></b></font>Все с расширением под курсором<font class="S11"><b><+></b></font>%p*.%E<font class="S11"><b><+></b></font>Все выделенные<font class="S11"><b><+></b></font>/filelist=%L<font class="S81"><b><#></b></font>290<font class="S81"><b><#></b></font>160</p></font>
+<hr align="left" width=300>
+Если в LineRadioButtons в параметрах командной строки участвуют параметры Total Commander (см. Дополнение <a class="le" href="add_param.htm"><b>№7</b></a>),<br>то через разделитель <b>!!</b> в <span class="S8">[</span>group=BOXN<span class="S8">]</span> необходимо добавить соответствующие параметры TC.<br><br>
+К примеру, если в LineRadioButtons есть параметры %L, %p, %E ..., то синтаксис записи:
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<span class="S8">[</span>group=BOXN<font class="S81"><b>!!</b></font>%%L=%L<font class="S81"><b>!!</b></font>%%p=%p<font class="S81"><b>!!</b></font>%%E=%E<span class="S8">]</span>
+</p>
+<hr align="left" width=300>
+В версии 14.6 добавлен в LineRadioButtons тег <b><font class="S121">:LABEL:</font><font class="S51">Text</font><font class="S11"><+></font><font class="S91">TextWeight</font><font class="S81">,</font><font class="S21">Color</font></b> позволяющий создавать <u>однострочную</u> надпись в GroupBox, где:<br>
+&nbsp;&nbsp;<font class="S121"><b>:LABEL:</b></font> - тег, означающий, что будет создаваться надпись.<br>
+&nbsp;&nbsp;<font class="S51"><b>Text</b></font> - текст надписи.<br>
+&nbsp;&nbsp;<font class="S11"><b><+></b></font> - разделитель.<br>
+&nbsp;&nbsp;<font class="S91"><b>TextWeight</b></font> [необязательный] - толщина шрифта: 400 - нормальный, 700 - жирный.<br>
+&nbsp;&nbsp;<font class="S21"><b>Color</b></font> [необязательный] - RGB цвет шрифта.<br>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+GroupBox_YY=Заголовок<font class="S81"><b><#></b></font>Описание<font class="S81"><b><#></b></font>Режим<font class="S81"><b><#></b></font><font class="S121"><b>:LABEL:</b></font><font class="S51"><b>Надпись 1</b></font><font class="S61"><b><+></b></font><font class="S91"><b>700</b></font><font class="S81"><b>,</b></font><font class="S21"><b>000080</b></font><font class="S61"><b><+></b></font>1. Первое<font class="S61"><b><+></b></font>N_1<font class="S61"><b><+></b></font>2. Второе<font class="S61"><b><+></b></font>N_2<font class="S61"><b><+></b></font><font class="S121"><b>:LABEL:</b></font><font class="S51"><b>Надпись 2</b></font><font class="S61"><b><+></b></font><font class="S91"><b>700</b></font><font class="S81"><b>,</b></font><font class="S21"><b>DC143C</b></font><font class="S61"><b><+></b></font>3. Третье<font class="S61"><b><+></b></font>N_3<font class="S61"><b><+></b></font>4. Четвёртое<+>N_4<font class="S81"><b><#></b></font>230<font class="S81"><b><#></b></font>240
+</p>
+
+<hr align="left" width=300>
+В версии 14.7 добавлен в LineRadioButtons тег <b><font class="S121">:BREAK:</font><font class="S61"><+></font><font class="S51">Indent</font></b><br>
+&nbsp;&nbsp;<font class="S121"><b>:BREAK:</b></font> - тег, означающий перенос последующих пунктов в новый столбец.<br>
+&nbsp;&nbsp;<font class="S51"><b>Indent</b></font> - число, означающее отступ от предыдущего столбца в пикселях.<br>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+GroupBox_BR1=Заголовок<font class="S81"><b><#></b></font>Описание<font class="S81"><b><#></b></font>Режим<font class="S81"><b><#></b></font>:LABEL:Надпись 1<font class="S61"><b><+></b></font>700,000080<font class="S61"><b><+></b></font>1. Первое<+>N_1<font class="S61"><b><+></b></font>2. Второе<+>N_2<font class="S61"><b><+></b></font><font class="S121"><b>:BREAK:</b></font><font class="S61"><b><+></b></font><font class="S51"><b>100</b></font><font class="S61"><b><+></b></font>:LABEL:Надпись 2<font class="S61"><b><+></b></font>700,DC143C<font class="S61"><b><+></b></font>3. Третье<font class="S61"><b><+></b></font>N_3<font class="S61"><b><+></b></font>4. Четвёртое<font class="S61"><b><+></b></font>N_4<font class="S81"><b><#></b></font>230<font class="S81"><b><#></b></font>180
+</p>
+<hr align="left" width=300>
+В LineRadioButtons тег <b>Текст<font class="S121">:V:</font><font class="S61"><+></font><font class="S51">Cmd</font></b><br>
+&nbsp;&nbsp;<b><font class="S121">:V:</font></b> - тег указывает, что пункт будет активен.<br>
+&nbsp;&nbsp;<b><font class="S51">Cmd</font></b> - параметры командной строки.<br>
+&nbsp;&nbsp;Активность устанавливается для последнего пункта, в котором найден тег <font class="S121">:V:</font> (по умолчанию активный 1-й пункт)
+<hr align="left" width=300>
+Совместно с другими тегами можно использовать подсказку к пунктам или к названиям в GroupBox.<br>
+В LineRadioButtons тег <b>Текст<font class="S121">©Hint©</font><font class="S61"><+></font><font class="S51">Cmd</font></b><br>
+&nbsp;&nbsp;<b><font class="S121">©Hint©</font></b> - подсказка к пункту (<u>прописывается в конце</u> после всех тегов и текста между символами <font class="S121"><b>©</b></font>)<br>
+&nbsp;&nbsp;<b><font class="S51">Cmd</font></b> - параметры командной строки.<br>
+&nbsp;&nbsp;&nbsp;Дополнительные настройки подсказки в Примечании <a class="re" href="#notes4" title="Настройка подсказки в диалоге"><b>№4</b></a>
+
+<hr align="left" width=300>
+В любом месте строки можно использовать метки <font class="S121"><b>§<font class="S61"><b>string</b></font>§</b></font> для внутреннего пользования, которые не влияют и не отображаются в диалоге.<br>
+&nbsp;&nbsp;<font class="S121"><b>§<font class="S61"><b>string</b></font>§</b></font> - string - строка или набор символов.
+<hr align="left" width=300>
+Можно настраивать размер, толщину, имя шрифта, фон, цвет в диалоге в <a class="le" href="../../config.htm#Box"><font class="S1"><b>TCIMG.ini</b></font></a> в секции [Box]
+<hr align="left" width=300>
+Установка значка окну <a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a>
+<hr align="left" width=300>
+Установка подсказки окну <a class="re" href="#notes9" title="Установка подсказки окну"><b>**</b></a>
+
+<hr align="left" width=70%>
+<a name="GLOBALGROUPX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALGROUP"></a>GLOBALGROUP</td><td>
+массив входных данных (в первой ячейке данные выбранного пункта)<br>
+если используются несколько диалогов [group] то:<br>
+&nbsp;&nbsp;данные 2-го диалога записываются во 2-ю ячейку<br>
+&nbsp;&nbsp;данные 3-го диалога записываются в 3-ю ячейку<br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в N-ю ячейку<br>
+</td></tr>
+<tr><td class="s3td"><a name="GLOBALGROUP1"></a>GLOBALGROUP<b>1</b><br>...<br>GLOBALGROUP<b>N</b></td><td>
+массив входных <u>построчных</u> данных. Разделитель данных <font class="S51"><b>@RN</b></font><br>
+&nbsp;&nbsp;построчные данные 1-го диалога записываются в переменную GLOBALGROUP<b>1</b><br>
+&nbsp;&nbsp;построчные данные 2-го диалога записываются в переменную GLOBALGROUP<b>2</b><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;построчные данные N-го диалога записываются в переменную GLOBALGROUP<b>N</b><br>
+</td></tr>
+
+<tr><td class="s3td"><a name="GLOBALGROUNX"></a>GLOBALGROUN<b>1</b><br>...<br>GLOBALGROUN<b>N</b></td><td>
+массив выходных данных.<br>
+в 1-й ячейке номер выбранного пункта.<br>
+&nbsp;&nbsp;номер 1-го диалога записываются в переменную GLOBALGROUN<b>1</b><br>
+&nbsp;&nbsp;номер 2-го диалога записываются в переменную GLOBALGROUN<b>2</b><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;номер N-го диалога записываются в переменную GLOBALGROUN<b>N</b><br>
+
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/dialog_g1.png" border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/dialog_g2.png" border=0></p>
+<br>
+
+
+<!-- 4. Диалог выбора информации в EditBox: Подпараметр [edits] или <edits> -->
+
+
+<br><hr class="hr-blue">
+<br><a name="4"></a><a name="edits"></a><br>
+<a href="#5"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>4.</b> Диалог выбора информации в EditsBox: Подпараметр <b>[edits]</b> или <b>&#60;edits&#62;</b><br></font>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Выбор информации в EditsBox</b></font>. Подпараметр <span class="S8">[</span>edits<span class="S8">]</span> или <span class="S8">&#60;</span>edits<span class="S8">&#62;</span>.
+<br>В любом месте строки параметров, где встретится <span class="S8">[</span>edits=BOXN<span class="S8">]</span>, будет вызвано диалоговое окно, в котором можно ввести данные.
+<hr align="left" width=300>
+<span class="S8">[</span>edits=BOXN<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a> в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>) в соответствующих ключах <b>EditsBox</b>1, <b>EditsBox</b>2 ... <b>EditsBox</b>N и позволяет самому настроить окно вывода.
+<br>Также могут использоваться ключи с любым окончанием после основы EditsBox, в котором есть цифры, латинские символы и знак подчёркивания _
+<br><br>
+Синтаксис шаблона: 
+<p class="codeheader" style="padding:6px;white-space: nowrap"><b>EditsBox</b>N=Title<a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a><font class="S81"><b><#></b></font>Info<font class="S81"><b><#></b></font>Edit<font class="S81"><b><#></b></font>Width<font class="S81"><b><#></b></font>Height<font class="S81"><b><#></b></font>TextSize<font class="S81"><b><#></b></font>TextWeight<font class="S81"><b><#></b></font>TextName<font class="S81"><b><#></b></font>Color </p></font>
+где:
+<br>
+<b>Title</b><a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a> - заголовок окна.<br>
+<b>Info</b> - информация в окне.<br>
+<b>Edit</b> - строка-список окон edit, состоящих из трио:<br>
+&nbsp;&nbsp;Название окна<b><+></b>Высота окна<b><+></b>параметр командной строки, передаваемый при выборе<br>
+&nbsp;&nbsp;Разделитель внутри и между трио <b><+></b><br>
+<b>Width</b> - ширина диалога.<br>
+<b>Height</b> - высота диалога.<br>
+<b>TextSize</b> - размер шрифта.<br>
+<b>TextWeight</b> - толщина шрифта.<br>
+<b>TextName</b> - имя шрифта. <br>
+<b>Color</b> - RGB цвет диалога (по умолчанию системный). 
+<br><br>
+<b>TextSize</b>, <b>TextWeight</b>, <b>TextName</b>, <b>Color</b> являются не обязательными, по умолчанию значения берутся в <a class="le" href="../../config.htm#Box"><font class="S1"><b>TCIMG.ini</b></font></a> в секции [Box]<br>
+<hr align="left" width=300>
+<span class="section">Пример записи:</span><p class="codeheader" style="padding:6px;white-space: nowrap"><b>EditsBox</b>1=Поиск и замена<font class="S81"><b><#></b></font>Введите фразы для поиска и замены в содержимом выделенных файлах.<font class="S81"><b><#></b></font>ввод строки поиска<font class="S11"><b><+></b></font>100<font class="S11"><b><+></b></font>!!<font class="S11"><b><+></b></font>ввод строки замены<font class="S11"><b><+></b></font>100<font class="S11"><b><+></b></font><font class="S81"><b><#</b></font>>340<font class="S81"><b><#></b></font>305</p></font>
+<hr align="left" width=300>
+Для установки заданных строк в элемент(ы) Edit при вызове диалога,<br>во 2-м соответствующем ключе EditsTextBoxN прописывается строка<br>или строки, разделённые <b><#></b> (количество строк должно совпадать количеству элементов Edit)<br><br>
+<span class="section">Пример записи:</span><p class="codeheader" style="padding:6px;white-space: nowrap">
+<b>EditsTextBox</b>1=Строка №1 по умолчанию<font class="S61"><b>@CRLF</b></font>при вызове диалога<font class="S81"><b><#></b></font>Строка №2
+</p>
+<hr align="left" width=300>
+Установка значка окну <a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a>
+<hr align="left" width=300>
+Установка подсказки окну <a class="re" href="#notes9" title="Установка подсказки окну"><b>**</b></a>
+
+<hr align="left" width=70%>
+<a name="GLOBALEDITSX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALEDITS"></a>GLOBALEDITS</td><td>
+массив входных данных (в первой ячейке введённые данные)<br>
+если используются несколько диалогов или полей ввода [edits] то:<br>
+&nbsp;&nbsp;данные 2-го диалога (или поля ввода) записываются во 2-ю ячейку<br>
+&nbsp;&nbsp;данные 3-го диалога (или поля ввода) записываются в 3-ю ячейку<br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога (или поля ввода) записываются в N-ю ячейку<br>
+<tr><td class="s3td"><a name="GLOBALEDITS1"></a>GLOBALEDITS<b>1</b><br>...<br>GLOBALEDITS<b>N</b></td><td>
+массив входных <u>построчных</u> данных. Разделитель данных <font class="S51"><b>@RN</b></font><br>
+&nbsp;&nbsp;построчные данные 1-го диалога записываются в переменную GLOBALEDITS<b>1</b><br>
+&nbsp;&nbsp;построчные данные 2-го диалога записываются в переменную GLOBALEDITS<b>2</b><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;построчные данные N-го диалога записываются в переменную GLOBALEDITS<b>N</b><br>
+
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/dialog_e1.png" border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/dialog_e2.png" border=0></p>
+<br>
+
+
+<!-- 5. Объединение в один диалог : Команда shape -->
+
+
+<br><hr class="hr-blue">
+<br><a name="5"></a><br>
+<a href="#6"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>5.</b> Объединение в один диалог : Команда <a class="le" href="../com_shape.htm"><b>shape</b></a><br></font>
+<br>
+Команда shape создана для объединения отдельных диалогов <font class="S19">[input], [richinput], [combo], [group], [edits], [check], [iconz], [lista], [updwn], [image], [dates]</font> в один.
+<br><br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/dialog_p1.png" border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/dialog_p2.png" border=0></p>
+<br>
+
+В версии 20.4 появилась возможность горизонтального объединения диалогов.<br>&nbsp;&nbsp;&bull; Тег [break] в командной строке между диалогами означает перенос последующих за ним диалогов в новую колонку.<br>&nbsp;&nbsp;&bull; Тег [break] может использоваться несколько раз.
+<br>
+<span class="section">Пример записи:</span><p class="codeheader" style="padding:6px;white-space: nowrap">shape=1 creat="%p"||[combo=BOX2].<b>[break]</b>[combo=BOX3]</p><br>Может выглядеть следующим образом:<p align="center"><img src="../../images/break.png" border="0"></p>
+
+Установка значка окну <a class="re" href="#notesshape" title="Установка значка окну"><b>*</b></a>
+<hr align="left" width=300>
+Установка подсказки окну <a class="re" href="#notes9" title="Установка подсказки окну"><b>**</b></a>
+<br>
+<span class="section">Пример записи:</span><p class="codeheader" style="padding:6px;white-space: nowrap">shape=1<font class="S81"><b>??</b></font>BOX_Ex1 creat="%p"||[combo=BOX2].<b>[break]</b>[combo=BOX3]</p>
+
+<br><br>
+
+
+<!-- 6. Диалог выбора файла для сохранения [ssave] или <ssave> -->
+
+
+<br><hr class="hr-blue">
+<br><a name="6"></a><a name="ssave"></a><br>
+<a href="#7"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>6.</b> Диалог выбора файла для сохранения: Подпараметр <b>[ssave]</b> или <b>&#60;ssave&#62;</b><br></font>
+
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Выбор файла для сохранения</b></font>. Подпараметр <span class="S8">[</span>ssave<span class="S8">]</span>. В любом месте строки параметров, где встретится <span class="S8">[</span>ssave<span class="S8">]</span>, будет вызвано диалоговое окно выбора файла для записи.<hr align="left" width=300>Расширенный вид:<span class="S8">[</span>ssave=<b>Info</b><span class="S11">!!</span><b>Path</b><span class="S11">!!</span><b>Filter</b><span class="S11">!!</span><b>Name</b><span class="S11">!!</span><b>Ext</b><span class="S11">!!</span><b>N</b><span class="S8">]</span> позволяет самому настроить окно ввода, где:
+<br>
+&nbsp;&nbsp;<b>Info</b> - информация в диалоге.<br>
+&nbsp;&nbsp;<b>Path</b> - корневой каталог дерева выбора в диалоге.<br>
+&nbsp;&nbsp;<b>Filter</b> - файловый фильтр (текст_1<font class="S81">|</font>фильтр_1<font class="S81">|</font>текст_2<font class="S81">|</font>фильтр_2<font class="S81">|</font>текст_N<font class="S81">|</font>фильтр_N).<br>
+&nbsp;&nbsp;<b>Name</b> - начальное имя.<br>
+&nbsp;&nbsp;<b>Ext</b> - начальное расширение.<br>
+&nbsp;&nbsp;<b>N</b> - номер начального выводимого фильтра.
+<hr align="left" width=300>
+Также поддерживается формат <span class="S8">[</span>ssave=BOXN<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a>, в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>), в соответствующих ключах <b>SaveBox</b>1, <b>SaveBox</b>2 ... <b>SaveBox</b>N, в том же формате <b>Info</b><span class="S11">!!</span><b>Path</b><span class="S11">!!</span><b>Filter</b><span class="S11">!!</span><b>Name</b><span class="S11">!!</span><b>Ext</b><span class="S11">!!</span><b>N</b>
+<br>Также могут использоваться ключи с любым окончанием после основы SaveBox, в котором есть цифры, латинские символы и знак подчёркивания _
+
+<br><br><span class="section">Пример записи:</span><p class="codeheader" style="padding:6px;white-space: nowrap"><b>SaveBox</b>1=Выберите имя файла для сохранения.<span class="S11">!!</span>C:\<span class="S11">!!</span>Текст (*TXT)|*.txt|Все (*.*)|*.*<span class="S11">!!</span>newname<span class="S11">!!</span>txt<span class="S11">!!</span>2</p></font>
+
+<hr align="left" width=70%>
+<a name="GLOBALSSAVEX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALSSAVE"></a>GLOBALSSAVE<b>1</b><br>GLOBALSSAVE<b>2</b><br>...<br>GLOBALSSAVE<b>N</b></td><td>
+массив: в первой ячейке путь выбранного файла</font><br>
+&nbsp;&nbsp;данные 1-го диалога записываются в переменную GLOBALSSAVE<b>1</b><br>
+&nbsp;&nbsp;данные 2-го диалога записываются в переменную GLOBALSSAVE<b>2</b><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в переменную GLOBALSSAVE<b>N</b><br>
+
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/dialog_s1.png" border=0></p>
+<br>
+
+
+<!-- 7. Диалог выбора файла для открытия: Подпараметр [sopen] или <sopen> -->
+
+
+<br><hr class="hr-blue">
+<br><a name="7"></a><a name="sopen"></a><br>
+<a href="#8"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>7.</b> Диалог выбора файла для открытия: Подпараметр <b>[sopen]</b> или <b>&#60;sopen&#62;</b><br></font>
+
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Выбор файла для открытия</b></font>. Подпараметр <span class="S8">[</span>sopen<span class="S8">]</span>. В любом месте строки параметров, где встретится <span class="S8">[</span>sopen<span class="S8">]</span>, будет вызвано диалоговое окно выбора файла.<hr align="left" width=300>Расширенный вид: <span class="S8">[</span>sopen=<b>Info</b><span class="S11">!!</span><b>Path</b><span class="S11">!!</span><b>Filter</b><span class="S11">!!</span><b>Name</b><span class="S11">!!</span><b>Ext</b><span class="S11">!!</span><b>Number</b><span class="S11">!!</span><b>Options</b><span class="S8">]</span> позволяет самому настроить окно ввода, где:<br><b>Info</b> - информация в диалоге.<br><b>Path</b> - корневой каталог дерева выбора в диалоге.<br><b>Filter</b> - файловый фильтр (текст_1<font class="S81">|</font>фильтр_1<font class="S81">|</font>текст_2<font class="S81">|</font>фильтр_2<font class="S81">|</font>текст_N<font class="S81">|</font>фильтр_N).<br><b>Name</b> - начальное имя.<br><b>Ext</b> - начальное расширение.<br><b>Number</b> - номер начального выводимого фильтра.<br><b>Options</b> - выбор нескольких файлов при Options=4 (по умолчанию Options=0 - выбор одного файла).
+
+<hr align="left" width=300>
+Также поддерживается формат <span class="S8">[</span>sopen=BOX1..N<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a>, в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>) , в соответствующих ключах <b>OpenBox</b>1, <b>OpenBox</b>2 ... <b>OpenBox</b>N, в том же формате <b>Info</b><span class="S11">!!</span><b>Path</b><span class="S11">!!</span><b>Filter</b><span class="S11">!!</span><b>Name</b><span class="S11">!!</span><b>Ext</b><span class="S11">!!</span><b>Number</b>.
+<br>Также могут использоваться ключи с любым окончанием после основы OpenBox, в котором есть цифры, латинские символы и знак подчёркивания _
+
+<br><br><span class="section">Пример записи:</span><p class="codeheader" style="padding:6px;white-space: nowrap"><b>OpenBox</b>1=Выберите имя файла.<span class="S11">!!</span>C:\<span class="S11">!!</span>Текст (*TXT)|*.txt|Все (*.*)|*.*<span class="S11">!!</span>openfile<span class="S11">!!</span>txt<span class="S11">!!</span>2</p></font><span class="section">Возвращает:</span><br>Полный путь к выбранному файлу.<br>При Options=4 временный файл со списком полных путей выбранных файлов (даже если выбран один файл)
+
+<hr align="left" width=70%>
+<a name="GLOBALSOPENX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALSOPEN"></a>GLOBALSOPEN<b>1</b><br>GLOBALSOPEN<b>2</b><br>...<br>GLOBALSOPEN<b>N</b></td><td>
+массив, в котором находятся пути выбранных файлов</font><br>
+&nbsp;&nbsp;данные 1-го диалога записываются в переменную GLOBALSOPEN<b>1</b><br>
+&nbsp;&nbsp;данные 2-го диалога записываются в переменную GLOBALSOPEN<b>2</b><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в переменную GLOBALSOPEN<b>N</b><br>
+
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/dialog_o1.png" border=0></p>
+<br>
+
+
+<!-- 8. Диалог просмотра и выбора значка: Подпараметр <sicon> или [sicon] -->
+
+
+<br><hr class="hr-blue">
+<br><a name="8"></a><a name="sicon"></a><br>
+<a href="#9"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>8.</b> Диалог просмотра и выбора значка: Подпараметр <b>&#60;sicon&#62;</b> или <b>[sicon]</b><br></font>
+
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Выбор значка</b></font>. Подпараметр <span class="S8">&#60;</span>sicon<span class="S8">&#62;</span> или <span class="S8">&#60;</span>sicon=<b>File</b><b>Icon</b>(<font class="S81"><b>|</b></font><b>Size</b><font class="S81"><b>|</b></font><b>Focus</b><font class="S81"><b>|</b></font><b>Flag</b><font class="S81"><b>|</b></font><b>Mode</b><font class="S81"><b>|</b></font><b>Delimeter</b>)<span class="S8">&#62;</span>, где:<br><b>File</b><b>Icon</b> - путь к библиотеке с иконками.<br><b>Size</b> - отображаемый размер значков при просмотре.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Этот параметр может быть в диапазоне от 8 до 256.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;При <b>-1</b> размер берётся из TCIMG.ini из секции [IconDialog] из ключа SizeIcon<br><b>Focus</b> - номер (начальная позиция) значка просмотра.<br><b>Flag</b><br>&nbsp;&nbsp;0 - не создавать кнопку "Свернуть", иконка не отображается на панели задач (по умолчанию).<br>&nbsp;&nbsp;1 - создавать кнопку "Свернуть", иконка отображается на панели задач.<br><b>Mode</b> - режим вывода:
+<br>&nbsp;&nbsp;0 - возвращается абсолютный путь и через разделитель номер иконки (по умолчанию)
+<br>&nbsp;&nbsp;1 - возвращается относительный путь и через разделитель номер иконки
+<br>&nbsp;&nbsp;2 - возвращается относительный путь (относительно утилиты TCIMG) и через разделитель номер иконки
+<br>&nbsp;&nbsp;3 - возвращается номер иконки
+<br><b>Delimeter</b> - разделитель между путём и номером иконки (по умолчанию запятая "<font class="S81"><b>,</b></font>")
+<br>&nbsp;&nbsp;
+Дополнительные возможности, которые можно использовать в разделителе:
+<br>&nbsp;&nbsp;• "<b>@CR</b>" - Символ возврата каретки, Chr(13), "<b>@LF</b>" - Символ перевода строки, Chr(10), "<b>@CRLF</b>" = @CR & @LF, "<b>@TAB</b>" - Символ Tab, Chr(9).
+<br>&nbsp;&nbsp;• Если необходимы <u>кавычки</u>, то используются две одинарных кавычки (апострофа) <b>''</b> , если в команде необходим <u>пробел</u> - используются два символа тильды <b>~~</b>
+<br>&nbsp;&nbsp;• Так же можно вставлять символы с помощью функций Autoit <a class="le" href="../fun/chr.htm"><span class="S4"><font size="2"><b>Chr()</b></font></span></a> и <a class="le" href="../fun/chrw.htm"><span class="S4"><font size="2"><b>ChrW()</b></font></span></a>, которые заменяются соответствующими символами, а так же <a class="le" href="../fun/clipget.htm"><span class="S4"><font size="2"><b>ClipGet()</b></font></span></a>, которая заменяется содержимым буфера обмена и <a class="le" href="../fun/number.htm"><span class="S4"><font size="2"><b>Number()</b></font></span></a>, позволяющая производить математические действия.
+<br><br>Если путь не найден, то открывается диалог ввода файла со значками.<br>Основные типы файлов, содержащие иконки: EXE, DLL, ICL, SCR, OCX, CPL, WCX, WDX, WLX, WFX, SFX, TSP, IME, AX, DRV....</font>
+
+<hr align="left" width=70%>
+<a name="GLOBALSICONX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALSICON"></a>GLOBALSICON<b>1</b><br>GLOBALSICON<b>2</b><br>...<br>GLOBALSICON<b>N</b></td><td>
+массив, в котором находятся данные выбранного значка:</font><br>
+- в 1-й ячейке путь файла и через запятую номер значка.<br>
+- во 2-й ячейке путь файла.<br>
+- в 3-й ячейке номер значка.<br>
+- в 4-й ячейке путь файла с удваиванием слешей и через запятую номер значка.<br><br>
+&nbsp;&nbsp;данные 1-го диалога записываются в переменную GLOBALSICON<b>1</b><br>
+&nbsp;&nbsp;данные 2-го диалога записываются в переменную GLOBALSICON<b>2</b><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в переменную GLOBALSICON<b>N</b><br>
+
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/dialog_c1.png" border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/dialog_c2.png" border=0></p>
+<br>
+
+
+<!-- 9. Диалог выбора каталога: Подпараметр [sfold] или <sfold> -->
+
+
+<br><hr class="hr-blue">
+<br><a name="9"></a><a name="sfold"></a><br>
+<a href="#10"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>9.</b> Диалог выбора каталога: Подпараметр <b>[sfold]</b> или <b>&#60;sfold&#62;</b><br></font>
+
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Выбор каталога</b></font>. Подпараметр <span class="S8">[</span>sfold<span class="S8">]</span>. В любом месте строки параметров, где встретится <span class="S8">[</span>sfold<span class="S8">]</span>, будет вызвано диалоговое окно выбора каталога, в котором можно выбрать каталог.<hr align="left" width=300>Расширенный вид: <span class="S8">[</span>sfold=<b>Info</b>|<b>Path</b><span class="S8">]</span> позволяет самому настроить окно ввода, где:<br><b>Info</b> - информация в диалоге.<br><b>Path</b> - корневой каталог дерева выбора в диалоге.<br>Чтобы установить Рабочий Стол в качестве корневого каталога (по умолчанию) 2-й параметр не указывается.
+
+<hr align="left" width=300>
+Также поддерживается формат <span class="S8">[</span>sfold=BOXN<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a>, в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>) , в соответствующих ключах <b>FolderBox</b>1, <b>FolderBox</b>2 ... <b>FolderBox</b>N, в том же формате <b>Info</b>|<b>Path</b>.
+<br>Также могут использоваться ключи с любым окончанием после основы FolderBox, в котором есть цифры, латинские символы и знак подчёркивания _
+
+<br><br><span class="section">Пример записи:</span><p class="codeheader" style="padding:6px;white-space: nowrap"><b>FolderBox</b>1=Выберите папку для создания списка|</p></font>
+
+<hr align="left" width=70%>
+<a name="GLOBALSFOLDX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALSFOLD"></a>GLOBALSFOLD<b>1</b><br>GLOBALSFOLD<b>2</b><br>...<br>GLOBALSFOLD<b>N</b></td><td>
+массив: в первой ячейке путь выбранной папки.</font><br>
+&nbsp;&nbsp;данные 1-го диалога записываются в переменную GLOBALSFOLD<b>1</b><br>
+&nbsp;&nbsp;данные 2-го диалога записываются в переменную GLOBALSFOLD<b>2</b><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в переменную GLOBALSFOLD<b>N</b><br>
+
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/dialog_f1.png" border=0></p>
+<br>
+<br>
+
+
+<!-- 10. Диалог ввода информации: Подпараметр [richinput] или <richinput> -->
+
+
+<br><hr class="hr-blue">
+<br><a name="10"></a><a name="richinput"></a><br>
+<a href="#11"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>10.</b> Диалог ввода информации: Подпараметр <b>[richinput]</b> или <b>&#60;richinput&#62;</b><br></font>
+<br>
+Параметр <b>richinput</b> является аналогом параметра <a class="le" href="#1"><b>input</b></a>, в котором используется класс поля ввода "RichEdit"
+<br>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Ввод информации</b></font>. Подпараметр <span class="S8">[</span>richinput<span class="S8">]</span> или <span class="S8">&#60;</span>richinput<span class="S8">&#62;</span>.
+<br>В любом месте строки параметров, где встретится <span class="S8">[</span>richinput<span class="S8">]</span>, будет вызвано диалоговое окно, в котором можно ввести данные.<hr align="left" width=300>Расширенный вид: <span class="S8">[</span>richinput=<b>Title</b><font class="S81">|</font><b>Info</b><font class="S81">|</font><b>Line</b>(<font class="S81">|</font><b>Width</b><font class="S81">|</font><b>Height</b><font class="S81">|</font><b>TextSize</b><font class="S81">|</font><b>Mode</b>)<span class="S8">]</span> позволяет самому настроить окно ввода, где:<br>
+<b>Title</b> - заголовок окна.<br>
+<b>Info</b> - информация в окне (если необходим символ <b>|</b>, используйте <b>&#38;&#38;</b>; если необходим перенос, используйте <b>@CRLF</b>).<br>
+<b>Line</b> - начальная строка в окне ввода.<br>
+<b>Width</b> - ширина диалога (минимальный размер 240 px).<br>
+<b>Height</b> - высота диалога (минимальный размер 96 px).<br>
+<b>TextSize</b> - размер шрифта.<br>
+<b>Mode</b> - любое значение отображает "звёздочки" (&#8226;) вместо символов при вводе текста
+
+<hr align="left" width=300>Также поддерживается формат <span class="S8">[</span>input=BOXN<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a> в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>) в соответствующих ключах <b>RichInputBox</b>1, <b>RichInputBox</b>2 ... <b>RichInputBox</b>N, в том же формате <b>Title</b><font class="S81">|</font><b>Info</b><font class="S81">|</font><b>Line</b>(<font class="S81">|</font><b>Width</b><font class="S81">|</font><b>Height</b><font class="S81">|</font><b>TextSize</b><font class="S81">|</font><b>Mode</b>).
+<br>Также могут использоваться ключи с любым окончанием после основы RichInputBox, в котором есть цифры, латинские символы и знак подчёркивания _
+<br><br>
+<span class="section">Пример записи:</span><p class="codeheader" style="padding:6px;white-space: nowrap"><b>RichInputBox</b>1=Ввод расширения<font class="S81"><b>|</b></font>Введите необходимое расширение<font class="S81"><b>|</b></font>txt</p></font>
+<hr align="left" width=300>
+Есть возможность настраивать размер, толщину, имя шрифта в диалоге в <a class="le" href="../../config.htm#Box"><font class="S1"><b>TCIMG.ini</b></font></a> в секции [Box]
+<hr align="left" width=300>
+Установка значка окну <a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a>
+<hr align="left" width=300>
+Установка подсказки окну <a class="re" href="#notes9" title="Установка подсказки окну"><b>**</b></a>
+
+<hr align="left" width=70%>
+<a name="GLOBALRICHINPUTX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALINPUT"></a>GLOBALINPUT</td><td>
+массив входных данных (в первой ячейке введённые данные)<br>
+если используются несколько диалогов [input] или [richinput] то:<br>
+&nbsp;&nbsp;данные 2-го диалога записываются во 2-ю ячейку<br>
+&nbsp;&nbsp;данные 3-го диалога записываются в 3-ю ячейку<br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в N-ю ячейку<br>
+</td></tr>
+<tr><td class="s3td"><a name="GLOBALINPUT1"></a>GLOBALINPUT<b>1</b><br>...<br>GLOBALINPUT<b>N</b></td><td>
+массив входных <u>построчных</u> данных. Разделитель данных <font class="S51"><b>@RN</b></font><br>
+&nbsp;&nbsp;построчные данные 1-го диалога записываются в переменную GLOBALINPUT<b>1</b><br>
+&nbsp;&nbsp;построчные данные 2-го диалога записываются в переменную GLOBALINPUT<b>2</b><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;построчные данные N-го диалога записываются в переменную GLOBALINPUT<b>N</b><br>
+
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+
+
+<!-- 11. Диалог выбора информации в CheckBox: Подпараметр [check] или <check> -->
+
+
+<br>
+<br><hr class="hr-blue">
+<br><a name="11"></a><a name="check"></a><br>
+<a href="#12"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>11.</b> Диалог выбора информации в CheckBox: Подпараметр <b>[check]</b> или <b>&#60;check&#62;</b><br></font>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Выбор информации в CheckBox</b></font>. Подпараметр <span class="S8">[</span>check<span class="S8">]</span> или <span class="S8">&#60;</span>check<span class="S8">&#62;</span>.
+<br>В любом месте строки параметров, где встретится <span class="S8">[</span>check=BOXN<span class="S8">]</span>, будет вызвано диалоговое окно, в котором можно выбрать данные.
+<hr align="left" width=300>
+<span class="S8">[</span>check=BOXN<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a> в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>) в соответствующих ключах <b>CheckBox</b>1, <b>CheckBox</b>2 ... <b>CheckBox</b>N и позволяет самому настроить окно вывода.
+<br>Также могут использоваться ключи с любым окончанием после основы CheckBox, в котором есть цифры, латинские символы и знак подчёркивания _
+
+<br><br>
+Синтаксис шаблона: 
+<p class="codeheader" style="padding:6px;white-space: nowrap"><b>CheckBox</b>N=Title<a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a><font class="S81"><b><#></b></font>Info<font class="S81"><b><#></b></font>Check<font class="S81"><b><#></b></font>LineRadioButtons<font class="S81"><b><#></b></font>Width<font class="S81"><b><#></b></font>Height<font class="S81"><b><#></b></font>TextSize<font class="S81"><b><#></b></font>TextWeight</p></font>
+где:
+<br>
+<b>Title</b><a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a> - заголовок окна.<br>
+<b>Info</b> - информация в окне.<br>
+<b>Check</b> - название группы.<br>
+<b>LineRadioButtons</b> - строка-список радиокнопок, состоящих из пар: название радиокнопки и параметр командной строки, передаваемый при выборе - разделитель внутри и между парами <b><+></b><br>
+<b>Width</b> - ширина диалога.<br>
+<b>Height</b> - высота диалога.<br>
+<b>TextSize</b> - размер шрифта.<br>
+<b>TextWeight</b> - толщина шрифта.<br>
+<hr align="left" width=300>
+<span class="section">Пример записи:</span><p class="codeheader" style="padding:6px;white-space: nowrap"><b>CheckBox</b>1=Выбор режима конвертирования<font class="S81"><b><#></b></font>Конвертировать изображения.<font class="S81"><b><#></b></font>Выберите режим<font class="S81"><b><#></b></font>Все с расширением под курсором<font class="S11"><b><+></b></font>%p*.%E<font class="S11"><b><+></b></font>Все выделенные<font class="S11"><b><+></b></font>/filelist=%L<font class="S81"><b><#></b></font>290<font class="S81"><b><#></b></font>160</p></font>
+<hr align="left" width=300>
+Если в LineRadioButtons в параметрах командной строки участвуют параметры Total Commander (см. Дополнение <a class="le" href="add_param.htm"><b>№7</b></a>),<br>то через разделитель <b>!!</b> в <span class="S8">[</span>check=BOXN<span class="S8">]</span> необходимо добавить соответствующие параметры TC.<br><br>
+К примеру, если в LineRadioButtons есть параметры %L, %p, %E ..., то синтаксис записи:
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<span class="S8">[</span>check=BOXN<font class="S81"><b>!!</b></font>%%L=%L<font class="S81"><b>!!</b></font>%%p=%p<font class="S81"><b>!!</b></font>%%E=%E<span class="S8">]</span>
+</p>
+<hr align="left" width=300>
+В LineRadioButtons тег <b><font class="S121">:LABEL:</font><font class="S51">Text</font><font class="S11"><+></font><font class="S91">TextWeight</font><font class="S81">,</font><font class="S21">Color</font></b> позволяющий создавать <u>однострочную</u> надпись в CheckBox, где:<br>
+&nbsp;&nbsp;<font class="S121"><b>:LABEL:</b></font> - тег, означающий, что будет создаваться надпись.<br>
+&nbsp;&nbsp;<font class="S51"><b>Text</b></font> - текст надписи.<br>
+&nbsp;&nbsp;<font class="S11"><b><+></b></font> - разделитель.<br>
+&nbsp;&nbsp;<font class="S91"><b>TextWeight</b></font> [необязательный] - толщина шрифта: 400 - нормальный, 700 - жирный.<br>
+&nbsp;&nbsp;<font class="S21"><b>Color</b></font> [необязательный] - RGB цвет шрифта.<br>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+CheckBox_YY=Заголовок<font class="S81"><b><#></b></font>Описание<font class="S81"><b><#></b></font>Режим<font class="S81"><b><#></b></font><font class="S121"><b>:LABEL:</b></font><font class="S51"><b>Надпись 1</b></font><font class="S61"><b><+></b></font><font class="S91"><b>700</b></font><font class="S81"><b>,</b></font><font class="S21"><b>000080</b></font><font class="S61"><b><+></b></font>1. Первое<font class="S61"><b><+></b></font>N_1<font class="S61"><b><+></b></font>2. Второе<font class="S61"><b><+></b></font>N_2<font class="S61"><b><+></b></font><font class="S121"><b>:LABEL:</b></font><font class="S51"><b>Надпись 2</b></font><font class="S61"><b><+></b></font><font class="S91"><b>700</b></font><font class="S81"><b>,</b></font><font class="S21"><b>DC143C</b></font><font class="S61"><b><+></b></font>3. Третье<font class="S61"><b><+></b></font>N_3<font class="S61"><b><+></b></font>4. Четвёртое<+>N_4<font class="S81"><b><#></b></font>230<font class="S81"><b><#></b></font>240
+</p>
+
+<hr align="left" width=300>
+В LineRadioButtons тег <b><font class="S121">:BREAK:</font><font class="S61"><+></font><font class="S51">Indent</font></b><br>
+&nbsp;&nbsp;<font class="S121"><b>:BREAK:</b></font> - тег, означающий перенос последующих пунктов в новый столбец.<br>
+&nbsp;&nbsp;<font class="S51"><b>Indent</b></font> - число, означающее отступ от предыдущего столбца в пикселях.<br>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+CheckBox_BR1=Заголовок<font class="S81"><b><#></b></font>Описание<font class="S81"><b><#></b></font>Режим<font class="S81"><b><#></b></font>:LABEL:Надпись 1<font class="S61"><b><+></b></font>700,000080<font class="S61"><b><+></b></font>1. Первое<+>N_1<font class="S61"><b><+></b></font>2. Второе<+>N_2<font class="S61"><b><+></b></font><font class="S121"><b>:BREAK:</b></font><font class="S61"><b><+></b></font><font class="S51"><b>100</b></font><font class="S61"><b><+></b></font>:LABEL:Надпись 2<font class="S61"><b><+></b></font>700,DC143C<font class="S61"><b><+></b></font>3. Третье<font class="S61"><b><+></b></font>N_3<font class="S61"><b><+></b></font>4. Четвёртое<font class="S61"><b><+></b></font>N_4<font class="S81"><b><#></b></font>230<font class="S81"><b><#></b></font>180
+</p>
+<hr align="left" width=300>
+В LineRadioButtons тег <b>Текст<font class="S121">:V:</font><font class="S61"><+></font><font class="S51">Cmd</font></b><br>
+&nbsp;&nbsp;<b><font class="S121">:V:</font></b> - тег указывает, что пункту будет установлена галочка.<br>
+&nbsp;&nbsp;<b><font class="S51">Cmd</font></b> - параметры командной строки.<br>
+<hr align="left" width=300>
+Тег <b><font class="S121">:NO:</font></b> - прописывается в любом месте, означает, что галочка не будет установлена 1-му пункту.<br>
+Тег игнорируется, если используется тег <b><font class="S121">:V:</font></b>
+
+<hr align="left" width=300>
+Совместно с другими тегами можно использовать подсказку к пунктам или к названиям в CheckBox.<br>
+В LineRadioButtons тег <b>Текст<font class="S121">©Hint©</font><font class="S61"><+></font><font class="S51">Cmd</font></b><br>
+&nbsp;&nbsp;<b><font class="S121">©Hint©</font></b> - подсказка к пункту (<u>прописывается в конце</u> после всех тегов и текста между символами <font class="S121"><b>©</b></font>)<br>
+&nbsp;&nbsp;<b><font class="S51">Cmd</font></b> - параметры командной строки.<br>
+&nbsp;&nbsp;&nbsp;Дополнительные настройки подсказки в Примечании <a class="re" href="#notes4" title="Настройка подсказки в диалоге"><b>№4</b></a>
+<hr align="left" width=300>
+В любом месте строки можно использовать метки <font class="S121"><b>§<font class="S61"><b>string</b></font>§</b></font> для внутреннего пользования, которые не влияют и не отображаются в диалоге.<br>
+&nbsp;&nbsp;<font class="S121"><b>§<font class="S61"><b>string</b></font>§</b></font> - string - строка или набор символов.
+<hr align="left" width=300>
+Можно настраивать размер, толщину, имя шрифта, фон, цвет в диалоге в <a class="le" href="../../config.htm#Box"><font class="S1"><b>TCIMG.ini</b></font></a> в секции [Box]
+</font>
+<hr align="left" width=300>
+Установка значка окну <a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a>
+<hr align="left" width=300>
+Установка подсказки окну <a class="re" href="#notes9" title="Установка подсказки окну"><b>**</b></a>
+
+<hr align="left" width=300>
+1. Диалог отличается от остальных тем что не передаёт в команду данных, т.к. можно выбрать несколько вариантов<br>
+2. Запуск производится через команды <a class="le" href="../com_cmdcm.htm"><b>cmdcm</b></a> или <a class="le" href="../com_dilog.htm"><b>dilog</b></a> (на странице команд есть примеры)<br>
+
+<hr align="left" width=70%>
+<a name="GLOBALCHECKX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALCHECKX"></a>GLOBALCHECK1<br>GLOBALCHECK2<br>GLOBALCHECK3<br>GLOBALCHECK4<br>GLOBALCHECK5<br>GLOBALCHECK6<br>GLOBALCHECK7<br>GLOBALCHECK8<br>GLOBALCHECK9</td><td>
+массив входных данных:<br>
+&nbsp;&nbsp;в&nbsp;&nbsp;&nbsp;1-й ячейке данные 1-го отмеченного пункта<br>
+&nbsp;&nbsp;во 2-й ячейке данные 2-го отмеченного пункта<br>
+&nbsp;&nbsp;в&nbsp;&nbsp;&nbsp;3-й ячейке данные 3-го отмеченного пункта<br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;в&nbsp;&nbsp;&nbsp;N-й ячейке данные N-го отмеченного пункта<br>
+<hr align="left" width=70%>
+если используются несколько диалогов [check] то:<br>
+&nbsp;&nbsp;данные 1-го диалога записываются в переменную GLOBALCHECK1<br>
+&nbsp;&nbsp;данные 2-го диалога записываются в переменную GLOBALCHECK2<br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные 9-го диалога записываются в переменную GLOBALCHECK9<br>
+</td></tr>
+
+<tr><td class="s3td"><a name="GLOBALCHECMX"></a>GLOBALCHECM1<br>GLOBALCHECM2<br>GLOBALCHECM3<br>GLOBALCHECM4<br>GLOBALCHECM5<br>GLOBALCHECM6<br>GLOBALCHECM7<br>GLOBALCHECM8<br>GLOBALCHECM9</td><td>
+массив входных данных:<br>
+&nbsp;&nbsp;все выбранные данные записываются в первую ячейку без разделителя
+<hr align="left" width=70%>
+если используются несколько диалогов [check] то:<br>
+&nbsp;&nbsp;данные 1-го диалога записываются в переменную GLOBALCHECM1<br>
+&nbsp;&nbsp;данные 2-го диалога записываются в переменную GLOBALCHECM2<br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные 9-го диалога записываются в переменную GLOBALCHECM9<br>
+</td></tr>
+
+<tr><td class="s3td"><a name="GLOBALCHECRX"></a>GLOBALCHECR1<br>GLOBALCHECR2<br>GLOBALCHECR3<br>GLOBALCHECR4<br>GLOBALCHECR5<br>GLOBALCHECR6<br>GLOBALCHECR7<br>GLOBALCHECR8<br>GLOBALCHECR9</td><td>
+массив входных <u>построчных</u> данных. Разделитель данных <font class="S51"><b>@RN</b></font><br>
+&nbsp;&nbsp;в&nbsp;&nbsp;&nbsp;1-й ячейке построчные данные 1-го отмеченного пункта<br>
+&nbsp;&nbsp;во 2-й ячейке построчные данные 2-го отмеченного пункта<br>
+&nbsp;&nbsp;в&nbsp;&nbsp;&nbsp;3-й ячейке построчные данные 3-го отмеченного пункта<br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;в&nbsp;&nbsp;&nbsp;N-й ячейке построчные данные N-го отмеченного пункта<br>
+<hr align="left" width=70%>
+если используются несколько диалогов [check] то:<br>
+&nbsp;&nbsp;данные 1-го диалога записываются в переменную GLOBALCHECR1<br>
+&nbsp;&nbsp;данные 2-го диалога записываются в переменную GLOBALCHECR2<br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные 9-го диалога записываются в переменную GLOBALCHECR9<br>
+</td></tr>
+
+<tr><td class="s3td"><a name="GLOBALCHECNX"></a>GLOBALCHECN1<br>GLOBALCHECN2<br>GLOBALCHECN3<br>GLOBALCHECN4<br>GLOBALCHECN5<br>GLOBALCHECN6<br>GLOBALCHECN7<br>GLOBALCHECN8<br>GLOBALCHECN9</td><td>
+массив выходных данных. Массив равен количеству пунктов.<br>
+&nbsp;&nbsp;0 - если пункт не выбран.<br>
+&nbsp;&nbsp;1 - если пункт выбран.<br>
+<hr align="left" width=70%>
+если используются несколько диалогов [check] то:<br>
+&nbsp;&nbsp;выбор 1-го диалога записываются в переменную GLOBALCHECN1<br>
+&nbsp;&nbsp;выбор 2-го диалога записываются в переменную GLOBALCHECN2<br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;выбор 9-го диалога записываются в переменную GLOBALCHECN9<br>
+</td></tr>
+
+<tr><td class="s3td"><a name="GLOBALCHECOX"></a>GLOBALCHECO1<br>GLOBALCHECO2<br>GLOBALCHECO3<br>GLOBALCHECO4<br>GLOBALCHECO5<br>GLOBALCHECO6<br>GLOBALCHECO7<br>GLOBALCHECO8<br>GLOBALCHECO9</td><td>
+массив выходных данных. Массив равен количеству пунктов.<br>
+&nbsp;&nbsp;"пустая строка" - если пункт не выбран.<br>
+&nbsp;&nbsp;указанные данные - если пункт выбран.<br>
+<hr align="left" width=70%>
+если используются несколько диалогов [check] то:<br>
+&nbsp;&nbsp;выбор 1-го диалога записываются в переменную GLOBALCHECO1<br>
+&nbsp;&nbsp;выбор 2-го диалога записываются в переменную GLOBALCHECO2<br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;выбор 9-го диалога записываются в переменную GLOBALCHECO9<br>
+
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/dialog_g3.png" border=0></p>
+<br>
+
+
+<!-- 12. Диалог выбора каталогов: Подпараметр [zfold] или <zfold> -->
+
+
+<br><hr class="hr-blue">
+<br><a name="12"></a><a name="zfold"></a><br>
+<a href="#13"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>12.</b> Диалог выбора каталогов: Подпараметр <b>[zfold]</b> или <b>&#60;zfold&#62;</b><br></font>
+
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Выбор каталогов</b></font>. Подпараметр <span class="S8">[</span>zfold<span class="S8">]</span>. В любом месте строки параметров, где встретится <span class="S8">[</span>zfold<span class="S8">]</span>, будет вызвано диалоговое окно выбора каталога, в котором можно выбрать один или несколько каталогов.<hr align="left" width=300>Расширенный вид: <span class="S8">[</span>zfold=<b>Info</b>|<b>Path</b><span class="S8">]</span> позволяет самому настроить окно ввода, где:<br><b>Info</b> - информация в диалоге.<br><b>Path</b> - корневой каталог дерева выбора в диалоге.<br>Чтобы установить Рабочий Стол в качестве корневого каталога (по умолчанию) 2-й параметр не указывается.
+
+<hr align="left" width=300>Также поддерживается формат <span class="S8">[</span>zfold=BOXN<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a>, в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>) , в соответствующих ключах <b>FolderzBox</b>1, <b>FolderzBox</b>2 ... <b>FolderzBox</b>N, в том же формате <b>Info</b>|<b>Path</b>.
+<br>Также могут использоваться ключи с любым окончанием после основы FolderzBox, в котором есть цифры, латинские символы и знак подчёркивания _
+
+<br><br><span class="section">Пример записи:</span><p class="codeheader" style="padding:6px;white-space: nowrap"><b>FolderzBox</b>1=Выберите папки для создания списка<font class="S81"><b>|</b></font>C:\</p></font>
+
+<hr align="left" width=70%>
+<a name="GLOBALZFOLDX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALZFOLD"></a>GLOBALZFOLD<b>1</b><br>GLOBALZFOLD<b>2</b><br>...<br>GLOBALZFOLD<b>N</b></td><td>
+массив, в котором находятся пути выбранных каталогов.</font><br>
+&nbsp;&nbsp;данные 1-го диалога записываются в переменную GLOBALZFOLD<b>1</b><br>
+&nbsp;&nbsp;данные 2-го диалога записываются в переменную GLOBALZFOLD<b>2</b><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в переменную GLOBALZFOLD<b>N</b><br>
+
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/zfold.png" border=0></p>
+<br>
+<br>
+
+
+
+<!-- 13. Диалог выбора шрифта: Подпараметр [fontz] или <fontz> -->
+
+
+<br><hr class="hr-blue">
+<br><a name="13"></a><a name="fontz"></a><br>
+<a href="#14"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>13.</b> Диалог выбора шрифта: Подпараметр <b>[fontz]</b> или <b>&#60;fontz&#62;</b><br></font>
+
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Выбор каталогов</b></font>. Подпараметр <span class="S8">[</span>fontz<span class="S8">]</span>. В любом месте строки параметров, где встретится <span class="S8">[</span>fontz<span class="S8">]</span>, будет вызвано диалоговое окно выбора шрифта, в котором можно выбрать размер, имя, цвет... шрифта.
+<hr align="left" width=300>
+Расширенный вид: <span class="S8">[</span>fontz=<b>Name<font class="S81">|</font>Size<font class="S81">|</font>Weight<font class="S81">|</font>Italic<font class="S81">|</font>Underline<font class="S81">|</font>Strikethru<font class="S81">|</font>Color<font class="S81">|</font>Flag<font class="S81">|</font>CharSet</b><span class="S8">]</span> позволяет самому настроить начальные данные окна шрифта, где:
+<br>&nbsp;&nbsp;<b>Name</b> - имя шрифта (по умолчанию системный).
+<br>&nbsp;&nbsp;<b>Size</b> - размер шрифта (по умолчанию системный).
+<br>&nbsp;&nbsp;<b>Weight</b> - толщина шрифта (от 100 до 1000, число кратное 100, 400 - нормальный, 700 - жирный) (по умолчанию 400).
+<br>&nbsp;&nbsp;<b>Italic</b> - 1 - курсив, 0 - не курсив (по умолчанию 0).
+<br>&nbsp;&nbsp;<b>Underline</b> - 1 - подчеркнутый, 0 - не подчеркнутый (по умолчанию 0).
+<br>&nbsp;&nbsp;<b>Strikethru</b> - 1 - зачёркнутый, 0 - не зачёркнутый (по умолчанию 0).
+<br>&nbsp;&nbsp;<b>Color</b> - RGB цвет шрифта (по умолчанию 0 или 000000 - чёрный).
+<br>&nbsp;&nbsp;<b>Flag</b> - может быть суммой флагов, определяющих вывод заданных шрифтов:<br><br>
+<div style="margin-left: 31pt; text-indent: 0pt;">
+<table class="param" width="800" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Имя Константы</td><td>Значение</td><td>Описание</td></tr>
+<tr><td class="s3td"><a name="CF_SCREENFONTS"></a>CF_SCREENFONTS</td><td class="s4td">0x1 (1)</td><td class="s5td">Список экранных шрифтов</td></tr>
+<tr><td class="s3td"><a name="CF_PRINTERFONTS"></a>CF_PRINTERFONTS</td><td class="s4td">0x2 (2)</td><td class="s5td">Список шрифтов для печати</td></tr>
+<tr><td class="s3td"><a name="CF_BOTH"></a>CF_BOTH</td><td class="s4td">0x3 (3)</td><td class="s5td">Список всех экранных и принтерных шрифтов (по умолчанию)</td></tr>
+<tr><td class="s3td"><a name="CF_FIXEDPITCHONLY"></a>CF_FIXEDPITCHONLY</td><td class="s4td">0x4000 (16384)</td><td class="s5td">Список только моноширинных шрифтов</td></tr>
+<tr><td class="s3td"><a name="CF_SCALABLEONLY"></a>CF_SCALABLEONLY</td><td class="s4td">0x20000 (131072)</td><td class="s5td">Список масштабированных шрифтов</td></tr>
+<tr><td class="s3td"><a name="CF_TTONLY"></a>CF_TTONLY</td><td class="s4td">0x40000 (262144)</td><td class="s5td">Список TrueType-шрифтов</td></tr>
+</table>
+</div>
+<br>&nbsp;&nbsp;<b>CharSet</b> - определяет используемый набор символов. Может иметь следующие значения:<br><br>
+<div style="margin-left: 31pt; text-indent: 0pt;">
+<table class="param" width="800" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Имя Константы</td><td>Значение</td><td>Описание (<a href="add_coddes.htm"><span class="S4"><b>code</code></b></span></a>)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_ARABIC"></a>CHARSET_ARABIC</td><td class="s4td">176</td><td class="s5td">арабский язык (1256)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_BALTIC"></a>CHARSET_BALTIC</td><td class="s4td">186</td><td class="s5td">прибалтийские языки (1257)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_CHINESEBIG5"></a>CHARSET_CHINESEBIG5</td><td class="s4td">136</td><td class="s5td">китайский язык (традиционное письмо) (950)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_CHINESEGB2312"></a>CHARSET_CHINESEGB2312</td><td class="s4td">134</td><td class="s5td">китайский язык (упрощенное письмо) (936)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_EASTEUROPE"></a>CHARSET_EASTEUROPE</td><td class="s4td">238</td><td class="s5td">Windows Latin 2 (1250)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_GREEK"></a>CHARSET_GREEK</td><td class="s4td">161</td><td class="s5td">греческий язык (1253)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_HEBREW"></a>CHARSET_HEBREW</td><td class="s4td">177</td><td class="s5td">иврит (1255)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_JAPANESESHIFTJIS"></a>CHARSET_JAPANESESHIFTJIS</td><td class="s4td">128</td><td class="s5td">японский язык (932)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_KOREANHANGEUL"></a>CHARSET_KOREANHANGEUL</td><td class="s4td">129</td><td class="s5td">корейский язык (949)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_KOREANJOHAB"></a>CHARSET_KOREANJOHAB</td><td class="s4td">130</td><td class="s5td">корейский язык (1361)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_RUSSIAN"></a>CHARSET_RUSSIAN</td><td class="s4td">204</td><td class="s5td">кириллица (1251)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_THAI"></a>CHARSET_THAI</td><td class="s4td">222</td><td class="s5td">тайский язык (874)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_TURKISH"></a>CHARSET_TURKISH</td><td class="s4td">162</td><td class="s5td">турецкий язык (1254)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_VIETNAMESE"></a>CHARSET_VIETNAMESE</td><td class="s4td">163</td><td class="s5td">вьетнамский язык (1258)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_SYMBOL"></a>CHARSET_SYMBOL</td><td class="s4td">2</td><td class="s5td">Symbol (42)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_ANSI"></a>CHARSET_ANSI</td><td class="s4td">0</td><td class="s5td">Зависит от локализации Windows (для русской - 1251)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_MAC"></a>CHARSET_MAC</td><td class="s4td">77</td><td class="s5td"> 	Зависит от локализации Windows (для русской - 10007)</td></tr>
+<tr><td class="s3td"><a name="CHARSET_OEM"></a>CHARSET_OEM</td><td class="s4td">255</td><td class="s5td"> 	Зависит от локализации Windows (для русской - 866)</td></tr>
+<!-- <tr><td class="s3td"><a name="111"></a>1111</td><td class="s4td">22222</td><td class="s5td">55555 ()</td></tr> -->
+</table>
+</div>
+
+<br>Все параметры являются необязательными.<hr align="left" width=300>Также поддерживается формат <span class="S8">[</span>fontz=BOXN<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a>, в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>) , в соответствующих ключах <b>FontBox</b>1, <b>FontBox</b>2 ... <b>FontBox</b>N, в том же формате <b>Name|Size|Weight|Italic|Underline|Strikethru|Color</b>.
+<br>Также могут использоваться ключи с любым окончанием после основы FontBox, в котором есть цифры, латинские символы и знак подчёркивания _
+
+<br><br><span class="section">Пример записи:</span><p class="codeheader" style="padding:6px;white-space: nowrap"><b>FontBox</b>1=Segoe UI|12|400|0|0|0|0000FF|0x4000</p></font>
+
+<hr align="left" width=70%>
+<a name="GLOBALFONTZX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALFONTZ"></a>GLOBALFONTZ<b>1</b><br>GLOBALFONTZ<b>2</b><br>...<br>GLOBALFONTZ<b>N</b></td><td>
+массив, в котором находятся данные, выбранные в диалоге.</font><br>
+&nbsp;&nbsp;данные 1-го диалога записываются в переменную GLOBALFONTZ<b>1</b><br>
+&nbsp;&nbsp;данные 2-го диалога записываются в переменную GLOBALFONTZ<b>2</b><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в переменную GLOBALFONTZ<b>N</b><br>
+<hr>
+в 1-й ячейке - имя шрифта.
+<br>в 2-й ячейке - размер шрифта.
+<br>в 3-й ячейке - ширина шрифта (от 100 до 1000).
+<br>в 4-й ячейке - курсив шрифта (0 или 1).
+<br>в 5-й ячейке - подчеркнутость шрифта (0 или 1).
+<br>в 6-й ячейке - зачёркнутость шрифта (0 или 1).
+<br>в 7-й ячейке - RGB цвет шрифта.
+<br>в 8-й ячейке - значение (используемый набор символов).
+
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/fontz.png" border=0></p>
+<p align="center"><img src="../../images/fontz2.png" border=0></p>
+<br>
+
+
+<!-- 14 Диалог выбора значка: Подпараметр [iconz] или <iconz> -->
+
+
+<br>
+<br><hr class="hr-blue">
+<br><a name="14"></a><a name="iconz"></a><br>
+<a href="#15"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>14.</b> Диалог выбора значка: Подпараметр <b>[iconz]</b> или <b>&#60;iconz&#62;</b><br></font>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Выбор значка</b></font>. Подпараметр <span class="S8">[</span>iconz<span class="S8">]</span> или <span class="S8">&#60;</span>iconz<span class="S8">&#62;</span>.
+<br>В любом месте строки параметров, где встретится <span class="S8">[</span>iconz=BOXN<span class="S8">]</span>, будет вызвано диалоговое окно, в котором можно выбрать значок.
+<hr align="left" width=300>
+<span class="S8">[</span>iconz=BOXN<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a> в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>) в соответствующих ключах <b>IconzBox</b>1, <b>IconzBox</b>2 ... <b>IconzBox</b>N и позволяет самому настроить окно вывода.
+<br>Также могут использоваться ключи с любым окончанием после основы IconzBox, в котором есть цифры, латинские символы и знак подчёркивания _
+
+<br><br>
+Синтаксис шаблона: 
+<p class="codeheader" style="padding:6px;white-space: nowrap"><b>IconzBox</b>N=Title<a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a><font class="S81"><b>|</b></font>Info<font class="S81"><b>|</b></font>Path<font class="S81"><b>|</b></font>Width<font class="S81"><b>|</b></font>Height<font class="S81"><b>|</b></font>Number</p></font>
+где:
+<br>
+<b>Title</b><a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a> - заголовок окна.<br><b>Info</b> - информация в окне.<br>
+<b>Path</b> - путь к библиотеке значков.<br>
+<b>Width</b> - ширина диалога.<br><b>Height</b> - высота диалога.<br>
+<b>Number</b> - нумерация значков: 0 - с нуля, 1 - с единицы.<br>
+<hr align="left" width=300>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap"><b>IconzBox</b>1=Выбор значка¤TCIMG.dll,92<font class="S81"><b>|</b></font>Выберите значок:<font class="S81"><b>|</b></font>%TCIMG_PATH%\TCIMG.dll<font class="S81"><b>|</b></font>343<font class="S81"><b>|</b></font>165<font class="S81"><b>|</b></font>0</p></font>
+<hr align="left" width=300>
+Можно настраивать размер, толщину, имя шрифта, фон, цвет в диалоге в <a class="le" href="../../config.htm#Box"><font class="S1"><b>TCIMG.ini</b></font></a> в секции [Box]<br>
+<hr align="left" width=300>
+Установка значка окну <a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a>
+<hr align="left" width=300>
+Установка подсказки окну <a class="re" href="#notes9" title="Установка подсказки окну"><b>**</b></a>
+
+<hr align="left" width=70%>
+<a name="GLOBALICONZX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALICONZ1"></a>GLOBALICONZ<b>1</b><br>...<br>GLOBALICONZ<b>N</b></td><td>
+&nbsp;&nbsp;данные 1-го диалога записываются в переменную GLOBALICONZ<b>1</b><br>
+&nbsp;&nbsp;данные 2-го диалога записываются в переменную GLOBALICONZ<b>2</b><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в переменную GLOBALICONZ<b>N</b><br>
+<hr align="left" width=30%>
+&nbsp;&nbsp;1 ячейка содержит путь библиотеки и через запятую номер значка.<br>
+&nbsp;&nbsp;2 ячейка содержит путь библиотеки.<br>
+&nbsp;&nbsp;3 ячейка содержит номер значка.<br>
+&nbsp;&nbsp;4 ячейка содержит путь с удвоенным слешем.<br>
+
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/iconz1.png" border=0></p>
+<br>
+<p align="center"><img src="../../images/iconz2.png" border=0></p>
+<br>
+
+<!-- 15 Установка стиля для диалогов  -->
+
+
+<br><hr class="hr-blue">
+<br><a name="15"></a><br>
+<a href="#16"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>15.</b> Установка стиля для диалогов : Команда <a class="le" href="../com_style.htm"><b>style</b></a><br></font>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/style1.png" border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/style2.png" border=0></p>
+<p align="center"><img src="../../images/dialog_cl1.png" border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/dialog_cl2.png" border=0></p>
+
+
+<!-- 16 Диалог редактирования и выбора из списка ListBox: Подпараметр [lista] или <lista> -->
+
+
+<br>
+<br><hr class="hr-blue">
+<br><a name="16"></a><a name="lista"></a><br>
+<a href="#17"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>16.</b> Диалог редактирования и выбора из списка ListBox: Подпараметр <b>[lista]</b> или <b>&#60;lista&#62;</b><br></font>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Выбор из списка</b></font>. Подпараметр <span class="S8">[</span>lista<span class="S8">]</span> или <span class="S8">&#60;</span>lista<span class="S8">&#62;</span>.
+<br>В любом месте строки параметров, где встретится <span class="S8">[</span>lista=BOXN<span class="S8">]</span>, будет вызвано диалоговое окно, в котором можно выбрать значение из списка.
+<hr align="left" width=300>
+<span class="S8">[</span>lista=BOXN<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a> в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>) в соответствующих ключах <b>ListaBox</b>1, <b>ListaBox</b>2 ... <b>ListaBox</b>N и позволяет самому настроить окно вывода.
+<br>Также могут использоваться ключи с любым окончанием после основы ListaBox, в котором есть цифры, латинские символы и знак подчёркивания _
+
+<br><br>
+Синтаксис шаблона: 
+<p class="codeheader" style="padding:6px;white-space: nowrap"><b>ListaBox</b>N=Title<a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a><font class="S81"><b>|</b></font>Info<font class="S81"><b>|</b></font>Path<font class="S81"><b>|</b></font>Width<font class="S81"><b>|</b></font>Height<font class="S81"><b>|</b></font>ListBox</p></font>
+где:
+<br>
+<b>Title</b><a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a> - заголовок окна.<br><b>Info</b> - информация в окне.<br>
+<b>List</b> - список пунктов, может иметь несколько вариантов:<br>
+&nbsp;&nbsp;Path - путь к файлу списка.<br>
+&nbsp;&nbsp;cliplist - список из буфера обмена.<br>
+&nbsp;&nbsp;$GLOBALNAME - список путей глобальной переменной.<br>
+<br>
+<b>Width</b> - ширина диалога.<br>
+<b>Height</b> - высота диалога.<br>
+<b>ListBox</b> - высота элемента ListBox (минимум 146).<br>
+<hr align="left" width=300>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<b>ListaBox1</b>=Список¤TCIMG.dll,92<font class="S81"><b>|</b></font>Редактировать список<font class="S81"><b>|</b></font>$GLOBALSLIST<font class="S81"><b>|</b></font>443<font class="S81"><b>|</b></font>240<font class="S81"><b>|</b></font>146</p></font>
+<hr align="left" width=300>
+Можно настраивать размер, толщину, имя шрифта, фон, цвет в диалоге в <a class="le" href="../../config.htm#Box"><font class="S1"><b>TCIMG.ini</b></font></a> в секции [Box]<br>
+<hr align="left" width=300>
+Установка значка окну <a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a>
+<hr align="left" width=300>
+Установка подсказки окну <a class="re" href="#notes9" title="Установка подсказки окну"><b>**</b></a>
+
+<hr align="left" width=70%>
+<a name="GLOBALLISTAX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALLISTA1"></a>
+GLOBALLISTA<b>1</b><br>...<br>GLOBALLISTA<b>N</b>
+<hr align="left" width=30%>
+GLOBALLISTB<b>1</b><br>...<br>GLOBALLISTB<b>N</b>
+
+</td><td>
+&nbsp;&nbsp;данные 1-го диалога записываются в переменные GLOBALLISTA<b>1</b> и GLOBALLISTB<b>1</b><br>
+&nbsp;&nbsp;данные 2-го диалога записываются в переменные GLOBALLISTA<b>2</b> и GLOBALLISTB<b>2</b><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в переменные GLOBALLISTA<b>N</b> и GLOBALLISTB<b>N</b><br>
+<hr align="left" width=30%>
+&nbsp;&nbsp;GLOBALLISTA<b>N</b> - содержит список всех пунктов.<br>
+&nbsp;&nbsp;GLOBALLISTB<b>N</b> - содержит в 1-й ячейке данные выбранного пункта.<br>
+
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/lista.png" border=0></p>
+<br>
+
+
+
+<!-- 17 Установка стиля для прогресс бара  -->
+
+
+<br><hr class="hr-blue">
+<br><a name="17"></a><a name="stylp"></a><br>
+<a href="#18"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>17.</b> Установка стиля для прогресс бара : Команда <a class="le" href="../com_stylp.htm"><b>stylp</b></a><br></font>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/stylp_1.png" border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/stylp_2.png" border=0></p>
+<p align="center"><img src="../../images/stylp_3.png" border=0></p>
+<br>
+
+
+
+
+<!-- 18 Установка времени ожидания для диалогов: Подпараметр [timen]  -->
+
+
+<br><hr class="hr-blue">
+<br><a name="18"></a><br>
+<a href="#19"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>18.</b> Установка времени ожидания для диалогов: Подпараметр <b>[timen]</b><br></font>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Установка времени ожидания</b></font>. Подпараметр <span class="S8">[</span>timen<span class="S8">]</span>.
+<br>В любом месте строки параметров, где встретится <span class="S8">[</span>timen=<font class="S51"><b>Seconds</b></font><font class="S61"><b>|</b></font><font class="S91"><b>Exit</b></font><span class="S8">]</span>, будут установлены следующие параметры для диалогов:<br>
+&nbsp;&nbsp;<font class="S51"><b>Seconds</b></font> - время ожидания (в секундах), по истечении которого диалог будет автоматически закрыт.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;При <b>0</b> время ожидания устанавливаться не будет.<br>
+&nbsp;&nbsp;<font class="S91"><b>Exit</b></font> - [необязательный]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - продолжаются выполнятся последующие команды, прописанные после диалога (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - происходит выход из утилиты.<br>
+<hr align="left" width=300>
+Установки параметра <span class="S8">[</span>timen<span class="S8">]</span> действуют для всех диалогов, следующих после подпараметра.<br>
+Для переопределения установок можно использовать подпараметр несколько раз.<br>
+<hr align="left" width=300>
+Для установки времени ожидания по умолчанию можно воспользоваться ключами DialogsTimeOut и DialogsTimeOutExit в <a class="le" href="../../config.htm"><font class="S1"><b>TCIMG.ini</b></font></a> в секции [Setting]<br><br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<b><font class="S81">[</font>Setting<font class="S81">]</font></b><br>
+<font class="S21">; DialogsTimeOut - устанавливать время ожидания (в секундах), по истечении которого диалог будет автоматически закрыт.</font><br>
+<font class="S21">; &nbsp;&nbsp;0 - не устанавливать ожидание.</font><br>
+<font class="S21">; &nbsp;&nbsp;N - число в секундах.</font><br>
+<b>DialogsTimeOut</b><font class="S81"><b>=</b></font><font class="S51"><b>15</b></font><br>
+<font class="S21">; DialogsTimeOutExit - режим действия после автоматического закрытия диалога:</font><br>
+<font class="S21">; &nbsp;&nbsp;0 - продолжаются выполнятся команды, прописанные после диалога.</font><br>
+<font class="S21">; &nbsp;&nbsp;1 - происходит выход из утилиты.</font><br>
+<b>DialogsTimeOutExit</b><font class="S81"><b>=</b></font><font class="S91"><b>0</b></font><br>
+
+</p>
+</td></tr></table></p>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/timen.png" border=0></p>
+<br>
+
+
+
+<!-- 19. Окно сообщения MsgBox: Подпараметр [msgbx] или <msgbx> -->
+
+<br>
+<br><hr class="hr-blue">
+<br><a name="19"></a><<a name="msgbx"></a><br>
+<a href="#20"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>19.</b> Окно сообщения MsgBox: Подпараметр <b>[msgbx]</b> или <b>&#60;msgbx&#62;</b><br></font>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Выбор информации в MsgBox</b></font>. Подпараметр <span class="S8">[</span>msgbx<span class="S8">]</span> или <span class="S8">&#60;</span>msgbx<span class="S8">&#62;</span>.
+<br>В любом месте строки параметров, где встретится <span class="S8">[</span>msgbx=BOXN<span class="S8">]</span>, будет вызвано окно сообщения.
+<hr align="left" width=300>
+<span class="S8">[</span>msgbx=BOXN<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a> в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>) в соответствующих ключах <b>MsgbxBox</b>1, <b>MsgbxBox</b>2 ... <b>MsgbxBox</b>N и позволяет самому настроить окно сообщения.
+<br>Также могут использоваться ключи с любым окончанием после основы MsgbxBox, в котором есть цифры, латинские символы и знак подчёркивания _
+<br><br>
+Синтаксис шаблона: 
+<p class="codeheader" style="padding:6px;white-space: nowrap"><b>MsgbxBox</b>N=Title<a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a><font class="S81"><b><#></b></font>Info<font class="S81"><b><#></b></font>PathIcon,Number,Size<font class="S81"><b><#></b></font>LineButtons<font class="S81"><b><#></b></font>Width<font class="S81"><b><#></b></font>Height<font class="S81"><b><#></b></font>TimeOut<font class="S81"><b><#></b></font>ButtonWidth</p></font>
+где:
+<br>
+<b>Title</b><a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a> - заголовок окна.<br>
+<b>Info</b> - информационная строка сообщения.<br>
+<b>PathIcon</b> - путь к библиотеке значков.<br>
+&nbsp;&nbsp;<b>Number</b> - номер значка.<br>
+&nbsp;&nbsp;<b>Size</b> - [необязательный] размер значка (по умолчанию 32).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Если значок или библиотека находится в папке системы или в той же папке, что и TCIMG.exe , то достаточно указать имя.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Некоторые DLL могут иметь значок извлекаемый только отрицательным числом.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Вместо иконки может использоваться рисунок BMP или файл курсора ANI.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Если PathIcon,Number,Size не прописаны, то диалог без значка.<br>
+
+<b>LineButtons</b> - строка-список кнопок.<br>
+&nbsp;&nbsp;Состоит из пар: название кнопки и возвращаемого значения, передаваемого при выборе.<br>
+&nbsp;&nbsp;Разделитель внутри и между парами <b><+></b><br>
+&nbsp;&nbsp;Если в возвращаемом значении прописан тег <font class="S51">:EXIT:</font>, то при нажатии на кнопку произойдёт завершение работы утилиты.<br>
+<b>Width</b> - ширина диалога (вычисляется автоматически, если ширина меньше заданного количества кнопок).<br>
+<b>Height</b> - высота диалога.<br>
+<b>TimeOut</b> - [необязательный] установка времени ожидания состоит из Button<font class="S81"><b>|</b></font>Seconds<font class="S81"><b>|</b></font>Exit , где:<br>
+&nbsp;&nbsp;Button - номер кнопки, на которой будет отображаться обратный отсчёт.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;при <b>0</b> время ожидания устанавливаться не будет (по умолчанию).<br>
+&nbsp;&nbsp;Seconds - время ожидания (в секундах), по истечении которого диалог будет автоматически закрыт.<br>
+&nbsp;&nbsp;Exit - режим:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - продолжаются выполнятся последующие команды, прописанные после диалога (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - происходит выход из утилиты.<br>
+<b>ButtonWidth</b> - [необязательный] ширина кнопки (по умолчанию 80).<br>
+
+<hr align="left" width=300>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<b>MsgbxBox2</b><font class="S81"><b>=</b></font>Сообщение¤TCIMG.dll,26<font class="S81"><b><#></b></font>Продолжить работу?<font class="S81"><b><#></b></font>user32.dll,102<font class="S81"><b><#></b></font>Да<font class="S61"><b><+></b></font>1<font class="S61"><b><+></b></font>Нет<font class="S61"><b><+></b></font><font class="S51"><b>:EXIT:</b></font><font class="S81"><b><#></b></font>280<font class="S81"><b><#></b></font>110<font class="S81"><b><#></b></font>1|15|0
+</p>
+
+
+
+<hr align="left" width=70%>
+<a name="GLOBALMSGBXX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALMSGBX1"></a>GLOBALMSGBX</td><td>
+возвращаются заданные данные нажатой кнопки диалога:<br>
+&nbsp;&nbsp;данные 1-го диалога записываются в 1-ю ячейку переменной GLOBALMSGBX<br>
+&nbsp;&nbsp;данные 2-го диалога записываются в 2-ю ячейку переменной GLOBALMSGBX<br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в N-ю ячейку переменной GLOBALMSGBX<br>
+
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/msgbx1.png" border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/msgbx8.png" border=0></p>
+<p align="center"><img src="../../images/msgbx7.png" border=0>&nbsp;&nbsp;&nbsp;<img src="../../images/msgbx3.png" border=0></p>
+<p align="center"><img src="../../images/msgbx4.png" border=0>&nbsp;&nbsp;&nbsp;<img src="../../images/msgbx6.png" border=0></p>
+<p align="center"><img src="../../images/msgbx5.png" border=0>&nbsp;&nbsp;<img src="../../images/msgbx2.png" border=0></p>
+
+
+<!-- 20. Диалог выбора числовой информации UpDown: Подпараметр [updwn] или <updwn> -->
+
+
+<br>
+<br><hr class="hr-blue">
+<br><a name="20"></a><a name="updwn"></a><br>
+<a href="#21"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>20.</b> Диалог выбора числовой информации UpDown: Подпараметр <b>[updwn]</b> или <b>&#60;updwn&#62;</b><br></font>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td>
+<font class="S0"><font class="S3"><b>Выбор информации в UpDown</b></font>. Подпараметр <span class="S8">[</span>updwn<span class="S8">]</span> или <span class="S8">&#60;</span>updwn<span class="S8">&#62;</span>.
+<br>В любом месте строки параметров, где встретится <span class="S8">[</span>updwn=BOXN<span class="S8">]</span>, будет вызвано диалоговое окно, в котором можно выбрать данные.
+<hr align="left" width=300>
+<span class="S8">[</span>updwn=BOXN<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a> в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>) в соответствующих ключах <b>UpDown</b>1, <b>UpDown</b>2 ... <b>UpDown</b>N и позволяет самому настроить окно вывода.
+<br>Также могут использоваться ключи с любым окончанием после основы UpDown, в котором есть цифры, латинские символы и знак подчёркивания _
+
+<br><br>
+Синтаксис шаблона: 
+<p class="codeheader" style="padding:6px;white-space: nowrap"><b>UpDown</b>N=Title<a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a><font class="S81"><b><#></b></font>Info<font class="S81"><b><#></b></font>LineUpDown<font class="S81"><b><#></b></font>Width<font class="S81"><b><#></b></font>Height<font class="S81"><b><#></b></font>TextSize<font class="S81"><b><#></b></font>TextWeight</p></font>
+где:
+<br>
+<b>Title</b><a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a> - заголовок окна.<br>
+<b>Info</b> - информация в окне.<br>
+<b>LineUpDown</b> - строка-список элементов UpDown<br>
+<b>Width</b> - ширина диалога.<br>
+<b>Height</b> - высота диалога.<br>
+<b>TextSize</b> - [необязательный] размер шрифта окна.<br>
+<b>TextWeight</b> - [необязательный] толщина шрифта окна.<br>
+<hr align="left" width=300>
+<b>LineUpDown</b> - строка-список элементов UpDown<br>
+&nbsp;&nbsp;Все параметры являются необязательными.<br>
+&nbsp;&nbsp;Недостающие значения берутся из ключей UpDown... в секции [Box] или из установленного стиля <a class="le" href="../com_style.htm"><b>style</b></a>.<br>
+&nbsp;&nbsp;Состоит из пар: <font class="S51"><b>Label</b></font><font class="S81"><b><+></b></font><font class="S21"><b>UpDown</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S51"><b>Label</b></font> - параметры названия элемента: Title<font class="S81"><b>|</b></font>Mode<font class="S81"><b>|</b></font>Width<font class="S81"><b>|</b></font>Height<font class="S81"><b>|</b></font>Style<font class="S81"><b>|</b></font>Size<font class="S81"><b>|</b></font>Weight<font class="S81"><b>|</b></font>Color<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Title - название (@CRLF используется для переноса строки).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mode - режим положения названия.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - сверху элемента.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - снизу элемента.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - слева элемента.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 - справа элемента.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Width - ширина названия.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Height - высота названия.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Style - стиль названия.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - выравнивание названия по левому краю (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - выравнивание названия по центру по горизонтали.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - выравнивание названия по правому краю.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;512 - выравнивание названия по центру по вертикали.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size - размер шрифта названия.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Weight - толщина шрифта названия: 400 - нормальный, 700 - жирный.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Color - RGB цвета названия.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>UpDown</b></font> - параметры элемента: Width<font class="S81"><b>|</b></font>Height<font class="S81"><b>|</b></font>Min<font class="S81"><b>|</b></font>Max<font class="S81"><b>|</b></font>Begin<font class="S81"><b>|</b></font>Style<font class="S81"><b>|</b></font>Size<font class="S81"><b>|</b></font>Weight<font class="S81"><b>|</b></font>Color<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Width - ширина элемента.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Height - высота элемента.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Min - минимальное значение элемента.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Max - максимальное значение элемента.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Begin - начальное значение элемента.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Style - стиль элемента. может быть суммой из значений:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - счёт "по кругу" (из начала в конец или из конца в начало).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 - элемент с правого края от поля ввода.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8 - элемент с левого края от поля ввода.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;32 - вызов элемента происходит клавишами UP (стрелка вверх) и DOWN (стрелка вниз) на клавиатуре.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;64 - элемент отображает указывающие стрелки влево/вправо, а не вверх/вниз.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;128 - предотвращает в четырёхзначных и более числах, использовать разделительный пробел после каждой тройки цифр.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size - размер шрифта элемента.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Weight - толщина шрифта элемента: 400 - нормальный, 700 - жирный.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Color - RGB цвета элемента.<br>
+
+<hr align="left" width=300>
+&nbsp;&nbsp;Может быть использовано несколько пар <font class="S51"><b>Label1</b></font><font class="S81"><b><+></b></font><font class="S21"><b>UpDown1</b></font><font class="S81"><b><+></b></font><font class="S51"><b>Label2</b></font><font class="S81"><b><+></b></font><font class="S21"><b>UpDown2</b></font><font class="S81"><b><+></b></font><font class="S51"><b>LabelN</b></font><font class="S81"><b><+></b></font><font class="S21"><b>UpDownN</b></font><br>
+&nbsp;&nbsp;Может быть использован тег <font class="S121"><b>:BREAK:</b></font><font class="S81"><b><+></b></font><font class="S51"><b>Indent</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>:BREAK:</b></font> - тег, означающий перенос следующего элемента на новый столбец.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S51"><b>Indent</b></font> - число, означающее отступ от предыдущего элемента в пикселях.<br>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<b>UpDownBox1</b><font class="S81"><b>=</b></font>Выбор счётчика¤TCIMG.dll,107<font class="S81"><b><#></b></font>Выберите число<font class="S81"><b><#></b></font>|2|80<font class="S51"><b><+></b></font>50|25|1|100|50|1<font class="S81"><b><#></b></font>220<font class="S81"><b><#></b></font>110
+</p>
+<hr align="left" width=300>
+Установка значка окну <a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a>
+<hr align="left" width=300>
+Установка подсказки окну <a class="re" href="#notes9" title="Установка подсказки окну"><b>**</b></a>
+
+<hr align="left" width=70%>
+<a name="GLOBALUPDWNX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+
+<tr><td class="s3td"><a name="GLOBALUPDWNX"></a>GLOBALUPDWN</td><td>
+массив входных данных. Данные передаются через разделитель <font class="S51"><b>|</b></font><br>
+&nbsp;&nbsp;данные 1-го диалога записываются в 1-ю ячейку<br>
+&nbsp;&nbsp;данные 2-го диалога записываются в 2-ю ячейку<br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в N-ю ячейку<br>
+</td></tr>
+<tr><td class="s3td"><a name="GLOBALUPDWNX"></a>GLOBALUPDWN<font class="S81">1</font><br>GLOBALUPDWN<font class="S81">2</font><br>...<br>GLOBALUPDWN<font class="S81">N</font><br></td><td>
+массив входных данных.<br>
+&nbsp;&nbsp;данные 1-го диалога записываются в переменную GLOBALUPDWN<font class="S81">1</font><br>
+&nbsp;&nbsp;данные 2-го диалога записываются в переменную GLOBALUPDWN<font class="S81">2</font><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в переменную GLOBALUPDWN<font class="S81">N</font><br>
+
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/updwn3.png" border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/updwn2.png" border=0></p>
+<p align="center"><img src="../../images/updwn1.png" border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/updwn4.png" border=0></p>
+
+
+<!-- 21 Диалог выбора изображения: Подпараметр [image] или <image> -->
+
+
+<br>
+<br><hr class="hr-blue">
+<br><a name="21"></a><a name="image"></a><br>
+<a href="#22"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>21.</b> Диалог выбора изображения: Подпараметр <b>[image]</b> или <b>&#60;image&#62;</b><br></font>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Выбор изображения или нескольких изображений</b></font>. Подпараметр <span class="S8">[</span>image<span class="S8">]</span> или <span class="S8">&#60;</span>image<span class="S8">&#62;</span>.
+<br>В любом месте строки параметров, где встретится <span class="S8">[</span>image=BOXN<span class="S8">]</span>, будет вызвано диалоговое окно, в котором можно выбрать изображения.<br>
+<hr align="left" width=300>
+Диалог рассчитан для отображения <u>небольшого количества</u> изображений:<br>
+2BP, AI, AMC, BMP, DIB, EMF, GIF, JBF, JFIF, JPE, JPEG, JPG, LPM, MPO, PDN, PLB, PNG, PXS, PXT, RLE, SSL, TIF, TIFF, WMF<br>
+Для других форматов необходимы дополнительные библиотеки (см. примечание команды <a class="le" href="../com_imgth.htm"><span class="S41"><b>imgth</b></span></a>)<br>
+
+<hr align="left" width=300>
+<span class="S8">[</span>image=BOXN<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a> в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>) в соответствующих ключах <b>ImageBox</b>1, <b>ImageBox</b>2 ... <b>ImageBox</b>N и позволяет самому настроить окно вывода.
+<br>Также могут использоваться ключи с любым окончанием после основы ImageBox, в котором есть цифры, латинские символы и знак подчёркивания _
+
+<br><br>
+Синтаксис шаблона: 
+<p class="codeheader" style="padding:6px;white-space: nowrap"><b>ImageBox</b>N=Title<a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a><font class="S81"><b>|</b></font>Info<font class="S81"><b>|</b></font>List<font class="S81"><b>|</b></font>Width<font class="S81"><b>|</b></font>Height<font class="S81"><b>|</b></font>SizeLV<font class="S81"><b>|</b></font>HeightLV<font class="S81"><b>|</b></font>BackgroundLV<font class="S81"><b>|</b></font>FrameColorLV<font class="S81"><b>|</b></font>TextColorLV<font class="S81"><b>|</b></font>StyleLV<font class="S81"><b>|</b></font>HintLV</p></font>
+где:
+<br>
+<b>Title</b><a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a> - заголовок окна.<br><b>Info</b> - информация в окне.<br>
+<b>List</b> - список изображений для выбора, возможны варианты:<br>
+&nbsp;&nbsp;- List - файл списка полных путей изображений.<br>
+&nbsp;&nbsp;- Folder - полный путь папки с изображениями.<br>
+&nbsp;&nbsp;- Path1/Path2/...PathN - пути изображений, прописанные через разделитель <font class="S81"><b>/</b></font><br>
+&nbsp;&nbsp;- $GLOBALNAME - массив с полными путями изображений (см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a>).<br>
+<b>Width</b> - ширина диалога.<br>
+<b>Height</b> - высота диалога.<br>
+<b>SizeLV</b> - размер квадрата элемента изображения, поддерживаются размеры: 32, 48, 64, 96, 128, 160, 192, 224, 256, 300, 400, 500.<br>
+<b>HeightLV</b> - высота ListView, в котором отображаются изображения (размер должен быть меньше Height (высоты диалога)).<br>
+<b>BackgroundLV</b> - фон ListView, возможны варианты:<br>
+&nbsp;&nbsp;- RGB цвет.<br>
+&nbsp;&nbsp;- путь к фоновому изображению.<br> 
+<b>FrameColorLV</b> - RGB цвет рамки элементов изображения.<br>
+&nbsp;&nbsp;- если прописан <font class="S19">'#'</font>, то без рамки.<br>
+<b>TextColorLV</b> - RGB цвет текста, надписи под элементами изображения.<br>
+&nbsp;&nbsp;- если прописан <font class="S19">'#'</font>, то без надписи.<br>
+<b>StyleLV</b> [необязательный] - стиль ListView:<br>
+&nbsp;&nbsp;0 - вертикальное расположение (по умолчанию).<br>
+&nbsp;&nbsp;1 - горизонтальное расположение.<br>
+<b>HintLV</b> [необязательный] - подсказка при наведении на элемент изображения:<br>
+&nbsp;&nbsp;0 - с подказками (по умолчанию).<br>
+&nbsp;&nbsp;1 - без подсказок.<br> 
+<hr align="left" width=300>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<b>ImageBox1</b>=Выбор изображений¤TCIMG.dll,55<font class="S81"><b>|</b></font>Выберите изображения:<font class="S81"><b>|</b></font>$GLOBALSENDS<font class="S81"><b>|</b></font>362<font class="S81"><b>|</b></font>215<font class="S81"><b>|</b></font>96<font class="S81"><b>|</b></font>127<font class="S81"><b>|</b></font>FFFFFF<font class="S81"><b>|</b></font>FF0000<font class="S81"><b>|</b></font>008080
+</p></font>
+<hr align="left" width=300>
+Можно настраивать размер, толщину, имя шрифта, фон, цвет в диалоге в <a class="le" href="../../config.htm#Box"><font class="S1"><b>TCIMG.ini</b></font></a> в секции [Box]<br>
+<hr align="left" width=300>
+Установка значка окну <a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a>
+<hr align="left" width=300>
+Установка подсказки окну <a class="re" href="#notes9" title="Установка подсказки окну"><b>**</b></a>
+
+<hr align="left" width=70%>
+<a name="GLOBALIMAGEX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALIMAGE1"></a>GLOBALIMAGE<b>1</b><br>...<br>GLOBALIMAGE<b>N</b></td><td>
+массив входных данных. Список путей выбранных изображений.<br>
+&nbsp;&nbsp;данные 1-го диалога записываются в переменную GLOBALIMAGE<b>1</b><br>
+&nbsp;&nbsp;данные 2-го диалога записываются в переменную GLOBALIMAGE<b>2</b><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в переменную GLOBALIMAGE<b>N</b><br>
+</td></tr>
+<tr><td class="s3td"><a name="GLOBALIMAGE1"></a>GLOBALIMAGE<b>0</b></td><td>
+массив входных данных. Номера выбранных изображений передаются через разделитель <font class="S51"><b>|</b></font><br>
+&nbsp;&nbsp;номера 1-го диалога записываются в 1-ю ячейку.<br>
+&nbsp;&nbsp;номера 2-го диалога записываются в 2-ю ячейку.<br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;номера N-го диалога записываются в N-ю ячейку.<br>
+Отсчёт нумерации с <font class="S51"><b>0</b></font>
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/image1.gif" border=0>
+&nbsp;&nbsp;&nbsp;
+<img src="../../images/image2.gif" border=0></p>
+
+
+<!-- 22 Подсказка в трее: Команда: <TRAY> -->
+
+
+<br>
+<br><hr class="hr-blue">
+<br><a name="22"></a><a name="tray"></a><a name="image"></a><br>
+<a href="#23"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+"><b>22.</b> Подсказка в трее: Команда <b>&#60;TRAY&#62;</b><br></font>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Подсказка при наведении курсора на иконку в трее</b></font>. Команда <span class="S8">&#60;</span>TRAY<span class="S8">&#62;</span></span>.
+<br>Если в начале строки параметров прописано <span class="S8">&#60;</span>TRAY=HINTN<span class="S8">&#62;</span>, будет установлен значок в трее и подсказка, отображающаяся при наведении на значок.<br>
+<hr align="left" width=300>
+
+Команда &#60TRAY=<b>String</b><font class="S81"><b>||</b></font><b>Mode</b><font class="S81"><b>||</b></font><b>Icon</b>&#62, где:<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>String</b> - строка-подсказка при наведении курсора на иконку в трее.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Так же подсказка может быть настроена в TCIMG.lng в секциях TrayIconHint<font class="S81">1</font>, TrayIconHint<font class="S81">2</font>, ... , TrayIconHint<font class="S81">N</font>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;при этом в тег прописываются соответствующие &#60TRAY=HINT<font class="S81">1</font>&#62;, &#60TRAY=HINT<font class="S81">2</font>&#62;, ... , &#60TRAY=HINT<font class="S81">N</font>&#62;<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Mode</b> - режим отображения значка:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - отображает иконку в трее<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - скрывает иконку в трее<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 - мигает иконка в трее<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 - мигание иконки остановлено<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Icon</b> - включает в себя путь и номер значка, прописанных через запятую.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(так же может быть использован <u>номер</u> ключа в <a class="le" href="../../config.htm#ProcessIcon"><font class="S1"><b>TCIMG.ini</b></font></a> из секции <span class="S8">[</span>ProcessIcon<span class="S8">]</span>)<br>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+TrayIconHint1=Описание подсказки:@CRLF• Первая строка@CRLF• Вторая строка@CRLF• Третья строка
+</p>
+<br>
+@CRLF заменяется переносом строки.<br><br>
+
+При &#60TRAY=...&#62 при нажатии на иконку в трее правой кнопкой мыши можно приостановить действие или завершить работу команд<br><br>
+
+</td></tr></table>
+<br>
+
+
+<!-- 23. Диалог выбора файлов и папок: Подпараметр [elect] или <elect> -->
+
+
+<br><hr class="hr-blue"><a name="23"></a><a name="elect"></a><br>
+<a href="#24"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+">
+<b>23.</b> Диалог выбора файлов и папок: Подпараметр <b>[elect]</b> или <b>&#60;elect&#62;</b><br></font>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Диалог выбора файлов и папок</b></font>. Подпараметр <span class="S8">[</span>elect<span class="S8">]</span> или <span class="S8">&#60;</span>elect<span class="S8">&#62;</span>.
+<br>В любом месте строки параметров, где встретится <span class="S8">[</span>elect<span class="S8">]</span>, будет вызвано диалоговое окно, в котором можно выбрать файлы и папки.<hr align="left" width=300>Расширенный вид: <span class="S8">[</span>elect=<b>Title</b><a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a><font class="S81">|</font><b>Path</b>(<font class="S81">|</font><b>Width</b><font class="S81">|</font><b>Height</b><font class="S81">|</font><b>ViewMode</b><font class="S81">|</font><b>Option</b><font class="S81">|</font><b>Flags</b><font class="S81">|</font><b>Filter</b><font class="S81">|</font><b>Style</b>)<span class="S8">]</span> позволяет самому настроить окно ввода, где:<br>
+<b>Title</b><a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a> - заголовок окна.<br>
+<b>Path</b> - корневой каталог дерева выбора в диалоге, возможны варианты:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&#8226; Абсолютный или относительный путь к каталогу: C:\Users\, <a class="le" href="add_path.htm"><b>$f</b></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&#8226; Сетевые пути: \\User-PC\
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&#8226; Путь каталога, передаваемый параметрами <a class="le" href="add_param.htm"><font class="S0"><b>%P%N, %P, %T, %T%M</b></font></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&#8226; Путь zip архива любой вложенности: D:\Util\TCIMG.zip\Files\Scripts\ (другие архивы не поддерживаются)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&#8226; Путь каталога, передаваемый параметрами <a class="le" href="add_info.htm"><b>&#60;info&#62;</b></a>, <a class="le" href="add_tc.htm"><b>[tc]</b></a>, и другими
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&#8226; Путь каталога, передаваемый глобальными переменными <a class="le" href="add_gloobal.htm"><font class="S91"><b>GLOBALNAME</font></b></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&#8226; Номер или идентификатор GUID папки, см. таблицу Дополнения <a class="le" href="add_system.htm#2"><b>№35</b></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;По умолчанию идентификатор возвращает пользовательский путь, для возврата пути по умолчанию системы прописывается <font class="S81">*</font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Пример: <code class="example">{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}<font class="S81">*</font></code> или <code class="example">39<font class="S81">*</font></code>
+<br><b>Width</b> - ширина диалога (размер по умолчанию 625).
+<br><b>Height</b> - высота диалога (размер по умолчанию 435).
+<br><b>ViewMode</b> - режим представления:
+<br>&nbsp;&nbsp;Прописывается номер режима.
+<br><br>
+<div style="margin-left: 31pt; text-indent: 0pt;">
+<table class="param" width="40%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Номер</td><td width="1%">Размер</td><td>Название</td></tr>
+<tr><td class="s3td">1</td><td class="s4td">32x32</td><td class="s5td">"Содержимое"</td></tr>
+<tr><td class="s3td">2</td><td class="s4td">48x48</td><td class="s5td">"Плитка"</td></tr>
+<tr><td class="s3td">3</td><td class="s4td">16x16</td><td class="s5td">"Таблица" (по умолчанию)</td></tr>
+<tr><td class="s3td">4</td><td class="s4td">16x16</td><td class="s5td">"Список"</td></tr>
+<tr><td class="s3td">5</td><td class="s4td">16x16</td><td class="s5td">"Мелкие значки"</td></tr>
+<tr><td class="s3td">6</td><td class="s4td">24x24</td><td class="s5td"></td></tr>
+<tr><td class="s3td">7</td><td class="s4td">32x32</td><td class="s5td"></td></tr>
+<tr><td class="s3td">8</td><td class="s4td">48x48</td><td class="s5td">"Обычные значки"</td></tr>
+<tr><td class="s3td">9</td><td class="s4td">64x64</td><td class="s5td"></td></tr>
+<tr><td class="s3td">10</td><td class="s4td">96x96</td><td class="s5td">"Крупные значки"</td></tr>
+<tr><td class="s3td">11</td><td class="s4td">128x128</td><td class="s5td"></td></tr>
+<tr><td class="s3td">12</td><td class="s4td">160x160</td><td class="s5td"></td></tr>
+<tr><td class="s3td">13</td><td class="s4td">192x192</td><td class="s5td"></td></tr>
+<tr><td class="s3td">14</td><td class="s4td">256x256</td><td class="s5td">"Огромные значки"</td></tr>
+</table>
+</div>
+<br><b>Option</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;0 - без отображения стандартных панелей слева и сверху
+<br>&nbsp;&nbsp;&nbsp;&nbsp;1 - отображение стандартных панелей (по умолчанию)
+<br><b>Flags</b> - может быть суммой значений:
+<br>&nbsp;&nbsp;По умолчанию Flags=0
+<br>&nbsp;&nbsp;Можно прописывать как сумму <code class="example">0x00000040+0x00000080</code>, так и десятичную сумму <code class="example">64+128</code> или <code class="example">192</code>
+<br>&nbsp;&nbsp;В таблице наиболее полезные флаги, информацию о других можно найти здесь <a href="https://docs.microsoft.com/en-us/windows/win32/api/shobjidl_core/ne-shobjidl_core-folderflags" target="_blank">FOLDERFLAGS</a>
+<br><br>
+<div style="margin-left: 31pt; text-indent: 0pt;">
+<table class="param" width="800" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="1%">Имя Константы</td><td>Значение</td><td>Описание</td></tr>
+<tr><td class="s3td"><a name="FWF_SINGLESEL"></a>FWF_SINGLESEL</td><td class="s4td">0x00000040 (64)</td><td class="s5td">Только один пункт может быть выделен</td></tr>
+<tr><td class="s3td"><a name="FWF_NOSUBFOLDERS"></a>FWF_NOSUBFOLDERS</td><td class="s4td">0x00000080 (128)</td><td class="s5td">Не показывать папки</td></tr>
+<tr><td class="s3td"><a name="FWF_ALIGNLEFT"></a>FWF_ALIGNLEFT</td><td class="s4td">0x00000800 (2048)</td><td class="s5td">Пункты выравниваются по левому краю</td></tr>
+<tr><td class="s3td"><a name="FWF_SINGLECLICKACTIVATE"></a>FWF_SINGLECLICKACTIVATE</td><td class="s4td">0x00008000 (32768)</td><td class="s5td">Элемент выделяется при наведении на него курсора</td></tr>
+<tr><td class="s3td"><a name="FWF_HIDEFILENAMES"></a>FWF_HIDEFILENAMES</td><td class="s4td">0x00020000 (131072)</td><td class="s5td">При ViewMode=7 и выше не отображаются имена файлов</td></tr>
+<tr><td class="s3td"><a name="FWF_NOFILTERS"></a>FWF_NOFILTERS</td><td class="s4td">0x00400000 (4194304)</td><td class="s5td">Не отображать фильтры в заголовках таблицы</td></tr>
+<tr><td class="s3td"><a name="FWF_NOCOLUMNHEADER"></a>FWF_NOCOLUMNHEADER</td><td class="s4td">0x01000000 (16777216)</td><td class="s5td">Не показывать заголовки столбцов (кроме ViewMode=3)</td></tr>
+<tr><td class="s3td"><a name="FWF_EXTENDEDDILES"></a>FWF_EXTENDEDDILES</td><td class="s4td">0x02000000 (33554432)</td><td class="s5td">При ViewMode=2 элемент размещается по ширине окна</td></tr>
+</table>
+</div>
+<br><b>Filter</b> - фильтр для файлов (по умолчанию отображаются все объекты).
+<br>&nbsp;&nbsp;&#8226; Необходимые типы файлов прописываются через разделитель <font class="S121"><b>;</b></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Пример: <code class="example">txt</code>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Пример: <code class="example">txt<font size=+1 class="S121"><b>;</b></font>ini<font size=+1 class="S121"><b>;</b></font>log</code>
+<br>&nbsp;&nbsp;&#8226; Если нужно получить <u>кроме</u> заданных, то перед фильтром прописывается знак <font class="S81"><b>^</b></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Пример: <code class="example"><font class="S81"><b>^</b></font>txt<font size=+1 class="S121"><b>;</b></font>ini<font size=+1 class="S121"><b>;</b></font>log</code>
+<br>&nbsp;&nbsp;&#8226; Если фильтр не нужен, то прописывается "<font class="S51">*</font>"
+
+<br><b>Style</b> - стиль диалога, может быть суммой значений:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;0 - по умолчанию (диалог с изменениями размеров, диалог блокирует активное окно)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;1 - без изменения размеров диалога
+<br>&nbsp;&nbsp;&nbsp;&nbsp;2 - диалог не блокирует активное окно
+<br>&nbsp;&nbsp;&nbsp;&nbsp;4 - диалог не блокирует активное окно и отображается на панели задач
+
+<br>
+
+<hr align="left" width=300>Также поддерживается формат <span class="S8">[</span>input=BOXN<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a> в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>) в соответствующих ключах <b>ElectBox</b>1, <b>ElectBox</b>2 ... <b>ElectBox</b>N, в том же формате.
+<br>Также могут использоваться ключи с любым окончанием после основы ElectBox, в котором есть цифры, латинские символы и знак подчёркивания _
+
+<br><hr align="left" width=300><span class="section">Пример записи:</span><p class="codeheader" style="padding:6px;white-space: nowrap"><b>ElectBox</b>1=Выберите объекты|%COMMANDER_PATH%<font class="S81"><b>|</b></font>600<font class="S81"><b>|</b></font>400<font class="S81"><b>|</b></font>7<font class="S81"><b>|</b></font>1<font class="S81"><b>|</b></font>0<font class="S81"><b>|</b></font>0<font class="S81"><b>|</b></font>2
+</p>
+
+<hr align="left" width=300>
+Установка значка окну <a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a>
+
+<hr align="left" width=70%>
+<a name="GLOBALELECTX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALELECT"></a>GLOBALELECT<b>1</b><br>GLOBALELECT<b>2</b><br>...<br>GLOBALELECT<b>N</b></td><td>
+массив, в котором находятся пути выбранных каталогов.</font><br>
+&nbsp;&nbsp;данные 1-го диалога записываются в переменную GLOBALELECT<b>1</b><br>
+&nbsp;&nbsp;данные 2-го диалога записываются в переменную GLOBALELECT<b>2</b><br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в переменную GLOBALELECT<b>N</b><br>
+
+</td></tr></table></p>
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/elect2.png" border=0></p>
+<br>
+<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/elect1.png" border=0></p>
+
+
+<!-- 24. Диалог ввода информации: Подпараметр [dates] или <dates> -->
+
+
+<br><hr class="hr-blue"><a name="24"></a><a name="dates"></a><br>
+<a href="#25"><img align=left src="../../images/down2.gif" border="0" title="К следующему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;<font size="+">
+<b>24.</b> Диалог выбора даты и времени: Подпараметр <b>[dates]</b> или <b>&#60;dates&#62;</b><br></font>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td><font class="S0"><font class="S3"><b>Диалог выбора даты и времени</b></font>. Подпараметр <span class="S8">[</span>dates<span class="S8">]</span> или <span class="S8">&#60;</span>dates<span class="S8">&#62;</span>.
+<br>В любом месте строки параметров, где встретится <span class="S8">[</span>dates<span class="S8">]</span>, будет вызвано диалоговое окно, в котором можно выбрать дату и время.<hr align="left" width=300>Расширенный вид: <span class="S8">[</span>dates=<b>Title</b><a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a><font class="S81">|</font><b>Info</b><font class="S81">|</font><b>DateLine</b><font class="S81">|</font><b>Width</b><font class="S81">|</font><b>Height</b><span class="S8">]</span> позволяет самому настроить окно выбора, где:<br>
+<b>Title</b><a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a> - заголовок окна.<br>
+<b>Info</b> - информация в окне.<br>
+<b>DateLine</b> - состоит из <b>Date<font class="S51">^</font>Format<font class="S51">^</font>Mode</b>, где:<br>
+&nbsp;&nbsp;<b>Date</b> - начальная дата в элементе выбора, может быть прописана в форматах:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>&#9193;</b></font> 2022/04/20 17:24:47<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>&#9193;</b></font> 2022/04/20<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>&#9193;</b></font> 17:24:47<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>&#9193;</b></font> если прописан тег <font class="S19">#SISDATE</font>, то будет вставлена системная дата.<br>
+&nbsp;&nbsp;<b>Format</b> - формат вывода даты, см. таблицу.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;К примеру: <code class="example">yyyy/MM/dd HH:mm:ss</code><br>
+&nbsp;&nbsp;<b>Mode</b> [необязательный] - режим выбора даты:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - выбор из выпадающего календаря (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - устанавливает элемент up-down (стрелочки вверх-вниз) справа от элемента даты для изменения значения времени.<br>
+<b>Width</b> - ширина диалога.<br>
+<b>Height</b> - высота диалога.<br>
+
+<hr align="left" width=300>Также поддерживается формат <span class="S8">[</span>dates=BOXN<span class="S8">]</span>, где BOX1, BOX2 ... BOXN - являются шаблонами, которые прописываются в <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a> в секции языка (<span class="S8">[</span><b>Russian</b><span class="S8">]</span>) в соответствующих ключах <b>DatesBox</b>1, <b>DatesBox</b>2 ... <b>DatesBox</b>N, в том же формате <b>Title</b><font class="S81">|</font><b>Info</b><font class="S81">|</font><b>DateLine</b><font class="S81">|</font><b>Width</b><font class="S81">|</font><b>Height</b>.
+<br>Также могут использоваться ключи с любым окончанием после основы DatesBox, в котором есть цифры, латинские символы и знак подчёркивания _
+
+<br><hr align="left" width=300><span class="section">Пример записи:</span><p class="codeheader" style="padding:6px;white-space: nowrap"><b>DatesBox</b>1=Выбор даты¤TCIMG.dll,131<font class="S81">|</font>Выберите дату.<font class="S81">|</font>#SISDATE^yyyy/MM/dd HH:mm:ss<font class="S81">|</font>245<font class="S81">|</font>110</p>
+
+<hr align="left" width=300>
+Можно настраивать размер, толщину, имя шрифта, фон, цвет в диалоге в <a class="le" href="../../config.htm#Box"><font class="S1"><b>TCIMG.ini</b></font></a> в секции [Box] в ключах Dates...
+<hr align="left" width=300>
+Установка значка окну <a class="re" href="#notes3" title="Установка значка окну"><b>*</b></a>
+<hr align="left" width=300>
+Установка подсказки окну <a class="re" href="#notes9" title="Установка подсказки окну"><b>**</b></a>
+<hr align="left" width=70%>
+<a name="GLOBALDATESX"></a>Команда имеет возможность передавать другим командам информацию через именные глобальные переменные. см. Дополнение <a class="le" href="add_gloobal.htm"><b>№23</b></a><p align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="20%">Имя переменной</td><td width="80%">Описание</td></tr>
+<tr><td class="s3td"><a name="GLOBALDATES"></a>GLOBALDATES</td><td>
+массив входных данных (в первой ячейке введённые данные)<br>
+если используются несколько диалогов [dates], то:<br>
+&nbsp;&nbsp;данные 2-го диалога записываются во 2-ю ячейку<br>
+&nbsp;&nbsp;данные 3-го диалога записываются в 3-ю ячейку<br>
+&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;данные N-го диалога записываются в N-ю ячейку<br>
+</td></tr></table></p>
+
+<hr align="left" width=70%>
+
+В формате вывода даты могут использоваться следующие сокращения (символы или сочетания символов):<br>
+h.hh.H.HH.m.mm.s.ss.t.tt.d.dd.ddd.dddd.M.MM.MMM.MMMM.y.yy.yyyy<br>
+Они могут располагаться в любом порядке и использоваться несколько раз.<br>
+Вместо точек могут прописываться любые другие символы.<br>
+<br>
+<table align="center" width="95%" cellspacing="0" cellpadding="2">
+<tr><td style="white-space:nowrap" width="5%"><b>Сокращение</b></td><td width="80%"><b>Описание</b></td></tr>
+<tr class="seltr"><td colspan=2>Время:</td></tr>
+<tr><td>h</td><td>часы, цифры без ведущего нуля; 12-часовой формат</td></tr>
+<tr><td>hh</td><td>часы, цифры с ведущим нулём; 12-часовой формат</td></tr>
+<tr><td>H</td><td>часы, цифры без ведущего нуля; 24-часовой формат</td></tr>
+<tr><td>HH</td><td>часы, цифры с ведущим нулём; 24-часовой формат</td></tr>
+<tr><td>m</td><td>минуты, цифры без ведущего нуля</td></tr>
+<tr><td>mm</td><td>минуты, цифры с ведущим нулём</td></tr>
+<tr><td>s</td><td>секунды, цифры без ведущего нуля</td></tr>
+<tr><td>ss</td><td>секунды, цифры с ведущим нулём</td></tr>
+<tr><td>t</td><td>один символ времени маркер, А или P (если установлен вывод в системе)</td></tr>
+<tr><td>tt</td><td>символы времени маркеров, AM или PM (если установлен вывод в системе)</td></tr>
+<tr class="seltr"><td colspan=2>Дата:</td></tr>
+<tr><td>d</td><td>день месяца, цифры без ведущего нуля</td></tr>
+<tr><td>dd</td><td>день месяца, цифры с ведущим нулём</td></tr>
+<tr><td>ddd</td><td>день недели, буквенное сокращение (Чт)</td></tr>
+<tr><td>dddd</td><td>день недели, полное имя (четверг)</td></tr>
+<tr><td>M</td><td>месяц, цифры без ведущего нуля</td></tr>
+<tr><td>MM</td><td>месяц, цифры с ведущим нулём</td></tr>
+<tr><td>MMM</td><td>месяц, трехбуквенное сокращение (авг)</td></tr>
+<tr><td>MMMM</td><td>месяц, полное имя (Август)</td></tr>
+<tr><td>y</td><td>год, две последние цифры без ведущего нуля</td></tr>
+<tr><td>yy</td><td>год, две последние цифры с ведущим нулем</td></tr>
+<tr><td>yyyy</td><td>год, четыре цифры</td></tr>
+</table><br>
+
+
+</td></tr></table>
+<br>
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/dates.png" border=0></p>
+
+
+
+
+
+
+
+
+
+<!-- Примечания -->
+
+
+<br><hr class="hr-blue">
+<p class="section" align="center"><b><big>Примечания:</big></b></p>
+<br>
+
+<!-- Примечание №1 -->
+
+<a name="notes1"></a>
+<b><font class="S91"><b>Примечание №1.</b></font> <font class="S51">Передача переменных диалогам.</font></b><br>
+<br>
+Диалоги подключены в большинстве команд утилиты. Если в какой-либо команде этого нет, а очень нужно, сообщите, вставлю.<br>
+Так же это можно сделать самостоятельно без изменения кода утилиты, а именно с помощью команды <a class="le" href="../com_exect.htm"><font class="S4"><b>exect</b></font></a><br>
+т.е переменной передаётся значение вызванного диалога, а далее переменная прописывается в любое необходимое место командной строки.
+<br><span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+exect=<font class="S121"><b>$var_i</b></font>=##[input=BOX77] exicn=%P%N||"%t"||<font class="S121"><b>$var_i</b></font>||nodelim<>
+</p>
+<br>
+
+<div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div>
+
+<!-- Примечание №2 -->
+
+<a name="notes2"></a><br>
+<b><font class="S91"><b>Примечание №2.</b></font> <font class="S51">Применение тегов ширины и высоты.</font></b><br>
+<br>
+В [input], [richinput], [combo], [group], [check], [edits] и других для определения размера диалогового окна (<b>Width</b> и <b>Height</b>), могут использоваться:<br>
+&nbsp;&nbsp;• Тег <b>@W</b>, который будет заменён значением ширины экрана.<br>
+&nbsp;&nbsp;• Тег <b>@H</b>, который будет заменён значением высоты экрана.<br>
+&nbsp;&nbsp;• При использовании тегов <b>@W</b> и <b>@H</b> :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- в <b>Width</b> и <b>Height</b> возможно указывать математические действия, определяющие размеры диалогового окна.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- диалоговое окно отображается относительно центра экрана.<br>
+<br>
+<span class="section">Пример записи в ключах <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a>:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<b>ComboBox_X01</b>=Создание файла||Создать текстовый файл:||Name.txt|Name.ini|Name.vbs|Name.au3|Name.ahk|Name.js|Name.html|Name.xml|Name.bat|Name.cmd|Name.doc|Name.xls|Name.lst|Name.m3u||<font class="S81"><b>@W-16</b></font>||117||1||1<br>
+<b>RichInputBox_X01</b>=Ввод пароля|Введите пароль для расшифрования.||<font class="S81"><b>@W-12</b></font>|<font class="S81"><b>@H/2</b></font>|10|1<br>
+<b>EditsBox_X01</b>=Ввод текста<#>Введите текст<#>ввод текста<+><font class="S81"><b>@H/2.6</b></font><+><#><font class="S81"><b>@W-12</b></font><#><font class="S81"><b>@H/2</b></font><#>10<#>700<#>Arial<#>5C6FCA<br>
+</p><br>
+<span class="section">Пример записи в командах:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+renmm=%P%N||##&#60;richinput=Редактировать~~имя|Изменение~~базового~~имени|"%O"|<font class="S81"><b>@W-12</b></font>|117&#62;||upd<1>
+</p>
+<br>
+
+<div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div>
+
+<!-- Примечание №3 -->
+
+<a name="notes3"></a><br>
+<b><font class="S91"><b>Примечание №3.</b></font> <font class="S51">Установка значка окну диалога.</font></b><br>
+<br>
+
+В версии 14.3 появилась возможность устанавливать значок диалогу:<br>
+Для установки значка <u>в конце заголовка</u> <b>Title</b> <u>после разделителя</u> <font class="S81"><b>¤</b></font> прописывается путь к библиотеке значков и <u>через запятую</u> номер значка.<br>
+Если значок или библиотека находится в той же папке, что и TCIMG.exe , то достаточно указать имя.<br>
+Некоторые DLL могут иметь значок извлекаемый только отрицательным числом.<br>
+Вместо иконки может использоваться рисунок BMP или файл курсора ANI.<br>
+<br>
+<span class="section">Примеры записи в ключах <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a>:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+InputBox1=Ввод расширения<font class="S81"><b>¤</b></font><font class="S21"><b>TCIMG.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>33</b></font>|Введите необходимое расширение для замены в выделенных файлах.|txt|270|140<br>
+InputBox1=Ввод расширения<font class="S81"><b>¤</b></font><font class="S21"><b>%WINDIR%\System32\shell32.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>-134</b></font>|Введите необходимое расширение для замены в выделенных файлах.|txt|270|140<br>
+InputBox1=Ввод расширения<font class="S81"><b>¤</b></font><font class="S21"><b>c:\testicon.ico</b></font><font class="S51"><b>,</b></font><font class="S121"><b>0</b></font>|Введите необходимое расширение для замены в выделенных файлах.|txt|270|140<br>
+InputBox1=Ввод расширения<font class="S81"><b>¤</b></font><font class="S21"><b>%COMMANDER_PATH%\Wcmicons.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>2</b></font>|Введите необходимое расширение для замены в выделенных файлах.|txt|270|140<br>
+InputBox1=Ввод расширения<font class="S81"><b>¤</b></font><font class="S21"><b>%TCIMG_PATH%\Files\Img\Puzzle.bmp</b></font><font class="S51"><b>,</b></font><font class="S121"><b>0</b></font>|Введите необходимое расширение для замены в выделенных файлах.|txt|270|140<br>
+InputBox1=Ввод расширения<font class="S81"><b>¤</b></font><font class="S21"><b>User.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>58</b></font>|Введите необходимое расширение для замены в выделенных файлах.|txt|270|140<br>
+<br>
+ComboBox12=Выбор глубины<font class="S81"><b>¤</b></font><font class="S21"><b>TCIMG.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>33</b></font>||Введите ГЛУБИНУ создания каталогов:||1|2|3|4|5|6|7|8|9|10||343||117||1||1<br>
+ComboBox12=Выбор глубины<font class="S81"><b>¤</b></font><font class="S21"><b>%WINDIR%\System32\shell32.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>-134</b></font>||Введите ГЛУБИНУ создания каталогов:||1|2|3|4|5|6|7|8|9|10||343||117||1||1<br>
+ComboBox12=Выбор глубины<font class="S81"><b>¤</b></font><font class="S21"><b>c:\testicon.ico</b></font><font class="S51"><b>,</b></font><font class="S121"><b>0</b></font>||Введите ГЛУБИНУ создания каталогов:||1|2|3|4|5|6|7|8|9|10||343||117||1||1<br>
+ComboBox12=Выбор глубины<font class="S81"><b>¤</b></font><font class="S21"><b>%COMMANDER_PATH%\Wcmicons.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>2</b></font>||Введите ГЛУБИНУ создания каталогов:||1|2|3|4|5|6|7|8|9|10||343||117||1||1<br>
+ComboBox12=Выбор глубины<font class="S81"><b>¤</b></font><font class="S21"><b>%TCIMG_PATH%\Files\Img\Puzzle.bmp</b></font><font class="S51"><b>,</b></font><font class="S121"><b>0</b></font>||Введите ГЛУБИНУ создания каталогов:||1|2|3|4|5|6|7|8|9|10||343||117||1||1<br>
+ComboBox12=Выбор глубины<font class="S81"><b>¤</b></font><font class="S21"><b>User.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>58</b></font>||Введите ГЛУБИНУ создания каталогов:||1|2|3|4|5|6|7|8|9|10||343||117||1||1<br>
+<br>
+GroupBox9=Выбор стиля кнопки<font class="S81"><b>¤</b></font><font class="S21"><b>TCIMG.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>33</b></font><#>Выберите стиль кнопки.<#><#>Обычный<+>0<+>В виде меню<+>1<#>280<#>155<br>
+GroupBox9=Выбор стиля кнопки<font class="S81"><b>¤</b></font><font class="S21"><b>%WINDIR%\System32\shell32.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>-134</b></font><#>Выберите стиль кнопки.<#><#>Обычный<+>0<+>В виде меню<+>1<#>280<#>155<br>
+GroupBox9=Выбор стиля кнопки<font class="S81"><b>¤</b></font><font class="S21"><b>c:\testicon.ico</b></font><font class="S51"><b>,</b></font><font class="S121"><b>0</b></font><#>Выберите стиль кнопки.<#><#>Обычный<+>0<+>В виде меню<+>1<#>280<#>155<br>
+GroupBox9=Выбор стиля кнопки<font class="S81"><b>¤</b></font><font class="S21"><b>%COMMANDER_PATH%\Wcmicons.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>2</b></font><#>Выберите стиль кнопки.<#><#>Обычный<+>0<+>В виде меню<+>1<#>280<#>155<br>
+GroupBox9=Выбор стиля кнопки<font class="S81"><b>¤</b></font><font class="S21"><b>%TCIMG_PATH%\Files\Img\Puzzle.bmp</b></font><font class="S51"><b>,</b></font><font class="S121"><b>0</b></font><#>Выберите стиль кнопки.<#><#>Обычный<+>0<+>В виде меню<+>1<#>280<#>155<br>
+GroupBox9=Выбор стиля кнопки<font class="S81"><b>¤</b></font><font class="S21"><b>User.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>58</b></font><#>Выберите стиль кнопки.<#><#>Обычный<+>0<+>В виде меню<+>1<#>280<#>155<br>
+<br>
+EditsBox4=Поиск фразы<font class="S81"><b>¤</b></font><font class="S21"><b>TCIMG.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>33</b></font><#>Введите фразу для поиска.<#>ввод строки<+>100<+><#>340<#>185<br>
+EditsBox4=Поиск фразы<font class="S81"><b>¤</b></font><font class="S21"><b>%WINDIR%\System32\shell32.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>-134</b></font><#>Введите фразу для поиска.<#>ввод строки<+>100<+><#>340<#>185<br>
+EditsBox4=Поиск фразы<font class="S81"><b>¤</b></font><font class="S21"><b>c:\testicon.ico</b></font><font class="S51"><b>,</b></font><font class="S121"><b>0</b></font><#>Введите фразу для поиска.<#>ввод строки<+>100<+><#>340<#>185<br>
+EditsBox4=Поиск фразы<font class="S81"><b>¤</b></font><font class="S21"><b>%COMMANDER_PATH%\Wcmicons.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>2</b></font><#>Введите фразу для поиска.<#>ввод строки<+>100<+><#>340<#>185<br>
+EditsBox4=Поиск фразы<font class="S81"><b>¤</b></font><font class="S21"><b>%TCIMG_PATH%\Files\Img\Puzzle.bmp</b></font><font class="S51"><b>,</b></font><font class="S121"><b>0</b></font><#>Введите фразу для поиска.<#>ввод строки<+>100<+><#>340<#>185<br>
+EditsBox4=Поиск фразы<font class="S81"><b>¤</b></font><font class="S21"><b>User.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>58</b></font><#>Введите фразу для поиска.<#>ввод строки<+>100<+><#>340<#>185<br>
+</p>
+<a name="notesshape"></a><br>
+Для команды <a class="le" href="../com_shape.htm"><b>shape</b></a>
+<br>
+Для установки значка через разделитель <font class="S81"><b>||</b></font> прописывается путь к библиотеке значков и через запятую номер значка.<br>
+Если значок или библиотека находится в той же папке, что и TCIMG.exe , то достаточно указать имя.<br>
+Некоторые DLL могут иметь значок извлекаемый только отрицательным числом.<br>
+Вместо иконки может использоваться рисунок BMP.<br>
+<br>
+<span class="section">Примеры записи в ключах <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a>:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+Shape1=Создание файлов<font class="S81"><b>||</b></font><font class="S21"><b>TCIMG.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>33</b></font><br>
+Shape1=Создание файлов<font class="S81"><b>||</b></font><font class="S21"><b>%WINDIR%\System32\shell32.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>-134</b></font><br>
+Shape1=Создание файлов<font class="S81"><b>||</b></font><font class="S21"><b>c:\testicon.ico</b></font><font class="S51"><b>,</b></font><font class="S121"><b>0</b></font><br>
+Shape1=Создание файлов<font class="S81"><b>||</b></font><font class="S21"><b>%COMMANDER_PATH%\Wcmicons.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>2</b></font><br>
+Shape1=Создание файлов<font class="S81"><b>||</b></font><font class="S21"><b>%TCIMG_PATH%\Files\Img\Puzzle.bmp</b></font><font class="S51"><b>,</b></font><font class="S121"><b>0</b></font><br>
+Shape1=Создание файлов<font class="S81"><b>||</b></font><font class="S21"><b>User.dll</b></font><font class="S51"><b>,</b></font><font class="S121"><b>58</b></font><br>
+</p>
+<br>
+
+<div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div>
+
+<!-- Примечание №4 -->
+
+<a name="notes4"></a><br>
+<b><font class="S91"><b>Примечание №4.</b></font> <font class="S51">Подсказки в диалогах GroupBox и CheckBox.</font></b><br>
+<br>
+В версии 15.5 появилась возможность устанавливать и настраивать подсказки к пунктам диалогов GroupBox и CheckBox:<br>
+<br>
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td>
+В конце названия пункта прописывается подсказка, несколько вариантов синтаксиса:<br>
+Знак тильды "<b>~</b>" означает перенос строки (для многострочных подсказок)<br>
+<b>1.</b><br>
+&nbsp;&nbsp;<b>Текст Пункта<font class="S121">©TipText©</font></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><font class="S121">TipText</font></b> - Текст всплывающей подсказки, который отображается при наведении мыши на элемент интерфейса.
+<hr align="left" width=70%>
+<b>2.</b><br>
+&nbsp;&nbsp;<b>Текст Пункта<font class="S121">©TipText©<font class="S91">Title</font>©<font class="S61">Icon</font>©<font class="S101">Options</font>©</font></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><font class="S121">TipText</font></b> - текст всплывающей подсказки, который отображается при наведении мыши на элемент интерфейса.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><font class="S91">Title</font></b>&nbsp;&nbsp;&nbsp;&nbsp; - <font class="S81"><b>[</b></font>необязательный<font class="S81"><b>]</b></font> заголовок подсказки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><font class="S61">Icon</font></b>&nbsp;&nbsp;&nbsp;&nbsp; - иконка, которая будет отображаться рядом с заголовком: Требуется заголовок.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - без иконки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - информационная иконка.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - иконка предупреждения.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 - иконка ошибки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><font class="S101">Options</font></b> - <font class="S81"><b>[</b></font>необязательный<font class="S81"><b>]</b></font> Установка различных параметров способа отображения подсказки (Может быть сложено - 1+2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - овальная подсказка.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - подсказка центрированная по горизонтали вдоль элемента.<br>
+<hr align="left" width=70%>
+<b>3.</b><br>
+&nbsp;&nbsp;<b>Текст Пункта<font class="S121">©TipText©<font class="S91">Title</font><font class="S81"><b>|</b></font><font class="S61">Path<font class="S81"><b>|</b></font><font class="S31">Icon</font></font><font class="S81"><b>|</b></font><font class="S101">Size</font>©<font class="S81"><b>:</b></font><font class="S51"><b>STYLE<font class="S21">N</font></b></font><font class="S81"><b>:</b></font>©</font></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><font class="S121">TipText</font></b> - текст всплывающей подсказки, который отображается при наведении мыши на элемент интерфейса.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><font class="S91">Title</font></b>&nbsp;&nbsp;&nbsp;&nbsp; - заголовок подсказки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><font class="S61">Path</font></b>&nbsp;&nbsp;&nbsp;&nbsp; - путь к значку (если файл находится в папке с утилитой достаточно прописывать имя файла).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><font class="S31">Icon</font></b>&nbsp;&nbsp;&nbsp;&nbsp; - номер иконки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><font class="S101">Size</font></b>&nbsp;&nbsp;&nbsp;&nbsp; - размер.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - устанавливается маленькая иконка 16x16<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - устанавливается большая иконка 32x32<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S81"><b>:</b></font><font class="S51"><b>STYLE<font class="S21"><b>N</b></font></b></font><font class="S81"><b>:</b></font> - стиль подсказки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Стиль для подсказки берётся из TCIMG.ini (TCIMGU.ini) из секции <font class="S81"><b>[</b></font><b>Box</b><font class="S81"><b>]</b></font> в ключах <font class="S01"><b>StyleToolTip</b></font><font class="S21"><b>N</b></font> , где:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S21"><b>N</b></font> - это приставка к ключам:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;если ключ <font class="S01"><b>StyleToolTip</b></font><font class="S21"><b>_Y1</b></font><font class="S81"><b>=</b></font>... , то прописывается <font class="S81"><b><font class="S81"><b>:</b></font></b></font><font class="S51"><b>STYLE</b></font><font class="S21"><b>_Y1</b></font><font class="S81"><b>:</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;если ключ <font class="S01"><b>StyleToolTip</b></font><font class="S21"><b>XXX</b></font><font class="S81"><b>=</b></font>... , то прописывается <font class="S81"><b>:</b></font><font class="S51"><b>STYLE</b></font><font class="S21"><b>XXX</b></font><font class="S81"><b>:</b></font>
+<br><br>
+&nbsp;&nbsp;Описание настроек стиля в TCIMG.ini в секции <font class="S81"><b>[</b></font><b>Box</b><font class="S81"><b>]</b></font>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font class="S01"><b>StyleToolTip</b></font><font class="S21"><b>N</b></font><font class="S81"><b>=</b></font><font class="S19"><b>StyleW<font class="S81"><b>|</b></font>DelayTime<font class="S81"><b>|</b></font>Balloon<font class="S81"><b>|</b></font>Flags<font class="S81"><b>|</b></font>FontName<font class="S81"><b>|</b></font>FontSize<font class="S81"><b>|</b></font>FontWidth<font class="S81"><b>|</b></font>FontStyle<font class="S81"><b>|</b></font>FontColor<font class="S81"><b>|</b></font>BkColor<font class="S81"><b>|</b></font>Left<font class="S81"><b>|</b></font>Top<font class="S81"><b>|</b></font>Right<font class="S81"><b>|</b></font>Bottom</b></font>
+
+
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1) <font class="S19"><b>StyleW</b></font> - стиль подсказки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - стиль системы, игнорируются параметры Font..., BkColor, Left, Top, Right, Bottom.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - свой стиль.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - стиль системы №2, игнорируются ряд параметров.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 - стиль системы №3, игнорируются ряд параметров.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2) <font class="S19"><b>DelayTime</b></font> - время в миллисекундах, в течение которого отображается подсказка.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;если курсор находится в пределах прямоугольника объекта (максимальное значение 32767 - ~32 секунды).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3) <font class="S19"><b>Balloon</b></font> - внешний вид.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- для StyleW=0 (Может быть суммой флагов (3, 6, 7 ...))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - прямоугольная.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - с закруглёнными углами.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - центрировать подсказку.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 - принудительно отображать подсказку полностью, независимо от указанных координат.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(если используется несколько мониторов, подсказка будет "прилипать" к ближайшему монитору).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- для StyleW больше нуля<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - прямоугольная.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;64 - с закруглёнными углами.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4) <font class="S19"><b>Flags</b></font> - отображение подсказки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - обычное.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - центрирует окно подсказки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 - сдвигает подсказку влево.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5) <font class="S19"><b>FontName</b></font> - имя шрифта.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(6) <font class="S19"><b>FontSize</b></font> - размер шрифта.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(7) <font class="S19"><b>FontWidth</b></font> - толщина шрифта: 400 - нормальный, 700 - жирный.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(8) <font class="S19"><b>FontStyle</b></font> - стиль шрифта.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - обычный.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - курсив.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(9) <font class="S19"><b>FontColor</b></font> - RGB цвет шрифта.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(10) <font class="S19"><b>BkColor</b></font> - RGB цвет фона подсказки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(11) <font class="S19"><b>Left</b></font> - интервал между левой границей и левой части текста, в пикселях.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(12) <font class="S19"><b>Top</b></font> - интервал между верхней границей и верхней части текста, в пикселях.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(13) <font class="S19"><b>Right</b></font> - интервал между правой границей и правой части текста, в пикселях.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(14) <font class="S19"><b>Bottom</b></font> - интервал между нижней границей и нижней части текста, в пикселях.<br>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<font class="S01"><b>StyleToolTip</b></font><font class="S21"><b>1</b></font><font class="S81"><b>=</b></font>1<font class="S81"><b>|</b></font>32767<font class="S81"><b>|</b></font>64<font class="S81"><b>|</b></font>0<font class="S81"><b>|</b></font>Tahoma<font class="S81"><b>|</b></font>14<font class="S81"><b>|</b></font>400<font class="S81"><b>|</b></font>1<font class="S81"><b>|</b></font>00008B<font class="S81"><b>|</b></font>DCF8F8<font class="S81"><b>|</b></font>0<font class="S81"><b>|</b></font>0<font class="S81"><b>|</b></font>0<font class="S81"><b>|</b></font>0<br>
+<font class="S01"><b>StyleToolTip</b></font><font class="S21"><b>2</b></font><font class="S81"><b>=</b></font>1<font class="S81"><b>|</b></font>5000<font class="S81"><b>|</b></font>0<font class="S81"><b>|</b></font>2<font class="S81"><b>|</b></font>Segoe UI<font class="S81"><b>|</b></font>14<font class="S81"><b>|</b></font>400<font class="S81"><b>|</b></font>1<font class="S81"><b>|</b></font>FFFFFF<font class="S81"><b>|</b></font>395A00<font class="S81"><b>|</b></font>0<font class="S81"><b>|</b></font>0<font class="S81"><b>|</b></font>0<font class="S81"><b>|</b></font>0<br>
+<font class="S01"><b>StyleToolTip</b></font><font class="S21"><b>3</b></font><font class="S81"><b>=</b></font>0<font class="S81"><b>|</b></font>5000<font class="S81"><b>|</b></font>0<font class="S81"><b>|</b></font>4<font class="S81"><b>|</b></font>Segoe UI<font class="S81"><b>|</b></font>15<font class="S81"><b>|</b></font>400<font class="S81"><b>|</b></font>2<font class="S81"><b>|</b></font>---<font class="S81"><b>|</b></font>---<font class="S81"><b>|</b></font>-<font class="S81"><b>|</b></font>-<font class="S81"><b>|</b></font>-<font class="S81"><b>|</b></font>-<br>
+<font class="S01"><b>StyleToolTip</b></font><font class="S21"><b>4</b></font><font class="S81"><b>=</b></font>1<font class="S81"><b>|</b></font>5000<font class="S81"><b>|</b></font>64<font class="S81"><b>|</b></font>2<font class="S81"><b>|</b></font>Segoe Script<font class="S81"><b>|</b></font>24<font class="S81"><b>|</b></font>900<font class="S81"><b>|</b></font>0<font class="S81"><b>|</b></font>FF0000<font class="S81"><b>|</b></font>FFFF00<font class="S81"><b>|</b></font>30<font class="S81"><b>|</b></font>20<font class="S81"><b>|</b></font>10<font class="S81"><b>|</b></font>15<br>
+<font class="S01"><b>StyleToolTip</b></font><font class="S21"><b>5</b></font><font class="S81"><b>=</b></font>0<font class="S81"><b>|</b></font>5000<font class="S81"><b>|</b></font>64<font class="S81"><b>|</b></font>0<font class="S81"><b>|</b></font>Segoe UI<font class="S81"><b>|</b></font>15<font class="S81"><b>|</b></font>700<font class="S81"><b>|</b></font>0<font class="S81"><b>|</b></font>---<font class="S81"><b>|</b></font>---<font class="S81"><b>|</b></font>-<font class="S81"><b>|</b></font>-<font class="S81"><b>|</b></font>-<font class="S81"><b>|</b></font>-<br>
+</p>
+</td></tr></table>
+<br>
+
+<div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div>
+
+<!-- Примечание №5 -->
+
+<a name="notes5"></a><br>
+<b><font class="S91"><b>Примечание №5.</b></font> <font class="S51">Сохранение позиций диалогов.</font></b><br>
+<br>
+В версии 16.1 появилась возможность сохранять позиции диалогов:<br>
+<br>
+В <a class="le" href="../../config.htm"><font class="S1"><b>TCIMG.ini</b></font></a> в секции [Setting] ключ <b>PositionDialogs</b> позволяет:<br>
+&nbsp;&nbsp;0 - не сохранять позиции диалогов.<br>
+&nbsp;&nbsp;1 - сохранять позиции диалогов.<br>
+При PositionDialogs=1 создаётся файл Dialog.ini в папке TCIMG, в который записываются позиции окон.<br>
+При PositionDialogs=1 все диалоги имеют атрибут "Поверх всех окон".<br>
+<br>
+
+<div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div>
+
+<!-- Примечание №6 -->
+
+<a name="notes6"></a><br>
+<b><font class="S91"><b>Примечание №6.</b></font> <font class="S51">Установка фона диалогов.</font></b><br>
+<br>
+
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr><td>
+Возможны варианты:<br>
+<b>1.</b> <font class="S19">(возможность появилась в версии 15.3)</font><br>
+&nbsp;&nbsp;RGB цвет фона диалога (0000FF).<br>
+<hr align="left" width=70%>
+
+<b>2.</b> <font class="S19">(возможность появилась в версии 22.6)</font><br>
+&nbsp;&nbsp;Фоновое изображение. <b>PathImage<font class="S81">*</font>Flag<font class="S81">*</font>Brightness</b>, где:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>PathImage</b> - путь к изображению JPG, GIF, PNG, BMP, ICO
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Flag</b> - [необязательный] стиль установки изображения:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - обычный (как есть по умолчанию).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - замостить плиткой (небольшое изображение размножается по всей области окна).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Brightness</b> - [необязательный] яркость:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Целое число в диапазоне от -255 до 255, которое определяет уровень яркости.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(0 - по умолчанию)
+<hr align="left" width=70%>
+<b>3.</b> <font class="S19">(возможность появилась в версии 22.7)</font><br>
+&nbsp;&nbsp;Градиентный фон. <b>Gradient<font class="S81">*</font>Offset<font class="S81">*</font>Mixing<font class="S81">*</font>Frame</b>, где:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Gradient</b> - градиент, состоит из: <font class="S91"><b>Color1</b></font><font class="S51"><b>,</b></font><font class="S91"><b>Color2</b></font><font class="S51"><b>,</b></font><font class="S91"><b>Flag</b></font><font class="S51"><b>,</b></font><font class="S91"><b>Correction</b></font> :
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S91"><b>Color1</b></font> - RGB цвет №1 (0000FF), # - случайный цвет, @ - прозрачный цвет.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S91"><b>Color2</b></font> - RGB цвет №2 (FF0000), # - случайный цвет, @ - прозрачный цвет.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S91"><b>Flag</b></font> - [необязательный] режим градиента:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - горизонтальный градиент (по умолчанию).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - вертикальный градиент.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - диагональный прямой градиент.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 - диагональный обратный градиент.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S91"><b>Correction</b></font> - [необязательный] гамма коррекция:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 - отключена (по умолчанию).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - включена.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Offset</b> - [необязательный] смещение градиента, состоит из: <font class="S121"><b>Factor1</b></font><font class="S81"><b>,</b></font><font class="S121"><b>Factor2</b></font><font class="S81"><b>,</b></font><font class="S121"><b>Factor3</b></font><font class="S81"><b>,</b></font><font class="S121"><b>Factor4</b></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>Factor</b></font><font class="S81"><b>N</b></font> - числа, указывающие процент от конечного цвета и должны быть в диапазоне от 0.0 до 1.0
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S121"><b>-1</b></font> - по умолчанию параметры: 0.0,0.4,0.6,1.0
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Mixing</b> - [необязательный] смешивание цветов градиента, состоит из: <font class="S51"><b>Pos1</b></font><font class="S81"><b>,</b></font><font class="S51"><b>Pos2</b></font><font class="S1"><b>,</b></font><font class="S51"><b>Pos3</b></font><font class="S81"><b>,</b></font><font class="S51"><b>Pos4</b></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S51"><b>Pos</b></font><font class="S81"><b>N</b></font> - числа, указывающие процент смешивания и должны быть в диапазоне от 0.0 до 1.0
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="S51"><b>-1</b></font> - по умолчанию параметры: 0.0,0.3,0.7,1.0
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Frame</b> - [необязательный] рамка вокруг градиента, состоит из: <font class="S21"><b>Color</b></font><font class="S21"><b></b></font><font class="S81"><b>,</b></font><font class="S21"><b>Frame</b></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font class="S21"><b>Color</b></font> - RGB цвет (0000FF), # - случайный цвет, @ - прозрачный цвет
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font class="S21"><b>Frame</b></font> - ширина рамки в пикселях.
+
+<hr align="left" width=70%>
+<b>4.</b> <font class="S19">(возможность появилась в версии 25.4)</font><br>
+&nbsp;&nbsp;После параметров фона диалога может быть прописано <u>число</u> через разделитель <font size="+1" class="S101"><b>?</b>Number</font>, позволяющее установить прозрачность диалога.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number - число в диапазоне 0 - 255. Чем меньше число, тем более прозрачность окна.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;255 - непрозрачно<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - невидимое<br>
+<br>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+
+<font class="S21"><b>; Примеры вариантов для ключей секции [Box] файла</b> <a class="le" href="../../config.htm#Box"><b>TCIMG.ini</b></a></font><br>
+<font class="S21">; InputBkColor, RichInputBkColor, ComboBkColor, GroupBkColor, CheckBkColor, EditsBkColor, IconzBkColor, ListaBkColor, MsgbxBkColor</font><br>
+
+<b><font class="S81">[</font>Box<font class="S81">]</font></b>
+<br><b>InputBkColor</b><font class="S81"><b>=</b></font><font color="0000FF">0000FF</font>
+<br><b>InputBkColor</b><font class="S81"><b>=</b></font><font color="0000FF">0000FF</font><font size="+1" class="S101"><b>?</b>200</font>
+<br><b>InputBkColor</b><font class="S81"><b>=</b></font>%TCIMG_PATH%\Files\Img\Puzzle.bmp<font size="+1" class="S81"><b>*</b></font>1
+<br><b>InputBkColor</b><font class="S81"><b>=</b></font>%TCIMG_PATH%\Files\Img\Puzzle.bmp<font size="+1" class="S81"><b>*</b></font>1<font size="+1" class="S101"><b>?</b>200</font>
+<br><b>InputBkColor</b><font class="S81"><b>=</b></font>$f202\Puzzle.bmp<font size="+1" class="S81"><b>*</b></font>1<font size="+1" class="S81"><b>*</b></font>-150
+<br><b>InputBkColor</b><font class="S81"><b>=</b></font><font color="FF033E">FF033E</font><font class="S81"><b>,</b></font><font color="0000FF">0000FF</font>
+<br><b>InputBkColor</b><font class="S81"><b>=</b></font><font color="FF033E">FF033E</font><font class="S81"><b>,</b></font><font color="0000FF">0000FF</font><font size="+1" class="S101"><b>?</b>200</font>
+<br><b>InputBkColor</b><font class="S81"><b>=</b></font><font color="FF033E">FF033E</font><font class="S81"><b>,</b></font><font color="0000FF">0000FF</font><font size="+1" class="S81"><b>*</b></font>0.5<font class="S81"><b>,</b></font>0.2<font class="S81"><b>,</b></font>0.0<font class="S81"><b>,</b></font>0.0<font size="+1" class="S81"><b>*</b></font>0.0<font class="S81"><b>,</b></font>1.0<font class="S81"><b>,</b></font>0.7<font class="S81"><b>,</b></font>1.0<font size="+1" class="S81"><b>*</b></font>#<font class="S81"><b>,</b></font>1<br>
+
+
+<b><font size=3 class="S91">-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-</font></b><br>
+<font class="S21"><b>; Примеры вариантов для ключей ShapeXXX файла <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a></b></font><br>
+<br>
+<font class="S21">; Пример установки цвета фона для диалогов</font><br>
+<b>ShapeXX</b><font class="S81"><b>=</b></font>Сообщение:NOEXIT:||TCIMG.dll,55||<font size="+1" color="CF1534"><b>CF1534</b></font>||FFF8DC|Comic Sans MS|12|400<br>
+<b>ShapeYY</b><font class="S81"><b>=</b></font>Сообщение||TCIMG.dll,55||<font size="+1" color="707070"><b>707070</b></font>||@T1||@D1||@P1||@G1<br>
+<b>ShapeZZ</b><font class="S81"><b>=</b></font>Сообщение||TCIMG.dll,55||<font size="+1" color="707070"><b>707070</b></font><font size="+1" class="S101"><b>?</b>200</font>||@T1||@D1||@P1||@G1<br>
+<br>
+<font class="S21">; Пример установки фонового изображения для диалогов</font><br>
+<b>ShapeIMG1</b><font class="S81"><b>=</b></font>Сообщение||TCIMG.dll,55||<b>%TCIMG_PATH%\Files\Img\Puzzle.bmp<font size="+1" class="S81">*</font>1</b><br>
+<b>ShapeIMG2</b><font class="S81"><b>=</b></font>Сообщение||TCIMG.dll,55||<b>$f202\DarkBlue.gif<font size="+1" class="S81">*</font>1</b>||@T3||@G3||@P3||@D3<br>
+<br>
+<font class="S21">; Пример установки фонового изображения для диалогов с заданной яркостью</font><br>
+<b>ShapeIMG1_1</b><font class="S81"><b>=</b></font>Сообщение||TCIMG.dll,55||<b>$f202\DarkBlue.gif<font size="+1" class="S81">*</font>1<font size="+1" class="S81">*</font>180</b><br>
+<b>ShapeIMG2_1</b><font class="S81"><b>=</b></font>Сообщение||TCIMG.dll,55||<b>$f202\Puzzle.bmp<font size="+1" class="S81">*</font>1<font size="+1" class="S81">*</font>-150</b>||@D3||@T3||@P3||@G7<br>
+<br>
+<font class="S21">; Пример установки градиентного изображения</font><br>
+<b>ShapeGRAD1</b><font class="S81"><b>=</b></font>Сообщение||TCIMG.dll,55||<b><font size="+1" color="FF033E">FF033E</font><font class="S51">,</font><font size="+1" color="FDEE00">FDEE00</font><font class="S51">,</font>0</b>||@D3||@T4||@P4||@G4<br>
+<b>ShapeGRAD2</b><font class="S81"><b>=</b></font>Сообщение||TCIMG.dll,55||<b><font size="+1" color="FF033E">FF033E</font><font class="S51">,</font><font size="+1" color="FDEE00">FDEE00</font><font size="+1" class="S81">*</font>0.5<font class="S51">,</font>0.0<font class="S51">,</font>0.0<font class="S51">,</font>1.0<font size="+1" class="S81">*</font>0.0<font class="S51">,</font>1.0<font class="S51">,</font>0.7<font class="S51">,</font>1.0<font size="+1" class="S81">*</font>#<font class="S51">,</font>3</b>||@D3||@T4||@P4||@G6<br>
+<b>ShapeGRAD3</b><font class="S81"><b>=</b></font>Сообщение||TCIMG.dll,55||<b><font size="+1" color="FF0000">FF0000</font><font class="S51">,</font><font size="+1" color="0000DF">0000DF</font><font size="+1" class="S81">*</font>0.5<font class="S51">,</font>0.2<font class="S51">,</font>0.0<font class="S51">,</font>0.0<font size="+1" class="S81">*</font>0.0<font class="S51">,</font>1.0<font class="S51">,</font>0.7<font class="S51">,</font>1.0<font size="+1" class="S81">*</font>#<font class="S51">,</font>1</b>||@D3||@T4||@P4||@G5<br>
+
+
+</p>
+<br>
+
+Может выглядеть следующим образом:
+<br><br>
+<p align="center"><img src="../../images/dialog_gr1.jpg" border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/dialog_gr2.jpg" border=0></p>
+<br>
+<p align="center"><img src="../../images/dialog_gr3.jpg" border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/dialog_gr4.jpg" border=0></p>
+
+</td></tr></table>
+
+</td></tr></table>
+<br><br>
+
+<div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div>
+
+<!-- Примечание №7 -->
+
+<br><a name="notes7"></a>
+<b><font class="S91"><b>Примечание №7.</b></font> <font class="S51">Установка значения по умолчанию.</font></b><br>
+<br>
+В версии 24.1 появилась возможность устанавливать значение по умолчанию для диалогов [combo], [group], [input], [richinput] <u>при использовании таймера</u> [timen].<br>
+<br>
+&nbsp;&nbsp;В любом месте шаблона строка между символами <font class="S51"><b>¶</b></font> (символ параграфа) будет являться значением по умолчанию, если во время ожидания не нажата ни одна кнопка диалога.<br>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<b>ComboBox_DEF1</b>=Выбор режима¤TCIMG.dll,85<font class="S51"><b>¶</b></font><font class="S91"><b>100</b></font><font class="S51"><b>¶</b></font>||Выберите||1|2|3|4||241||134||1||2<br>
+<b>ComboBox_DEF2</b>=Выбор режима2¤TCIMG.dll,85<font class="S51"><b>¶</b></font><font class="S91"><b>$var_s</b></font><font class="S51"><b>¶</b></font>||Выберите||111|222|333|444||241||134||1||2<br>
+
+</p>
+<br>
+<div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div>
+
+<!-- Примечание №8 -->
+
+<br><a name="notes8"></a>
+<b><font class="S91"><b>Примечание №8.</b></font> <font class="S51">Маска шаблонов. Параметр [extnd=Name].</font></b><br>
+<br>
+В версии 27.7 параметр обрабатывается совместно с обработкой диалогов.<br>
+<br>
+Параметр <span class="S8">[</span>extnd=<b>Name</b><span class="S8">]</span><br>
+В любом месте строки параметров, где встретится <span class="S8">[</span>extnd=<b>Name</b><span class="S8">]</span>, будет вставлена строка-шаблон значений, прописанных <a class="le" href="../../config.htm#Extensions"><font class="S1"><b>TCIMG.ini</b></font></a>, в секции <span class="S8">[</span><b>Extensions</b><span class="S8">]</span>, где <b>Name</b> - имя ключа.<br>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<b><font class="S81">[</font>Extensions<font class="S81">]</font></b><br>
+<b>Arhives<font class="S81">=</font></b>*.7z|*.7zip|*.rar<br>
+<b>Musics<font class="S81">=</font></b>*.mp3|*.wav|*.wma<br>
+<b>Scripts<font class="S81">=</font></b>*.bat|*.cmd|*.vbs|*.js<br>
+</p>
+
+<br>
+<div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div>
+
+<!-- Примечание №9 -->
+
+<br><a name="notes9"></a>
+<b><font class="S91"><b>Примечание №9.</b></font> <font class="S51">Окно подсказки в диалогах.</font></b><br>
+<br>
+В версии 28.2 появилась возможность устанавливать подсказку для диалогов [input], [richinput], [combo], [group], [edits], [check], [iconz], [lista], [updwn], [image], а так же для команды <a class="le" href="../com_shape.htm"><b>shape</b></a>.<br>
+<br>
+После имени шаблона через разделитель <font class="S81"><b>??</b></font> прописывается имя шаблона подсказки.
+<br><br>
+<span class="section">Пример записи команд:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<font class="S1"> ;; пример вывода окна подсказки в диалоге по нажатию кнопки [i]</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_dilog.htm">dilog</a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_dialog.htm#11"><span class="S121">c&#104e&#99k</span></a>=BOX_BR1<span class="S81"><b>??</b></span>BOX_Ex1<span class="S8">]</span></span><font class="S1"> ;; шаблон подсказки настраивается в TCIMG_...lng в ключе HelpBox_Ex1</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_dilog.htm">dilog</a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_dialog.htm#2"><span class="S121">c&#111m&#98o</span></a>=BOX1<span class="S81"><b>??</b></span>BOX_Ex3<span class="S8">]</span></span><font class="S1"> ;; шаблон подсказки настраивается в TCIMG_...lng в ключе HelpBox_Ex3</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_dilog.htm">dilog</a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_dialog.htm#4"><span class="S121">e&#100i&#116s</span></a>=BOX2<span class="S81"><b>??</b></span>BOX_Ex5<span class="S8">]</span></span><font class="S1"> ;; шаблон подсказки настраивается в TCIMG_...lng в ключе HelpBox_Ex5</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_dilog.htm">dilog</a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_dialog.htm#3"><span class="S121">g&#114o&#117p</span></a>=BOX1<span class="S81"><b>??</b></span>BOX_Ex4<span class="S8">]</span></span><font class="S1"> ;; шаблон подсказки настраивается в TCIMG_...lng в ключе HelpBox_Ex4</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_dilog.htm">dilog</a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_dialog.htm#14"><span class="S121">i&#99o&#110z</span></a>=BOX1<span class="S81"><b>??</b></span>BOX_Ex2<span class="S8">]</span></span><font class="S1"> ;; шаблон подсказки настраивается в TCIMG_...lng в ключе HelpBox_Ex2</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_dilog.htm">dilog</a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_dialog.htm#1"><span class="S121">i&#110p&#117t</span></a>=BOX9<span class="S81"><b>??</b></span>BOX_Ex1<span class="S8">]</span></span><font class="S1"> ;; шаблон подсказки настраивается в TCIMG_...lng в ключе HelpBox_Ex1</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_dilog.htm">dilog</a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_dialog.htm#10"><span class="S121">r&#105ch&#105np&#117t</span></a>=BOX1<span class="S81"><b>??</b></span>BOX_Ex2<span class="S8">]</span></span><font class="S1"> ;; шаблон подсказки настраивается в TCIMG_...lng в ключе HelpBox_Ex2</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_dilog.htm">dilog</a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_dialog.htm#20"><span class="S121">up&#100;&#119;n</span></a>=BOX_EX1<span class="S81"><b>??</b></span>BOX_Ex4<span class="S8">]</span></span><font class="S1"> ;; шаблон подсказки настраивается в TCIMG_...lng в ключе HelpBox_Ex4</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_sends.htm">sends</a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a> <a class="le" href="../com_dilog.htm">dilog</a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_dialog.htm#21"><span class="S121">&#105;&#109;&#97;&#103;&#101;</span></a>=BOX1<span class="S81"><b>??</b></span>BOX_Ex5<span class="S8">]</span></span><font class="S1"> ;; шаблон подсказки настраивается в TCIMG_...lng в ключе HelpBox_Ex5</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_slist.htm">slist</a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a> <a class="le" href="../com_dilog.htm">dilog</a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_dialog.htm#16"><span class="S121">lis&#116;a</span></a>=BOX1<span class="S81"><b>??</b></span>BOX_Ex3<span class="S8">]</span></span><font class="S1"> ;; шаблон подсказки настраивается в TCIMG_...lng в ключе HelpBox_Ex3</font><br>
+<br>
+<span class="S0"><a class="le" href="../com_shape.htm">shape</a><span class="S8">=</span>GRAD3<span class="S81"><b>??</b></span>BOX_Ex1 <a class="le" href="../com_dilog.htm">dilog</a><span class="S8">=</span><span class="S8">[</span><a class="le" href="add_dialog.htm#11"><span class="S121">t&#105;m&#101;n</span></a>=15<span class="S8">]</span><span class="S8">[</span><a class="le" href="add_dialog.htm#3"><span class="S121">g&#114o&#117p</span></a>=BOX1<span class="S8">]</span><span class="S8">[</span><a class="le" href="add_dialog.htm#2"><span class="S121">c&#111m&#98o</span></a>=BOX_U3<span class="S8">]</span><span class="S8">[</span><a class="le" href="add_dialog.htm#14"><span class="S121">i&#99o&#110z</span></a>=BOX1<span class="S8">]</span><span class="S8">[</span><a class="le" href="add_dialog.htm#1"><span class="S121">i&#110p&#117t</span></a>=BOX6<span class="S8">]</span></span><font class="S1"> ;; шаблон подсказки настраивается в TCIMG_...lng в ключе HelpBox_Ex1</font><br>
+
+</p>
+
+<br>Шаблоны подсказки настраиваются в ключах <b>HelpBox</b>1, <b>HelpBox</b>2, ... <b>HelpBox</b>_Ex1 в языковом файле <a class="le" href="../../lng.htm"><font class="S1"><b>TCIMG_.lng</b></font></a>
+<br>Также могут использоваться ключи с любым окончанием после основы ImageBox, в котором есть цифры, латинские символы и знак подчёркивания _
+<br><br>
+Синтаксис шаблона: 
+<p class="codeheader" style="padding:6px;white-space:nowrap"><b>HelpBox</b>N=Title<font class="S81"><b>||</b></font>Content<font class="S81"><b>||</b></font>Width<font class="S81"><b>||</b></font>Height<font class="S81"><b>||</b></font>X<font class="S81"><b>||</b></font>Y<font class="S81"><b>||</b></font>OnTop<font class="S81"><b>||</b></font>Transparency<font class="S81"><b>||</b></font>Icon<font class="S81"><b>||</b></font><font class="S51">style&#60;</font>Number<font class="S81"><b>|</b></font>Flag<font class="S51">&#62;</font><font class="S81"><b>||</b></font><font class="S51">set&#60;</font>,,,,,,,<font class="S51">&#62;</font></p></font>
+где:
+<br>
+&nbsp;&nbsp;<b>Title</b> - Заголовок всплывающего окна.<br>
+&nbsp;&nbsp;<b>Content</b> - содержимое окна, варианты:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Текст<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Код html<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• @PathFile.html - путь к файлу с кодом html<br>
+&nbsp;&nbsp;<b>Width</b> - ширина окна в пикселях.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;при <font class="S51"><b>-1</b></font> ширина окна равна ширине диалога.<br>
+&nbsp;&nbsp;<b>Height</b> - высота окна в пикселях.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;при <font class="S51"><b>-1</b></font> высота окна равна высота диалога.<br>
+&nbsp;&nbsp;<b>X</b> - отступ слева в пикселях.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;при <font class="S51"><b>-1</b></font> окно располагается относительно окна диалога (справа или слева, в зависимости от расстояния ширины экрана).<br>
+&nbsp;&nbsp;<b>Y</b> - отступ сверху в пикселях.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;при <font class="S51"><b>-1</b></font> окно располагается относительно окна диалога.<br>
+&nbsp;&nbsp;<b>OnTop</b> - [необязательный] <br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - отключить "Поверх всех окон".<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - включить "Поверх всех окон" (по умолчанию).<br>
+&nbsp;&nbsp;<b>Transparency</b> - [необязательный] прозрачность окна .<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Число в диапазоне 0-255. Чем меньше число, тем более прозрачность окна. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;255 - непрозрачно (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - невидимое.<br>
+&nbsp;&nbsp;<b>Icon</b> - значок диалога, возможны варианты:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PathIcon,Number - прописывается путь к библиотеке значка и через запятую номер значка.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number - номер ключа в TCIMG.ini в секции [ProcessIcon] в котором прописан путь и номер значка.<br>
+<br>
+<b>Дополнительные параметры:</b>
+<br><br>
+&nbsp;&nbsp;<font class="S121"><b>Стиль окна</b></font>. Параметр <font class="S51">style&#60;</font>Number<font class="S81"><b>|</b></font>Flag<font class="S51">&#62;</font> , где:<br>
+
+&nbsp;&nbsp;<b>Number</b>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - окно не меняет размеры (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - окно меняет размеры и имеет горизонтальную и вертикальную прокрутку.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2 - окно без заголовка и границ.<br>
+&nbsp;&nbsp;<b>Flag</b> [необязательный]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 - окно с границами и заголовком (по умолчанию).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 - окно без границ и заголовка.<br>
+<br><br>
+&nbsp;&nbsp;<font class="S121"><b>Установка внешнего вида сообщения</b></font>. Параметр <font class="S51">set&#60;</font>BgColor,FontColor,FontName,FontSize,FontStyle,FontWidth,Center<font class="S51">&#62;</font>, где:
+&nbsp;&nbsp;<b>BgColor</b> - RGB цвет фона окна.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;можно установить градиент Color1|Color2|Type (работает не на всех системах и версиях IE)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Color1 - начальный RGB цвет градиента.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Color2 - конечный RGB цвет градиента.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type - тип градиента: 1 - горизонтальный градиент, 0 - вертикальный.<br>
+&nbsp;&nbsp;<b>FontColor</b> - RGB цвет шрифта.<br>
+&nbsp;&nbsp;<b>FontName</b> - имя шрифта.<br>
+&nbsp;&nbsp;<b>FontSize</b> - размер шрифта.<br>
+&nbsp;&nbsp;<b>FontStyle</b> - стиль шрифта, 0 - нормальный (по умолчанию), 1 - курсивный, 2 - наклонный.<br>
+&nbsp;&nbsp;<b>FontWidth</b> - толщина шрифта: 400 - нормальный (по умолчанию), 700 - жирный.<br>
+&nbsp;&nbsp;<b>Center</b> - 0 - не по центру (по умолчанию), 1 - текст по центру.<br>
+--------------------------------------------------------------------------------<br>
+Ни один из параметров не является обязательным, если какой либо из параметров не прописан, он не будет установлен.<br>
+Пример: set<,,,30,,,1><br>
+--------------------------------------------------------------------------------<br>
+Параметр рассчитан для обычного текста, если в команде прописан шаблон html, в котором уже указаны цвет фона, текста, и другие теги, то параметр set<> использовать не имеет смысла - все стили будут взяты из шаблона...<br>
+<br><br>
+Может выглядеть следующим образом:<br>
+<p align="center"><img src="../../images/helpbox.jpg" border=0>
+
+<div align="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </div>
+<br><br>
+
+<!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+
+
+<a href="#22"><img align=left src="../../images/up2.gif" border="0" title="К предыдущему параметру"></a><a href="#up"><img align=left src="../../images/up2.gif" border="0" title="Наверх"></a>&nbsp;&nbsp;
+<p></p>
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

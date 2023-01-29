@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Определение типа файла по его содержимому</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №38</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Определение типа файла по его содержимому</font></p>
+<hr><br>
+Данный функционал будет полезен при определения расширений для файлов, у которых их нет:
+<br>
+<br>- при восстановлении данных при случайном удалении расширений.
+<br>- при восстановлении файлов скаченных из сети без расширений или если они искажены.
+<br>- для определения оригинальных расширений при изменении типов файлов.
+<br>- для определения оригинальных расширений файлов кэша браузеров и других приложений.
+<br>
+<br>
+<hr align="left" width=70%><br>
+Отдельное спасибо тем, кто участвовал в тестировании и присылал архивы с файлами: <b>shveicar</b>, <b>chip642</b>, <b>zybrevl</b>, <b>ogenry</b>
+
+<br><br>
+<hr align="left" width=70%><br>
+
+Может использоваться в различных параметрах и командах:<br><br>
+1. В команде <a class="le" href="../com_renmm.htm"><span class="S4"><b>renmm</b></span></a>, <a class="le" href="../com_renms.htm"><span class="S4"><b>renms</b></span></a>, <a class="le" href="../com_copyy.htm"><span class="S4"><b>copyy</b></span></a>, <a class="le" href="../com_copys.htm"><span class="S4"><b>copys</b></span></a>, <a class="le" href="../com_movee.htm"><span class="S4"><b>movee</b></span></a>, <a class="le" href="../com_moves.htm"><span class="S4"><b>moves</b></span></a>
+<br><br>
+<span class="section">Примеры команд:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<font class="S1"> ;; постараться найти расширения для выделенных файлов без расширения и переименовать</font><br>
+<span class="S0"><a class="le" href="../com_renms.htm"><span class="S4">renms</span></a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span>extplus<span class="S8">&lt;</span><span class="S8">&gt;</span><span class="S8">||</span>upd<span class="S8">&lt;</span>1<span class="S8">&gt;</span></span>
+<br>
+<br>
+<font class="S1"> ;; копировать выделенные файлы в другую панель, заменить расширение на "правильное", если не найдено, то расширение остаётся прежним</font><br>
+<span class="S0"><a class="le" href="../com_copys.htm"><span class="S4">copys</span></a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span>"<a class="le" href="add_param.htm"><span class="S23">%t</span></a>"<span class="S11">//</span>0<span class="S8">||</span><span class="S51">**</span>2<span class="S11">!!</span>?.<span class="S8">&lt;</span><a class="le" href="add_info.htm#f230"><font class="S01">&#105;&#110;&#102;&#111;</font><font class="S21">=</font><span class="S81">f</span><font class="S91">230</font></a><span class="S8">::</span><span class="S8">&gt;</span></span>
+</p>
+<br>
+2. В параметре <a class="le" href="add_info.htm#f230"><span class="S4"><b>info</b></span></a>
+<br><br>
+<span class="section">Примеры команд:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<font class="S1"> ;; для выделенных файлов получить в таблице оригинальные расширения</font><br>
+<span class="S0"><a class="le" href="../com_anf2d.htm"><span class="S4">anf2d</span></a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span>1<span class="S8">||</span><a class="le" href="add_lines.htm###"><span class="S51">##</span></a><span class="S51">@@</span><a class="le" href="add_info.htm#f230"><span class="S81">f</span><font class="S91">230</font></a><span class="S8">::</span> <a class="le" href="add_gloobal.htm#GLOBALANF2D"><span class="S121">GLOBA&#76;ANF2D</span></a><span class="S8">&lt;</span>a<span class="S8">&gt;</span></span>
+</p>
+<br>
+<hr align="left" width=70%><br>
+В версии 30.2 добавлены дополнительные подпараметры в параметры:<br>
+&nbsp;&nbsp;extplus<font class="S81">&#60;</font><b>Mode<font class="S81">|</font>tExt<font class="S81">|</font>bExt</b><font class="S81">&#62;</font><br>
+&nbsp;&nbsp;<font class="S81">&#60;</font>info=f230File<b><font class="S81">|</font>Mode<font class="S81">|</font>tExt<font class="S81">|</font>bExt</b><font class="S81">&#62;</font><br>
+&nbsp;&nbsp;Все параметры необязательны.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Mode - режим возвращения расширения исполняемых файлов типа exe:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - возвращается расширение <font class="S19"><b>ins.exe</b></font> или <font class="S19"><b>sfx.exe</b></font> (по умолчанию).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - возвращается расширение <font class="S19"><b>exe</b></font>.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 - возвращается расширение <font class="S19"><b>exe</b></font> или <font class="S19"><b>sfx</b></font>.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;tExt - если расширение не найдено, то для текстового формата файла возвращается заданное расширение tExt.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(прописывается символ <font class="S51">*</font>, если нужно возвращать пустое расширение)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;bExt - если расширение не найдено, то для бинарного формата файла возвращается заданное расширение bExt.
+
+<br><br>
+<span class="section">Примеры команд:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<font class="S1"> ;; переименовать выделенные файлы без расширения в расширение, определённому по содержимому файла (если расширение не найдено, то для текстовых файлов расширение "txt", для бинарных "bbb")</font><br>
+<span class="S0"><a class="le" href="../com_renms.htm"><span class="S4">renms</span></a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span>extplus<span class="S8">&lt;</span>2|txt|bbb<span class="S8">&gt;</span><span class="S8">||</span>upd<span class="S8">&lt;</span>1<span class="S8">&gt;</span></span>
+<br>
+<br>
+<font class="S1"> ;; из выделенных файлов копировать в другую панель те, которые определяются по содержимому (т.е. полученное расширение совпадает с существующим</font><br>
+<span class="S0"><a class="le" href="../com_copys.htm"><span class="S4">copys</span></a><span class="S8">=</span><a class="le" href="add_param.htm"><span class="S23">%WL</span></a><span class="S8">||</span>"<a class="le" href="add_param.htm"><span class="S23">%t</span></a>"<span class="S11">//</span>0<span class="S8">||</span>t&#101st<span class="S8">&lt;</span>1w<span class="S11">!!</span>``f11<span class="S8">::</span><span class="S11">!!</span>f230<span class="S8">::</span>|2<span class="S8">&gt;</span><span class="S8">||</span>upd<span class="S8">&lt;</span>3<span class="S8">&gt;</span></span><br>
+</p>
+<br>
+Возвращается расширение "#" при "пустом" бинарном файле, в котором одни нули, при проверке первых 37000 байтов.
+<br>
+<br>
+<hr align="left" width=70%><br>
+Список типов файлов, которые определяются по содержимому:
+<br><br>
+
+<div align="center">
+<table class="param" width="100%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="5%">&nbsp;</td><td width="95%">Типы файлов</td></tr>
+
+
+<tr><td class="s3td">0-9</td><td>__meta__, ~0, ~1, ~2, ~3, ~4, ~5, ~6, ~7, ~8, ~9, ~json, ~tmp, 0, 000, 001, 08, 1, 14, 16, 1q, 3bs, 3dg, 3dl, 3ds, 3dsn, 3g2 (3gpp2), 3gp (3gpp), 3pp, 5, 50h, 6bit, 7, 7z (sbsar/jpac/z), 8ba, 8be, 8bf (8li), 8bi, 8bx, 8by, 8li, 8me, 8svx (iff)</td></tr>
+<tr><td class="s3td">A</td><td>a (lib), a3x, aac, aapp, aarch64, aaui, aba, abbrev, abc, abc3, abk, abr, abs, abw, ac, ac3, acb, acbl, accdb (acc/accde/accda/accdu), accdt (accft), acd, acda, acdt, ace, acf, acg, acl, acm, aco, acrodata, acrotheme, acs, acs2, acs3, acs4, acs5, acsrf, act, action, acv, acx, adb, adb2, adc, addin, addon, adf, adg, adm, adml (def/dat/opal), admx (opax), ado, adp, adr, adt, adv, aed, aedlayout, aei, aex, afd, aff, afm, afpxml, agc, ahf (bhf/qhf), ahk, ahu, ai, aia, aif (aiff), aifc, aimppl, aimppl4, aip, aip, aiqb (cpf), al, aldict, alias, allow, alut3, alv, am, am7, amd, amio, amm, amp, amr, amsdc, amt, ana, ani, animtext, anm, anp, ap, ape, apf, api (ppi), apk, apl, apln (rpln), apm, appx, aqt, arbfp1, arbvp1, archive, aren, arf, arj, arr, arsc, arw, as, asar, asc, ascx (cs), asd, asdb, ase, asedzs, asfx, ash, ashaudio, ashlang, asl, asm, asn, asp, ass, assetproj, assets, ast, asx, asz, atb, atk-sharp, atm, atn, atr, au, au3, auo, authedtheme, auths, automaticdestinations-ms, aux, avi, avif, avifs, avs (aph), avsi (avs), avsz, avz, aw, ax, axco, axct (act)</td></tr>
+<tr><td class="s3td">B</td><td>b32, b64, b64, bar, bas, base, bash, bashrc, bat (cmd), bau, bbm, bc, bcd, bcdb, bcg, bcm, bcmap, bdf, bdic, bdjo, bdmv, bdr, bep, betaid, bfc, bff, bg, bht, bigrams, bik, bin, bindump, bitcfg, bitmap, biz, bkml, blb, blend, blf, blob, blw, bmk, bmp (dib/rle/bmp2/bmp3/bmp4), bnf, bnk, bnm, boot, box, bp, bpd, bpfile, bpg, bpl, br, brd, brk, browser, brs, bsd, bsdiff, bseq, bsh, bt, btall, btapp, btdb, btn, bto, btr, btrfs, btskin, bud, build-id, buildinfo, bundle, bundler, bvf, bw, bwl, bxlog, bytecode, bz2 (bin)</td></tr>
+<tr><td class="s3td">C</td><td>c, c32, c4d, ca_, cab (cn_/ex_/is_/msu/sy_), cache (mpc), cachebridge, cag, calibre_msgpack, camp, campackage, camtemplate, cap, capslock, cat (abs/ca_/cache/cat_x64/cat_x86/cbz/cez/csz/ctz/dsa/kcat/p7b/rsa/shl/stl/swz), catalog, caz, cb, cbn, cbp, cc, cc0, cch, ccjk, ccv, ccwmap, ccx, cdd, cdf, cdf-ms, cdmp, cdp, cdr, cdrt (cdr), cdss, cdt (edt), cdx (cjw/cpx), cdxml, cedf, cedilla, cedtheme (authedtheme/aedtheme/medtheme), cer (der/crt), certs, cfc, cfg (imported), cfp (pl), cfs, cfx, cgp, cha, chi, chk (jcp), chm (chi/swe/por), chp, chs, cht, chw, cifs, cik, cis, ciso, cjcnn, cjk, cjkdmcnn, cjstyle, ck, cki, cl, class (bundle/dylib/jnilib/o), clb, clc, cldms, client, clilibs, cliplibrary, clj, clm_blob, clock, clp, clpi, clr, cls, clw, clx, cly, cmake, cmap, cmb, cmd, cmx, cmyk, cnf, cnfg, cnn, cnnmodel, cnt (dta), cnv, coder, cok, col, colors, common, compiled, components, compositefont, comss, conf, config (con/default), const, cont, cookie, cool, cop, copreset, coprinttemplate, coroutineexceptionhandler, costyle, costylebrush, cotooltip, cov, cp, cp4, cpa, cpd, cpf, cpi (cpc), cpio, cpk, cpl (cp_), cpp, cpsh, cpt, cpx, cr2, crl, crn, crt (pem/cert/0), cru, crv, crwl, crx (nex), cs, cset, csf, csg, csh, cshrc, csm, cso, csp, csproj (user), csr, css (css2/css3/css4), cst, csv, ctb, ctd, ctf, ctg, ctl, ctrlperiod, cty, ctypes, cu, cube, cuda-lexmap, cuda-theme-syntax, cuda-theme-ui, cue, cur, customdestinations-ms, customui, cva, cvb, cvsh, cwe, cxmod, cz (cs), cze</td></tr>
+<tr><td class="s3td">D</td><td>d, da_, dae, dalp, dan, dat (cdf), data, datatypefactory, db (ht), db_, dbb, dbd, dbf, dbrush, dbt, dbx, dcl, dcp, dcr, dct, dctl, dctm, dcx, ddj, ddp, dds (dxt), ddsh, de, deb, debian, dectest, def, defs, deny, depend, desklink, desktop, deu, dev, device-mapper, devicemetadata-ms, dex, dfm, dfp, dfu, dgdat, dgml, dgn, dgxpi, diagcab, diagpkg, dic (tlx/hyph), dict, did, dif, diff, din, dir, dit, djvu (djv), dks, dlc (ini), dlg, dlh (ini), dll (dll64/dll86/dll_x64/dll_x86), dlm, dlp, dls, dlz, dmd, dmg, dmi, dmp (mdmp), dmraid, dng, dnm (dnm2), dns_resolver, doc (dot/wbk/asd), dock, documentbuilderfactory, docx (docm/dotx/tmdx/tmvx), dof, domimplementationsourcelist, dot (wpt), down_meta, dpl, dpr, dpv, dpx, driver, drl, drv, ds, ds_store, dsc, dsf, dsp, dst, dsw, dta, dtb, dtd (mod), dub, dump, dvg, dvx, dwf, dwg, dwr, dwt (aspx), dxf, dxt, dylib, dynamic_transcode</td></tr>
+<tr><td class="s3td">E</td><td>e2e, e64, eap, ebc, ebd, ebm, ecf, ecjk, ecw, edb (sdb/stm), edc, editorconfig, eff, efi, efx, egg-info, eh_frame, eh_frame_hdr, el, eld, elf (o/e01/e04/e05/e08/e8b/e09), elm, elp, emf, eml, emul, enc, ent, env, eof, eop, eot (fntdata), epd, epim, epl, epr, eps (ept), epub, equiv, erb, erl, es, eslintignore, esm (patch), esp, etl (merged), etmpl, ett, eu, eula, euq, eus, eve, exc, exe, exp, expected, exr, ext, extra, exv</td></tr>
+<tr><td class="s3td">F</td><td>fab, fabpf, fac, fae, farconfig, fb2, fb3, fbz, fca, fch, fcjk, fcl, fcrv, fcs, fdb, fdd, fdi, fdoc, fdseq, fdt, fe, feature, feb, feed-ms, feedsdb-ms, fencelayout, feq, ffp, ffpreset (preset), ffx, fi, filesystemprovider, fill (cdws), filter (filters), fin, final, fingerprint, fio, fish, fla, flac (fla), flc, flg, fli, flow, flp, fls, flt, flv, flz, fmc, fmt, fmx, fnc, fns (bm), fnt, fntpack, fo (fon), fodp, fodt, fon, fontdata, fonts, forgewindowlayout, forms, formula, fpage, fpl (fpd/fpu), fpmcp, fpt (atn), fr, fr3, fra, frag, frg, frm, fs, fs3, fsa, fsa (ab1), fsh, fslang, fst, ft, ftf, fth, ftl, ftu, ftx, ftz, functions, fuskin, fw, fx, fxml, fxo, fxpl</td></tr>
+<tr><td class="s3td">G</td><td>g, g4b, gadgeprj, gadget, galleryitems, gb, gbr, gcc, gcnn, gde, gdk-sharp, gdl, gdpr, gds, gen, geom, gfie (gfi), gfs, ggr, gic, gid, gif, gih, gitmodules, glb (tlb), glib-sharp, glr, glsl (tbl/fsh), glslesf, glslesv, glsllib, gm (gm2/gm4/qm), gmmp, gms, go, gold-version, gpa, gpd, gpl, gpr, gra, grain, grd, grid, grl, groovy, grskn, grxml, gs, gsl, gst, gthr, gtk-dotnet, gtk-sharp, gtt, guess, gvi, gyp (fontified), gypi, gz (tgz/svgz/vbox-extpack/nocr/lngx)</td></tr>
+<tr><td class="s3td">H</td><td>h, h1c, h1f, h1k, h1s, h1v, h264, hap, hash, hbaked (hbakedmotionproperties/hbakedproj/hbakedbodyquality/hbakedcurve), hbin, hbs, hcd, hcom, hcp, hdr (pic/rgbe/xyze), hdt, helpcfg, heq, hexdwc, hfml, hgl, hgp, hhk (hhc), hhp, hint, his, hkdoc, hky, hl, hlf, hlp, hlsl (psh), host, hpp, hrc, hrd, hrv, hs, hsp, ht, ht_, hta, htc, html (htm), hu, hun, hxc, hxd, hxf, hxh, hxk, hxl, hxn, hxs, hxt, hxw, hxx, hyb, hyf, hyn, hyp</td></tr>
+<tr><td class="s3td">I</td><td>i386, i51, ia64, ib_pdb_index, ibk, ibt, icl (dll/icl32), icm (icc), icn (xbg/z), icns, ico (iit), icp, icpr, icr, ics, icu, icxs, id, idb, iddx, identifier, idl, idp, idrc, ids, idt, idx, idx~0, iec, ieee1394map, ifo, ifs, igdb, igpi, iiq, ilex, ilg, ilut, ima, imagedoc, imagereaderspi, ime, img (dmf/ima), iml, imodel, imp, imz, in, inc (asp), ind, index, indk, indl, indt, inf (ibz/in_/inf_x64/inf_x86/infdrp/inx/itz/org/org1/sif), inf_loc, info, ini (cfg/txt/v11/v12/v13/v14), input, inputmap, ins, installlog, installstate, int, inv, iobj, ion, ipconfig, ipdb, ips, iqy, irf, iros, irs, irtp, isapnpmap, isf, isn, iso, iss, it, ita, its, itx, iwfl, iwr, izp</td></tr>
+<tr><td class="s3td">J</td><td>ja, jap, jar (odg/odp/ods), java, jaxbcontext, jb2 (jbig2), jbf, jc, jcp (chk), jcsk, jfc, jfm, jgcscs, jmd, jml, jng, joboptions, jp2, jpeg, jpg (jpeg/mask/frame/cof/cot), jpn, js (lua/jsfl), jsb, jsc, jse, jsee, jsfl (js), jshintrc, jsk, jsm, json (jso/sublime-build/sublime-color-scheme/resjson), jsonlz4 (mozlz4/lz4), jsp, jss, jst, jsx, jsxbin, jtp, jtx, jvi, jxa</td></tr>
+<tr><td class="s3td">K</td><td>k2, kar, kbd, kc, kcnn, kdb, kdc (nef), kdz, kernel, key (reg/prv/pem/regupd), key_, keys, kfn, kfp (kfpx), kgm, kic, klog, kmc, kmf, kml, kmm, ko (o), komodoproject, kor, kotlin_builtins, kpl, kpz, kra, krd, kse, ksf (zip), ksvlayout, kui, kuip, kwl, kws, kxf, kys</td></tr>
+<tr><td class="s3td">L</td><td>la, lan, lang (xaml), las, last, lastbuildstate, lau, lay, layout, lbm, lbmp, lcd, lcf, lcp, ldb, ldconfig, ldd, ldf (lde), lds, leases, less, lex (ths), lf, lgz, lib (a), library-ms, libzip (zip), lic (txt), license, licp, licx, lint, list, lit, little, lkeys, lktheme, lm (lm1\lm2), lncs, lng (lang), lng_rad, lngc, lnk, loadmodules, loc, local, locale (loc), localfs, locallicense, localnet, lock, log, log1 (log2), loggerbridge, login, look, lpd, lpm, lrc, lrf, lrmodule, lrplugin, lrtemplate, lrweb, ls, lsa, lsd, lsp (ls), lst, lt, lua, luac, lut, lxa, lz4</td></tr>
+<tr><td class="s3td">M</td><td>m, m3danim, m3u, m3u8, m4, m4a (m4p), m4v (mp4), mak, make, maker, maki, man (config/vbproj), manifest (man/mum/win32manifest), map (inc), mapping, mar, mark, markdown, master, mbn, mbr, mc, mcd (vwx), md (cd), md3, md5, md5sums, mdb (ast/mda/mde/mdt/dvflt), mde (mda), mdl, mdp, mds, mdw, mdz, mea, meh, mem, menu, mepx, mesh, meta, metadata, metadata-v2, metainfo, mf, mfh, mfl (mof), mft, mgc, mht (mbs), mhtml, mi, mid (kar), milk, mingw, mip, mips64el, mit, mjv, mkd, mkv, ml, mlfd, mllr, mlr, mlu, mm, mmdb, mmf, mmm, mng, mno, mnu, mo, mobi (azw3/prc), mod, model, mof (mfl), mogrt, mono, mor, mountd, mov, mox, mp3, mp4 (m4a/m4v/asf/trec/mov), mpcpl, mpg, mpl, mpls, mpn (nib/plist), mpp, mpt, mqres, msbak, msc, msg, mshc, mshi, msi (mst), msix (appx), msk, mskn, msp, msstyles, mst, msu, mswmm, msz, mta, mte, mtl, mtp, mts (m2ts), mtx, mui, muien-us, multi (alias), mum, mun, mvcmd, mxaddon, mxc2, mxdh, mxdk, mxdp, mxmd, mzz</td></tr>
+<tr><td class="s3td">N</td><td>n12, naf, nav, ncd, ncl, nct (ncw), ncx, nef, neft, neq, netconfig, new, nexe, nfo (ucs), nfs (nfs4), nfx, ngot, ngr, nib, nix, nlang3, nld, nlog, nlot, nlp (nls), nls (nlp), nlt, nmd (evn), nmp, nmwt (nmwt2), nn, nnm, nnn, nochop, node, nor, normal, npip, nrr, nsh, nsi, nsis, nsla, nsls, nsx, ntdi, ntds, ntf, ntfs, nthd, nu2, nup, nupkg, nus, nuspec, nut (san), nvc, nvi, nvu, nvx, nxp, ny, nycrc</td></tr>
+<tr><td class="s3td">O</td><td>o, obi, obj (o/lib), obsolete, oce, ocr, octf, ocx, odb (otr), odc, odf, odl (aodl), odlgz, ods (ott), odt (ott), oem, oemdat, oex, ofi, ofmap, oft, ofx, ogg (ogv), ogm, ogv, olb, old, olf, olp, olut, one, onepkg, onetoc2, onnx, opa, opc, opf, opg, opml, ops, opt, optimize, opts, opus, opx, orb, ori, orp, ort, os2, osa, osf, osp, ot, otf, ott (ots/ods/otg/otp), out, ovl, ovpn, ovr, oxt, oxtproperties</td></tr>
+<tr><td class="s3td">P</td><td>p12, p1x, p3e (p3f), p3m, p3r (p3l), p7b, p7x, pack, pages, pak, pal, pan, pango-sharp, params, part1 (part2), pas (imm), passwd, pat, patch, pb, pbf, pbfilespec, pbm, pbv, pbxproj, pbz, pc, pca, pcb, pcc, pcf, pcimap, pck, pckgdep, pcl, pcm, pcx, pdb (idb), pdf (pds/pdt/ai/ait), pdfaschema, pdi, pdl, pdn, pegjs, pem (cer), peps, perm, persist, pf (ini), pf2, pfb, pff, pfm, pfs, pft (bcw), pfw, pfx, pgm, pgt, phn, php, pic (picio/pixar/pxr), pickle, pif, pig, pig, pima, pimx, pio, pip, pis, pjs, pkg (xar/xip), pki, pl, player, plb, plf, plg, plg64, plgx, plist (nib/tmpreferences/tmtheme/hidden-tmlanguage/lmp), pln (rpln/apln), pls, plt, ply, pm (ix), pma, pmap, pmd, pmf, pmlz, pmp, pmv, pnf, png (kpp/wcp/bytes/vid/img), pnm, po (pot), poc, pol, policy, pot (prd/prv/pps/dps), ppd, ppi (api), ppkg (gdl), ppm, ppp (tb1), ppt (pps/pot), pptx (potm/potx/ppsm/ppsx/pptm/prsx/prvx), pqhero, pr0, pragma, pre, preasm, predefinedimage, pref, prepl, preset, presets, prev, prfpset, prg, prgi, prgraphic, pri, prj, prm, pro, proc, prod, profile, prop, propcol, propdesc, propdesc, properties, props, proto, protocol, provider, prproj, prsl, prt, prtl, prv, prx (bpfile), ps, ps1, ps1xml, psb, psb, psc1, psd (p3l/p3r/ple/psdt/psp), psd1, pset, psfu (psf), psi, psl, psm1, psmdcp, psp (pspimage), psr, pst (bcs/pcs/prs/sty/psh), pstf, psw, ptb, ptc, pth, ptmp, pts, ptscript, ptv, ptx, pub (jsp), puppet, pvk, pwd, px, pxc, pxd, pxm, pxs (pxt), py (pyi), pyc, pyd, pyi, pyj, pyo (pyc), pyproj, pyw, pyz</td></tr>
+<tr><td class="s3td">Q</td><td>q1, qat (officeui), qfx, qip, qm, qml, qmlc (jsc/qml), qmltypes, qrb (rcc), qrc, qss, qts, qtx, que</td></tr>
+<tr><td class="s3td">R</td><td>r, r0, rad, raf, ram, rap, rar, ras (im1/im24/im32/im8/rast/rs/sr/sun), raswatch, raw, rb (gemspec), rbe, rbl, rbsct, rc, rc16, rc2, rcache, rcc (qrb), rcrc32, rdat, rdb (components), rdf, rdi, rdisc, rdlc, rdoc, rdp, re, reabank, reapeaks, reaperkeymap, reaperosc, reapertheme, reaperthemezip, reascale, rec, recipe, ref, reg (key/regupd), registry, regtrans-ms, reko, rels, removable, rep, res, resjson, resource, resources, ress, resx (mlsxml/xml/resx_amd64), rfa, rfs, rfx, rgb (sgi), rgba, rgf, rgs, rgt, rgx, rk, rl, rla, rld, rle, rll, rmi, rmlan, rna, rnd, rng, rnnn, rollback, rom (bin), rope, rpad, rpd, rpl, rpln, rpm, rpt, rr2, rs, rsa, rsc, rsd, rsdx, rsf, rsm, rsn, rsp, rsrc, rss, rst, rt, rtbw, rtbz, rtf, rttmeta, ru, rul, rule, rules, rum, runtime-xml, rus, rws</td></tr>
+<tr><td class="s3td">S</td><td>s, s2k, s2p, sal, sam, sami, sample, sav, saver, saxparserfactory, sbcf, sbin, sbk (swi), sbsasm, sbstore, sbt, sbv, sc, scala, scc, sccd, scf, sch, sched, schema, schema, schemafactory, scitetheme, scm, scmx, scp, scpt, scr, scriptenginefactory, scs, scss (css), sct (cht), sdb, sde, sdf, sdg, sdi, sdkmesh, sdv, sdw, sdx, searchconnector-ms, search-ms, seat, security, selx, sem, sep, sequ, seriomap, service, ses, session, set, setting, settings, sf, sf2, sfexp (bj), sfi, sfk, sfv, sg, sgi, sgml, sgn, sh (sample/run), sha (sha1), sha1, sha3, sha3-512, shader, shaderprop, shc, she, shg, shiftctrl, shortcuts, shp, shr, shw, shx, sib, sif, sig, sii, sim, sinfo (ver), sip, size, sk, skc, skin (skin7), skm, skn, skr, sky, slc, slim, slk (sylk), sln, slp, slv, sm, smp, smrd, sms, smwt, snag, snagpalette, snagt, snagtheme, snagx, snb, sndt, snk, so (node), soc, sod, soe, sofa, softdep, sog, soh, sol, son, spa, spak, spc (sps), spck, spd, speeddial, spf, spi, spi1d, spi3d, spimtx, spkg, spl, splash, spp, spr, sps, spt, spx, sq, sqfm (sq), sqfs, sql, sqlite (apobject/approj/aptheme/cocatalogdb/data/db/dbd/dbl/kvdb/kvro/localstorage/otc/qch/qhc/rupldb/sdb/session/sqb/sqlite2/sqlite3/srd/storage/tudb), sqlite-shm (db-shm/db3-shm/srd-shm/kvdb-shm), sqlite-wal (db-wal/db3-wal/kvdb-wal), sqm, sqpreset, src, srs, srt, srw, ssa, ssc, ssf (ptc), ssh, ssp, sst, ssts, sta, stamp, stapl, statd, status, stb (opt), stc (otp/stw), std, stderr, stf, stg, sth (stw), sti (odp/ods/otp/ots/ott/std/sti/stw/sxc/sxd/sxg/sxi/sxw/sob/sop), stl, stm, stone, storage_props, store, str, strings, struct, stt, styl, style, stylecap, sub, sublime-menu, sublime-project, sublime-snippet, sud, sum, suo, susig, sv (se), sve, svg, svm, svn-work, svp, swa, swc, swf, swidtag, swift, sy_ (ex_/dl_), syl, sym, symbols, symtab, symvers, syntax, sys (mpd/sbz/sez/sy_/sys_backup_x64/sys_backup_x86/sys_x64/sys_x86), sysctl</td></tr>
+<tr><td class="s3td">T</td><td>t1, tab, table, tabs, tag, tap, tar (fls/orig), targ (deps), targets (dproj), tasks (overridetasks), tbacct, tbi, tbl, tbr, tbres, tc, tcg, tci, tcl, tcm, tcpip, tcr, tdat (dat/traineddata), tdi (idt), temp, template, tex (pattern), texi, text, textile, textresources, tfc, tflite, tfx (z/bcw), tga, tgz, theme, thm (pak), thmx (eftx), thn, thn, ths, tic, tiff (tif/3fr/arw/sr2/svs/ndpi/stk/mos), tip, tlb (olb), tlbin (cz), tll, tlog, tlt, tmd (tmv), tmp, tmpfs, tmpl, tnu, toc, tok, toml, ton, tool, torrent, tpl, tpl2, tpr, tr, tr, trace, train, traineddata (dat), transact, transformerfactory, trb, trd, tree, trk, trn, ts, tscplugin, tscproj (tsctemplate), tscsupport, tse, tsm, tsp, tst (tse), tstemplate, tsv, ttb, ttc (otc), ttf (fnt/tt_), tts, ttt, tur, tut, tvp, twk, tx, txcap_blob, txl, txt (adobe/copying/gpl/gpl2/lgpl/lgplv1/lgplv2/lgplv3/md/readme/tx_/utxt), txtst, txtz, typed, types, tz</td></tr>
+<tr><td class="s3td">U</td><td>ua, uce, ucode, ucp, ucs, uct, udat, udc, udev_retry, udl, udt, uha, uhb, ui, uim, uk, ukr, ult, unilang, unit, unix (mak/in), unp, unt, uot (uop/uos), up_meta_secure, upcall, update, upp, url, urrs, usbmap, user, usf (usflib), utf8, utxt, uue, uvp</td></tr>
+<tr><td class="s3td">V</td><td>v, v1, v2 (js), val, var, vb, vbe, vbo, vbp, vbs, vch, vcproj, vcxproj, vdc, vdex, vdf, vdi, vdj, vdm (lkg), vdplugin (vdf), vdw, veg, version (vert), vf, vfs, vfs0, vfx, vfx1, vg, vhd, vhdx, vic, vip (fst), vkm, vkt, vlcl, vlng, vlpset, vlt, vm, vmd, vmdk, vms, vmsg, vob, voc, vor (sdw), vp, vp9, vpk, vpl, vpol, vpr, vpx, vpy, vrd, vrg, vs_2_0, vs_2_0, vsb, vsd (vss/vst/vdw), vsdx (vsdm/vssm/vssx/vstm/vstx), vsf, vsh, vsix, vsixmanifest, vsl, vst, vst3, vst3, vstatemplate, vstax, vsto, vstpreset, vsx (xml_), vtc, vtm, vtm, vtt, vtv, vue, vwp, vxml</td></tr>
+<tr><td class="s3td">W</td><td>w5s, w6c, wac, wal, wap, wasm, watchr, wav (bwf/nrw), wbm, wbmp, wcd, wcm, wcp, wcx, wdp, wdx, web, webm, webp (web), wep, wer, wfd, wfm, wfx, whl, whs, wih, wim (wim2/swm/esd/ppkg), winkeys, winmd (efi), winmdobj, wkt, wld, wlx, wlz, wma, wmc, wmdb, wmf, wmi, wmo, wms, wmv (wma), wmz, wngfx, woff, woff2, wpg (hyd/cbt), wpl, wprp, wpt, wrd, wrk, wrl, wsc, wsdd, wsf, wsh, wsk, wskn, wsplugin, wswdb, wsz, wtl, wul, wve, wwd</td></tr>
+<tr><td class="s3td">X</td><td>x, x32, x3d, x3db, x3dv, x86_64, xaml (style), xap, xas, xautopf, xba, xbap, xbf, xbl, xbm, xcd, xcf, xcl, xclangspec, xcm, xcs, xcu, xd, xdb, xdc, xdl, xdr, xe, xfm, xfs, xg0, xgeq, xgm, xhp, xhtml (html/tml/htpl), xib, xif, xiph, xlb, xlc, xls (xla/xlt/xls2), xls2, xlsx (pmdx/pmvx/xlam/xlsb/xlsm/xltm/xltx), xlt, xm, xmb, xmd, xml, xmlc, xmlgui, xmp, xmrlang, xmrpres, xms, xnf, xnormodel, xnp, xpfwext (xefwext), xpi, xpm, xps, xpt, xql (xqm/xqy), xrc, xrm-ms (nls/p7b/p7x/pri/sch/xaml/xbf/xrm/ppkg), xsd, xsf, xsfs, xshd, xsl (xslt/xsd/xbf/nls/pri/sch/xaml/ppkg), xslt (xls), xsn, xspf, xss, xst, xul, xxe, xxx, xz</td></tr>
+<tr><td class="s3td">Y</td><td>yaml (yml/sublime-syntax), yardopts, yfx, yml, yprt, yt, ytf, yti, ytr</td></tr>
+<tr><td class="s3td">Z</td><td>z77, zdct (zbin), zeg, zfsendtotarget, zi, zip, zlx, zmd, zmdownload, zmf, zmfragcfg, zoom, zpaq, zpl, zvt, zzl</td></tr>
+
+
+
+
+</td></tr></table>
+</div>
+<br>
+
+<hr align="left" width=70%>
+<br>
+<span class="section">Дополнение:</span>
+<br><br>
+Конечно это не 100% определение так как:<br>
+&nbsp;&nbsp;- одни и те же типы могут иметь разное содержание (текстовое/бинарное) и сигнатуру...<br>
+&nbsp;&nbsp;- разные типы могут иметь одинаковую начальную сигнатуру...<br>
+<br>
+100%-го определения быть не может , но если этот инструмент поможет восстановить половину важных файлов, то значит всё не зря...
+<br><br>
+<hr align="left" width=30%>
+<br>
+<font class="S121">Последовательность распознавания:</font>
+<br>
+<br>&nbsp;&nbsp;1. Исполняемые файлы (типа exe, dll, mui, ...):
+<br>&nbsp;&nbsp;&nbsp;&nbsp; - в таких файлах ищется оригинальное расширение в заголовке файла в полях <font class="S19">"InternalName"</font> и <font class="S19">"OriginalFilename"</font>, некоторые файлы можно определить по комментарию <font class="S19">"FileDescription"</font> (см. команду <a class="le" href="../com_versn.htm"><span class="S4"><b>versn</b></span></a>)
+<br>&nbsp;&nbsp;&nbsp;&nbsp; - если оригинальное расширение не найдено, то определить какой именно исполняемый файл не всегда представляется возможным, т.к. exe может быть любым из типов: 8bf, 8bi, 8bx, 8by, 8li, 8me, acm, aip, ape, auo, bpl, cer, ciso, com, cpl, dll, driver, drv, ds, efi, fil, flt, ia64, icl, iec, ime, lex, lkg, mgc, node, ocx, olb, pig, plg, rll, rs, scr, svp, sys, tlb, tsp, unp, vdf, vdm, vdplugin, vwp, w5s, w6c, wac, wcx, wdx, wfx, wlx, x32, x3d, xnp и т.д.
+<br>&nbsp;&nbsp;&nbsp;&nbsp; - для определения некоторых исполняемых файлов происходит поиск уникальной информации в ресурсах<font class="S19"> "VERSION"</font>, <font class="S19">"MANIFEST"</font>, <font class="S19">"BITMAP"</font>, <font class="S19">"301"</font>, <font class="S19">"MUI"</font>, <font class="S19">"SKIN"</font>, <font class="S19">"ZDCT"</font> и других.
+<br>&nbsp;&nbsp;&nbsp;&nbsp; - для определения некоторых файлов происходит поиск в дополнительных свойствах (см. <a class="le" href="../com_infos.htm"><span class="S4"><b>infos</b></span></a>=3||18).
+<br>&nbsp;&nbsp;&nbsp;&nbsp; - для определения некоторых исполняемых файлов используется плагин Total7zip.wcx, который прописывается в <a class="le" href="../../config.htm#Programs"><font class="S1"><b>TCIMG.ini</b></font></a> (TCIMGU.ini) в секции <span class="S8"><b>[</b></span><a href="../../config.htm#Programs"><b>Programs</b></a><span class="S8"><b>]</b></span>.
+<br>&nbsp;&nbsp;&nbsp;&nbsp; - если exe является sfx архивом, то есть параметры возвращения типа файла.
+<br>&nbsp;&nbsp;&nbsp;&nbsp; - для определения некоторых типов dll используется поиск "функций" внутри файла (ряд плагинов/приложений имеют одинаковые функции по которым можно определить общий тип, см. <a class="le" href="../com_infos.htm"><span class="S4"><b>infos</b></span></a>=3||16).
+<br>(возможно позже найдутся более действенные методы для определения исполняемых файлов)
+
+<br><br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<b><font class="S81">[</font>Programs<font class="S81">]</font></b><br>
+<font class="S21">; Total7zip - архиваторный плагин на основе 7-ZIP</font>, <a href="http://wincmd.ru/plugring/Total7zip.html" target="_blank">скачать</a><br>
+<b>Total7zip<font class="S81">=</font></b>%COMMANDER_PATH%\Plugins\Wcx\Total7zip\Total7zip.wcx<br>
+</p>
+<br>&nbsp;&nbsp;2. Ряд файлов являются zip архивами, они определяются по структуре архива. При одинаковой структуре возвращается первый тип из таблицы: xlsx (pmdx/pmvx/xlam/xlsb/xlsm/xltm/xltx), т.е. возвращается расширение <font class="S19">"xlsx"</font>.
+<br>
+<br>&nbsp;&nbsp;3. Для текстовых файлов:
+<br>&nbsp;&nbsp;&nbsp;&nbsp; - производится поиск расширения в начальных комментариях файлов: ahk, au3, bsh, c, chp, cmd, coder, conf, cpp, cs, csh, def, fish, gdl, h, hrc, hxx, ini, js, jsx, kmm, la, ldf, lng, lsp, lst, m, obj, pis, properties, ps1, psd1, rc2, s, sal, sip, sql, targets, tcg, tch, tci, tcm, vbs, wsf, xls, и др.
+<br>&nbsp;&nbsp;&nbsp;&nbsp; - в скриптовых файлах тип определяется по уникальным операторам (если это возможно).
+<br>&nbsp;&nbsp;&nbsp;&nbsp; - в различных xml файлах тип определяется по уникальным тегам.
+<br>&nbsp;&nbsp;&nbsp;&nbsp; - в других файлах тип определяется по уникальным фразам, разметке, структуре, ... файла.
+<br>
+<br>&nbsp;&nbsp;4. При одинаковой сигнатуре возвращается первый тип из таблицы sqlite (sqlite2/sqlite3), т.е. возвращается расширение <font class="S19">"sqlite"</font>
+<br><br>
+<hr align="left" width=30%>
+<br>&nbsp;&nbsp;<font class="S21"><b>&#9193;</b></font> Функционал определения расширения тестируется, будет улучшаться по мере нахождения неточностей.
+<br>
+<br>&nbsp;&nbsp;<font class="S21"><b>&#9193;</b></font> Если какие-либо файлы определяются неправильно, то вы можете их прислать для исправления.
+<br>
+<br>&nbsp;&nbsp;<font class="S21"><b>&#9193;</b></font> Сейчас определяется более <b>2300</b> типов файлов, некоторые типы проверяются по разным условиям (к примеру, команда определяет более 200 видов log, dic, lng, dat, bin, inf, cfg, conf, lang файлов и др.), созданных различными программами.
+<br> 
+<br>&nbsp;&nbsp;<font class="S21"><b>&#9193;</b></font> При этом команда работает довольно быстро, т.к. поиск происходит с регулярными выражениями по начальным данным файла, а база данных base.dll размером всего 500Kb (в отличие от других программ).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;- исполняемые файлы, в которых есть точные метаданные обрабатываются примерно 60-100 файлов в секунду.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;- бинарные файлы обрабатываются примерно 50-130 файлов в секунду.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;- текстовые файлы обрабатываются примерно 5-80 файлов в секунду (все зависит от содержимого).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;- замедлить работу может большой архивный файл (типа cab, iso, jar), из которого не всегда быстро извлекается структура объектов для его определения.
+<br>
+<br>&nbsp;&nbsp;<font class="S21"><b>&#9193;</b></font> Чтение и проверка условий в файлах производится поэтапно:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;- в бинарных файлах читается первые 16, 32, 512 байта, для некоторых файлов требуется чуть больше.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;- в текстовых файлах читается первые 32, 64, 512, 1024 символов, максимальное чтение файла 100Kb.
+<br>
+<br>&nbsp;&nbsp;<font class="S21"><b>&#9193;</b></font> Можно добавить и другие типы файлов, но у меня их нет на компьютере, высылайте в архиве по 5-10 файлов одного типа, возможно получиться их распознать. Тем самым вы поможете создать хороший инструмент для восстановления данных.
+<br><br>
+<hr align="left" width=30%>
+<br>
+Если вы создаёте файлы для своих проектов и хотите, чтобы они распознавались, то:<br>
+<br>&nbsp;&nbsp;a) Для текстовых файлов рекомендуется <u>в начале</u> прописывать то, что будет отличать их от других, к примеру:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;- уникальные комментарии/фразы (<font class="S19">LIBRARY_A_B_C</font>, <font class="S19">PROJECT_A_B_C</font>).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;- реальное имя файла с расширением, особенно для скриптовых файлов (<font class="S19">' Test.vbs</font>, <font class="S19">/// Test.js</font>, <font class="S19">; Test.ahk</font>, <font class="S19">; Test.ini</font>). 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;- уникальную секцию/ключи для ini и подобных файлов (<font class="S19">[TEST_A_B_C]</font>, <font class="S19">[1_2_3_4_5]</font>). 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;- уникальные теги для xml/html и подобных файлов (<font class="S19">&#60;ClassABC&#62;</font>).
+<br>&nbsp;&nbsp;&nbsp;&nbsp;- уникальную структуру файла или дату в оригинальном формате (в файлах log).
+<br>
+<br>&nbsp;&nbsp;b) Для бинарных файлов рекомендуется <u>в начале</u> создавать уникальную сигнатуру (набор байтов, обеспечивающий идентификацию типа файла), к примеру: <font class="S19">535F55504552</font>, если открыть такой файл в блокноте, то в начале увидим <font class="S19">S_UPER</font>.
+<br>
+<br>&nbsp;&nbsp;c) Если вы создаёте архивы zip и при этом расширение архивов переименовываете, то для того, чтобы они распознавались необходимо <u>в корне архива создавать уникальное имя</u> каталога или файла.
+<br>
+<br>&nbsp;&nbsp;d) Если вы создаёте плагины/приложения с сигнатурой схожей с exe файлами необходимо прописывать в ресурс "Version Info" <u>точные данные файла</u> в поля "<font class="S19">OriginalFilename</font>" или "<font class="S19">InternalName</font>" (к примеру: <font class="S19">"Plugin.qqq"</font>) - тогда проблем не будет с распознаванием расширения такого файла.
+<br><br>
+Всё это позволяет без особого труда идентифицировать файлы при восстановлении расширения.
+<br>Если какие-либо ваши файлы не распознаются, то вы так же можете их прислать для добавления условий в базу данных.
+<br><br>
+<hr align="left" width=30%>
+<br>
+Некоторые программисты и программы намерено искажают данные файлов и их расширения (или делают похожими файлы под другие типы), чтобы их было невозможно определить - ну тут уж ничего не поделаешь - не хотят так не хотят &#9786;.
+<br><br>
+В некоторых программах:
+<br>&nbsp;&nbsp;- форматы jpg, bmp, zip, mp3, ... могут быть переименованы в типы dat, bin и др.
+<br>&nbsp;&nbsp;- скриптовые форматы h, js, xml, ini, ... могут быть переименованы в типы txt, diz, dat и др.
+<br>&nbsp;&nbsp;- исполняемые форматы exe, dll, ... могут быть переименованы в типы 000, 001, upx и др.
+<br>&nbsp;&nbsp;- форматы данных sqlite ... могут быть переименованы в типы sqlite1, sqlite2, db, sdb и др.
+<br>&nbsp;&nbsp;- форматы изображений могут изменяться bmp в png, jpg в gif и т.д. и наоборот.
+<br>&nbsp;&nbsp;- так же у форматов может быть просто намерено удалено расширение.
+<br>&nbsp;&nbsp;- некоторые пользуются "старым" советом и переименовывают текстовые файлы txt, rtf и др. в тип doc, чтобы файл открывался MS Office
+<br>
+При определении таких файлов будет возвращено оригинальное расширение.
+<br><br>
+Некоторые типы файлов невозможно или нет смысла определять:
+<br>&nbsp;&nbsp;- текстовые файлы общей информации: csv, txt, dic, diz, keys, ... (если они не имеют точную начальную информацию)
+<br>&nbsp;&nbsp;- бинарные файлы общей информации: dat, data, bin, db, ... 
+<br>&nbsp;&nbsp;- файлы с зашифрованной информацией: crypt, ... 
+<br>&nbsp;&nbsp;- файлы различных лицензионных ключей: key, ... 
+<br>&nbsp;&nbsp;- файлы бэкапа: bacup, bak, bkp, bk, log_backup, ...
+<br>&nbsp;&nbsp;- файлы кэша: br, br64, br120, ...
+<br>&nbsp;&nbsp;- временные файлы: tmp, temp, old, ...
+<br>&nbsp;&nbsp;- файлы без уникальных сигнатуры/разметки.
+<br><br>
+Если тип файла не определён, то будет возвращено "пустое" расширение. Но можно это настроить в подпараметрах, см. выше: для текстовых и бинарных файлов отдельное расширение.
+
+
+<br><br>
+<hr align="left" width=30%>
+
+<br><br>
+
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

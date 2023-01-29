@@ -1,0 +1,333 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Получение информации папки или файла с помощью метода GetDetailsOf</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<link type="text/css" rel="stylesheet" href="../../css/default.css">
+</head>
+<body background="../../images/LiteImage.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="../../images/bgl_red.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Дополнение №6</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="../../images/bgs_grey.gif"></td></tr></table>
+
+<hr><a name="ONLINE3"></a>
+<p><font class="S3" size="+1">Дополнение к командам <a href="../com_infos.htm">infos=3<font class="S81">||</font>1<font class="S81">||</font>File</a> и <a href="add_info.htm#o300">&#60;info=o250File<font class="S81">|</font>Numbers&#62;</a>.</font></p>
+<hr><br>
+<b>Получение информации папки или файла с помощью метода GetDetailsOf (ShellDetails).</b><br><br>
+&nbsp;&nbsp;<font class="S81"><b>!!! Может отличаться относительно версий системы Windows !!!</b></font><br>
+<br>
+<span class="section">Для получения названий типов информации и номеров воспользуйтесь командами:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap">
+<font class="S21">; отображение всей не пустой информации GetDetailsOf объекта с названиями и номерами типа информации</font><br>
+<a class="le" href="../com_infos.htm"><span class="S4"><b>infos</b></span></a>=3<font class="S81"><b>||</b></font>20<font class="S81"><b>||</b></font>File<br>
+<font class="S21">; отображение всей информации GetDetailsOf объекта с названиями и номерами типа информации</font><br>
+<a class="le" href="../com_infos.htm"><span class="S4"><b>infos</b></span></a>=3<font class="S81"><b>||</b></font>21<font class="S81"><b>||</b></font>File<br>
+
+</p>
+<br><br>
+<div align="center">
+<table class="param" width="50%" cellspacing="0" cellpadding="3">
+<tr class="sl2tr"><td width="30%">Тип информации</td><td width="70%">Описание типа информации</td></tr>
+<tr><td class="s3td">0</td><td><font class="S0">Имя</font></td></tr>
+<tr><td class="s3td">1</td><td><font class="S0">Размер</font></td></tr>
+<tr><td class="s3td">2</td><td><font class="S0">Тип элемента</font></td></tr>
+<tr><td class="s3td">3</td><td><font class="S0">Дата изменения</font></td></tr>
+<tr><td class="s3td">4</td><td><font class="S0">Дата создания</font></td></tr>
+<tr><td class="s3td">5</td><td><font class="S0">Дата доступа</font></td></tr>
+<tr><td class="s3td">6</td><td><font class="S0">Атрибуты</font></td></tr>
+<tr><td class="s3td">7</td><td><font class="S0">Автономность</font></td></tr>
+<tr><td class="s3td">8</td><td><font class="S0">Вне сети</font></td></tr>
+<tr><td class="s3td">9</td><td><font class="S0">Распознанный тип</font></td></tr>
+<tr><td class="s3td">10</td><td><font class="S0">Владелец</font></td></tr>
+<tr><td class="s3td">11</td><td><font class="S0">Вид элемента</font></td></tr>
+<tr><td class="s3td">12</td><td><font class="S0">Дата съемки</font></td></tr>
+<tr><td class="s3td">13</td><td><font class="S0">Участвующие исполнители</font></td></tr>
+<tr><td class="s3td">14</td><td><font class="S0">Альбом</font></td></tr>
+<tr><td class="s3td">15</td><td><font class="S0">Год</font></td></tr>
+<tr><td class="s3td">16</td><td><font class="S0">Жанр</font></td></tr>
+<tr><td class="s3td">17</td><td><font class="S0">Дирижер</font></td></tr>
+<tr><td class="s3td">18</td><td><font class="S0">Ключевые слова</font></td></tr>
+<tr><td class="s3td">19</td><td><font class="S0">Оценка</font></td></tr>
+<tr><td class="s3td">20</td><td><font class="S0">Авторы</font></td></tr>
+<tr><td class="s3td">21</td><td><font class="S0">Название/Заголовок</font></td></tr>
+<tr><td class="s3td">22</td><td><font class="S0">Тема</font></td></tr>
+<tr><td class="s3td">23</td><td><font class="S0">Категории</font></td></tr>
+<tr><td class="s3td">24</td><td><font class="S0">Комментарии</font></td></tr>
+<tr><td class="s3td">25</td><td><font class="S0">Авторские права</font></td></tr>
+<tr><td class="s3td">26</td><td><font class="S0">№</font></td></tr>
+<tr><td class="s3td">27</td><td><font class="S0">Продолжительность</font></td></tr>
+<tr><td class="s3td">28</td><td><font class="S0">Скорость потока</font></td></tr>
+<tr><td class="s3td">29</td><td><font class="S0">С защитой</font></td></tr>
+<tr><td class="s3td">30</td><td><font class="S0">Камера, модель</font></td></tr>
+<tr><td class="s3td">31</td><td><font class="S0">Размеры</font></td></tr>
+<tr><td class="s3td">32</td><td><font class="S0">Камера, изготовитель</font></td></tr>
+<tr><td class="s3td">33</td><td><font class="S0">Организация</font></td></tr>
+<tr><td class="s3td">34</td><td><font class="S0">Описание файла</font></td></tr>
+<tr><td class="s3td">35</td><td><font class="S0">Имя программы</font></td></tr>
+<tr><td class="s3td">36</td><td><font class="S0">Длительность</font></td></tr>
+<tr><td class="s3td">37</td><td><font class="S0">В сети</font></td></tr>
+<tr><td class="s3td">38</td><td><font class="S0">Повторяется</font></td></tr>
+<tr><td class="s3td">39</td><td><font class="S0">Место</font></td></tr>
+<tr><td class="s3td">40</td><td><font class="S0">Адреса необязательных участников</font></td></tr>
+<tr><td class="s3td">41</td><td><font class="S0">Необязательные участники</font></td></tr>
+<tr><td class="s3td">42</td><td><font class="S0">Адрес организатора</font></td></tr>
+<tr><td class="s3td">43</td><td><font class="S0">Имя организатора</font></td></tr>
+<tr><td class="s3td">44</td><td><font class="S0">Время оповещения</font></td></tr>
+<tr><td class="s3td">45</td><td><font class="S0">Адреса обязательных участников</font></td></tr>
+<tr><td class="s3td">46</td><td><font class="S0">Обязательные участники</font></td></tr>
+<tr><td class="s3td">47</td><td><font class="S0">Ресурсы</font></td></tr>
+<tr><td class="s3td">48</td><td><font class="S0">Состояние собрания</font></td></tr>
+<tr><td class="s3td">49</td><td><font class="S0">Свободно/Занято</font></td></tr>
+<tr><td class="s3td">50</td><td><font class="S0">Общий размер</font></td></tr>
+<tr><td class="s3td">51</td><td><font class="S0">Учетная запись</font></td></tr>
+<tr><td class="s3td">52</td><td><font class="S0">Состояние задачи</font></td></tr>
+<tr><td class="s3td">53</td><td><font class="S0">Компьютер</font></td></tr>
+<tr><td class="s3td">54</td><td><font class="S0">Годовщина</font></td></tr>
+<tr><td class="s3td">55</td><td><font class="S0">Имя помощника</font></td></tr>
+<tr><td class="s3td">56</td><td><font class="S0">Телефон помощника</font></td></tr>
+<tr><td class="s3td">57</td><td><font class="S0">День рождения</font></td></tr>
+<tr><td class="s3td">58</td><td><font class="S0">Работа, адрес</font></td></tr>
+<tr><td class="s3td">59</td><td><font class="S0">Работа, город</font></td></tr>
+<tr><td class="s3td">60</td><td><font class="S0">Работа, страна/регион</font></td></tr>
+<tr><td class="s3td">61</td><td><font class="S0">Работа, а/я</font></td></tr>
+<tr><td class="s3td">62</td><td><font class="S0">Работа, почтовый индекс</font></td></tr>
+<tr><td class="s3td">63</td><td><font class="S0">Работа, республика/край/область</font></td></tr>
+<tr><td class="s3td">64</td><td><font class="S0">Работа, улица</font></td></tr>
+<tr><td class="s3td">65</td><td><font class="S0">Работа, факс</font></td></tr>
+<tr><td class="s3td">66</td><td><font class="S0">Работа, домашняя страница</font></td></tr>
+<tr><td class="s3td">67</td><td><font class="S0">Работа, телефон</font></td></tr>
+<tr><td class="s3td">68</td><td><font class="S0">Номер обратного вызова</font></td></tr>
+<tr><td class="s3td">69</td><td><font class="S0">Телефон в машине</font></td></tr>
+<tr><td class="s3td">70</td><td><font class="S0">Дети</font></td></tr>
+<tr><td class="s3td">71</td><td><font class="S0">Организация, основной телефон</font></td></tr>
+<tr><td class="s3td">72</td><td><font class="S0">Отдел</font></td></tr>
+<tr><td class="s3td">73</td><td><font class="S0">Эл. почта</font></td></tr>
+<tr><td class="s3td">74</td><td><font class="S0">Эл. почта 2</font></td></tr>
+<tr><td class="s3td">75</td><td><font class="S0">Эл. почта 3</font></td></tr>
+<tr><td class="s3td">76</td><td><font class="S0">Эл. почта, список</font></td></tr>
+<tr><td class="s3td">77</td><td><font class="S0">Эл. почта, имя</font></td></tr>
+<tr><td class="s3td">78</td><td><font class="S0">Хранится как</font></td></tr>
+<tr><td class="s3td">79</td><td><font class="S0">Личное имя</font></td></tr>
+<tr><td class="s3td">80</td><td><font class="S0">Полное имя</font></td></tr>
+<tr><td class="s3td">81</td><td><font class="S0">Пол</font></td></tr>
+<tr><td class="s3td">82</td><td><font class="S0">Простое имя</font></td></tr>
+<tr><td class="s3td">83</td><td><font class="S0">Увлечения</font></td></tr>
+<tr><td class="s3td">84</td><td><font class="S0">Дом, адрес</font></td></tr>
+<tr><td class="s3td">85</td><td><font class="S0">Дом, город</font></td></tr>
+<tr><td class="s3td">86</td><td><font class="S0">Дом, страна/регион</font></td></tr>
+<tr><td class="s3td">87</td><td><font class="S0">Дом, а/я</font></td></tr>
+<tr><td class="s3td">88</td><td><font class="S0">Дом, почтовый индекс</font></td></tr>
+<tr><td class="s3td">89</td><td><font class="S0">Дом, республика/край/область</font></td></tr>
+<tr><td class="s3td">90</td><td><font class="S0">Дом, улица</font></td></tr>
+<tr><td class="s3td">91</td><td><font class="S0">Дом, факс</font></td></tr>
+<tr><td class="s3td">92</td><td><font class="S0">Дом, телефон</font></td></tr>
+<tr><td class="s3td">93</td><td><font class="S0">Мгн. сообщения</font></td></tr>
+<tr><td class="s3td">94</td><td><font class="S0">Инициалы</font></td></tr>
+<tr><td class="s3td">95</td><td><font class="S0">Должность</font></td></tr>
+<tr><td class="s3td">96</td><td><font class="S0">Метка</font></td></tr>
+<tr><td class="s3td">97</td><td><font class="S0">Фамилия</font></td></tr>
+<tr><td class="s3td">98</td><td><font class="S0">Почтовый адрес</font></td></tr>
+<tr><td class="s3td">99</td><td><font class="S0">Отчество, второе имя</font></td></tr>
+<tr><td class="s3td">100</td><td><font class="S0">Мобильный телефон</font></td></tr>
+<tr><td class="s3td">101</td><td><font class="S0">Псевдоним</font></td></tr>
+<tr><td class="s3td">102</td><td><font class="S0">Комната</font></td></tr>
+<tr><td class="s3td">103</td><td><font class="S0">Другой адрес</font></td></tr>
+<tr><td class="s3td">104</td><td><font class="S0">Другой адрес, город</font></td></tr>
+<tr><td class="s3td">105</td><td><font class="S0">Другой адрес, страна</font></td></tr>
+<tr><td class="s3td">106</td><td><font class="S0">Другой адрес, а/я</font></td></tr>
+<tr><td class="s3td">107</td><td><font class="S0">Другой адрес, индекс</font></td></tr>
+<tr><td class="s3td">108</td><td><font class="S0">Другой адрес, республика/область/край</font></td></tr>
+<tr><td class="s3td">109</td><td><font class="S0">Другой адрес, улица</font></td></tr>
+<tr><td class="s3td">110</td><td><font class="S0">Пейджер</font></td></tr>
+<tr><td class="s3td">111</td><td><font class="S0">Обращение</font></td></tr>
+<tr><td class="s3td">112</td><td><font class="S0">Город</font></td></tr>
+<tr><td class="s3td">113</td><td><font class="S0">Страна/Регион</font></td></tr>
+<tr><td class="s3td">114</td><td><font class="S0">а/я</font></td></tr>
+<tr><td class="s3td">115</td><td><font class="S0">Почтовый индекс</font></td></tr>
+<tr><td class="s3td">116</td><td><font class="S0">Республика/Область/Край</font></td></tr>
+<tr><td class="s3td">117</td><td><font class="S0">Улица</font></td></tr>
+<tr><td class="s3td">118</td><td><font class="S0">Основной адрес эл.почты</font></td></tr>
+<tr><td class="s3td">119</td><td><font class="S0">Основной телефон</font></td></tr>
+<tr><td class="s3td">120</td><td><font class="S0">Профессия</font></td></tr>
+<tr><td class="s3td">121</td><td><font class="S0">Супруг(а)/Партнер</font></td></tr>
+<tr><td class="s3td">122</td><td><font class="S0">Суффикс</font></td></tr>
+<tr><td class="s3td">123</td><td><font class="S0">Телетайп/телефон с титрами</font></td></tr>
+<tr><td class="s3td">124</td><td><font class="S0">Телекс</font></td></tr>
+<tr><td class="s3td">125</td><td><font class="S0">Веб-страница</font></td></tr>
+<tr><td class="s3td">126</td><td><font class="S0">Состояние содержимого</font></td></tr>
+<tr><td class="s3td">127</td><td><font class="S0">Тип содержимого</font></td></tr>
+<tr><td class="s3td">128</td><td><font class="S0">Дата приобретения</font></td></tr>
+<tr><td class="s3td">129</td><td><font class="S0">Дата архивирования</font></td></tr>
+<tr><td class="s3td">130</td><td><font class="S0">Дата завершения</font></td></tr>
+<tr><td class="s3td">131</td><td><font class="S0">Категория устройства</font></td></tr>
+<tr><td class="s3td">132</td><td><font class="S0">Подключено</font></td></tr>
+<tr><td class="s3td">133</td><td><font class="S0">Метод обнаружения</font></td></tr>
+<tr><td class="s3td">134</td><td><font class="S0">Понятное имя</font></td></tr>
+<tr><td class="s3td">135</td><td><font class="S0">Локальный компьютер</font></td></tr>
+<tr><td class="s3td">136</td><td><font class="S0">Производитель</font></td></tr>
+<tr><td class="s3td">137</td><td><font class="S0">Модель</font></td></tr>
+<tr><td class="s3td">138</td><td><font class="S0">Сопряжено</font></td></tr>
+<tr><td class="s3td">139</td><td><font class="S0">Классификация</font></td></tr>
+<tr><td class="s3td">140</td><td><font class="S0">Статус</font></td></tr>
+<tr><td class="s3td">141</td><td><font class="S0">ИД клиента</font></td></tr>
+<tr><td class="s3td">142</td><td><font class="S0">Соавторы</font></td></tr>
+<tr><td class="s3td">143</td><td><font class="S0">Дата создания содержимого</font></td></tr>
+<tr><td class="s3td">144</td><td><font class="S0">Последний вывод на печать</font></td></tr>
+<tr><td class="s3td">145</td><td><font class="S0">Дата последнего сохранения</font></td></tr>
+<tr><td class="s3td">146</td><td><font class="S0">Подразделение</font></td></tr>
+<tr><td class="s3td">147</td><td><font class="S0">Код документа</font></td></tr>
+<tr><td class="s3td">148</td><td><font class="S0">Число страниц</font></td></tr>
+<tr><td class="s3td">149</td><td><font class="S0">Слайды</font></td></tr>
+<tr><td class="s3td">150</td><td><font class="S0">Общее время редактирования</font></td></tr>
+<tr><td class="s3td">151</td><td><font class="S0">Слова, количество</font></td></tr>
+<tr><td class="s3td">152</td><td><font class="S0">Срок</font></td></tr>
+<tr><td class="s3td">153</td><td><font class="S0">Дата окончания</font></td></tr>
+<tr><td class="s3td">154</td><td><font class="S0">Количество файлов</font></td></tr>
+<tr><td class="s3td">155</td><td><font class="S0">Имя файла</font></td></tr>
+<tr><td class="s3td">156</td><td><font class="S0">Версия файла</font></td></tr>
+<tr><td class="s3td">157</td><td><font class="S0">Цвет флага</font></td></tr>
+<tr><td class="s3td">158</td><td><font class="S0">Состояние флажка</font></td></tr>
+<tr><td class="s3td">159</td><td><font class="S0">Свободно</font></td></tr>
+<tr><td class="s3td">160</td><td><font class="S0">Глубина цвета</font></td></tr>
+<tr><td class="s3td">161</td><td><font class="S0">Горизонтальное разрешение</font></td></tr>
+<tr><td class="s3td">162</td><td><font class="S0">Ширина</font></td></tr>
+<tr><td class="s3td">163</td><td><font class="S0">Разрешение по вертикали</font></td></tr>
+<tr><td class="s3td">164</td><td><font class="S0">Высота</font></td></tr>
+<tr><td class="s3td">165</td><td><font class="S0">Важность</font></td></tr>
+<tr><td class="s3td">166</td><td><font class="S0">Вложение?</font></td></tr>
+<tr><td class="s3td">167</td><td><font class="S0">Удален</font></td></tr>
+<tr><td class="s3td">168</td><td><font class="S0">Состояние шифрования</font></td></tr>
+<tr><td class="s3td">169</td><td><font class="S0">С флагом</font></td></tr>
+<tr><td class="s3td">170</td><td><font class="S0">Завершено?</font></td></tr>
+<tr><td class="s3td">171</td><td><font class="S0">Неполное</font></td></tr>
+<tr><td class="s3td">172</td><td><font class="S0">Состояние чтения</font></td></tr>
+<tr><td class="s3td">173</td><td><font class="S0">Общий доступ</font></td></tr>
+<tr><td class="s3td">174</td><td><font class="S0">Создатели</font></td></tr>
+<tr><td class="s3td">175</td><td><font class="S0">Дата</font></td></tr>
+<tr><td class="s3td">176</td><td><font class="S0">Имя папки</font></td></tr>
+<tr><td class="s3td">177</td><td><font class="S0">Путь к папке</font></td></tr>
+<tr><td class="s3td">178</td><td><font class="S0">Расположение</font></td></tr>
+<tr><td class="s3td">179</td><td><font class="S0">Участники</font></td></tr>
+<tr><td class="s3td">180</td><td><font class="S0">Путь</font></td></tr>
+<tr><td class="s3td">181</td><td><font class="S0">По расположению</font></td></tr>
+<tr><td class="s3td">182</td><td><font class="S0">Тип</font></td></tr>
+<tr><td class="s3td">183</td><td><font class="S0">Имена контактов</font></td></tr>
+<tr><td class="s3td">184</td><td><font class="S0">Тип записи</font></td></tr>
+<tr><td class="s3td">185</td><td><font class="S0">Язык</font></td></tr>
+<tr><td class="s3td">186</td><td><font class="S0">Дата посещения</font></td></tr>
+<tr><td class="s3td">187</td><td><font class="S0">Описание</font></td></tr>
+<tr><td class="s3td">188</td><td><font class="S0">Состояние ссылки</font></td></tr>
+<tr><td class="s3td">189</td><td><font class="S0">Цель ссылки</font></td></tr>
+<tr><td class="s3td">190</td><td><font class="S0">URL-адрес</font></td></tr>
+<tr><td class="s3td">191</td><td><font class="S0">Дата создания мультимедиа</font></td></tr>
+<tr><td class="s3td">192</td><td><font class="S0">Дата выпуска</font></td></tr>
+<tr><td class="s3td">193</td><td><font class="S0">Зашифровано</font></td></tr>
+<tr><td class="s3td">194</td><td><font class="S0">Продюсер</font></td></tr>
+<tr><td class="s3td">195</td><td><font class="S0">Издатель</font></td></tr>
+<tr><td class="s3td">196</td><td><font class="S0">Субтитры</font></td></tr>
+<tr><td class="s3td">197</td><td><font class="S0">URL-адрес веб-сайта пользователя</font></td></tr>
+<tr><td class="s3td">198</td><td><font class="S0">Сценарист</font></td></tr>
+<tr><td class="s3td">199</td><td><font class="S0">Вложения</font></td></tr>
+<tr><td class="s3td">200</td><td><font class="S0">СК (адреса)</font></td></tr>
+<tr><td class="s3td">201</td><td><font class="S0">СК</font></td></tr>
+<tr><td class="s3td">202</td><td><font class="S0">Копия (адреса)</font></td></tr>
+<tr><td class="s3td">203</td><td><font class="S0">Копия</font></td></tr>
+<tr><td class="s3td">204</td><td><font class="S0">Код разговора</font></td></tr>
+<tr><td class="s3td">205</td><td><font class="S0">Дата получения</font></td></tr>
+<tr><td class="s3td">206</td><td><font class="S0">Дата отправки</font></td></tr>
+<tr><td class="s3td">207</td><td><font class="S0">От кого (адреса)</font></td></tr>
+<tr><td class="s3td">208</td><td><font class="S0">От кого</font></td></tr>
+<tr><td class="s3td">209</td><td><font class="S0">С вложениями</font></td></tr>
+<tr><td class="s3td">210</td><td><font class="S0">Отправитель, адрес</font></td></tr>
+<tr><td class="s3td">211</td><td><font class="S0">Отправитель, имя</font></td></tr>
+<tr><td class="s3td">212</td><td><font class="S0">Хранилище</font></td></tr>
+<tr><td class="s3td">213</td><td><font class="S0">Кому (адреса)</font></td></tr>
+<tr><td class="s3td">214</td><td><font class="S0">Название задачи</font></td></tr>
+<tr><td class="s3td">215</td><td><font class="S0">Имя получателя</font></td></tr>
+<tr><td class="s3td">216</td><td><font class="S0">Пробег</font></td></tr>
+<tr><td class="s3td">217</td><td><font class="S0">Исполнитель альбома</font></td></tr>
+<tr><td class="s3td">218</td><td><font class="S0">ИД альбома</font></td></tr>
+<tr><td class="s3td">219</td><td><font class="S0">Ударов в минуту</font></td></tr>
+<tr><td class="s3td">220</td><td><font class="S0">Композитор</font></td></tr>
+<tr><td class="s3td">221</td><td><font class="S0">Тональность</font></td></tr>
+<tr><td class="s3td">222</td><td><font class="S0">Часть компиляции</font></td></tr>
+<tr><td class="s3td">223</td><td><font class="S0">Настроение</font></td></tr>
+<tr><td class="s3td">224</td><td><font class="S0">Часть сборника</font></td></tr>
+<tr><td class="s3td">225</td><td><font class="S0">Период</font></td></tr>
+<tr><td class="s3td">226</td><td><font class="S0">Цветной</font></td></tr>
+<tr><td class="s3td">227</td><td><font class="S0">Родительский контроль</font></td></tr>
+<tr><td class="s3td">228</td><td><font class="S0">Причина родительской оценки</font></td></tr>
+<tr><td class="s3td">229</td><td><font class="S0">Использовано</font></td></tr>
+<tr><td class="s3td">230</td><td><font class="S0">Версия EXIF</font></td></tr>
+<tr><td class="s3td">231</td><td><font class="S0">Событие</font></td></tr>
+<tr><td class="s3td">232</td><td><font class="S0">Экспокоррекция</font></td></tr>
+<tr><td class="s3td">233</td><td><font class="S0">Программа экспозиции</font></td></tr>
+<tr><td class="s3td">234</td><td><font class="S0">Выдержка</font></td></tr>
+<tr><td class="s3td">235</td><td><font class="S0">Диафрагма</font></td></tr>
+<tr><td class="s3td">236</td><td><font class="S0">Вспышка, режим</font></td></tr>
+<tr><td class="s3td">237</td><td><font class="S0">Фокусное расстояние</font></td></tr>
+<tr><td class="s3td">238</td><td><font class="S0">Фокусное расстояние, экв. 35 мм</font></td></tr>
+<tr><td class="s3td">239</td><td><font class="S0">Скорость ISO</font></td></tr>
+<tr><td class="s3td">240</td><td><font class="S0">Объектив, изготовитель</font></td></tr>
+<tr><td class="s3td">241</td><td><font class="S0">Объектив, модель</font></td></tr>
+<tr><td class="s3td">242</td><td><font class="S0">Источник света</font></td></tr>
+<tr><td class="s3td">243</td><td><font class="S0">Светосила</font></td></tr>
+<tr><td class="s3td">244</td><td><font class="S0">Экспозамер</font></td></tr>
+<tr><td class="s3td">245</td><td><font class="S0">Ориентация</font></td></tr>
+<tr><td class="s3td">246</td><td><font class="S0">Люди</font></td></tr>
+<tr><td class="s3td">247</td><td><font class="S0">Программный режим</font></td></tr>
+<tr><td class="s3td">248</td><td><font class="S0">Насыщенность</font></td></tr>
+<tr><td class="s3td">249</td><td><font class="S0">Расстояние до объекта</font></td></tr>
+<tr><td class="s3td">250</td><td><font class="S0">Баланс белого</font></td></tr>
+<tr><td class="s3td">251</td><td><font class="S0">Приоритет</font></td></tr>
+<tr><td class="s3td">252</td><td><font class="S0">Проект</font></td></tr>
+<tr><td class="s3td">253</td><td><font class="S0">Номер канала</font></td></tr>
+<tr><td class="s3td">254</td><td><font class="S0">Название серии</font></td></tr>
+<tr><td class="s3td">255</td><td><font class="S0">Скрытые титры</font></td></tr>
+<tr><td class="s3td">256</td><td><font class="S0">Повтор</font></td></tr>
+<tr><td class="s3td">257</td><td><font class="S0">SAP</font></td></tr>
+<tr><td class="s3td">258</td><td><font class="S0">Дата трансляции</font></td></tr>
+<tr><td class="s3td">259</td><td><font class="S0">Описание телепрограммы</font></td></tr>
+<tr><td class="s3td">260</td><td><font class="S0">Время записи</font></td></tr>
+<tr><td class="s3td">261</td><td><font class="S0">Позывные станции</font></td></tr>
+<tr><td class="s3td">262</td><td><font class="S0">Название станции</font></td></tr>
+<tr><td class="s3td">263</td><td><font class="S0">Сводка</font></td></tr>
+<tr><td class="s3td">264</td><td><font class="S0">Фрагменты</font></td></tr>
+<tr><td class="s3td">265</td><td><font class="S0">Автоматическая сводка</font></td></tr>
+<tr><td class="s3td">266</td><td><font class="S0">Релевантность</font></td></tr>
+<tr><td class="s3td">267</td><td><font class="S0">Конфиденциальность</font></td></tr>
+<tr><td class="s3td">268</td><td><font class="S0">Общий доступ</font></td></tr>
+<tr><td class="s3td">269</td><td><font class="S0">Состояние общего доступа</font></td></tr>
+<tr><td class="s3td">270</td><td><font class="S0">Название продукта</font></td></tr>
+<tr><td class="s3td">271</td><td><font class="S0">Версия продукта</font></td></tr>
+<tr><td class="s3td">272</td><td><font class="S0">Ссылка на службу поддержки</font></td></tr>
+<tr><td class="s3td">273</td><td><font class="S0">Источник</font></td></tr>
+<tr><td class="s3td">274</td><td><font class="S0">Дата начала</font></td></tr>
+<tr><td class="s3td">275</td><td><font class="S0">Выставление счетов</font></td></tr>
+<tr><td class="s3td">276</td><td><font class="S0">Завершена</font></td></tr>
+<tr><td class="s3td">277</td><td><font class="S0">Владелец задачи</font></td></tr>
+<tr><td class="s3td">278</td><td><font class="S0">Общий размер файлов</font></td></tr>
+<tr><td class="s3td">279</td><td><font class="S0">Товарные знаки</font></td></tr>
+<tr><td class="s3td">280</td><td><font class="S0">Сжатие видео</font></td></tr>
+<tr><td class="s3td">281</td><td><font class="S0">Режиссер</font></td></tr>
+<tr><td class="s3td">282</td><td><font class="S0">Скорость передачи данных</font></td></tr>
+<tr><td class="s3td">283</td><td><font class="S0">Высота кадра</font></td></tr>
+<tr><td class="s3td">284</td><td><font class="S0">Частота кадров</font></td></tr>
+<tr><td class="s3td">285</td><td><font class="S0">Ширина кадра</font></td></tr>
+<tr><td class="s3td">286</td><td><font class="S0">Общая скорость потока</font></td></tr>
+<tr><td class="s3td">287</td><td><font class="S0">Audio tracks</font></td></tr>
+<tr><td class="s3td">288</td><td><font class="S0">Bit depth</font></td></tr>
+<tr><td class="s3td">289</td><td><font class="S0">Contains chapters</font></td></tr>
+<tr><td class="s3td">290</td><td><font class="S0">Content compression</font></td></tr>
+<tr><td class="s3td">291</td><td><font class="S0">Subtitles</font></td></tr>
+<tr><td class="s3td">292</td><td><font class="S0">Subtitle tracks</font></td></tr>
+<tr><td class="s3td">293</td><td><font class="S0">Video tracks</font></td></tr>
+
+</td></tr></table>
+</div>
+<br>
+
+<hr><img vspace=-6 height=14 src="../../images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> © Аверин Андрей для </font><a href="http://tc-image.3dn.ru"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a><hr>
+</body></html>

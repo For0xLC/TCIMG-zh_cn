@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Языковые файлы TCIMG_...lng</title>
+<meta http-equiv="content-Type" content="text/html; charset=Windows-1251">
+<!-- <link type="text/css" rel="stylesheet" href="css/default.css"> -->
+<link type="text/css" rel="stylesheet" href="css/i.css">
+</head>
+<body background="images/LiteImage.jpg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="images/bgl_orchid.jpg">
+<tr valign="bottom"> <td align="left" valign="bottom" class="topichead">
+<p><span class="S131" style="margin-left: 90px"><big><strong>Языковые файлы TCIMG_...lng</strong></big></span></p>
+</td></tr><tr><td colspan="2" height="3px" background="images/bgs_grey.gif"></td></tr></table>
+<hr><a name="ONLINE1"></a>
+<p><font class="S3" size="+1">Настройка LNG файлов для использования различных языков</font></p>
+<hr>
+
+<!-- <hr> -->
+
+<!-- 1 -->
+
+<br>
+<a name="1"></a><font class="S51"><b>1.</b></font>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+Для установления языка необходимо в <a class="le" href="config.htm#Language"><font class="S1"><b>TCIMG.ini</b></font></a> (TCIMGU.ini) в секции <span class="S8">[</span>Setting<span class="S8">]</span> в ключе <b>Language</b> прописать имя языка.
+<br>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:500">
+<b><font class="S81">[</font>Setting<font class="S81">]</font></b><br>
+<b>Language</b><font class="S81"><b>=</b></font>Russian<br>
+<font class="S21">; Language=Chinese</font><br>
+<font class="S21">; Language=Ukraine</font><br>
+<font class="S21">; Language=English</font><br>
+<font class="S21">; Language=NameLang</font><br>
+</p>
+<br>
+Для переключения языка можно воспользоваться командой <a class="le" href="html/com_slang.htm"><span class="S4"><b>slang</b></span></a> или диалогом:
+<p align="center"><img src="images/faq13.gif"></p>
+</div>
+
+<!-- 2 -->
+
+<a name="2"></a><font class="S51"><b>2.</b></font>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+Для подключения своего языка необходимо в папке TCIMG\Files\Lng\ создать именной файл TCIMG_<font class="S121">NameLang</font>.lng в кодировке 1200 UTF16 LE (Unicode Little Endian), где <font class="S121">NameLang</font> - это имя языка.<br>
+<font size=-1 class="S20">Можно создать дубликат TCIMG_Russian.lng, переименовать в TCIMG_NameLang.lng и перевести фразы.</font><br>
+В файле обязательно создаётся секция с именем языка.<br>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:500">
+<b><font class="S81">[</font>NameLang<font class="S81">]</font></b><br>
+Translite<font class="S81">=</font>...<br>
+Translite2<font class="S81">=</font>...<br>
+Translite3<font class="S81">=</font>...<br>
+Translite4<font class="S81">=</font>...<br>
+...
+</p>
+</div>
+
+<!-- 3 -->
+
+<br>
+<a name="3"></a><font class="S51"><b>3.</b></font> 
+<div style="margin-left: 16pt; text-indent: 0pt;">
+Для сохранения своего перевода и своих шаблонов вы можете:
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+а) Создать файл TCIMGU.lng в кодировке 1200 LE, прописать  в нём секцию с именем языка [NameLang] (секций может быть несколько: для каждого языка своя) и поместить либо в папку TCIMG\Files\Lng\, либо в корневую папку TCIMG <br>
+<br>
+б) Есть возможность создать сколько угодно пользовательских файлов .lng и прописать пути или имена файлов в <a class="le" href="config.htm#LNG"><font class="S1"><b>TCIMG.ini</b></font></a> (TCIMGU.ini) в секции <span class="S8">[</span>Setting<span class="S8">]</span> в ключе <b>LNG</b> через разделитель <font class="S81"><b>/</b></font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&#8226; Если прописано только имя, то файл ищется сначала в папке TCIMG\Files\Lng\, затем в корневой папке TCIMG<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&#8226; TCIMGU.lng прописывать необязательно, если он существует, то считывается автоматически.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&#8226; В именах пользовательских .lng файлах <u>не должно быть</u> приставки TCIMG_ (приставка TCIMG_ только для основных языковых файлов)
+<br>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:500">
+<b><font class="S81">[</font>Setting<font class="S81">]</font></b><br>
+LNG<font class="S81">=</font>MY.lng<font class="S81"><b>/</b></font>%COMMANDER_PATH%\commands\HTML.lng<br>
+</p>
+</div>
+<br>
+Порядок считывания информации из файлов .lng:
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+1. Файлы из ключа LNG<br>
+2. Файл TCIMGU.lng (приоритет папка TCIMG\Files\Lng\, затем корневая папка TCIMG)<br>
+3. Файл TCIMG_NameLang.lng<br>
+4. Файл TCIMG_Russian.lng (если запрашиваемая информация не найдена)<br>
+</div><br>
+Рекомендуется все пользовательские файлы .lng поместить в папку TCIMG\Files\Lng\
+</div>
+<br>
+
+<!-- 4 -->
+
+<a name="4"></a><font class="S51"><b>4.</b></font> 
+<div style="margin-left: 16pt; text-indent: 0pt;">
+Синтаксис файлов.
+<div style="margin-left: 16pt; text-indent: 0pt;">
+Файлы TCIMG...lng имеют синтаксис ini файла, где прописываются ключи и значения (Key=Value)<br>
+Так же могут быть использованы комментарии<br>
+Описание синтаксиса имён и значений см. Дополнение <a class="le" href="html/add/add_dialog.htm"> <b>№18</b></a>
+<br><br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:500">
+<b><font class="S81">[</font>NameLang<font class="S81">]</font></b><br>
+<font class="S19">; комментарий</font><br>
+FileNameZiro<font class="S81">=</font>Name.txt<br>
+</p>
+<br>
+По просьбе пользователей добавлена возможность многострочной записи<br>
+Все ключи, кроме ключей Translite могут быть записаны многострочно в именной секции с фигурными скобками.
+<br><br>
+<div style="margin-left: 16pt; text-indent: 0pt;">
+<font class="S21">&#8226;</font> Если значение ключа равно "{@}" , то значение берётся из именной секции с фигурными скобками<br>
+<font class="S21">&#8226;</font> Именем фигурной секции является имя ключа<br>
+<font class="S21">&#8226;</font> Секция должна заканчиваться "{@}"<br>
+<font class="S21">&#8226;</font> В многострочной секции могут использоваться комментарии:
+<div style="margin-left: 16pt; text-indent: 0pt;">
+- Комментарии могут быть в любом месте, кроме имени секции<br>
+- Синтаксис: <font class="S21"><b>пробел;;пробел комментарий</b></font><br>
+- Комментарии <font class="S81"><b>НЕ МОГУТ НАХОДИТСЯ</b></font> после имени секции!!!<br>
+- При считывании секции все комментарии удаляются<br>
+- Так же удаляются начальные и конечные пробелы, пустые строки<br>
+</div>
+
+<font class="S21">&#8226;</font> Фигурная секция может находится в любом месте .lng файла (не обязательно рядом с ключом)
+</div>
+<br>
+<span class="section">Пример записи:</span>
+<p class="codeheader" style="padding:6px;white-space: nowrap;width:700">
+<b><font class="S81">[</font>NameLang<font class="S81">]</font></b><br>
+<font class="S19">; ShapeXXX=Сообщение:NOEXIT:||TCIMG.dll,55||CF1534||FFF8DC|Comic Sans MS|12|400</font><br>
+<font class="S51"><b>ShapeXXX</b></font><font class="S81"><b>=</b></font>{@}<br><br>
+<font class="S81"><b>{ShapeXXX}</b></font><br>
+<font class="S21">&nbsp;;; комментарий 1</font><br>
+Сообщение:NOEXIT:<br>
+||TCIMG.dll,55<font class="S21"> ;; комментарий 2</font><br>
+||CF1534<br>
+||FFF8DC|Comic Sans MS|12|400<font class="S21"> ;; комментарий 3</font><br>
+<font class="S81"><b>{@}</b></font></p>
+</div>
+</div>
+<br>
+
+<!-- 5 -->
+
+<a name="5"></a><font class="S51"><b>5.</b></font> 
+<div style="margin-left: 16pt; text-indent: 0pt;">
+Ключи файла .lng<br><br>
+<div align="center">
+<font size="x-small">
+<table class="param" width="85%">
+
+<tr class="sl2tr"><td width="15%"><font size="-1"><div align="center">Ключ</div></font></td><td width="85%"><font size="-1"><div align="center">Описание</div></font></td></tr>
+<tr class="seltr"><td colspan=2><font><div align="center">Основные ключи</div></font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite"></a>&nbsp;Translite</font></td><td><font class="S0">&nbsp;Фразы используются в различных командах.</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite2"></a>&nbsp;Translite2</font></td><td><font class="S0"><a href="html/add/add_info.htm#s23"><img align=right src="images/left.gif" border="0" title="Переход к параметру info=s23"></a>&nbsp;Фразы используются для получения языка операционной системы.</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite3"></a>&nbsp;Translite3</font></td><td><font class="S0"><a href="html/com_captxt.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде captxt"></a>&nbsp;Фразы используются в команде captxt</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite4"></a>&nbsp;Translite4</font></td><td><font class="S0"><a href="html/com_color.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде color"></a>&nbsp;Фразы используются в команде color</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite5"></a>&nbsp;Translite5</font></td><td><font class="S0"><a href="html/com_plays.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде plays"></a>&nbsp;Фразы используются в команде plays</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite6"></a>&nbsp;Translite6</font></td><td><font class="S0"><a href="html/com_scren.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде scren"></a>&nbsp;Фразы используются в команде scren</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite7"></a>&nbsp;Translite7</font></td><td><font class="S0"><a href="html/com_picus.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде picus"></a><a href="html/com_uplds.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде uplds"></a>&nbsp;Фразы используются в командах picus и uplds</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite8"></a>&nbsp;Translite8</font></td><td><font class="S0"><a href="html/com_imgvw.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде imgvw"></a>&nbsp;Фразы используются в команде imgvw</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite9"></a>&nbsp;Translite9</font></td><td><font class="S0"><a href="html/com_zmenu.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде zmenu"></a>&nbsp;Фразы используются в команде zmenu</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite10"></a>&nbsp;Translite10</font></td><td><font class="S0"><a href="html/com_fonts.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде fonts"></a>&nbsp;Фразы используются в команде fonts</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite11"></a>&nbsp;Translite11</font></td><td><font class="S0"><a href="html/add/add_info.htm#s27"><img align=right src="images/left.gif" border="0" title="Переход к параметру info=s27"></a>&nbsp;Фразы используются для получения буквенного значения текущего месяца</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite12"></a>&nbsp;Translite12</font></td><td><font class="S0"><a href="html/add/add_info.htm#s28"><img align=right src="images/left.gif" border="0" title="Переход к параметру info=s28"></a>&nbsp;Фразы используются для получения буквенного значения текущего дня недели</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite13"></a>&nbsp;Translite14</font></td><td><font class="S0"><a href="html/add/add_info.htm#s29"><img align=right src="images/left.gif" border="0" title="Переход к параметру info=s29"></a>&nbsp;Фразы используются для получения буквенного значения слова 'год'</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite15"></a>&nbsp;Translite15</font></td><td><font class="S0"><a href="html/com_timesx.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде timesx"></a>&nbsp;Фразы используются в команде timesx</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite16"></a>&nbsp;Translite16</font></td><td><font class="S0"><a href="html/com_ledit.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде ledit"></a>&nbsp;Фразы используются в команде ledit</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite17"></a>&nbsp;Translite17</font></td><td><font class="S0"><a href="html/com_diffd.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде diffd"></a>&nbsp;Фразы используются в команде diffd</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite18"></a>&nbsp;Translite18</font></td><td><font class="S0"><a href="html/com_pasgen.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде pasgen"></a>&nbsp;Фразы используются в команде pasgen</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite19"></a>&nbsp;Translite19</font></td><td><font class="S0"><a href="html/com_vclip.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде vclip"></a>&nbsp;Фразы используются в команде vclip</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite20"></a>&nbsp;Translite20</font></td><td><font class="S0"><a href="html/com_ftpset.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде ftpset"></a>&nbsp;Фразы используются в команде ftpset</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite21"></a>&nbsp;Translite21</font></td><td><font class="S0"><a href="html/com_xbarx.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде xbarx"></a>&nbsp;Фразы используются в команде xbarx</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite22"></a>&nbsp;Translite22</font></td><td><font class="S0"><a href="html/com_textv.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде textv"></a>&nbsp;Фразы используются в команде textv</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite23"></a>&nbsp;Translite23</font></td><td><font class="S0"><a href="html/com_watch.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде watch"></a>&nbsp;Фразы используются в команде watch</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite24"></a>&nbsp;Translite24</font></td><td><font class="S0"><a href="html/com_imgfs.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде imgfs"></a>&nbsp;Фразы используются в команде imgfs</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite25"></a>&nbsp;Translite25</font></td><td><font class="S0"><a href="html/com_sdess.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде sdess"></a>&nbsp;Фразы используются в команде sdess</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite26"></a>&nbsp;Translite26</font></td><td><font class="S0"><a href="html/com_infos.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде infos"></a>&nbsp;Фразы используются в команде infos=2||10</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite27"></a>&nbsp;Translite27</font></td><td><font class="S0"><a href="html/com_infos.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде infos"></a>&nbsp;Фразы используются в команде infos=3||9||File</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite28"></a>&nbsp;Translite28</font></td><td><font class="S0"><a href="html/com_symxx.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде symxx"></a>&nbsp;Фразы используются в команде symxx</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite29"></a>&nbsp;Translite29</font></td><td><font class="S0"><a href="html/com_imgth.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде imgth"></a>&nbsp;Фразы используются в команде imgth</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite30"></a>&nbsp;Translite30</font></td><td><font class="S0"><a href="html/com_modfx.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде modfx"></a>&nbsp;Фразы используются в команде modfx</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite31"></a>&nbsp;Translite31</font></td><td><font class="S0"><a href="html/com_regex.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде regex"></a>&nbsp;Фразы используются в команде regex</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite32"></a>&nbsp;Translite32</font></td><td><font class="S0">&nbsp;Фразы используются в диалоге "О программе"</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite33"></a>&nbsp;Translite33</font></td><td><font class="S0"><a href="html/com_spech.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде spech"></a>&nbsp;Фразы используются в команде spech</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Translite34"></a>&nbsp;Translite34</font></td><td><font class="S0"><a href="html/com_genwd.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде genwd"></a>&nbsp;Фразы используются в команде genwd</font></td></tr>
+<tr class="seltr"><td colspan=2><font size="+1"><div align="center">Ключи диалогов</div></font></td></tr>
+<tr><td colspan=2>
+&nbsp;Для нижеперечисленных ключей:
+<br>&nbsp;&nbsp;• Могут использоваться пользовательские окончания
+<br>&nbsp;&nbsp;• Окончания могут включать в себя цифры, латинские символы и знак подчёркивания _
+<br>&nbsp;&nbsp;• Окончание, состоящее только из цифр используется утилитой 
+<br>Примеры пользовательских окончаний:<br>
+&nbsp;&nbsp;<code class="example2"><font class="S3">InputBox</font><font class="S81">_V01</font>=</code> ,
+&nbsp;<code class="example2"><font class="S3">InputBox</font><font class="S81">_X2Z</font>=</code> ,
+&nbsp;<code class="example2"><font class="S3">InputBox</font><font class="S81">_8QZ</font>=</code> ,
+&nbsp;<code class="example2"><font class="S3">InputBox</font><font class="S81">_i_S3</font>=</code>
+
+
+</font></td></tr>
+<tr><td height=30><font class="S3"><a name="InputBox"></a>&nbsp;InputBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#input"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [input]"></a>&nbsp;Настройки диалога [input]</font></td></tr>
+<tr><td height=30><font class="S3"><a name="ComboBox"></a>&nbsp;ComboBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#combo"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [combo]"></a>&nbsp;Настройки диалога [combo]</font></td></tr>
+<tr><td height=30><font class="S3"><a name="GroupBox"></a>&nbsp;GroupBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#group"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [group]"></a>&nbsp;Настройки диалога [group]</font></td></tr>
+<tr><td height=30><font class="S3"><a name="EditsBox"></a>&nbsp;EditsBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#edits"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [edits]"></a>&nbsp;Настройки диалога [edits]</font></td></tr>
+<tr><td height=30><font class="S3"><a name="SaveBox"></a>&nbsp;SaveBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#ssave"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [ssave]"></a>&nbsp;Настройки диалога [ssave]</font></td></tr>
+<tr><td height=30><font class="S3"><a name="OpenBox"></a>&nbsp;OpenBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#sopen"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [sopen]"></a>&nbsp;Настройки диалога [sopen]</font></td></tr>
+<tr><td height=30><font class="S3"><a name="FolderBox"></a>&nbsp;FolderBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#sfold"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [sfold]"></a>&nbsp;Настройки диалога [sfold]</font></td></tr>
+<tr><td height=30><font class="S3"><a name="RichInputBox"></a>&nbsp;RichInputBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#richinput"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [richinput]"></a>&nbsp;Настройки диалога [richinput]</font></td></tr>
+<tr><td height=30><font class="S3"><a name="CheckBox"></a>&nbsp;CheckBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#check"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [check]"></a>&nbsp;Настройки диалога [check]</font></td></tr>
+<tr><td height=30><font class="S3"><a name="FolderzBox"></a>&nbsp;FolderzBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#zfold"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [zfold]"></a>&nbsp;Настройки диалога [zfold]</font></td></tr>
+<tr><td height=30><font class="S3"><a name="FontBox"></a>&nbsp;FontBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#fontz"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [fontz]"></a>&nbsp;Настройки диалога [fontz]</font></td></tr>
+<tr><td height=30><font class="S3"><a name="IconzBox"></a>&nbsp;IconzBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#iconz"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [iconz]"></a>&nbsp;Настройки диалога [iconz]</font></td></tr>
+<tr><td height=30><font class="S3"><a name="ListaBox"></a>&nbsp;ListaBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#lista"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [lista]"></a>&nbsp;Настройки диалога [lista]</font></td></tr>
+<tr><td height=30><font class="S3"><a name="MsgbxBox"></a>&nbsp;MsgbxBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#msgbx"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [msgbx]"></a>&nbsp;Настройки диалога [msgbx]</font></td></tr>
+<tr><td height=30><font class="S3"><a name="ElectBox"></a>&nbsp;ElectBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#elect"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [elect]"></a>&nbsp;Настройки диалога [elect]</font></td></tr>
+<tr><td height=30><font class="S3"><a name="UpDown"></a>&nbsp;UpDown</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#updwn"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [updwn]"></a>&nbsp;Настройки диалога [updwn]</font></td></tr>
+<tr><td height=30><font class="S3"><a name="ImageBox"></a>&nbsp;ImageBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#image"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [image]"></a>&nbsp;Настройки диалога [image]</font></td></tr>
+<tr><td height=30><font class="S3"><a name="DatesBox"></a>&nbsp;DatesBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#dates"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [dates]"></a>&nbsp;Настройки диалога [dates]</font></td></tr>
+
+
+<tr><td height=30><font class="S3"><a name="InfoBox"></a>&nbsp;InfoBox</font></td><td><font class="S0"><a href="html/com_infbx.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде infbx"></a>&nbsp;Настройки информации в команде infbx</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Shape"></a>&nbsp;Shape</font></td><td><font class="S0"><a href="html/com_shape.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде shape"></a>&nbsp;Настройки объединённого диалога командой shape</font></td></tr>
+<tr><td height=30><font class="S3"><a name="HelpBox"></a>&nbsp;HelpBox</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#notes9"><img align=right src="images/left.gif" border="0" title="Переход к настройкам подсказок"></a>&nbsp;Настройки подсказок в диалогах</font></td></tr>
+<tr><td height=30><font class="S3"><a name="TrayIconHint"></a>&nbsp;TrayIconHint</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#tray"><img align=right src="images/left.gif" border="0" title="Переход к команде &#60;TRAY&#62;"></a>&nbsp;Настройки подсказки в трее в команде &#60;TRAY&#62;</font></td></tr>
+<tr><td height=30><font class="S3"><a name="CheckBoxHint"></a>&nbsp;CheckBoxHint</font></td><td><font class="S0"><a href="html/fun/_ArrayDisplay.htm#hint"><img align=right src="images/left.gif" border="0" title="Переход к описанию функции _ArrayDisplay()"></a>&nbsp;Настройки подсказки для кнопки <a href="html/fun/_ArrayDisplay.htm#hint"><img src="images/imgth1.png" border="0" title="подсказки для кнопки вывода информации в переменную GLOBALARRAY"></a> в команде infos, функции _ArrayDisplay()</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Title"></a>&nbsp;Title</font></td><td><font class="S0"><a href="html/com_title.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде title"></a>&nbsp;Шаблоны заголовков для команды <title></title></font></td></tr>
+<tr><td height=30><font class="S3"><a name="InfoHtml"></a>&nbsp;InfoHtml</font></td><td><font class="S0"><a href="html/com_infht.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде infht"></a>&nbsp;Настройки окна в команде infht</font></td></tr>
+
+<!-- <tr><td height=30><font class="S3"><a name="WWWWWW"></a>&nbsp;YYYYYYY</font></td><td><font class="S0"><a href="html/add/add_dialog.htm#NNNN"><img align=right src="images/left.gif" border="0" title="Переход к диалогу [XXXXX]"></a>&nbsp;Настройки диалога [ZZZZZ]</font></td></tr> -->
+
+
+<tr class="seltr"><td colspan=2><font size="+1"><div align="center">Дополнительные ключи</div></font></td></tr>
+<tr><td height=30><font class="S3"><a name="FolderZiro"></a>&nbsp;FolderZiro</font></td><td><font class="S0"><a href="html/com_folds.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде folds"></a>&nbsp;При создании папок в команде folds, если возникает пустое имя, то оно берётся из значения ключа</font></td></tr>
+<tr><td height=30><font class="S3"><a name="FileNameZiro"></a>&nbsp;FileNameZiro</font></td><td><font class="S0"><a href="html/com_creat.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде creat"></a>&nbsp;При создании файлов в команде creat, если возникает пустое имя, то оно берётся из значения ключа</font></td></tr>
+<tr><td height=30><font class="S3"><a name="FolderLang"></a>&nbsp;FolderLang<font class="S81">1</font><br>&nbsp;...<br>&nbsp;FolderLang<font class="S81">N</font></font></td><td><font class="S0"><a href="html/com_websc.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде websc"></a>&nbsp;Использование своих папок в параметре tip&#60;&#62; в командах moves, copys, downl, websc</font></td></tr>
+<tr><td height=30><font class="S3"><a name="FolderExtZiro"></a>&nbsp;FolderExtZiro</font></td><td><font class="S0">&nbsp;Папка по умолчанию, если тип файла не прописан ни в одном ключе в параметре tip&#60;&#62;</font></td></tr>
+<tr><td height=30><font class="S3"><a name="ErrorBox"></a>&nbsp;ErrorBox</font></td><td><font class="S0">&nbsp;Сообщения об ошибках для внутреннего использования</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Window1"></a>&nbsp;Window1</font></td><td><font class="S0"><a href="html/com_propes.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде propes"></a>&nbsp;Заголовок окна системного диалога "Свойства:", используются в команде propes, в runcm=3||Path</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Window2"></a>&nbsp;Window2</font></td><td><font class="S0"><a href="html/com_rundfr.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде rundfr"></a>&nbsp;Название пункта "Форматировать..." в контекстном меню диска в Total Commander, используются в команде rundfr</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Window3"></a>&nbsp;Window3</font></td><td><font class="S0"><a href="html/com_runcm.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде runcm"></a>&nbsp;Заголовок окна системного диалога "Свойства: Интернет", используется в команде runcm=4||0 ... runcm=4||7</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Window4"></a>&nbsp;Window4</font></td><td><font class="S0"><a href="html/com_runcm.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде runcm"></a>&nbsp;Заголовок окна системного диалога "Выполнить" (WIN+R), используется в команде runcm=1</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Window5"></a>&nbsp;Window5</font></td><td><font class="S0"><a href="html/com_sfont.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде sfont"></a>&nbsp;Текст окна ошибки при установке несуществующего имени шрифта в Total Commander, используется в команде sfont</font></td></tr>
+<tr><td height=30><font class="S3"><a name="Window6"></a>&nbsp;Window6</font></td><td><font class="S0"><a href="html/com_runcm.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде runcm"></a>&nbsp;Заголовок окна системного диалога "Конфигурация системы" (msconfig), используется в команде runcm=2</font></td></tr>
+
+<!-- <tr><td height=30><font class="S3"><a name="FolderExtZiro"></a>&nbsp;FolderExtZiro</font></td><td><font class="S0"><a href="html/com_regex.htm"><img align=right src="images/left.gif" border="0" title="Переход к команде regex"></a>&nbsp;Фразы используются в команде regex</font></td></tr> -->
+
+</table>
+</font>
+</div>
+</div>
+<br>
+
+<!-- 6 -->
+
+<a name="6"></a><font class="S51"><b>6.</b></font> 
+<div style="margin-left: 16pt; text-indent: 0pt;">
+
+
+
+Каждый желающий может перевести TCIMG_Russian.lng на  другой язык.<br>
+Для минимального перевода необходимо перевести или доперевести недостающие фразы ключей <u>Translite</u>.<br>
+Тем самым Вы войдёте в историю и поможете в развитии утилиты.<br>
+Свой вариант перевода Вы можете выслать на почту Averin-And@yandex.ru, передать через ICQ 601298959 или приложить в сообщении к теме обсуждения.<br>
+Для перевода справки создана команда <a class="le" href="html/com_chelp.htm"><span class="S4"><b>chelp</b></span></a>
+<br><br>
+Для перевода ключей <u>Translite</u> Вы можете воспользоваться командой для просмотра данных:
+
+<p class="codeheader" style="padding:6px;white-space: nowrap;">
+TOTALCMD#BAR#DATA<br>
+%COMMANDER_PATH%\TCIMG.exe<br>
+<span class="S0"><a class="le" href="html/com_sends.htm"><span class="S4"><b>sends</b></span></a>=</span><span class="S8">&lt</span>inikey=8<span class="S11">//</span><a class="le" href="html/add/add_path.htm#$f213"><span class="S3">&#36;&#102;</span><span class="S121">213</span></a>\TCIMG_Russian.lng<span class="S11">//</span>Russian<span class="S11">//</span>Translite<span class="S8">&gt</span><span class="S51">??</span>-4 <a class="le" href="html/com_zends.htm"><span class="S4"><b>zends</b></span></a>=<span class="S8">&lt</span>inikey=8<span class="S11">//</span><a class="le" href="html/add/add_path.htm#$f213"><span class="S3">&#36;&#102;</span><span class="S121">213</span></a>\TCIMG_Ukrainian.lng<span class="S11">//</span>Ukrainian<span class="S11">//</span>Translite<span class="S8">&gt</span><span class="S51">??</span>-4 <a class="le" href="html/com_arr2d.htm"><span class="S4"><b>arr2d</b></span></a>=<a class="le" href="html/add/add_gloobal.htm#LISTGLOBALSYN"><span class="S91">$GLOB&#65&#76SENDS</span></a><span class="S8">||</span>18|<a class="le" href="html/add/add_gloobal.htm#LISTGLOBALSYN"><span class="S91">$GLOB&#65&#76ZENDS</span></a> <a class="le" href="html/add/add_gloobal.htm#GLOBALARR2D"><span class="S121">GLOBA&#76ARR2D</span></a><span class="S8">&lt</span>a<span class="S8">&gt</span></span><br>
+%COMMANDER_PATH%\Wcmicons.dll,1<br>
+<font class="S21">Показать в таблице значения ключа Translite двух .lng файлов<br></font>
+
+<br>
+0<br>
+-1<br>
+</p>
+</div>
+
+<!-- 7 -->
+
+<!-- <a name="7"></a><font class="S51"><b>5.</b></font>  -->
+<!-- <div style="margin-left: 16pt; text-indent: 0pt;"> -->
+
+<!-- </div> -->
+
+
+
+
+
+<!-- Эта строка нужна для подхвата TCIMG2.gif -->
+<img src="images/TCIMG.gif" width="0" height="0"><img src="images/TCIMG2.gif" width="0" height="0">
+
+<br><br>
+<hr><img vspace=-6 height=14 src="images/tcimage.gif" width=14 align=middle;<br><font color=green><I><font size=2> &copy; Averin Andrey </font><a href="http://tc-image.3dn.ru" target="_blank"><font size=2>Total Commander Image</font></a><font size=2>&nbsp; </font></I></font><a href="mailto:Averin-And@yandex.ru"><font color=#0066cc size=2>Averin-And@yandex.ru</font></a>
+<hr>
+<!-- <a href="https://vk.com/sochirealtys" target="_blank"><img align="middle" alt="" border="0" src="images/ssss.png" width="100%" /></a> -->
+<hr>
+</body></html>
+
